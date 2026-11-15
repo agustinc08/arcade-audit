@@ -1,0 +1,32 @@
+system,rom,path,size_bytes,classification
+mame,acpsx.zip,/userdata/roms/mame/acpsx.zip,126167,BIOS/DEVICE set per metadata
+mame,cpzn1.zip,/userdata/roms/mame/cpzn1.zip,125571,BIOS/DEVICE set per metadata
+mame,cpzn2.zip,/userdata/roms/mame/cpzn2.zip,137827,BIOS/DEVICE set per metadata
+mame,cvs.zip,/userdata/roms/mame/cvs.zip,3113,BIOS/DEVICE set per metadata
+mame,decocass.zip,/userdata/roms/mame/decocass.zip,13203,BIOS/DEVICE set per metadata
+mame,konamigx.zip,/userdata/roms/mame/konamigx.zip,8712,BIOS/DEVICE set per metadata
+mame,megaplay.zip,/userdata/roms/mame/megaplay.zip,49978,BIOS/DEVICE set per metadata
+mame,megatech.zip,/userdata/roms/mame/megatech.zip,33137,BIOS/DEVICE set per metadata
+mame,neogeo.zip,/userdata/roms/mame/neogeo.zip,1592774,BIOS/DEVICE set per metadata
+mame,nss.zip,/userdata/roms/mame/nss.zip,50555,BIOS/DEVICE set per metadata
+mame,pgm.zip,/userdata/roms/mame/pgm.zip,2094614,BIOS/DEVICE set per metadata
+mame,playch10.zip,/userdata/roms/mame/playch10.zip,48317,BIOS/DEVICE set per metadata
+mame,skns.zip,/userdata/roms/mame/skns.zip,924740,BIOS/DEVICE set per metadata
+mame,stvbios.zip,/userdata/roms/mame/stvbios.zip,2955608,BIOS/DEVICE set per metadata
+mame,taitofx1.zip,/userdata/roms/mame/taitofx1.zip,126441,BIOS/DEVICE set per metadata
+mame,tps.zip,/userdata/roms/mame/tps.zip,138474,BIOS/DEVICE set per metadata
+fbneo,acpsx.zip,/userdata/roms/fbneo/acpsx.zip,126167,support/archive not identified as playable game in DAT/gamelist
+fbneo,cpzn1.zip,/userdata/roms/fbneo/cpzn1.zip,125571,support/archive not identified as playable game in DAT/gamelist
+fbneo,cpzn2.zip,/userdata/roms/fbneo/cpzn2.zip,137827,support/archive not identified as playable game in DAT/gamelist
+fbneo,cvs.zip,/userdata/roms/fbneo/cvs.zip,3113,support/archive not identified as playable game in DAT/gamelist
+fbneo,decocass.zip,/userdata/roms/fbneo/decocass.zip,13203,BIOS/DEVICE set per metadata
+fbneo,konamigx.zip,/userdata/roms/fbneo/konamigx.zip,8712,support/archive not identified as playable game in DAT/gamelist
+fbneo,megaplay.zip,/userdata/roms/fbneo/megaplay.zip,49978,support/archive not identified as playable game in DAT/gamelist
+fbneo,megatech.zip,/userdata/roms/fbneo/megatech.zip,33137,support/archive not identified as playable game in DAT/gamelist
+fbneo,neogeo.zip,/userdata/roms/fbneo/neogeo.zip,1592774,BIOS/DEVICE set per metadata
+fbneo,nss.zip,/userdata/roms/fbneo/nss.zip,50555,support/archive not identified as playable game in DAT/gamelist
+fbneo,pgm.zip,/userdata/roms/fbneo/pgm.zip,2094614,BIOS/DEVICE set per metadata
+fbneo,playch10.zip,/userdata/roms/fbneo/playch10.zip,48317,support/archive not identified as playable game in DAT/gamelist
+fbneo,skns.zip,/userdata/roms/fbneo/skns.zip,924740,BIOS/DEVICE set per metadata
+fbneo,stvbios.zip,/userdata/roms/fbneo/stvbios.zip,2955608,support/archive not identified as playable game in DAT/gamelist
+fbneo,tps.zip,/userdata/roms/fbneo/tps.zip,138474,support/archive not identified as playable game in DAT/gamelist
