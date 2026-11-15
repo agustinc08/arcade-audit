@@ -84,3 +84,15 @@ El default HDMI ya está fijado por el servicio existente y fue comprobado con e
 Se realizó un control positivo único de `altair` para validar la cadena de lanzamiento y restauración; no cuenta como juego nuevo certificado. Resultado: ROM correcta en ES y cmdfile; core `/usr/lib/libretro/mame_libretro.so`; proceso estable 21,25 s; HDMI default durante el muestreo; cierre con `game_health` exit 0; retorno a ES; restore de 62 file/tree paths `RESTORE_VERIFIED`; SHA de `batocera.conf` antes/después igual (`098c8844…47b52d2`). Hotkeygen anotó `ProcessLookupError` posterior a la salida del PID; se clasifica `CLEANUP_RACE`, no fallo del juego.
 
 El engine ahora soporta snapshots acotados de árboles existentes y ausentes, además de detectar conflictos concurrentes; su self-test pasó. Aun así `AUTO_CERTIFIED=0`: el scaffold no implementa adapters por sistema ni un piloto de 10 juegos, y falta integrar monitorización HDMI/safety gates en el runner. La reconexión física DS4 y reboot validation permanecen pendientes. No se inició certificación masiva; `CONTROL_CERTIFIED=0`, `GUEST_READY=0`.
+
+
+## Piloto universal actualizado — 2026-11-15
+
+- Juegos únicos `AUTO_CERTIFIED`: **10** (de 10 del piloto).
+- Intentos: 11; un `ENGINE_FAIL` inicial fue un core esperado incorrecto del adapter (`pce_fast` frente al core efectivo `pce` definido por el sistema ES); se corrigió y el mismo juego pasó en la reanudación. Los otros ocho PASS no se repitieron.
+- `GAME_FAIL`: 0; `WRONG_GAME_DISPATCH`: 0; `AUDIO_ROUTE_CHANGED`: 0; restore fallido: 0.
+- HDMI: estable antes/durante/después. `batocera.conf`, core global, 18 overrides y P1-P4 sin cambios.
+- `CONTROL_CERTIFIED`: 0; `GUEST_READY`: 0. El piloto no inyectó inputs ni certificó controles físicos.
+- Adaptadores: 48 sistemas detectados; 23 READY por familia; 25 standalone en espera de adapter seguro.
+- Reporte detallado: `reports/UNIVERSAL_CERTIFIER_PILOT.md`.
+- Siguiente juego del lote: se determina por `full_game_certifier.py --batch 50`; el checkpoint registra progreso por juego.

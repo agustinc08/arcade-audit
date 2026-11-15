@@ -1,0 +1,83 @@
+{
+  "created_at": "2026-11-15T11:29:15+00:00",
+  "prefilter_skips": [
+    {
+      "system": "psx",
+      "shortname": "CTR - Crash Team Racing (USA).cue",
+      "cause": "ADAPTER_OR_CONTENT_NOT_READY"
+    },
+    {
+      "system": "n64",
+      "shortname": "Super Mario 64.z64",
+      "cause": "ADAPTER_OR_CONTENT_NOT_READY"
+    }
+  ],
+  "games": [
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/lbgrande.zip",
+      "adapter": "MAME_CURRENT",
+      "core": "mame"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/1941.zip",
+      "adapter": "MAME078PLUS",
+      "core": "mame078plus"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/captcomm.zip",
+      "adapter": "FBNEO",
+      "core": "fbneo"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Super Mario Bros. (ESP-Her-Saki).nes",
+      "adapter": "RETROARCH_GENERIC",
+      "core": "fceumm"
+    },
+    {
+      "system": "snes",
+      "rom": "/userdata/roms/snes/NBA Jam (USA).zip",
+      "adapter": "RETROARCH_GENERIC",
+      "core": "snes9x"
+    },
+    {
+      "system": "megadrive",
+      "rom": "/userdata/roms/megadrive/Ultimate Mortal Kombat 3 (E) [!].bin",
+      "adapter": "RETROARCH_GENERIC",
+      "core": "genesisplusgx"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Final Fantasy V Advance (Europe) (En,Fr,De,Es,It).gba",
+      "adapter": "RETROARCH_GENERIC",
+      "core": "mgba"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Batman Returns (EU).sms",
+      "adapter": "RETROARCH_GENERIC",
+      "core": "genesisplusgx"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Bull Fight - Ring no Haja (Japan).pce",
+      "adapter": "RETROARCH_GENERIC",
+      "core": "pce_fast"
+    },
+    {
+      "system": "gb",
+      "rom": "/userdata/roms/gb/Bomb Jack (U).gb",
+      "adapter": "RETROARCH_GENERIC",
+      "core": "gambatte"
+    }
+  ],
+  "resumed_at": "2026-11-15T11:36:39+00:00",
+  "adapter_reconciliation": {
+    "system": "pcengine",
+    "configured_core": "pce",
+    "reason": "ES effective default core takes precedence over configgen fallback"
+  }
+}

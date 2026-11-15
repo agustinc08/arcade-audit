@@ -24,3 +24,13 @@ El publisher detuvo el primer intento por `LARGE_CHANGESET`; no se bajó ningún
 ## Persistencia y salud
 
 Audio: `AUDIO_POLICY_INSTALLED`, reconexión física/reboot pendientes. Restore: positive control PASS. FBNeo DAT: VERIFIED. Global MAME y 18 overrides sin cambios. P1–P4 sin cambios. No iniciar un batch masivo hasta completar adapters y un piloto de infraestructura; después mantener HDMI monitorizado en cada test.
+
+## Universal certifier — piloto real (2026-11-15)
+
+El runner `/userdata/system/el_gordo_tools/full_game_certifier.py` ya ejecuta por la API de EmulationStation y conserva el selector/dispatcher. Se corrigió la precedencia de módulos: carga el motor transaccional actual de `el_gordo_tools`, no la copia histórica de `scripts/`.
+
+El piloto terminó con 10/10 juegos únicos `AUTO_PASS` (11 intentos por una expectativa de core PC Engine corregida y reprobada). Cada PASS verificó identidad de ROM, dispatcher/marker, core, HDMI, estabilidad, actividad visual, `game_health` exit 0, retorno a ES y restore. No hubo wrong dispatch, cambio de audio, fallo de restore ni regresión P1-P4/core global. Los snapshots de transacción se podaron sólo tras restore verificado, conservando manifests/resultados.
+
+Adapters detectados: 48 sistemas; 23 READY por familia y 25 standalone aún pendientes. La pasada masiva opera sólo sistemas READY y cada juego necesita su propio preflight y restore scope. El adapter standalone no se lanza. `AUTO_CERTIFIED=10`; `CONTROL_CERTIFIED=0`; `GUEST_READY=0`. Reconnect/reboot físico de DS4 sigue pendiente.
+
+Detalle: `reports/UNIVERSAL_CERTIFIER_PILOT.md`; registro: `data/certifier_adapter_registry.csv`; progreso y reanudación: `full_game_certification_checkpoint.json`. Siguiente: lote prioritario de hasta 50, con checkpoint por juego.

@@ -124,15 +124,14 @@
       "updated_at": "2026-11-15T10:57:30+00:00"
     },
     "PHASE_14_FULL_GAME_CERTIFICATION": {
-      "status": "BLOCKED",
-      "started_at": null,
+      "status": "RUNNING",
+      "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "Self-test del motor PASS (archivos, árboles existentes/nuevos, conflicto concurrente) y control positivo altair PASS vía ES→dispatcher→launcher→RetroArch/MAME actual: 21.25 s, game_health exit 0, HDMI estable, retorno ES. Restore VERIFIED de 62 rutas, incluidas /userdata/saves/mame/mame y /userdata/saves/mame/plugins; batocera.conf SHA sin cambio. La certificación masiva sigue bloqueada: falta implementar adapters por sistema y gates de audio/identidad/restore integrados; no se certificó visualmente ni se inició batch.",
+      "summary": "Universal certifier pilot completed: 10/10 unique games AUTO_PASS, 11 attempts due to one resolved PC Engine core-expectation mismatch. All 11 transactions restored; no wrong dispatch, audio, conf, controller or orphan regression. Starting priority batch 1 (50).",
       "issues": [
-        "CERT-001",
-        "AUD-002"
+        "CERT-001"
       ],
-      "updated_at": "2026-11-15T10:52:13+00:00"
+      "updated_at": "2026-11-15T11:38:49+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -561,5 +560,6 @@
     "transaction_restore": "no-game tests PASS; positive control pending",
     "fbneo_dat": "verified 1.0.0.03",
     "github": "pending exact manifest and final publish"
-  }
+  },
+  "updated": "2026-11-15T11:38:49+00:00"
 }
