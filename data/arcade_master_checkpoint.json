@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-15T10:57:30+00:00",
+  "updated_at": "2026-11-15T12:39:16+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,11 +127,11 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "Universal certifier pilot completed: 10/10 unique games AUTO_PASS, 11 attempts due to one resolved PC Engine core-expectation mismatch. All 11 transactions restored; no wrong dispatch, audio, conf, controller or orphan regression. Starting priority batch 1 (50).",
+      "summary": "Piloto 10/10 únicos AUTO_PASS. Lote prioritario 1: 50 considerados, 50 lanzados, 49 PASS y 1 SIGSEGV (mvp), restore 50/50. Lote prioritario 2: 50 considerados, 49 lanzados/PASS, 1 STATIC_FAIL (hoops95 CRC incorrecto), restore 49/49. Motor recuperado tras un bug de logger; sin regresiones globales. NEXT_GAME mame/salmndr2.zip.",
       "issues": [
         "CERT-001"
       ],
-      "updated_at": "2026-11-15T11:38:49+00:00"
+      "updated_at": "2026-11-15T12:39:16+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -561,5 +561,10 @@
     "fbneo_dat": "verified 1.0.0.03",
     "github": "pending exact manifest and final publish"
   },
-  "updated": "2026-11-15T11:38:49+00:00"
+  "updated": "2026-11-15T11:38:49+00:00",
+  "certification_counts": {
+    "auto_certified": 59,
+    "game_fail": 1,
+    "guest_ready": 0
+  }
 }

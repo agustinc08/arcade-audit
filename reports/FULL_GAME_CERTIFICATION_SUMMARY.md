@@ -6,7 +6,7 @@
 - Instalados según fichero/gamelist: 8400
 - Evidencia histórica BOOT_OK: 1200
 - STATIC_VALIDATED completo: 0 (la mera presencia no verifica dependencias/ROMset)
-- AUTO_CERTIFIED: 0; CONTROL_CERTIFIED: 0; GUEST_READY: 0
+- AUTO_CERTIFIED nuevo: 59 (10 piloto + 49 lote 1); GAME_FAIL nuevo: 1 (`mvp`, SIGSEGV); CONTROL_CERTIFIED: 0; GUEST_READY: 0
 - NOT_TESTED para auto-certificación: 8426
 - FAIL histórico conservado, separado: 197
 - FLAKY: 0 nuevos (sin reintentos de runtime en esta fase)
@@ -17,7 +17,7 @@
 
 Los BOOT_OK históricos no se elevan a AUTO_CERTIFIED. No hubo lanzamientos nuevos: se creó un baseline separado actual y verificado que conserva el histórico, pero todavía falta integrar una transacción de restore en el runner universal; además el default de audio sigue en el sink del DualShock.
 
-La prueba automática futura deberá pasar por EmulationStation, `controller_dispatcher` y launcher oficial; snapshots transaccionales por juego, duración específica por sistema, evidencia visual/audio y estado limpio serán obligatorios.
+El runner actual ejecuta por EmulationStation, `controller_dispatcher` y launcher oficial. Los 10 casos del piloto y los 50 del lote 1 pasaron por transacción, identidad, audio HDMI, estabilidad, salida y retorno a ES; 59 fueron AUTO_CERTIFIED y `mvp` falló con SIGSEGV. Sigue siendo obligatorio certificar controles físicamente antes de Guest Ready.
 
 ## Resumen por sistema
 
@@ -96,3 +96,23 @@ El engine ahora soporta snapshots acotados de árboles existentes y ausentes, ad
 - Adaptadores: 48 sistemas detectados; 23 READY por familia; 25 standalone en espera de adapter seguro.
 - Reporte detallado: `reports/UNIVERSAL_CERTIFIER_PILOT.md`.
 - Siguiente juego del lote: se determina por `full_game_certifier.py --batch 50`; el checkpoint registra progreso por juego.
+
+
+## Certificación universal — actualización 2026-11-15T12:11:00+00:00
+
+- Piloto: 10 juegos únicos AUTO_PASS, 11 intentos; 11/11 restores verificados.
+- Lote prioritario 1: 50 lanzados; 49 AUTO_PASS; 1 GAME_FAIL (`mvp`, SIGSEGV, `exit_code=-11`, `signal=11`); 50/50 restores verificados.
+- Total nuevo: 59 AUTO_CERTIFIED; 1 GAME_FAIL; 0 CONTROL_CERTIFIED; 0 GUEST_READY.
+- NEXT_GAME: `mame/espgal.zip`.
+- Reporte: `PRIORITY_CERTIFICATION_BATCH_1.md`.
+
+
+## Lote prioritario 2 — 2026-11-15T09:39:16-03:00
+
+- Considerados: 50; lanzados: 49; AUTO_PASS: 49; STATIC_FAIL omitido: `hoops95` por CRC incorrecto en `hoops.b2` (esperado a1dc3519, encontrado b54c63d1).
+- Restore: 49/49; fallos globales al cierre: 0.
+- Total universal nuevo: 108 AUTO_CERTIFIED; 1 GAME_FAIL (`mvp`, SIGSEGV); 1 STATIC_FAIL (`hoops95`); CONTROL_CERTIFIED 0; GUEST_READY 0.
+- Lote 1: 49/50 PASS (una falla SIGSEGV); lote 2: 49/49 lanzados PASS; tasa combinada de lotes entre lanzados: 98/99 (98,99%).
+- Transacciones lanzadas desde el piloto: 110, restores verificados: 110/110. El adaptador PC Engine tuvo una expectativa inicial incorrecta, corregida tras un intento; el logger tuvo un fallo resuelto en un STATIC_FAIL sin lanzamiento.
+- NEXT_GAME: `mame/salmndr2.zip`.
+- Controles físicos no certificados.

@@ -34,3 +34,22 @@ El piloto terminó con 10/10 juegos únicos `AUTO_PASS` (11 intentos por una exp
 Adapters detectados: 48 sistemas; 23 READY por familia y 25 standalone aún pendientes. La pasada masiva opera sólo sistemas READY y cada juego necesita su propio preflight y restore scope. El adapter standalone no se lanza. `AUTO_CERTIFIED=10`; `CONTROL_CERTIFIED=0`; `GUEST_READY=0`. Reconnect/reboot físico de DS4 sigue pendiente.
 
 Detalle: `reports/UNIVERSAL_CERTIFIER_PILOT.md`; registro: `data/certifier_adapter_registry.csv`; progreso y reanudación: `full_game_certification_checkpoint.json`. Siguiente: lote prioritario de hasta 50, con checkpoint por juego.
+
+
+## Certificación universal — lote prioritario 1 (2026-11-15T12:11:00+00:00)
+
+- 10/10 juegos únicos del piloto AUTO_PASS (11 intentos; discrepancia PC Engine corregida).
+- Lote 1: 50 lanzados, 49 AUTO_PASS, `mvp` GAME_FAIL SIGSEGV; 50/50 restores. Sin fallos del motor, dispatch incorrecto, cambio HDMI ni regresión de sistema.
+- AUTO_CERTIFIED: 59; CONTROL_CERTIFIED: 0; GUEST_READY: 0. El AUTO_PASS no certifica botones físicos.
+- NEXT_GAME: `mame/espgal.zip`; el lote 2 está autorizado por el gate estructural y se inicia a continuación.
+
+
+## Lote prioritario 2 — 2026-11-15T09:39:16-03:00
+
+- Considerados: 50; lanzados: 49; AUTO_PASS: 49; STATIC_FAIL omitido: `hoops95` por CRC incorrecto en `hoops.b2` (esperado a1dc3519, encontrado b54c63d1).
+- Restore: 49/49; fallos globales al cierre: 0.
+- Total universal nuevo: 108 AUTO_CERTIFIED; 1 GAME_FAIL (`mvp`, SIGSEGV); 1 STATIC_FAIL (`hoops95`); CONTROL_CERTIFIED 0; GUEST_READY 0.
+- Lote 1: 49/50 PASS (una falla SIGSEGV); lote 2: 49/49 lanzados PASS; tasa combinada de lotes entre lanzados: 98/99 (98,99%).
+- Transacciones lanzadas desde el piloto: 110, restores verificados: 110/110. El adaptador PC Engine tuvo una expectativa inicial incorrecta, corregida tras un intento; el logger tuvo un fallo resuelto en un STATIC_FAIL sin lanzamiento.
+- NEXT_GAME: `mame/salmndr2.zip`.
+- Controles físicos no certificados.

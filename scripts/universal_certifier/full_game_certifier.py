@@ -379,7 +379,8 @@ def update_csv(game,result):
  life,auto=mapping.get(result.get('result'),('NOT_TESTED','NOT_TESTED'))
  found['lifecycle_state']=life;found['auto_certification']=auto;found['adapter']=result.get('adapter','')
  found['test_result']=result.get('result','');found['test_id']=result.get('transaction_id','')
- found['identity_status']='PASS' if result.get('identity',{}).get('core_ok') and result.get('identity',{}).get('content_ok') else result.get('failure_class','UNKNOWN')
+ identity=result.get('identity') or {}
+ found['identity_status']='PASS' if identity.get('core_ok') and identity.get('content_ok') else result.get('failure_class','UNKNOWN')
  found['audio_status']=result.get('audio',{}).get('default_during','NOT_TESTED')
  found['restore_status']=result.get('restore',{}).get('status','NOT_RUN');found['exit_status']=str(result.get('exit',{}).get('code') or '')
  found['visual_status']=result.get('visual_summary') or (result.get('visual') or [{}])[-1].get('status','UNKNOWN')
