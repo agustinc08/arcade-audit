@@ -1,0 +1,931 @@
+{
+  "batch": "MAME_BATCH3_RESUME",
+  "phase": "PAUSED_SAFETY",
+  "created_at": "2026-11-15T03:46:24-0300",
+  "original_checkpoint": "/userdata/system/state/arcade_audit/mame_batch3_checkpoint.json",
+  "original_checkpoint_sha256": "1ab807fcc21f6a0bae4144bb7285ec2b32b6e01d32c197f5d3daa33415d60e48",
+  "original_phase": "PAUSED_SAFETY",
+  "preservation": "Original report/checkpoint/preflight intact; no changes were made to them.",
+  "initial_attempt": {
+    "shortname": "kinstb",
+    "name": "Killer Instinct (SNES bootleg)",
+    "preflight": "PASS",
+    "launch_request_sent": true,
+    "launch_request_http": "200",
+    "retroarch_started": false,
+    "mame_core_loaded": false,
+    "game_health_event_created": false,
+    "status": "UNKNOWN",
+    "cause": "DISPATCHER_MARKER_NOT_CONSUMED; ES API devolvió idle sin proceso RetroArch/MAME ni evento de game_health.",
+    "started_at": "2026-11-15T03:22:48-03:00",
+    "ended_at": "2026-11-15T03:22:52-03:00",
+    "temporary_override": "mame[\"kinstb.zip\"].core=mame",
+    "temporary_override_result": "REVERTED",
+    "restore_verified": "YES",
+    "restore_evidence": "El runner reportó \"restore verified; current override reverted\"; post-snapshot sin batocera.conf coincide con baseline; los nueve overrides activos quedaron byte-exactos.",
+    "processes_after": [],
+    "es_api_after": {
+      "idle": true,
+      "running_game": null
+    },
+    "not_counted_as_mame_current_test": true
+  },
+  "api": {
+    "host": "127.0.0.1:1234",
+    "pid": [
+      2929
+    ],
+    "idle": {
+      "status": 200,
+      "body": "[ true ]"
+    },
+    "running_game": {
+      "status": 201,
+      "body": "{\"msg\":\"NO GAME RUNNING\"}"
+    },
+    "altair_loaded_entry": {
+      "id": "bcfb79093ba2f9653ad37c756da0e65e",
+      "path": "/userdata/roms/mame/altair.zip",
+      "name": "Altair",
+      "systemName": "mame",
+      "desc": "Shoot ´em up del estilo de \"Space Invaders\". Supera ataque tras ataque, destuye la nave maestra y las hordas de enemigos alienígenas.",
+      "genre": "Disparos / Tipo Space Invaders",
+      "image": "/systems/mame/games/bcfb79093ba2f9653ad37c756da0e65e/media/image",
+      "video": "/systems/mame/games/bcfb79093ba2f9653ad37c756da0e65e/media/video",
+      "thumbnail": "/systems/mame/games/bcfb79093ba2f9653ad37c756da0e65e/media/thumbnail",
+      "fanart": "/systems/mame/games/bcfb79093ba2f9653ad37c756da0e65e/media/fanart",
+      "rating": "0.6",
+      "releasedate": "19810101T000000",
+      "developer": "Cidelsa",
+      "publisher": "Cidelsa",
+      "players": "1-2",
+      "favorite": "false",
+      "hidden": "true",
+      "kidgame": "false",
+      "playcount": "1",
+      "lastplayed": "20261113T100857",
+      "md5": "969a24aff748af9049223096032cc7e0",
+      "gametime": "25",
+      "lang": "en",
+      "region": "us",
+      "scraperId": "39991"
+    },
+    "altair_shortname_is_in_loaded_mame_game_collection": true
+  },
+  "marker": {
+    "path": "/userdata/system/state/boot_audit_once.json",
+    "exists_before_control": false,
+    "dispatcher_constant_verified": "/userdata/system/state/boot_audit_once.json",
+    "owner_mode_content": "ABSENT; no residual marker"
+  },
+  "comparison_batch2_batch3": {
+    "post_launch_source": "smoke_runner.post_launch shared unchanged",
+    "post_launch_method": "POST /launch; raw UTF-8 absolute ROM path body; Content-Type application/x-www-form-urlencoded; default timeout 5s",
+    "marker_value_source": "smoke_runner.marker_value shared unchanged: enabled/system/absolute rom/choice BOTONERA/created_at/expires_at/audit_id; lifetime 55s",
+    "marker_path": "/userdata/system/state/boot_audit_once.json",
+    "batch2_runner": "/userdata/system/state/arcade_audit/smoke_pilot_batch2.py",
+    "batch3_runner": "/userdata/system/state/arcade_audit/smoke_pilot_batch3.py",
+    "batch3_calls": "smoke_pilot_batch3 delegates run_game to imported smoke_pilot_batch2.run_game; same API body, marker and dispatch path",
+    "polling": "Both poll up to 30s and may stop early after >3s when ES is idle/runningGame is null. Target detection requires runningGame.path exact plus RetroArch current core process. game_health lookup uses same helper.",
+    "differences_found": "No material difference in API POST, path, marker, timeout, polling, target process detector or health DB lookup. BATCH3 changes candidate selection/output state. The previous attempt exited before recording dispatcher evidence."
+  },
+  "dispatcher": {
+    "path": "/userdata/system/el_gordo_tools/controller_dispatcher",
+    "sha256": "a60be89fb45ea27ec4f7c3f546e088c7ff3da140bccfe1c6a37e5b14ec581c45",
+    "matches_batch2_sha256": "a60be89fb45ea27ec4f7c3f546e088c7ff3da140bccfe1c6a37e5b14ec581c45",
+    "marker_conditions": "enabled true; exact system and absolute ROM path; choice BOTONERA; created_at not future/not >60s old; expires_at future; lifetime <=60s; then unlink",
+    "marker_consumer_order": "parent_launch parses -system/-rom and checks marker before selector_controles",
+    "logs_since_attempt": "controller_selector.log and es_launch_stderr.log mtime 2026-11-13, no updates after 2026-11-15 kinstb attempt; no logged dispatcher invocation"
+  },
+  "es_config": {
+    "path": "/userdata/system/configs/emulationstation/es_systems_el_gordo.cfg",
+    "sha256": "35a40be0bbce75807b38131673e4190c7f51354e60881a7169261ff71d523a10",
+    "mame_command": "/userdata/system/el_gordo_tools/controller_dispatcher %CONTROLLERSCONFIG% -system %SYSTEM% -rom %ROM% -gameinfoxml %GAMEINFOXML% -systemname %SYSTEMNAME%",
+    "global_core_default": "mame078plus"
+  },
+  "kinstb_identity_mame_current": {
+    "shortname": "kinstb",
+    "description": "Killer Instinct (SNES bootleg)",
+    "cloneof": null,
+    "romof": null,
+    "runnable": "yes",
+    "players": "2",
+    "listfull": "Name:             Description:\nkinstb            \"Killer Instinct (SNES bootleg)\""
+  },
+  "pre_control_system": {
+    "global_core": "mame078plus",
+    "overrides": [
+      "altair.zip",
+      "apache3.zip",
+      "blazlaz.zip",
+      "cubeqst.zip",
+      "evosocc.zip",
+      "ffight2b.zip",
+      "funcube4.zip",
+      "hoops95.zip",
+      "sia2650.zip"
+    ],
+    "expected_overrides_intact": true,
+    "dispatcher_sha256": "a60be89fb45ea27ec4f7c3f546e088c7ff3da140bccfe1c6a37e5b14ec581c45",
+    "mapping_status": "verified in current turn with controller_dispatcher --diagnose and sdl2-jstest --list",
+    "protected_baseline": "/userdata/system/state/arcade_audit/protected_baseline.json",
+    "backup_path": "/media/ROMS/ARCADE_BACKUPS/ARCADE_SMOKE_TEST_SAVES_2026-11-13_011039",
+    "backup_verified": true,
+    "snapshot_path": "/userdata/system/state/arcade_audit/mame_batch3_resume_runtime/pre_control_snapshot.json",
+    "snapshot_item_count": 2434,
+    "snapshot_sha256": "710940412081576fa145247e0cf6a281319c5abac96d5fd8a53d080db16b899f",
+    "protected_snapshot_matches_baseline_except_batocera_conf": true,
+    "focused_altair_state_paths": {},
+    "batocera_conf_copy": "/userdata/system/state/arcade_audit/mame_batch3_resume_runtime/batocera.conf.pre_altair",
+    "current_launch_processes": "NONE (process list checked; previous generic helper false-positive was its own heredoc text)"
+  },
+  "control_altair": {
+    "status": "LAUNCH_CHAIN_RUNTIME_FAILURE",
+    "events": [
+      {
+        "event": "T0_MARKER_CREATED",
+        "time": "2026-11-15T03:46:31.522-03:00",
+        "detail": {
+          "path": "/userdata/system/state/boot_audit_once.json",
+          "value": {
+            "enabled": true,
+            "system": "mame",
+            "rom": "/userdata/roms/mame/altair.zip",
+            "choice": "BOTONERA",
+            "created_at": 1794725191.521005,
+            "expires_at": 1794725246.521005,
+            "audit_id": "mame:altair.zip:1794725191.521005"
+          }
+        }
+      },
+      {
+        "event": "T1_POST_SENT",
+        "time": "2026-11-15T03:46:31.522-03:00",
+        "detail": {
+          "url": "http://127.0.0.1:1234/launch",
+          "body_utf8": "/userdata/roms/mame/altair.zip",
+          "content_type": "application/x-www-form-urlencoded",
+          "timeout_seconds": 8
+        }
+      },
+      {
+        "event": "T2_ISIDLE_CHANGED",
+        "time": "2026-11-15T03:46:32.105-03:00",
+        "detail": {
+          "status": 201,
+          "body": "[ false ]"
+        }
+      },
+      {
+        "event": "T3_RUNNINGGAME_CHANGED",
+        "time": "2026-11-15T03:46:32.105-03:00",
+        "detail": {
+          "raw": {
+            "status": 200,
+            "body": "{\n    \"id\": \"c31c734dd4a7d6ebf0c8cf1ff1d6308b\",\n    \"path\": \"/userdata/roms/mame/kinstb.zip\",\n    \"name\": \"Killer Instinct\",\n    \"systemName\": \"mame\",\n    \"desc\": \"Killer Instinct es un juego de lucha para dos jugadores que debutó en 1994. Utilizaba personajes 3D prerrenderizados en lugar de sprites, impresionante para su época, ayudó a consolidar los sistemas de combos y los movimientos finales como elementos básicos del género de lucha.\",\n    \"genre\": \"Lucha / Versus\",\n    \"image\": \"/systems/mame/games/c31c734dd4a7d6ebf0c8cf1ff1d6308b/media/image\",\n    \"video\": \"/systems/mame/games/c31c734dd4a7d6ebf0c8cf1ff1d6308b/media/video\",\n    \"thumbnail\": \"/systems/mame/games/c31c734dd4a7d6ebf0c8cf1ff1d6308b/media/thumbnail\",\n    \"rating\": \"0.7\",\n    \"releasedate\": \"not-a-date-time\",\n    \"developer\": \"Rareware\",\n    \"publisher\": \"bootleg\",\n    \"family\": \"Killer Instinct\",\n    \"genres\": \"2885\",\n    \"players\": \"1-2\",\n    \"favorite\": \"false\",\n    \"hidden\": \"true\",\n    \"kidgame\": \"false\",\n    \"playcount\": \"0\",\n    \"lastplayed\": \"0\",\n    \"md5\": \"f4d9affe7cafc2e18aafbcd60eea2a72\",\n    \"gametime\": \"0\",\n    \"lang\": \"en\",\n    \"region\": \"us\",\n    \"scraperId\": \"42004\"\n}"
+          },
+          "parsed": {
+            "id": "c31c734dd4a7d6ebf0c8cf1ff1d6308b",
+            "path": "/userdata/roms/mame/kinstb.zip",
+            "name": "Killer Instinct",
+            "systemName": "mame",
+            "desc": "Killer Instinct es un juego de lucha para dos jugadores que debutó en 1994. Utilizaba personajes 3D prerrenderizados en lugar de sprites, impresionante para su época, ayudó a consolidar los sistemas de combos y los movimientos finales como elementos básicos del género de lucha.",
+            "genre": "Lucha / Versus",
+            "image": "/systems/mame/games/c31c734dd4a7d6ebf0c8cf1ff1d6308b/media/image",
+            "video": "/systems/mame/games/c31c734dd4a7d6ebf0c8cf1ff1d6308b/media/video",
+            "thumbnail": "/systems/mame/games/c31c734dd4a7d6ebf0c8cf1ff1d6308b/media/thumbnail",
+            "rating": "0.7",
+            "releasedate": "not-a-date-time",
+            "developer": "Rareware",
+            "publisher": "bootleg",
+            "family": "Killer Instinct",
+            "genres": "2885",
+            "players": "1-2",
+            "favorite": "false",
+            "hidden": "true",
+            "kidgame": "false",
+            "playcount": "0",
+            "lastplayed": "0",
+            "md5": "f4d9affe7cafc2e18aafbcd60eea2a72",
+            "gametime": "0",
+            "lang": "en",
+            "region": "us",
+            "scraperId": "42004"
+          }
+        }
+      },
+      {
+        "event": "T5_CONTROLLER_DISPATCHER_SEEN",
+        "time": "2026-11-15T03:46:32.106-03:00",
+        "detail": null
+      }
+    ],
+    "post_response": {
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Length": "0"
+      },
+      "body": ""
+    },
+    "restore_verified": true,
+    "started_at": "2026-11-15T03:46:31.481-03:00",
+    "pre_snapshot": "/userdata/system/state/arcade_audit/mame_batch3_resume_runtime/altair/snapshot.pretest.json",
+    "pre_snapshot_sha256": "710940412081576fa145247e0cf6a281319c5abac96d5fd8a53d080db16b899f",
+    "pre_snapshot_item_count": 2434,
+    "config_copy": "/userdata/system/state/arcade_audit/mame_batch3_resume_runtime/altair/batocera.conf.pretest",
+    "game_health_max_id_before": 8160,
+    "log_metadata_before": {
+      "/userdata/system/logs/controller_selector.log": {
+        "size": 129645,
+        "mtime_ns": 1794585810627766062
+      },
+      "/userdata/system/logs/es_launch_stderr.log": {
+        "size": 3561,
+        "mtime_ns": 1794585810614432244
+      }
+    },
+    "cmdfile_before": {
+      "exists": false,
+      "mtime_ns": null,
+      "size": null
+    },
+    "initial_api": {
+      "isIdle": {
+        "status": 200,
+        "body": "[ true ]"
+      },
+      "runningGame": {
+        "status": 201,
+        "body": "{\"msg\":\"NO GAME RUNNING\"}"
+      }
+    },
+    "rom_sha256_before": "955f253a55dfde44cedacec756b493a412acbd945b2970b959c5c79b840f09f9",
+    "core_path": "/usr/lib/libretro/mame_libretro.so",
+    "override_set_before": [
+      "altair.zip",
+      "apache3.zip",
+      "blazlaz.zip",
+      "cubeqst.zip",
+      "evosocc.zip",
+      "ffight2b.zip",
+      "funcube4.zip",
+      "hoops95.zip",
+      "sia2650.zip"
+    ],
+    "marker": {
+      "enabled": true,
+      "system": "mame",
+      "rom": "/userdata/roms/mame/altair.zip",
+      "choice": "BOTONERA",
+      "created_at": 1794725191.521005,
+      "expires_at": 1794725246.521005,
+      "audit_id": "mame:altair.zip:1794725191.521005"
+    },
+    "launch_start_epoch": 1794725191.5228097,
+    "marker_cleanup": "REMOVED_OWN_UNCONSUMED_MARKER",
+    "detail": "POST/dispatch no inició RetroArch con MAME actual dentro de 30s",
+    "ended_at": "2026-11-15T03:47:31.794-03:00",
+    "observer_final": {
+      "idle": false,
+      "game": {
+        "id": "c31c734dd4a7d6ebf0c8cf1ff1d6308b",
+        "path": "/userdata/roms/mame/kinstb.zip",
+        "name": "Killer Instinct",
+        "systemName": "mame",
+        "desc": "Killer Instinct es un juego de lucha para dos jugadores que debutó en 1994. Utilizaba personajes 3D prerrenderizados en lugar de sprites, impresionante para su época, ayudó a consolidar los sistemas de combos y los movimientos finales como elementos básicos del género de lucha.",
+        "genre": "Lucha / Versus",
+        "image": "/systems/mame/games/c31c734dd4a7d6ebf0c8cf1ff1d6308b/media/image",
+        "video": "/systems/mame/games/c31c734dd4a7d6ebf0c8cf1ff1d6308b/media/video",
+        "thumbnail": "/systems/mame/games/c31c734dd4a7d6ebf0c8cf1ff1d6308b/media/thumbnail",
+        "rating": "0.7",
+        "releasedate": "not-a-date-time",
+        "developer": "Rareware",
+        "publisher": "bootleg",
+        "family": "Killer Instinct",
+        "genres": "2885",
+        "players": "1-2",
+        "favorite": "false",
+        "hidden": "true",
+        "kidgame": "false",
+        "playcount": "0",
+        "lastplayed": "0",
+        "md5": "f4d9affe7cafc2e18aafbcd60eea2a72",
+        "gametime": "0",
+        "lang": "en",
+        "region": "us",
+        "scraperId": "42004"
+      },
+      "marker_exists": true,
+      "cmdfile": {
+        "exists": false,
+        "mtime_ns": null,
+        "size": null
+      },
+      "health_id": 8160,
+      "records": [
+        {
+          "pid": 1,
+          "exe": "/sbin/init",
+          "comm": "init",
+          "cmd": "init [3]"
+        },
+        {
+          "pid": 240,
+          "exe": "/usr/bin/dbus-daemon",
+          "comm": "dbus-daemon",
+          "cmd": "dbus-daemon --system"
+        },
+        {
+          "pid": 248,
+          "exe": "/usr/sbin/syslog-ng",
+          "comm": "syslog-ng",
+          "cmd": "supervising syslog-ng"
+        },
+        {
+          "pid": 249,
+          "exe": "/usr/sbin/syslog-ng",
+          "comm": "syslog-ng",
+          "cmd": "/usr/sbin/syslog-ng"
+        },
+        {
+          "pid": 599,
+          "exe": "/sbin/udevd",
+          "comm": "udevd",
+          "cmd": "/sbin/udevd -d"
+        },
+        {
+          "pid": 1100,
+          "exe": "/usr/bin/pipewire",
+          "comm": "pipewire",
+          "cmd": "/usr/bin/pipewire"
+        },
+        {
+          "pid": 1106,
+          "exe": "/usr/bin/wireplumber",
+          "comm": "wireplumber",
+          "cmd": "/usr/bin/wireplumber"
+        },
+        {
+          "pid": 1108,
+          "exe": "/usr/bin/pipewire",
+          "comm": "pipewire",
+          "cmd": "/usr/bin/pipewire -c pipewire-pulse.conf"
+        },
+        {
+          "pid": 1171,
+          "exe": "/usr/sbin/connmand",
+          "comm": "connmand",
+          "cmd": "/usr/sbin/connmand -n -r"
+        },
+        {
+          "pid": 1176,
+          "exe": "/usr/sbin/wpa_supplicant",
+          "comm": "wpa_supplicant",
+          "cmd": "/usr/sbin/wpa_supplicant -u"
+        },
+        {
+          "pid": 1943,
+          "exe": "/usr/bin/mergerfs",
+          "comm": "mergerfs",
+          "cmd": "/usr/bin/mergerfs -o cache.files=partial,dropcacheonclose=true,category.create=eplfs,allow_other,inodecalc=path-hash,moveonenospc=true,minfreespace=4G,nonempty /userdata/.roms_base:/media/BATOCERA_ROMS/roms:/media/ROMS/roms /userdata/roms"
+        },
+        {
+          "pid": 2050,
+          "exe": "/usr/sbin/irqbalance",
+          "comm": "irqbalance",
+          "cmd": "/usr/sbin/irqbalance"
+        },
+        {
+          "pid": 2081,
+          "exe": "/usr/sbin/lircd",
+          "comm": "lircd",
+          "cmd": "/usr/sbin/lircd -n --driver=default --device=/dev/lirc0 --output=/var/run/lirc/lircd --pidfile=/var/run/lirc/lircd-lirc0.pid /userdata/system/.config/lirc/lircd.conf"
+        },
+        {
+          "pid": 2376,
+          "exe": "/usr/sbin/rpcbind",
+          "comm": "rpcbind",
+          "cmd": "/usr/sbin/rpcbind"
+        },
+        {
+          "pid": 2403,
+          "exe": "/bin/dash",
+          "comm": "startx",
+          "cmd": "/bin/sh /usr/bin/startx"
+        },
+        {
+          "pid": 2412,
+          "exe": "/usr/bin/xinit",
+          "comm": "xinit",
+          "cmd": "xinit /etc/X11/xinit/xinitrc -- /usr/bin/X :0"
+        },
+        {
+          "pid": 2414,
+          "exe": "/usr/bin/Xorg",
+          "comm": "X",
+          "cmd": "/usr/bin/X :0"
+        },
+        {
+          "pid": 2426,
+          "exe": "/usr/libexec/bluetooth/bluetoothd",
+          "comm": "bluetoothd",
+          "cmd": "/usr/libexec/bluetooth/bluetoothd --noplugin=sixaxis,sixaxispair"
+        },
+        {
+          "pid": 2427,
+          "exe": "/usr/bin/python3.12",
+          "comm": "batocera-blueto",
+          "cmd": "/usr/bin/python /usr/bin/batocera-bluetooth-agent"
+        },
+        {
+          "pid": 2439,
+          "exe": "/usr/sbin/rngd",
+          "comm": "rngd",
+          "cmd": "/usr/sbin/rngd -O jitter:buffer_size:4000 -O jitter:refill_thresh:4000 -O jitter:thread_count:1"
+        },
+        {
+          "pid": 2451,
+          "exe": "/usr/sbin/osspd",
+          "comm": "osspd",
+          "cmd": "/usr/sbin/osspd"
+        },
+        {
+          "pid": 2498,
+          "exe": "/usr/sbin/ntpd",
+          "comm": "ntpd",
+          "cmd": "/usr/sbin/ntpd -u ntp:ntp -g -p /var/run/ntpd.pid"
+        },
+        {
+          "pid": 2506,
+          "exe": "/usr/sbin/avahi-daemon",
+          "comm": "avahi-daemon",
+          "cmd": "avahi-daemon: running [BATOCERA.local]"
+        },
+        {
+          "pid": 2507,
+          "exe": "/usr/sbin/avahi-daemon",
+          "comm": "avahi-daemon",
+          "cmd": "avahi-daemon: chroot helper"
+        },
+        {
+          "pid": 2514,
+          "exe": "/usr/sbin/dropbear",
+          "comm": "dropbear",
+          "cmd": "/usr/sbin/dropbear -W 204800 -R"
+        },
+        {
+          "pid": 2520,
+          "exe": "/usr/lib/polkit-1/polkitd",
+          "comm": "polkitd",
+          "cmd": "/usr/lib/polkit-1/polkitd --no-debug"
+        },
+        {
+          "pid": 2535,
+          "exe": "/usr/sbin/thd",
+          "comm": "thd",
+          "cmd": "/usr/sbin/thd --daemon --triggers /etc/triggerhappy/triggers.d/multimedia_keys.conf --socket /var/run/thd.socket --pidfile /var/run/thd.pid /dev/input/event0 /dev/input/event1 /dev/input/event10 /dev/input/event11 /dev/input/event12 /dev/input/event13 /dev/input/event14 /dev/input/event15 /dev/input/event16 /dev/input/event17 /dev/input/event18 /dev/input/event19 /dev/input/event2 /dev/input/event20 /dev/input/event3 /dev/input/event4 /dev/input/event5 /dev/input/event6 /dev/input/event7 /dev/input/event8 /dev/input/event9"
+        },
+        {
+          "pid": 2551,
+          "exe": "/usr/sbin/rpc.statd",
+          "comm": "rpc.statd",
+          "cmd": "rpc.statd"
+        },
+        {
+          "pid": 2566,
+          "exe": "/bin/bash",
+          "comm": "xinitrc",
+          "cmd": "/bin/bash /etc/X11/xinit/xinitrc"
+        },
+        {
+          "pid": 2572,
+          "exe": "/usr/bin/unclutter",
+          "comm": "unclutter",
+          "cmd": "unclutter --noevents -b"
+        },
+        {
+          "pid": 2575,
+          "exe": "/usr/bin/openbox",
+          "comm": "openbox",
+          "cmd": "openbox --config-file /etc/openbox/rc.xml --startup emulationstation-standalone"
+        },
+        {
+          "pid": 2579,
+          "exe": "/bin/bash",
+          "comm": "emulationstatio",
+          "cmd": "/bin/bash /usr/bin/emulationstation-standalone"
+        },
+        {
+          "pid": 2921,
+          "exe": "/usr/bin/dbus-run-session",
+          "comm": "dbus-run-sessio",
+          "cmd": "dbus-run-session -- emulationstation --exit-on-reboot-required --windowed"
+        },
+        {
+          "pid": 2926,
+          "exe": "/usr/bin/dbus-daemon",
+          "comm": "dbus-daemon",
+          "cmd": "dbus-daemon --nofork --print-address 4 --session"
+        },
+        {
+          "pid": 2929,
+          "exe": "/usr/bin/emulationstation",
+          "comm": "emulationstatio",
+          "cmd": "emulationstation --exit-on-reboot-required --windowed"
+        },
+        {
+          "pid": 2938,
+          "exe": "/usr/bin/python3.12",
+          "comm": "python3",
+          "cmd": "python3 /usr/bin/batocera-controlcenter-app --hidden 20"
+        },
+        {
+          "pid": 3006,
+          "exe": "/usr/sbin/rpc.mountd",
+          "comm": "rpc.mountd",
+          "cmd": "rpc.mountd"
+        },
+        {
+          "pid": 3124,
+          "exe": "/usr/sbin/smbd",
+          "comm": "smbd",
+          "cmd": "smbd -D --configfile=/etc/samba/smb.conf"
+        },
+        {
+          "pid": 3127,
+          "exe": "/usr/sbin/smbd",
+          "comm": "smbd-notifyd",
+          "cmd": "smbd -D --configfile=/etc/samba/smb.conf"
+        },
+        {
+          "pid": 3128,
+          "exe": "/usr/sbin/smbd",
+          "comm": "smbd-cleanupd",
+          "cmd": "smbd -D --configfile=/etc/samba/smb.conf"
+        },
+        {
+          "pid": 3133,
+          "exe": "/usr/sbin/nmbd",
+          "comm": "nmbd",
+          "cmd": "nmbd -D --configfile=/etc/samba/smb.conf"
+        },
+        {
+          "pid": 3150,
+          "exe": "/usr/bin/python3.12",
+          "comm": "python3",
+          "cmd": "python3 /usr/bin/wsdd -w WORKGROUP"
+        },
+        {
+          "pid": 3157,
+          "exe": "/usr/bin/joycond",
+          "comm": "joycond",
+          "cmd": "/usr/bin/joycond"
+        },
+        {
+          "pid": 3171,
+          "exe": "/bin/login",
+          "comm": "login",
+          "cmd": "login -- root"
+        },
+        {
+          "pid": 3172,
+          "exe": "/bin/bash",
+          "comm": "batocera-mixer",
+          "cmd": "/bin/bash /usr/bin/batocera-mixer"
+        },
+        {
+          "pid": 3173,
+          "exe": "/sbin/agetty",
+          "comm": "getty",
+          "cmd": "/sbin/getty 38400 tty5"
+        },
+        {
+          "pid": 3176,
+          "exe": "/usr/bin/alsamixer",
+          "comm": "alsamixer",
+          "cmd": "/usr/bin/alsamixer -c0"
+        },
+        {
+          "pid": 3178,
+          "exe": "/bin/bash",
+          "comm": "bash",
+          "cmd": "-bash"
+        },
+        {
+          "pid": 18793,
+          "exe": "/usr/sbin/dropbear",
+          "comm": "dropbear",
+          "cmd": "/usr/sbin/dropbear -W 204800 -R -2 9"
+        },
+        {
+          "pid": 19617,
+          "exe": "/userdata/system/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+          "comm": "codex",
+          "cmd": "/userdata/system/.local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex"
+        },
+        {
+          "pid": 24720,
+          "exe": "/userdata/system/.codex/packages/app-server-daemon/releases/0.169.0-x86_64-unknown-linux-musl/bin/codex-code-mode-host",
+          "comm": "codex-code-mode",
+          "cmd": "/userdata/system/.codex/packages/app-server-daemon/releases/0.169.0-x86_64-unknown-linux-musl/bin/codex-code-mode-host --listen grpc+stdio://"
+        },
+        {
+          "pid": 27254,
+          "exe": "/bin/dash",
+          "comm": "sh",
+          "cmd": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/kinstb.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))"
+        },
+        {
+          "pid": 27255,
+          "exe": "/bin/dash",
+          "comm": "sh",
+          "cmd": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/kinstb.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))"
+        },
+        {
+          "pid": 27256,
+          "exe": "/bin/dash",
+          "comm": "sh",
+          "cmd": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/kinstb.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))"
+        },
+        {
+          "pid": 27257,
+          "exe": "/bin/dash",
+          "comm": "sh",
+          "cmd": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/kinstb.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))"
+        },
+        {
+          "pid": 27258,
+          "exe": "/usr/bin/coreutils",
+          "comm": "head",
+          "cmd": "head -300"
+        },
+        {
+          "pid": 27259,
+          "exe": "/usr/bin/python3.12",
+          "comm": "controller_disp",
+          "cmd": "/usr/bin/python3 /userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name DragonRise Inc.   Generic   USB  Joystick   -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name DragonRise Inc.   Generic   USB  Joystick   -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name DragonRise Inc.   Generic   USB  Joystick   -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name DragonRise Inc.   Generic   USB  Joystick   -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20 -system mame -rom /userdata/roms/mame/kinstb.zip -gameinfoxml /tmp/game.xml -systemname Mame"
+        },
+        {
+          "pid": 27260,
+          "exe": "/usr/bin/python3.12",
+          "comm": "selector_contro",
+          "cmd": "/usr/bin/python3 /userdata/system/el_gordo_tools/selector_controles --timeout 0"
+        },
+        {
+          "pid": 29189,
+          "exe": "/usr/libexec/at-spi-bus-launcher",
+          "comm": "at-spi-bus-laun",
+          "cmd": "/usr/libexec/at-spi-bus-launcher"
+        },
+        {
+          "pid": 29194,
+          "exe": "/usr/libexec/gvfsd",
+          "comm": "gvfsd",
+          "cmd": "/usr/libexec/gvfsd"
+        },
+        {
+          "pid": 29200,
+          "exe": "/usr/libexec/gvfsd-fuse",
+          "comm": "gvfsd-fuse",
+          "cmd": "/usr/libexec/gvfsd-fuse /var/run/gvfs -f"
+        },
+        {
+          "pid": 29207,
+          "exe": "/usr/bin/dbus-daemon",
+          "comm": "dbus-daemon",
+          "cmd": "/usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/var/run/at-spi/bus_0"
+        },
+        {
+          "pid": 29215,
+          "exe": "/usr/libexec/at-spi2-registryd",
+          "comm": "at-spi2-registr",
+          "cmd": "/usr/libexec/at-spi2-registryd --use-gnome-session"
+        }
+      ],
+      "api_errors": [],
+      "dispatcher": true
+    },
+    "game_health_event": null,
+    "restore": {
+      "verified": true,
+      "created": [],
+      "changed": [],
+      "removed": [],
+      "snapshot_sha256_after": "710940412081576fa145247e0cf6a281319c5abac96d5fd8a53d080db16b899f"
+    },
+    "final_api": {
+      "isIdle": {
+        "status": 201,
+        "body": "[ false ]"
+      },
+      "runningGame": {
+        "status": 200,
+        "body": "{\n    \"id\": \"c31c734dd4a7d6ebf0c8cf1ff1d6308b\",\n    \"path\": \"/userdata/roms/mame/kinstb.zip\",\n    \"name\": \"Killer Instinct\",\n    \"systemName\": \"mame\",\n    \"desc\": \"Killer Instinct es un juego de lucha para dos jugadores que debutó en 1994. Utilizaba personajes 3D prerrenderizados en lugar de sprites, impresionante para su época, ayudó a consolidar los sistemas de combos y los movimientos finales como elementos básicos del género de lucha.\",\n    \"genre\": \"Lucha / Versus\",\n    \"image\": \"/systems/mame/games/c31c734dd4a7d6ebf0c8cf1ff1d6308b/media/image\",\n    \"video\": \"/systems/mame/games/c31c734dd4a7d6ebf0c8cf1ff1d6308b/media/video\",\n    \"thumbnail\": \"/systems/mame/games/c31c734dd4a7d6ebf0c8cf1ff1d6308b/media/thumbnail\",\n    \"rating\": \"0.7\",\n    \"releasedate\": \"not-a-date-time\",\n    \"developer\": \"Rareware\",\n    \"publisher\": \"bootleg\",\n    \"family\": \"Killer Instinct\",\n    \"genres\": \"2885\",\n    \"players\": \"1-2\",\n    \"favorite\": \"false\",\n    \"hidden\": \"true\",\n    \"kidgame\": \"false\",\n    \"playcount\": \"0\",\n    \"lastplayed\": \"0\",\n    \"md5\": \"f4d9affe7cafc2e18aafbcd60eea2a72\",\n    \"gametime\": \"0\",\n    \"lang\": \"en\",\n    \"region\": \"us\",\n    \"scraperId\": \"42004\"\n}"
+      }
+    },
+    "final_launch_processes": [],
+    "rom_unchanged": true,
+    "override_set_after": [
+      "altair.zip",
+      "apache3.zip",
+      "blazlaz.zip",
+      "cubeqst.zip",
+      "evosocc.zip",
+      "ffight2b.zip",
+      "funcube4.zip",
+      "hoops95.zip",
+      "sia2650.zip"
+    ],
+    "log_metadata_after": {
+      "/userdata/system/logs/controller_selector.log": {
+        "size": 129645,
+        "mtime_ns": 1794585810627766062
+      },
+      "/userdata/system/logs/es_launch_stderr.log": {
+        "size": 0,
+        "mtime_ns": 1794725192080935166
+      }
+    },
+    "classification": "LAUNCH_CHAIN_RUNTIME_FAILURE",
+    "expected_events": {
+      "T0": "YES",
+      "T1": "YES",
+      "HTTP": "200; empty body; Content-Length 0",
+      "T2": "YES; isIdle became false",
+      "T3": "YES; runningGame became kinstb (unexpected)",
+      "T4": "NO; marker remained until owned-marker cleanup",
+      "T5": "YES; dispatcher args identify kinstb",
+      "T6": "NO; emulatorlauncher not observed",
+      "T7": "NO; RetroArch/MAME current not started",
+      "T8": "NO; altair.cmd not created/changed",
+      "T9": "NO; no new game_health event"
+    },
+    "dispatcher_observed_argv": "/userdata/system/el_gordo_tools/controller_dispatcher ... -system mame -rom /userdata/roms/mame/kinstb.zip -gameinfoxml /tmp/game.xml -systemname Mame",
+    "marker_match_result": "NOT_CONSUMED: marker rom was /userdata/roms/mame/altair.zip; dispatcher argv rom was /userdata/roms/mame/kinstb.zip.",
+    "game_health_event_created": false,
+    "mame_result": "NOT_RUN; no MAME core was started.",
+    "log_evidence_preservation": {
+      "prelaunch_log_metadata": {
+        "/userdata/system/logs/controller_selector.log": {
+          "size": 129645,
+          "mtime_ns": 1794585810627766062
+        },
+        "/userdata/system/logs/es_launch_stderr.log": {
+          "size": 3561,
+          "mtime_ns": 1794585810614432244
+        }
+      },
+      "postlaunch_log_metadata": {
+        "/userdata/system/logs/controller_selector.log": {
+          "size": 129645,
+          "mtime_ns": 1794585810627766062
+        },
+        "/userdata/system/logs/es_launch_stderr.log": {
+          "size": 0,
+          "mtime_ns": 1794725192080935166
+        }
+      },
+      "controller_selector_log": "Append-only update recorded selector_error for kinstb after test selector termination.",
+      "es_launch_stderr_log": "3561 bytes before this control; official ES shell redirection truncated it to 0 bytes when launching the command. No duplicate/backup was found under /userdata/system; prior contents unrecoverable.",
+      "es_launch_stdout_log": "Opened/truncated to 0 bytes by same shell redirection; previous size is recorded in log_metadata_before. No duplicate/backup found.",
+      "evidence_restore": "NO for these two prior diagnostic log contents; YES for monitored per-game persistent state."
+    },
+    "system_final_api": {
+      "/isIdle": {
+        "status": 200,
+        "body": "[ true ]"
+      },
+      "/runningGame": {
+        "status": 201,
+        "body": "{\"msg\":\"NO GAME RUNNING\"}"
+      }
+    },
+    "system_final_api_idle": true,
+    "system_final_running_game_none": true,
+    "marker_absent_final": true,
+    "final_es_pids": [],
+    "final_launch_processes_zero": true,
+    "system_final_status": "OK"
+  },
+  "kinstb_retry": "NOT_RUN; control failed before correct target dispatch; not target-core evidence.",
+  "normal_candidates_launched": [],
+  "special_candidates": "NOT_RUN_BY_INSTRUCTION",
+  "system_after_control": {
+    "es_pids": [
+      2929
+    ],
+    "api_idle": null,
+    "api_game": {
+      "id": "c31c734dd4a7d6ebf0c8cf1ff1d6308b",
+      "path": "/userdata/roms/mame/kinstb.zip",
+      "name": "Killer Instinct",
+      "systemName": "mame",
+      "desc": "Killer Instinct es un juego de lucha para dos jugadores que debutó en 1994. Utilizaba personajes 3D prerrenderizados en lugar de sprites, impresionante para su época, ayudó a consolidar los sistemas de combos y los movimientos finales como elementos básicos del género de lucha.",
+      "genre": "Lucha / Versus",
+      "image": "/systems/mame/games/c31c734dd4a7d6ebf0c8cf1ff1d6308b/media/image",
+      "video": "/systems/mame/games/c31c734dd4a7d6ebf0c8cf1ff1d6308b/media/video",
+      "thumbnail": "/systems/mame/games/c31c734dd4a7d6ebf0c8cf1ff1d6308b/media/thumbnail",
+      "rating": "0.7",
+      "releasedate": "not-a-date-time",
+      "developer": "Rareware",
+      "publisher": "bootleg",
+      "family": "Killer Instinct",
+      "genres": "2885",
+      "players": "1-2",
+      "favorite": "false",
+      "hidden": "true",
+      "kidgame": "false",
+      "playcount": "0",
+      "lastplayed": "0",
+      "md5": "f4d9affe7cafc2e18aafbcd60eea2a72",
+      "gametime": "0",
+      "lang": "en",
+      "region": "us",
+      "scraperId": "42004"
+    },
+    "launch_processes": [
+      {
+        "pid": 27254,
+        "exe": "/bin/dash",
+        "comm": "sh",
+        "cmd": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/kinstb.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))"
+      },
+      {
+        "pid": 27255,
+        "exe": "/bin/dash",
+        "comm": "sh",
+        "cmd": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/kinstb.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))"
+      },
+      {
+        "pid": 27256,
+        "exe": "/bin/dash",
+        "comm": "sh",
+        "cmd": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/kinstb.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))"
+      },
+      {
+        "pid": 27257,
+        "exe": "/bin/dash",
+        "comm": "sh",
+        "cmd": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/kinstb.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))"
+      },
+      {
+        "pid": 27259,
+        "exe": "/usr/bin/python3.12",
+        "comm": "controller_disp",
+        "cmd": "/usr/bin/python3 /userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name DragonRise Inc.   Generic   USB  Joystick   -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name DragonRise Inc.   Generic   USB  Joystick   -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name DragonRise Inc.   Generic   USB  Joystick   -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name DragonRise Inc.   Generic   USB  Joystick   -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20 -system mame -rom /userdata/roms/mame/kinstb.zip -gameinfoxml /tmp/game.xml -systemname Mame"
+      },
+      {
+        "pid": 27260,
+        "exe": "/usr/bin/python3.12",
+        "comm": "selector_contro",
+        "cmd": "/usr/bin/python3 /userdata/system/el_gordo_tools/selector_controles --timeout 0"
+      }
+    ],
+    "global_core": "mame078plus",
+    "overrides": [
+      "altair.zip",
+      "apache3.zip",
+      "blazlaz.zip",
+      "cubeqst.zip",
+      "evosocc.zip",
+      "ffight2b.zip",
+      "funcube4.zip",
+      "hoops95.zip",
+      "sia2650.zip"
+    ],
+    "p1_p4_diagnostic": "see pre-control record; no mapping writes were made"
+  },
+  "original_checkpoint_sha256_after": "1ab807fcc21f6a0bae4144bb7285ec2b32b6e01d32c197f5d3daa33415d60e48",
+  "original_checkpoint_unchanged": true,
+  "diagnosis": {
+    "classification": "LAUNCH_CHAIN_RUNTIME_FAILURE",
+    "immediate_cause": "El API respondió HTTP 200 al body exacto de altair, pero EmulationStation reportó runningGame=/userdata/roms/mame/kinstb.zip y lanzó controller_dispatcher con -rom /userdata/roms/mame/kinstb.zip. El marker esperaba /userdata/roms/mame/altair.zip; la igualdad exacta del dispatcher no podía consumirlo, por lo que apareció selector_controles y no avanzó a emulatorlauncher/RetroArch/MAME.",
+    "first_divergent_stage": "API/EmulationStation identity: contenido solicitado altair, identidad observada por runningGame/dispatcher kinstb.",
+    "underlying_trigger": "NO DETERMINADO. El runtime mostró una identidad distinta a la solicitada; no hay evidencia suficiente para distinguir evento concurrente de entrada/UI, divergencia de estado interno de ES o resolución del endpoint.",
+    "http_200_meaning": "HTTP 200 con body vacío no confirmó que el juego pedido fuese el despachado. La ruta de altair estaba presente exactamente en /systems/mame/games; el runtime contradijo esa identidad esperada.",
+    "dispatcher_is_broken": "NO DEMOSTRADO. SHA igual al BATCH 2; recibió kinstb mientras el marker era de altair. El no consumo coincide con el match exacto system/rom.",
+    "b2_b3_mechanism_comparison": "post_launch, body, Content-Type, marker_value, marker path, timeout, polling, target detector y game_health helper compartidos por BATCH 2/BATCH 3. El mecanismo actual no queda validado para continuar.",
+    "stop_rule": "STOPPED. No retry de kinstb, candidatos normales/especiales, BATCH 4 ni pruebas físicas."
+  },
+  "special_candidates_launched": [],
+  "export_status": "PASS",
+  "completed_at": "2026-11-15T03:54:47-03:00",
+  "export": {
+    "destination": "/userdata/system/state/arcade_audit_git",
+    "sync_method": "filtered filesystem copy only; sync_arcade_audit_git.sh not run because it executes git add/commit and may push",
+    "exported_regular_files_scanned": 47,
+    "secret_scan": "PASS; scanned 48 files including internal sync manifest",
+    "payload_scan": "PASS; scanned 48 files including internal sync manifest",
+    "payload_extensions_media_rom_bios_chd_saves_nvram_absent": true,
+    "git_commands_executed": false,
+    "commit_push_executed": false,
+    "new_artifacts": [
+      "reports/ARCADE_MAME_BATCH3_RESUME_RESULTS.md",
+      "data/mame_batch3_resume_checkpoint.json",
+      "scripts/mame_batch3_resume_control.py"
+    ],
+    "scanned_files_including_manifest": 48,
+    "exported_content_regular_files": 47
+  }
+}
