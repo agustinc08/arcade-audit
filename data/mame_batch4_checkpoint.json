@@ -50,7 +50,7 @@
     "kinstb": "EXCLUDE_ARCADE_PRIORITY_SN​ES_BOOTLEG; canonical MAME description Killer Instinct (SNES bootleg); no retry"
   },
   "backup": {
-    "path": "REDACTED_EXTERNAL_BACKUP_PATH",
+    "path": "/media/ROMS/ARCADE_BACKUPS/ARCADE_ES_RESET_PRE_BATCH4_20261115_040813",
     "file_count": 58,
     "bytes": 11763020,
     "manifest_sha256": "5942bc0b4dca347a6f6a87ce1b29ac5e1a4f43bb0f56f684c47a42d108fc8219",

@@ -230,10 +230,8 @@
     },
     "restore_verified": true,
     "started_at": "2026-11-15T03:46:31.481-03:00",
-    "pre_snapshot": "/userdata/system/state/arcade_audit/mame_batch3_resume_runtime/altair/snapshot.pretest.json",
     "pre_snapshot_sha256": "710940412081576fa145247e0cf6a281319c5abac96d5fd8a53d080db16b899f",
     "pre_snapshot_item_count": 2434,
-    "config_copy": "/userdata/system/state/arcade_audit/mame_batch3_resume_runtime/altair/batocera.conf.pretest",
     "game_health_max_id_before": 8160,
     "log_metadata_before": {
       "/userdata/system/logs/controller_selector.log": {
