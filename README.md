@@ -29,8 +29,8 @@ Estado extraído de los informes existentes al 2026-11-15; no se relanzaron jueg
 - BOOT_OK acumulados: 1.191.
 - Sin BOOT_OK acumulado: 206.
 - Core MAME global: `mame078plus`.
-- Overrides individuales conocidos: `ffight2b`, `altair`, `apache3`, `blazlaz`, `cubeqst`, `sia2650`, `evosocc`, `hoops95`, `funcube4`.
-- Último piloto: BATCH 2 del 2026-11-13; 4 PASS de 10 lanzados, 6 fallos de contenido/ROMSET y 5 omitidos sin lanzar.
+- Overrides individuales conocidos: `ffight2b`, `altair`, `apache3`, `blazlaz`, `cubeqst`, `sia2650`, `evosocc`, `hoops95`, `funcube4`, `lbgrande`, `sws98`, `tenkomor`, `multigam`, `multigm3`, `nratechu`, `ertictac`.
+- BATCH 4 real (2026-11-15): control `altair` PASS y 7/7 candidatos normales BOOT_PASS con overrides individuales; 0 fallos de juego. Ver `reports/ARCADE_MAME_BATCH4_RESULTS.md`.
 - Estado de controles y conteo reconciliado: consultar los informes bajo `reports/`.
 
 ## Cómo interpretar los estados
