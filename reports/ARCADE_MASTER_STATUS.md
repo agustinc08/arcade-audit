@@ -19,7 +19,7 @@ Consultar `arcade_master_checkpoint.json` como fuente de estado. PHASE_03 catalo
 
 ## GitHub
 
-El publisher detuvo el primer intento por `LARGE_CHANGESET`; no se bajó ningún umbral. El changeset se revisó ruta por ruta, el test JSON remoto previamente autorizado fue recuperado en el source activo y el inventario final no debe contener borrados. Se publicará sólo si los scans vuelven a pasar y el one-time manifest coincide exactamente con el HEAD y los hashes del changeset.
+El publisher detuvo el primer intento por `LARGE_CHANGESET`; no se bajó ningún umbral. El changeset se revisó ruta por ruta, el test JSON remoto previamente autorizado fue recuperado en el source activo y el inventario final no debe contener borrados. La autorización one-time exacta publicó 96 archivos añadidos y 1 modificado, sin borrados. SECRET_SCAN/PAYLOAD_SCAN PASS; `main` verificado en `71ed4467dc56c349f85657f0ec0268a48adfe80b` (`arcade: master audit infrastructure`). El guard normal permanece intacto.
 
 ## Persistencia y salud
 

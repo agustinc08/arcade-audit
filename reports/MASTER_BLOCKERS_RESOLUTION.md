@@ -16,7 +16,7 @@ En el control previo el runner viejo del experimento no cubría esos árboles; s
 
 ## GITHUB
 
-El guard normal rechazó legítimamente un changeset grande y sigue intacto. La revisión identificó solamente artefactos permitidos del Master Audit; el único delete remoto era `data/github_api_publish_test.json`, evidencia de test autorizada, y se recuperó byte por byte en el source local, por lo que el plan final debe tener cero deletions. Se añadió una autorización one-time ligada al repo/branch/HEAD y lista exacta de path/status/size/SHA, con expiración/digest; no es un bypass genérico. Publicación aún pendiente de regenerar inventory, scans, validar manifest exacto y confirmar SHA remoto.
+El guard normal rechazó legítimamente un changeset grande y sigue intacto. La revisión identificó solamente artefactos permitidos del Master Audit; el único delete remoto era `data/github_api_publish_test.json`, evidencia de test autorizada, y se recuperó byte por byte en el source local, por lo que el plan final debe tener cero deletions. Se añadió una autorización one-time ligada al repo/branch/HEAD y lista exacta de path/status/size/SHA, con expiración/digest; no es un bypass genérico. Publicación verificada: 96 añadidos, 1 modificado, 0 eliminados; SECRET_SCAN/PAYLOAD_SCAN PASS; main quedó en `71ed4467dc56c349f85657f0ec0268a48adfe80b` con el commit `arcade: master audit infrastructure`. El guard global no cambió.
 
 ## FBNEO
 

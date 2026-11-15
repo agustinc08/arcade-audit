@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-15T10:52:13+00:00",
+  "updated_at": "2026-11-15T10:57:30+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -117,11 +117,11 @@
       "status": "COMPLETE_WITH_ISSUES",
       "started_at": null,
       "completed_at": null,
-      "summary": "Changeset legítimo auditado archivo por archivo; cero borrados remotos pendientes. Scans preliminares PASS. La política publisher one-time queda limitada por manifest con hash exacto; publicación remota pendiente.",
+      "summary": "Master Audit export publicado mediante autorización one-time ligada a hashes exactos. Commit 71ed4467dc56c349f85657f0ec0268a48adfe80b; scans PASS; 96 añadidos, 1 modificado, 0 eliminados. Guard global intacto.",
       "issues": [
         "GIT-001"
       ],
-      "updated_at": "2026-11-15T10:52:13+00:00"
+      "updated_at": "2026-11-15T10:57:30+00:00"
     },
     "PHASE_14_FULL_GAME_CERTIFICATION": {
       "status": "BLOCKED",
@@ -499,11 +499,11 @@
       "system": "Batocera",
       "game": "",
       "severity": "MEDIUM",
-      "category": "PUBLISHER_LARGE_CHANGESET",
-      "description": "LARGE_CHANGESET detuvo el publish sin debilitar guards. El changeset se auditó; el archivo remoto-only data/github_api_publish_test.json fue restaurado byte por byte en el source activo, dejando cero deletes. Se mantiene pendiente publicar sólo con manifest one-time de paths/status/size/SHA exactos.",
-      "evidence": "github_pending_changeset.csv; publisher state y manifest one-time (si se aprueba); scans finales.",
-      "status": "OPEN",
-      "action": "Recalcular y validar manifest exacto después del cierre documental; publicar sólo por --one-time-approved.",
+      "category": "ONE_TIME_CHANGESET_PUBLISHED",
+      "description": "LARGE_CHANGESET se resolvió sin bajar límites. Un manifest one-time de hash exacto autorizó 96 additions, 1 modification y 0 deletions; SECRET_SCAN/PAYLOAD_SCAN PASS. main fue verificada en el commit publicado.",
+      "evidence": "github_pending_changeset.csv; one-time manifest consumed; publisher state SHA 71ed4467dc56c349f85657f0ec0268a48adfe80b; commit message arcade: master audit infrastructure.",
+      "status": "CLOSED",
+      "action": "Mantener guards globales; usar publish normal para cambios futuros dentro de umbral.",
       "manual_required": "NO"
     }
   ],
