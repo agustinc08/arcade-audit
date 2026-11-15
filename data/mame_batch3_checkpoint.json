@@ -1,0 +1,401 @@
+{
+  "batch": "MAME_BATCH3",
+  "phase": "PAUSED_SAFETY",
+  "started_at": "2026-11-15T03:22:48-03:00",
+  "sources": {
+    "compatibility_csv_sha256": "3e412e4087fe5eec1dc335c1417cab71fc534cf3716d0a79ecb8327662a42172",
+    "preflight_json_sha256": "79411b740c0c85f337ef745fda6fa62f1d2a8419005f010a37523f214467ae3a",
+    "pilot_batch1_report": "/userdata/system/state/arcade_audit/ARCADE_CORE_PILOT_RESULTS.md",
+    "pilot_batch2_report": "/userdata/system/state/arcade_audit/ARCADE_CORE_PILOT_BATCH2_RESULTS.md"
+  },
+  "pool_target_core_untested": 56,
+  "pool_shortnames": [
+    "big10",
+    "bigappg",
+    "cclownz",
+    "cmaster",
+    "cmv4",
+    "comg076",
+    "comg128",
+    "coronatn",
+    "ertictac",
+    "fredmem",
+    "gepoker",
+    "ghlpanic",
+    "gldncrwn",
+    "gs4002",
+    "guab",
+    "jokpoker",
+    "kdynastg",
+    "kinstb",
+    "ladylinr",
+    "lbgrande",
+    "midnrun",
+    "monopldx",
+    "monopoly",
+    "multigam",
+    "multigm3",
+    "ncb3",
+    "nratechu",
+    "pacapp2",
+    "pacappsp",
+    "paradice",
+    "pocketrc",
+    "poker41",
+    "pokio",
+    "ppcar",
+    "pulltabs",
+    "pyramid",
+    "qb3",
+    "qntoond",
+    "qos",
+    "quintoon",
+    "rcasino",
+    "re900",
+    "schery97",
+    "screenpl",
+    "sidewndr",
+    "skill98",
+    "slotsnl",
+    "sltblgpo",
+    "sltblgtk",
+    "smoto20",
+    "ssipkr24",
+    "superbwl",
+    "sws98",
+    "tenkomor",
+    "trivialp",
+    "windheat"
+  ],
+  "preflight_considered": 56,
+  "preflight_pass": 48,
+  "skip_preflight": [
+    {
+      "shortname": "fredmem",
+      "name": "ZZZ(notgame):Fred Flintstones' Memory Match",
+      "file_exists": true,
+      "verify": "SKIP_PREFLIGHT",
+      "reason": "MAME_VERIFY_FAILED:fredmem : bsmt2000.bin (8192 bytes) - NOT FOUND (bsmt2000) romset fredmem is bad 1 romsets found, 0 were OK.",
+      "crc": "FULL_CRC_MATCH_MAME_CURRENT",
+      "input": "SPECIAL_CONTROL",
+      "control": "only_buttons",
+      "buttons": "9",
+      "players": "1",
+      "dependency": "",
+      "romof": ""
+    },
+    {
+      "shortname": "kdynastg",
+      "name": "King Of Dynast Gear",
+      "file_exists": true,
+      "verify": "SKIP_PREFLIGHT",
+      "reason": "MAME_VERIFY_FAILED:kdynastg : kdynastg_pic (4096 bytes) - NOT FOUND - NO GOOD DUMP KNOWN romset kdynastg is best available 1 romsets found, 1 were OK.",
+      "crc": "FULL_CRC_MATCH_MAME_CURRENT",
+      "input": "DIRECT_COMPATIBLE",
+      "control": "joy",
+      "buttons": "2",
+      "players": "2",
+      "dependency": "",
+      "romof": ""
+    },
+    {
+      "shortname": "ncb3",
+      "name": "ZZZ(notgame):Cherry Bonus 3",
+      "file_exists": true,
+      "verify": "SKIP_PREFLIGHT",
+      "reason": "MAME_VERIFY_FAILED:ncb3 : 82s147.u2 (512 bytes) - NEEDS REDUMP romset ncb3 is best available 1 romsets found, 1 were OK.",
+      "crc": "FULL_CRC_MATCH_MAME_CURRENT",
+      "input": "SPECIAL_CONTROL",
+      "control": "gambling",
+      "buttons": "17",
+      "players": "1",
+      "dependency": "",
+      "romof": ""
+    },
+    {
+      "shortname": "pocketrc",
+      "name": "Pocket Racer",
+      "file_exists": true,
+      "verify": "SKIP_PREFLIGHT",
+      "reason": "MAME_VERIFY_FAILED:pocketrc : c76.bin (16384 bytes) - NOT FOUND (namcoc76) romset pocketrc is bad 1 romsets found, 0 were OK.",
+      "crc": "FULL_CRC_MATCH_MAME_CURRENT",
+      "input": "SPECIAL_CONTROL",
+      "control": "paddle,pedal",
+      "buttons": "1",
+      "players": "1",
+      "dependency": "",
+      "romof": ""
+    },
+    {
+      "shortname": "ppcar",
+      "name": "Pang Pang Car",
+      "file_exists": true,
+      "verify": "SKIP_PREFLIGHT",
+      "reason": "MAME_VERIFY_FAILED:ppcar : qs1000.bin (65536 bytes) - NOT FOUND - NO GOOD DUMP KNOWN romset ppcar is best available 1 romsets found, 1 were OK.",
+      "crc": "FULL_CRC_MATCH_MAME_CURRENT",
+      "input": "DIRECT_COMPATIBLE",
+      "control": "joy",
+      "buttons": "2",
+      "players": "1",
+      "dependency": "",
+      "romof": ""
+    },
+    {
+      "shortname": "quintoon",
+      "name": "ZZZ(notgame):Quintoon",
+      "file_exists": true,
+      "verify": "SKIP_PREFLIGHT",
+      "reason": "MAME_VERIFY_FAILED:quintoon : 95001016.snd (131072 bytes) - NEEDS REDUMP romset quintoon is best available 1 romsets found, 1 were OK.",
+      "crc": "FULL_CRC_MATCH_MAME_CURRENT",
+      "input": "SPECIAL_CONTROL",
+      "control": "only_buttons",
+      "buttons": "8",
+      "players": "1",
+      "dependency": "",
+      "romof": ""
+    },
+    {
+      "shortname": "sidewndr",
+      "name": "ZZZ(notgame):Sidewinder",
+      "file_exists": true,
+      "verify": "SKIP_PREFLIGHT",
+      "reason": "MAME_VERIFY_FAILED:sidewndr : 2_h09.bin (2048 bytes) - NEEDS REDUMP romset sidewndr is best available 1 romsets found, 1 were OK.",
+      "crc": "FULL_CRC_MATCH_MAME_CURRENT",
+      "input": "SPECIAL_CONTROL",
+      "control": "only_buttons",
+      "buttons": "10",
+      "players": "1",
+      "dependency": "",
+      "romof": ""
+    },
+    {
+      "shortname": "ssipkr24",
+      "name": "ZZZ(notgame):Ssi Poker",
+      "file_exists": true,
+      "verify": "SKIP_PREFLIGHT",
+      "reason": "MAME_VERIFY_FAILED:ssipkr24 : tuni-83.u67 (2048 bytes) - NEEDS REDUMP ssipkr24 : tuni-83.u70 (2048 bytes) - NEEDS REDUMP ssipkr24 : tuni-83.u69 (2048 bytes) - NEEDS REDUMP ssipkr24 : tuni-83.u68 (2048 bytes) - NEEDS REDUMP ssipkr24 : tunipoker.u28 (256 bytes) - NEEDS REDUMP romset ssipkr24 is best available 1 romsets found, 1 were OK.",
+      "crc": "FULL_CRC_MATCH_MAME_CURRENT",
+      "input": "SPECIAL_CONTROL",
+      "control": "gambling",
+      "buttons": "13",
+      "players": "1",
+      "dependency": "",
+      "romof": ""
+    }
+  ],
+  "selected": [
+    "kinstb",
+    "lbgrande",
+    "sws98",
+    "tenkomor",
+    "multigam",
+    "multigm3",
+    "nratechu",
+    "ertictac",
+    "pacapp2",
+    "pacappsp",
+    "ghlpanic",
+    "midnrun",
+    "cclownz",
+    "qb3"
+  ],
+  "launches": [],
+  "passes": [],
+  "failures": [
+    {
+      "shortname": "kinstb",
+      "name": "Killer Instinct (SNES bootleg)",
+      "category": "UNKNOWN",
+      "game_core_started": false,
+      "cause": "DISPATCHER_MARKER_NOT_CONSUMED",
+      "restore_verified": "YES"
+    }
+  ],
+  "skips": [],
+  "overrides_before": [
+    "altair.zip",
+    "apache3.zip",
+    "blazlaz.zip",
+    "cubeqst.zip",
+    "evosocc.zip",
+    "ffight2b.zip",
+    "funcube4.zip",
+    "hoops95.zip",
+    "sia2650.zip"
+  ],
+  "overrides_added": [],
+  "overrides_removed": [
+    "kinstb"
+  ],
+  "baseline": {
+    "backup_path": "/media/ROMS/ARCADE_BACKUPS/ARCADE_SMOKE_TEST_SAVES_2026-11-13_011039",
+    "backup_manifest_sha256": "21cfdfa7e59615a874e47a2e91805d4e0027c3ec3ead0103ea152c4e2f262daf",
+    "protected_baseline_sha256": "271e378d77efd4be6e5b62cbd74a8d9ef302f262452152e15de97cbea07230db",
+    "protected_entries": 2434,
+    "initial_conf_sha256": "7a8666ac038606f0f776e28435c8b030103bdab58bf1ce2b2fa9c9b322f81576",
+    "initial_conf_backup": "/userdata/system/state/arcade_audit/mame_batch3_runtime/batocera.conf.batch3.initial"
+  },
+  "restore_verified_count": 1,
+  "restore_required_count": 1,
+  "system_before": {
+    "es_pids": [
+      2929
+    ],
+    "api_idle": true,
+    "api_game": null,
+    "mapping": {
+      "dispatcher": "PASS",
+      "duplicates": false,
+      "players": {
+        "P1": [
+          "5",
+          "/dev/input/event17"
+        ],
+        "P2": [
+          "6",
+          "/dev/input/event18"
+        ],
+        "P3": [
+          "8",
+          "/dev/input/event20"
+        ],
+        "P4": [
+          "7",
+          "/dev/input/event19"
+        ]
+      },
+      "sdl_paths": [
+        "/dev/input/event17",
+        "/dev/input/event18",
+        "/dev/input/event19",
+        "/dev/input/event20"
+      ]
+    },
+    "cpu_temp_c": 41.0,
+    "mem_available_mb": 14161,
+    "global_core": "mame078plus"
+  },
+  "prior_config_reconciled_to_b1_b2": true,
+  "system_checkpoints": [],
+  "matrix_backup": {
+    "path": "/userdata/system/state/arcade_audit/mame_batch3_backups/arcade_core_compatibility.csv.pre_batch3",
+    "sha256": "3e412e4087fe5eec1dc335c1417cab71fc534cf3716d0a79ecb8327662a42172"
+  },
+  "error": "DISPATCHER_MARKER_NOT_CONSUMED; batch halted before RetroArch/MAME start. No following candidate launched.",
+  "stopped_at": "2026-11-15T03:22:52-03:00",
+  "overrides_after": [
+    "altair.zip",
+    "apache3.zip",
+    "blazlaz.zip",
+    "cubeqst.zip",
+    "evosocc.zip",
+    "ffight2b.zip",
+    "funcube4.zip",
+    "hoops95.zip",
+    "sia2650.zip"
+  ],
+  "finished_at": "2026-11-15T03:22:52-03:00",
+  "global_core_unchanged": true,
+  "config_delta_exact": true,
+  "system_after": {
+    "es_pids": [
+      2929
+    ],
+    "api_idle": true,
+    "api_game": null,
+    "target_processes": [],
+    "cpu_temp_c": 52.0,
+    "mem_available_mb": 14148,
+    "mapping": {
+      "dispatcher": "PASS",
+      "duplicates": false,
+      "players": {
+        "P1": [
+          "5",
+          "/dev/input/event17"
+        ],
+        "P2": [
+          "6",
+          "/dev/input/event18"
+        ],
+        "P3": [
+          "8",
+          "/dev/input/event20"
+        ],
+        "P4": [
+          "7",
+          "/dev/input/event19"
+        ]
+      },
+      "sdl_paths": [
+        "/dev/input/event17",
+        "/dev/input/event18",
+        "/dev/input/event19",
+        "/dev/input/event20"
+      ]
+    },
+    "health_gate": "PASS",
+    "final_health_temp_c": 52.0,
+    "launch_processes": [],
+    "global_core": "mame078plus",
+    "batch_launch_chain": "PAUSED: API request returned idle; dispatcher one-shot marker remained unconsumed.",
+    "controller_dispatcher_sha256": "a60be89fb45ea27ec4f7c3f546e088c7ff3da140bccfe1c6a37e5b14ec581c45",
+    "controller_dispatcher_matches_batch2": true,
+    "controller_dispatcher_active_mame_command": "EmulationStation XML invokes /userdata/system/el_gordo_tools/controller_dispatcher",
+    "controller_dispatcher_self_test": "DISPATCHER_SELF_TEST_OK (invocación directa)",
+    "p1_p4_status": "OK"
+  },
+  "launch_attempts": [
+    {
+      "shortname": "kinstb",
+      "name": "Killer Instinct (SNES bootleg)",
+      "preflight": "PASS",
+      "launch_request_sent": true,
+      "launch_request_http": "200",
+      "retroarch_started": false,
+      "mame_core_loaded": false,
+      "game_health_event_created": false,
+      "status": "UNKNOWN",
+      "cause": "DISPATCHER_MARKER_NOT_CONSUMED; ES API devolvió idle sin proceso RetroArch/MAME ni evento de game_health.",
+      "started_at": "2026-11-15T03:22:48-03:00",
+      "ended_at": "2026-11-15T03:22:52-03:00",
+      "temporary_override": "mame[\"kinstb.zip\"].core=mame",
+      "temporary_override_result": "REVERTED",
+      "restore_verified": "YES",
+      "restore_evidence": "El runner reportó \"restore verified; current override reverted\"; post-snapshot sin batocera.conf coincide con baseline; los nueve overrides activos quedaron byte-exactos.",
+      "processes_after": [],
+      "es_api_after": {
+        "idle": true,
+        "running_game": null
+      },
+      "not_counted_as_mame_current_test": true
+    }
+  ],
+  "launch_requests": 1,
+  "games_started": 0,
+  "boot_fail_count": 1,
+  "temporary_overrides_attempted": [
+    "kinstb"
+  ],
+  "temporary_overrides_reverted": [
+    "kinstb"
+  ],
+  "failure_classification": "UNKNOWN",
+  "matrix_candidate_test_status_kinstb": "NOT_TESTED_TARGET_CORE",
+  "reconciled_pool_after_attempt": 56,
+  "direct_compatible_pass": 0,
+  "fighting_pass": 0,
+  "multiplayer_pass": 0,
+  "special_control_pass": 0,
+  "resume_policy": "NO_AUTOMATIC_RESUME; investigate API/marker path before any new launch",
+  "export": {
+    "status": "SYNCED_FILTERED",
+    "destination": "/userdata/system/state/arcade_audit_git",
+    "source_files_synced": 42,
+    "secret_scan": "PASS",
+    "payload_scan": "PASS",
+    "git_commands_executed": false,
+    "commit": "NOT_DONE",
+    "push": "NOT_DONE"
+  }
+}

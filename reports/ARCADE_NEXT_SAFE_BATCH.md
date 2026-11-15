@@ -136,3 +136,7 @@ Son información de compatibilidad, no candidatos al lote bajo las exclusiones a
 ## Fuentes cruzadas
 
 `ARCADE_CORE_PILOT_RESULTS.md`, `ARCADE_CORE_PILOT_BATCH2_RESULTS.md`, `ARCADE_CORE_COMPATIBILITY.md`, `ARCADE_CORE_FIX_GROUPS.md`, `ARCADE_FAILURES.md`, `ARCADE_CHD_MISSING.md`, `ARCADE_MISSING_DEPENDENCIES.md`, `ARCADE_CRASH_CASES.md`, `ARCADE_PILOT_RETEST.md`, `ARCADE_SMOKE_TEST_DIAGNOSIS.md`, `arcade_core_compatibility.csv`, `arcade_games_audit.csv` y `checkpoint.json`. El core default confirmado por runtime/documentación sigue siendo `mame078plus`; no se cambió.
+
+## Aclaración de elegibilidad — Batch 3 (2026-11-15)
+
+La regla anterior que excluía cualquier juego ya lanzado era demasiado amplia para el objetivo MAME actual. Se mantiene separado `TESTED_DEFAULT_CORE` de `TESTED_MAME_CURRENT`: un rechazo con `mame078plus` no cuenta como piloto MAME actual. Reconciliados los reportes reales de BATCH 1 (5 MAME actual), BATCH 2 (10 MAME actual) y los cinco skips FBNeo, quedan 56 de las 61 filas `USE_MAME_CORE_X` sin prueba MAME actual. Preflight Batch 3: 48 `-verifyroms` PASS y 8 omitidos por contenido/dump. El intento de `kinstb` no llegó a RetroArch; permanece sin prueba target. Ver `ARCADE_MAME_BATCH3_RESULTS.md` y `mame_batch3_checkpoint.json`.
