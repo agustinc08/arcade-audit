@@ -1,0 +1,124 @@
+{
+  "created_at_utc": "2026-11-15T05:42:22Z",
+  "batch_id": "arcade_safe_batch_2026-11-15",
+  "status": "NO_CANDIDATES_ELIGIBLE_NO_GAMES_LAUNCHED",
+  "source_of_truth": {
+    "markdown": "/userdata/system/state/arcade_audit/ARCADE_NEXT_SAFE_BATCH.md",
+    "csv": "/userdata/system/state/arcade_audit/arcade_next_safe_batch.csv",
+    "markdown_sha256": "0fce5bee088af8cf2de35efee5c5e32dfaa346cf57b1224422ebde44a704868a",
+    "csv_sha256": "d962f243d45a29d146a95fdbd0135b3cfa27939058a3b520e9134dd4a9a4b558",
+    "csv_rows": 0,
+    "csv_fields": [
+      "SHORTNAME",
+      "DISPLAY_NAME",
+      "PLAYERS",
+      "BUTTONS",
+      "CONTROL_TYPE",
+      "CURRENT_CORE",
+      "TARGET_CORE",
+      "CRC_STATUS",
+      "CHD",
+      "BIOS",
+      "PARENT_ROMOF",
+      "CONFIDENCE",
+      "PRIORITY",
+      "CABINET_COMPATIBILITY",
+      "MULTIPLAYER_PRIORITY",
+      "FIGHTING",
+      "WHY_SELECTED"
+    ]
+  },
+  "considered_candidates": [],
+  "counts": {
+    "candidates_in_prepared_lot": 0,
+    "launched": 0,
+    "skipped_in_prepared_lot": 0,
+    "boot_pass": 0,
+    "boot_fail": 0,
+    "new_overrides": 0,
+    "restores_verified": "0/0",
+    "three_or_four_player_recovered": 0,
+    "fighting_recovered": 0,
+    "special_control": 0
+  },
+  "excluded_context": {
+    "very_high_or_high_candidates_eligible": 0,
+    "static_use_mame_current_without_modern_core_pilot": 56,
+    "reason": "Los candidatos ya tienen intento previo con mame078plus y el documento fuente los excluye expresamente; la lista preparada y el CSV no contienen filas elegibles. No se relanzaron fuera del lote."
+  },
+  "launches": [],
+  "skipped": [],
+  "passes": [],
+  "failures": [],
+  "overrides_before": [
+    "altair.zip",
+    "apache3.zip",
+    "blazlaz.zip",
+    "cubeqst.zip",
+    "evosocc.zip",
+    "ffight2b.zip",
+    "funcube4.zip",
+    "hoops95.zip",
+    "sia2650.zip"
+  ],
+  "overrides_after": [
+    "altair.zip",
+    "apache3.zip",
+    "blazlaz.zip",
+    "cubeqst.zip",
+    "evosocc.zip",
+    "ffight2b.zip",
+    "funcube4.zip",
+    "hoops95.zip",
+    "sia2650.zip"
+  ],
+  "overrides_added": [],
+  "overrides_removed": [],
+  "restore": {
+    "required": false,
+    "verified": "N/A",
+    "reason": "No hubo juegos lanzados ni escrituras inducidas por esta tanda."
+  },
+  "system_before_after": {
+    "emulationstation": {
+      "pid": 2929,
+      "status": "ACTIVE"
+    },
+    "retroarch_orphans": 0,
+    "mame_orphans": 0,
+    "duplicate_testers": 0,
+    "controller_dispatcher_self_test": "DISPATCHER_SELF_TEST_OK",
+    "p1_p4": {
+      "status": "OK",
+      "mapping": {
+        "P1": "USB5 / event17 / js0",
+        "P2": "USB6 / event18 / js1",
+        "P3": "USB8 / event20 / js3",
+        "P4": "USB7 / event19 / js2"
+      },
+      "source": "controller_dispatcher --diagnose y sdl2-jstest --list"
+    },
+    "global_core": "mame078plus",
+    "system_status": "OK"
+  },
+  "compatibility_matrix": {
+    "updated": false,
+    "reason": "No hubo resultados por juego que registrar; no se inventaron filas ni se modificó evidencia histórica."
+  },
+  "notes": [
+    "BATCH 2 reporta históricamente 4 PASS de 10 juegos lanzados; son resultados anteriores y no se contabilizan en esta tanda.",
+    "Los nueve overrides activos coinciden con los documentados.",
+    "No se modificaron core global, ROMs, BIOS, saves, controles, dispatcher, EmulationStation ni configuración de RetroArch.",
+    "La estrategia de override individual permanece sustentada por nueve overrides existentes y pilotos previos exitosos; esta tanda no aporta ensayos nuevos."
+  ],
+  "export": {
+    "status": "SYNCED_FILTERED",
+    "destination": "/userdata/system/state/arcade_audit_git",
+    "source_files_synced": 38,
+    "secret_scan": "PASS",
+    "payload_scan": "PASS",
+    "git_commit": "NOT_DONE",
+    "git_push": "NOT_DONE",
+    "reason": "Prohibición expresa de commit/push desde Batocera; el script integral los contempla y git no está instalado."
+  }
+}
