@@ -1,0 +1,255 @@
+system,directory_present,gamelist_present,gamelist_entries,fullname,configured_in_es,configured_path,configured_cores,notes
+3do,YES,NO,,3DO Interactive Multiplayer,YES,/userdata/roms/3do,opera,No gamelist.xml; contents require later inventory
+3ds,YES,NO,,3DS,YES,/userdata/roms/3ds,azahar,No gamelist.xml; contents require later inventory
+Nueva carpeta,YES,NO,,,NO,,,No gamelist.xml; contents require later inventory
+Nueva carpeta (2),YES,NO,,,NO,,,No gamelist.xml; contents require later inventory
+abuse,YES,NO,,Abuse,YES,/userdata/roms/abuse,abuse,No gamelist.xml; contents require later inventory
+adam,YES,NO,,ADAM,YES,/userdata/roms/adam,mame;mame,No gamelist.xml; contents require later inventory
+advision,YES,NO,,Adventure Vision,YES,/userdata/roms/advision,mame;mame,No gamelist.xml; contents require later inventory
+amiga1200,YES,NO,,Amiga AGA,YES,/userdata/roms/amiga1200,A1200;A4000;A1200;A4000;puae;puae2021,No gamelist.xml; contents require later inventory
+amiga500,YES,NO,,Amiga OCS/ECS,YES,/userdata/roms/amiga500,A500;A500+;A1000;A3000;A500;A500+;A600;puae;puae2021,No gamelist.xml; contents require later inventory
+amigacd32,YES,NO,,Amiga CD32,YES,/userdata/roms/amigacd32,CD32;CD32;puae;puae2021,No gamelist.xml; contents require later inventory
+amigacdtv,YES,NO,,Amiga CDTV,YES,/userdata/roms/amigacdtv,CDTV;CDTV;puae;puae2021,No gamelist.xml; contents require later inventory
+amstradcpc,YES,NO,,Amstrad CPC,YES,/userdata/roms/amstradcpc,clk;cap32,No gamelist.xml; contents require later inventory
+apfm1000,YES,NO,,M-1000,YES,/userdata/roms/apfm1000,mame;mame,No gamelist.xml; contents require later inventory
+apple2,YES,NO,,Apple II,YES,/userdata/roms/apple2,gsplus;mame;mame,No gamelist.xml; contents require later inventory
+apple2gs,YES,NO,,Apple IIGS,YES,/userdata/roms/apple2gs,gsplus;mame;mame,No gamelist.xml; contents require later inventory
+arcadia,YES,NO,,Arcadia 2001,YES,/userdata/roms/arcadia,mame;mame,No gamelist.xml; contents require later inventory
+archimedes,YES,NO,,Archimedes,YES,/userdata/roms/archimedes,clk;mame;mame,No gamelist.xml; contents require later inventory
+arduboy,YES,NO,,Arduboy,YES,/userdata/roms/arduboy,arduous,No gamelist.xml; contents require later inventory
+astrocade,YES,NO,,Astrocade,YES,/userdata/roms/astrocade,mame;mame,No gamelist.xml; contents require later inventory
+atari2600,YES,YES,2,Atari 2600,YES,/userdata/roms/atari2600,stella,gamelist entry count only; ROM file existence not verified
+atari5200,YES,NO,,Atari 5200,YES,/userdata/roms/atari5200,a5200;atari800,No gamelist.xml; contents require later inventory
+atari7800,YES,NO,,Atari 7800,YES,/userdata/roms/atari7800,prosystem,No gamelist.xml; contents require later inventory
+atari800,YES,NO,,Atari 800,YES,/userdata/roms/atari800,atari800,No gamelist.xml; contents require later inventory
+atarist,YES,NO,,Atari ST,YES,/userdata/roms/atarist,clk;hatari;hatari;hatarib,No gamelist.xml; contents require later inventory
+atom,YES,NO,,Atom,YES,/userdata/roms/atom,mame;mame,No gamelist.xml; contents require later inventory
+atomiswave,YES,NO,,Atomiswave,YES,/userdata/roms/atomiswave,flycast;flycast,No gamelist.xml; contents require later inventory
+bbcmicro,YES,NO,,BBC Micro,YES,/userdata/roms/bbcmicro,mame;mame,No gamelist.xml; contents require later inventory
+beena,YES,NO,,Advanced Pico Beena,YES,/userdata/roms/beena,mame;mame,No gamelist.xml; contents require later inventory
+bennugd,YES,NO,,Bennu Game Development,YES,/userdata/roms/bennugd,bennugd,No gamelist.xml; contents require later inventory
+bk,YES,NO,,Elektronika BK,YES,/userdata/roms/bk,mame;mame,No gamelist.xml; contents require later inventory
+bstone,YES,NO,,Blake Stone,YES,/userdata/roms/bstone,bstone,No gamelist.xml; contents require later inventory
+c128,YES,NO,,Commodore 128,YES,/userdata/roms/c128,vice_x128;x128,No gamelist.xml; contents require later inventory
+c20,YES,NO,,Commodore VIC-20,YES,/userdata/roms/c20,vice_xvic;xvic,No gamelist.xml; contents require later inventory
+c64,YES,YES,4,Commodore 64,YES,/userdata/roms/c64,vice_x64;vice_x64sc;vice_xscpu64;x64;x64dtv;xscpu64,gamelist entry count only; ROM file existence not verified
+camplynx,YES,NO,,Camputers Lynx,YES,/userdata/roms/camplynx,mame;mame,No gamelist.xml; contents require later inventory
+cannonball,YES,YES,1,Cannonball,YES,/userdata/roms/cannonball,cannonball,gamelist entry count only; ROM file existence not verified
+cassettevision,YES,NO,,Cassette Vision,YES,/userdata/roms/cassettevision,pd777,No gamelist.xml; contents require later inventory
+catacomb,YES,NO,,CatacombGL,YES,/userdata/roms/catacomb,catacombgl,No gamelist.xml; contents require later inventory
+cave3rd,YES,NO,,Cave CV1000,YES,/userdata/roms/cave3rd,demul;mame;mame,No gamelist.xml; contents require later inventory
+cavestory,YES,NO,,Cave Story,YES,/userdata/roms/cavestory,nxengine,No gamelist.xml; contents require later inventory
+cdi,YES,NO,,CD-i,YES,/userdata/roms/cdi,same_cdi;mame,No gamelist.xml; contents require later inventory
+cdogs,YES,YES,1,C-Dogs SDL,YES,/userdata/roms/cdogs,cdogs,gamelist entry count only; ROM file existence not verified
+cgenie,YES,NO,,Colour Genie,YES,/userdata/roms/cgenie,mame;mame,No gamelist.xml; contents require later inventory
+cgenius,YES,NO,,Commander Genius,YES,/userdata/roms/cgenius,cgenius,No gamelist.xml; contents require later inventory
+channelf,YES,NO,,Channel-F,YES,/userdata/roms/channelf,freechaf,No gamelist.xml; contents require later inventory
+chihiro,YES,NO,,Sega Chihiro,YES,/userdata/roms/chihiro,xemu,No gamelist.xml; contents require later inventory
+coco,YES,NO,,Color Computer,YES,/userdata/roms/coco,mame;mame;xroar,No gamelist.xml; contents require later inventory
+colecovision,YES,NO,,ColecoVision,YES,/userdata/roms/colecovision,clk;bluemsx;openmsx,No gamelist.xml; contents require later inventory
+commanderx16,YES,NO,,Commander X16,YES,/userdata/roms/commanderx16,x16emu,No gamelist.xml; contents require later inventory
+corsixth,YES,NO,,CorsixTH,YES,/userdata/roms/corsixth,corsixth,No gamelist.xml; contents require later inventory
+cplus4,YES,NO,,Commodore Plus4,YES,/userdata/roms/cplus4,vice_xplus4;xplus4,No gamelist.xml; contents require later inventory
+crvision,YES,NO,,CreatiVision,YES,/userdata/roms/crvision,mame;mame,No gamelist.xml; contents require later inventory
+ctvboy,YES,NO,,Compact Vision TV Boy,YES,/userdata/roms/ctvboy,mame;mame,No gamelist.xml; contents require later inventory
+daphne,YES,NO,,Daphne,YES,/userdata/roms/daphne,hypseus-singe,No gamelist.xml; contents require later inventory
+devilutionx,YES,YES,8,Diablo,YES,/userdata/roms/devilutionx,devilutionx,gamelist entry count only; ROM file existence not verified
+dice,YES,NO,,DICE,YES,/userdata/roms/dice,dice,No gamelist.xml; contents require later inventory
+doom3,YES,NO,,Doom 3,YES,/userdata/roms/doom3,dhewm3;boom3,No gamelist.xml; contents require later inventory
+dos,YES,NO,,Dos (x86),YES,/userdata/roms/dos,dosbox;dosbox_staging;dosbox-x;dosbox_pure,No gamelist.xml; contents require later inventory
+dragon64,YES,NO,,Dragon 64,YES,/userdata/roms/dragon64,mame;mame;xroar,No gamelist.xml; contents require later inventory
+dreamcast,YES,YES,775,Dreamcast,YES,/userdata/roms/dreamcast,flycast;flycast;redream,gamelist entry count only; ROM file existence not verified
+dxx-rebirth,YES,NO,,DXX Rebirth,YES,/userdata/roms/dxx-rebirth,dxx-rebirth,No gamelist.xml; contents require later inventory
+easyrpg,YES,YES,12,EasyRPG,YES,/userdata/roms/easyrpg,easyrpg;easyrpg,gamelist entry count only; ROM file existence not verified
+ecwolf,YES,NO,,ECWolf,YES,/userdata/roms/ecwolf,ecwolf,No gamelist.xml; contents require later inventory
+eduke32,YES,NO,,EDuke32,YES,/userdata/roms/eduke32,eduke32,No gamelist.xml; contents require later inventory
+electron,YES,NO,,Electron,YES,/userdata/roms/electron,clk;mame;mame,No gamelist.xml; contents require later inventory
+enterprise,YES,NO,,Enterprise,YES,/userdata/roms/enterprise,clk;mame;mame,No gamelist.xml; contents require later inventory
+etlegacy,YES,NO,,Wolfenstein - Enemy Territory,YES,/userdata/roms/etlegacy,etlegacy,No gamelist.xml; contents require later inventory
+fallout1-ce,YES,NO,,Fallout Community Edition,YES,/userdata/roms/fallout1-ce,fallout1-ce,No gamelist.xml; contents require later inventory
+fallout2-ce,YES,NO,,Fallout 2 Community Edition,YES,/userdata/roms/fallout2-ce,fallout2-ce,No gamelist.xml; contents require later inventory
+fbneo,YES,YES,104,Final Burn Neo,YES,/userdata/roms/fbneo,fbneo,gamelist entry count only; ROM file existence not verified
+fds,YES,YES,1,Family Computer Disk System,YES,/userdata/roms/fds,fceumm;mesen;nestopia,gamelist entry count only; ROM file existence not verified
+flash,YES,NO,,Flash Player,YES,/userdata/roms/flash,lightspark;ruffle,No gamelist.xml; contents require later inventory
+flatpak,YES,YES,2,Applications,YES,/userdata/roms/flatpak,flatpak,gamelist entry count only; ROM file existence not verified
+fm7,YES,NO,,FM-7,YES,/userdata/roms/fm7,mame;mame,No gamelist.xml; contents require later inventory
+fmtowns,YES,NO,,FM-TOWNS,YES,/userdata/roms/fmtowns,mame;mame;tsugaru,No gamelist.xml; contents require later inventory
+fury,YES,NO,,Ion Fury,YES,/userdata/roms/fury,fury,No gamelist.xml; contents require later inventory
+gaelco,YES,NO,,Gaelco,YES,/userdata/roms/gaelco,demul;mame;mame,No gamelist.xml; contents require later inventory
+gamate,YES,NO,,Gamate,YES,/userdata/roms/gamate,mame;mame,No gamelist.xml; contents require later inventory
+gameandwatch,YES,NO,,Game and Watch,YES,/userdata/roms/gameandwatch,gw;mame;mame,No gamelist.xml; contents require later inventory
+gamecom,YES,NO,,Game.com,YES,/userdata/roms/gamecom,mame;mame,No gamelist.xml; contents require later inventory
+gamecube,YES,YES,9,GameCube,YES,/userdata/roms/gamecube,dolphin;dolphin,gamelist entry count only; ROM file existence not verified
+gamegear,YES,NO,,Game Gear,YES,/userdata/roms/gamegear,gearsystem;genesisplusgx;picodrive;smsplus,No gamelist.xml; contents require later inventory
+gamepock,YES,NO,,Game Pocket Computer,YES,/userdata/roms/gamepock,mame;mame,No gamelist.xml; contents require later inventory
+gb,YES,YES,410,Game Boy,YES,/userdata/roms/gb,gambatte;mesen-s;mgba;vba-m,gamelist entry count only; ROM file existence not verified
+gb2players,YES,NO,,Game Boy (2 players),YES,/userdata/roms/gb2players,tgbdual,No gamelist.xml; contents require later inventory
+gba,YES,YES,725,Game Boy Advance,YES,/userdata/roms/gba,mgba;vba-m,gamelist entry count only; ROM file existence not verified
+gbc,YES,YES,406,Game Boy Color,YES,/userdata/roms/gbc,gambatte;mesen-s;mgba;vba-m,gamelist entry count only; ROM file existence not verified
+gbc2players,YES,NO,,Game Boy Color (2 players),YES,/userdata/roms/gbc2players,tgbdual,No gamelist.xml; contents require later inventory
+gmaster,YES,NO,,Game Master,YES,/userdata/roms/gmaster,mame;mame,No gamelist.xml; contents require later inventory
+gp32,YES,NO,,GP32,YES,/userdata/roms/gp32,mame;mame,No gamelist.xml; contents require later inventory
+gx4000,YES,NO,,GX4000,YES,/userdata/roms/gx4000,cap32,No gamelist.xml; contents require later inventory
+gzdoom,YES,NO,,GZDoom,YES,/userdata/roms/gzdoom,gzdoom,No gamelist.xml; contents require later inventory
+halflife,YES,NO,,Half-Life 1,YES,/userdata/roms/halflife,xash3d_fwgs,No gamelist.xml; contents require later inventory
+hcl,YES,YES,1,Hydra Castle Labyrinth,YES,/userdata/roms/hcl,hcl,gamelist entry count only; ROM file existence not verified
+hikaru,YES,NO,,Hikaru,YES,/userdata/roms/hikaru,demul,No gamelist.xml; contents require later inventory
+hurrican,YES,YES,1,Hurrican,YES,/userdata/roms/hurrican,hurrican,gamelist entry count only; ROM file existence not verified
+ikemen,YES,YES,2,IKEMEN,YES,/userdata/roms/ikemen,ikemen,gamelist entry count only; ROM file existence not verified
+intellivision,YES,NO,,Mattel Intellivision,YES,/userdata/roms/intellivision,freeintv,No gamelist.xml; contents require later inventory
+iortcw,YES,NO,,,NO,,,No gamelist.xml; contents require later inventory
+jaguar,YES,NO,,Jaguar,YES,/userdata/roms/jaguar,bigpemu;virtualjaguar,No gamelist.xml; contents require later inventory
+jaguarcd,YES,NO,,Jaguar CD,YES,/userdata/roms/jaguarcd,bigpemu;virtualjaguar,No gamelist.xml; contents require later inventory
+jazz2,YES,NO,,Jazz Jackrabbit 2,YES,/userdata/roms/jazz2,jazz2-native,No gamelist.xml; contents require later inventory
+jkdf2,YES,NO,,Jedi Knight - Dark Forces 2,YES,/userdata/roms/jkdf2,openjkdf2,No gamelist.xml; contents require later inventory
+jknight,YES,NO,,Star Wars - Jedi Academy,YES,/userdata/roms/jknight,openjk,No gamelist.xml; contents require later inventory
+laser310,YES,NO,,Laser 310,YES,/userdata/roms/laser310,mame;mame,No gamelist.xml; contents require later inventory
+lcdgames,YES,NO,,LCD Games,YES,/userdata/roms/lcdgames,mame;mame,No gamelist.xml; contents require later inventory
+lindbergh,YES,NO,,Sega Lindbergh,YES,/userdata/roms/lindbergh,lindbergh-loader,No gamelist.xml; contents require later inventory
+loopy,YES,NO,,Casio Loopy,YES,/userdata/roms/loopy,mame;mame,No gamelist.xml; contents require later inventory
+lowresnx,YES,NO,,Lowres NX,YES,/userdata/roms/lowresnx,lowresnx,No gamelist.xml; contents require later inventory
+lutro,YES,NO,,Lutro,YES,/userdata/roms/lutro,lutro,No gamelist.xml; contents require later inventory
+lynx,YES,NO,,Atari Lynx,YES,/userdata/roms/lynx,handy;holani;mednafen_lynx,No gamelist.xml; contents require later inventory
+macintosh,YES,NO,,Macintosh,YES,/userdata/roms/macintosh,clk;mame;minivmac;mame,No gamelist.xml; contents require later inventory
+mame,YES,YES,1324,Mame,YES,/userdata/roms/mame,mame;mame078plus;mame,gamelist entry count only; ROM file existence not verified
+mastersystem,YES,YES,383,Master System,YES,/userdata/roms/mastersystem,clk;gearsystem;genesisplusgx;picodrive;smsplus,gamelist entry count only; ROM file existence not verified
+mc10,YES,NO,,MC-10,YES,/userdata/roms/mc10,mame;mame;xroar,No gamelist.xml; contents require later inventory
+megacd,YES,YES,24,Mega CD,YES,/userdata/roms/megacd,genesisplusgx;picodrive,gamelist entry count only; ROM file existence not verified
+megadrive,YES,YES,1037,Mega Drive,YES,/userdata/roms/megadrive,blastem;genesisplusgx;genesisplusgx-expanded;genesisplusgx-wide;picodrive,gamelist entry count only; ROM file existence not verified
+megadrive-msu,YES,NO,,MSU-MD,YES,/userdata/roms/megadrive-msu,genesisplusgx;genesisplusgx-wide,No gamelist.xml; contents require later inventory
+megaduck,YES,NO,,Mega Duck / Cougar Boy,YES,/userdata/roms/megaduck,mame;sameduck;mame,No gamelist.xml; contents require later inventory
+model2,YES,NO,,Model 2,YES,/userdata/roms/model2,mame;mame;model2emu,No gamelist.xml; contents require later inventory
+model3,YES,NO,,Model 3,YES,/userdata/roms/model3,mame;mame;supermodel,No gamelist.xml; contents require later inventory
+mohaa,YES,NO,,Medal Of Honor - Allied Assault,YES,/userdata/roms/mohaa,openmohaa,No gamelist.xml; contents require later inventory
+moonlight,YES,NO,,Moonlight,YES,/userdata/roms/moonlight,moonlight,No gamelist.xml; contents require later inventory
+mrboom,YES,YES,1,MrBoom,YES,/userdata/roms/mrboom,mrboom,gamelist entry count only; ROM file existence not verified
+msx1,YES,NO,,MSX1,YES,/userdata/roms/msx1,clk;bluemsx;fmsx;openmsx,No gamelist.xml; contents require later inventory
+msx2,YES,NO,,MSX2,YES,/userdata/roms/msx2,clk;bluemsx;fmsx;openmsx,No gamelist.xml; contents require later inventory
+msx2+,YES,NO,,MSX2+,YES,/userdata/roms/msx2+,bluemsx;fmsx;openmsx,No gamelist.xml; contents require later inventory
+msxturbor,YES,NO,,MSX Turbo-R,YES,/userdata/roms/msxturbor,bluemsx;openmsx,No gamelist.xml; contents require later inventory
+mugen,YES,NO,,MUGEN,YES,/userdata/roms/mugen,wine-tkg,No gamelist.xml; contents require later inventory
+multivision,YES,NO,,Othello Multivision,YES,/userdata/roms/multivision,gearsystem,No gamelist.xml; contents require later inventory
+mz2000,YES,NO,,Sharp MZ-2000,YES,/userdata/roms/mz2000,mame;mame,No gamelist.xml; contents require later inventory
+mz2500,YES,NO,,Sharp MZ-2500,YES,/userdata/roms/mz2500,mame;mame,No gamelist.xml; contents require later inventory
+mz700,YES,NO,,Sharp MZ-700,YES,/userdata/roms/mz700,mame;mame,No gamelist.xml; contents require later inventory
+mz800,YES,NO,,Sharp MZ-800,YES,/userdata/roms/mz800,mame;mame,No gamelist.xml; contents require later inventory
+mz80k,YES,NO,,Sharp MZ-80K,YES,/userdata/roms/mz80k,mame;mame,No gamelist.xml; contents require later inventory
+n64,YES,YES,377,Nintendo 64,YES,/userdata/roms/n64,mupen64plus-next;parallel_n64;glide64mk2;gliden64;rice,gamelist entry count only; ROM file existence not verified
+n64dd,YES,NO,,Nintendo 64 Disk Drive,YES,/userdata/roms/n64dd,mupen64plus-next;parallel_n64;glide64mk2;gliden64;rice,No gamelist.xml; contents require later inventory
+namco22,YES,NO,,Namco System 22,YES,/userdata/roms/namco22,mame;mame,No gamelist.xml; contents require later inventory
+namco2x6,YES,NO,,Namco System 246/256,YES,/userdata/roms/namco2x6,play,No gamelist.xml; contents require later inventory
+naomi,YES,YES,1,Naomi,YES,/userdata/roms/naomi,flycast;flycast,gamelist entry count only; ROM file existence not verified
+naomi2,YES,NO,,Naomi 2,YES,/userdata/roms/naomi2,flycast;flycast,No gamelist.xml; contents require later inventory
+nds,YES,YES,2,Nintendo DS,YES,/userdata/roms/nds,desmume;melonds;melondsds;melonds,gamelist entry count only; ROM file existence not verified
+neogeo,YES,YES,105,Neo-Geo,YES,/userdata/roms/neogeo,fbneo;mame;mame078plus;mame,gamelist entry count only; ROM file existence not verified
+neogeocd,YES,NO,,Neo-Geo CD,YES,/userdata/roms/neogeocd,neocd,No gamelist.xml; contents require later inventory
+nes,YES,YES,702,Nintendo Entertainment System,YES,/userdata/roms/nes,fceumm;mesen;nestopia,gamelist entry count only; ROM file existence not verified
+ngp,YES,NO,,Neo-Geo Pocket,YES,/userdata/roms/ngp,mednafen_ngp,No gamelist.xml; contents require later inventory
+ngpc,YES,NO,,Neo-Geo Pocket Color,YES,/userdata/roms/ngpc,mednafen_ngp,No gamelist.xml; contents require later inventory
+odcommander,YES,YES,1,OD-Commander,YES,/userdata/roms/odcommander,odcommander,gamelist entry count only; ROM file existence not verified
+odyssey2,YES,NO,,Odyssey2,YES,/userdata/roms/odyssey2,o2em,No gamelist.xml; contents require later inventory
+openbor,YES,YES,128,OpenBOR,YES,/userdata/roms/openbor,openbor4432;openbor6412;openbor7142;openbor7530,gamelist entry count only; ROM file existence not verified
+openjazz,YES,NO,,Jazz Jackrabbit,YES,/userdata/roms/openjazz,openjazz,No gamelist.xml; contents require later inventory
+oricatmos,YES,NO,,Oric Atmos,YES,/userdata/roms/oricatmos,clk;mame;mame,No gamelist.xml; contents require later inventory
+pc60,YES,NO,,PC-6000,YES,/userdata/roms/pc60,mame;mame,No gamelist.xml; contents require later inventory
+pc80,YES,NO,,PC-8001,YES,/userdata/roms/pc80,mame;mame,No gamelist.xml; contents require later inventory
+pc88,YES,NO,,PC-8800,YES,/userdata/roms/pc88,quasi88,No gamelist.xml; contents require later inventory
+pc98,YES,NO,,PC-9800,YES,/userdata/roms/pc98,np2kai,No gamelist.xml; contents require later inventory
+pcengine,YES,YES,529,PC Engine,YES,/userdata/roms/pcengine,pce;pce_fast,gamelist entry count only; ROM file existence not verified
+pcenginecd,YES,NO,,PC Engine CD,YES,/userdata/roms/pcenginecd,pce;pce_fast,No gamelist.xml; contents require later inventory
+pcfx,YES,NO,,PC-FX,YES,/userdata/roms/pcfx,pcfx,No gamelist.xml; contents require later inventory
+pcw,YES,NO,,Amstrad PCW,YES,/userdata/roms/pcw,mame;mame,No gamelist.xml; contents require later inventory
+pdp1,YES,NO,,PDP-1,YES,/userdata/roms/pdp1,mame;mame,No gamelist.xml; contents require later inventory
+pet,YES,NO,,Commodore PET,YES,/userdata/roms/pet,vice_xpet;xpet,No gamelist.xml; contents require later inventory
+pico,YES,NO,,Sega Pico,YES,/userdata/roms/pico,genesisplusgx;genesisplusgx-wide;picodrive,No gamelist.xml; contents require later inventory
+pico8,YES,NO,,Pico-8,YES,/userdata/roms/pico8,fake08,No gamelist.xml; contents require later inventory
+pokemini,YES,NO,,Pokemon Mini,YES,/userdata/roms/pokemini,pokemini,No gamelist.xml; contents require later inventory
+ports,YES,YES,5,Ports,YES,/userdata/roms/ports,sh,gamelist entry count only; ROM file existence not verified
+prboom,YES,YES,2,PrBoom,YES,/userdata/roms/prboom,prboom,gamelist entry count only; ROM file existence not verified
+ps2,YES,YES,196,PlayStation 2,YES,/userdata/roms/ps2,pcsx2;play;pcsx2;play,gamelist entry count only; ROM file existence not verified
+ps3,YES,YES,13,PlayStation 3,YES,/userdata/roms/ps3,rpcs3,gamelist entry count only; ROM file existence not verified
+ps4,YES,YES,95,PlayStation 4,YES,/userdata/roms/ps4,shadps4,gamelist entry count only; ROM file existence not verified
+psp,YES,YES,637,PlayStation Portable,YES,/userdata/roms/psp,ppsspp;ppsspp,gamelist entry count only; ROM file existence not verified
+psvita,YES,NO,,PlayStation Vita,YES,/userdata/roms/psvita,vita3k,No gamelist.xml; contents require later inventory
+psx,YES,YES,78,PlayStation,YES,/userdata/roms/psx,duckstation;mednafen_psx;pcsx_rearmed;swanstation,gamelist entry count only; ROM file existence not verified
+pv1000,YES,NO,,PV-1000,YES,/userdata/roms/pv1000,mame;mame,No gamelist.xml; contents require later inventory
+pv2000,YES,NO,,PV-2000,YES,/userdata/roms/pv2000,mame;mame,No gamelist.xml; contents require later inventory
+pygame,YES,YES,1,Pygame,YES,/userdata/roms/pygame,pygame,gamelist entry count only; ROM file existence not verified
+pyxel,YES,NO,,pyxel,YES,/userdata/roms/pyxel,pyxel,No gamelist.xml; contents require later inventory
+quake,YES,NO,,Quake,YES,/userdata/roms/quake,tyrquake;vkquake,No gamelist.xml; contents require later inventory
+quake2,YES,NO,,Quake II,YES,/userdata/roms/quake2,vitaquake2;vkquake2;yquake2,No gamelist.xml; contents require later inventory
+quake3,YES,NO,,Quake III,YES,/userdata/roms/quake3,vkquake3,No gamelist.xml; contents require later inventory
+raze,YES,NO,,Raze,YES,/userdata/roms/raze,raze,No gamelist.xml; contents require later inventory
+reminiscence,YES,NO,,REminiscence,YES,/userdata/roms/reminiscence,reminiscence,No gamelist.xml; contents require later inventory
+rott,YES,NO,,Rise of the Triad,YES,/userdata/roms/rott,taradino,No gamelist.xml; contents require later inventory
+rtcw,YES,NO,,Return To Castle Wolfenstein,YES,/userdata/roms/rtcw,iortcw,No gamelist.xml; contents require later inventory
+rx78,YES,NO,,RX-78,YES,/userdata/roms/rx78,mame;mame,No gamelist.xml; contents require later inventory
+samcoupe,YES,NO,,SAM Coupé,YES,/userdata/roms/samcoupe,mame;mame;samcoupe,No gamelist.xml; contents require later inventory
+satellaview,YES,NO,,Satellaview,YES,/userdata/roms/satellaview,mesen-s;snes9x,No gamelist.xml; contents require later inventory
+saturn,YES,YES,6,Saturn,YES,/userdata/roms/saturn,beetle-saturn;kronos;yabasanshiro;ymir,gamelist entry count only; ROM file existence not verified
+sc3000,YES,NO,,SC-3000,YES,/userdata/roms/sc3000,mame;mame,No gamelist.xml; contents require later inventory
+scummvm,YES,YES,3,ScummVM,YES,/userdata/roms/scummvm,scummvm;scummvm,gamelist entry count only; ROM file existence not verified
+scv,YES,NO,,Super Cassette Vision,YES,/userdata/roms/scv,emuscv,No gamelist.xml; contents require later inventory
+sdlpop,YES,YES,1,SdlPop,YES,/userdata/roms/sdlpop,sdlpop,gamelist entry count only; ROM file existence not verified
+sega32x,YES,NO,,32x,YES,/userdata/roms/sega32x,picodrive,No gamelist.xml; contents require later inventory
+segaai,YES,NO,,Sega AI Computer,YES,/userdata/roms/segaai,mame;mame,No gamelist.xml; contents require later inventory
+sg1000,YES,NO,,SG-1000,YES,/userdata/roms/sg1000,gearsystem;genesisplusgx,No gamelist.xml; contents require later inventory
+sgb,YES,NO,,Super Game Boy,YES,/userdata/roms/sgb,mesen-s;mgba,No gamelist.xml; contents require later inventory
+sgb-msu1,YES,NO,,Super Game Boy MSU1,YES,/userdata/roms/sgb-msu1,bsnes;bsnes_hd,No gamelist.xml; contents require later inventory
+singe,YES,NO,,Singe,YES,/userdata/roms/singe,hypseus-singe,No gamelist.xml; contents require later inventory
+snes,YES,YES,275,Super Nintendo Entertainment System,YES,/userdata/roms/snes,bsnes;bsnes_hd;mesen-s;snes9x;snes9x_next,gamelist entry count only; ROM file existence not verified
+snes-msu1,YES,NO,,Super Disc System (MSU1),YES,/userdata/roms/snes-msu1,bsnes;bsnes_hd;snes9x,No gamelist.xml; contents require later inventory
+socrates,YES,NO,,Socrates,YES,/userdata/roms/socrates,mame;mame,No gamelist.xml; contents require later inventory
+solarus,YES,YES,10,Solarus,YES,/userdata/roms/solarus,solarus,gamelist entry count only; ROM file existence not verified
+sonic-mania,YES,NO,,Sonic Mania,YES,/userdata/roms/sonic-mania,sonic-mania,No gamelist.xml; contents require later inventory
+sonic3-air,YES,NO,,Sonic 3 A.I.R.,YES,/userdata/roms/sonic3-air,sonic3-air,No gamelist.xml; contents require later inventory
+sonicretro,YES,NO,,Sonic Retro Engine,YES,/userdata/roms/sonicretro,sonic2013;soniccd,No gamelist.xml; contents require later inventory
+spectravideo,YES,NO,,Spectravideo SV-328,YES,/userdata/roms/spectravideo,bluemsx;openmsx,No gamelist.xml; contents require later inventory
+steam,YES,YES,7,Steam,YES,/userdata/roms/steam,steam,gamelist entry count only; ROM file existence not verified
+sufami,YES,NO,,SuFami Turbo,YES,/userdata/roms/sufami,snes9x,No gamelist.xml; contents require later inventory
+superbroswar,YES,YES,1,Super Mario War,YES,/userdata/roms/superbroswar,superbroswar,gamelist entry count only; ROM file existence not verified
+supergrafx,YES,NO,,Supergrafx,YES,/userdata/roms/supergrafx,mednafen_supergrafx,No gamelist.xml; contents require later inventory
+supervision,YES,NO,,Supervision,YES,/userdata/roms/supervision,potator,No gamelist.xml; contents require later inventory
+supracan,YES,NO,,Super A'Can,YES,/userdata/roms/supracan,mame;mame,No gamelist.xml; contents require later inventory
+sv8000,YES,NO,,Super Vision 8000,YES,/userdata/roms/sv8000,mame;mame,No gamelist.xml; contents require later inventory
+systemsp,YES,NO,,Sega System SP,YES,/userdata/roms/systemsp,flycast;flycast,No gamelist.xml; contents require later inventory
+theforceengine,YES,YES,6,The Force Engine,YES,/userdata/roms/theforceengine,theforceengine,gamelist entry count only; ROM file existence not verified
+thextech,YES,NO,,TheXTech,YES,/userdata/roms/thextech,thextech,No gamelist.xml; contents require later inventory
+thomson,YES,NO,,Thomson - MO/TO (Theodore),YES,/userdata/roms/thomson,theodore,No gamelist.xml; contents require later inventory
+ti99,YES,NO,,TI-99,YES,/userdata/roms/ti99,mame;mame,No gamelist.xml; contents require later inventory
+tic80,YES,YES,3,TIC-80,YES,/userdata/roms/tic80,tic80,gamelist entry count only; ROM file existence not verified
+traider1,YES,NO,,Tomb Raider,YES,/userdata/roms/traider1,tr1x,No gamelist.xml; contents require later inventory
+traider2,YES,NO,,Tomb Raider 2,YES,/userdata/roms/traider2,tr2x,No gamelist.xml; contents require later inventory
+triforce,YES,NO,,Triforce,YES,/userdata/roms/triforce,dolphin,No gamelist.xml; contents require later inventory
+trs80,YES,NO,,TRS-80,YES,/userdata/roms/trs80,mame;mame,No gamelist.xml; contents require later inventory
+tutor,YES,NO,,Tutor,YES,/userdata/roms/tutor,mame;mame,No gamelist.xml; contents require later inventory
+tvc,YES,NO,,Videoton TVC,YES,/userdata/roms/tvc,mame;mame,No gamelist.xml; contents require later inventory
+tvgames,YES,NO,,Plug and Play TV Games,YES,/userdata/roms/tvgames,mame;mame,No gamelist.xml; contents require later inventory
+tyrian,YES,NO,,Tyrian,YES,/userdata/roms/tyrian,tyrian,No gamelist.xml; contents require later inventory
+uzebox,YES,NO,,Uzebox,YES,/userdata/roms/uzebox,mame;uzem;mame,No gamelist.xml; contents require later inventory
+vc4000,YES,NO,,VC 4000,YES,/userdata/roms/vc4000,mame;mame,No gamelist.xml; contents require later inventory
+vectrex,YES,NO,,Vectrex,YES,/userdata/roms/vectrex,vecx;mame,No gamelist.xml; contents require later inventory
+vgmplay,YES,NO,,Video Game Music Player,YES,/userdata/roms/vgmplay,mame;mame,No gamelist.xml; contents require later inventory
+videopacplus,YES,NO,,Videopac+ G7400,YES,/userdata/roms/videopacplus,o2em,No gamelist.xml; contents require later inventory
+vircon32,YES,NO,,vircon32,YES,/userdata/roms/vircon32,vircon32,No gamelist.xml; contents require later inventory
+virtualboy,YES,NO,,Virtual Boy,YES,/userdata/roms/virtualboy,vb,No gamelist.xml; contents require later inventory
+vis,YES,NO,,Tandy Video Information System,YES,/userdata/roms/vis,mame,No gamelist.xml; contents require later inventory
+vpinball,YES,NO,,Visual Pinball X,YES,/userdata/roms/vpinball,vpinball,No gamelist.xml; contents require later inventory
+vsmile,YES,NO,,V.Smile,YES,/userdata/roms/vsmile,mame;mame,No gamelist.xml; contents require later inventory
+wasm4,YES,NO,,wasm4,YES,/userdata/roms/wasm4,wasm4,No gamelist.xml; contents require later inventory
+wii,YES,NO,,Wii,YES,/userdata/roms/wii,dolphin;dolphin,No gamelist.xml; contents require later inventory
+wiiu,YES,NO,,Wii U,YES,/userdata/roms/wiiu,cemu,No gamelist.xml; contents require later inventory
+windows,YES,YES,7,Windows,YES,/userdata/roms/windows,wine-tkg,gamelist entry count only; ROM file existence not verified
+windows_installers,YES,NO,,Install a new Windows game,YES,/userdata/roms/windows_installers,wine-tkg,No gamelist.xml; contents require later inventory
+wswan,YES,NO,,WonderSwan,YES,/userdata/roms/wswan,mednafen_wswan,No gamelist.xml; contents require later inventory
+wswanc,YES,NO,,WonderSwan Color,YES,/userdata/roms/wswanc,mednafen_wswan,No gamelist.xml; contents require later inventory
+x1,YES,NO,,Sharp X1,YES,/userdata/roms/x1,x1,No gamelist.xml; contents require later inventory
+x68000,YES,NO,,Sharp X68000,YES,/userdata/roms/x68000,px68k,No gamelist.xml; contents require later inventory
+xbox,YES,YES,2,Xbox,YES,/userdata/roms/xbox,xemu,gamelist entry count only; ROM file existence not verified
+xbox360,YES,YES,5,Xbox 360,YES,/userdata/roms/xbox360,xenia;xenia-canary,gamelist entry count only; ROM file existence not verified
+xbox_interno_backup,YES,NO,,,NO,,,No gamelist.xml; contents require later inventory
+xegs,YES,NO,,Atari XE Game System,YES,/userdata/roms/xegs,mame;mame,No gamelist.xml; contents require later inventory
+xrick,YES,YES,1,xrick,YES,/userdata/roms/xrick,xrick,gamelist entry count only; ROM file existence not verified
+zc210,YES,NO,,Zelda Classic,YES,/userdata/roms/zc210,zc210,No gamelist.xml; contents require later inventory
+zx81,YES,NO,,ZX81,YES,/userdata/roms/zx81,81,No gamelist.xml; contents require later inventory
+zxspectrum,YES,NO,,ZX Spectrum,YES,/userdata/roms/zxspectrum,clk;fuse,No gamelist.xml; contents require later inventory

@@ -1,0 +1,15 @@
+priority,test_id,system,rom,name,players_metadata,buttons_metadata,test_goal,status,certification_effect
+P1,ARCADE_FIGHT_01,mame,ffight2b.zip,Final Fight 2,2,6,"Fighting, six-button; MAME-current BOOT_OK. Verify no duplicate/double inputs and exit combo.",MANUAL_REQUIRED,NO_PASS_UNTIL_HUMAN_TEST
+P1,ARCADE_4P_01,mame,kov2p.zip,Knights of Valour 2 Plus,4,4,MAME-current BOOT_PASS; verify P1-P4 in-game and simultaneous players.,MANUAL_REQUIRED,NO_PASS_UNTIL_HUMAN_TEST
+P1,ARCADE_4P_02,mame,martmast.zip,Martial Masters,4,4,MAME-current BOOT_PASS; fighting; verify P1-P4 and each mapped action.,MANUAL_REQUIRED,NO_PASS_UNTIL_HUMAN_TEST
+P1,ARCADE_4P_03,mame,evosocc.zip,Evolution Soccer,4,4,MAME-current BOOT_OK; sports; verify P1-P4.,MANUAL_REQUIRED,NO_PASS_UNTIL_HUMAN_TEST
+P1,ARCADE_4P_04,mame,hoops95.zip,Hoops'96,4,4,MAME-current BOOT_OK; sports; verify P1-P4.,MANUAL_REQUIRED,NO_PASS_UNTIL_HUMAN_TEST
+P1,ARCADE_FIGHT_02,mame,umk3.zip,Ultimate Mortal Kombat 3,2,6,Existing BOOT_OK; specifically retest historical double-hit/binds physically; not resolved by boot.,MANUAL_REQUIRED,NO_PASS_UNTIL_HUMAN_TEST
+P1,ARCADE_BEATEMUP_01,mame,captcomm.zip,Captain Commando,4,2,"Existing BOOT_OK; verify P1-P4, Coin/Start, each button.",MANUAL_REQUIRED,NO_PASS_UNTIL_HUMAN_TEST
+P1,ARCADE_BEATEMUP_02,mame,tmnt.zip,Teenage Mutant Ninja Turtles,4,2,Existing BOOT_OK; verify P1-P4 and four-player mode.,MANUAL_REQUIRED,NO_PASS_UNTIL_HUMAN_TEST
+P1,ARCADE_BEATEMUP_03,mame,simpsons.zip,The Simpsons,4,2,Existing BOOT_OK; verify P1-P4 and four-player mode.,MANUAL_REQUIRED,NO_PASS_UNTIL_HUMAN_TEST
+P1,ARCADE_BEATEMUP_04,mame,vendetta.zip,Vendetta,4,2,Existing BOOT_OK; verify P1-P4 and four-player mode.,MANUAL_REQUIRED,NO_PASS_UNTIL_HUMAN_TEST
+P1,CABINET_MAPPING,cabinet,,P1-P4,4,,Press each physical position and confirm identity only; no remapping.,MANUAL_REQUIRED,NO_PASS_UNTIL_HUMAN_TEST
+P1,EXIT_COMBO,cabinet,,P1 exit combo,1,,Physically verify SELECT+START+START on P1; verify P2-P4 do not trigger exit.,MANUAL_REQUIRED,NO_PASS_UNTIL_HUMAN_TEST
+P1,AUDIO_PS4_RECONNECT,audio,,DualShock 4 HDMI audio policy,1,,Connect/disconnect PS4 controller while observing default sink; no manual certification yet.,MANUAL_REQUIRED,NO_PASS_UNTIL_HUMAN_TEST
+P2,EXTERNAL_GAMEPAD,controllers,,External joystick inventory,1,,Record name/GUID/USB or Bluetooth/battery/audio capability and detection.,MANUAL_REQUIRED,NO_PASS_UNTIL_HUMAN_TEST

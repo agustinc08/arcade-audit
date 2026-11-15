@@ -2,18 +2,19 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-15T09:28:44+00:00",
-  "current_phase": "PHASE_03_ARCADE_CATALOG",
+  "updated_at": "2026-11-15T10:52:13+00:00",
+  "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
     "PHASE_01_AUDIO": {
-      "status": "BLOCKED",
+      "status": "COMPLETE_WITH_ISSUES",
       "started_at": "2026-11-15T09:19:52+00:00",
-      "completed_at": null,
-      "summary": "Confirmed current misrouting: HDMI sink exists but DualShock 4 USB audio sink is default. Existing WirePlumber HDMI-priority rule matches stale PCI BDF 0000:04:00.1 while live GPU HDMI is 0000:01:00.1; HDMI priority.session=696 vs DS4=1009. Persistent correction deferred pending review of unexpected overlay save.",
+      "completed_at": "2026-11-15T10:31:22+00:00",
+      "summary": "Política HDMI instalada por el custom_service existente. Con DualShock 4 conectado, sink HDMI quedó predeterminado antes, durante y después del positivo altair. El endpoint de audio del DS4 permanece disponible; reconexión física y validación tras reboot siguen pendientes.",
       "issues": [
         "AUD-001"
-      ]
+      ],
+      "updated_at": "2026-11-15T10:52:13+00:00"
     },
     "PHASE_02_FILESYSTEM": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -26,29 +27,38 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T09:28:44+00:00",
       "completed_at": null,
-      "summary": "",
+      "summary": "First-pass arcade classification and per-game certification scaffold generated for all 1397 entries. No deletions. Must-have/popularity and dependency reconciliation remain outstanding; phase is still in progress.",
       "issues": []
     },
     "PHASE_04_MAME_UNRESOLVED": {
-      "status": "PENDING",
+      "status": "COMPLETE_WITH_ISSUES",
       "started_at": null,
       "completed_at": null,
-      "summary": "",
-      "issues": []
+      "summary": "Repair plan read-only derivado del preflight Batch 5: 43 SKIP_PREFLIGHT con causas, missing member/parent/BIOS/CHD y prioridad inicial. Sin reparación ni nuevo lanzamiento.",
+      "issues": [
+        "CERT-001"
+      ],
+      "updated_at": "2026-11-15T10:00:41+00:00"
     },
     "PHASE_05_FBNEO": {
-      "status": "PENDING",
+      "status": "COMPLETE_WITH_ISSUES",
       "started_at": null,
-      "completed_at": null,
-      "summary": "",
-      "issues": []
+      "completed_at": "2026-11-15T10:31:22+00:00",
+      "summary": "DAT runtime Batocera v1.0.0.03 localizado; coincide con core info y CRC/tamaño de sfiii3/captcomm. Candidatos reservados aún no reprobados.",
+      "issues": [
+        "FBN-001"
+      ],
+      "updated_at": "2026-11-15T10:52:13+00:00"
     },
     "PHASE_06_CONTROL_MODEL": {
-      "status": "PENDING",
+      "status": "MANUAL_REQUIRED",
       "started_at": null,
       "completed_at": null,
-      "summary": "",
-      "issues": []
+      "summary": "Modelo universal en full_game_certification.csv; juego/controles físicos separados. No se certificó ninguna acción física.",
+      "issues": [
+        "CTRL-001"
+      ],
+      "updated_at": "2026-11-15T10:00:41+00:00"
     },
     "PHASE_07_GUEST_MODE": {
       "status": "PENDING",
@@ -58,46 +68,124 @@
       "issues": []
     },
     "PHASE_08_CONTROLLER_INTELLIGENCE": {
-      "status": "PENDING",
+      "status": "COMPLETE_WITH_ISSUES",
       "started_at": null,
       "completed_at": null,
-      "summary": "",
-      "issues": []
+      "summary": "controllers_live.json capturó en runtime 4 paneles P1-P4 y 2 gamepads externos (DualShock + USB Gamepad); mapeos sin cambios. Audio del DS4 sigue como issue independiente.",
+      "issues": [
+        "AUD-002"
+      ],
+      "updated_at": "2026-11-15T10:00:41+00:00"
     },
     "PHASE_09_CONSOLES": {
-      "status": "PENDING",
+      "status": "COMPLETE_WITH_ISSUES",
       "started_at": null,
       "completed_at": null,
-      "summary": "",
-      "issues": []
+      "summary": "Inventario de 51 sistemas con entradas gamelist, 8.426 registros cross-system, path existence, 26 entradas sin archivo; 51 resúmenes generados. No runtime launches ni curación destructiva.",
+      "issues": [
+        "SAFE-001"
+      ],
+      "updated_at": "2026-11-15T10:00:41+00:00"
     },
     "PHASE_10_RECOVERY": {
-      "status": "PENDING",
+      "status": "COMPLETE_WITH_ISSUES",
       "started_at": null,
       "completed_at": null,
-      "summary": "",
-      "issues": []
+      "summary": "arcade_recover.py ofrece diagnóstico PID/PPID/argv/API/marker y reinicio opcional ES por API con snapshot mínimo; no se ejecutó restart.",
+      "issues": [],
+      "updated_at": "2026-11-15T10:00:41+00:00"
     },
     "PHASE_11_CONTROL_OVERLAYS": {
-      "status": "PENDING",
+      "status": "COMPLETE_WITH_ISSUES",
       "started_at": null,
       "completed_at": null,
-      "summary": "",
-      "issues": []
+      "summary": "Renderer de metadata preparado para mostrar sólo controles humanos certificados; no integrado al selector/launcher y no inventa acciones.",
+      "issues": [
+        "CTRL-001"
+      ],
+      "updated_at": "2026-11-15T10:02:50+00:00"
     },
     "PHASE_12_ARCADE_MANAGER": {
-      "status": "PENDING",
+      "status": "COMPLETE_WITH_ISSUES",
       "started_at": null,
       "completed_at": null,
-      "summary": "",
-      "issues": []
+      "summary": "Dashboard read-only con Python estándar preparado, default loopback, sin endpoints de acciones ni autostart; servicio no iniciado.",
+      "issues": [],
+      "updated_at": "2026-11-15T10:02:50+00:00"
     },
     "PHASE_13_FINAL_RECONCILIATION": {
-      "status": "PENDING",
+      "status": "COMPLETE_WITH_ISSUES",
       "started_at": null,
       "completed_at": null,
-      "summary": "",
-      "issues": []
+      "summary": "Changeset legítimo auditado archivo por archivo; cero borrados remotos pendientes. Scans preliminares PASS. La política publisher one-time queda limitada por manifest con hash exacto; publicación remota pendiente.",
+      "issues": [
+        "GIT-001"
+      ],
+      "updated_at": "2026-11-15T10:52:13+00:00"
+    },
+    "PHASE_14_FULL_GAME_CERTIFICATION": {
+      "status": "BLOCKED",
+      "started_at": null,
+      "completed_at": null,
+      "summary": "Self-test del motor PASS (archivos, árboles existentes/nuevos, conflicto concurrente) y control positivo altair PASS vía ES→dispatcher→launcher→RetroArch/MAME actual: 21.25 s, game_health exit 0, HDMI estable, retorno ES. Restore VERIFIED de 62 rutas, incluidas /userdata/saves/mame/mame y /userdata/saves/mame/plugins; batocera.conf SHA sin cambio. La certificación masiva sigue bloqueada: falta implementar adapters por sistema y gates de audio/identidad/restore integrados; no se certificó visualmente ni se inició batch.",
+      "issues": [
+        "CERT-001",
+        "AUD-002"
+      ],
+      "updated_at": "2026-11-15T10:52:13+00:00"
+    },
+    "PHASE_15_VISUAL_MEDIA_AUDIT": {
+      "status": "COMPLETE_WITH_ISSUES",
+      "started_at": null,
+      "completed_at": null,
+      "summary": "8432 entries; image 8047, video 7995, thumbnail 7986, fanart 6209; 385 sin imagen accesible; 3565 huérfanos candidatos, sin borrado.",
+      "issues": [
+        "MEDIA-001"
+      ],
+      "updated_at": "2026-11-15T10:07:42+00:00"
+    },
+    "PHASE_16_MULTIPLAYER_8P": {
+      "status": "COMPLETE_WITH_ISSUES",
+      "started_at": null,
+      "completed_at": null,
+      "summary": "4074 entradas metadata >=2; 156 filas >=5 players metadata; 0 runtime/physical certified.",
+      "issues": [
+        "MULTI-001"
+      ],
+      "updated_at": "2026-11-15T10:07:42+00:00"
+    },
+    "PHASE_17_CONTROLLER_CERTIFICATION": {
+      "status": "MANUAL_REQUIRED",
+      "started_at": null,
+      "completed_at": null,
+      "summary": "Snapshot read-only actual: cuatro paneles P1-P4 más DualShock y USB Gamepad externos; herramienta física evdev lista, ninguna secuencia física certificada.",
+      "issues": [
+        "CTRL-001"
+      ],
+      "updated_at": "2026-11-15T10:07:42+00:00"
+    },
+    "PHASE_18_GUEST_READY_BUILD": {
+      "status": "COMPLETE_WITH_ISSUES",
+      "started_at": null,
+      "completed_at": null,
+      "summary": "No se incluyó ningún juego en Guest Ready. El inventario y requerimientos están separados; GUEST_READY permanece 0 hasta AUTO_CERTIFIED + CONTROL_CERTIFIED + salida/audio/video.",
+      "issues": [
+        "AUD-002",
+        "CTRL-001"
+      ],
+      "updated_at": "2026-11-15T10:07:42+00:00"
+    },
+    "PHASE_19_FAILURE_REPAIR_LOOP": {
+      "status": "COMPLETE_WITH_ISSUES",
+      "started_at": null,
+      "completed_at": null,
+      "summary": "Causas actuales agrupadas en reporte; sin retries ni reparaciones nuevas, se preservaron fallos y estados históricos.",
+      "issues": [
+        "SAFE-001",
+        "AUD-002",
+        "CAT-001"
+      ],
+      "updated_at": "2026-11-15T10:07:42+00:00"
     }
   },
   "baseline": {
@@ -124,16 +212,15 @@
       "pipewire": "1.4.6",
       "wireplumber": "1.4.6",
       "hdmi_sink": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
-      "hdmi_priority_session": 696,
+      "default_sink_now": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
       "controller_audio_sink": "alsa_output.usb-Sony_Interactive_Entertainment_Wireless_Controller-00.analog-stereo",
-      "controller": "DualShock 4 [CUH-ZCT2x], USB VID:PID 054c:09cc",
-      "controller_priority_session": 1009,
-      "default_sink_is_controller": true,
-      "batocera_audio_device": "alsa_output.pci-0000_01_00.1.hdmi-surround",
-      "batocera_audio_profile": "output:hdmi-stereo@alsa_card.pci-0000_01_00.1",
-      "existing_hdmi_rule_file": "/etc/wireplumber/wireplumber.conf.d/51-loki-hdmi-priority.conf",
-      "existing_rule_matches_live_gpu": false,
-      "manual_reconnect_test": "PENDING"
+      "controller_connected_during_test": true,
+      "controller_audio_endpoint_preserved": true,
+      "policy": "/userdata/system/el_gordo_tools/arcade_audio_policy_service.sh called by existing enabled /userdata/system/services/custom_service on start",
+      "policy_result": "HDMI_DEFAULT_POLICY_APPLIED; observed during altair positive control",
+      "physical_reconnect": "PENDING",
+      "reboot_validation": "PENDING",
+      "wireplumber_restart": "NOT_PERFORMED"
     },
     "filesystem": {
       "userdata_mount": "/dev/sda2 ext4 213.6 GiB",
@@ -152,19 +239,327 @@
         "filesystem_cleanup_inventory.csv",
         "FILESYSTEM_MASTER_AUDIT.md"
       ]
+    },
+    "catalog_first_pass": {
+      "inventory_rows": 1397,
+      "boot_ok_default_core": 1094,
+      "boot_ok_mame_current": 18,
+      "boot_ok_fbneo": 88,
+      "total_unique_boot_ok": 1200,
+      "control_certified": 0,
+      "guest_ready": 0,
+      "mame_0285_listxml_installed_shortnames": 1308,
+      "mame_0285_exact_machine_matches": 1260,
+      "mame_metadata_unmatched": 48,
+      "catalog_classification_rows": 1397,
+      "game_certification_rows": 1397,
+      "all_physical_controls_explicitly_not_tested": true
+    },
+    "certification": {
+      "systems_with_game_entries": 51,
+      "game_rows": 8426,
+      "historic_boot_ok": 1200,
+      "auto_certified_new": 0,
+      "control_certified": 0,
+      "guest_ready": 0,
+      "media_rows": 8432,
+      "images_present": 8047,
+      "videos_present": 7995,
+      "thumbnail_present": 7986,
+      "fanart_present": 6209,
+      "orphan_candidates": 3565,
+      "multiplayer_metadata_rows": 4074,
+      "metadata_max_players_5_to_8": 145,
+      "metadata_max_players_over_8": 11,
+      "runtime_5_to_8_certified": 0,
+      "physical_5_to_8_certified": 0,
+      "launch_tests_performed": 1,
+      "current_baseline": "VERIFIED; separate local 0600 file, historic backup preserved",
+      "safety": "BLOCKED: universal per-game restore integration not yet implemented and HDMI is not default audio sink",
+      "missing_primary_images": 385,
+      "image_references_absent": 380,
+      "image_references_broken": 5,
+      "transaction_engine": "SELF_TEST_PASS; ALTair POSITIVE CONTROL PASS; per-game file/tree restore verified",
+      "latest_control": {
+        "game": "altair",
+        "transaction_id": "20261115T074956_d283099c84",
+        "result": "CONTROL_LAUNCH_PASS",
+        "stable_seconds": 21.248476184991887,
+        "game_health_id": 8174,
+        "exit_code": 0,
+        "signal": null,
+        "restore": "RESTORE_VERIFIED",
+        "batocera_conf_sha_before_after": "098c88444322bacaac5f2f2383e5bf6e5fa42623353fe8c49d307fffc47b52d2",
+        "audio_default": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "mame_directories_snapshotted": [
+          "/userdata/saves/mame/mame",
+          "/userdata/saves/mame/plugins"
+        ],
+        "classification": "CONTROL_ONLY_NOT_NEW_GAME_CERTIFICATION"
+      }
+    },
+    "controllers_live": {
+      "panels": 4,
+      "external_gamepads": 2,
+      "p1": "USB5/event17/js0",
+      "p2": "USB6/event18/js1",
+      "p3": "USB8/event20/js3",
+      "p4": "USB7/event19/js2",
+      "mapping_modified": false
+    },
+    "console_inventory": {
+      "systems_with_entries": 51,
+      "gamelist_and_arcade_rows": 8426,
+      "installed_paths": 8400,
+      "missing_paths": 26,
+      "deleted_content": 0,
+      "runtime_tests_performed": 0
+    },
+    "publisher": {
+      "export_sync": "PASS",
+      "secret_scan": "PASS",
+      "payload_scan": "PASS",
+      "payload_bytes": 15457539,
+      "publish": "PUBLISH_FAILED",
+      "category": "LARGE_CHANGESET",
+      "add": 92,
+      "modify": 1,
+      "delete": 1,
+      "remote_write": "NOT PERFORMED"
+    },
+    "final_health": {
+      "checked_at": "2026-11-15T10:06:28+00:00",
+      "emulationstation": "ACTIVE",
+      "es_api_idle": true,
+      "running_game": "NONE",
+      "marker_absent": true,
+      "launcher_processes": 0,
+      "current_baseline": "MATCH",
+      "global_mame_core": "mame078plus",
+      "mame_overrides": 18,
+      "overrides_exact": true,
+      "P1": "USB5/event17/js0",
+      "P2": "USB6/event18/js1",
+      "P3": "USB8/event20/js3",
+      "P4": "USB7/event19/js2",
+      "panel_duplicates": false,
+      "default_audio_sink": "DualShock 4 (pre-existing issue; not HDMI)",
+      "new_regression": "NO"
+    },
+    "restore_transaction": {
+      "engine": "/userdata/system/el_gordo_tools/certification_transaction.py",
+      "self_test": "PASS",
+      "restore_conflict_guard": "PASS",
+      "batocera_conf_comment_mutation_restore": "RESTORE_VERIFIED",
+      "batocera_conf_sha_before": "098c88444322bacaac5f2f2383e5bf6e5fa42623353fe8c49d307fffc47b52d2",
+      "batocera_conf_sha_during": "aa7b1e099c1681af30cccf8dcbcb032d3c65c53df94a46c177d975cd4eff4147",
+      "batocera_conf_sha_after": "098c88444322bacaac5f2f2383e5bf6e5fa42623353fe8c49d307fffc47b52d2",
+      "positive_control": "NOT_RUN",
+      "mass_certifier_release": "BLOCKED"
+    },
+    "fbneo_dat": {
+      "status": "VERIFIED",
+      "dat_path": "/userdata/bios/fbneo/FinalBurn Neo (ClrMame Pro XML, Arcade only).dat",
+      "source": "Batocera 43.1 installed datainit; mirrored to /userdata/bios/fbneo",
+      "version": "1.0.0.03",
+      "sha256": "fde84d217c5df17a03ba234c421da084afdfe6cd778cc15b759d1e0c941a5f7d",
+      "core_info": "/usr/share/libretro/info/fbneo_libretro.info display_version v1.0.0.03",
+      "known_boot_ok_full_crc_matches": [
+        "sfiii3",
+        "captcomm"
+      ],
+      "reserved_candidates_launched": []
+    },
+    "github": {
+      "remote_head_before": "13e89ed7cb9f5ecedcbe52be39e2de643942153f",
+      "pending_changeset_review": "COMPLETE; 0 deletions; one-time exact-manifest publish not yet executed"
     }
   },
   "issues": [
     {
       "id": "AUD-001",
       "phase": "PHASE_01_AUDIO",
+      "system": "Batocera",
+      "game": "",
       "severity": "HIGH",
       "category": "UNINTENDED_SYSTEM_OVERLAY_SAVE",
+      "description": "batocera-save-overlay --help ejecutado anteriormente guardó el overlay; reboot validation pendiente. No se restauró un overlay histórico.",
+      "evidence": "FILESYSTEM_MASTER_AUDIT.md; overlay mtime 2026-11-15 06:22; comando reportó Success.",
       "status": "OPEN",
-      "evidence": "While querying batocera-save-overlay --help, this build ignored --help and ran the save: rsync -av --delete synced current /overlay/overlay (724 KiB) into /boot/boot/overlay (100 MiB). The file timestamp changed to 2026-11-15 06:22; no pre-action hash exists. Command output listed deletion of stale .local/state/wireplumber/default-routes and copied the live upperdir files. No reboot performed; /boot restored ro; operation reported Success. overlay.old is dated 2026-05 and was not restored because it is stale.",
-      "action": "No further root overlay writes until precise review. Continue independent read-only phases. Reboot persistence validation pending."
+      "action": "Mantener sistema base intacto; no restaurar overlay.old sin reconciliación.",
+      "manual_required": "YES"
+    },
+    {
+      "id": "AUD-002",
+      "phase": "PHASE_01_AUDIO",
+      "system": "Batocera",
+      "game": "",
+      "severity": "HIGH",
+      "category": "AUDIO_DEFAULT_WRONG",
+      "description": "El endpoint de audio USB del DualShock podía quedar como default. Se instaló una política de startup que resuelve HDMI por node.name estable. HDMI se observó como default con DS4 conectado y durante un control MAME de 21.25 s; falta desconexión/reconexión física y validación reboot.",
+      "evidence": "ARCADE_AUDIO_POLICY.md; helper/service y backup; pactl get-default-sink durante altair positivo.",
+      "status": "MITIGATED",
+      "action": "Completar prueba física de desconectar/reconectar DualShock y validar persistencia al siguiente reboot cuando sea conveniente.",
+      "manual_required": "YES"
+    },
+    {
+      "id": "CAT-001",
+      "phase": "PHASE_03_ARCADE_CATALOG",
+      "system": "mame/fbneo",
+      "game": "",
+      "severity": "MEDIUM",
+      "category": "CATALOG_CLASSIFICATION_FIRST_PASS",
+      "description": "1397 entradas tienen clasificación conservadora; falta reconciliar aliases, dependencias y valor antes de cualquier curación destructiva.",
+      "evidence": "game_certification.csv; arcade_catalog_classification.csv.",
+      "status": "OPEN",
+      "action": "Continuar revisión no destructiva.",
+      "manual_required": "NO"
+    },
+    {
+      "id": "SAFE-001",
+      "phase": "PHASE_04_MAME_UNRESOLVED",
+      "system": "mame",
+      "game": "",
+      "severity": "MEDIUM",
+      "category": "SMOKE_TEST_SAFETY_PAUSED",
+      "description": "El runner histórico no se usa. El motor transaccional actual ya tiene positive control con snapshots file/tree y guards; adapters de todos los sistemas siguen sin integrar.",
+      "evidence": "certification_transaction.py; tx 20261115T074956_d283099c84 RESTORE_VERIFIED.",
+      "status": "MITIGATED",
+      "action": "No usar runner histórico; adaptar cada sistema a rutas persistentes reales antes de certificarlo.",
+      "manual_required": "NO"
+    },
+    {
+      "id": "CTRL-001",
+      "phase": "PHASE_06_CONTROL_MODEL",
+      "system": "mame/fbneo",
+      "game": "",
+      "severity": "MEDIUM",
+      "category": "PHYSICAL_CONTROL_CERTIFICATION_PENDING",
+      "description": "Los eventos/mappings físicos de botones no se han probado por una persona.",
+      "evidence": "game_certification.csv; manual_physical_test_queue.csv.",
+      "status": "MANUAL_REQUIRED",
+      "action": "Usar cola física; mantener control_certification=NOT_TESTED hasta secuencias humanas reales.",
+      "manual_required": "YES"
+    },
+    {
+      "id": "CERT-001",
+      "phase": "PHASE_14_FULL_GAME_CERTIFICATION",
+      "system": "all",
+      "game": "",
+      "severity": "HIGH",
+      "category": "CERTIFIER_ADAPTERS_INCOMPLETE",
+      "description": "El runner viejo podía restaurar un batocera.conf histórico y no se usa. El motor nuevo pasó self-tests y control positivo altair con restore de 62 paths, incluyendo directory trees y SHA batocera.conf preservado. Falta integrar adapters por sistema y safety gates; no habilitar batch masivo todavía.",
+      "evidence": "certification_transaction.py; runtime/20261115T074956_d283099c84/manifest.json; blocker_resolution/altair_restore_verification.json.",
+      "status": "MITIGATED",
+      "action": "Implementar adapter pilot y gates por juego (identidad, core, HDMI, duración, exit, restore, huérfanos); después piloto de 10 juegos antes de lote mayor.",
+      "manual_required": "NO"
+    },
+    {
+      "id": "MEDIA-001",
+      "phase": "PHASE_15_VISUAL_MEDIA_AUDIT",
+      "system": "all",
+      "game": "",
+      "severity": "LOW",
+      "category": "MEDIA_ORPHAN_CANDIDATES",
+      "description": "Unreferenced media are review candidates; none deleted.",
+      "evidence": "media_audit.csv; media_orphan_candidates.csv.",
+      "status": "OPEN",
+      "action": "Revisar referencias antes de borrar.",
+      "manual_required": "NO"
+    },
+    {
+      "id": "MULTI-001",
+      "phase": "PHASE_16_MULTIPLAYER_8P",
+      "system": "all",
+      "game": "",
+      "severity": "MEDIUM",
+      "category": "MULTIPLAYER_METADATA_UNVERIFIED",
+      "description": "Metadata de 5–8 jugadores no equivale a simultaneidad/runtime/física certificada.",
+      "evidence": "multiplayer_games.csv; GAMES_5_TO_8_PLAYERS.md.",
+      "status": "OPEN",
+      "action": "Validar capacidad runtime y controles por juego.",
+      "manual_required": "YES"
+    },
+    {
+      "id": "FBN-001",
+      "phase": "PHASE_05_FBNEO",
+      "system": "fbneo",
+      "game": "",
+      "severity": "MEDIUM",
+      "category": "FBNEO_DAT_VERSION_VERIFIED",
+      "description": "DAT instalado v1.0.0.03 coincide con el core y con sets históricos; no se relanzaron candidatos reservados.",
+      "evidence": "ARCADE_FBNEO_AUDIT.md; DAT SHA fde84d217c5df17a03ba234c421da084afdfe6cd778cc15b759d1e0c941a5f7d.",
+      "status": "CLOSED",
+      "action": "Usar DAT instalado para read-only preflight.",
+      "manual_required": "NO"
+    },
+    {
+      "id": "GIT-001",
+      "phase": "PHASE_13_FINAL_RECONCILIATION",
+      "system": "Batocera",
+      "game": "",
+      "severity": "MEDIUM",
+      "category": "PUBLISHER_LARGE_CHANGESET",
+      "description": "LARGE_CHANGESET detuvo el publish sin debilitar guards. El changeset se auditó; el archivo remoto-only data/github_api_publish_test.json fue restaurado byte por byte en el source activo, dejando cero deletes. Se mantiene pendiente publicar sólo con manifest one-time de paths/status/size/SHA exactos.",
+      "evidence": "github_pending_changeset.csv; publisher state y manifest one-time (si se aprueba); scans finales.",
+      "status": "OPEN",
+      "action": "Recalcular y validar manifest exacto después del cierre documental; publicar sólo por --one-time-approved.",
+      "manual_required": "NO"
     }
   ],
   "manual_tests": [],
-  "last_action": "Phase 02 filesystem metadata inventory documented with zero deletions. Begin catalog reconciliation from existing arcade audit data."
+  "last_action": "Resolved HDMI selection policy at runtime, verified no-game transaction restore, found/version-checked FBNeo DAT, audited publisher changeset; no game launched.",
+  "scope_extension": {
+    "full_game_certification_requested": true,
+    "new_phases": [
+      "PHASE_14_FULL_GAME_CERTIFICATION",
+      "PHASE_15_VISUAL_MEDIA_AUDIT",
+      "PHASE_16_MULTIPLAYER_8P",
+      "PHASE_17_CONTROLLER_CERTIFICATION",
+      "PHASE_18_GUEST_READY_BUILD",
+      "PHASE_19_FAILURE_REPAIR_LOOP"
+    ],
+    "states_for_new_phases": [
+      "PENDING",
+      "RUNNING",
+      "COMPLETE",
+      "COMPLETE_WITH_ISSUES",
+      "MANUAL_REQUIRED",
+      "BLOCKED"
+    ],
+    "do_not_repeat_catalog_if_complete": true,
+    "do_not_launch_without_safe_per_game_restore": true,
+    "full_game_certification": {
+      "inventory_csv": "full_game_certification.csv",
+      "resume_checkpoint": "full_game_certification_checkpoint.json",
+      "resume_policy": "Continue from NOT_TESTED rows; never repeat a runtime attempt without explicit retry state and verified per-game restore."
+    }
+  },
+  "blocker_resolution": {
+    "updated_at": "2026-11-15T10:31:22+00:00",
+    "runtime_api": {
+      "/isIdle": {
+        "http": 200,
+        "body": "[ true ]"
+      },
+      "/runningGame": {
+        "http": 201,
+        "body": "{\"msg\":\"NO GAME RUNNING\"}"
+      }
+    },
+    "protected_hashes": {
+      "/userdata/system/batocera.conf": "098c88444322bacaac5f2f2383e5bf6e5fa42623353fe8c49d307fffc47b52d2",
+      "/userdata/system/configs/emulationstation/es_systems_el_gordo.cfg": "35a40be0bbce75807b38131673e4190c7f51354e60881a7169261ff71d523a10",
+      "/userdata/system/el_gordo_tools/controller_dispatcher": "a60be89fb45ea27ec4f7c3f546e088c7ff3da140bccfe1c6a37e5b14ec581c45",
+      "/userdata/system/el_gordo_tools/selector_controles": "c77b2aaae862580685d71bf0ef493e928c3ab28b00cd7464fdafb8843d888daf",
+      "/userdata/system/configs/el_gordo_controller_profiles/controller_technical.json": "11431873bed4f024d71707b71ad1b2e6848c2f79fafda485b086cad0a548af15",
+      "/userdata/system/services/custom_service": "ad81be13cea6cfade6ba4b9994b64ddb821b9680099c4a9233356fd3a9a4247c"
+    },
+    "global_core": "mame078plus",
+    "mame_override_count": 18,
+    "audio": "HDMI default verified while DS4 audio endpoint connected; reconnect pending",
+    "transaction_restore": "no-game tests PASS; positive control pending",
+    "fbneo_dat": "verified 1.0.0.03",
+    "github": "pending exact manifest and final publish"
+  }
 }

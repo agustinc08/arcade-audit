@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-15T10:07:42+00:00",
+  "source": "full_game_certification.csv",
+  "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
+  "next_untested": null,
+  "attempted_new": 0,
+  "auto_certified": 0,
+  "manual_control_certified": 0,
+  "guest_ready": 0,
+  "launches_blocked_by": [
+    "UNIVERSAL_RESTORE_ADAPTERS_NOT_IMPLEMENTED",
+    "AUDIO_DEFAULT_WRONG"
+  ],
+  "note": "Resume by selecting next row with auto_certification=NOT_TESTED after safety blockers resolved; no automatic retry of FAIL/FLAKY."
+}

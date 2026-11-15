@@ -1,0 +1,78 @@
+{
+  "updated_at": "2026-11-15T10:00:41+00:00",
+  "source": "controller_dispatcher --diagnose; SDL runtime; pactl sink names",
+  "BOTONERA_P1_P4": [
+    {
+      "name": "DragonRise Inc.   Generic   USB  Joystick",
+      "guid": "03000000790000000600000010010000",
+      "event_path": "/dev/input/event17",
+      "sdl_index": 0,
+      "transport": "USB",
+      "battery": "UNKNOWN",
+      "audio_capability": false,
+      "connected": true,
+      "player": "P1",
+      "usb_port": "5"
+    },
+    {
+      "name": "DragonRise Inc.   Generic   USB  Joystick",
+      "guid": "03000000790000000600000010010000",
+      "event_path": "/dev/input/event18",
+      "sdl_index": 1,
+      "transport": "USB",
+      "battery": "UNKNOWN",
+      "audio_capability": false,
+      "connected": true,
+      "player": "P2",
+      "usb_port": "6"
+    },
+    {
+      "name": "DragonRise Inc.   Generic   USB  Joystick",
+      "guid": "03000000790000000600000010010000",
+      "event_path": "/dev/input/event20",
+      "sdl_index": 3,
+      "transport": "USB",
+      "battery": "UNKNOWN",
+      "audio_capability": false,
+      "connected": true,
+      "player": "P3",
+      "usb_port": "8"
+    },
+    {
+      "name": "DragonRise Inc.   Generic   USB  Joystick",
+      "guid": "03000000790000000600000010010000",
+      "event_path": "/dev/input/event19",
+      "sdl_index": 2,
+      "transport": "USB",
+      "battery": "UNKNOWN",
+      "audio_capability": false,
+      "connected": true,
+      "player": "P4",
+      "usb_port": "7"
+    }
+  ],
+  "GAMEPADS_CONNECTED": [
+    {
+      "name": "Sony Interactive Entertainment Wireless Controller",
+      "guid": "030000004c050000cc09000011810000",
+      "event_path": "/dev/input/event21",
+      "sdl_index": 4,
+      "transport": "USB",
+      "battery": "UNKNOWN",
+      "audio_capability": true,
+      "connected": true
+    },
+    {
+      "name": "USB Gamepad",
+      "guid": "03000000100800000100000010010000",
+      "event_path": "/dev/input/event24",
+      "sdl_index": 5,
+      "transport": "USB",
+      "battery": "UNKNOWN",
+      "audio_capability": false,
+      "connected": true
+    }
+  ],
+  "audio_default_sink_identity": "see current WirePlumber/pactl state; device capability only, not certification",
+  "mapping_modified": false
+}

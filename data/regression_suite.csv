@@ -1,0 +1,36 @@
+category,system,rom,name,status,reason
+DREAMCAST,dreamcast,Ikaruga (Japan).chd,Ikaruga,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+DREAMCAST,dreamcast,Illbleed (USA).chd,Illbleed,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+DREAMCAST,dreamcast,Feet of Fury (USA) (Unl).chd,Feet of Fury,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+DREAMCAST,dreamcast,Derby Tsuku - Derby-ba o Tsukurou! (Japan).chd,Derby Tsuku : Derby Ba o Tsukurou!,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+DREAMCAST,dreamcast,Gunlord (Europe) (Unl).chd,GunLord,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+FIGHTING,fbneo,sfiii3.zip,Street Fighter III : 3rd Strike - Fight for the Future,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+BEAT_EM_UP,fbneo,captcomm.zip,Captain Commando,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+FIGHTING,fbneo,sfiii2.zip,Street Fighter III : 2nd Impact - Giant Attack,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+4P,fbneo,spidman.zip,Spider-Man: The Videogame,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+4P,fbneo,bbmanw.zip,New Dyna Blaster - Global Quest,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+4P,fbneo,ga2.zip,Golden Axe: The Revenge of Death Adder,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+4P,fbneo,moomesa.zip,Wild West C.O.W.-Boys of Moo Mesa,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+4P,fbneo,zeroteam.zip,zeroteam,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+FIGHTING,fbneo,sfz2al.zip,Street Fighter Zero 2 Alpha,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+BEAT_EM_UP,fbneo,tmnt.zip,Teenage Mutant Ninja Turtles,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+FIGHTING,fbneo,sfiii.zip,Street Fighter III : New Generation,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+FIGHTING,fbneo,sf2hf.zip,Street Fighter II' : Hyper Fighting,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+BEAT_EM_UP,fbneo,ffight.zip,Final Fight,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+BEAT_EM_UP,fbneo,dino.zip,Cadillacs and Dinosaurs,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+BEAT_EM_UP,mame,simpbowl.zip,Simpsons Bowling,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+N64,n64,Cruis'n USA (USA) (Rev B).zip,Cruis'n USA,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+N64,n64,Mario Kart 64 (3-4 players Grand Prix).zip,Mario Kart 64,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+N64,n64,"1080 TenEighty Snowboarding (Europe) (En,Ja,Fr,De).zip",1080 TenEighty Snowboarding,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+N64,n64,"San Francisco Rush 2049 (Europe) (En,Fr,De,Es,It,Nl).zip",San Francisco Rush 2049,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+N64,n64,Pokemon Stadium 2 (Spain).zip,Pokémon Stadium 2,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+PS2,ps2,Gregory Horror Show.chd,Gregory Horror Show,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+PS2,ps2,007 Agent Under Fire.iso,007 : Agent Under Fire,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+PS2,ps2,Crash TTR.iso,Crash Tag Team Racing,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+PS2,ps2,Urban Reign.iso,Urban Reign,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+PS2,ps2,Champions of Norrath.iso,Champions of Norrath,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+PS1,psx,Dino Crisis 2 (Spain).chd,Dino Crisis 2,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+PS1,psx,Mortal Kombat Trilogy (E) (v1.1) (Track 01) [SLES-02509].7z,Mortal Kombat Trilogy (E),NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+PS1,psx,"Team Buddies (Europe) (En,Es,It).cue",Team Buddies,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+PS1,psx,"Worms World Party (Europe) (En,Fr,De,Es,It,Nl,Sv,Da).cue",Worms World Party,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
+PS1,psx,PS1 - Digimon World (Euro-Pal Esp) [SLES-03436].chd,PS1: Digimon World,NOT_RUN,Representative regression candidate; launch blocked pending safe current baseline
