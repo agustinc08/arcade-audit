@@ -1,0 +1,22 @@
+path,size,mtime,category,reason,referenced_by,safe_to_delete,deleted,bytes_recovered
+/userdata,127415001088,2026-11-15T03:32:24-03:00,KEEP_ACTIVE,userdata root; contains active Batocera state and ROM merger,mount topology,NO,NO,0
+/userdata/system,33208254464,2026-11-15T06:07:38-03:00,KEEP_ACTIVE,persistent system config/runtime root,project docs and active services,NO,NO,0
+/userdata/system/state,128983040,2026-11-15T05:08:28-03:00,KEEP_EVIDENCE,audit state and checkpoints,audit reports/checkpoints,NO,NO,0
+/userdata/system/state/arcade_audit,30015488,2026-11-15T06:24:30-03:00,KEEP_EVIDENCE,active audit history; preserve,all audit runners/reports,NO,NO,0
+/userdata/system/el_gordo_tools,196608,2026-11-15T05:47:55-03:00,KEEP_ACTIVE,custom runtime tools,Batocera runtime and publisher,NO,NO,0
+/userdata/roms,1813808558080,2026-10-09T22:47:36-03:00,KEEP_ACTIVE,merged ROM namespace; ROM deletion excluded from this phase,mergerfs source branches,NO,NO,0
+/media/ROMS,1086071005184,2026-09-25T23:47:37-03:00,KEEP_ACTIVE,external 4TB games disk; do not remove contents,mount /dev/sdc1,NO,NO,0
+/media/ROMS/roms,1051592593408,2026-08-29T16:13:51-03:00,KEEP_ACTIVE,ROM branch; explicitly protected,mergerfs source branch,NO,NO,0
+/userdata/system/backups_el_gordo/FINAL_BATOCERA_CONTROLES_JUEGOS,2676129792,2026-07-31T13:09:15-03:00,KEEP_REQUIRED_BACKUP,critical historical recovery tree; preserve,BACKUPS.md,NO,NO,0
+/media/ROMS/ARCADE_BACKUPS/BASELINE_PRE_CAMBIOS_2026-09-25_234721,17870974976,2026-09-25T23:47:37-03:00,REVIEW_MANUAL,large baseline archive; retained because its full scope and redundancy are not yet established,historical baseline; no deletion proof,NO,NO,0
+/media/ROMS/ARCADE_BACKUPS/ARCADE_SMOKE_TEST_SAVES_2026-11-13_011039,17567744,2026-11-13T01:10:46-03:00,KEEP_REQUIRED_BACKUP,active save baseline referenced by current smoke checkpoint,checkpoint.json; protected_baseline.json; B3/B4/B5 checkpoints,NO,NO,0
+/media/ROMS/ARCADE_BACKUPS/ARCADE_ES_RESET_PRE_BATCH4_20261115_040813,12169216,2026-11-15T04:08:13-03:00,KEEP_REQUIRED_BACKUP,gamelist/config rollback snapshot referenced by Batch 4 evidence,mame_batch4_checkpoint.json and runtime diffs,NO,NO,0
+/media/ROMS/ARCADE_BACKUPS/ARCADE_CORE_PILOT_2026-11-13_093236,36864,2026-11-13T09:38:58-03:00,KEEP_EVIDENCE,pilot evidence and pretest config,pilot report/checkpoint,NO,NO,0
+/media/ROMS/ARCADE_BACKUPS/ARCADE_CORE_PILOT_BATCH2_2026-11-13_104010,528384,2026-11-13T10:40:10-03:00,KEEP_EVIDENCE,pilot batch 2 evidence and rollback material,pilot batch 2 reports/checkpoint,NO,NO,0
+/userdata/system/game_audit/game_boot_audit.json.pre_castlevania_recovery_20261008_004604.bak,7933878,2026-10-08T00:44:12-03:00,KEEP_EVIDENCE,pre-recovery audit backup; evidence value retained,game_audit history; exact consumers still under review,NO,NO,0
+/userdata/system/game_audit/game_boot_audit.csv.pre_castlevania_recovery_20261008_004604.bak,3983054,2026-10-08T00:44:12-03:00,KEEP_EVIDENCE,pre-recovery audit backup; evidence value retained,game_audit history; exact consumers still under review,NO,NO,0
+/userdata/system/game_audit/batches/BATCH_007_1000.json.pre_castlevania_recovery_20261008_004604.bak,283449,2026-10-08T00:44:12-03:00,KEEP_EVIDENCE,pre-recovery batch audit backup,game_audit history; exact consumers still under review,NO,NO,0
+/userdata/system/.roms_base/abuse/abuse_data/art/satan.bak,107365,2001-06-17T10:38:15-03:00,UNKNOWN,asset under an active game data tree; extension alone does not prove temporary,Abuse game data,NO,NO,0
+/userdata/system/.copilot/session-state/9e1547a7-4c40-47ff-b191-e3c879a8e225/checkpoints/001-solarus-import-audit-staging.md,9293,2026-08-02T10:53:57-03:00,KEEP_EVIDENCE,"session checkpoint, not a disposable staging directory",Copilot session state,NO,NO,0
+/userdata/system/.copilot/session-state/9e1547a7-4c40-47ff-b191-e3c879a8e225/checkpoints/002-importaci-n-solarus-staging.md,10720,2026-08-02T16:52:09-03:00,KEEP_EVIDENCE,"session checkpoint, not a disposable staging directory",Copilot session state,NO,NO,0
+/userdata/system/cache/rpcs3/cache/BLES01133/ppu-SixjXXnh76n3ubgy4YonsjP0Fxvu-EBOOT.BIN/＄v7-kusa-UWtvQ45Kcw77wHd0uzeQoP-00001P-alderlake.obj.gz.8fPgzR0NA12.tmp,0,2026-10-08T05:58:52-03:00,REVIEW_MANUAL,zero-byte temp-shaped RPCS3 cache file; no RPCS3 process found in this scan; leave untouched pending second verification,active RPCS3 cache namespace,NO,NO,0

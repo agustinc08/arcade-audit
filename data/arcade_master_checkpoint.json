@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "audit": "ARCADE_MASTER_HARDENING",
+  "created_at": "2026-11-15T09:19:52+00:00",
+  "updated_at": "2026-11-15T09:28:44+00:00",
+  "current_phase": "PHASE_03_ARCADE_CATALOG",
+  "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
+  "phases": {
+    "PHASE_01_AUDIO": {
+      "status": "BLOCKED",
+      "started_at": "2026-11-15T09:19:52+00:00",
+      "completed_at": null,
+      "summary": "Confirmed current misrouting: HDMI sink exists but DualShock 4 USB audio sink is default. Existing WirePlumber HDMI-priority rule matches stale PCI BDF 0000:04:00.1 while live GPU HDMI is 0000:01:00.1; HDMI priority.session=696 vs DS4=1009. Persistent correction deferred pending review of unexpected overlay save.",
+      "issues": [
+        "AUD-001"
+      ]
+    },
+    "PHASE_02_FILESYSTEM": {
+      "status": "COMPLETE_WITH_ISSUES",
+      "started_at": "2026-11-15T09:24:30+00:00",
+      "completed_at": "2026-11-15T09:28:44+00:00",
+      "summary": "Read-only storage topology and backup/temp inventory completed. No deletion was proven safe or performed; 21 inventory rows recorded. Unexpected overlay save is logged as AUD-001, with reboot persistence pending.",
+      "issues": []
+    },
+    "PHASE_03_ARCADE_CATALOG": {
+      "status": "RUNNING",
+      "started_at": "2026-11-15T09:28:44+00:00",
+      "completed_at": null,
+      "summary": "",
+      "issues": []
+    },
+    "PHASE_04_MAME_UNRESOLVED": {
+      "status": "PENDING",
+      "started_at": null,
+      "completed_at": null,
+      "summary": "",
+      "issues": []
+    },
+    "PHASE_05_FBNEO": {
+      "status": "PENDING",
+      "started_at": null,
+      "completed_at": null,
+      "summary": "",
+      "issues": []
+    },
+    "PHASE_06_CONTROL_MODEL": {
+      "status": "PENDING",
+      "started_at": null,
+      "completed_at": null,
+      "summary": "",
+      "issues": []
+    },
+    "PHASE_07_GUEST_MODE": {
+      "status": "PENDING",
+      "started_at": null,
+      "completed_at": null,
+      "summary": "",
+      "issues": []
+    },
+    "PHASE_08_CONTROLLER_INTELLIGENCE": {
+      "status": "PENDING",
+      "started_at": null,
+      "completed_at": null,
+      "summary": "",
+      "issues": []
+    },
+    "PHASE_09_CONSOLES": {
+      "status": "PENDING",
+      "started_at": null,
+      "completed_at": null,
+      "summary": "",
+      "issues": []
+    },
+    "PHASE_10_RECOVERY": {
+      "status": "PENDING",
+      "started_at": null,
+      "completed_at": null,
+      "summary": "",
+      "issues": []
+    },
+    "PHASE_11_CONTROL_OVERLAYS": {
+      "status": "PENDING",
+      "started_at": null,
+      "completed_at": null,
+      "summary": "",
+      "issues": []
+    },
+    "PHASE_12_ARCADE_MANAGER": {
+      "status": "PENDING",
+      "started_at": null,
+      "completed_at": null,
+      "summary": "",
+      "issues": []
+    },
+    "PHASE_13_FINAL_RECONCILIATION": {
+      "status": "PENDING",
+      "started_at": null,
+      "completed_at": null,
+      "summary": "",
+      "issues": []
+    }
+  },
+  "baseline": {
+    "inventory_arcade": 1397,
+    "boot_ok_default_core": 1094,
+    "boot_ok_mame_current": 18,
+    "boot_ok_fbneo": 88,
+    "total_unique_boot_ok": 1200,
+    "global_mame_core": "mame078plus",
+    "mame_individual_overrides_expected": 18,
+    "counts_source": "mame_batch5_checkpoint.json; verified against user-provided expectation",
+    "source_sha256": {
+      "mame_batch5_checkpoint.json": "eb3c974f62189cf319f17339e1743430d5fe15dc509dc7d3c606fe6b40ae1f82",
+      "ARCADE_MAME_BATCH5_RESULTS.md": "4f538d4feafad7fe8c6fd710309bc472aae813242f0d88ff3a8738b3386c2406",
+      "arcade_core_compatibility.csv": "994e3876e6e43c3c537a691353f3aae867b0687ef9ff282a2583af7f49fe3751",
+      "arcade_games_audit.csv": "ac2668f13950f3048d005137de021cdcaa244f77ad66d3728c5b2a384d5be7e8",
+      "checkpoint.json": "4b4db936feb1bd2bc6dc308f8d733a2643ed92614453148f438e3f197b43eb9e",
+      "GITHUB_API_PUBLISHER_SETUP.md": "98668324e74369bb9f5bbb242f821dc310fe9aaf42aaeb5bed735ecc6898ebb4"
+    },
+    "historical_smoke_test_safety": "checkpoint.json is paused because unrestricted launches may write save/NVRAM state; no broad launch tests until a safe, bounded restore model is validated"
+  },
+  "current_observations": {
+    "audio": {
+      "pipewire": "1.4.6",
+      "wireplumber": "1.4.6",
+      "hdmi_sink": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+      "hdmi_priority_session": 696,
+      "controller_audio_sink": "alsa_output.usb-Sony_Interactive_Entertainment_Wireless_Controller-00.analog-stereo",
+      "controller": "DualShock 4 [CUH-ZCT2x], USB VID:PID 054c:09cc",
+      "controller_priority_session": 1009,
+      "default_sink_is_controller": true,
+      "batocera_audio_device": "alsa_output.pci-0000_01_00.1.hdmi-surround",
+      "batocera_audio_profile": "output:hdmi-stereo@alsa_card.pci-0000_01_00.1",
+      "existing_hdmi_rule_file": "/etc/wireplumber/wireplumber.conf.d/51-loki-hdmi-priority.conf",
+      "existing_rule_matches_live_gpu": false,
+      "manual_reconnect_test": "PENDING"
+    },
+    "filesystem": {
+      "userdata_mount": "/dev/sda2 ext4 213.6 GiB",
+      "roms_mount": "mergerfs over userdata/.roms_base, /media/BATOCERA_ROMS/roms, /media/ROMS/roms",
+      "external_rom_disk": "/dev/sdc1 ext4 3.6 TiB",
+      "system_size_approx_bytes": 33300000000,
+      "internal_backup_bytes_approx": 2500000000,
+      "external_arcade_backups_bytes_approx": 35446764687,
+      "inventory_rows": 21,
+      "files_deleted": 0,
+      "backups_deleted": 0,
+      "temp_deleted": 0,
+      "roms_deleted": 0,
+      "bytes_recovered": 0,
+      "artifacts": [
+        "filesystem_cleanup_inventory.csv",
+        "FILESYSTEM_MASTER_AUDIT.md"
+      ]
+    }
+  },
+  "issues": [
+    {
+      "id": "AUD-001",
+      "phase": "PHASE_01_AUDIO",
+      "severity": "HIGH",
+      "category": "UNINTENDED_SYSTEM_OVERLAY_SAVE",
+      "status": "OPEN",
+      "evidence": "While querying batocera-save-overlay --help, this build ignored --help and ran the save: rsync -av --delete synced current /overlay/overlay (724 KiB) into /boot/boot/overlay (100 MiB). The file timestamp changed to 2026-11-15 06:22; no pre-action hash exists. Command output listed deletion of stale .local/state/wireplumber/default-routes and copied the live upperdir files. No reboot performed; /boot restored ro; operation reported Success. overlay.old is dated 2026-05 and was not restored because it is stale.",
+      "action": "No further root overlay writes until precise review. Continue independent read-only phases. Reboot persistence validation pending."
+    }
+  ],
+  "manual_tests": [],
+  "last_action": "Phase 02 filesystem metadata inventory documented with zero deletions. Begin catalog reconciliation from existing arcade audit data."
+}
