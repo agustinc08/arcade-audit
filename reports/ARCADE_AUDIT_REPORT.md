@@ -129,3 +129,8 @@ No se probaron automáticamente otros sistemas arcade en esta fase.
 - Total inventariado: 1397; PASS: 1182; FAIL/TIMEOUT: 215; NOT_TESTED: 0; input manual pendiente: 0.
 - No se inyectaron pulsaciones. PASS sólo confirma que el core permaneció abierto en la ventana y volvió a ES.
 - Clasificación input por metadata: COMPATIBLE_CON_VALIDACION=19, COMPATIBLE_DIRECTO_METADATA=874, INPUT_REVIEW_METADATA_INCOMPLETA=291, NO_COMPATIBLE_CON_BOTONERA=150, PARCIAL_CONTROL_STICK_ANALOGICO_O_ESPECIAL=44, PARCIAL_DUAL_STICK=17, PARCIAL_MAS_DE_4_JUGADORES=2.
+
+
+## Reconciliación posterior — MAME BATCH 5 (2026-11-15)
+
+Este apéndice actualiza el conteo global sin alterar las cifras históricas fechadas de la Fase 1. Con las fuentes actuales: `BOOT_OK_DEFAULT_CORE` (mame078plus) = 1094, `BOOT_OK_MAME_CURRENT` = 18, `BOOT_OK_FBNEO` = 88, `TOTAL_UNIQUE_BOOT_OK` = 1200 (unión por sistema/ROM, 0 solapamientos). BATCH 5 añadió `kov2p` y `martmast` con PASS y restore verificado. Ver `ARCADE_MAME_BATCH5_RESULTS.md`.

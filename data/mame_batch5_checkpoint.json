@@ -1,0 +1,4181 @@
+{
+  "batch": "MAME BATCH 5",
+  "phase": "COMPLETE_RECONCILED_RUNNER_GATE_FALSE_POSITIVE",
+  "created_at": "2026-11-15T05:07:38-03:00",
+  "historical_artifacts_preserved": {
+    "ARCADE_MAME_BATCH4_RESULTS.md": "7e8ec88020403060eb04c34566fb0991ed4e1d2fcaa54fe0cc068240bac4f52b",
+    "mame_batch4_checkpoint.json": "08ee801f1ed05d21aae226cc4976a300b925b6d810ac81859d1bb7afd9d48cf9",
+    "ARCADE_MAME_BATCH3_RESULTS.md": "2e131287f09d872cc681bd45b4a04e7cffe69eec36fe3d710da1c281801002a2",
+    "ARCADE_MAME_BATCH3_RESUME_RESULTS.md": "07051e6ecaa2284938adcd523050fdcd6df6b51e21fbbcb3adce5a68f1e17aca",
+    "mame_batch3_checkpoint.json": "1ab807fcc21f6a0bae4144bb7285ec2b32b6e01d32c197f5d3daa33415d60e48",
+    "mame_batch3_resume_checkpoint.json": "3431963ce42e7be5e11265ba6f23c5855c31f3845025d887545c3a3f639fac35",
+    "ARCADE_CORE_PILOT_RESULTS.md": "72b022db22aa643823524b5821297077449d1712254f7ad1f9b5db6761b8f351",
+    "ARCADE_CORE_PILOT_BATCH2_RESULTS.md": "17f0e2f7e61373ce293c4cbab2240a2a46a3a2e19686c416c09306833b6d67f0"
+  },
+  "prior_batch4_games_not_repeated": [
+    "lbgrande",
+    "sws98",
+    "tenkomor",
+    "multigam",
+    "multigm3",
+    "nratechu",
+    "ertictac"
+  ],
+  "excluded_already_mame_current": [
+    "ffight2b",
+    "altair",
+    "apache3",
+    "blazlaz",
+    "cubeqst",
+    "mvp",
+    "sia2650",
+    "redearth",
+    "jojo",
+    "jojoba",
+    "evosocc",
+    "hoops95",
+    "nbapbp",
+    "funcube4",
+    "hyperath",
+    "lbgrande",
+    "sws98",
+    "tenkomor",
+    "multigam",
+    "multigm3",
+    "nratechu",
+    "ertictac"
+  ],
+  "reserved_fbneo": [
+    "gprider",
+    "sfiii2n",
+    "sfiii3n",
+    "sfiiin",
+    "neotris"
+  ],
+  "excluded_kinstb": {
+    "shortname": "kinstb",
+    "identity": "Killer Instinct (SNES bootleg)",
+    "classification": "EXCLUDE_ARCADE_PRIORITY_SNES_BOOTLEG"
+  },
+  "pool": {
+    "mame_current_untested_matrix_rows": 161,
+    "old_core_rejected_mame_current_driver_game_pool": 145,
+    "normal_metadata_pool_after_exclusions": 45,
+    "preflight_considered": 45,
+    "verify_pass": 2,
+    "skip_preflight": 43
+  },
+  "preflight_file": "mame_batch5_preflight.json",
+  "preflight_sha256": "1167af78e6310ef766d784eda9422d676ae9a169b0c96941ea3b21c248f8bbfd",
+  "selected_candidates": [
+    "kov2p",
+    "martmast"
+  ],
+  "candidate_evidence": {
+    "kov2p": {
+      "shortname": "kov2p",
+      "name": "Knights of Valour 2 Plus - Nine Dragons / Sanguo Zhan Ji 2 Qunxiong Zhengba / Sanguo Zhan Ji 2 Feilong Zai Tian / Sangoku Senki Busyou Souha (ver. M205XX, 200, 100CN)",
+      "mame_name": "Knights of Valour 2 Plus - Nine Dragons / Sanguo Zhan Ji 2 Qunxiong Zhengba / Sanguo Zhan Ji 2 Feilong Zai Tian / Sangoku Senki Busyou Souha (ver. M205XX, 200, 100CN)",
+      "source": "arcade_core_compatibility.csv + MAME 0.285 current read-only output",
+      "core_default": "mame078plus",
+      "tested_mame_current_before": "NO",
+      "static_recommended_action": "KEEP_CURRENT_AND_INVESTIGATE",
+      "static_romset_status": "PARTIAL_CRC_MATCH_UNRESOLVED",
+      "static_players": "4",
+      "static_buttons": "4",
+      "static_control_type": "joy",
+      "input_classification": "DIRECT_COMPATIBLE",
+      "cloneof": null,
+      "romof": "pgm",
+      "rom_zip": "/userdata/roms/mame/kov2p.zip",
+      "rom_zip_present": true,
+      "rom_zip_size": 25090297,
+      "rom_zip_mtime_ns": 851463120000000000,
+      "listfull_rc": 0,
+      "listfull_output": "Name:             Description:\nkov2p             \"Knights of Valour 2 Plus - Nine Dragons / Sanguo Zhan Ji 2 Qunxiong Zhengba / Sanguo Zhan Ji 2 Feilong Zai Tian / Sangoku Senki Busyou Souha (ver. M205XX, 200, 100CN)\"",
+      "listxml_rc": 0,
+      "listxml_error": null,
+      "mame_machine": {
+        "shortname": "kov2p",
+        "description": "Knights of Valour 2 Plus - Nine Dragons / Sanguo Zhan Ji 2 Qunxiong Zhengba / Sanguo Zhan Ji 2 Feilong Zai Tian / Sangoku Senki Busyou Souha (ver. M205XX, 200, 100CN)",
+        "runnable": "yes",
+        "cloneof": null,
+        "romof": "pgm",
+        "isbios": "no",
+        "driver_status": "imperfect",
+        "driver_emulation": "good",
+        "players": "4",
+        "buttons": null,
+        "control_type": null,
+        "roms": [
+          {
+            "name": "pgm_p02s.u20",
+            "size": "131072",
+            "crc": "78c15fa2",
+            "sha1": "885a6558e022602cc6f482ac9667ba9f61e75092",
+            "status": "good",
+            "optional": "no",
+            "bios": "v2",
+            "merge": "pgm_p02s.u20"
+          },
+          {
+            "name": "pgm_p01s.u20",
+            "size": "131072",
+            "crc": "e42b166e",
+            "sha1": "2a9df9ec746b14b74fae48b1a438da14973702ea",
+            "status": "good",
+            "optional": "no",
+            "bios": "v1",
+            "merge": "pgm_p01s.u20"
+          },
+          {
+            "name": "v205_32m.u8",
+            "size": "4194304",
+            "crc": "3a2cc0de",
+            "sha1": "d7511478b34bfb03b2fb5b8268b60502d05b9414",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "kov2p_igs027a_china.bin",
+            "size": "16384",
+            "crc": "19a0bd95",
+            "sha1": "83e9f22512832a51d41c588debe8be7adb3b1df7",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "v200_16m.u23",
+            "size": "2097152",
+            "crc": "16a0c11f",
+            "sha1": "ce449cef76ebd5657d49b57951e2eb0f132e203e",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_t01s.rom",
+            "size": "2097152",
+            "crc": "1a7123a0",
+            "sha1": "cc567f577bfbf45427b54d6695b11b74f2578af3",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": "pgm_t01s.rom"
+          },
+          {
+            "name": "pgm_t1200.u21",
+            "size": "8388608",
+            "crc": "d7e26609",
+            "sha1": "bdad810f82fcf1d50a8791bdc495374ec5a309c6",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1200.u1",
+            "size": "8388608",
+            "crc": "ceeb81d8",
+            "sha1": "5476729443fc1bc9593ae10fbf7cbc5d7290b017",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1201.u4",
+            "size": "8388608",
+            "crc": "21063ca7",
+            "sha1": "cf561b44902425a920d5cbea5bf65dd9530b2289",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1202.u6",
+            "size": "8388608",
+            "crc": "4bb92fae",
+            "sha1": "f0b6d72ed425de1c69dc8f8d5795ea760a4a59b0",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1203.u8",
+            "size": "8388608",
+            "crc": "e73cb627",
+            "sha1": "4c6e48b845a5d1e8f9899010fbf273d54c2b8899",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1204.u10",
+            "size": "2097152",
+            "crc": "14b4b5bb",
+            "sha1": "d7db5740eec971f2782fb2885ee3af8f2a796550",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_b1200.u5",
+            "size": "8388608",
+            "crc": "bed7d994",
+            "sha1": "019dfba8154256d64cd249eb0fa4c451edce34b8",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_b1201.u7",
+            "size": "8388608",
+            "crc": "f251eb57",
+            "sha1": "56a5fc14ab7822f83379cecb26638e5bb266349a",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_m01s.rom",
+            "size": "2097152",
+            "crc": "45ae7159",
+            "sha1": "d3ed3ff3464557fd0df6b069b2e431528b0ebfa8",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": "pgm_m01s.rom"
+          },
+          {
+            "name": "pgm_m1200.u3",
+            "size": "8388608",
+            "crc": "b0d88720",
+            "sha1": "44ab137e3f8e15b7cb5697ffbd9b1143d8210c4f",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          }
+        ],
+        "bios_sets": [
+          {
+            "name": "v2",
+            "description": "PGM BIOS V2",
+            "default": "no"
+          },
+          {
+            "name": "v1",
+            "description": "PGM BIOS V1",
+            "default": "no"
+          }
+        ],
+        "disks": []
+      },
+      "runnable": true,
+      "driver_status": "imperfect",
+      "verifyroms_status": "PASS",
+      "verifyroms_rc": 0,
+      "verifyroms_output": "romset kov2p [pgm] is good\n1 romsets found, 1 were OK.",
+      "missing_files": [],
+      "final_preflight": "PREFLIGHT_PASS",
+      "preflight_failure_categories": []
+    },
+    "martmast": {
+      "shortname": "martmast",
+      "name": "Martial Masters / Xing Yi Quan (ver. 104, 102, 102US)",
+      "mame_name": "Martial Masters / Xing Yi Quan (ver. 104, 102, 102US)",
+      "source": "arcade_core_compatibility.csv + MAME 0.285 current read-only output",
+      "core_default": "mame078plus",
+      "tested_mame_current_before": "NO",
+      "static_recommended_action": "KEEP_CURRENT_AND_INVESTIGATE",
+      "static_romset_status": "PARTIAL_CRC_MATCH_UNRESOLVED",
+      "static_players": "4",
+      "static_buttons": "4",
+      "static_control_type": "joy",
+      "input_classification": "DIRECT_COMPATIBLE",
+      "cloneof": null,
+      "romof": "pgm",
+      "rom_zip": "/userdata/roms/mame/martmast.zip",
+      "rom_zip_present": true,
+      "rom_zip_size": 28525018,
+      "rom_zip_mtime_ns": 1239438721655868000,
+      "listfull_rc": 0,
+      "listfull_output": "Name:             Description:\nmartmast          \"Martial Masters / Xing Yi Quan (ver. 104, 102, 102US)\"",
+      "listxml_rc": 0,
+      "listxml_error": null,
+      "mame_machine": {
+        "shortname": "martmast",
+        "description": "Martial Masters / Xing Yi Quan (ver. 104, 102, 102US)",
+        "runnable": "yes",
+        "cloneof": null,
+        "romof": "pgm",
+        "isbios": "no",
+        "driver_status": "imperfect",
+        "driver_emulation": "good",
+        "players": "4",
+        "buttons": null,
+        "control_type": null,
+        "roms": [
+          {
+            "name": "pgm_p02s.u20",
+            "size": "131072",
+            "crc": "78c15fa2",
+            "sha1": "885a6558e022602cc6f482ac9667ba9f61e75092",
+            "status": "good",
+            "optional": "no",
+            "bios": "v2",
+            "merge": "pgm_p02s.u20"
+          },
+          {
+            "name": "pgm_p01s.u20",
+            "size": "131072",
+            "crc": "e42b166e",
+            "sha1": "2a9df9ec746b14b74fae48b1a438da14973702ea",
+            "status": "good",
+            "optional": "no",
+            "bios": "v1",
+            "merge": "pgm_p01s.u20"
+          },
+          {
+            "name": "v104_32m.u9",
+            "size": "4194304",
+            "crc": "cfd9dff4",
+            "sha1": "328eaf6ac49a73265ee4e0f992b1b1312f49877b",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "martial_masters_v102_usa.asic",
+            "size": "16384",
+            "crc": "a6c0828c",
+            "sha1": "0a5bda56dca264c3c7ff7698b8f699563f203c4d",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "v102_16m.u10",
+            "size": "2097152",
+            "crc": "18b745e6",
+            "sha1": "7bcb58dd3a2d6072f492cf0dd7181cb061c1f49d",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_t01s.rom",
+            "size": "2097152",
+            "crc": "1a7123a0",
+            "sha1": "cc567f577bfbf45427b54d6695b11b74f2578af3",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": "pgm_t01s.rom"
+          },
+          {
+            "name": "pgm_t1000.u3",
+            "size": "8388608",
+            "crc": "bbf879b5",
+            "sha1": "bd9a6aea34ad4001e89e62ff4b7a2292eb833c00",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1000.u3",
+            "size": "8388608",
+            "crc": "43577ac8",
+            "sha1": "6eea8b455985d5bac74dcc9943cdc3c0902de6cc",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1001.u4",
+            "size": "8388608",
+            "crc": "fe7a476f",
+            "sha1": "a8c7f1f0dd3e53141aed6d927eb88a3ceebb81e4",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1002.u6",
+            "size": "8388608",
+            "crc": "62e33d38",
+            "sha1": "96163d583e25073594f8413ce263e56b66bd69a1",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1003.u8",
+            "size": "8388608",
+            "crc": "b2c4945a",
+            "sha1": "7b18287a2db56db3651cfd4deb607af53522fefd",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1004.u10",
+            "size": "4194304",
+            "crc": "9fd3f5fd",
+            "sha1": "057531f91062be51589c6cf8f4170089b9be6380",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_b1000.u9",
+            "size": "8388608",
+            "crc": "c5961f6f",
+            "sha1": "a68060b10edbd084cbde79d2ed1c9084777beb10",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_b1001.u11",
+            "size": "8388608",
+            "crc": "0b7e1c06",
+            "sha1": "545e15e0087f8621d593fecd8b4013f7ca311686",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_m01s.rom",
+            "size": "2097152",
+            "crc": "45ae7159",
+            "sha1": "d3ed3ff3464557fd0df6b069b2e431528b0ebfa8",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": "pgm_m01s.rom"
+          },
+          {
+            "name": "pgm_m1000.u5",
+            "size": "8388608",
+            "crc": "ed407ae8",
+            "sha1": "a6e9c09b39c13e8fb7fbc89fa9f823cbeb66e901",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_m1001.u7",
+            "size": "4194304",
+            "crc": "662d2d48",
+            "sha1": "2fcc3099d9c04456cae3b13035fb28eaf709e7d8",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          }
+        ],
+        "bios_sets": [
+          {
+            "name": "v2",
+            "description": "PGM BIOS V2",
+            "default": "no"
+          },
+          {
+            "name": "v1",
+            "description": "PGM BIOS V1",
+            "default": "no"
+          }
+        ],
+        "disks": []
+      },
+      "runnable": true,
+      "driver_status": "imperfect",
+      "verifyroms_status": "PASS",
+      "verifyroms_rc": 0,
+      "verifyroms_output": "romset martmast [pgm] is good\n1 romsets found, 1 were OK.",
+      "missing_files": [],
+      "final_preflight": "PREFLIGHT_PASS",
+      "preflight_failure_categories": []
+    }
+  },
+  "preflight_skips": [
+    {
+      "shortname": "kdynastg",
+      "cause": [
+        "NO_GOOD_DUMP_REQUIRED",
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "ppcar",
+      "cause": [
+        "NO_GOOD_DUMP_REQUIRED",
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "theglad",
+      "cause": [
+        "NO_GOOD_DUMP_REQUIRED",
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "kov2",
+      "cause": [
+        "MISSING_PARENT"
+      ]
+    },
+    {
+      "shortname": "svg",
+      "cause": [
+        "NO_GOOD_DUMP_REQUIRED",
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "nagano98",
+      "cause": [
+        "MISSING_PARENT"
+      ]
+    },
+    {
+      "shortname": "ddux",
+      "cause": [
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "dynwar",
+      "cause": [
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "mk4",
+      "cause": [
+        "ROMSET_BAD",
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "sfzch",
+      "cause": [
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "aerofgts",
+      "cause": [
+        "NO_GOOD_DUMP_REQUIRED",
+        "MISSING_PARENT"
+      ]
+    },
+    {
+      "shortname": "rdft",
+      "cause": [
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "rdft2",
+      "cause": [
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "rfjet",
+      "cause": [
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "gradius4",
+      "cause": [
+        "ROMSET_BAD",
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "ar_ldrb",
+      "cause": [
+        "MISSING_BIOS",
+        "MISSING_PARENT"
+      ]
+    },
+    {
+      "shortname": "ar_ninj",
+      "cause": [
+        "MISSING_BIOS",
+        "MISSING_PARENT"
+      ]
+    },
+    {
+      "shortname": "ar_sprg",
+      "cause": [
+        "MISSING_BIOS",
+        "MISSING_PARENT"
+      ]
+    },
+    {
+      "shortname": "bldyror2",
+      "cause": [
+        "NO_GOOD_DUMP_REQUIRED",
+        "MISSING_PARENT",
+        "ROMSET_BAD"
+      ]
+    },
+    {
+      "shortname": "cbaj",
+      "cause": [
+        "NO_GOOD_DUMP_REQUIRED",
+        "MISSING_PARENT"
+      ]
+    },
+    {
+      "shortname": "dacholer",
+      "cause": [
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "darkhleg",
+      "cause": [
+        "NO_GOOD_DUMP_REQUIRED",
+        "MISSING_PARENT",
+        "ROMSET_BAD"
+      ]
+    },
+    {
+      "shortname": "dsftkd",
+      "cause": [
+        "NO_GOOD_DUMP_REQUIRED",
+        "MISSING_PARENT",
+        "ROMSET_BAD"
+      ]
+    },
+    {
+      "shortname": "dstage",
+      "cause": [
+        "DRIVER_NOT_RUNNABLE"
+      ]
+    },
+    {
+      "shortname": "fishfren",
+      "cause": [
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "flamegun",
+      "cause": [
+        "NO_GOOD_DUMP_REQUIRED",
+        "MISSING_PARENT"
+      ]
+    },
+    {
+      "shortname": "freezeat",
+      "cause": [
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "gekisou",
+      "cause": [
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "glpracr3",
+      "cause": [
+        "NO_GOOD_DUMP_REQUIRED",
+        "MISSING_PARENT"
+      ]
+    },
+    {
+      "shortname": "hvnsgate",
+      "cause": [
+        "NO_GOOD_DUMP_REQUIRED",
+        "MISSING_PARENT"
+      ]
+    },
+    {
+      "shortname": "jockeygp",
+      "cause": [
+        "MISSING_PARENT"
+      ]
+    },
+    {
+      "shortname": "konam80s",
+      "cause": [
+        "NO_GOOD_DUMP_REQUIRED",
+        "MISSING_PARENT",
+        "ROMSET_BAD"
+      ]
+    },
+    {
+      "shortname": "mfjump",
+      "cause": [
+        "NO_GOOD_DUMP_REQUIRED",
+        "MISSING_PARENT"
+      ]
+    },
+    {
+      "shortname": "misncrft",
+      "cause": [
+        "ROMSET_BAD",
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "scorpion",
+      "cause": [
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "senkyu",
+      "cause": [
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "shngmtkb",
+      "cause": [
+        "NO_GOOD_DUMP_REQUIRED",
+        "MISSING_PARENT"
+      ]
+    },
+    {
+      "shortname": "sqix",
+      "cause": [
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "suplup",
+      "cause": [
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "tblkkuzu",
+      "cause": [
+        "NO_GOOD_DUMP_REQUIRED",
+        "MISSING_PARENT"
+      ]
+    },
+    {
+      "shortname": "twinbrat",
+      "cause": [
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "viprp1",
+      "cause": [
+        "MISSING_ROM_MEMBER"
+      ]
+    },
+    {
+      "shortname": "weddingr",
+      "cause": [
+        "MISSING_PARENT"
+      ]
+    }
+  ],
+  "global_core_before": "mame078plus",
+  "arcade_system_core_metadata": [
+    [
+      "mame",
+      {}
+    ],
+    [
+      "mame078plus",
+      {
+        "default": "true"
+      }
+    ]
+  ],
+  "overrides_before": [
+    "altair.zip",
+    "apache3.zip",
+    "blazlaz.zip",
+    "cubeqst.zip",
+    "ertictac.zip",
+    "evosocc.zip",
+    "ffight2b.zip",
+    "funcube4.zip",
+    "hoops95.zip",
+    "lbgrande.zip",
+    "multigam.zip",
+    "multigm3.zip",
+    "nratechu.zip",
+    "sia2650.zip",
+    "sws98.zip",
+    "tenkomor.zip"
+  ],
+  "expected_overrides_before": [
+    "altair.zip",
+    "apache3.zip",
+    "blazlaz.zip",
+    "cubeqst.zip",
+    "ertictac.zip",
+    "evosocc.zip",
+    "ffight2b.zip",
+    "funcube4.zip",
+    "hoops95.zip",
+    "lbgrande.zip",
+    "multigam.zip",
+    "multigm3.zip",
+    "nratechu.zip",
+    "sia2650.zip",
+    "sws98.zip",
+    "tenkomor.zip"
+  ],
+  "dispatcher_sha256_before": "a60be89fb45ea27ec4f7c3f546e088c7ff3da140bccfe1c6a37e5b14ec581c45",
+  "api_before": {
+    "idle_raw": {
+      "status": 200,
+      "body": "[ true ]"
+    },
+    "idle": true,
+    "game_raw": {
+      "status": 201,
+      "body": "{\"msg\":\"NO GAME RUNNING\"}"
+    },
+    "game": null
+  },
+  "marker_absent_before": true,
+  "launch_processes_before": [],
+  "p1_p4_before": {
+    "players": {
+      "P1": [
+        "5",
+        "/dev/input/event17"
+      ],
+      "P2": [
+        "6",
+        "/dev/input/event18"
+      ],
+      "P3": [
+        "8",
+        "/dev/input/event20"
+      ],
+      "P4": [
+        "7",
+        "/dev/input/event19"
+      ]
+    },
+    "sdl_paths": [
+      "/dev/input/event17",
+      "/dev/input/event18",
+      "/dev/input/event19",
+      "/dev/input/event20"
+    ],
+    "duplicates": false
+  },
+  "es_pids_before": [
+    29733
+  ],
+  "protected_backup_path": "/media/ROMS/ARCADE_BACKUPS/ARCADE_SMOKE_TEST_SAVES_2026-11-13_011039",
+  "protected_baseline_sha256": "271e378d77efd4be6e5b62cbd74a8d9ef302f262452152e15de97cbea07230db",
+  "system_health_before": {
+    "cpu_temp_c": 49.0,
+    "meminfo": [
+      "MemTotal:       16216572 kB",
+      "MemFree:         7295592 kB",
+      "MemAvailable:   14580312 kB",
+      "Buffers:          406656 kB",
+      "Cached:          6923724 kB",
+      "SwapCached:            0 kB"
+    ],
+    "recent_dmesg_tail": [
+      "[17976.891508] input: evmapy as /devices/virtual/input/input236",
+      "[17977.158205] input: batocera-mouse-reset as /devices/virtual/input/input237",
+      "[17995.590748] input: evmapy as /devices/virtual/input/input238",
+      "[17995.838227] input: batocera-mouse-reset as /devices/virtual/input/input239",
+      "[18010.943553] input: evmapy as /devices/virtual/input/input240",
+      "[18011.191349] input: batocera-mouse-reset as /devices/virtual/input/input241",
+      "[18029.612851] input: evmapy as /devices/virtual/input/input242",
+      "[18029.873737] input: batocera-mouse-reset as /devices/virtual/input/input243",
+      "[18043.792371] input: evmapy as /devices/virtual/input/input244",
+      "[18044.038927] input: batocera-mouse-reset as /devices/virtual/input/input245",
+      "[18058.458348] input: evmapy as /devices/virtual/input/input246",
+      "[18058.704638] input: batocera-mouse-reset as /devices/virtual/input/input247",
+      "[18073.204546] input: evmapy as /devices/virtual/input/input248",
+      "[18073.470732] input: batocera-mouse-reset as /devices/virtual/input/input249",
+      "[18091.667274] input: evmapy as /devices/virtual/input/input250",
+      "[18091.921024] input: batocera-mouse-reset as /devices/virtual/input/input251",
+      "[18106.823402] input: evmapy as /devices/virtual/input/input252",
+      "[18107.069601] input: batocera-mouse-reset as /devices/virtual/input/input253",
+      "[18121.612843] input: evmapy as /devices/virtual/input/input254",
+      "[18121.869991] input: batocera-mouse-reset as /devices/virtual/input/input255",
+      "[18135.912331] input: evmapy as /devices/virtual/input/input256",
+      "[18136.172457] input: batocera-mouse-reset as /devices/virtual/input/input257",
+      "[18155.994927] input: evmapy as /devices/virtual/input/input258",
+      "[18156.252521] input: batocera-mouse-reset as /devices/virtual/input/input259",
+      "[18170.787687] input: evmapy as /devices/virtual/input/input260",
+      "[18171.036181] input: batocera-mouse-reset as /devices/virtual/input/input261",
+      "[18185.953838] input: evmapy as /devices/virtual/input/input262",
+      "[18186.202169] input: batocera-mouse-reset as /devices/virtual/input/input263",
+      "[18201.079912] input: evmapy as /devices/virtual/input/input264",
+      "[18201.335723] input: batocera-mouse-reset as /devices/virtual/input/input265",
+      "[18215.795970] input: evmapy as /devices/virtual/input/input266",
+      "[18216.053332] input: batocera-mouse-reset as /devices/virtual/input/input267",
+      "[18231.015387] input: evmapy as /devices/virtual/input/input268",
+      "[18231.287096] input: batocera-mouse-reset as /devices/virtual/input/input269",
+      "[18245.771504] input: evmapy as /devices/virtual/input/input270",
+      "[18246.036190] input: batocera-mouse-reset as /devices/virtual/input/input271",
+      "[18260.984366] input: evmapy as /devices/virtual/input/input272",
+      "[18261.238344] input: batocera-mouse-reset as /devices/virtual/input/input273",
+      "[18275.547191] input: evmapy as /devices/virtual/input/input274",
+      "[18275.799499] input: batocera-mouse-reset as /devices/virtual/input/input275",
+      "[18289.953300] input: evmapy as /devices/virtual/input/input276",
+      "[18290.216782] input: batocera-mouse-reset as /devices/virtual/input/input277",
+      "[18291.486961] retroarch[28948]: segfault at 30 ip 00007f0b758b11c2 sp 00007ffe9b4c8b30 error 4 in mame078plus_libretro.so[bed1c2,7f0b7566f000+78a000] likely on CPU 10 (core 5, socket 0)",
+      "[18291.486968] Code: 8b 04 82 89 fa c1 fa 1f c1 ea 15 c1 e0 0b 01 d7 48 98 81 e7 ff 07 00 00 29 d7 48 8d 15 57 8c d6 01 48 63 ff 48 8b 12 48 01 f8 <44> 0f b7 04 42 48 8d 15 c6 8b d6 01 44 89 c0 44 89 c3 44 89 c6 25",
+      "[18305.452727] input: evmapy as /devices/virtual/input/input278",
+      "[18305.714364] input: batocera-mouse-reset as /devices/virtual/input/input279",
+      "[18330.711832] input: evmapy as /devices/virtual/input/input280",
+      "[18330.970076] input: batocera-mouse-reset as /devices/virtual/input/input281",
+      "[18346.004381] input: evmapy as /devices/virtual/input/input282",
+      "[18346.246787] input: batocera-mouse-reset as /devices/virtual/input/input283",
+      "[18360.997336] input: evmapy as /devices/virtual/input/input284",
+      "[18361.264412] input: batocera-mouse-reset as /devices/virtual/input/input285",
+      "[18375.663442] input: evmapy as /devices/virtual/input/input286",
+      "[18375.928882] input: batocera-mouse-reset as /devices/virtual/input/input287",
+      "[18391.276179] input: evmapy as /devices/virtual/input/input288",
+      "[18391.533355] input: batocera-mouse-reset as /devices/virtual/input/input289",
+      "[18405.878882] input: evmapy as /devices/virtual/input/input290",
+      "[18406.147905] input: batocera-mouse-reset as /devices/virtual/input/input291",
+      "[18420.795077] input: evmapy as /devices/virtual/input/input292",
+      "[18421.046350] input: batocera-mouse-reset as /devices/virtual/input/input293",
+      "[18435.667669] input: evmapy as /devices/virtual/input/input294",
+      "[18435.912616] input: batocera-mouse-reset as /devices/virtual/input/input295",
+      "[18460.630217] input: evmapy as /devices/virtual/input/input296",
+      "[18460.892657] input: batocera-mouse-reset as /devices/virtual/input/input297",
+      "[18476.009646] input: evmapy as /devices/virtual/input/input298",
+      "[18476.285542] input: batocera-mouse-reset as /devices/virtual/input/input299",
+      "[18490.739080] input: evmapy as /devices/virtual/input/input300",
+      "[18490.993495] input: batocera-mouse-reset as /devices/virtual/input/input301",
+      "[18505.998509] input: evmapy as /devices/virtual/input/input302",
+      "[18506.243746] input: batocera-mouse-reset as /devices/virtual/input/input303",
+      "[18520.601192] input: evmapy as /devices/virtual/input/input304",
+      "[18520.860439] input: batocera-mouse-reset as /devices/virtual/input/input305",
+      "[18534.690669] input: evmapy as /devices/virtual/input/input306",
+      "[18534.943799] input: batocera-mouse-reset as /devices/virtual/input/input307",
+      "[18560.613004] input: evmapy as /devices/virtual/input/input308",
+      "[18560.878143] input: batocera-mouse-reset as /devices/virtual/input/input309",
+      "[18574.872371] input: evmapy as /devices/virtual/input/input310",
+      "[18575.124675] input: batocera-mouse-reset as /devices/virtual/input/input311",
+      "[18590.365354] input: evmapy as /devices/virtual/input/input312",
+      "[18590.607535] input: batocera-mouse-reset as /devices/virtual/input/input313",
+      "[18605.834717] input: evmapy as /devices/virtual/input/input314",
+      "[18606.089923] input: batocera-mouse-reset as /devices/virtual/input/input315",
+      "[18620.557309] input: evmapy as /devices/virtual/input/input316",
+      "[18620.828833] input: batocera-mouse-reset as /devices/virtual/input/input317",
+      "[18636.043502] input: evmapy as /devices/virtual/input/input318",
+      "[18636.307358] input: batocera-mouse-reset as /devices/virtual/input/input319",
+      "[18650.746215] input: evmapy as /devices/virtual/input/input320",
+      "[18651.005449] input: batocera-mouse-reset as /devices/virtual/input/input321",
+      "[18669.518991] input: evmapy as /devices/virtual/input/input322",
+      "[18669.772827] input: batocera-mouse-reset as /devices/virtual/input/input323",
+      "[18684.638334] input: evmapy as /devices/virtual/input/input324",
+      "[18684.905583] input: batocera-mouse-reset as /devices/virtual/input/input325",
+      "[18709.940611] input: evmapy as /devices/virtual/input/input326",
+      "[18710.199760] input: batocera-mouse-reset as /devices/virtual/input/input327",
+      "[18724.833579] input: evmapy as /devices/virtual/input/input328",
+      "[18725.086825] input: batocera-mouse-reset as /devices/virtual/input/input329",
+      "[18740.039644] input: evmapy as /devices/virtual/input/input330",
+      "[18740.295758] input: batocera-mouse-reset as /devices/virtual/input/input331",
+      "[18754.712427] input: evmapy as /devices/virtual/input/input332",
+      "[18754.970182] input: batocera-mouse-reset as /devices/virtual/input/input333",
+      "[18769.871852] input: evmapy as /devices/virtual/input/input334",
+      "[18770.141328] input: batocera-mouse-reset as /devices/virtual/input/input335",
+      "[18784.801291] input: evmapy as /devices/virtual/input/input336",
+      "[18785.056627] input: batocera-mouse-reset as /devices/virtual/input/input337",
+      "[18799.757307] input: evmapy as /devices/virtual/input/input338",
+      "[18800.019396] input: batocera-mouse-reset as /devices/virtual/input/input339",
+      "[18814.706845] input: evmapy as /devices/virtual/input/input340",
+      "[18814.968681] input: batocera-mouse-reset as /devices/virtual/input/input341",
+      "[18830.209575] input: evmapy as /devices/virtual/input/input342",
+      "[18830.471246] input: batocera-mouse-reset as /devices/virtual/input/input343",
+      "[18845.072355] input: evmapy as /devices/virtual/input/input344",
+      "[18845.335668] input: batocera-mouse-reset as /devices/virtual/input/input345",
+      "[18860.058344] input: evmapy as /devices/virtual/input/input346",
+      "[18860.320241] input: batocera-mouse-reset as /devices/virtual/input/input347",
+      "[18874.851193] input: evmapy as /devices/virtual/input/input348",
+      "[18875.117201] input: batocera-mouse-reset as /devices/virtual/input/input349",
+      "[18889.500666] input: evmapy as /devices/virtual/input/input350",
+      "[18889.750995] input: batocera-mouse-reset as /devices/virtual/input/input351",
+      "[18903.683375] input: evmapy as /devices/virtual/input/input352",
+      "[18903.948528] input: batocera-mouse-reset as /devices/virtual/input/input353",
+      "[18918.809581] input: evmapy as /devices/virtual/input/input354",
+      "[18919.065364] input: batocera-mouse-reset as /devices/virtual/input/input355",
+      "[18939.348760] input: evmapy as /devices/virtual/input/input356",
+      "[18939.616591] input: batocera-mouse-reset as /devices/virtual/input/input357",
+      "[18953.668186] input: evmapy as /devices/virtual/input/input358",
+      "[18953.915044] input: batocera-mouse-reset as /devices/virtual/input/input359",
+      "[18979.103919] input: evmapy as /devices/virtual/input/input360",
+      "[18979.350073] input: batocera-mouse-reset as /devices/virtual/input/input361",
+      "[18993.756737] input: evmapy as /devices/virtual/input/input362",
+      "[18994.020552] input: batocera-mouse-reset as /devices/virtual/input/input363",
+      "[19009.106048] input: evmapy as /devices/virtual/input/input364",
+      "[19009.363326] input: batocera-mouse-reset as /devices/virtual/input/input365",
+      "[19023.915496] input: evmapy as /devices/virtual/input/input366",
+      "[19024.163241] input: batocera-mouse-reset as /devices/virtual/input/input367",
+      "[19038.395011] input: evmapy as /devices/virtual/input/input368",
+      "[19038.646523] input: batocera-mouse-reset as /devices/virtual/input/input369",
+      "[19053.057733] input: evmapy as /devices/virtual/input/input370",
+      "[19053.313694] input: batocera-mouse-reset as /devices/virtual/input/input371",
+      "[19068.557223] input: evmapy as /devices/virtual/input/input372",
+      "[19068.813203] input: batocera-mouse-reset as /devices/virtual/input/input373",
+      "[19083.746673] input: evmapy as /devices/virtual/input/input374",
+      "[19083.995542] input: batocera-mouse-reset as /devices/virtual/input/input375",
+      "[19099.132758] input: evmapy as /devices/virtual/input/input376",
+      "[19099.392941] input: batocera-mouse-reset as /devices/virtual/input/input377",
+      "[19114.102183] input: evmapy as /devices/virtual/input/input378",
+      "[19114.360076] input: batocera-mouse-reset as /devices/virtual/input/input379",
+      "[19128.798279] input: evmapy as /devices/virtual/input/input380",
+      "[19129.059620] input: batocera-mouse-reset as /devices/virtual/input/input381",
+      "[19143.607635] input: evmapy as /devices/virtual/input/input382",
+      "[19143.860458] input: batocera-mouse-reset as /devices/virtual/input/input383",
+      "[19145.057322] retroarch[9153]: segfault at 13b412bb4 ip 00007f8b390d88d7 sp 00007fff03195cc0 error 4 in mame078plus_libretro.so[a508d7,7f8b39033000+78a000] likely on CPU 6 (core 3, socket 0)",
+      "[19145.057344] Code: 41 55 41 54 49 89 fc 55 53 48 89 d3 48 83 ec 38 48 85 ff 0f 84 c2 02 00 00 8b 57 08 83 fa 10 7f 32 83 fa 0e 0f 8e 4a 09 00 00 <8b> bb 84 00 00 00 48 8d 2d ac dd ff ff 85 ff 75 32 48 83 c4 38 5b",
+      "[19158.353858] input: evmapy as /devices/virtual/input/input384",
+      "[19158.609589] input: batocera-mouse-reset as /devices/virtual/input/input385",
+      "[19173.186640] input: evmapy as /devices/virtual/input/input386",
+      "[19173.461073] input: batocera-mouse-reset as /devices/virtual/input/input387",
+      "[19187.666069] input: evmapy as /devices/virtual/input/input388",
+      "[19187.907806] input: batocera-mouse-reset as /devices/virtual/input/input389",
+      "[19202.281990] input: evmapy as /devices/virtual/input/input390",
+      "[19202.524731] input: batocera-mouse-reset as /devices/virtual/input/input391",
+      "[19216.808314] input: evmapy as /devices/virtual/input/input392",
+      "[19217.058587] input: batocera-mouse-reset as /devices/virtual/input/input393",
+      "[19232.007729] input: evmapy as /devices/virtual/input/input394",
+      "[19232.259380] input: batocera-mouse-reset as /devices/virtual/input/input395",
+      "[19246.763850] input: evmapy as /devices/virtual/input/input396",
+      "[19247.007321] input: batocera-mouse-reset as /devices/virtual/input/input397",
+      "[19261.473184] input: evmapy as /devices/virtual/input/input398",
+      "[19261.723464] input: batocera-mouse-reset as /devices/virtual/input/input399",
+      "[19275.806072] input: evmapy as /devices/virtual/input/input400",
+      "[19276.073369] input: batocera-mouse-reset as /devices/virtual/input/input401",
+      "[19291.195488] input: evmapy as /devices/virtual/input/input402",
+      "[19291.445830] input: batocera-mouse-reset as /devices/virtual/input/input403",
+      "[19306.144911] input: evmapy as /devices/virtual/input/input404",
+      "[19306.407810] input: batocera-mouse-reset as /devices/virtual/input/input405",
+      "[19320.667730] input: evmapy as /devices/virtual/input/input406",
+      "[19320.937689] input: batocera-mouse-reset as /devices/virtual/input/input407",
+      "[19335.387154] input: evmapy as /devices/virtual/input/input408",
+      "[19335.639358] input: batocera-mouse-reset as /devices/virtual/input/input409",
+      "[19349.949920] input: evmapy as /devices/virtual/input/input410",
+      "[19350.220947] input: batocera-mouse-reset as /devices/virtual/input/input411",
+      "[19364.542720] input: evmapy as /devices/virtual/input/input412",
+      "[19364.791182] input: batocera-mouse-reset as /devices/virtual/input/input413",
+      "[19389.838450] input: evmapy as /devices/virtual/input/input414",
+      "[19390.086655] input: batocera-mouse-reset as /devices/virtual/input/input415",
+      "[19404.644538] input: evmapy as /devices/virtual/input/input416",
+      "[19404.903842] input: batocera-mouse-reset as /devices/virtual/input/input417",
+      "[19420.090657] input: evmapy as /devices/virtual/input/input418",
+      "[19420.342204] input: batocera-mouse-reset as /devices/virtual/input/input419",
+      "[19434.796700] input: evmapy as /devices/virtual/input/input420",
+      "[19435.054398] input: batocera-mouse-reset as /devices/virtual/input/input421",
+      "[19449.756059] input: evmapy as /devices/virtual/input/input422",
+      "[19450.003250] input: batocera-mouse-reset as /devices/virtual/input/input423",
+      "[19464.862185] input: evmapy as /devices/virtual/input/input424",
+      "[19465.122604] input: batocera-mouse-reset as /devices/virtual/input/input425",
+      "[19479.938363] input: evmapy as /devices/virtual/input/input426",
+      "[19480.190391] input: batocera-mouse-reset as /devices/virtual/input/input427",
+      "[19494.967820] input: evmapy as /devices/virtual/input/input428",
+      "[19495.222079] input: batocera-mouse-reset as /devices/virtual/input/input429",
+      "[19520.253521] input: evmapy as /devices/virtual/input/input430",
+      "[19520.499706] input: batocera-mouse-reset as /devices/virtual/input/input431",
+      "[19534.999546] input: evmapy as /devices/virtual/input/input432",
+      "[19535.249799] input: batocera-mouse-reset as /devices/virtual/input/input433",
+      "[19550.155720] input: evmapy as /devices/virtual/input/input434",
+      "[19550.422849] input: batocera-mouse-reset as /devices/virtual/input/input435",
+      "[19564.915142] input: evmapy as /devices/virtual/input/input436",
+      "[19565.167093] input: batocera-mouse-reset as /devices/virtual/input/input437",
+      "[19579.851261] input: evmapy as /devices/virtual/input/input438",
+      "[19580.115889] input: batocera-mouse-reset as /devices/virtual/input/input439",
+      "[19594.800706] input: evmapy as /devices/virtual/input/input440",
+      "[19595.064191] input: batocera-mouse-reset as /devices/virtual/input/input441",
+      "[19609.746638] input: evmapy as /devices/virtual/input/input442",
+      "[19610.013850] input: batocera-mouse-reset as /devices/virtual/input/input443",
+      "[19624.602720] input: evmapy as /devices/virtual/input/input444",
+      "[19624.865438] input: batocera-mouse-reset as /devices/virtual/input/input445",
+      "[19638.945731] input: evmapy as /devices/virtual/input/input446",
+      "[19639.198728] input: batocera-mouse-reset as /devices/virtual/input/input447",
+      "[19653.435158] input: evmapy as /devices/virtual/input/input448",
+      "[19653.680530] input: batocera-mouse-reset as /devices/virtual/input/input449",
+      "[19673.261114] input: evmapy as /devices/virtual/input/input450",
+      "[19673.531374] input: batocera-mouse-reset as /devices/virtual/input/input451",
+      "[19687.640532] input: evmapy as /devices/virtual/input/input452",
+      "[19687.894653] input: batocera-mouse-reset as /devices/virtual/input/input453",
+      "[19702.926607] input: evmapy as /devices/virtual/input/input454",
+      "[19703.197240] input: batocera-mouse-reset as /devices/virtual/input/input455",
+      "[19717.856061] input: evmapy as /devices/virtual/input/input456",
+      "[19718.119898] input: batocera-mouse-reset as /devices/virtual/input/input457",
+      "[19747.198294] input: evmapy as /devices/virtual/input/input458",
+      "[19747.445252] input: batocera-mouse-reset as /devices/virtual/input/input459",
+      "[19762.107720] input: evmapy as /devices/virtual/input/input460",
+      "[19762.379180] input: batocera-mouse-reset as /devices/virtual/input/input461",
+      "[19776.850511] input: evmapy as /devices/virtual/input/input462",
+      "[19777.092536] input: batocera-mouse-reset as /devices/virtual/input/input463",
+      "[47117.312018] input: evmapy as /devices/virtual/input/input464",
+      "[47117.576307] input: batocera-mouse-reset as /devices/virtual/input/input465",
+      "[47425.660747] input: evmapy as /devices/virtual/input/input466",
+      "[47425.930988] input: batocera-mouse-reset as /devices/virtual/input/input467",
+      "[47512.947579] input: evmapy as /devices/virtual/input/input468",
+      "[47513.194743] input: batocera-mouse-reset as /devices/virtual/input/input469",
+      "[47539.540036] input: evmapy as /devices/virtual/input/input470",
+      "[47539.814903] input: batocera-mouse-reset as /devices/virtual/input/input471",
+      "[47565.852318] input: evmapy as /devices/virtual/input/input472",
+      "[47566.112107] input: batocera-mouse-reset as /devices/virtual/input/input473",
+      "[47592.181244] input: evmapy as /devices/virtual/input/input474",
+      "[47592.443432] input: batocera-mouse-reset as /devices/virtual/input/input475",
+      "[47618.547152] input: evmapy as /devices/virtual/input/input476",
+      "[47618.798781] input: batocera-mouse-reset as /devices/virtual/input/input477",
+      "[51605.215607] input: evmapy as /devices/virtual/input/input478",
+      "[51605.475746] input: batocera-mouse-reset as /devices/virtual/input/input479",
+      "[56944.134683] input: evmapy as /devices/virtual/input/input480",
+      "[56944.385813] input: batocera-mouse-reset as /devices/virtual/input/input481",
+      "[56970.403721] input: evmapy as /devices/virtual/input/input482",
+      "[56970.652256] input: batocera-mouse-reset as /devices/virtual/input/input483",
+      "[57905.079665] input: evmapy as /devices/virtual/input/input484",
+      "[57905.345044] input: batocera-mouse-reset as /devices/virtual/input/input485",
+      "[57920.145877] input: evmapy as /devices/virtual/input/input486",
+      "[57920.394817] input: batocera-mouse-reset as /devices/virtual/input/input487",
+      "[57936.235387] input: evmapy as /devices/virtual/input/input488",
+      "[57936.493857] input: batocera-mouse-reset as /devices/virtual/input/input489",
+      "[57963.060881] input: evmapy as /devices/virtual/input/input490",
+      "[57963.326205] input: batocera-mouse-reset as /devices/virtual/input/input491",
+      "[57989.706569] input: evmapy as /devices/virtual/input/input492",
+      "[57989.961469] input: batocera-mouse-reset as /devices/virtual/input/input493",
+      "[58006.139374] input: evmapy as /devices/virtual/input/input494",
+      "[58006.395209] input: batocera-mouse-reset as /devices/virtual/input/input495",
+      "[58032.608409] input: evmapy as /devices/virtual/input/input496",
+      "[58032.874285] input: batocera-mouse-reset as /devices/virtual/input/input497",
+      "[74854.987302] wlan0: deauthenticated from 30:68:93:62:74:15 (Reason: 3=DEAUTH_LEAVING)",
+      "[74856.329999] wlan0: authenticate with 30:68:93:62:74:15 (local address=ec:75:0c:ae:e7:4e)",
+      "[74856.330002] wlan0: send auth to 30:68:93:62:74:15 (try 1/3)",
+      "[74856.333543] wlan0: authenticated",
+      "[74856.335534] wlan0: associate with 30:68:93:62:74:15 (try 1/3)",
+      "[74856.351311] wlan0: RX AssocResp from 30:68:93:62:74:15 (capab=0x1c11 status=0 aid=6)",
+      "[74856.351913] usb 1-9: rtl8xxxu_bss_info_changed: HT supported",
+      "[74856.352646] wlan0: associated",
+      "[83232.571529] wlan0: deauthenticated from 30:68:93:62:74:15 (Reason: 3=DEAUTH_LEAVING)",
+      "[83233.821076] wlan0: authenticate with 30:68:93:62:74:15 (local address=ec:75:0c:ae:e7:4e)",
+      "[83233.821079] wlan0: send auth to 30:68:93:62:74:15 (try 1/3)",
+      "[83233.824936] wlan0: authenticated",
+      "[83233.826475] wlan0: associate with 30:68:93:62:74:15 (try 1/3)",
+      "[83233.835044] wlan0: RX AssocResp from 30:68:93:62:74:15 (capab=0x1c11 status=0 aid=6)",
+      "[83233.835766] usb 1-9: rtl8xxxu_bss_info_changed: HT supported",
+      "[83233.836487] wlan0: associated",
+      "[199798.061733] input: evmapy as /devices/virtual/input/input498",
+      "[199798.311758] input: batocera-mouse-reset as /devices/virtual/input/input499",
+      "[200098.467098] input: evmapy as /devices/virtual/input/input500",
+      "[200098.719758] input: batocera-mouse-reset as /devices/virtual/input/input501",
+      "[200231.155491] input: evmapy as /devices/virtual/input/input502",
+      "[200231.415165] input: batocera-mouse-reset as /devices/virtual/input/input503",
+      "[200257.831133] input: evmapy as /devices/virtual/input/input504",
+      "[200258.081613] input: batocera-mouse-reset as /devices/virtual/input/input505",
+      "[200285.350087] input: evmapy as /devices/virtual/input/input506",
+      "[200285.596311] input: batocera-mouse-reset as /devices/virtual/input/input507",
+      "[200312.252428] input: evmapy as /devices/virtual/input/input508",
+      "[200312.514177] input: batocera-mouse-reset as /devices/virtual/input/input509",
+      "[200338.784725] input: evmapy as /devices/virtual/input/input510",
+      "[200339.067718] input: batocera-mouse-reset as /devices/virtual/input/input511",
+      "[200365.523758] input: evmapy as /devices/virtual/input/input512",
+      "[200365.796364] input: batocera-mouse-reset as /devices/virtual/input/input513",
+      "[200391.922810] input: evmapy as /devices/virtual/input/input514",
+      "[200392.194128] input: batocera-mouse-reset as /devices/virtual/input/input515"
+    ]
+  },
+  "launched": [
+    "kov2p",
+    "martmast"
+  ],
+  "passes": [
+    {
+      "shortname": "kov2p",
+      "name": "Knights of Valour 2 Plus - Nine Dragons",
+      "control": false,
+      "requested_rom": "/userdata/roms/mame/kov2p.zip",
+      "core_default": "mame078plus",
+      "core_test": "mame current",
+      "preflight": {
+        "status": "PASS",
+        "reason": "MAME 0.285 fresh -listfull/-listxml/-verifyroms PASS",
+        "fresh_machine": {
+          "shortname": "kov2p",
+          "description": "Knights of Valour 2 Plus - Nine Dragons / Sanguo Zhan Ji 2 Qunxiong Zhengba / Sanguo Zhan Ji 2 Feilong Zai Tian / Sangoku Senki Busyou Souha (ver. M205XX, 200, 100CN)",
+          "runnable": "yes",
+          "cloneof": null,
+          "romof": "pgm",
+          "isbios": "no",
+          "driver_status": "imperfect",
+          "driver_emulation": "good",
+          "players": "4",
+          "buttons": null,
+          "control_type": null,
+          "roms": [
+            {
+              "name": "pgm_p02s.u20",
+              "size": "131072",
+              "crc": "78c15fa2",
+              "sha1": "885a6558e022602cc6f482ac9667ba9f61e75092",
+              "status": "good",
+              "optional": "no",
+              "bios": "v2",
+              "merge": "pgm_p02s.u20"
+            },
+            {
+              "name": "pgm_p01s.u20",
+              "size": "131072",
+              "crc": "e42b166e",
+              "sha1": "2a9df9ec746b14b74fae48b1a438da14973702ea",
+              "status": "good",
+              "optional": "no",
+              "bios": "v1",
+              "merge": "pgm_p01s.u20"
+            },
+            {
+              "name": "v205_32m.u8",
+              "size": "4194304",
+              "crc": "3a2cc0de",
+              "sha1": "d7511478b34bfb03b2fb5b8268b60502d05b9414",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "kov2p_igs027a_china.bin",
+              "size": "16384",
+              "crc": "19a0bd95",
+              "sha1": "83e9f22512832a51d41c588debe8be7adb3b1df7",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "v200_16m.u23",
+              "size": "2097152",
+              "crc": "16a0c11f",
+              "sha1": "ce449cef76ebd5657d49b57951e2eb0f132e203e",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_t01s.rom",
+              "size": "2097152",
+              "crc": "1a7123a0",
+              "sha1": "cc567f577bfbf45427b54d6695b11b74f2578af3",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": "pgm_t01s.rom"
+            },
+            {
+              "name": "pgm_t1200.u21",
+              "size": "8388608",
+              "crc": "d7e26609",
+              "sha1": "bdad810f82fcf1d50a8791bdc495374ec5a309c6",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_a1200.u1",
+              "size": "8388608",
+              "crc": "ceeb81d8",
+              "sha1": "5476729443fc1bc9593ae10fbf7cbc5d7290b017",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_a1201.u4",
+              "size": "8388608",
+              "crc": "21063ca7",
+              "sha1": "cf561b44902425a920d5cbea5bf65dd9530b2289",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_a1202.u6",
+              "size": "8388608",
+              "crc": "4bb92fae",
+              "sha1": "f0b6d72ed425de1c69dc8f8d5795ea760a4a59b0",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_a1203.u8",
+              "size": "8388608",
+              "crc": "e73cb627",
+              "sha1": "4c6e48b845a5d1e8f9899010fbf273d54c2b8899",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_a1204.u10",
+              "size": "2097152",
+              "crc": "14b4b5bb",
+              "sha1": "d7db5740eec971f2782fb2885ee3af8f2a796550",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_b1200.u5",
+              "size": "8388608",
+              "crc": "bed7d994",
+              "sha1": "019dfba8154256d64cd249eb0fa4c451edce34b8",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_b1201.u7",
+              "size": "8388608",
+              "crc": "f251eb57",
+              "sha1": "56a5fc14ab7822f83379cecb26638e5bb266349a",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_m01s.rom",
+              "size": "2097152",
+              "crc": "45ae7159",
+              "sha1": "d3ed3ff3464557fd0df6b069b2e431528b0ebfa8",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": "pgm_m01s.rom"
+            },
+            {
+              "name": "pgm_m1200.u3",
+              "size": "8388608",
+              "crc": "b0d88720",
+              "sha1": "44ab137e3f8e15b7cb5697ffbd9b1143d8210c4f",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            }
+          ],
+          "bios_sets": [
+            {
+              "name": "v2",
+              "description": "PGM BIOS V2",
+              "default": "no"
+            },
+            {
+              "name": "v1",
+              "description": "PGM BIOS V1",
+              "default": "no"
+            }
+          ],
+          "disks": []
+        },
+        "fresh_verifyroms_output": "romset kov2p [pgm] is good\n1 romsets found, 1 were OK.",
+        "rom_sha256": "fa34658376bc36b200b9882a530aac730ed5d56075fc09d0cfc2216cca860160",
+        "rom_size": 25090297,
+        "rom_mtime_ns": 851463120000000000
+      },
+      "started_at": "2026-11-15T05:07:59.620-03:00",
+      "start_epoch": 1794730079.620258,
+      "marker": {
+        "enabled": true,
+        "system": "mame",
+        "rom": "/userdata/roms/mame/kov2p.zip",
+        "choice": "BOTONERA",
+        "created_at": 1794730079.618474,
+        "expires_at": 1794730134.618474,
+        "audit_id": "mame:kov2p.zip:1794730079.618474"
+      },
+      "game_xml_pre": {
+        "exists": true,
+        "sha256": "01d76d8a4c21d6e20c189156422fe967af5a2614f08c4794fe3164aec7c18628",
+        "mtime_ns": 1794728170152399284
+      },
+      "cmdfile_pre": {
+        "exists": false,
+        "mtime_ns": null,
+        "size": null
+      },
+      "game_health_max_id_before": 8169,
+      "rom_sha256_before": "fa34658376bc36b200b9882a530aac730ed5d56075fc09d0cfc2216cca860160",
+      "retroarch_pid": 6032,
+      "dispatcher": [],
+      "events": [
+        {
+          "event": "T0_MARKER_CREATED",
+          "time": "2026-11-15T05:07:59.621-03:00",
+          "detail": {
+            "path": "/userdata/system/state/boot_audit_once.json",
+            "value": {
+              "enabled": true,
+              "system": "mame",
+              "rom": "/userdata/roms/mame/kov2p.zip",
+              "choice": "BOTONERA",
+              "created_at": 1794730079.618474,
+              "expires_at": 1794730134.618474,
+              "audit_id": "mame:kov2p.zip:1794730079.618474"
+            }
+          }
+        },
+        {
+          "event": "T1_POST_SENT",
+          "time": "2026-11-15T05:07:59.622-03:00",
+          "detail": {
+            "url": "http://127.0.0.1:1234/launch",
+            "body": "/userdata/roms/mame/kov2p.zip",
+            "content_type": "application/x-www-form-urlencoded"
+          }
+        },
+        {
+          "event": "T2_ISIDLE_CHANGED",
+          "time": "2026-11-15T05:08:00.853-03:00",
+          "detail": {
+            "status": 201,
+            "body": "[ false ]"
+          }
+        },
+        {
+          "event": "T3_RUNNINGGAME_CHANGED",
+          "time": "2026-11-15T05:08:00.854-03:00",
+          "detail": {
+            "id": "49ab28152745562978518373e0ef31e9",
+            "path": "/userdata/roms/mame/kov2p.zip",
+            "name": "Knights of Valour 2 Plus - Nine Dragons",
+            "systemName": "mame",
+            "desc": "Knights of Valour 2 Plus: Nine Dragons es un juego de acción beat 'em up desarrollado por International Games System y lanzado en 2002 para arcades. Ambientado en un mundo de fantasía inspirado en la antigua China, el juego permite a los jugadores elegir entre varios héroes y guerreros para enfrentarse a hordas de enemigos y jefes poderosos. Nine Dragons destaca por su jugabilidad cooperativa para hasta cuatro jugadores, permitiendo a los equipos trabajar juntos para superar desafíos y desbloquear mejoras. Con gráficos detallados, un sistema de combate fluido y una variedad de movimientos y habilidades especiales, el juego ofrece una experiencia dinámica y envolvente en el género beat 'em up.",
+            "genre": "Lucha / 2.5D",
+            "image": "/systems/mame/games/49ab28152745562978518373e0ef31e9/media/image",
+            "video": "/systems/mame/games/49ab28152745562978518373e0ef31e9/media/video",
+            "thumbnail": "/systems/mame/games/49ab28152745562978518373e0ef31e9/media/thumbnail",
+            "rating": "0.7",
+            "releasedate": "20010101T000000",
+            "developer": "IGS",
+            "publisher": "IGS",
+            "family": "Knights of Valour",
+            "genres": "2874",
+            "arcadesystemname": "igs",
+            "players": "1-4",
+            "favorite": "false",
+            "hidden": "true",
+            "kidgame": "false",
+            "playcount": "0",
+            "lastplayed": "0",
+            "crc32": "BFDE944F",
+            "md5": "5ce8923723798aba92f2fd06a494f47f",
+            "gametime": "0",
+            "lang": "en",
+            "region": "us",
+            "cheevosHash": "8D05AE2068A22B3F3EAA62D811FF622A",
+            "scraperId": "149844"
+          }
+        },
+        {
+          "event": "T5_CONTROLLER_DISPATCHER_ARGV",
+          "time": "2026-11-15T05:08:00.856-03:00",
+          "detail": {
+            "pid": 5884,
+            "ppid": 29733,
+            "argv": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/kov2p.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))",
+            "system": "mame",
+            "rom": "/userdata/roms/mame/kov2p.zip"
+          }
+        },
+        {
+          "event": "T4_MARKER_CONSUMED",
+          "time": "2026-11-15T05:08:00.918-03:00",
+          "detail": {
+            "audit_id": "mame:kov2p.zip:1794730079.618474"
+          }
+        },
+        {
+          "event": "T7_CMD_FILE",
+          "time": "2026-11-15T05:08:02.618-03:00",
+          "detail": {
+            "exists": true,
+            "mtime_ns": 1794730082563737761,
+            "size": 441,
+            "content_shortname": "kov2p"
+          }
+        },
+        {
+          "event": "T8_RETROARCH_SEEN",
+          "time": "2026-11-15T05:08:03.087-03:00",
+          "detail": {
+            "pid": 6032,
+            "ppid": 5905,
+            "exe": "/usr/bin/retroarch",
+            "comm": "retroarch",
+            "cmd": "/usr/bin/retroarch -L /usr/lib/libretro/mame_libretro.so --config /userdata/system/configs/retroarch/retroarchcustom.cfg --set-shader /userdata/shaders/scalehq/2xScaleHQ-persistent-fixed.slangp --verbose /var/run/cmdfiles/kov2p.cmd"
+          }
+        },
+        {
+          "event": "T9_MAME_CURRENT_CORE",
+          "time": "2026-11-15T05:08:03.088-03:00",
+          "detail": "/usr/lib/libretro/mame_libretro.so"
+        },
+        {
+          "event": "T6_EMULATORLAUNCHER_SEEN",
+          "time": "2026-11-15T05:08:03.091-03:00",
+          "detail": {
+            "source": "/userdata/system/logs/es_launch_stdout.log",
+            "copy": "/userdata/system/state/arcade_audit/mame_batch5_runtime/kov2p/logs_observed/es_launch_stdout.log",
+            "game_path_present": true,
+            "emulatorlauncher_trace_present": true
+          }
+        },
+        {
+          "event": "T10_GAME_HEALTH",
+          "time": "2026-11-15T05:08:25.023-03:00",
+          "detail": {
+            "id": 8170,
+            "core": "mame",
+            "exit_code": 0,
+            "status": "INICIO_SOSTENIDO"
+          }
+        }
+      ],
+      "post_response": {
+        "status": 200,
+        "headers": {
+          "Connection": "close",
+          "Content-Length": "0"
+        },
+        "body": ""
+      },
+      "classification": "BOOT_PASS",
+      "restore_verified": true,
+      "retroarch_argv": "/usr/bin/retroarch -L /usr/lib/libretro/mame_libretro.so --config /userdata/system/configs/retroarch/retroarchcustom.cfg --set-shader /userdata/shaders/scalehq/2xScaleHQ-persistent-fixed.slangp --verbose /var/run/cmdfiles/kov2p.cmd",
+      "reached_mame_current": true,
+      "marker_consumed_log_match": true,
+      "emulatorlauncher_log_evidence": {
+        "source": "/userdata/system/logs/es_launch_stdout.log",
+        "copy": "/userdata/system/state/arcade_audit/mame_batch5_runtime/kov2p/logs_observed/es_launch_stdout.log",
+        "game_path_present": true,
+        "emulatorlauncher_trace_present": true
+      },
+      "stability_started_at": "2026-11-15T05:08:03.092-03:00",
+      "stable_20s": true,
+      "close_method": "SIGTERM_EXACT_RETROARCH_PID",
+      "dispatcher_observed": [
+        {
+          "pid": 5884,
+          "ppid": 29733,
+          "argv": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/kov2p.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))",
+          "system": "mame",
+          "rom": "/userdata/roms/mame/kov2p.zip"
+        },
+        {
+          "pid": 5885,
+          "ppid": 5884,
+          "argv": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/kov2p.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))",
+          "system": "mame",
+          "rom": "/userdata/roms/mame/kov2p.zip"
+        },
+        {
+          "pid": 5886,
+          "ppid": 5884,
+          "argv": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/kov2p.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))",
+          "system": "mame",
+          "rom": "/userdata/roms/mame/kov2p.zip"
+        },
+        {
+          "pid": 5887,
+          "ppid": 5885,
+          "argv": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/kov2p.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))",
+          "system": "mame",
+          "rom": "/userdata/roms/mame/kov2p.zip"
+        },
+        {
+          "pid": 5889,
+          "ppid": 5887,
+          "argv": "/usr/bin/python3 /userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name DragonRise Inc.   Generic   USB  Joystick   -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name DragonRise Inc.   Generic   USB  Joystick   -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name DragonRise Inc.   Generic   USB  Joystick   -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name DragonRise Inc.   Generic   USB  Joystick   -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20 -system mame -rom /userdata/roms/mame/kov2p.zip -gameinfoxml /tmp/game.xml -systemname Mame",
+          "system": "mame",
+          "rom": "/userdata/roms/mame/kov2p.zip"
+        },
+        {
+          "pid": 5905,
+          "ppid": 5889,
+          "argv": "/usr/bin/python3 /userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name DragonRise Inc.   Generic   USB  Joystick   -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name DragonRise Inc.   Generic   USB  Joystick   -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name DragonRise Inc.   Generic   USB  Joystick   -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name DragonRise Inc.   Generic   USB  Joystick   -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20 -system mame -rom /userdata/roms/mame/kov2p.zip -gameinfoxml /tmp/game.xml -systemname Mame",
+          "system": "mame",
+          "rom": "/userdata/roms/mame/kov2p.zip"
+        }
+      ],
+      "cmdfile_post": {
+        "exists": true,
+        "mtime_ns": 1794730082563737761,
+        "size": 441,
+        "content_shortname": "kov2p",
+        "content_matches": true
+      },
+      "game_health_event": {
+        "id": 8170,
+        "launched_at": "2026-11-15T08:08:24Z",
+        "system": "mame",
+        "rom": "/userdata/roms/mame/kov2p.zip",
+        "control_order": "arcade",
+        "emulator": "libretro",
+        "core": "mame",
+        "command": "[\"/usr/bin/retroarch\", \"-L\", \"/usr/lib/libretro/mame_libretro.so\", \"--config\", \"/userdata/system/configs/retroarch/retroarchcustom.cfg\", \"--set-shader\", \"/userdata/shaders/scalehq/2xScaleHQ-persistent-fixed.slangp\", \"--verbose\", \"/var/run/cmdfiles/kov2p.cmd\"]",
+        "pid": 6032,
+        "duration_seconds": 20.54038013200625,
+        "exit_code": 0,
+        "signal": null,
+        "relevant_error": "ProcessLookupError: [Errno 3] No such process\nProcessLookupError: [Errno 3] No such process",
+        "status": "INICIO_SOSTENIDO",
+        "requested_exit": 0,
+        "diagnosis": null,
+        "solution": null,
+        "missing_file": null
+      },
+      "game_xml_post": {
+        "exists": true,
+        "sha256": "c8c3a42f77d9200c7d9293a1c1b02cf23c4851be7b580431d2ca07580047e1a9",
+        "content_matches": true
+      },
+      "api_after_close": {
+        "idle_raw": {
+          "status": 200,
+          "body": "[ true ]"
+        },
+        "idle": true,
+        "game_raw": {
+          "status": 201,
+          "body": "{\"msg\":\"NO GAME RUNNING\"}"
+        },
+        "game": null
+      },
+      "processes_after_close": [],
+      "restore_delta": {
+        "created": [
+          "/userdata/saves/mame/mame",
+          "/userdata/saves/mame/mame/cfg",
+          "/userdata/saves/mame/mame/cfg/default.cfg",
+          "/userdata/saves/mame/mame/cfg/kov2p.cfg",
+          "/userdata/saves/mame/mame/nvram",
+          "/userdata/saves/mame/mame/nvram/kov2p",
+          "/userdata/saves/mame/mame/nvram/kov2p/sram",
+          "/userdata/saves/mame/plugins",
+          "/userdata/saves/mame/plugins/hiscore",
+          "/userdata/saves/mame/plugins/hiscore/plugin.cfg"
+        ],
+        "changed": [
+          "/userdata/saves/mame"
+        ],
+        "removed": []
+      },
+      "override": "KEPT",
+      "rom_unchanged": true,
+      "ended_at": "2026-11-15T05:08:25.326-03:00",
+      "api_idle_after": true,
+      "running_game_none_after": true,
+      "marker_absent_after": true,
+      "launch_processes_zero_after": true,
+      "p1_p4_after": {
+        "players": {
+          "P1": [
+            "5",
+            "/dev/input/event17"
+          ],
+          "P2": [
+            "6",
+            "/dev/input/event18"
+          ],
+          "P3": [
+            "8",
+            "/dev/input/event20"
+          ],
+          "P4": [
+            "7",
+            "/dev/input/event19"
+          ]
+        },
+        "sdl_paths": [
+          "/dev/input/event17",
+          "/dev/input/event18",
+          "/dev/input/event19",
+          "/dev/input/event20"
+        ],
+        "duplicates": false
+      },
+      "global_core_after": true,
+      "overrides_after": [
+        "altair.zip",
+        "apache3.zip",
+        "blazlaz.zip",
+        "cubeqst.zip",
+        "ertictac.zip",
+        "evosocc.zip",
+        "ffight2b.zip",
+        "funcube4.zip",
+        "hoops95.zip",
+        "kov2p.zip",
+        "lbgrande.zip",
+        "multigam.zip",
+        "multigm3.zip",
+        "nratechu.zip",
+        "sia2650.zip",
+        "sws98.zip",
+        "tenkomor.zip"
+      ],
+      "gamelist_hashes_after": {
+        "/userdata/roms/cannonball/gamelist.xml": "4dfd59b823f696d42ef21e5dfc48219fb4edba94163810ddcbeaf7b304dd0951",
+        "/userdata/roms/psx/gamelist.xml": "13d00ee681214340c5d8bfffb40c27050197383dd386304cbdbefc0059955380",
+        "/userdata/roms/megacd/gamelist.xml": "1fe51c17d1617248eff73c81d2ab9d72c9a1cc57674e6e209a58d6d9e8045b4d",
+        "/userdata/roms/c64/gamelist.xml": "42004a76da6a01a5f0731fd4bf42721cda90d66cb12786df911801c5cb873c42",
+        "/userdata/roms/gb/gamelist.xml": "6e9efeca1d1ff98ccf6485e94c49e1cd263a9860cc8e8db9ff400d85bbcee8cc",
+        "/userdata/roms/mame/gamelist.xml": "a2c30247618239c574e09d94ee467ff4809d5ede4cd0abb969bf8bad6a3611d1",
+        "/userdata/roms/fbneo/gamelist.xml": "5d235af9fa9450a66be72f1e94d964f46aaa4efc5a5bc04d132ec9407588dca7",
+        "/userdata/roms/scummvm/gamelist.xml": "c4a6ca3ef778da785bc617225fa8aedbaa448186f0531ba51152a9f424e5f011",
+        "/userdata/roms/ps4/gamelist.xml": "1f8a0e2a119a38b25c0b7bf249697238ff49643364c7b00f1d8b6905c992ad9a",
+        "/userdata/roms/snes/gamelist.xml": "4f8d20ba82bf7416d220c793e0e175e738b719e3d2c8cf2bd4a79b7ac865d6bc",
+        "/userdata/roms/mastersystem/gamelist.xml": "98fed6413dbb20bc7b108a63439292b20edb4b64a47adc811c4aef10d160902f",
+        "/userdata/roms/ikemen/gamelist.xml": "c09117546e62cff92af07b18489f8826de6efcfd32e8761a3b58daff602418c0",
+        "/userdata/roms/ps2/gamelist.xml": "47d386f9e86734ef9659626c6e6c10b7a62231fec53090016e6b45ee5dfccc3b",
+        "/userdata/roms/fds/gamelist.xml": "c2a540aab8ddb450d40dab51abf0df1e62477f0b7ff485c40b5aa06057f244d5",
+        "/userdata/roms/hcl/gamelist.xml": "47c57dd4c02a72c8e31942c0b9fcb3c7b9d17707dcedec991400f4474ac2c25f",
+        "/userdata/roms/pcengine/gamelist.xml": "fb32495609ff5b1e5ec02e409b8429d308d56cc9b60a675d0a2a644eb8b13ce4",
+        "/userdata/roms/megadrive/gamelist.xml": "ec7505dab1fc4a8b048226dd2317f23e3eda5a665c15fdcc0eb844219d9f2a85",
+        "/userdata/roms/mrboom/gamelist.xml": "193d7e2acec2aa1f6185dbd8cabf8353277dda01b09c283a7b5f875f4648714f",
+        "/userdata/roms/ports/gamelist.xml": "7648c85fcb67250119c8934e90d7f7bbff2f5432eabc39ea9b4ad3847916b5b5",
+        "/userdata/roms/devilutionx/gamelist.xml": "9b4b1726ff7c5544fa4d35bbd008df1ba441a1b2a870376fff721b95feafb0b8",
+        "/userdata/roms/atari2600/gamelist.xml": "ff6d4edc99dc17b08c5abdea8c3c54c3faa5265e33a7dfe41d0a59fe4c4d5260",
+        "/userdata/roms/psp/gamelist.xml": "790ee47a9fbdd53f3582f94604ad3f99742dee33d943fe439e56464da4350d43",
+        "/userdata/roms/sdlpop/gamelist.xml": "54ae5ea40b136dc8726c99614aa8d548d6de67187c86136834649b711bd63320",
+        "/userdata/roms/openbor/gamelist.xml": "a85bf97b3f727d352304ac373a351c9573c2dada0267e5a04bc11aa1ef4be673",
+        "/userdata/roms/gamecube/gamelist.xml": "22548ed24ea7b1a41c3205c860cbf19d904db99ba0472dd3b94d7e54670c373e",
+        "/userdata/roms/odcommander/gamelist.xml": "538a3358bc28675c17b0801dc0c071eea1739610c4c5a91b27080f7e7d21e894",
+        "/userdata/roms/neogeo/gamelist.xml": "e8e32ec709f0b8bcd4286541bba787aabb4cf6f5694ac95e700f9c4df5f55181",
+        "/userdata/roms/gbc/gamelist.xml": "2ba57951eeb0b41c013faecd54954c01a59f16ee9269965481245f6eab1e8ac0",
+        "/userdata/roms/flatpak/gamelist.xml": "fb642f011ba160d7a14348a87417b4d09eec78ad5d0e8ce370b087813d4ab488",
+        "/userdata/roms/naomi/gamelist.xml": "042ae314bd70f3e7b6f18c82cff5cf4e6255e445036f7ca1b43e3b9d7f8a0b68",
+        "/userdata/roms/hurrican/gamelist.xml": "b18dbe50ee82283c9451d83fad70d6e7d8db20d4e6b203a557f31b278ddca683",
+        "/userdata/roms/dreamcast/gamelist.xml": "29362e16b44d88950b2bfe76921c63ab7a990bf1804f66c68ad25398fe9c89d3",
+        "/userdata/roms/pygame/gamelist.xml": "4a562aff53ee48f9368d77fecc9f1b99cf32246372e186963c36032b40465cff",
+        "/userdata/roms/ps3/gamelist.xml": "57c4f17c91c92bc8a090e37c978a0dc4b1cc3cef9eaa0444651f51ccd186f2a5",
+        "/userdata/roms/saturn/gamelist.xml": "367c2c01cfccc274d4eb8914f4ab109cc94d42e691081f08c07a64d9bc0ec621",
+        "/userdata/roms/nds/gamelist.xml": "35f336953b261ea3fba31297f77666e01394925a01bdb69e8211ac87b0f12d33",
+        "/userdata/roms/gba/gamelist.xml": "8c5896ce8733abbcb9079a01f63734f462e2d79f59962619dcf672a6103a0bc9",
+        "/userdata/roms/cdogs/gamelist.xml": "17b52cb768448dcdbcd4716f8ddb4fb34fe3bab4acfb902a6bacf4b1f5eef408",
+        "/userdata/roms/nes/gamelist.xml": "10033b46f42652ceee2941985d25dc4984bf880bc1c8949c7230df11aff3965d",
+        "/userdata/roms/prboom/gamelist.xml": "69c2b6e9d798a7ea97fab9f6e33aa88224a84c48c0e6778171789144cf4dbe11",
+        "/userdata/roms/easyrpg/gamelist.xml": "9daed1388a4dfc410a2d748981a25e6a24abc849d5f338a00137bd8010e41d32",
+        "/userdata/roms/n64/gamelist.xml": "65659a949c569a6f6890a926c0f0693250277d00c377585631e1e6f772ef9c1d",
+        "/userdata/roms/theforceengine/gamelist.xml": "a2ef28948fd6da50d448dd989be80f31e627378616046103a2f8f7941014bf10",
+        "/userdata/roms/solarus/gamelist.xml": "f2ed87933ddcc4fa9b4c4497f2c4cdc4340e2612341e2ee8034071d2e502601d",
+        "/userdata/roms/tic80/gamelist.xml": "01dbeae4ec3479c05e8631f5b620c1944102ae4b5f384cd370e45a892b62b959",
+        "/userdata/roms/superbroswar/gamelist.xml": "27ed0092bfe0d4015cdd0ab7da3b0630b933d338c89ee0548fe91b1d59b13d73",
+        "/userdata/roms/xbox360/gamelist.xml": "1a201e3eb13b4077573eda79f7f982de1d2c9a4fd8a598f6fd06a2c2b4719fd5",
+        "/userdata/roms/steam/gamelist.xml": "a8d0550f654fd5e6a7a5d9e4aff8fd9dc7562e67c2c42625ca143b690c56c2d6",
+        "/userdata/roms/xrick/gamelist.xml": "c394ab37f095412b17f98ca5ff335551f702da170fdf0d94d726bb1a674db81b",
+        "/userdata/roms/windows/gamelist.xml": "b236987137b2d3f5ddac4e3c905368001e28a52bfe216838da0585f46141e351",
+        "/userdata/roms/xbox/gamelist.xml": "9021b28c238d532614dc8968e816489391dc13664a1f1cfdd6839af7687bba51"
+      },
+      "expected_overrides_after": [
+        "altair.zip",
+        "apache3.zip",
+        "blazlaz.zip",
+        "cubeqst.zip",
+        "ertictac.zip",
+        "evosocc.zip",
+        "ffight2b.zip",
+        "funcube4.zip",
+        "hoops95.zip",
+        "kov2p.zip",
+        "lbgrande.zip",
+        "multigam.zip",
+        "multigm3.zip",
+        "nratechu.zip",
+        "sia2650.zip",
+        "sws98.zip",
+        "tenkomor.zip"
+      ],
+      "overrides_verified": true,
+      "dispatcher_sha_after": "a60be89fb45ea27ec4f7c3f546e088c7ff3da140bccfe1c6a37e5b14ec581c45",
+      "safety_gate": "PASS",
+      "matrix_updated": true,
+      "safety_gate_reconciled": true,
+      "cleanup_race_classification": "CLEANUP_RACE"
+    },
+    {
+      "shortname": "martmast",
+      "name": "Martial Masters",
+      "control": false,
+      "requested_rom": "/userdata/roms/mame/martmast.zip",
+      "core_default": "mame078plus",
+      "core_test": "mame current",
+      "preflight": {
+        "status": "PASS",
+        "reason": "MAME 0.285 fresh -listfull/-listxml/-verifyroms PASS",
+        "fresh_machine": {
+          "shortname": "martmast",
+          "description": "Martial Masters / Xing Yi Quan (ver. 104, 102, 102US)",
+          "runnable": "yes",
+          "cloneof": null,
+          "romof": "pgm",
+          "isbios": "no",
+          "driver_status": "imperfect",
+          "driver_emulation": "good",
+          "players": "4",
+          "buttons": null,
+          "control_type": null,
+          "roms": [
+            {
+              "name": "pgm_p02s.u20",
+              "size": "131072",
+              "crc": "78c15fa2",
+              "sha1": "885a6558e022602cc6f482ac9667ba9f61e75092",
+              "status": "good",
+              "optional": "no",
+              "bios": "v2",
+              "merge": "pgm_p02s.u20"
+            },
+            {
+              "name": "pgm_p01s.u20",
+              "size": "131072",
+              "crc": "e42b166e",
+              "sha1": "2a9df9ec746b14b74fae48b1a438da14973702ea",
+              "status": "good",
+              "optional": "no",
+              "bios": "v1",
+              "merge": "pgm_p01s.u20"
+            },
+            {
+              "name": "v104_32m.u9",
+              "size": "4194304",
+              "crc": "cfd9dff4",
+              "sha1": "328eaf6ac49a73265ee4e0f992b1b1312f49877b",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "martial_masters_v102_usa.asic",
+              "size": "16384",
+              "crc": "a6c0828c",
+              "sha1": "0a5bda56dca264c3c7ff7698b8f699563f203c4d",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "v102_16m.u10",
+              "size": "2097152",
+              "crc": "18b745e6",
+              "sha1": "7bcb58dd3a2d6072f492cf0dd7181cb061c1f49d",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_t01s.rom",
+              "size": "2097152",
+              "crc": "1a7123a0",
+              "sha1": "cc567f577bfbf45427b54d6695b11b74f2578af3",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": "pgm_t01s.rom"
+            },
+            {
+              "name": "pgm_t1000.u3",
+              "size": "8388608",
+              "crc": "bbf879b5",
+              "sha1": "bd9a6aea34ad4001e89e62ff4b7a2292eb833c00",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_a1000.u3",
+              "size": "8388608",
+              "crc": "43577ac8",
+              "sha1": "6eea8b455985d5bac74dcc9943cdc3c0902de6cc",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_a1001.u4",
+              "size": "8388608",
+              "crc": "fe7a476f",
+              "sha1": "a8c7f1f0dd3e53141aed6d927eb88a3ceebb81e4",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_a1002.u6",
+              "size": "8388608",
+              "crc": "62e33d38",
+              "sha1": "96163d583e25073594f8413ce263e56b66bd69a1",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_a1003.u8",
+              "size": "8388608",
+              "crc": "b2c4945a",
+              "sha1": "7b18287a2db56db3651cfd4deb607af53522fefd",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_a1004.u10",
+              "size": "4194304",
+              "crc": "9fd3f5fd",
+              "sha1": "057531f91062be51589c6cf8f4170089b9be6380",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_b1000.u9",
+              "size": "8388608",
+              "crc": "c5961f6f",
+              "sha1": "a68060b10edbd084cbde79d2ed1c9084777beb10",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_b1001.u11",
+              "size": "8388608",
+              "crc": "0b7e1c06",
+              "sha1": "545e15e0087f8621d593fecd8b4013f7ca311686",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_m01s.rom",
+              "size": "2097152",
+              "crc": "45ae7159",
+              "sha1": "d3ed3ff3464557fd0df6b069b2e431528b0ebfa8",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": "pgm_m01s.rom"
+            },
+            {
+              "name": "pgm_m1000.u5",
+              "size": "8388608",
+              "crc": "ed407ae8",
+              "sha1": "a6e9c09b39c13e8fb7fbc89fa9f823cbeb66e901",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            },
+            {
+              "name": "pgm_m1001.u7",
+              "size": "4194304",
+              "crc": "662d2d48",
+              "sha1": "2fcc3099d9c04456cae3b13035fb28eaf709e7d8",
+              "status": "good",
+              "optional": "no",
+              "bios": null,
+              "merge": null
+            }
+          ],
+          "bios_sets": [
+            {
+              "name": "v2",
+              "description": "PGM BIOS V2",
+              "default": "no"
+            },
+            {
+              "name": "v1",
+              "description": "PGM BIOS V1",
+              "default": "no"
+            }
+          ],
+          "disks": []
+        },
+        "fresh_verifyroms_output": "romset martmast [pgm] is good\n1 romsets found, 1 were OK.",
+        "rom_sha256": "d7c72b92f2604f4d2eebd081be6bbfcc548e208a4d56ddeb88f52a26e89f1412",
+        "rom_size": 28525018,
+        "rom_mtime_ns": 1239438721655868000
+      },
+      "started_at": "2026-11-15T05:08:27.215-03:00",
+      "start_epoch": 1794730107.2154706,
+      "marker": {
+        "enabled": true,
+        "system": "mame",
+        "rom": "/userdata/roms/mame/martmast.zip",
+        "choice": "BOTONERA",
+        "created_at": 1794730107.2136958,
+        "expires_at": 1794730162.2136958,
+        "audit_id": "mame:martmast.zip:1794730107.213696"
+      },
+      "game_xml_pre": {
+        "exists": true,
+        "sha256": "c8c3a42f77d9200c7d9293a1c1b02cf23c4851be7b580431d2ca07580047e1a9",
+        "mtime_ns": 1794730080374081297
+      },
+      "cmdfile_pre": {
+        "exists": false,
+        "mtime_ns": null,
+        "size": null
+      },
+      "game_health_max_id_before": 8170,
+      "rom_sha256_before": "d7c72b92f2604f4d2eebd081be6bbfcc548e208a4d56ddeb88f52a26e89f1412",
+      "retroarch_pid": 6319,
+      "dispatcher": [],
+      "events": [
+        {
+          "event": "T0_MARKER_CREATED",
+          "time": "2026-11-15T05:08:27.217-03:00",
+          "detail": {
+            "path": "/userdata/system/state/boot_audit_once.json",
+            "value": {
+              "enabled": true,
+              "system": "mame",
+              "rom": "/userdata/roms/mame/martmast.zip",
+              "choice": "BOTONERA",
+              "created_at": 1794730107.2136958,
+              "expires_at": 1794730162.2136958,
+              "audit_id": "mame:martmast.zip:1794730107.213696"
+            }
+          }
+        },
+        {
+          "event": "T1_POST_SENT",
+          "time": "2026-11-15T05:08:27.218-03:00",
+          "detail": {
+            "url": "http://127.0.0.1:1234/launch",
+            "body": "/userdata/roms/mame/martmast.zip",
+            "content_type": "application/x-www-form-urlencoded"
+          }
+        },
+        {
+          "event": "T2_ISIDLE_CHANGED",
+          "time": "2026-11-15T05:08:28.512-03:00",
+          "detail": {
+            "status": 201,
+            "body": "[ false ]"
+          }
+        },
+        {
+          "event": "T3_RUNNINGGAME_CHANGED",
+          "time": "2026-11-15T05:08:28.515-03:00",
+          "detail": {
+            "id": "83c127f592efea3ffe7ba882b6dd188e",
+            "path": "/userdata/roms/mame/martmast.zip",
+            "name": "Martial Masters",
+            "systemName": "mame",
+            "desc": "Martial Masters es un juego de lucha 2D versus ambientado a finales de la dinastía Qing , en el que tomas el control de uno de los once luchadores orientales. La Secta del Loto Blanco quiere hacerse con el control de China y cada personaje lucha por lo suyo.\n\nLos luchadores entre los que elegir son Master Huang (él es el protagonista y su hermano Dragon es secuestrado por el Loto Blanco), Drunk Master, Crane, Ghost Kick, Tiger, Reika, Lotus Master, Monk, Monkey Boy, Red Snake y Scorpion. Cada luchador tiene sus propias técnicas de lucha, que incluyen bloqueos y ataques especiales. Los combates son al mejor de tres. Después de derrotar a los luchadores jugables, hay que vencer al jefe no jugable, el Verdadero Maestro del Loto. También hay un personaje oculto, Saojin, que se desbloquea dejando la máquina encendida durante un mes y pagando 99 créditos. Puedes jugar solo o contra un amigo.",
+            "genre": "Lucha / Versus",
+            "image": "/systems/mame/games/83c127f592efea3ffe7ba882b6dd188e/media/image",
+            "video": "/systems/mame/games/83c127f592efea3ffe7ba882b6dd188e/media/video",
+            "thumbnail": "/systems/mame/games/83c127f592efea3ffe7ba882b6dd188e/media/thumbnail",
+            "fanart": "/systems/mame/games/83c127f592efea3ffe7ba882b6dd188e/media/fanart",
+            "rating": "0.9",
+            "releasedate": "20010101T000000",
+            "developer": "IGS",
+            "publisher": "IGS",
+            "genres": "2885",
+            "arcadesystemname": "igs",
+            "players": "1-2",
+            "favorite": "false",
+            "hidden": "true",
+            "kidgame": "false",
+            "playcount": "0",
+            "lastplayed": "0",
+            "crc32": "05B5CFEB",
+            "md5": "22be30c04b1862e2aa890b572f9ee0b6",
+            "gametime": "0",
+            "lang": "en",
+            "region": "us",
+            "cheevosHash": "682D0A80FC3220E5CE90E148CAA5D83C",
+            "scraperId": "78860"
+          }
+        },
+        {
+          "event": "T5_CONTROLLER_DISPATCHER_ARGV",
+          "time": "2026-11-15T05:08:28.517-03:00",
+          "detail": {
+            "pid": 6177,
+            "ppid": 29733,
+            "argv": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/martmast.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))",
+            "system": "mame",
+            "rom": "/userdata/roms/mame/martmast.zip"
+          }
+        },
+        {
+          "event": "T4_MARKER_CONSUMED",
+          "time": "2026-11-15T05:08:28.579-03:00",
+          "detail": {
+            "audit_id": "mame:martmast.zip:1794730107.213696"
+          }
+        },
+        {
+          "event": "T7_CMD_FILE",
+          "time": "2026-11-15T05:08:30.397-03:00",
+          "detail": {
+            "exists": true,
+            "mtime_ns": 1794730110340359585,
+            "size": 444,
+            "content_shortname": "martmast"
+          }
+        },
+        {
+          "event": "T8_RETROARCH_SEEN",
+          "time": "2026-11-15T05:08:30.868-03:00",
+          "detail": {
+            "pid": 6319,
+            "ppid": 6194,
+            "exe": "/usr/bin/retroarch",
+            "comm": "retroarch",
+            "cmd": "/usr/bin/retroarch -L /usr/lib/libretro/mame_libretro.so --config /userdata/system/configs/retroarch/retroarchcustom.cfg --set-shader /userdata/shaders/scalehq/2xScaleHQ-persistent-fixed.slangp --verbose /var/run/cmdfiles/martmast.cmd"
+          }
+        },
+        {
+          "event": "T9_MAME_CURRENT_CORE",
+          "time": "2026-11-15T05:08:30.869-03:00",
+          "detail": "/usr/lib/libretro/mame_libretro.so"
+        },
+        {
+          "event": "T6_EMULATORLAUNCHER_SEEN",
+          "time": "2026-11-15T05:08:30.872-03:00",
+          "detail": {
+            "source": "/userdata/system/logs/es_launch_stdout.log",
+            "copy": "/userdata/system/state/arcade_audit/mame_batch5_runtime/martmast/logs_observed/es_launch_stdout.log",
+            "game_path_present": true,
+            "emulatorlauncher_trace_present": true
+          }
+        },
+        {
+          "event": "T10_GAME_HEALTH",
+          "time": "2026-11-15T05:08:52.694-03:00",
+          "detail": {
+            "id": 8171,
+            "core": "mame",
+            "exit_code": 0,
+            "status": "INICIO_SOSTENIDO"
+          }
+        }
+      ],
+      "post_response": {
+        "status": 200,
+        "headers": {
+          "Connection": "close",
+          "Content-Length": "0"
+        },
+        "body": ""
+      },
+      "classification": "BOOT_PASS",
+      "restore_verified": true,
+      "retroarch_argv": "/usr/bin/retroarch -L /usr/lib/libretro/mame_libretro.so --config /userdata/system/configs/retroarch/retroarchcustom.cfg --set-shader /userdata/shaders/scalehq/2xScaleHQ-persistent-fixed.slangp --verbose /var/run/cmdfiles/martmast.cmd",
+      "reached_mame_current": true,
+      "marker_consumed_log_match": true,
+      "emulatorlauncher_log_evidence": {
+        "source": "/userdata/system/logs/es_launch_stdout.log",
+        "copy": "/userdata/system/state/arcade_audit/mame_batch5_runtime/martmast/logs_observed/es_launch_stdout.log",
+        "game_path_present": true,
+        "emulatorlauncher_trace_present": true
+      },
+      "stability_started_at": "2026-11-15T05:08:30.874-03:00",
+      "stable_20s": true,
+      "close_method": "SIGTERM_EXACT_RETROARCH_PID",
+      "dispatcher_observed": [
+        {
+          "pid": 6177,
+          "ppid": 29733,
+          "argv": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/martmast.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))",
+          "system": "mame",
+          "rom": "/userdata/roms/mame/martmast.zip"
+        },
+        {
+          "pid": 6178,
+          "ppid": 6177,
+          "argv": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/martmast.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))",
+          "system": "mame",
+          "rom": "/userdata/roms/mame/martmast.zip"
+        },
+        {
+          "pid": 6179,
+          "ppid": 6177,
+          "argv": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/martmast.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))",
+          "system": "mame",
+          "rom": "/userdata/roms/mame/martmast.zip"
+        },
+        {
+          "pid": 6180,
+          "ppid": 6178,
+          "argv": "sh -c -- ((((/userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name \"DragonRise Inc.   Generic   USB  Joystick  \" -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name \"DragonRise Inc.   Generic   USB  Joystick  \" -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name \"DragonRise Inc.   Generic   USB  Joystick  \" -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name \"DragonRise Inc.   Generic   USB  Joystick  \" -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20  -system mame -rom /userdata/roms/mame/martmast.zip -gameinfoxml /tmp/game.xml -systemname Mame 2> /userdata/system/logs/es_launch_stderr.log ; echo $? >&3) | head -300 > /userdata/system/logs/es_launch_stdout.log) 3>&1) | (read xs; exit $xs))",
+          "system": "mame",
+          "rom": "/userdata/roms/mame/martmast.zip"
+        },
+        {
+          "pid": 6182,
+          "ppid": 6180,
+          "argv": "/usr/bin/python3 /userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name DragonRise Inc.   Generic   USB  Joystick   -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name DragonRise Inc.   Generic   USB  Joystick   -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name DragonRise Inc.   Generic   USB  Joystick   -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name DragonRise Inc.   Generic   USB  Joystick   -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20 -system mame -rom /userdata/roms/mame/martmast.zip -gameinfoxml /tmp/game.xml -systemname Mame",
+          "system": "mame",
+          "rom": "/userdata/roms/mame/martmast.zip"
+        },
+        {
+          "pid": 6194,
+          "ppid": 6182,
+          "argv": "/usr/bin/python3 /userdata/system/el_gordo_tools/controller_dispatcher -p1index 0 -p1guid 03000000790000000600000010010000 -p1name DragonRise Inc.   Generic   USB  Joystick   -p1nbbuttons 12 -p1nbhats 1 -p1nbaxes 5 -p1devicepath /dev/input/event17 -p2index 1 -p2guid 03000000790000000600000010010000 -p2name DragonRise Inc.   Generic   USB  Joystick   -p2nbbuttons 12 -p2nbhats 1 -p2nbaxes 5 -p2devicepath /dev/input/event18 -p3index 2 -p3guid 03000000790000000600000010010000 -p3name DragonRise Inc.   Generic   USB  Joystick   -p3nbbuttons 12 -p3nbhats 1 -p3nbaxes 5 -p3devicepath /dev/input/event19 -p4index 3 -p4guid 03000000790000000600000010010000 -p4name DragonRise Inc.   Generic   USB  Joystick   -p4nbbuttons 12 -p4nbhats 1 -p4nbaxes 5 -p4devicepath /dev/input/event20 -system mame -rom /userdata/roms/mame/martmast.zip -gameinfoxml /tmp/game.xml -systemname Mame",
+          "system": "mame",
+          "rom": "/userdata/roms/mame/martmast.zip"
+        }
+      ],
+      "cmdfile_post": {
+        "exists": true,
+        "mtime_ns": 1794730110340359585,
+        "size": 444,
+        "content_shortname": "martmast",
+        "content_matches": true
+      },
+      "game_health_event": {
+        "id": 8171,
+        "launched_at": "2026-11-15T08:08:52Z",
+        "system": "mame",
+        "rom": "/userdata/roms/mame/martmast.zip",
+        "control_order": "arcade",
+        "emulator": "libretro",
+        "core": "mame",
+        "command": "[\"/usr/bin/retroarch\", \"-L\", \"/usr/lib/libretro/mame_libretro.so\", \"--config\", \"/userdata/system/configs/retroarch/retroarchcustom.cfg\", \"--set-shader\", \"/userdata/shaders/scalehq/2xScaleHQ-persistent-fixed.slangp\", \"--verbose\", \"/var/run/cmdfiles/martmast.cmd\"]",
+        "pid": 6319,
+        "duration_seconds": 20.56833905100939,
+        "exit_code": 0,
+        "signal": null,
+        "relevant_error": "ProcessLookupError: [Errno 3] No such process\nProcessLookupError: [Errno 3] No such process",
+        "status": "INICIO_SOSTENIDO",
+        "requested_exit": 0,
+        "diagnosis": null,
+        "solution": null,
+        "missing_file": null
+      },
+      "game_xml_post": {
+        "exists": true,
+        "sha256": "eb038b80fcc04cb786ced5cf8e2847a997f5cdf10a654f15d044b3fd20e7a6a0",
+        "content_matches": true
+      },
+      "api_after_close": {
+        "idle_raw": {
+          "status": 200,
+          "body": "[ true ]"
+        },
+        "idle": true,
+        "game_raw": {
+          "status": 201,
+          "body": "{\"msg\":\"NO GAME RUNNING\"}"
+        },
+        "game": null
+      },
+      "processes_after_close": [],
+      "restore_delta": {
+        "created": [
+          "/userdata/saves/mame/mame",
+          "/userdata/saves/mame/mame/cfg",
+          "/userdata/saves/mame/mame/cfg/default.cfg",
+          "/userdata/saves/mame/mame/cfg/martmast.cfg",
+          "/userdata/saves/mame/mame/nvram",
+          "/userdata/saves/mame/mame/nvram/martmast",
+          "/userdata/saves/mame/mame/nvram/martmast/sram",
+          "/userdata/saves/mame/plugins",
+          "/userdata/saves/mame/plugins/hiscore",
+          "/userdata/saves/mame/plugins/hiscore/plugin.cfg"
+        ],
+        "changed": [
+          "/userdata/saves/mame"
+        ],
+        "removed": []
+      },
+      "override": "KEPT",
+      "rom_unchanged": true,
+      "ended_at": "2026-11-15T05:08:53.053-03:00",
+      "api_idle_after": true,
+      "running_game_none_after": true,
+      "marker_absent_after": true,
+      "launch_processes_zero_after": true,
+      "p1_p4_after": {
+        "players": {
+          "P1": [
+            "5",
+            "/dev/input/event17"
+          ],
+          "P2": [
+            "6",
+            "/dev/input/event18"
+          ],
+          "P3": [
+            "8",
+            "/dev/input/event20"
+          ],
+          "P4": [
+            "7",
+            "/dev/input/event19"
+          ]
+        },
+        "sdl_paths": [
+          "/dev/input/event17",
+          "/dev/input/event18",
+          "/dev/input/event19",
+          "/dev/input/event20"
+        ],
+        "duplicates": false
+      },
+      "global_core_after": true,
+      "overrides_after": [
+        "altair.zip",
+        "apache3.zip",
+        "blazlaz.zip",
+        "cubeqst.zip",
+        "ertictac.zip",
+        "evosocc.zip",
+        "ffight2b.zip",
+        "funcube4.zip",
+        "hoops95.zip",
+        "kov2p.zip",
+        "lbgrande.zip",
+        "martmast.zip",
+        "multigam.zip",
+        "multigm3.zip",
+        "nratechu.zip",
+        "sia2650.zip",
+        "sws98.zip",
+        "tenkomor.zip"
+      ],
+      "gamelist_hashes_after": {
+        "/userdata/roms/cannonball/gamelist.xml": "4dfd59b823f696d42ef21e5dfc48219fb4edba94163810ddcbeaf7b304dd0951",
+        "/userdata/roms/psx/gamelist.xml": "13d00ee681214340c5d8bfffb40c27050197383dd386304cbdbefc0059955380",
+        "/userdata/roms/megacd/gamelist.xml": "1fe51c17d1617248eff73c81d2ab9d72c9a1cc57674e6e209a58d6d9e8045b4d",
+        "/userdata/roms/c64/gamelist.xml": "42004a76da6a01a5f0731fd4bf42721cda90d66cb12786df911801c5cb873c42",
+        "/userdata/roms/gb/gamelist.xml": "6e9efeca1d1ff98ccf6485e94c49e1cd263a9860cc8e8db9ff400d85bbcee8cc",
+        "/userdata/roms/mame/gamelist.xml": "a2c30247618239c574e09d94ee467ff4809d5ede4cd0abb969bf8bad6a3611d1",
+        "/userdata/roms/fbneo/gamelist.xml": "5d235af9fa9450a66be72f1e94d964f46aaa4efc5a5bc04d132ec9407588dca7",
+        "/userdata/roms/scummvm/gamelist.xml": "c4a6ca3ef778da785bc617225fa8aedbaa448186f0531ba51152a9f424e5f011",
+        "/userdata/roms/ps4/gamelist.xml": "1f8a0e2a119a38b25c0b7bf249697238ff49643364c7b00f1d8b6905c992ad9a",
+        "/userdata/roms/snes/gamelist.xml": "4f8d20ba82bf7416d220c793e0e175e738b719e3d2c8cf2bd4a79b7ac865d6bc",
+        "/userdata/roms/mastersystem/gamelist.xml": "98fed6413dbb20bc7b108a63439292b20edb4b64a47adc811c4aef10d160902f",
+        "/userdata/roms/ikemen/gamelist.xml": "c09117546e62cff92af07b18489f8826de6efcfd32e8761a3b58daff602418c0",
+        "/userdata/roms/ps2/gamelist.xml": "47d386f9e86734ef9659626c6e6c10b7a62231fec53090016e6b45ee5dfccc3b",
+        "/userdata/roms/fds/gamelist.xml": "c2a540aab8ddb450d40dab51abf0df1e62477f0b7ff485c40b5aa06057f244d5",
+        "/userdata/roms/hcl/gamelist.xml": "47c57dd4c02a72c8e31942c0b9fcb3c7b9d17707dcedec991400f4474ac2c25f",
+        "/userdata/roms/pcengine/gamelist.xml": "fb32495609ff5b1e5ec02e409b8429d308d56cc9b60a675d0a2a644eb8b13ce4",
+        "/userdata/roms/megadrive/gamelist.xml": "ec7505dab1fc4a8b048226dd2317f23e3eda5a665c15fdcc0eb844219d9f2a85",
+        "/userdata/roms/mrboom/gamelist.xml": "193d7e2acec2aa1f6185dbd8cabf8353277dda01b09c283a7b5f875f4648714f",
+        "/userdata/roms/ports/gamelist.xml": "7648c85fcb67250119c8934e90d7f7bbff2f5432eabc39ea9b4ad3847916b5b5",
+        "/userdata/roms/devilutionx/gamelist.xml": "9b4b1726ff7c5544fa4d35bbd008df1ba441a1b2a870376fff721b95feafb0b8",
+        "/userdata/roms/atari2600/gamelist.xml": "ff6d4edc99dc17b08c5abdea8c3c54c3faa5265e33a7dfe41d0a59fe4c4d5260",
+        "/userdata/roms/psp/gamelist.xml": "790ee47a9fbdd53f3582f94604ad3f99742dee33d943fe439e56464da4350d43",
+        "/userdata/roms/sdlpop/gamelist.xml": "54ae5ea40b136dc8726c99614aa8d548d6de67187c86136834649b711bd63320",
+        "/userdata/roms/openbor/gamelist.xml": "a85bf97b3f727d352304ac373a351c9573c2dada0267e5a04bc11aa1ef4be673",
+        "/userdata/roms/gamecube/gamelist.xml": "22548ed24ea7b1a41c3205c860cbf19d904db99ba0472dd3b94d7e54670c373e",
+        "/userdata/roms/odcommander/gamelist.xml": "538a3358bc28675c17b0801dc0c071eea1739610c4c5a91b27080f7e7d21e894",
+        "/userdata/roms/neogeo/gamelist.xml": "e8e32ec709f0b8bcd4286541bba787aabb4cf6f5694ac95e700f9c4df5f55181",
+        "/userdata/roms/gbc/gamelist.xml": "2ba57951eeb0b41c013faecd54954c01a59f16ee9269965481245f6eab1e8ac0",
+        "/userdata/roms/flatpak/gamelist.xml": "fb642f011ba160d7a14348a87417b4d09eec78ad5d0e8ce370b087813d4ab488",
+        "/userdata/roms/naomi/gamelist.xml": "042ae314bd70f3e7b6f18c82cff5cf4e6255e445036f7ca1b43e3b9d7f8a0b68",
+        "/userdata/roms/hurrican/gamelist.xml": "b18dbe50ee82283c9451d83fad70d6e7d8db20d4e6b203a557f31b278ddca683",
+        "/userdata/roms/dreamcast/gamelist.xml": "29362e16b44d88950b2bfe76921c63ab7a990bf1804f66c68ad25398fe9c89d3",
+        "/userdata/roms/pygame/gamelist.xml": "4a562aff53ee48f9368d77fecc9f1b99cf32246372e186963c36032b40465cff",
+        "/userdata/roms/ps3/gamelist.xml": "57c4f17c91c92bc8a090e37c978a0dc4b1cc3cef9eaa0444651f51ccd186f2a5",
+        "/userdata/roms/saturn/gamelist.xml": "367c2c01cfccc274d4eb8914f4ab109cc94d42e691081f08c07a64d9bc0ec621",
+        "/userdata/roms/nds/gamelist.xml": "35f336953b261ea3fba31297f77666e01394925a01bdb69e8211ac87b0f12d33",
+        "/userdata/roms/gba/gamelist.xml": "8c5896ce8733abbcb9079a01f63734f462e2d79f59962619dcf672a6103a0bc9",
+        "/userdata/roms/cdogs/gamelist.xml": "17b52cb768448dcdbcd4716f8ddb4fb34fe3bab4acfb902a6bacf4b1f5eef408",
+        "/userdata/roms/nes/gamelist.xml": "10033b46f42652ceee2941985d25dc4984bf880bc1c8949c7230df11aff3965d",
+        "/userdata/roms/prboom/gamelist.xml": "69c2b6e9d798a7ea97fab9f6e33aa88224a84c48c0e6778171789144cf4dbe11",
+        "/userdata/roms/easyrpg/gamelist.xml": "9daed1388a4dfc410a2d748981a25e6a24abc849d5f338a00137bd8010e41d32",
+        "/userdata/roms/n64/gamelist.xml": "65659a949c569a6f6890a926c0f0693250277d00c377585631e1e6f772ef9c1d",
+        "/userdata/roms/theforceengine/gamelist.xml": "a2ef28948fd6da50d448dd989be80f31e627378616046103a2f8f7941014bf10",
+        "/userdata/roms/solarus/gamelist.xml": "f2ed87933ddcc4fa9b4c4497f2c4cdc4340e2612341e2ee8034071d2e502601d",
+        "/userdata/roms/tic80/gamelist.xml": "01dbeae4ec3479c05e8631f5b620c1944102ae4b5f384cd370e45a892b62b959",
+        "/userdata/roms/superbroswar/gamelist.xml": "27ed0092bfe0d4015cdd0ab7da3b0630b933d338c89ee0548fe91b1d59b13d73",
+        "/userdata/roms/xbox360/gamelist.xml": "1a201e3eb13b4077573eda79f7f982de1d2c9a4fd8a598f6fd06a2c2b4719fd5",
+        "/userdata/roms/steam/gamelist.xml": "a8d0550f654fd5e6a7a5d9e4aff8fd9dc7562e67c2c42625ca143b690c56c2d6",
+        "/userdata/roms/xrick/gamelist.xml": "c394ab37f095412b17f98ca5ff335551f702da170fdf0d94d726bb1a674db81b",
+        "/userdata/roms/windows/gamelist.xml": "b236987137b2d3f5ddac4e3c905368001e28a52bfe216838da0585f46141e351",
+        "/userdata/roms/xbox/gamelist.xml": "9021b28c238d532614dc8968e816489391dc13664a1f1cfdd6839af7687bba51"
+      },
+      "expected_overrides_after": [
+        "altair.zip",
+        "apache3.zip",
+        "blazlaz.zip",
+        "cubeqst.zip",
+        "ertictac.zip",
+        "evosocc.zip",
+        "ffight2b.zip",
+        "funcube4.zip",
+        "hoops95.zip",
+        "lbgrande.zip",
+        "martmast.zip",
+        "multigam.zip",
+        "multigm3.zip",
+        "nratechu.zip",
+        "sia2650.zip",
+        "sws98.zip",
+        "tenkomor.zip"
+      ],
+      "overrides_verified": false,
+      "dispatcher_sha_after": "a60be89fb45ea27ec4f7c3f546e088c7ff3da140bccfe1c6a37e5b14ec581c45",
+      "safety_gate": "FAIL",
+      "matrix_updated": true,
+      "safety_gate_reconciled": true,
+      "cleanup_race_classification": "CLEANUP_RACE"
+    }
+  ],
+  "failures": [],
+  "skips": [
+    {
+      "shortname": "kdynastg",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "ppcar",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "theglad",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "kov2",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "svg",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "nagano98",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "ddux",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "dynwar",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "mk4",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "sfzch",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "aerofgts",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "rdft",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "rdft2",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "rfjet",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "gradius4",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "ar_ldrb",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "ar_ninj",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "ar_sprg",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "bldyror2",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "cbaj",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "dacholer",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "darkhleg",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "dsftkd",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "dstage",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "fishfren",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "flamegun",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "freezeat",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "gekisou",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "glpracr3",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "hvnsgate",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "jockeygp",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "konam80s",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "mfjump",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "misncrft",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "scorpion",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "senkyu",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "shngmtkb",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "sqix",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "suplup",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "tblkkuzu",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "twinbrat",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "viprp1",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    },
+    {
+      "shortname": "weddingr",
+      "cause": null,
+      "stage": "MASS_READ_ONLY_PREFLIGHT",
+      "launched": false
+    }
+  ],
+  "new_overrides": [
+    "kov2p",
+    "martmast"
+  ],
+  "restore_results": [
+    {
+      "shortname": "kov2p",
+      "verified": true,
+      "type": "GAME"
+    },
+    {
+      "shortname": "martmast",
+      "verified": true,
+      "type": "GAME"
+    }
+  ],
+  "preflights": {
+    "kov2p": {
+      "status": "PASS",
+      "reason": "MAME 0.285 fresh -listfull/-listxml/-verifyroms PASS",
+      "fresh_machine": {
+        "shortname": "kov2p",
+        "description": "Knights of Valour 2 Plus - Nine Dragons / Sanguo Zhan Ji 2 Qunxiong Zhengba / Sanguo Zhan Ji 2 Feilong Zai Tian / Sangoku Senki Busyou Souha (ver. M205XX, 200, 100CN)",
+        "runnable": "yes",
+        "cloneof": null,
+        "romof": "pgm",
+        "isbios": "no",
+        "driver_status": "imperfect",
+        "driver_emulation": "good",
+        "players": "4",
+        "buttons": null,
+        "control_type": null,
+        "roms": [
+          {
+            "name": "pgm_p02s.u20",
+            "size": "131072",
+            "crc": "78c15fa2",
+            "sha1": "885a6558e022602cc6f482ac9667ba9f61e75092",
+            "status": "good",
+            "optional": "no",
+            "bios": "v2",
+            "merge": "pgm_p02s.u20"
+          },
+          {
+            "name": "pgm_p01s.u20",
+            "size": "131072",
+            "crc": "e42b166e",
+            "sha1": "2a9df9ec746b14b74fae48b1a438da14973702ea",
+            "status": "good",
+            "optional": "no",
+            "bios": "v1",
+            "merge": "pgm_p01s.u20"
+          },
+          {
+            "name": "v205_32m.u8",
+            "size": "4194304",
+            "crc": "3a2cc0de",
+            "sha1": "d7511478b34bfb03b2fb5b8268b60502d05b9414",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "kov2p_igs027a_china.bin",
+            "size": "16384",
+            "crc": "19a0bd95",
+            "sha1": "83e9f22512832a51d41c588debe8be7adb3b1df7",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "v200_16m.u23",
+            "size": "2097152",
+            "crc": "16a0c11f",
+            "sha1": "ce449cef76ebd5657d49b57951e2eb0f132e203e",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_t01s.rom",
+            "size": "2097152",
+            "crc": "1a7123a0",
+            "sha1": "cc567f577bfbf45427b54d6695b11b74f2578af3",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": "pgm_t01s.rom"
+          },
+          {
+            "name": "pgm_t1200.u21",
+            "size": "8388608",
+            "crc": "d7e26609",
+            "sha1": "bdad810f82fcf1d50a8791bdc495374ec5a309c6",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1200.u1",
+            "size": "8388608",
+            "crc": "ceeb81d8",
+            "sha1": "5476729443fc1bc9593ae10fbf7cbc5d7290b017",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1201.u4",
+            "size": "8388608",
+            "crc": "21063ca7",
+            "sha1": "cf561b44902425a920d5cbea5bf65dd9530b2289",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1202.u6",
+            "size": "8388608",
+            "crc": "4bb92fae",
+            "sha1": "f0b6d72ed425de1c69dc8f8d5795ea760a4a59b0",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1203.u8",
+            "size": "8388608",
+            "crc": "e73cb627",
+            "sha1": "4c6e48b845a5d1e8f9899010fbf273d54c2b8899",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1204.u10",
+            "size": "2097152",
+            "crc": "14b4b5bb",
+            "sha1": "d7db5740eec971f2782fb2885ee3af8f2a796550",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_b1200.u5",
+            "size": "8388608",
+            "crc": "bed7d994",
+            "sha1": "019dfba8154256d64cd249eb0fa4c451edce34b8",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_b1201.u7",
+            "size": "8388608",
+            "crc": "f251eb57",
+            "sha1": "56a5fc14ab7822f83379cecb26638e5bb266349a",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_m01s.rom",
+            "size": "2097152",
+            "crc": "45ae7159",
+            "sha1": "d3ed3ff3464557fd0df6b069b2e431528b0ebfa8",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": "pgm_m01s.rom"
+          },
+          {
+            "name": "pgm_m1200.u3",
+            "size": "8388608",
+            "crc": "b0d88720",
+            "sha1": "44ab137e3f8e15b7cb5697ffbd9b1143d8210c4f",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          }
+        ],
+        "bios_sets": [
+          {
+            "name": "v2",
+            "description": "PGM BIOS V2",
+            "default": "no"
+          },
+          {
+            "name": "v1",
+            "description": "PGM BIOS V1",
+            "default": "no"
+          }
+        ],
+        "disks": []
+      },
+      "fresh_verifyroms_output": "romset kov2p [pgm] is good\n1 romsets found, 1 were OK.",
+      "rom_sha256": "fa34658376bc36b200b9882a530aac730ed5d56075fc09d0cfc2216cca860160",
+      "rom_size": 25090297,
+      "rom_mtime_ns": 851463120000000000
+    },
+    "martmast": {
+      "status": "PASS",
+      "reason": "MAME 0.285 fresh -listfull/-listxml/-verifyroms PASS",
+      "fresh_machine": {
+        "shortname": "martmast",
+        "description": "Martial Masters / Xing Yi Quan (ver. 104, 102, 102US)",
+        "runnable": "yes",
+        "cloneof": null,
+        "romof": "pgm",
+        "isbios": "no",
+        "driver_status": "imperfect",
+        "driver_emulation": "good",
+        "players": "4",
+        "buttons": null,
+        "control_type": null,
+        "roms": [
+          {
+            "name": "pgm_p02s.u20",
+            "size": "131072",
+            "crc": "78c15fa2",
+            "sha1": "885a6558e022602cc6f482ac9667ba9f61e75092",
+            "status": "good",
+            "optional": "no",
+            "bios": "v2",
+            "merge": "pgm_p02s.u20"
+          },
+          {
+            "name": "pgm_p01s.u20",
+            "size": "131072",
+            "crc": "e42b166e",
+            "sha1": "2a9df9ec746b14b74fae48b1a438da14973702ea",
+            "status": "good",
+            "optional": "no",
+            "bios": "v1",
+            "merge": "pgm_p01s.u20"
+          },
+          {
+            "name": "v104_32m.u9",
+            "size": "4194304",
+            "crc": "cfd9dff4",
+            "sha1": "328eaf6ac49a73265ee4e0f992b1b1312f49877b",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "martial_masters_v102_usa.asic",
+            "size": "16384",
+            "crc": "a6c0828c",
+            "sha1": "0a5bda56dca264c3c7ff7698b8f699563f203c4d",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "v102_16m.u10",
+            "size": "2097152",
+            "crc": "18b745e6",
+            "sha1": "7bcb58dd3a2d6072f492cf0dd7181cb061c1f49d",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_t01s.rom",
+            "size": "2097152",
+            "crc": "1a7123a0",
+            "sha1": "cc567f577bfbf45427b54d6695b11b74f2578af3",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": "pgm_t01s.rom"
+          },
+          {
+            "name": "pgm_t1000.u3",
+            "size": "8388608",
+            "crc": "bbf879b5",
+            "sha1": "bd9a6aea34ad4001e89e62ff4b7a2292eb833c00",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1000.u3",
+            "size": "8388608",
+            "crc": "43577ac8",
+            "sha1": "6eea8b455985d5bac74dcc9943cdc3c0902de6cc",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1001.u4",
+            "size": "8388608",
+            "crc": "fe7a476f",
+            "sha1": "a8c7f1f0dd3e53141aed6d927eb88a3ceebb81e4",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1002.u6",
+            "size": "8388608",
+            "crc": "62e33d38",
+            "sha1": "96163d583e25073594f8413ce263e56b66bd69a1",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1003.u8",
+            "size": "8388608",
+            "crc": "b2c4945a",
+            "sha1": "7b18287a2db56db3651cfd4deb607af53522fefd",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_a1004.u10",
+            "size": "4194304",
+            "crc": "9fd3f5fd",
+            "sha1": "057531f91062be51589c6cf8f4170089b9be6380",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_b1000.u9",
+            "size": "8388608",
+            "crc": "c5961f6f",
+            "sha1": "a68060b10edbd084cbde79d2ed1c9084777beb10",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_b1001.u11",
+            "size": "8388608",
+            "crc": "0b7e1c06",
+            "sha1": "545e15e0087f8621d593fecd8b4013f7ca311686",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_m01s.rom",
+            "size": "2097152",
+            "crc": "45ae7159",
+            "sha1": "d3ed3ff3464557fd0df6b069b2e431528b0ebfa8",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": "pgm_m01s.rom"
+          },
+          {
+            "name": "pgm_m1000.u5",
+            "size": "8388608",
+            "crc": "ed407ae8",
+            "sha1": "a6e9c09b39c13e8fb7fbc89fa9f823cbeb66e901",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          },
+          {
+            "name": "pgm_m1001.u7",
+            "size": "4194304",
+            "crc": "662d2d48",
+            "sha1": "2fcc3099d9c04456cae3b13035fb28eaf709e7d8",
+            "status": "good",
+            "optional": "no",
+            "bios": null,
+            "merge": null
+          }
+        ],
+        "bios_sets": [
+          {
+            "name": "v2",
+            "description": "PGM BIOS V2",
+            "default": "no"
+          },
+          {
+            "name": "v1",
+            "description": "PGM BIOS V1",
+            "default": "no"
+          }
+        ],
+        "disks": []
+      },
+      "fresh_verifyroms_output": "romset martmast [pgm] is good\n1 romsets found, 1 were OK.",
+      "rom_sha256": "d7c72b92f2604f4d2eebd081be6bbfcc548e208a4d56ddeb88f52a26e89f1412",
+      "rom_size": 28525018,
+      "rom_mtime_ns": 1239438721655868000
+    }
+  },
+  "current_game": null,
+  "gamelist_hashes_before_batch": {
+    "/userdata/roms/cannonball/gamelist.xml": "4dfd59b823f696d42ef21e5dfc48219fb4edba94163810ddcbeaf7b304dd0951",
+    "/userdata/roms/psx/gamelist.xml": "13d00ee681214340c5d8bfffb40c27050197383dd386304cbdbefc0059955380",
+    "/userdata/roms/megacd/gamelist.xml": "1fe51c17d1617248eff73c81d2ab9d72c9a1cc57674e6e209a58d6d9e8045b4d",
+    "/userdata/roms/c64/gamelist.xml": "42004a76da6a01a5f0731fd4bf42721cda90d66cb12786df911801c5cb873c42",
+    "/userdata/roms/gb/gamelist.xml": "6e9efeca1d1ff98ccf6485e94c49e1cd263a9860cc8e8db9ff400d85bbcee8cc",
+    "/userdata/roms/mame/gamelist.xml": "a2c30247618239c574e09d94ee467ff4809d5ede4cd0abb969bf8bad6a3611d1",
+    "/userdata/roms/fbneo/gamelist.xml": "5d235af9fa9450a66be72f1e94d964f46aaa4efc5a5bc04d132ec9407588dca7",
+    "/userdata/roms/scummvm/gamelist.xml": "c4a6ca3ef778da785bc617225fa8aedbaa448186f0531ba51152a9f424e5f011",
+    "/userdata/roms/ps4/gamelist.xml": "1f8a0e2a119a38b25c0b7bf249697238ff49643364c7b00f1d8b6905c992ad9a",
+    "/userdata/roms/snes/gamelist.xml": "4f8d20ba82bf7416d220c793e0e175e738b719e3d2c8cf2bd4a79b7ac865d6bc",
+    "/userdata/roms/mastersystem/gamelist.xml": "98fed6413dbb20bc7b108a63439292b20edb4b64a47adc811c4aef10d160902f",
+    "/userdata/roms/ikemen/gamelist.xml": "c09117546e62cff92af07b18489f8826de6efcfd32e8761a3b58daff602418c0",
+    "/userdata/roms/ps2/gamelist.xml": "47d386f9e86734ef9659626c6e6c10b7a62231fec53090016e6b45ee5dfccc3b",
+    "/userdata/roms/fds/gamelist.xml": "c2a540aab8ddb450d40dab51abf0df1e62477f0b7ff485c40b5aa06057f244d5",
+    "/userdata/roms/hcl/gamelist.xml": "47c57dd4c02a72c8e31942c0b9fcb3c7b9d17707dcedec991400f4474ac2c25f",
+    "/userdata/roms/pcengine/gamelist.xml": "fb32495609ff5b1e5ec02e409b8429d308d56cc9b60a675d0a2a644eb8b13ce4",
+    "/userdata/roms/megadrive/gamelist.xml": "ec7505dab1fc4a8b048226dd2317f23e3eda5a665c15fdcc0eb844219d9f2a85",
+    "/userdata/roms/mrboom/gamelist.xml": "193d7e2acec2aa1f6185dbd8cabf8353277dda01b09c283a7b5f875f4648714f",
+    "/userdata/roms/ports/gamelist.xml": "7648c85fcb67250119c8934e90d7f7bbff2f5432eabc39ea9b4ad3847916b5b5",
+    "/userdata/roms/devilutionx/gamelist.xml": "9b4b1726ff7c5544fa4d35bbd008df1ba441a1b2a870376fff721b95feafb0b8",
+    "/userdata/roms/atari2600/gamelist.xml": "ff6d4edc99dc17b08c5abdea8c3c54c3faa5265e33a7dfe41d0a59fe4c4d5260",
+    "/userdata/roms/psp/gamelist.xml": "790ee47a9fbdd53f3582f94604ad3f99742dee33d943fe439e56464da4350d43",
+    "/userdata/roms/sdlpop/gamelist.xml": "54ae5ea40b136dc8726c99614aa8d548d6de67187c86136834649b711bd63320",
+    "/userdata/roms/openbor/gamelist.xml": "a85bf97b3f727d352304ac373a351c9573c2dada0267e5a04bc11aa1ef4be673",
+    "/userdata/roms/gamecube/gamelist.xml": "22548ed24ea7b1a41c3205c860cbf19d904db99ba0472dd3b94d7e54670c373e",
+    "/userdata/roms/odcommander/gamelist.xml": "538a3358bc28675c17b0801dc0c071eea1739610c4c5a91b27080f7e7d21e894",
+    "/userdata/roms/neogeo/gamelist.xml": "e8e32ec709f0b8bcd4286541bba787aabb4cf6f5694ac95e700f9c4df5f55181",
+    "/userdata/roms/gbc/gamelist.xml": "2ba57951eeb0b41c013faecd54954c01a59f16ee9269965481245f6eab1e8ac0",
+    "/userdata/roms/flatpak/gamelist.xml": "fb642f011ba160d7a14348a87417b4d09eec78ad5d0e8ce370b087813d4ab488",
+    "/userdata/roms/naomi/gamelist.xml": "042ae314bd70f3e7b6f18c82cff5cf4e6255e445036f7ca1b43e3b9d7f8a0b68",
+    "/userdata/roms/hurrican/gamelist.xml": "b18dbe50ee82283c9451d83fad70d6e7d8db20d4e6b203a557f31b278ddca683",
+    "/userdata/roms/dreamcast/gamelist.xml": "29362e16b44d88950b2bfe76921c63ab7a990bf1804f66c68ad25398fe9c89d3",
+    "/userdata/roms/pygame/gamelist.xml": "4a562aff53ee48f9368d77fecc9f1b99cf32246372e186963c36032b40465cff",
+    "/userdata/roms/ps3/gamelist.xml": "57c4f17c91c92bc8a090e37c978a0dc4b1cc3cef9eaa0444651f51ccd186f2a5",
+    "/userdata/roms/saturn/gamelist.xml": "367c2c01cfccc274d4eb8914f4ab109cc94d42e691081f08c07a64d9bc0ec621",
+    "/userdata/roms/nds/gamelist.xml": "35f336953b261ea3fba31297f77666e01394925a01bdb69e8211ac87b0f12d33",
+    "/userdata/roms/gba/gamelist.xml": "8c5896ce8733abbcb9079a01f63734f462e2d79f59962619dcf672a6103a0bc9",
+    "/userdata/roms/cdogs/gamelist.xml": "17b52cb768448dcdbcd4716f8ddb4fb34fe3bab4acfb902a6bacf4b1f5eef408",
+    "/userdata/roms/nes/gamelist.xml": "10033b46f42652ceee2941985d25dc4984bf880bc1c8949c7230df11aff3965d",
+    "/userdata/roms/prboom/gamelist.xml": "69c2b6e9d798a7ea97fab9f6e33aa88224a84c48c0e6778171789144cf4dbe11",
+    "/userdata/roms/easyrpg/gamelist.xml": "9daed1388a4dfc410a2d748981a25e6a24abc849d5f338a00137bd8010e41d32",
+    "/userdata/roms/n64/gamelist.xml": "65659a949c569a6f6890a926c0f0693250277d00c377585631e1e6f772ef9c1d",
+    "/userdata/roms/theforceengine/gamelist.xml": "a2ef28948fd6da50d448dd989be80f31e627378616046103a2f8f7941014bf10",
+    "/userdata/roms/solarus/gamelist.xml": "f2ed87933ddcc4fa9b4c4497f2c4cdc4340e2612341e2ee8034071d2e502601d",
+    "/userdata/roms/tic80/gamelist.xml": "01dbeae4ec3479c05e8631f5b620c1944102ae4b5f384cd370e45a892b62b959",
+    "/userdata/roms/superbroswar/gamelist.xml": "27ed0092bfe0d4015cdd0ab7da3b0630b933d338c89ee0548fe91b1d59b13d73",
+    "/userdata/roms/xbox360/gamelist.xml": "1a201e3eb13b4077573eda79f7f982de1d2c9a4fd8a598f6fd06a2c2b4719fd5",
+    "/userdata/roms/steam/gamelist.xml": "a8d0550f654fd5e6a7a5d9e4aff8fd9dc7562e67c2c42625ca143b690c56c2d6",
+    "/userdata/roms/xrick/gamelist.xml": "c394ab37f095412b17f98ca5ff335551f702da170fdf0d94d726bb1a674db81b",
+    "/userdata/roms/windows/gamelist.xml": "b236987137b2d3f5ddac4e3c905368001e28a52bfe216838da0585f46141e351",
+    "/userdata/roms/xbox/gamelist.xml": "9021b28c238d532614dc8968e816489391dc13664a1f1cfdd6839af7687bba51"
+  },
+  "gamelist_results": {
+    "kov2p": {
+      "changed_files": [],
+      "status": "NONE",
+      "added_paths": [],
+      "removed_paths": [],
+      "non_runtime_field_changes": []
+    },
+    "martmast": {
+      "changed_files": [],
+      "status": "NONE",
+      "added_paths": [],
+      "removed_paths": [],
+      "non_runtime_field_changes": []
+    }
+  },
+  "stop_reason": "All selected candidates completed. Runner paused after martmast because its expected override set omitted kov2p, the already retained PASS override; independent reconciliation passed. No further candidates or batch were started.",
+  "finished_at": "2026-11-15T05:11:40-03:00",
+  "system_final_status": {
+    "es_pids": [
+      29733
+    ],
+    "api_idle": true,
+    "running_game_none": true,
+    "marker_absent": true,
+    "launch_processes_non_shell": [],
+    "global_core": "mame078plus",
+    "overrides": [
+      "altair.zip",
+      "apache3.zip",
+      "blazlaz.zip",
+      "cubeqst.zip",
+      "ertictac.zip",
+      "evosocc.zip",
+      "ffight2b.zip",
+      "funcube4.zip",
+      "hoops95.zip",
+      "kov2p.zip",
+      "lbgrande.zip",
+      "martmast.zip",
+      "multigam.zip",
+      "multigm3.zip",
+      "nratechu.zip",
+      "sia2650.zip",
+      "sws98.zip",
+      "tenkomor.zip"
+    ],
+    "p1_p4": {
+      "players": {
+        "P1": [
+          "5",
+          "/dev/input/event17"
+        ],
+        "P2": [
+          "6",
+          "/dev/input/event18"
+        ],
+        "P3": [
+          "8",
+          "/dev/input/event20"
+        ],
+        "P4": [
+          "7",
+          "/dev/input/event19"
+        ]
+      },
+      "sdl_paths": [
+        "/dev/input/event17",
+        "/dev/input/event18",
+        "/dev/input/event19",
+        "/dev/input/event20"
+      ],
+      "duplicates": false
+    },
+    "dispatcher_sha256": "a60be89fb45ea27ec4f7c3f546e088c7ff3da140bccfe1c6a37e5b14ec581c45",
+    "protected_persistent_state_drift_except_authorized_batocera_conf": {},
+    "batocera_conf_exact_pretest_plus_new_overrides": true,
+    "system_health_after": {
+      "cpu_temp_c": 49.0,
+      "meminfo": [
+        "MemTotal:       16216572 kB",
+        "MemFree:         7196136 kB",
+        "MemAvailable:   14540948 kB",
+        "Buffers:          406756 kB",
+        "Cached:          6983528 kB",
+        "SwapCached:            0 kB"
+      ],
+      "critical_new_dmesg_lines": []
+    }
+  },
+  "runner_guard_discrepancy": {
+    "game": "martmast",
+    "raw_runner_safety_gate": "FAIL",
+    "cause": "Expected override set was base + martmast only; it omitted kov2p retained from the preceding BOOT_PASS.",
+    "actual_overrides_after": [
+      "altair.zip",
+      "apache3.zip",
+      "blazlaz.zip",
+      "cubeqst.zip",
+      "ertictac.zip",
+      "evosocc.zip",
+      "ffight2b.zip",
+      "funcube4.zip",
+      "hoops95.zip",
+      "kov2p.zip",
+      "lbgrande.zip",
+      "martmast.zip",
+      "multigam.zip",
+      "multigm3.zip",
+      "nratechu.zip",
+      "sia2650.zip",
+      "sws98.zip",
+      "tenkomor.zip"
+    ],
+    "independent_expected_cumulative_overrides": [
+      "altair.zip",
+      "apache3.zip",
+      "blazlaz.zip",
+      "cubeqst.zip",
+      "ertictac.zip",
+      "evosocc.zip",
+      "ffight2b.zip",
+      "funcube4.zip",
+      "hoops95.zip",
+      "kov2p.zip",
+      "lbgrande.zip",
+      "martmast.zip",
+      "multigam.zip",
+      "multigm3.zip",
+      "nratechu.zip",
+      "sia2650.zip",
+      "sws98.zip",
+      "tenkomor.zip"
+    ],
+    "independent_safety_gate": "PASS",
+    "runner_fixed_after_tests": true,
+    "no_retest_performed": true
+  },
+  "counts": {
+    "preflight_considered": 45,
+    "verify_pass": 2,
+    "skip_preflight": 43,
+    "selected": 2,
+    "launched": 2,
+    "boot_pass": 2,
+    "boot_fail": 0,
+    "new_overrides": 2,
+    "restores_verified": 2,
+    "restores_total": 2,
+    "direct_compatible_pass": 2,
+    "fighting_pass": 1,
+    "beat_em_up_pass": 1,
+    "multiplayer_3p4p_pass": 2,
+    "special_control_pass": 0,
+    "wrong_game_dispatch": 0,
+    "pass_rate_percent": 100.0,
+    "target_core_pool_unprobed": 145,
+    "strong_preflight_pass_candidates_remaining": 0
+  },
+  "global_boot_counts": {
+    "boot_ok_default_core_mame078plus": 1094,
+    "boot_ok_mame_current": 18,
+    "boot_ok_fbneo": 88,
+    "total_unique_boot_ok": 1200,
+    "overlaps": {
+      "default_mame_current": 0,
+      "default_fbneo": 0,
+      "mame_current_fbneo": 0
+    },
+    "inventory_rows": 1397,
+    "inventory_without_boot_ok_in_these_sources": 197,
+    "mame_current_tested_total": 24,
+    "mame_current_result_counts": {
+      "BOOT_OK": 9,
+      "BOOT_PASS": 9,
+      "FAIL_CHD": 3,
+      "FAIL_ROMSET": 1,
+      "FAIL_MISSING_CONTENT": 2
+    }
+  },
+  "overrides_after": [
+    "altair.zip",
+    "apache3.zip",
+    "blazlaz.zip",
+    "cubeqst.zip",
+    "ertictac.zip",
+    "evosocc.zip",
+    "ffight2b.zip",
+    "funcube4.zip",
+    "hoops95.zip",
+    "kov2p.zip",
+    "lbgrande.zip",
+    "martmast.zip",
+    "multigam.zip",
+    "multigm3.zip",
+    "nratechu.zip",
+    "sia2650.zip",
+    "sws98.zip",
+    "tenkomor.zip"
+  ],
+  "report": "ARCADE_MAME_BATCH5_RESULTS.md",
+  "report_sha256": "4f538d4feafad7fe8c6fd710309bc472aae813242f0d88ff3a8738b3386c2406",
+  "compatibility_csv_sha256_after": "994e3876e6e43c3c537a691353f3aae867b0687ef9ff282a2583af7f49fe3751",
+  "historical_artifact_hashes_reconfirmed": {
+    "ARCADE_MAME_BATCH4_RESULTS.md": "7e8ec88020403060eb04c34566fb0991ed4e1d2fcaa54fe0cc068240bac4f52b",
+    "mame_batch4_checkpoint.json": "08ee801f1ed05d21aae226cc4976a300b925b6d810ac81859d1bb7afd9d48cf9",
+    "ARCADE_MAME_BATCH3_RESULTS.md": "2e131287f09d872cc681bd45b4a04e7cffe69eec36fe3d710da1c281801002a2",
+    "ARCADE_MAME_BATCH3_RESUME_RESULTS.md": "07051e6ecaa2284938adcd523050fdcd6df6b51e21fbbcb3adce5a68f1e17aca",
+    "mame_batch3_checkpoint.json": "1ab807fcc21f6a0bae4144bb7285ec2b32b6e01d32c197f5d3daa33415d60e48",
+    "mame_batch3_resume_checkpoint.json": "3431963ce42e7be5e11265ba6f23c5855c31f3845025d887545c3a3f639fac35",
+    "ARCADE_CORE_PILOT_RESULTS.md": "72b022db22aa643823524b5821297077449d1712254f7ad1f9b5db6761b8f351",
+    "ARCADE_CORE_PILOT_BATCH2_RESULTS.md": "17f0e2f7e61373ce293c4cbab2240a2a46a3a2e19686c416c09306833b6d67f0"
+  },
+  "export_status": {
+    "destination": "/userdata/system/state/arcade_audit_git/",
+    "method": "filtered copy; no Git commands",
+    "secret_scan": "PASS",
+    "payload_scan": "PASS",
+    "files_scanned": 55,
+    "exported_paths": [
+      "reports/ARCADE_MAME_BATCH5_RESULTS.md",
+      "reports/ARCADE_AUDIT_REPORT.md",
+      "data/arcade_core_compatibility.csv",
+      "data/mame_batch5_preflight.json",
+      "data/mame_batch5_checkpoint.json",
+      "scripts/mame_batch5_runner.py",
+      "scripts/mame_batch5_preflight.py"
+    ],
+    "git_commit_or_push": "NOT RUN"
+  },
+  "runner_original_paused_phase": "PAUSED_SAFETY_RESTORE_OR_SYSTEM",
+  "preflight_excluded_before_mame_checks": [
+    {
+      "shortname": "act2000",
+      "name": "Action 2000",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "alpinr2b",
+      "name": "Alpine Racer 2",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "big10",
+      "name": "ZZZ(notgame):Big 10",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "bigappg",
+      "name": "The Big Apple",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "bigdeal",
+      "name": "ZZZ(notgame):Bonus Card",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "buggyboy",
+      "name": "Buggy Boy",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "casino5",
+      "name": "ZZZ(notgame):Casino Five",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "cball",
+      "name": "Cannonball",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "cclownz",
+      "name": "Crazzy Clownz",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "cmast91",
+      "name": "ZZZ(notgame):Cherry Master '91",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "cmaster",
+      "name": "ZZZ(notgame):Cherry Master I",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "cmv4",
+      "name": "ZZZ(notgame):Cherry Master",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "comg076",
+      "name": "ZZZ(notgame):Cal Omega - Game 7.6",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "comg128",
+      "name": "ZZZ(notgame):Cal Omega - Game 12.8",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "coronatn",
+      "name": "ZZZ(notgame):Coronation Street Quiz Game",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "fbait2bc",
+      "name": "Fisherman's Bait 2 - A Bass Challenge",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "fbaitbc",
+      "name": "Fisherman's Bait - A Bass Challenge",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "fbaitmc",
+      "name": "Fisherman's Bait - Marlin Challenge",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "finalapr",
+      "name": "Final Lap R",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "fiveside",
+      "name": "Five A Side Soccer",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "fredmem",
+      "name": "ZZZ(notgame):Fred Flintstones' Memory Match",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "galastrm",
+      "name": "Galactic Storm",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "gauntdl",
+      "name": "Gauntlet Dark Legacy",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "gauntleg",
+      "name": "Gauntlet Legends",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "gepoker",
+      "name": "ZZZ(notgame):Poker",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "ghlpanic",
+      "name": "Ghoul Panic",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "gldncrwn",
+      "name": "ZZZ(notgame):Golden Crown",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "gloc",
+      "name": "G-loc Air Battle",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "gprider",
+      "name": "Gp Rider",
+      "reason": "RESERVED_FOR_FBNEO"
+    },
+    {
+      "shortname": "gs4002",
+      "name": "ZZZ(notgame):Selection",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "gtrfrk2m",
+      "name": "Guitar Freaks 2nd Mix Ver 1.01",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "gtrfrks",
+      "name": "Guitar Freaks",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "guab",
+      "name": "ZZZ(notgame):Give Us A Break",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "hyprdriv",
+      "name": "Hyperdrive",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "invasnab",
+      "name": "Invasion - The Abductors",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "jokpoker",
+      "name": "ZZZ(notgame):Joker Poker",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "jolyjokr",
+      "name": "Jolly Joker",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "kinstb",
+      "name": "Killer Instinct",
+      "reason": "EXCLUDE_ARCADE_PRIORITY_SNES_BOOTLEG"
+    },
+    {
+      "shortname": "ladylinr",
+      "name": "ZZZ(notgame):Lady Liner",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "megat3",
+      "name": "ZZZ(notgame):Megatouch III",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "mf_bdash",
+      "name": "Boulder Dash",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "midnrun",
+      "name": "Midnight Run: Road Fighters 2",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "monopldx",
+      "name": "ZZZ(notgame):Monopoly Deluxe",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "monopoly",
+      "name": "ZZZ(notgame):Monopoly",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "ncb3",
+      "name": "ZZZ(notgame):Cherry Bonus 3",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "pacapp2",
+      "name": "Paca Paca Passion 2",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "pacappsp",
+      "name": "Paca Paca Passion Special",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "paradice",
+      "name": "ZZZ(notgame):Paradice",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "pasha2",
+      "name": "Pasha Pasha 2",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "pdrift",
+      "name": "Power Drift",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "pitboss",
+      "name": "The Pit Boss",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "pitbossm",
+      "name": "ZZZ(notgame):Pit Boss Megastar",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "pocketrc",
+      "name": "Pocket Racer",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "poker41",
+      "name": "ZZZ(notgame):Four In One Poker",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "pokio",
+      "name": "ZZZ(notgame):Pokio",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "pulltabs",
+      "name": "ZZZ(notgame):Pull Tabs",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "pyramid",
+      "name": "ZZZ(notgame):Pyramid",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "qb3",
+      "name": "Qb-3",
+      "reason": "SPECIAL_OR_NON_DIGITAL_CONTROL:doublejoy"
+    },
+    {
+      "shortname": "qdrmfgp",
+      "name": "Quiz Do Re Mi Fa Grand Prix",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "qdrmfgp2",
+      "name": "Quiz Do Re Mi Fa Grand Prix 2 - Shin-Kyoku Nyuukad",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "qntoond",
+      "name": "ZZZ(notgame):Quintoon",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "qos",
+      "name": "ZZZ(notgame):Question Of Sport, A",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "quintoon",
+      "name": "ZZZ(notgame):Quintoon",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "radikalb",
+      "name": "Radikal Bikers",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "rcasino",
+      "name": "ZZZ(notgame):Royal Casino",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "re900",
+      "name": "ZZZ(notgame):Ruleta Re-900",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "ridgerac",
+      "name": "Ridge Racer",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "salarymc",
+      "name": "Salary Man Champ",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "schery97",
+      "name": "ZZZ(notgame):Skill Cherry '97",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "screenpl",
+      "name": "ZZZ(notgame):Screen Play",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "sfbonus",
+      "name": "ZZZ(notgame):Skill Fruit Bonus",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "sfiii2n",
+      "name": "Street Fighter III : 2nd Impact - Giant Attack",
+      "reason": "RESERVED_FOR_FBNEO"
+    },
+    {
+      "shortname": "sfiii3n",
+      "name": "Street Fighter III : 3rd Strike - Fight for the Future",
+      "reason": "RESERVED_FOR_FBNEO"
+    },
+    {
+      "shortname": "sfiiin",
+      "name": "Street Fighter III : New Generation",
+      "reason": "RESERVED_FOR_FBNEO"
+    },
+    {
+      "shortname": "sfruitb",
+      "name": "ZZZ(notgame):Super Fruit Bonus",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "sidebs",
+      "name": "Side By Side",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "sidebs2",
+      "name": "Side By Side 2",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "sidewndr",
+      "name": "ZZZ(notgame):Sidewinder",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "simpbowl",
+      "name": "Simpsons Bowling",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "skill98",
+      "name": "ZZZ(notgame):Skill '98",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "slotsnl",
+      "name": "ZZZ(notgame):Slots",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "sltblgpo",
+      "name": "ZZZ(notgame):Slots",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "sltblgtk",
+      "name": "ZZZ(notgame):Slots",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "smoto20",
+      "name": "ZZZ(notgame):Super Rider",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "speedrcr",
+      "name": "Speed Racer",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "speedup",
+      "name": "Speed Up",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "ssipkr24",
+      "name": "ZZZ(notgame):Ssi Poker",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "starsldr",
+      "name": "Star Soldier: Vanishing Earth",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "strtdriv",
+      "name": "Street Drivin'",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "superbwl",
+      "name": "ZZZ(notgame):Super Bowl",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "surfplnt",
+      "name": "Surf Planet",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "tenthdeg",
+      "name": "Tenth Degree",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "terabrst",
+      "name": "Teraburst",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "tm4k",
+      "name": "Touchmaster 4000",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "tm7k",
+      "name": "Touchmaster 7000",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "trivialp",
+      "name": "ZZZ(notgame):Trivial Pursuit",
+      "reason": "ZZZ_NOTGAME"
+    },
+    {
+      "shortname": "tx1",
+      "name": "Tx-1",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "vaportrx",
+      "name": "Vapor Trx",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "windheat",
+      "name": "Winding Heat",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    },
+    {
+      "shortname": "witch",
+      "name": "Witch",
+      "reason": "NOT_DIRECT_COMPATIBLE_METADATA"
+    }
+  ],
+  "target_core_status_by_candidate": {
+    "kdynastg": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "ppcar": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "theglad": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "kov2": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "kov2p": {
+      "tested_mame_current": true,
+      "result": "BOOT_PASS",
+      "restore": "VERIFIED"
+    },
+    "martmast": {
+      "tested_mame_current": true,
+      "result": "BOOT_PASS",
+      "restore": "VERIFIED"
+    },
+    "svg": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "nagano98": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "ddux": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "dynwar": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "mk4": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "sfzch": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "aerofgts": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "rdft": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "rdft2": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "rfjet": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "gradius4": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "ar_ldrb": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "ar_ninj": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "ar_sprg": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "bldyror2": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "cbaj": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "dacholer": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "darkhleg": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "dsftkd": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "dstage": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "fishfren": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "flamegun": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "freezeat": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "gekisou": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "glpracr3": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "hvnsgate": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "jockeygp": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "konam80s": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "mfjump": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "misncrft": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "scorpion": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "senkyu": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "shngmtkb": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "sqix": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "suplup": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "tblkkuzu": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "twinbrat": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "viprp1": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    },
+    "weddingr": {
+      "tested_mame_current": false,
+      "result": null,
+      "restore": null
+    }
+  }
+}

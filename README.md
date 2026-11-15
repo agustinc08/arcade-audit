@@ -26,11 +26,15 @@ La sincronización se prepara con `/userdata/system/el_gordo_tools/sync_arcade_a
 Estado extraído de los informes existentes al 2026-11-15; no se relanzaron juegos para crear esta referencia.
 
 - Inventario: 1.397 juegos arcade.
-- BOOT_OK acumulados: 1.191.
-- Sin BOOT_OK acumulado: 206.
+- BOOT_OK_DEFAULT_CORE (`mame078plus`): 1094.
+- BOOT_OK_MAME_CURRENT: 18.
+- BOOT_OK_FBNEO: 88.
+- TOTAL_UNIQUE_BOOT_OK: 1200 (unión por sistema/ROM; sin doble conteo).
+- Juegos del inventario sin BOOT_OK en ninguna de esas categorías: 197.
 - Core MAME global: `mame078plus`.
-- Overrides individuales conocidos: `ffight2b`, `altair`, `apache3`, `blazlaz`, `cubeqst`, `sia2650`, `evosocc`, `hoops95`, `funcube4`, `lbgrande`, `sws98`, `tenkomor`, `multigam`, `multigm3`, `nratechu`, `ertictac`.
+- Overrides individuales conocidos: `ffight2b`, `altair`, `apache3`, `blazlaz`, `cubeqst`, `sia2650`, `evosocc`, `hoops95`, `funcube4`, `lbgrande`, `sws98`, `tenkomor`, `multigam`, `multigm3`, `nratechu`, `ertictac`, `kov2p`, `martmast`.
 - BATCH 4 real (2026-11-15): control `altair` PASS y 7/7 candidatos normales BOOT_PASS con overrides individuales; 0 fallos de juego. Ver `reports/ARCADE_MAME_BATCH4_RESULTS.md`.
+- BATCH 5 real (2026-11-15): `kov2p` y `martmast` BOOT_PASS con MAME actual; 2/2 preflight PASS seleccionados, 43 SKIP_PREFLIGHT. Ver `reports/ARCADE_MAME_BATCH5_RESULTS.md`.
 - Estado de controles y conteo reconciliado: consultar los informes bajo `reports/`.
 
 ## Cómo interpretar los estados
