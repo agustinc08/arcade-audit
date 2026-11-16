@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T10:00:41+00:00",
+  "updated_at": "2026-11-16T21:33:28+00:00",
   "source": "controller_dispatcher --diagnose; SDL runtime; pactl sink names",
   "BOTONERA_P1_P4": [
     {
@@ -53,20 +53,10 @@
   ],
   "GAMEPADS_CONNECTED": [
     {
-      "name": "Sony Interactive Entertainment Wireless Controller",
-      "guid": "030000004c050000cc09000011810000",
-      "event_path": "/dev/input/event21",
-      "sdl_index": 4,
-      "transport": "USB",
-      "battery": "UNKNOWN",
-      "audio_capability": true,
-      "connected": true
-    },
-    {
       "name": "USB Gamepad",
       "guid": "03000000100800000100000010010000",
-      "event_path": "/dev/input/event24",
-      "sdl_index": 5,
+      "event_path": "/dev/input/event21",
+      "sdl_index": 4,
       "transport": "USB",
       "battery": "UNKNOWN",
       "audio_capability": false,
