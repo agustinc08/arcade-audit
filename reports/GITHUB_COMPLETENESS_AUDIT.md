@@ -7,7 +7,7 @@
 
 ## Cobertura local
 
-El inventario documental registró 565 candidatos en rutas persistentes acotadas. Es un snapshot creado antes de este informe y de `ROOT_CAUSES.md`; ambos se revisaron después de generarlo.
+El inventario documental registró 565 candidatos en rutas persistentes acotadas. Es un snapshot creado antes de este informe y de `ROOT_CAUSES.md`; ambos se revisaron después de generarlo. El campo `github_status` conserva la comparación de inventario contra el HEAD inicial `554e66ddcd0373d629179bfc937879952c2234a3`; este dato es el estado de auditoría antes de publicación, no el estado post-publish.
 
 | Categoría | Archivos |
 |---|---:|
