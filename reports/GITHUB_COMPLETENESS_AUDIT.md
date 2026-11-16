@@ -3,7 +3,7 @@
 - Fecha: 2026-11-16
 - Repositorio/rama: `agustinc08/arcade-audit`, `main`
 - HEAD remoto consultado: `554e66ddcd0373d629179bfc937879952c2234a3`
-- Resultado: el diff fue auditado localmente; esta generación aún no implica publicación.
+- Resultado: publicación principal verificada en `main`; el commit del changeset documental fue `009c556fd9edb4444d30e3891c57d755ec918d31`.
 
 ## Cobertura local
 
@@ -112,4 +112,4 @@ No se exportan ROMs, BIOS, CHD, saves, NVRAM, backups completos, secretos, clave
 
 ## Publicación
 
-Pendiente de manifest de una sola vez para este conjunto exacto, con el HEAD `554e66ddcd0373d629179bfc937879952c2234a3`. Cualquier cambio en rutas o contenido invalida la aprobación y obliga a repetir el audit.
+La manifest one-time exacta fue validada antes de publicar: 45 altas, 7 modificaciones, cero borrados, HEAD base `554e66ddcd0373d629179bfc937879952c2234a3`. `main` avanzó al commit documental `009c556fd9edb4444d30e3891c57d755ec918d31`; el wrapper confirmó `PUBLISH_PASS` y el árbol remoto contiene los archivos auditados. El guard ordinario permanece intacto.
