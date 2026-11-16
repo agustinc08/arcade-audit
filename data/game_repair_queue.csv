@@ -2,3 +2,7 @@ priority,system,rom,name,failure_class,root_issue,automatic_possible,suggested_a
 HIGH,mame,/userdata/roms/mame/mvp.zip,Mvp,SIGSEGV,CERT-002,YES,Revisar logs y probar fallback core en fase aislada; no incluir en cola automática.,NO,OPEN
 HIGH,mame,/userdata/roms/mame/hoops95.zip,Hoops'96,ROMSET_CRC_MISMATCH,CERT-003,NO,"Aportar/verificar set correcto legalmente; hoops.b2 esperado CRC a1dc3519, actual b54c63d1.",YES,OPEN
 MEDIUM,mame,/userdata/roms/mame/stonebal.zip,Stone Ball,RUNTIME_HEALTH_OR_VISUAL_CHECK_FAILED,CERT-004,NO,Revisar capturas/log; no relanzar automáticamente hasta diagnóstico.,YES,OPEN
+MEDIUM,mame,/userdata/roms/mame/bbprot.zip,Unknown Fighting Game 'bb',RUNTIME_HEALTH_OR_VISUAL_CHECK_FAILED,CERT-004,NO,Revisar capturas/log y distinguir pantalla legítimamente oscura de fallo; no retry automático.,YES,OPEN
+MEDIUM,mame,/userdata/roms/mame/calibr50.zip,Caliber 50,RUNTIME_HEALTH_OR_VISUAL_CHECK_FAILED,CERT-004,NO,Revisar capturas/log y distinguir pantalla legítimamente oscura de fallo; no retry automático.,YES,OPEN
+MEDIUM,mame,/userdata/roms/mame/chplftb.zip,Choplifter,RUNTIME_HEALTH_OR_VISUAL_CHECK_FAILED,CERT-004,NO,Revisar capturas/log y distinguir pantalla legítimamente oscura de fallo; no retry automático.,YES,OPEN
+MEDIUM,mame,/userdata/roms/mame/daraku.zip,The Fallen Angels,RUNTIME_HEALTH_OR_VISUAL_CHECK_FAILED,CERT-004,NO,Revisar capturas/log y distinguir pantalla legítimamente oscura de fallo; no retry automático.,YES,OPEN

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-16T18:16:40+00:00",
+  "updated_at": "2026-11-16T19:06:44+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,11 +127,11 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "Universal certifier: piloto 10/10 AUTO_PASS; Batch 1 49/50 PASS (mvp SIGSEGV); Batch 2 49/49 lanzados PASS y hoops95 STATIC_FAIL por CRC; Batch 3 100 lanzados, 99 AUTO_PASS, 1 GAME_FAIL (stonebal, visual black-screen suspect), 100/100 restores. Sin ENGINE_FAIL nuevo, wrong dispatch, cambio de audio ni fallos de restore. NEXT_GAME mame:/userdata/roms/mame/battroad.zip.",
+      "summary": "Piloto 10/10 AUTO_PASS; Batch 1 49/50 PASS (mvp SIGSEGV); Batch 2 49/49 PASS y hoops95 STATIC_FAIL CRC; Batch 3 100 lanzados, 99 PASS/1 GAME_FAIL, restore 100/100; Batch 4 100 lanzados, 96 PASS/4 GAME_FAIL por captura negra persistente, restore 100/100. Sin fallo de motor nuevo, audio, dispatch ni restore. NEXT_GAME mame:/userdata/roms/mame/docastle.zip.",
       "issues": [
         "CERT-001"
       ],
-      "updated_at": "2026-11-16T18:16:40+00:00"
+      "updated_at": "2026-11-16T19:06:44+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
