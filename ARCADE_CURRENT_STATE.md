@@ -1,7 +1,7 @@
 # Estado actual del arcade
 
-- UPDATED_AT: 2026-11-16T22:58:47+00:00
-- GITHUB_HEAD observado antes de publicar: `4de2e52f47c2c50387c175b82a096797882933a8`
+- UPDATED_AT: 2026-11-16T23:49:56+00:00
+- GITHUB_HEAD observado antes de publicar: `141c7672c8fd1db2897e2da31a548c25e7122263`
 - BATOCERA_VERSION: 43.1
 
 ## Sistema y hardware
@@ -37,26 +37,26 @@
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- AUTO_CERTIFIED: 499
-- GAME_FAIL: 9
+- AUTO_CERTIFIED: 596
+- GAME_FAIL: 12
 - STATIC_FAIL: 2
 - FLAKY: 0
-- NEEDS_REPAIR: 11
+- NEEDS_REPAIR: 14
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
-- NEXT_GAME: `mame:/userdata/roms/mame/machridr.zip`
-- UNIQUE_GAMES_PROCESSED: 510
-- RESULT_RECORDS: 511
-- LAUNCH_TRANSACTIONS: 509
+- NEXT_GAME: `mame:/userdata/roms/mame/pc_bfght.zip`
+- UNIQUE_GAMES_PROCESSED: 610
+- RESULT_RECORDS: 611
+- LAUNCH_TRANSACTIONS: 609
 - RETRY_TRANSACTIONS: 1
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- REPAIR_QUEUE_PENDING: 9
+- REPAIR_QUEUE_PENDING: 14
 
 ## Espacio
 
 - FILESYSTEM_STATUS: lectura de capacidad; no es una prueba SMART.
-    /dev/sda2        211G   120G   83G  60% /userdata
+    /dev/sda2        211G   120G   82G  60% /userdata
     /dev/sdc1        3,6T  1012G  2,5T  30% /media/ROMS
     /dev/sdb1        916G   783G   88G  90% /media/BATOCERA_ROMS
 

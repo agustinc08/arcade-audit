@@ -9,7 +9,7 @@ Actualizado: 2026-11-16. Este informe agrupa problemas de sistema y contenido; l
 | `MAME078PLUS_SIGSEGV` | 1 (`mvp`) | ABIERTO | SIGSEGV de RetroArch, exit -11. Mantener en reparación y analizar core/driver por separado; no reintentar en la cola normal. |
 | `MAME_ROMSET_CRC_MISMATCH` | 1 (`hoops95`) | ABIERTO | `hoops.b2`: CRC esperado `a1dc3519`, actual `b54c63d1`; preflight falló antes de lanzar. No alterar el ZIP. |
 | `MAME_BIOS_MEMBER_MISSING` | 1 (`evosocc`) | ABIERTO | Falta `mx27l1000-alt.u14` de `crysbios`, CRC `1e8175c8`; no llegó a lanzamiento. |
-| `VISUAL_BLACK_CAPTURE_SUSPECT` | 8 (`stonebal`, `bbprot`, `calibr50`, `chplftb`, `daraku`, `gunbird2`, `heberpop`, `hvymetal`) | REVISIÓN PENDIENTE | Capturas T+5/T+15 negras con proceso estable, salida 0 y restore correcto. No confirma pantalla negra real ni fallo de ROM/core. Comparar backend de captura, renderer, logs y actividad visual alternativa antes de clasificarlos como rotos. |
+| `VISUAL_BLACK_CAPTURE_SUSPECT` | 11 (`stonebal`, `bbprot`, `calibr50`, `chplftb`, `daraku`, `gunbird2`, `heberpop`, `hvymetal`, `metlhawk`, `opaopa`, `passsht`) | REVISIÓN PENDIENTE | Capturas T+5/T+15 negras con proceso estable, exit 0 y restore correcto. No confirma pantalla negra real ni fallo de ROM/core; revisar backend de captura/renderer antes de reclasificar. Evidencia nueva: Batch 7. |
 | `AUDIO_DEFAULT_GAMEPAD` | sistema; DS4 presente durante prueba | MITIGADO | Política activa y HDMI se mantuvo default durante Altair. Reconnect físico DS4 y persistencia post-reboot aún pendientes. |
 | `HISTORICAL_RESTORE_RUNNER` | runner histórico | MITIGADO | Certificador actual usa transacciones con snapshot previo por prueba; no usar el runner antiguo que podía restaurar configuración vieja. |
 | `FBNEO_DAT_REFERENCE` | preflight FBNeo | CERRADO | DAT runtime v1.0.0.03 coincide con core; esto no certifica los juegos FBNeo aún reservados. |
@@ -17,7 +17,7 @@ Actualizado: 2026-11-16. Este informe agrupa problemas de sistema y contenido; l
 
 ## Fallos técnicos separados de sospechas visuales
 
-La tabla de certificación muestra 9 filas `GAME_FAIL`: una SIGSEGV (`mvp`) y ocho `BLACK_SCREEN_SUSPECT` pendientes de revisión visual. Muestra 2 `STATIC_FAIL`: contenido/CRC de `hoops95` y miembro BIOS de `evosocc`. Estos conteos proceden del CSV; el checkpoint superior se reconcilió con el CSV y los resultados el 2026-11-16. Los contadores canónicos actuales están en `full_game_certification_checkpoint.json`; el reporte de reconciliación describe semánticas y hashes.
+La tabla de certificación muestra 12 filas `GAME_FAIL`: una SIGSEGV (`mvp`) y once `BLACK_SCREEN_SUSPECT` pendientes de revisión visual. Muestra 2 `STATIC_FAIL`: contenido/CRC de `hoops95` y miembro BIOS de `evosocc`. Estos conteos proceden del CSV; el checkpoint superior se reconcilió con el CSV y los resultados el 2026-11-16. Los contadores canónicos actuales están en `full_game_certification_checkpoint.json`; el reporte de reconciliación describe semánticas y hashes.
 
 Los sospechosos visuales no deben provocar un fallo masivo automático: el método de captura puede ser incompatible con el renderer o capturar una pantalla legítimamente oscura. No elevarlos a `GAME_FAIL_BLACK_SCREEN` sin evidencia adicional.
 
