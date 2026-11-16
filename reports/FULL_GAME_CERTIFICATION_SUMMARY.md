@@ -1,21 +1,21 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-16T19:06:45+00:00
+- UPDATED_AT: 2026-11-16T20:00:53+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 310
-- AUTO_CERTIFIED: 303
-- STATIC_FAIL: 1
-- GAME_FAIL: 6
+- ATTEMPTED_NEW: 409
+- AUTO_CERTIFIED: 401
+- STATIC_FAIL: 2
+- GAME_FAIL: 7
 - FLAKY: 0
-- NEEDS_REPAIR: 7
+- NEEDS_REPAIR: 9
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: mame:/userdata/roms/mame/docastle.zip
-- TOTAL_RESTORES: 310
+- NEXT_GAME: mame:/userdata/roms/mame/gundealr.zip
+- TOTAL_RESTORES: 409
 - RESTORE_FAILURES: 0
 - CERTIFICATION_PHASE: RUNNING
 
@@ -42,7 +42,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | hcl | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | hurrican | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | ikemen | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
-| mame | 1324 | 1324 | 1112 | 295 | 1 | 6 | 0 | 0 | 0 | 1022 |
+| mame | 1324 | 1324 | 1112 | 393 | 2 | 7 | 0 | 0 | 0 | 922 |
 | mastersystem | 383 | 383 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 382 |
 | megacd | 24 | 24 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 24 |
 | megadrive | 1037 | 1037 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1036 |
@@ -79,9 +79,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_4; considerados 100; lanzados 100; AUTO_PASS 96; restore 100/100.
-- Estado de runner: BATCH_4_COMPLETE_READY_FOR_BATCH_5.
-- NEXT_GAME: mame:/userdata/roms/mame/docastle.zip.
+- Lote más reciente: priority_batch_5; considerados 100; lanzados 99; AUTO_PASS 98; restore 99/99.
+- Estado de runner: COMPLETE.
+- NEXT_GAME: mame:/userdata/roms/mame/gundealr.zip.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY
