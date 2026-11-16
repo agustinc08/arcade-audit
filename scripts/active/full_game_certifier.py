@@ -459,21 +459,104 @@ def queue(rows,systems):
   score=(priority,-min(play,20),-multiplayer,str(path).lower())
   g=dict(r);g['adapter_info']=ad.game_adapter(s,r['rom'],systems) or dict(ready[s]);candidates.append((score,g))
  candidates.sort(key=lambda x:x[0]);return [x[1] for x in candidates]
+
+def certification_metrics(rows,cp):
+ hist=cp.get('results',[]); latest={}
+ for item in hist:latest[(item.get('system'),item.get('rom'))]=item
+ csv_counts={k:sum(r.get('auto_certification')==v for r in rows) for k,v in {
+  'auto_certified':'AUTO_CERTIFIED','game_fail':'GAME_FAIL','static_fail':'STATIC_FAIL','flaky':'FLAKY'}.items()}
+ csv_counts['needs_repair']=sum(r.get('lifecycle_state')=='NEEDS_REPAIR' for r in rows)
+ tx_count=sum(bool(x.get('transaction_id')) for x in hist)
+ tx_unique=len({(x.get('system'),x.get('rom')) for x in hist if x.get('transaction_id')})
+ return {'unique_games_processed':len({(x.get('system'),x.get('rom')) for x in hist}),
+  'result_records':len(hist),'launch_transactions':tx_count,'retry_transactions':max(0,tx_count-tx_unique),
+  'static_preflight_results':sum(x.get('result')=='STATIC_FAIL' for x in hist),
+  'engine_fail_total_historical':sum(x.get('result')=='ENGINE_FAIL' for x in hist),
+  'engine_fail_active':sum(x.get('result') in STOP_ENGINE for x in latest.values()),**csv_counts,
+  'restores_verified':sum(bool(x.get('transaction_id')) and x.get('restore',{}).get('status')=='RESTORE_VERIFIED' for x in hist),
+  'restore_failures':sum(x.get('restore',{}).get('status')=='RESTORE_FAILURE' for x in hist),
+  'counts':{k:sum(x.get('result')==k for x in hist) for k in ('AUTO_PASS','GAME_FAIL','STATIC_FAIL','FLAKY','ADAPTER_NOT_READY','ENGINE_FAIL','WRONG_GAME_DISPATCH','AUDIO_ROUTE_CHANGED','RESTORE_FAILURE')}}
+
+def next_cursor(rows,systems):
+ q=queue(rows,systems)
+ return ('%s:%s'%(q[0]['system'],q[0]['rom'])) if q else None
+
+def assert_reconciled_queue(rows,cp,systems,batch_size=None):
+ metrics=certification_metrics(rows,cp)
+ for key in ('auto_certified','game_fail','static_fail','flaky','needs_repair'):
+  if cp.get(key)!=metrics[key]:raise RuntimeError('QUEUE_INVARIANT_FAIL: '+key)
+ if cp.get('attempted_new')!=metrics['launch_transactions']:
+  raise RuntimeError('QUEUE_INVARIANT_FAIL: attempted_new transaction semantics')
+ if cp.get('counts')!=metrics['counts']:
+  raise RuntimeError('QUEUE_INVARIANT_FAIL: result counts differ')
+ for key in ('unique_games_processed','result_records','launch_transactions','retry_transactions'):
+  if cp.get(key)!=metrics[key]:raise RuntimeError('QUEUE_INVARIANT_FAIL: '+key)
+ expected=next_cursor(rows,systems)
+ if cp.get('next_untested')!=expected:
+  raise RuntimeError('QUEUE_INVARIANT_FAIL: cursor differs from deterministic queue')
+ if expected:
+  system,rom=expected.split(':',1)
+  row=next((r for r in rows if r.get('system')==system and r.get('rom')==rom),None)
+  if not row or row.get('installed')!='YES' or row.get('auto_certification') not in ('NOT_TESTED',''):
+   raise RuntimeError('QUEUE_INVARIANT_FAIL: cursor is not an installed NOT_TESTED row')
+ row_map={(r.get('system'),r.get('rom')):r for r in rows}
+ if len(row_map)!=len(rows):raise RuntimeError('QUEUE_INVARIANT_FAIL: CSV identity collision')
+ latest={}
+ for item in cp.get('results',[]):latest[(item.get('system'),item.get('rom'))]=item
+ if any(key not in row_map for key in latest):raise RuntimeError('QUEUE_INVARIANT_FAIL: result without CSV row')
+ expected_status={'AUTO_PASS':'AUTO_CERTIFIED','GAME_FAIL':'GAME_FAIL','STATIC_FAIL':'STATIC_FAIL','FLAKY':'FLAKY'}
+ for key,item in latest.items():
+  wanted=expected_status.get(item.get('result'))
+  if wanted and row_map[key].get('auto_certification')!=wanted:
+   raise RuntimeError('QUEUE_INVARIANT_FAIL: latest result/CSV mismatch')
+  if item.get('transaction_id') and row_map[key].get('test_id')!=item.get('transaction_id'):
+   raise RuntimeError('QUEUE_INVARIANT_FAIL: latest transaction/CSV mismatch')
+ if batch_size:
+  selected=queue(rows,systems)[:batch_size]
+  for game in selected:
+   status=game.get('auto_certification') or 'NOT_TESTED'
+   if status not in ('NOT_TESTED',''):
+    raise RuntimeError('QUEUE_INVARIANT_FAIL: selected terminal game')
+   if any(x.get('system')==game['system'] and x.get('rom')==game['rom'] for x in cp.get('results',[])):
+    raise RuntimeError('QUEUE_INVARIANT_FAIL: selected game already has a result')
+ return metrics
+
 def run_tests(games,cp,mode):
  baseline=safety_baseline();cp['baseline']=baseline;cp['mode']=mode
+ started=stamp();before_results=len(cp.get('results',[]));batch_pass=batch_game=batch_static=batch_flaky=launched=restored=0;first=games[0]['rom'] if games else None;last=None
+ batch_progress=cp.get('batch_in_progress') if mode in ('batch','resume') else None
+ if mode in ('batch','resume') and not batch_progress:
+  prior=(cp.get('latest_batch') or {}).get('name','priority_batch_0')
+  number=int(prior.rsplit('_',1)[-1])+1 if prior.rsplit('_',1)[-1].isdigit() else 1
+  batch_progress={'name':'priority_batch_'+str(number),'considered':len(games),'launched':0,'auto_pass':0,'game_fail':0,'static_fail':0,'flaky':0,
+   'restore_verified':0,'restore_failures':0,'started_at':started,'first_game':first,'last_game':None}
+  cp['batch_in_progress']=batch_progress;checkpoint_update(cp)
  for game in games:
   label=game['system']+'/'+Path(game['rom']).name
   cp['current_test']=label;cp['next_game']=label;cp['status']='RUNNING';checkpoint_update(cp)
   result=launch_one(game,game['adapter_info'],baseline,mode)
   # Keep structured, bounded evidence per test; no screenshots or raw full logs.
   RUNTIME.mkdir(parents=True,exist_ok=True,mode=0o700)
+  if not update_csv(game,result):
+   cp['status']='PAUSED_ENGINE_FAILURE';cp['blocked_reason']='CSV_UPDATE_FAILED';checkpoint_update(cp);return False
   hist=cp.setdefault('results',[]);hist.append({'system':result.get('system'),'rom':result.get('rom'),'name':result.get('name'),
       'adapter':result.get('adapter'),'result':result.get('result'),'failure_class':result.get('failure_class'),
       'transaction_id':result.get('transaction_id'),'stable_seconds':result.get('process',{}).get('stable_seconds'),
       'audio':result.get('audio'),'restore':result.get('restore'),'finished_at':result.get('finished_at')})
-  cp['counts']={k:sum(1 for x in hist if x.get('result')==k) for k in ('AUTO_PASS','GAME_FAIL','STATIC_FAIL','FLAKY','ADAPTER_NOT_READY','ENGINE_FAIL','WRONG_GAME_DISPATCH','AUDIO_ROUTE_CHANGED','RESTORE_FAILURE')}
-  cp['next_game']=None;cp['current_test']=None;checkpoint_update(cp)
-  update_csv(game,result)
+  rows,_=load_rows();metrics=certification_metrics(rows,cp)
+  cp.update({k:metrics[k] for k in ('unique_games_processed','result_records','launch_transactions','retry_transactions','static_preflight_results','engine_fail_total_historical','engine_fail_active','auto_certified','game_fail','static_fail','flaky','needs_repair','restores_verified','restore_failures','counts')})
+  cp['attempted_new']=metrics['launch_transactions'];cp['next_untested']=next_cursor(rows,ad.live_systems());cp['next_game']=None;cp['current_test']=None
+  if batch_progress is not None:
+   batch_progress['launched']+=bool(result.get('transaction_id'))
+   batch_progress['restore_verified']+=result.get('restore',{}).get('status')=='RESTORE_VERIFIED'
+   batch_progress['restore_failures']+=result.get('restore',{}).get('status')=='RESTORE_FAILURE'
+   batch_progress['last_game']=game['rom']
+   batch_progress['auto_pass']+=result.get('result')=='AUTO_PASS';batch_progress['game_fail']+=result.get('result')=='GAME_FAIL'
+   batch_progress['static_fail']+=result.get('result')=='STATIC_FAIL';batch_progress['flaky']+=result.get('result')=='FLAKY'
+   cp['batch_in_progress']=batch_progress
+  checkpoint_update(cp)
+  launched+=bool(result.get('transaction_id'));restored+=result.get('restore',{}).get('status')=='RESTORE_VERIFIED';last=game['rom']
+  batch_pass+=result.get('result')=='AUTO_PASS';batch_game+=result.get('result')=='GAME_FAIL';batch_static+=result.get('result')=='STATIC_FAIL';batch_flaky+=result.get('result')=='FLAKY'
   health=result.get('exit',{}).get('game_health') or {}
   health_summary={k:health.get(k) for k in ('id','system','rom','core','status','exit_code','duration_seconds') if k in health}
   health_summary['cleanup_race']=result.get('exit',{}).get('cleanup_race')
@@ -494,7 +577,43 @@ def run_tests(games,cp,mode):
   except Exception as e:cp['status']='PAUSED_SYSTEM_SAFETY_FAILURE';cp['blocked_reason']=type(e).__name__+': '+str(e);checkpoint_update(cp);return False
   if after!=baseline:
    cp['status']='PAUSED_SYSTEM_SAFETY_FAILURE';cp['blocked_reason']='GLOBAL_BASELINE_CHANGED';checkpoint_update(cp);return False
- cp['status']='COMPLETE';cp['next_game']=None;checkpoint_update(cp);return True
+ rows,_=load_rows();systems=ad.live_systems();metrics=certification_metrics(rows,cp)
+ cp.update({k:metrics[k] for k in ('unique_games_processed','result_records','launch_transactions','retry_transactions','static_preflight_results','engine_fail_total_historical','engine_fail_active','auto_certified','game_fail','static_fail','flaky','needs_repair','restores_verified','restore_failures','counts')})
+ cp['attempted_new']=metrics['launch_transactions'];cp['next_untested']=next_cursor(rows,systems);cp['next_game']=None;cp['current_test']=None;cp['status']='COMPLETE'
+ if mode in ('batch','resume'):
+  progress=cp.get('batch_in_progress') or batch_progress or {}
+  name=progress.get('name','priority_batch_unknown')
+  cp['latest_batch']={'name':name,'considered':progress.get('considered',len(games)),'launched':progress.get('launched',launched),
+   'auto_pass':progress.get('auto_pass',batch_pass),'game_fail':progress.get('game_fail',batch_game),'static_fail':progress.get('static_fail',batch_static),'flaky':progress.get('flaky',batch_flaky),
+   'restore_verified':f"{progress.get('restore_verified',restored)}/{progress.get('launched',launched)}",'restore_failures':progress.get('restore_failures',0),'engine_failures_unresolved':metrics['engine_fail_active'],
+   'started_at':progress.get('started_at',started),'finished_at':stamp(),'first_game':progress.get('first_game',first),'last_game':progress.get('last_game',last),'next_game':cp['next_untested']}
+  cp.pop('batch_in_progress',None)
+  try:
+   m=json.loads(MASTER.read_text());ph=m.get('phases',{}).get('PHASE_14_FULL_GAME_CERTIFICATION',{});ph['updated_at']=utc();ph['summary']=f"{name}: {len(games)} considerados, {launched} lanzados, {batch_pass} AUTO_PASS, {batch_game} GAME_FAIL, {batch_static} STATIC_FAIL; restores {restored}/{launched}; AUTO_CERTIFIED={metrics['auto_certified']}; NEXT_GAME={cp['next_untested']}";m['certification_counts']={**m.get('certification_counts',{}),'auto_certified':metrics['auto_certified'],'attempted_new':metrics['launch_transactions'],'unique_games_processed':metrics['unique_games_processed'],'result_records':metrics['result_records'],'launch_transactions':metrics['launch_transactions'],'retry_transactions':metrics['retry_transactions'],'static_fail':metrics['static_fail'],'game_fail':metrics['game_fail'],'flaky':metrics['flaky'],'needs_repair':metrics['needs_repair'],'control_certified':metrics['control_certified'] if 'control_certified' in metrics else sum(r.get('control_certification')=='CONTROL_CERTIFIED' for r in rows),'guest_ready':sum(r.get('guest_ready')=='YES' for r in rows),'total_restores':metrics['restores_verified'],'restore_failures':metrics['restore_failures'],'next_game':cp['next_untested'],'engine_failures_unresolved':metrics['engine_fail_active']};m['updated_at']=utc();atomic_json(MASTER,m)
+  except Exception as e:
+   cp['status']='PAUSED_ENGINE_FAILURE';cp['blocked_reason']='MASTER_CHECKPOINT_UPDATE_FAILED:'+type(e).__name__;checkpoint_update(cp);return False
+ checkpoint_update(cp)
+ if mode in ('batch','resume'):
+  report_lines=[f"# Certificación prioritaria — {cp['latest_batch']['name']}",'',
+   f"- Considerados: {cp['latest_batch']['considered']}",f"- Lanzados: {cp['latest_batch']['launched']}",
+   f"- AUTO_PASS: {cp['latest_batch']['auto_pass']}",f"- GAME_FAIL: {cp['latest_batch']['game_fail']}",
+   f"- STATIC_FAIL: {cp['latest_batch']['static_fail']}",f"- FLAKY: {cp['latest_batch']['flaky']}",
+   f"- ENGINE_FAIL activos: {metrics['engine_fail_active']}",f"- Restores: {cp['latest_batch']['restore_verified']}",
+   f"- Restore failures: {cp['latest_batch']['restore_failures']}",
+   f"- Audio route changes: {sum(x.get('result')=='AUDIO_ROUTE_CHANGED' for x in cp['results'][before_results:])}",
+   f"- Wrong dispatch: {sum(x.get('result')=='WRONG_GAME_DISPATCH' for x in cp['results'][before_results:])}",
+   f"- NEXT_GAME: `{cp['next_untested'] or 'NONE'}`",'']
+  batch_num=int(cp['latest_batch']['name'].rsplit('_',1)[-1])
+  atomic_bytes(AUDIT/f'reports/PRIORITY_CERTIFICATION_BATCH_{batch_num}.md','\n'.join(report_lines).encode())
+  summary=subprocess.run([sys.executable,str(TOOLS/'rebuild_certification_summary.py')],capture_output=True,text=True,timeout=60)
+  print(summary.stdout.strip(),flush=True)
+  if summary.returncode or 'REPORT_RECONCILIATION_PASS' not in summary.stdout:
+   cp['status']='PAUSED_REPORT_RECONCILIATION';cp['blocked_reason']='REPORT_RECONCILIATION_FAIL';checkpoint_update(cp);return False
+  current=subprocess.run([sys.executable,str(TOOLS/'rebuild_arcade_current_state.py')],capture_output=True,text=True,timeout=60)
+  print(current.stdout.strip(),flush=True)
+  if current.returncode or 'CERTIFICATION_RECONCILIATION_PASS' not in current.stdout:
+   cp['status']='PAUSED_REPORT_RECONCILIATION';cp['blocked_reason']='CURRENT_STATE_RECONCILIATION_FAIL';checkpoint_update(cp);return False
+ return True
 
 def main():
  p=argparse.ArgumentParser(description=__doc__);g=p.add_mutually_exclusive_group(required=False)
@@ -513,6 +632,10 @@ def main():
       'runtime_launch':'NOT RUN'},ensure_ascii=False,indent=2));return 0
  try:cp=json.loads(STATE.read_text(encoding='utf-8'))
  except Exception:cp={'schema_version':2,'updated_at':utc(),'results':[],'counts':{},'status':'READY'}
+ if not (a.plan or a.single or a.pilot):
+  try:assert_reconciled_queue(rows,cp,systems)
+  except Exception as e:
+   print('QUEUE_INVARIANT_FAIL');print(type(e).__name__+': '+str(e));return 6
  if cp.get('status','').startswith('PAUSED_') and not a.resume:
   print(json.dumps({'result':'PAUSED','reason':cp.get('blocked_reason'),'hint':'inspect issue and use --resume only after recovery'},ensure_ascii=False));return 3
  if a.single:
@@ -548,8 +671,15 @@ def main():
   if cp.get('blocked_reason'):print(json.dumps({'result':'RESUME_BLOCKED','reason':cp['blocked_reason']},ensure_ascii=False));return 3
   q=queue(rows,systems);games=q[:a.limit];mode='resume'
  elif a.batch is not None:
-  q=queue(rows,systems);games=q[:a.batch];mode='batch'
+  q=queue(rows,systems)
+  if not q or f"{q[0]['system']}:{q[0]['rom']}"!=cp.get('next_untested'):
+   print('QUEUE_INVARIANT_FAIL: NEXT_GAME does not match first eligible queue entry');return 6
+  games=q[:a.batch];mode='batch'
  if not games:print('NO_READY_GAMES');return 4
+ if mode in ('batch','resume'):
+  try:assert_reconciled_queue(rows,cp,systems,len(games))
+  except Exception as e:
+   print('QUEUE_INVARIANT_FAIL');print(type(e).__name__+': '+str(e));return 6
  # Bind pilot roster before launching so a restart cannot silently replace games.
  if mode=='pilot' and not a.resume:
   roster={'created_at':utc(),'prefilter_skips':globals().get('PILOT_PREFLIGHT_SKIPS',[]),

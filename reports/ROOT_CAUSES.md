@@ -13,11 +13,11 @@ Actualizado: 2026-11-16. Este informe agrupa problemas de sistema y contenido; l
 | `AUDIO_DEFAULT_GAMEPAD` | sistema; DS4 presente durante prueba | MITIGADO | Política activa y HDMI se mantuvo default durante Altair. Reconnect físico DS4 y persistencia post-reboot aún pendientes. |
 | `HISTORICAL_RESTORE_RUNNER` | runner histórico | MITIGADO | Certificador actual usa transacciones con snapshot previo por prueba; no usar el runner antiguo que podía restaurar configuración vieja. |
 | `FBNEO_DAT_REFERENCE` | preflight FBNeo | CERRADO | DAT runtime v1.0.0.03 coincide con core; esto no certifica los juegos FBNeo aún reservados. |
-| `CERTIFICATION_CURSOR_STALE` | cursor de certificación | ABIERTO | Batch 6 está presente en CSV/resultados, pero agregados/cursor superior permanecen en Batch 5. `gundealr` ya está AUTO_CERTIFIED en CSV. No reanudar hasta reconciliar metadata, sin editar resultados históricos. |
+| `CERTIFICATION_CURSOR_STALE` | cursor de certificación | CERRADO / RESUELTO | Agregados/cursor derivados reconciliados desde CSV y 511 records; Batch 6 delta verificado. CSV y resultados individuales no se modificaron. NEXT_GAME=`mame:/userdata/roms/mame/machridr.zip`. Ver `CERTIFICATION_RECONCILIATION_RESULT.md`. |
 
 ## Fallos técnicos separados de sospechas visuales
 
-La tabla de certificación muestra 9 filas `GAME_FAIL`: una SIGSEGV (`mvp`) y ocho `BLACK_SCREEN_SUSPECT` pendientes de revisión visual. Muestra 2 `STATIC_FAIL`: contenido/CRC de `hoops95` y miembro BIOS de `evosocc`. Estos conteos proceden del CSV; el checkpoint superior todavía no reconcilia con el CSV y por eso no deben sustituirse por un único contador canónico hasta corregir ese metadata.
+La tabla de certificación muestra 9 filas `GAME_FAIL`: una SIGSEGV (`mvp`) y ocho `BLACK_SCREEN_SUSPECT` pendientes de revisión visual. Muestra 2 `STATIC_FAIL`: contenido/CRC de `hoops95` y miembro BIOS de `evosocc`. Estos conteos proceden del CSV; el checkpoint superior se reconcilió con el CSV y los resultados el 2026-11-16. Los contadores canónicos actuales están en `full_game_certification_checkpoint.json`; el reporte de reconciliación describe semánticas y hashes.
 
 Los sospechosos visuales no deben provocar un fallo masivo automático: el método de captura puede ser incompatible con el renderer o capturar una pantalla legítimamente oscura. No elevarlos a `GAME_FAIL_BLACK_SCREEN` sin evidencia adicional.
 

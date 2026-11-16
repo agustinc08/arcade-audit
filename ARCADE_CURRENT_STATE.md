@@ -1,40 +1,71 @@
-# Estado actual del arcade — CURRENT_STATE_RECONCILIATION_FAIL
+# Estado actual del arcade
 
-- UPDATED_AT: 2026-11-16T21:48:47+00:00
-- GITHUB_HEAD observado antes de esta publicación: `554e66ddcd0373d629179bfc937879952c2234a3`
+- UPDATED_AT: 2026-11-16T22:58:47+00:00
+- GITHUB_HEAD observado antes de publicar: `4de2e52f47c2c50387c175b82a096797882933a8`
 - BATOCERA_VERSION: 43.1
 
-## Hardware observado
+## Sistema y hardware
+
 - CPU: 12th Gen Intel(R) Core(TM) i5-12400F
 - GPU: NVIDIA Corporation GP106 [GeForce GTX 1060 3GB] (rev a1)
 - RAM: 15Gi
-- DISPLAY: configuración HDMI; EDID/modo vivo no disponible desde la sesión de lectura.
-- NETWORK: Ethernet y adaptadores Wi-Fi/Bluetooth; no se publican direcciones, SSID ni credenciales.
+- DISPLAY: modo configurado `max-1920x1080`; EDID/modo vivo no disponible en la sesión de consulta.
+- NETWORK: Ethernet y adaptadores Wi-Fi/Bluetooth detectados históricamente; no se publican SSID, dirección IP ni MAC.
 
-## Runtime y configuración
-- GLOBAL_MAME_CORE (EmulationStation): `mame078plus`
+## Configuración arcade
+
+- GLOBAL_MAME_CORE: `mame078plus`
 - MAME_OVERRIDES_COUNT: 18
 - AUDIO_DEFAULT: `alsa_output.pci-0000_01_00.1.hdmi-stereo`
-- AUDIO_POLICY_STATUS: instalada; reconexión física DS4 y persistencia post-reboot siguen pendientes.
-- EmulationStation: API idle; `NO GAME RUNNING`; marker ausente; no hay procesos RetroArch/MAME/dispatcher/selector/emulatorlauncher huérfanos.
-- P1: USB5 / event17 / js0; P2: USB6 / event18 / js1; P3: USB8 / event20 / js3; P4: USB7 / event19 / js2. Snapshot actual con `mapping_modified=false`.
+- HDMI_DEFAULT_STATUS: PASS
+- AUDIO_POLICY_STATUS: instalada; reconexión física DS4 y persistencia post-reboot pendientes.
 
-## Certificación — fuentes en conflicto
-- CSV: total=8426, installed=8400, HISTORICAL_BOOT_OK=1200, AUTO_CERTIFIED=499, GAME_FAIL=9, STATIC_FAIL=2, FLAKY=0, NEEDS_REPAIR=11, CONTROL_CERTIFIED=0, GUEST_READY=0.
-- Checkpoint: attempted_new=409, AUTO_CERTIFIED=401, next_untested=`mame:/userdata/roms/mame/gundealr.zip`, latest_batch=`priority_batch_5`, status=COMPLETE.
-- Estado de la fila indicada como NEXT_GAME en el checkpoint: `AUTO_CERTIFIED`. El runner informó `next_game=null` al completar Batch 6.
-- Resultado: no se presenta un contador unificado ni NEXT_GAME como confiable. No se tocó el progreso.
+### P1–P4
 
-- NEXT_GAME: UNRECONCILED (el checkpoint apunta a `mame:/userdata/roms/mame/gundealr.zip`, cuya fila CSV ya está `AUTO_CERTIFIED`; el runner terminó con `next_game=null`).
+- Fuente de snapshot: `controllers_live.json`
+- P1: USB5 / event17 / js0
+- P2: USB6 / event18 / js1
+- P3: USB8 / event20 / js3
+- P4: USB7 / event19 / js2
 
-## Sistemas
+- GAMEPADS_CONNECTED: 1
+  - USB Gamepad (USB, audio endpoint: no/unknown)
 
-- Adapters detectados: 48; READY=23; PENDING=25 (captura registrada en `data/detected_systems.csv`).
-- GUEST_MODE_STATUS: no activo; GUEST_READY continúa en 0 según CSV.
-- Arcade Manager: herramienta local presente; no certificado como servicio persistente.
-- Espacio actual:
-  - /dev/sda2        211G   120G   83G  60% /userdata
-  - /dev/sdc1        3,6T  1012G  2,5T  30% /media/ROMS
-  - /dev/sdb1        916G   783G   88G  90% /media/BATOCERA_ROMS
+## Certificación
 
-Para resolver la discrepancia consultar `reports/CERTIFICATION_RECONCILIATION_BLOCKER.md`. El resumen derivado está marcado en fallo de reconciliación.
+- FULL_CERTIFICATION_PHASE: RUNNING
+- TOTAL_INVENTORY: 8426
+- INSTALLED: 8400
+- HISTORICAL_BOOT_OK: 1200
+- AUTO_CERTIFIED: 499
+- GAME_FAIL: 9
+- STATIC_FAIL: 2
+- FLAKY: 0
+- NEEDS_REPAIR: 11
+- CONTROL_CERTIFIED: 0
+- GUEST_READY: 0
+- NEXT_GAME: `mame:/userdata/roms/mame/machridr.zip`
+- UNIQUE_GAMES_PROCESSED: 510
+- RESULT_RECORDS: 511
+- LAUNCH_TRANSACTIONS: 509
+- RETRY_TRANSACTIONS: 1
+- ADAPTERS_READY: 23
+- ADAPTERS_PENDING: 25
+- REPAIR_QUEUE_PENDING: 9
+
+## Espacio
+
+- FILESYSTEM_STATUS: lectura de capacidad; no es una prueba SMART.
+    /dev/sda2        211G   120G   83G  60% /userdata
+    /dev/sdc1        3,6T  1012G  2,5T  30% /media/ROMS
+    /dev/sdb1        916G   783G   88G  90% /media/BATOCERA_ROMS
+
+## Guest Mode y herramientas
+
+- GUEST_MODE_STATUS: PENDING; no se promueven juegos automáticamente.
+- ARCADE_MANAGER_STATUS: script local disponible; servicio/panel persistente no certificado.
+- OPEN_ROOT_ISSUES: 9
+- MANUAL_TESTS_PENDING: 14 (detalle en `data/manual_physical_test_queue.csv`).
+- LAST_MAJOR_CHANGES: Resolved HDMI selection policy at runtime, verified no-game transaction restore, found/version-checked FBNeo DAT, audited publisher changeset; no game launched.
+
+Este documento se deriva de checkpoints, tabla de certificación y consultas locales. Los datos variables deben regenerarse; los reportes históricos no prevalecen sobre estas fuentes.

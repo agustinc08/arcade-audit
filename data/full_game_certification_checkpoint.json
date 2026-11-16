@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-16T21:29:06+00:00",
+  "updated_at": "2026-11-16T22:52:55+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
-  "next_untested": "mame:/userdata/roms/mame/gundealr.zip",
-  "attempted_new": 409,
-  "auto_certified": 401,
+  "next_untested": "mame:/userdata/roms/mame/machridr.zip",
+  "attempted_new": 509,
+  "auto_certified": 499,
   "manual_control_certified": 0,
   "guest_ready": 0,
   "launches_blocked_by": [],
@@ -12352,43 +12352,24 @@
     "status": "PILOT_PASS_WITH_ADAPTER_FIX"
   },
   "latest_batch": {
-    "name": "priority_batch_5",
+    "name": "priority_batch_6",
     "considered": 100,
-    "launched": 99,
+    "launched": 100,
     "auto_pass": 98,
-    "static_fail": 1,
-    "game_fail": 1,
+    "game_fail": 2,
+    "static_fail": 0,
     "flaky": 0,
-    "engine_fail": 0,
-    "restore_verified": "99/99",
+    "restore_verified": "100/100",
     "restore_failures": 0,
+    "engine_failures_unresolved": 0,
     "audio_route_changed": 0,
     "wrong_game_dispatch": 0,
-    "engine_failures_unresolved": 0,
-    "started_at": "2026-11-16T16:07:54.285-03:00",
-    "finished_at": "2026-11-16T16:55:20.195-03:00",
-    "first_game": "/userdata/roms/mame/docastle.zip",
-    "last_game": "/userdata/roms/mame/gunbird2.zip",
-    "next_game": "mame:/userdata/roms/mame/gundealr.zip",
-    "failures": [
-      {
-        "system": "mame",
-        "rom": "/userdata/roms/mame/evosocc.zip",
-        "name": "Evolution Soccer",
-        "result": "STATIC_FAIL",
-        "failure_class": "MAME_VERIFYROMS_FAILED",
-        "diagnosis": "MAME 0.285 verifyroms exit 2: mx27l1000-alt.u14 (131072 bytes) NOT FOUND (crysbios); crysbios.zip exists but contains only mx27l1000.u14 CRC beff39a9. Required alternate member CRC 1e8175c8. No game launch."
-      },
-      {
-        "system": "mame",
-        "rom": "/userdata/roms/mame/gunbird2.zip",
-        "name": "Gunbird 2",
-        "result": "GAME_FAIL",
-        "failure_class": "RUNTIME_HEALTH_OR_VISUAL_CHECK_FAILED",
-        "transaction_id": "20261116T165452_4bafc55070",
-        "diagnosis": "T+5.24s and T+15.05s frames BLACK_SCREEN_SUSPECT (black_pixel_ratio 1.0, mean_luma 0); stable 20.59s; exit 0; HDMI_PASS; RESTORE_VERIFIED. Review visual false-positive possibility; no retry."
-      }
-    ]
+    "started_at": "2026-11-16T17:41:25-03:00",
+    "finished_at": "2026-11-16T18:29:05-03:00",
+    "first_game": "/userdata/roms/mame/gundealr.zip",
+    "last_game": "/userdata/roms/mame/machbrkr.zip",
+    "next_game": "mame:/userdata/roms/mame/machridr.zip",
+    "note": "100 new result records: 98 AUTO_PASS and 2 GAME_FAIL. The two STATIC_FAIL records predated Batch 6."
   },
   "latest_engine_issue": {
     "cause": "update_csv assumed identity was a dict for STATIC_FAIL (identity=null)",
@@ -12407,5 +12388,20 @@
       "game_launch_occurred": false,
       "resolved_at": "2026-11-15T09:39:16-03:00"
     }
-  ]
+  ],
+  "launch_transactions": 509,
+  "transaction_attempts": 509,
+  "retry_transactions": 1,
+  "unique_games_processed": 510,
+  "result_records": 511,
+  "static_preflight_results": 2,
+  "engine_fail_total_historical": 1,
+  "engine_fail_active": 0,
+  "game_fail": 9,
+  "static_fail": 2,
+  "flaky": 0,
+  "needs_repair": 11,
+  "control_certified": 0,
+  "restores_verified": 509,
+  "restore_failures": 0
 }

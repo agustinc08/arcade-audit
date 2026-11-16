@@ -61,8 +61,22 @@ def main():
     flaky = count(rows, 'auto_certification', 'FLAKY')
     needs_repair = count(rows, 'lifecycle_state', 'NEEDS_REPAIR')
     attempted = cp.get('attempted_new')
-    next_game = cp.get('next_untested') or 'NONE'
     tx_results = cp.get('results', [])
+    result_records = len(tx_results)
+    result_keys = {(x.get('system'), x.get('rom')) for x in tx_results}
+    unique_games = len(result_keys)
+    launch_transactions = sum(bool(x.get('transaction_id')) for x in tx_results)
+    retry_transactions = max(0, launch_transactions - len({(x.get('system'), x.get('rom')) for x in tx_results if x.get('transaction_id')}))
+    static_preflight_results = sum(x.get('result') == 'STATIC_FAIL' for x in tx_results)
+    engine_fail_total = sum(x.get('result') == 'ENGINE_FAIL' for x in tx_results)
+    # A prior engine-class result is historical if the same identity later has
+    # a successful terminal result. Keep the total separately from active cases.
+    latest_by_key = {}
+    for item in tx_results:
+        latest_by_key[(item.get('system'), item.get('rom'))] = item
+    engine_states = {'ENGINE_FAIL','WRONG_GAME_DISPATCH','AUDIO_ROUTE_CHANGED','RESTORE_FAILURE'}
+    engine_fail_active = sum(item.get('result') in engine_states for item in latest_by_key.values())
+    next_game = cp.get('next_untested') or 'NONE'
     total_restores = sum(1 for item in tx_results if item.get('transaction_id') and item.get('restore', {}).get('status') == 'RESTORE_VERIFIED')
     restore_failures = sum(1 for item in tx_results if item.get('restore', {}).get('status') == 'RESTORE_FAILURE')
     adapter_ready = sum(row.get('adapter_status') == 'READY' for row in systems)
@@ -73,7 +87,10 @@ def main():
     mismatches = []
     for label, actual, expected in (
         ('auto_certified', auto, cp.get('auto_certified')),
-        ('attempted_new', attempted, cp.get('attempted_new')),
+        ('attempted_new_transactions', attempted, launch_transactions),
+        ('unique_games_processed', unique_games, cp.get('unique_games_processed')),
+        ('result_records', result_records, cp.get('result_records')),
+        ('retry_transactions', retry_transactions, cp.get('retry_transactions')),
         ('control_certified', controls, cp.get('manual_control_certified')),
         ('guest_ready', guest, cp.get('guest_ready')),
     ):
@@ -106,6 +123,11 @@ def main():
         f"- INSTALLED: {installed}",
         f"- HISTORICAL_BOOT_OK: {historical}",
         f"- ATTEMPTED_NEW: {attempted}",
+        f"- UNIQUE_GAMES_PROCESSED: {unique_games}",
+        f"- RESULT_RECORDS: {result_records}",
+        f"- LAUNCH_TRANSACTIONS: {launch_transactions}",
+        f"- RETRY_TRANSACTIONS: {retry_transactions}",
+        f"- STATIC_PREFLIGHT_RESULTS: {static_preflight_results}",
         f"- AUTO_CERTIFIED: {auto}",
         f"- STATIC_FAIL: {static_fail}",
         f"- GAME_FAIL: {game_fail}",
@@ -118,6 +140,8 @@ def main():
         f"- NEXT_GAME: {next_game}",
         f"- TOTAL_RESTORES: {total_restores}",
         f"- RESTORE_FAILURES: {restore_failures}",
+        f"- ENGINE_FAIL_TOTAL_HISTORICAL: {engine_fail_total}",
+        f"- ENGINE_FAIL_ACTIVE: {engine_fail_active}",
         f"- CERTIFICATION_PHASE: {master_phase.get('status', 'UNKNOWN')}", '',
         'Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la nueva auto-certificación. `AUTO_CERTIFIED` no certifica botones físicos. `GUEST_READY` permanece sujeto a certificación de controles y salida.', '',
         '## Conteos por sistema', '',
@@ -160,7 +184,10 @@ def main():
         atomic_write(path, text + '\n')
     print('REPORT_RECONCILIATION_PASS')
     print(json.dumps({'total_inventory': len(rows), 'installed': installed, 'historical_boot_ok': historical,
-        'attempted_new': attempted, 'auto_certified': auto, 'static_fail': static_fail, 'game_fail': game_fail,
+        'attempted_new': attempted, 'unique_games_processed': unique_games, 'result_records': result_records,
+        'launch_transactions': launch_transactions, 'retry_transactions': retry_transactions,
+        'static_preflight_results': static_preflight_results, 'engine_fail_total_historical': engine_fail_total,
+        'engine_fail_active': engine_fail_active, 'auto_certified': auto, 'static_fail': static_fail, 'game_fail': game_fail,
         'flaky': flaky, 'needs_repair': needs_repair, 'control_certified': controls, 'guest_ready': guest,
         'adapters_ready': adapter_ready, 'adapters_pending': adapter_pending, 'next_game': next_game,
         'total_restores': total_restores, 'restore_failures': restore_failures}, ensure_ascii=False))

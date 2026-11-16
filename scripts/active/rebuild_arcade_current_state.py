@@ -120,26 +120,34 @@ def default_audio_sink():
 
 
 def controller_state():
-    path = AUDIT / 'controllers_live.json'
-    if not path.exists():
-        return 'UNAVAILABLE', [], []
-    data = load_json(path)
-    if data.get('mapping_modified') is True:
-        raise RuntimeError('CURRENT_STATE_RECONCILIATION_FAIL: controller mapping modification flag is set')
-    entries = data.get('BOTONERA_P1_P4')
-    if not isinstance(entries, list):
-        raise RuntimeError('CURRENT_STATE_RECONCILIATION_FAIL: controllers_live schema unavailable')
+    # Prefer the live dispatcher diagnosis; controllers_live.json is a snapshot
+    # and may be stale. SDL index is derived by matching the current event path.
+    dispatcher = Path('/userdata/system/el_gordo_tools/controller_dispatcher')
+    try:
+        probe = subprocess.run([str(dispatcher), '--diagnose'], check=True,
+                               stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
+                               text=True, timeout=20)
+        data = json.loads(probe.stdout)
+    except (OSError, subprocess.SubprocessError, ValueError):
+        raise RuntimeError('CURRENT_STATE_RECONCILIATION_FAIL: live controller diagnosis unavailable')
+    entries = data.get('profiles', {}).get('arcade', {}).get('players')
+    natural = data.get('natural')
+    if not isinstance(entries, list) or not isinstance(natural, list):
+        raise RuntimeError('CURRENT_STATE_RECONCILIATION_FAIL: live controller diagnosis schema unavailable')
     lines = []
     for player, expected in EXPECTED_PADS.items():
-        found = next((item for item in entries if item.get('player') == player), None)
+        found = next((item for item in entries if item.get('arcade_player') == player), None)
         usb, event, js = expected
-        if not found:
+        event_path='/dev/input/'+event
+        live_index=next((item.get('index') for item in natural if item.get('path')==event_path),None)
+        if not found or str(found.get('usb_port')) != usb.removeprefix('USB'):
             raise RuntimeError('CURRENT_STATE_RECONCILIATION_FAIL: controller player missing')
-        if (found.get('usb_port') != usb or found.get('event_path') != '/dev/input/' + event
-                or 'js' + str(found.get('sdl_index')) != js):
+        if found.get('path') != event_path or 'js' + str(live_index) != js:
             raise RuntimeError('CURRENT_STATE_RECONCILIATION_FAIL: P1-P4 mapping differs')
         lines.append(f'- {player}: {usb} / {event} / {js}')
-    gamepads = data.get('GAMEPADS_CONNECTED', [])
+    snapshot=AUDIT/'controllers_live.json'
+    snapshot_data=load_json(snapshot) if snapshot.exists() else {}
+    gamepads = snapshot_data.get('GAMEPADS_CONNECTED', [])
     external = []
     if isinstance(gamepads, list):
         for pad in gamepads:
@@ -221,10 +229,17 @@ def main():
         'control_certified': sum(r.get('control_certification') == 'CONTROL_CERTIFIED' for r in rows),
         'guest_ready': sum(r.get('guest_ready') == 'YES' for r in rows),
     }
-    attempted_from_table = sum(r.get('auto_certification') in
-                               {'AUTO_CERTIFIED', 'GAME_FAIL', 'STATIC_FAIL', 'FLAKY'} for r in rows)
-    if attempted_from_table != cert.get('attempted_new'):
-        raise RuntimeError('CURRENT_STATE_RECONCILIATION_FAIL: attempted count differs')
+    certification_results = cert.get('results', [])
+    unique_processed = len({(r.get('system'), r.get('rom')) for r in certification_results})
+    result_records = len(certification_results)
+    launch_transactions = sum(bool(r.get('transaction_id')) for r in certification_results)
+    retry_transactions = max(0, launch_transactions - len({(r.get('system'), r.get('rom')) for r in certification_results if r.get('transaction_id')}))
+    if (unique_processed != cert.get('unique_games_processed')
+            or result_records != cert.get('result_records')
+            or launch_transactions != cert.get('attempted_new')
+            or launch_transactions != cert.get('launch_transactions')
+            or retry_transactions != cert.get('retry_transactions')):
+        raise RuntimeError('CURRENT_STATE_RECONCILIATION_FAIL: result/checkpoint metrics differ')
     checks = [('AUTO_CERTIFIED', counts['auto_certified'], cert.get('auto_certified')),
               ('CONTROL_CERTIFIED', counts['control_certified'], cert.get('manual_control_certified')),
               ('GUEST_READY', counts['guest_ready'], cert.get('guest_ready'))]
@@ -293,6 +308,8 @@ def main():
         f'- STATIC_FAIL: {counts["static_fail"]}', f'- FLAKY: {counts["flaky"]}',
         f'- NEEDS_REPAIR: {counts["needs_repair"]}', f'- CONTROL_CERTIFIED: {counts["control_certified"]}',
         f'- GUEST_READY: {counts["guest_ready"]}', f'- NEXT_GAME: `{next_game}`',
+        f'- UNIQUE_GAMES_PROCESSED: {unique_processed}', f'- RESULT_RECORDS: {result_records}',
+        f'- LAUNCH_TRANSACTIONS: {launch_transactions}', f'- RETRY_TRANSACTIONS: {retry_transactions}',
         f'- ADAPTERS_READY: {sum(s.get("adapter_status") == "READY" for s in systems)}',
         f'- ADAPTERS_PENDING: {sum(s.get("adapter_status") != "READY" for s in systems)}',
         f'- REPAIR_QUEUE_PENDING: {repair_count}', '', '## Espacio', '',

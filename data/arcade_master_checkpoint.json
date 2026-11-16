@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-16T20:00:53+00:00",
+  "updated_at": "2026-11-16T22:52:55+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "Piloto 10 juegos únicos AUTO_PASS/11 intentos; prioridad batch 1: 49/50 AUTO_PASS, mvp SIGSEGV; batch 2: 49/49 AUTO_PASS y hoops95 STATIC_FAIL por CRC; batch 3: 99/100 AUTO_PASS, 1 GAME_FAIL; batch 4: 96/100 AUTO_PASS, 4 GAME_FAIL; batch 5: 98/99 AUTO_PASS, 1 GAME_FAIL y 1 STATIC_FAIL. Batch 5 restores 99/99; sin fallo de motor, dispatch, audio ni restore. Conteo acumulado AUTO_CERTIFIED=401, transacciones=409, CONTROL_CERTIFIED=0, GUEST_READY=0. NEXT_GAME mame:/userdata/roms/mame/gundealr.zip.",
+      "summary": "Piloto 10 juegos únicos AUTO_PASS/11 intentos; Batch 1: 49/50 AUTO_PASS, 1 GAME_FAIL; Batch 2: 49 AUTO_PASS y 1 STATIC_FAIL; Batch 3: 99/100 AUTO_PASS, 1 GAME_FAIL; Batch 4: 96/100 AUTO_PASS, 4 GAME_FAIL; Batch 5: 98 AUTO_PASS, 1 GAME_FAIL, 1 STATIC_FAIL; Batch 6: 98 AUTO_PASS y 2 GAME_FAIL de 100 lanzamientos, 100/100 restores. Acumulado: AUTO_CERTIFIED=499, GAME_FAIL=9, STATIC_FAIL=2, transactions=509, unique_games_processed=510, CONTROL_CERTIFIED=0, GUEST_READY=0, NEXT_GAME=mame:/userdata/roms/mame/machridr.zip.",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-16T19:59:54+00:00"
+      "updated_at": "2026-11-16T22:52:55+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,17 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 401,
-    "attempted_new": 409,
+    "auto_certified": 499,
+    "attempted_new": 509,
     "static_fail": 2,
-    "game_fail": 7,
+    "game_fail": 9,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
-    "needs_repair": 9,
-    "total_restores": 409,
+    "needs_repair": 11,
+    "total_restores": 509,
     "restore_failures": 0,
-    "next_game": "mame:/userdata/roms/mame/gundealr.zip",
-    "engine_failures_unresolved": 0
+    "next_game": "mame:/userdata/roms/mame/machridr.zip",
+    "engine_failures_unresolved": 0,
+    "unique_games_processed": 510,
+    "result_records": 511,
+    "launch_transactions": 509,
+    "retry_transactions": 1
   }
 }
