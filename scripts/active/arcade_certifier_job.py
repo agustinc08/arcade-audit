@@ -28,10 +28,10 @@ def now():
     return datetime.now(timezone.utc).isoformat(timespec='seconds')
 
 
-def autopilot_owns_start():
+def autopilot_owner_record():
     state = read_json(AUTOPILOT_STATE, {}) or {}
     if state.get('status') not in ('STARTING', 'RUNNING'):
-        return True
+        return None
     run_id = state.get('run_id')
     pid = state.get('pid')
     if not run_id or os.environ.get('ARCADE_AUTOPILOT_RUN_ID') != run_id or not isinstance(pid, int):
@@ -43,10 +43,19 @@ def autopilot_owns_start():
         cmdline = (proc / 'cmdline').read_bytes().replace(b'\0', b' ').decode('utf-8', 'replace')
         fields = (proc / 'stat').read_text().rsplit(')', 1)[1].split()
         start_ticks = int(fields[19])
-        return ('arcade_autopilot.py' in cmdline and '--worker' in cmdline and run_id in cmdline and
-                start_ticks == state.get('process_start_ticks'))
+        if ('arcade_autopilot.py' not in cmdline or '--worker' not in cmdline or run_id not in cmdline or
+                start_ticks != state.get('process_start_ticks')):
+            return False
+        return {'run_id': run_id, 'pid': pid, 'process_start_ticks': start_ticks}
     except (OSError, ValueError, IndexError):
         return False
+
+
+def autopilot_owns_start():
+    state = read_json(AUTOPILOT_STATE, {}) or {}
+    if state.get('status') not in ('STARTING', 'RUNNING'):
+        return True
+    return bool(autopilot_owner_record())
 
 
 def atomic_json(path, value):
@@ -107,8 +116,12 @@ def validate_start(batch_size):
         raise RuntimeError('BATCH_SIZE_MUST_BE_1_TO_100')
     if active_certifiers():
         raise RuntimeError('CERTIFIER_ALREADY_RUNNING')
-    if not autopilot_owns_start():
-        raise RuntimeError('AUTOPILOT_ALREADY_RUNNING')
+    autopilot_state = read_json(AUTOPILOT_STATE, {}) or {}
+    owner_record = None
+    if autopilot_state.get('status') in ('STARTING', 'RUNNING'):
+        owner_record = autopilot_owner_record()
+        if not owner_record:
+            raise RuntimeError('AUTOPILOT_ALREADY_RUNNING')
     old = read_json(META)
     if active_job(old):
         raise RuntimeError('CERTIFIER_ALREADY_RUNNING')
@@ -142,8 +155,8 @@ def validate_start(batch_size):
         remaining = int(progress.get('considered', 0)) - int(progress.get('launched', 0))
         if remaining < 1:
             raise RuntimeError('SAFE_STOP_BATCH_BOUNDARY_INCONSISTENT')
-        return next_game, min(batch_size, remaining)
-    return next_game, batch_size
+        return next_game, min(batch_size, remaining), owner_record
+    return next_game, batch_size, owner_record
 
 
 def rotate_successful_log():
@@ -184,7 +197,7 @@ def acquire_lock():
 def start(batch_size):
     lock_fd = acquire_lock()
     try:
-        next_game, effective_batch_size = validate_start(batch_size)
+        next_game, effective_batch_size, owner_record = validate_start(batch_size)
         rotate_successful_log()
         job_id = datetime.now().strftime('%Y%m%dT%H%M%S') + '_' + uuid.uuid4().hex[:8]
         job_log = JOBS / 'logs' / (job_id + '.log')
@@ -205,6 +218,7 @@ def start(batch_size):
             'requested_batch_size': batch_size,
             'starting_game': next_game, 'command': argv, 'status': 'STARTING',
             'exit_code': None, 'log_path': str(job_log), 'stop_request': None,
+            'autopilot_owner': owner_record,
         }
         atomic_json(META, meta)
         # Open the per-job log before detaching so all worker output is persistent.

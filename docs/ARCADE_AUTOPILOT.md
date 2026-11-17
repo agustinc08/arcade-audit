@@ -39,6 +39,13 @@ Tras desconexión, consultar `status`. Si RUNNING no iniciar otra instancia.
 Un certifier se adopta sólo si PID/command line, metadata y checkpoint coinciden.
 Job COMPLETE se reconcilia antes de reports/publicación. Estado dudoso pausa.
 
+El arranque de un job bajo Autopilot valida primero el `run_id`, PID y
+`process_start_ticks` del worker. El detached runner conserva esa vinculación en
+`certifier_job.json`; el certifier la vuelve a verificar junto con su PID y el
+PID de su worker. No depende de encontrar al Autopilot como ancestro del
+certifier, porque el job crea una sesión propia y el proceso queda reparentado.
+Un inicio manual durante un Autopilot activo sigue siendo rechazado.
+
 ## Tareas y recuperación
 
 Las tareas se agrupan por batch o root cause, no por cada AUTO_PASS.
@@ -72,3 +79,16 @@ otras tareas automáticas independientes.
 La operación real se libera sólo después de pruebas y un test pequeño elegible
 con detached survival, checkpoint y restore. Si el checkpoint está bloqueado,
 no iniciar juegos ni `start` real.
+
+## Validación del handoff detached — 2026-11-17
+
+El primer arranque real de Autopilot llegó al detached job runner, pero el
+certifier rechazó tres veces la ejecución antes de lanzar un juego. La causa
+fue que el guard del certifier exigía una cadena de ancestros hasta Autopilot;
+la sesión propia del worker rompe esa cadena al reparentar el certifier. Los
+tres logs `REFUSED` y el checkpoint `STOPPED_SAFE` se conservan. La corrección
+local valida la delegación guardada por el runner contra el Autopilot activo,
+su PID/start ticks, el `run_id`, el PID del worker y el PID/command line del
+certifier. Pruebas unitarias focalizadas y dry-run pasan. La publicación y el
+arranque sólo se consideran listos después de verificar esta revisión en
+GitHub; no se atribuye a este rechazo ningún fallo de juego.

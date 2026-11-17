@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-17T11:24:27+00:00",
+  "updated_at": "2026-11-17T11:33:41+00:00",
   "tasks": [
     {
       "id": "CERT-BATCH-0011",
       "type": "CERTIFICATION_BATCH",
       "title": "Continuar priority_batch_11",
-      "status": "PAUSED_SAFETY",
+      "status": "READY",
       "priority": 10,
       "created_at": "2026-11-17T03:06:29+00:00",
-      "updated_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T11:39:33+00:00",
       "source": "full_game_certification_checkpoint.json",
-      "reason": "Batch 11 permanece parcial (9 AUTO_PASS originales; 10 transacciones originales). CERT-007 mitigado/cerrado, xmultipl retry AUTO_PASS y engine_fail_active=0. Reanudar sólo después de publicar Autopilot, desde xsleena y con el remanente del mismo lote.",
+      "reason": "Checkpoint y safety gates PASS. Tres intentos previos fueron rechazados antes de iniciar el certifier; evidencia preservada en jobs/logs/20261117T083*.log*.",
       "automatic": true,
       "requires_codex": false,
       "requires_manual": false,
@@ -21,7 +21,7 @@
       "attempts": 0,
       "max_attempts": 3,
       "last_error": null,
-      "next_action": "Tras publicar infraestructura, detached runner debe continuar priority_batch_11 desde xsleena y limitarse a los juegos restantes; no crear otro lote.",
+      "next_action": "Reanudar prioridad_batch_11 desde el cursor canónico mediante detached certifier job.",
       "evidence": [
         "/userdata/system/state/arcade_audit/full_game_certification_checkpoint.json",
         "/userdata/system/state/arcade_audit/full_game_certification.csv"
@@ -39,7 +39,8 @@
         "ROM/BIOS"
       ],
       "success_criteria": "Batch limitado completado, restore verificado por juego y fuentes locales reconciliadas.",
-      "after_completion": "Rebuild summary/current state, publicar y recalcular NEXT_GAME."
+      "after_completion": "Rebuild summary/current state, publicar y recalcular NEXT_GAME.",
+      "prelaunch_refusals_recorded": 3
     },
     {
       "id": "REPAIR-CERTIFIER-MARKER-COLLISION",
@@ -81,26 +82,22 @@
       "id": "REGRESSION-HEALTH-001",
       "type": "REGRESSION_CHECK",
       "title": "Health review antes de modificar runtime",
-      "status": "READY",
+      "status": "COMPLETE",
       "priority": 8,
       "created_at": "2026-11-17T03:06:29+00:00",
-      "updated_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T11:30:31+00:00",
       "source": "ARCADE_MASTER",
       "reason": "Validar configuración, runtime, disco y reconciliación antes de certificar.",
       "automatic": true,
       "requires_codex": false,
       "requires_manual": false,
       "depends_on": [],
-      "attempts": 0,
+      "attempts": 1,
       "max_attempts": 3,
       "last_error": null,
       "next_action": "Ejecutar comprobaciones read-only; cualquier discrepancia pausa la cola.",
       "evidence": [
-        "checkpoint",
-        "batocera.conf",
-        "P1-P4",
-        "HDMI",
-        "EmulationStation"
+        "{\"autopilot_conflict\": null, \"certifier_conflict\": null, \"checkpoint\": {\"blocked_reason\": null, \"engine_fail_active\": 0, \"next_untested\": \"mame:/userdata/roms/mame/xsleena.zip\", \"status\": \"STOPPED_SAFE\"}, \"disk\": [{\"free_bytes\": 87447072768, \"path\": \"/userdata\", \"used_percent\": 61}, {\"free_bytes\": 2650688667648, \"path\": \"/media/ROMS\", \"used_percent\": 32}, {\"free_bytes\": 93454204928, \"path\": \"/media/BATOCERA_ROMS\", \"used_percent\": 90}], \"marker\": {\"exists\": false, \"ownership\": null}, \"runtime\": {\"ES_API\": \"PASS\", \"HDMI\": \"alsa_output.pci-0000_01_00.1.hdmi-stereo\", \"MAME_GLOBAL_CORE\": \"mame078plus\", \"MAME_OVERRIDES_COUNT\": 18, \"P1_P4\": {\"P1\": [\"5\", \"/dev/input/event17\"], \"P2\": [\"6\", \"/dev/input/event18\"], \"P3\": [\"8\", \"/dev/input/event20\"], \"P4\": [\"7\", \"/dev/input/event19\"]}, \"batocera_conf_sha256\": \"098c88444322bacaac5f2f2383e5bf6e5fa42623353fe8c49d307fffc47b52d2\"}, \"temperature_c\": 43.0}"
       ],
       "files": [],
       "do_not_change": [],

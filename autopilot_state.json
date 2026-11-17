@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "status": "STOPPED",
-  "started_at": null,
-  "updated_at": "2026-11-17T11:24:27+00:00",
+  "status": "WAITING_CODEX",
+  "started_at": "2026-11-17T11:30:31+00:00",
+  "updated_at": "2026-11-17T11:33:44+00:00",
   "current_task": null,
-  "last_completed_task": null,
+  "last_completed_task": "REGRESSION-HEALTH-001",
   "safe_mode": true,
   "pause_reason": null,
   "batches_completed": 0,
   "games_processed_this_run": 0,
-  "last_github_sha": "c20d8a43187a83c5dbdeac5fedaee31b6ff5e9bf",
-  "next_action": "Gates certificados; publicar la infraestructura antes de continuar priority_batch_11 con el runner desacoplado."
+  "last_github_sha": "7e4026935bb4c340eec386cdc268ee258474240f",
+  "next_action": "/userdata/system/state/arcade_audit/CODEX_NEXT_TASK.md"
 }

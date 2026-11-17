@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Universal, resumable Batocera game certifier; launches only READY adapters."""
-import argparse,csv,hashlib,json,os,re,signal,sqlite3,subprocess,sys,time,urllib.request,shutil
+import argparse,csv,hashlib,json,os,re,signal,sqlite3,subprocess,sys,time,urllib.request,shutil,fcntl
 from datetime import datetime,timezone
 from pathlib import Path
 
@@ -20,6 +20,9 @@ PROFILE=Path('/userdata/system/configs/el_gordo_controller_profiles/controller_t
 MULTI=Path('/userdata/system/configs/el_gordo_controller_profiles/multiplayer.json')
 LOGS=[Path('/userdata/system/logs/controller_selector.log'),Path('/userdata/system/logs/es_launch_stdout.log'),
       Path('/userdata/system/logs/es_launch_stderr.log'),Path('/userdata/system/logs/emulog.txt')]
+AUTOPILOT_STATE=AUDIT/'autopilot_state.json'; CERTIFIER_LOCK=AUDIT/'jobs'/'.full_game_certifier.lock'
+CERTIFIER_JOB_META=AUDIT/'jobs'/'certifier_job.json'
+CERTIFIER_LOCK_FD=None
 HDMI='alsa_output.pci-0000_01_00.1.hdmi-stereo'
 DURATIONS={'mame':20,'fbneo':20,'neogeo':20,'nes':16,'fds':16,'snes':16,'megadrive':16,'mastersystem':16,
  'gb':16,'gbc':16,'gba':16,'pcengine':16,'n64':35,'psx':35,'dreamcast':50,'ps2':75,'psp':35}
@@ -80,6 +83,45 @@ def pids():
     st=(x/'stat').read_text().rsplit(')',1)[1].split();out.append({'pid':int(x.name),'ppid':int(st[1]),'comm':comm,'exe':exe,'argv':argv})
   except (OSError,ValueError,IndexError):pass
  return out
+def process_identity(pid):
+ try:
+  proc=Path(f'/proc/{pid}');cmd=(proc/'cmdline').read_bytes().replace(b'\0',b' ').decode(errors='replace')
+  fields=(proc/'stat').read_text().rsplit(')',1)[1].split()
+  return {'cmdline':cmd,'ppid':int(fields[1]),'start_ticks':int(fields[19])}
+ except (OSError,ValueError,IndexError):return None
+def delegated_autopilot_owner_matches(state,env_run_id,owner,job,cert_pid,cert_ppid,cert_cmd,owner_proc):
+ run_id=state.get('run_id');pid=state.get('pid')
+ expected={'run_id':run_id,'pid':pid,'process_start_ticks':state.get('process_start_ticks')}
+ return bool(state.get('status') in ('STARTING','RUNNING') and isinstance(pid,int) and run_id and
+  env_run_id==run_id and owner==expected and owner_proc and
+  owner_proc.get('start_ticks')==state.get('process_start_ticks') and
+  'arcade_autopilot.py' in owner_proc.get('cmdline','') and '--worker' in owner_proc.get('cmdline','') and
+  run_id in owner_proc.get('cmdline','') and job.get('status')=='RUNNING' and
+  job.get('pid')==cert_pid and job.get('worker_pid')==cert_ppid and
+  job.get('autopilot_owner')==expected and str(Path(__file__).resolve()) in cert_cmd)
+def autopilot_process_owned_by_current_run():
+ try:state=json.loads(AUTOPILOT_STATE.read_text())
+ except (OSError,ValueError):return True
+ if state.get('status') not in ('STARTING','RUNNING'):return True
+ run_id=state.get('run_id');pid=state.get('pid')
+ if not run_id or os.environ.get('ARCADE_AUTOPILOT_RUN_ID')!=run_id or not isinstance(pid,int):return False
+ try:
+  cert_pid=os.getpid();cert_proc=process_identity(cert_pid);parent_pid=os.getppid()
+  job=json.loads(CERTIFIER_JOB_META.read_text())
+  owner_proc=process_identity(pid)
+  return delegated_autopilot_owner_matches(state,os.environ.get('ARCADE_AUTOPILOT_RUN_ID'),
+   job.get('autopilot_owner'),job,cert_pid,parent_pid,
+   cert_proc.get('cmdline','') if cert_proc else '',owner_proc)
+ except (OSError,ValueError,TypeError):return False
+def acquire_certifier_lock():
+ global CERTIFIER_LOCK_FD
+ CERTIFIER_LOCK.parent.mkdir(parents=True,exist_ok=True,mode=0o700)
+ fd=os.open(str(CERTIFIER_LOCK),os.O_CREAT|os.O_RDWR,0o600)
+ try:fcntl.flock(fd,fcntl.LOCK_EX|fcntl.LOCK_NB)
+ except BlockingIOError:
+  os.close(fd);raise RuntimeError('CERTIFIER_ALREADY_RUNNING')
+ CERTIFIER_LOCK_FD=fd
+ return fd
 def conf_sha():return hashlib.sha256(CONF.read_bytes()).hexdigest()
 def get_default_sink():
  q=subprocess.run(['pactl','get-default-sink'],capture_output=True,text=True,timeout=3)
@@ -350,8 +392,11 @@ def launch_one(game,adapter_info,baseline,mode):
     result['restore']={'status':'RESTORE_VERIFIED','transaction_id':result['transaction_id'],'paths':len(manifest.get('entries',[]))}
     prune_verified_snapshots(result['transaction_id'])
    except Exception as e:
-    result['restore']={'status':'RESTORE_FAILURE','detail':type(e).__name__+': '+str(e)}
-    result['result']='RESTORE_FAILURE';result['failure_class']='RESTORE_FAILURE'
+    detail=type(e).__name__+': '+str(e)
+    marker_conflict=str(e).startswith('FOREIGN_STATE_CONFLICT:')
+    result['restore']={'status':'FOREIGN_STATE_CONFLICT' if marker_conflict else 'RESTORE_FAILURE','detail':detail}
+    if result.get('failure_class')!='MARKER_ALREADY_EXISTS':
+     result['result']='ENGINE_FAIL';result['failure_class']='FOREIGN_STATE_CONFLICT' if marker_conflict else 'RESTORE_FAILURE'
    if result.get('restore',{}).get('status')=='RESTORE_VERIFIED':
     try:
      after=None
@@ -535,6 +580,14 @@ def run_tests(games,cp,mode):
    'restore_verified':0,'restore_failures':0,'started_at':started,'first_game':first,'last_game':None}
   cp['batch_in_progress']=batch_progress;checkpoint_update(cp)
  for game in games:
+  stop_file=os.environ.get('ARCADE_CERTIFIER_STOP_FILE')
+  if stop_file and Path(stop_file).is_file():
+   # This boundary is reached only after the previous transaction's restore
+   # and global-baseline checks completed successfully.
+   rows,_=load_rows();systems=ad.live_systems()
+   cp['next_untested']=next_cursor(rows,systems);cp['current_test']=None;cp['next_game']=None
+   cp['status']='STOPPED_SAFE';cp['blocked_reason']=None;cp['safe_stop_requested_at']=utc()
+   checkpoint_update(cp);print('SAFE_STOP_AT_GAME_BOUNDARY',flush=True);return True
   label=game['system']+'/'+Path(game['rom']).name
   cp['current_test']=label;cp['next_game']=label;cp['status']='RUNNING';checkpoint_update(cp)
   result=launch_one(game,game['adapter_info'],baseline,mode)
@@ -633,6 +686,8 @@ def main():
   q=queue(rows,systems);print(json.dumps({'systems_detected':len(systems),'games_in_certification_table':len(rows),
       'adapters':systems,'queue_total_ready':len(q),'next':[{k:x.get(k) for k in ('system','rom','name')} for x in q[:a.limit]],
       'runtime_launch':'NOT RUN'},ensure_ascii=False,indent=2));return 0
+ if not autopilot_process_owned_by_current_run():
+  print(json.dumps({'result':'REFUSED','reason':'AUTOPILOT_ALREADY_RUNNING_WITHOUT_OWNER_TOKEN'},ensure_ascii=False));return 3
  try:cp=json.loads(STATE.read_text(encoding='utf-8'))
  except Exception:cp={'schema_version':2,'updated_at':utc(),'results':[],'counts':{},'status':'READY'}
  if not (a.plan or a.single or a.pilot):
@@ -688,6 +743,9 @@ def main():
   roster={'created_at':utc(),'prefilter_skips':globals().get('PILOT_PREFLIGHT_SKIPS',[]),
     'games':[{'system':x['system'],'rom':x['rom'],'adapter':x['adapter_info']['adapter'],'core':x['adapter_info']['configured_core']} for x in games]}
   atomic_json(AUDIT/'certifier_pilot_roster.json',roster)
+ try:acquire_certifier_lock()
+ except RuntimeError as e:
+  print(json.dumps({'result':'REFUSED','reason':str(e)},ensure_ascii=False));return 3
  cp.setdefault('results',[]);cp['status']='RUNNING';cp['mode']=mode;cp['selected_count']=len(games);checkpoint_update(cp)
  ok=run_tests(games,cp,mode)
  print(json.dumps({'batch_status':cp.get('status'),'mode':mode,'selected':len(games),'counts':cp.get('counts',{}),
