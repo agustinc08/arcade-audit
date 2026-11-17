@@ -30,3 +30,9 @@ Los sospechosos visuales no deben provocar un fallo masivo automático: el méto
 ## Fuente y mantenimiento
 
 Los estados individuales viven en `arcade_issues.csv`; resultados de juegos en `full_game_certification.csv`; cursor y transacciones en `full_game_certification_checkpoint.json`. Este resumen es derivado y debe regenerarse cuando esas fuentes cambien.
+
+| `CERTIFIER_MARKER_COLLISION` | 1 (`mame/xmultipl.zip`, pre-launch) | ABIERTO | El manifest muestra marker ausente en PRE_STATE y presente en POST_STATE; `open('x')` falló con `FileExistsError` antes de `/launch`. Restore volvió a PRE_STATE, pero el contenido/escritor concurrente no quedó preservado. No reanudar lanzamientos hasta implementar/verificar exclusión mutua y abort seguro ante marker ajeno. Ver `reports/PRIORITY_CERTIFICATION_BATCH_11.md`. |
+
+## Estado de certificación después de Batch 11 parcial
+
+La tabla y los resultados individuales permanecen intactos. Conteos derivados actuales: 897 `AUTO_CERTIFIED`, 20 `GAME_FAIL`, 2 `STATIC_FAIL`, 22 `NEEDS_REPAIR`, 919 transacciones, 921 records y 1 `ENGINE_FAIL` activo. Batch 11 no está cerrado; sus nueve AUTO_PASS son válidos y `xmultipl` no constituye un fallo de juego.

@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-17T02:21:11+00:00",
+  "updated_at": "2026-11-17T02:27:23+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
-  "next_untested": "mame:/userdata/roms/mame/wndrplnt.zip",
-  "attempted_new": 909,
-  "auto_certified": 888,
+  "next_untested": "mame:/userdata/roms/mame/xsleena.zip",
+  "attempted_new": 919,
+  "auto_certified": 897,
   "manual_control_certified": 0,
   "guest_ready": 0,
   "launches_blocked_by": [],
@@ -21895,9 +21895,242 @@
         "paths": 10
       },
       "finished_at": "2026-11-16T23:21:10.992-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/wndrplnt.zip",
+      "name": "Wonder Planet",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261116T232255_bbe02ab9ee",
+      "stable_seconds": 20.122,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261116T232255_bbe02ab9ee",
+        "paths": 10
+      },
+      "finished_at": "2026-11-16T23:23:23.129-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/wow.zip",
+      "name": "Wizard Of Wor",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261116T232324_cd3f6982fd",
+      "stable_seconds": 20.132,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261116T232324_cd3f6982fd",
+        "paths": 10
+      },
+      "finished_at": "2026-11-16T23:23:51.892-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/wrally.zip",
+      "name": "World Rally",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261116T232353_85a9fcb2fe",
+      "stable_seconds": 20.178,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261116T232353_85a9fcb2fe",
+        "paths": 10
+      },
+      "finished_at": "2026-11-16T23:24:20.799-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/ws.zip",
+      "name": "World Stadium",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261116T232422_1ca9fb31f4",
+      "stable_seconds": 20.118,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261116T232422_1ca9fb31f4",
+        "paths": 10
+      },
+      "finished_at": "2026-11-16T23:24:51.009-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/wseries.zip",
+      "name": "World Series: The Season",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261116T232456_8a6e5ea082",
+      "stable_seconds": 20.089,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261116T232456_8a6e5ea082",
+        "paths": 10
+      },
+      "finished_at": "2026-11-16T23:25:24.722-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/wwfmania.zip",
+      "name": "WWF: Wrestlemania",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261116T232525_f6e2a2662f",
+      "stable_seconds": 20.12,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261116T232525_f6e2a2662f",
+        "paths": 10
+      },
+      "finished_at": "2026-11-16T23:25:53.516-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/wwjgtin.zip",
+      "name": "Wai Wai Jockey Gate-in!",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261116T232554_696dda24f3",
+      "stable_seconds": 20.127,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261116T232554_696dda24f3",
+        "paths": 10
+      },
+      "finished_at": "2026-11-16T23:26:22.449-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/xevious.zip",
+      "name": "Xevious",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261116T232623_b466da3825",
+      "stable_seconds": 20.134,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261116T232623_b466da3825",
+        "paths": 10
+      },
+      "finished_at": "2026-11-16T23:26:51.479-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/xexex.zip",
+      "name": "Xexex",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261116T232652_2c01126168",
+      "stable_seconds": 20.149,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261116T232652_2c01126168",
+        "paths": 10
+      },
+      "finished_at": "2026-11-16T23:27:20.243-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/xmultipl.zip",
+      "name": "X Multiply",
+      "adapter": "MAME078PLUS",
+      "result": "ENGINE_FAIL",
+      "failure_class": "CERTIFIER_EXCEPTION:FileExistsError: [Errno 17] File exists: '/userdata/system/state/boot_audit_once.json'",
+      "transaction_id": "20261116T232721_823ec5e49e",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261116T232721_823ec5e49e",
+        "paths": 10
+      },
+      "finished_at": "2026-11-16T23:27:22.879-03:00"
     }
   ],
-  "status": "COMPLETE",
+  "status": "PAUSED_ENGINE_FAILURE",
   "mode": "batch",
   "selected_count": 100,
   "baseline": {
@@ -21929,17 +22162,17 @@
   "current_test": null,
   "next_game": null,
   "counts": {
-    "AUTO_PASS": 888,
+    "AUTO_PASS": 897,
     "GAME_FAIL": 20,
     "STATIC_FAIL": 2,
     "FLAKY": 0,
     "ADAPTER_NOT_READY": 0,
-    "ENGINE_FAIL": 1,
+    "ENGINE_FAIL": 2,
     "WRONG_GAME_DISPATCH": 0,
     "AUDIO_ROUTE_CHANGED": 0,
     "RESTORE_FAILURE": 0
   },
-  "blocked_reason": null,
+  "blocked_reason": "CERTIFIER_EXCEPTION:FileExistsError: [Errno 17] File exists: '/userdata/system/state/boot_audit_once.json'",
   "resume_reason": "CSV logger normalized null identity; Hoops95 preflight result was safely recorded without launch",
   "pilot_summary": {
     "unique_games": 10,
@@ -21986,19 +22219,33 @@
       "resolved_at": "2026-11-15T09:39:16-03:00"
     }
   ],
-  "launch_transactions": 909,
+  "launch_transactions": 919,
   "transaction_attempts": 509,
   "retry_transactions": 1,
-  "unique_games_processed": 910,
-  "result_records": 911,
+  "unique_games_processed": 920,
+  "result_records": 921,
   "static_preflight_results": 2,
-  "engine_fail_total_historical": 1,
-  "engine_fail_active": 0,
+  "engine_fail_total_historical": 2,
+  "engine_fail_active": 1,
   "game_fail": 20,
   "static_fail": 2,
   "flaky": 0,
   "needs_repair": 22,
   "control_certified": 0,
-  "restores_verified": 909,
-  "restore_failures": 0
+  "restores_verified": 919,
+  "restore_failures": 0,
+  "batch_in_progress": {
+    "name": "priority_batch_11",
+    "considered": 100,
+    "launched": 10,
+    "auto_pass": 9,
+    "game_fail": 0,
+    "static_fail": 0,
+    "flaky": 0,
+    "restore_verified": 10,
+    "restore_failures": 0,
+    "started_at": "2026-11-16T23:22:54.606-03:00",
+    "first_game": "/userdata/roms/mame/wndrplnt.zip",
+    "last_game": "/userdata/roms/mame/xmultipl.zip"
+  }
 }

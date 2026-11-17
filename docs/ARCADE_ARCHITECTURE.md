@@ -29,6 +29,20 @@ La configuración activa de EmulationStation es `/userdata/system/configs/emulat
 
 El marcador `boot_audit_once.json` es temporal y de un solo uso para la selección automática de perfil durante pruebas autorizadas. No es parte del uso normal del invitado.
 
+El control y la observación se separan de la ejecución larga mediante `/userdata/system/el_gordo_tools/arcade_certifier_job.sh`. Codex/SSH inicia o consulta el job; el helper crea un supervisor en sesión nueva (`start_new_session=True`/`setsid(2)`); el supervisor ejecuta el certifier con límite `--batch N`, guarda metadata/log persistentes y el certifier mantiene checkpoint transaccional por juego. No hay autoarranque al boot, cron ni servicio de certificación.
+
+```text
+Codex / SSH
+    ↓ start / status / log / stop-safe
+arcade_certifier_job.sh
+    ↓ supervisor desacoplado de terminal (sesión nueva)
+full_game_certifier.py --batch N
+    ↓ gates + transacción + restore verificado
+checkpoint por juego
+```
+
+La operación y recuperación se describen en `CERTIFIER_JOB_RUNNER.md`. El helper rechaza estados no reconciliados, fallos de motor activos o un segundo certifier; la desconexión SSH/Codex no es una señal de parada.
+
 ## Core MAME y overrides
 
 El core predeterminado se mantiene `mame078plus`. Algunas ROMs tienen override individual a `mame` (MAME actual); nunca se cambia el core global como atajo. El número y shortnames vigentes se leen de `batocera.conf` y el registro de sistemas, no de esta descripción.

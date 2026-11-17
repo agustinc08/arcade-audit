@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-17T02:21:11+00:00",
+  "updated_at": "2026-11-17T02:38:55+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -124,10 +124,10 @@
       "updated_at": "2026-11-15T10:57:30+00:00"
     },
     "PHASE_14_FULL_GAME_CERTIFICATION": {
-      "status": "RUNNING",
+      "status": "BLOCKED",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_10: 100 considerados, 100 lanzados, 98 AUTO_PASS, 2 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=888; NEXT_GAME=mame:/userdata/roms/mame/wndrplnt.zip",
+      "summary": "priority_batch_11 parcial: 9 AUTO_PASS de 9 juegos lanzados; xmultipl abortado antes de /launch por colisión de boot_audit_once.json; 10 transacciones con RESTORE_VERIFIED; engine pause activa; no continuar hasta resolver la concurrencia del marker.",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-17T02:21:11+00:00"
+      "updated_at": "2026-11-17T02:38:55+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 888,
-    "attempted_new": 909,
+    "auto_certified": 897,
+    "attempted_new": 919,
     "static_fail": 2,
     "game_fail": 20,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
     "needs_repair": 22,
-    "total_restores": 909,
+    "total_restores": 919,
     "restore_failures": 0,
-    "next_game": "mame:/userdata/roms/mame/wndrplnt.zip",
-    "engine_failures_unresolved": 0,
-    "unique_games_processed": 910,
-    "result_records": 911,
-    "launch_transactions": 909,
+    "next_game": "mame:/userdata/roms/mame/xsleena.zip",
+    "engine_failures_unresolved": 1,
+    "unique_games_processed": 920,
+    "result_records": 921,
+    "launch_transactions": 919,
     "retry_transactions": 1
   }
 }
