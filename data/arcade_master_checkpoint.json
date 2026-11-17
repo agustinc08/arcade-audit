@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-17T19:23:13+00:00",
+  "updated_at": "2026-11-17T20:04:06+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_20: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=1563; NEXT_GAME=nes:/userdata/roms/nes/Twin Eagle - Revenge Joe's Brother (ESP).nes",
+      "summary": "priority_batch_21: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=1663; NEXT_GAME=nes:/userdata/roms/nes/Cosmo Police Galivan (ESP).nes",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-17T19:23:13+00:00"
+      "updated_at": "2026-11-17T20:04:06+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 1563,
-    "attempted_new": 1718,
+    "auto_certified": 1663,
+    "attempted_new": 1818,
     "static_fail": 194,
     "game_fail": 153,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
     "needs_repair": 347,
-    "total_restores": 1718,
+    "total_restores": 1818,
     "restore_failures": 0,
-    "next_game": "nes:/userdata/roms/nes/Twin Eagle - Revenge Joe's Brother (ESP).nes",
+    "next_game": "nes:/userdata/roms/nes/Cosmo Police Galivan (ESP).nes",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 1910,
-    "result_records": 1912,
-    "launch_transactions": 1718,
+    "unique_games_processed": 2010,
+    "result_records": 2012,
+    "launch_transactions": 1818,
     "retry_transactions": 2
   }
 }
