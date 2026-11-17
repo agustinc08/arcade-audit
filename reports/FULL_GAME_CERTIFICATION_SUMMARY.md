@@ -1,26 +1,26 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-17T16:41:19+00:00
+- UPDATED_AT: 2026-11-17T17:22:00+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 1318
-- UNIQUE_GAMES_PROCESSED: 1510
-- RESULT_RECORDS: 1512
-- LAUNCH_TRANSACTIONS: 1318
+- ATTEMPTED_NEW: 1418
+- UNIQUE_GAMES_PROCESSED: 1610
+- RESULT_RECORDS: 1612
+- LAUNCH_TRANSACTIONS: 1418
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 1170
+- AUTO_CERTIFIED: 1267
 - STATIC_FAIL: 194
-- GAME_FAIL: 146
+- GAME_FAIL: 149
 - FLAKY: 0
-- NEEDS_REPAIR: 340
+- NEEDS_REPAIR: 343
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: snes:/userdata/roms/snes/Super Battletank 2.zip
-- TOTAL_RESTORES: 1318
+- NEXT_GAME: snes:/userdata/roms/snes/Mickey Mania - The Timeless Adventures of Mickey Mouse (USA).zip
+- TOTAL_RESTORES: 1418
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -73,7 +73,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | saturn | 6 | 6 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 |
 | scummvm | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 |
 | sdlpop | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
-| snes | 275 | 275 | 0 | 104 | 0 | 4 | 0 | 0 | 0 | 167 |
+| snes | 275 | 275 | 0 | 201 | 0 | 7 | 0 | 0 | 0 | 67 |
 | solarus | 10 | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 10 |
 | steam | 7 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 |
 | superbroswar | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_16; considerados 100; lanzados 100; AUTO_PASS 96; restore 100/100.
+- Lote más reciente: priority_batch_17; considerados 100; lanzados 100; AUTO_PASS 97; restore 100/100.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: snes:/userdata/roms/snes/Super Battletank 2.zip.
+- NEXT_GAME: snes:/userdata/roms/snes/Mickey Mania - The Timeless Adventures of Mickey Mouse (USA).zip.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY
