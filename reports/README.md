@@ -6,9 +6,10 @@ Auditoría reproducible del arcade Batocera personalizado: configuración docume
 
 1. [ARCADE_CURRENT_STATE.md](ARCADE_CURRENT_STATE.md): snapshot generado del estado observado.
 2. [ARCADE_DOCUMENT_INDEX.md](ARCADE_DOCUMENT_INDEX.md): guía para navegar documentación y datos.
-3. [Resumen de certificación](reports/FULL_GAME_CERTIFICATION_SUMMARY.md): resultados derivados de las fuentes canónicas.
-4. [Causas raíz](reports/ROOT_CAUSES.md), [issues](data/arcade_issues.csv) y [cola de reparación](data/game_repair_queue.csv).
-5. [Scripts](scripts/): snapshots de herramientas y código de auditoría.
+3. [ARCADE AUTOPILOT](docs/ARCADE_AUTOPILOT.md): operación explícita, recovery y handoffs.
+4. [Resumen de certificación](reports/FULL_GAME_CERTIFICATION_SUMMARY.md): resultados derivados de las fuentes canónicas.
+5. [Causas raíz](reports/ROOT_CAUSES.md), [issues](data/arcade_issues.csv) y [cola de reparación](data/game_repair_queue.csv).
+6. [Scripts](scripts/): snapshots de herramientas y código de auditoría.
 
 ## Fuentes y alcance
 

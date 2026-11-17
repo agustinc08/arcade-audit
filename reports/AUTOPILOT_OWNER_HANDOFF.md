@@ -44,10 +44,26 @@ una variable de entorno como autorización.
 - La suite completa 26/26 no se repitió; los cambios se cubrieron con tests
   focalizados.
 
-## Estado / siguiente paso
+## Resultado de validación
 
-La corrección sigue local hasta que pase scans, publicación protegida y
-verificación del SHA remoto. Después se requiere un arranque único de Autopilot
-y confirmación del job detached RUNNING/progreso del checkpoint antes de
-declarar el handoff estable. No iniciar Batch 12 ni repetir los nueve
-`AUTO_PASS` originales de Batch 11.
+- Publicación infra con `SECRET_SCAN` y `PAYLOAD_SCAN` PASS. HEAD remoto
+  verificado: `f1124def868182422a7eee0be43aeecb7b811cc8`; no force.
+- Dry-run final: `HEALTH: PASS`, `CHECKPOINT: PASS`, próxima tarea
+  `CERT-BATCH-0011`, cursor `xsleena`.
+- Autopilot activo en PID 2061, sesión/grupo 2061; runner PID 2094, sesión/grupo
+  2094; certifier PID 2096. Los tres procesos fueron observados vivos bajo
+  `/proc` y el job conserva el owner `run_id`/PID/start ticks esperado.
+- El checkpoint progresó desde 10/100 hasta 19/100: `AUTO_PASS=18`,
+  `GAME_FAIL=0`, `RESTORE_VERIFIED=19`, `RESTORE_FAILURES=0`,
+  `AUTO_CERTIFIED=907`; cursor siguiente `mame:/userdata/roms/mame/znpwfv.zip`.
+  Ningún resultado terminal original fue relanzado.
+- `arcade_autopilot status` imprime `ARCADE_SAFETY: FAIL:RUNNING:None` cuando
+  el checkpoint está en RUNNING. Es una limitación de su presentación actual:
+  el resumen sólo define PASS para COMPLETE/STOPPED_SAFE; no refleja que el
+  launch pasó `HEALTH: PASS`/`CHECKPOINT: PASS` ni que el job RUNNING está
+  vinculado a Autopilot. No provocó pausa ni detuvo el worker. Debe corregirse
+  como indicador `IN_PROGRESS` en una revisión futura, sin cambiar gates.
+
+Autopilot y certifier siguen detached y el checkpoint progresa; Codex puede
+finalizar sin esperar la terminación de Batch 11. Batch 11 sigue RUNNING. No
+iniciar Batch 12 ni repetir los nueve `AUTO_PASS` originales.

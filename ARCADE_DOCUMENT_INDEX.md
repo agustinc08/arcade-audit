@@ -6,6 +6,9 @@ Este repositorio reúne documentación, datos saneados, checkpoints y herramient
 
 - [Estado actual](ARCADE_CURRENT_STATE.md): hardware, configuración y avance derivados de fuentes canónicas.
 - [Arquitectura del arcade](docs/ARCADE_ARCHITECTURE.md): ruta de arranque, selección, dispatcher, launcher y cierre.
+- [ARCADE AUTOPILOT](docs/ARCADE_AUTOPILOT.md): cola determinística, comandos, safety y recovery.
+- [Último ciclo Autopilot](reports/AUTOPILOT_STATUS.md): resumen generado al terminar un batch estable.
+- [Opciones futuras de Codex](docs/CODEX_AUTOMATION_OPTIONS.md): investigación no activada.
 - [Modelo de datos](docs/DATA_MODEL.md): fuentes de verdad y relación entre CSV, checkpoints e informes.
 - [Sistemas detectados](docs/SYSTEMS.md): inventario de sistemas y adapters observados.
 - [Configuración Batocera saneada](reports/CURRENT_BATOCERA_CONFIG.md): parámetros permitidos y hashes, nunca el archivo íntegro.
@@ -61,6 +64,7 @@ Los snapshots de `reports/history/` son evidencia fechada, no el estado vigente.
 
 - [`scripts/active/`](scripts/active/): snapshots de las herramientas activas y scripts de operación revisados para exportación.
 - [`scripts/universal_certifier/`](scripts/universal_certifier/): implementación del certificador y adapters.
+- [`scripts/active/arcade_autopilot.py`](scripts/active/arcade_autopilot.py): orquestador explícito y desacoplado.
 - [`scripts/`](scripts/): utilidades históricas/audit por lote. El inventario con SHA está en [custom_scripts_inventory.csv](data/custom_scripts_inventory.csv).
 
 ## Historia técnica y decisiones
