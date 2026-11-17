@@ -816,6 +816,7 @@ def recover_unfinished_tasks(obj, job, cp, state):
             stopped = cp.get('batch_in_progress') or {}
             stop_match = re.search(r'(\d+)$', stopped.get('name', ''))
             stop_id = f'CERT-BATCH-{int(stop_match.group(1)):04d}' if stop_match else None
+            next_batch_id = f'CERT-BATCH-{_batch_index(latest.get("name")) + 1:04d}' if _batch_index(latest.get('name')) else None
             if cp.get('status') == 'STOPPED_SAFE' and item.get('id') == stop_id:
                 item.update({'status': 'READY', 'updated_at': now(), 'last_error': None,
                              'next_action': 'Retomar el batch desde el siguiente cursor; el helper calcula el remanente.'})
@@ -824,6 +825,10 @@ def recover_unfinished_tasks(obj, job, cp, state):
                     not cp.get('batch_in_progress') and item.get('id') == completed_id):
                 item.update({'status': 'READY', 'updated_at': now(), 'last_error': None,
                              'next_action': 'Finalizar reconcile/reports/publicación del job COMPLETE; no relanzar.'})
+            elif (job.get('status') == 'CONSUMED' and cp.get('status') == 'COMPLETE' and
+                  not cp.get('batch_in_progress') and item.get('id') == next_batch_id):
+                item.update({'status': 'READY', 'updated_at': now(), 'last_error': None,
+                             'next_action': 'Revalidar job consumido y continuar con el runner del batch siguiente.'})
             continue
         if kind in ('REPORT_REBUILD', 'GITHUB_PUBLISH', 'CHECKPOINT_RECONCILIATION'):
             item.update({'status': 'READY', 'updated_at': now(), 'last_error': None,
@@ -953,7 +958,8 @@ def execute_one(item, task_obj, state):
                     return False
             append_event('PREVIOUS_JOB_COMPLETE_AND_CONSUMED', task_id=tid,
                          job_id=existing_job.get('job_id'))
-        else:
+            existing_job = {'status': 'NOT_RUNNING'}
+        if existing_job.get('status') not in ('RUNNING', 'COMPLETE', 'CONSUMED'):
             ok, reason, checks = health_check(include_checkpoint=True, allow_self=True)
             state['last_safety_check'] = checks
             if not ok:

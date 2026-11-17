@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "status": "PAUSED_SAFETY",
-  "started_at": "2026-11-17T11:50:33+00:00",
-  "updated_at": "2026-11-17T13:04:27+00:00",
+  "started_at": "2026-11-17T13:06:21+00:00",
+  "updated_at": "2026-11-17T13:07:21+00:00",
   "current_task": "CERT-BATCH-0012",
   "last_completed_task": "GITHUB-PUBLISH-CERT-BATCH-0011",
   "safe_mode": true,
-  "pause_reason": "COMPLETE_JOB_CHECKPOINT_MISMATCH:PUBLISH_SHA_UNVERIFIED",
+  "pause_reason": "CERTIFIER_FAILED:CONSUMED",
   "batches_completed": 0,
   "games_processed_this_run": 0,
   "last_github_sha": "f4e77ef44791e0be5b8c8c0d92ec6df3fff2b6a9",
-  "next_action": "Resolver safety blocker antes de iniciar Autopilot."
+  "next_action": "Diagnosticar transacción/restore/checkpoint antes de reanudar."
 }

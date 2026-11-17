@@ -57,6 +57,11 @@ sigue usando los guards existentes de PID/command line/checkpoint y no crea un
 segundo certifier. Un reintento después del consumo exige validar de nuevo el
 archivo histórico y la reconciliación.
 
+Si el proceso Autopilot cae después del consumo y antes del start, la task del
+batch siguiente vuelve a `READY` sólo cuando el checkpoint sigue limpio y la
+última metadata está `CONSUMED`; luego se vuelven a validar el archivo y el SHA
+antes de iniciar exactamente un runner nuevo.
+
 Durante un batch activo, `STATUS: RUNNING` y `ARCADE_SAFETY: PASS` son campos
 separados: `RUNNING` no representa un fallo de safety. `NEXT_ACTION` se deriva
 del certifier vivo cuando éste está procesando.

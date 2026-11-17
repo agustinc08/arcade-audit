@@ -195,6 +195,16 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(item['status'], 'READY')
         self.assertIn('no relanzar', item['next_action'])
 
+    def test_consumed_previous_job_recovers_interrupted_next_batch_task(self):
+        item = AP.task('CERT-BATCH-0012', 'CERTIFICATION_BATCH', 'next batch', 'RUNNING', 10,
+                       automatic=True)
+        obj = {'tasks': [item]}
+        cp = {'status': 'COMPLETE', 'latest_batch': {'name': 'priority_batch_11'},
+              'batch_in_progress': None}
+        AP.recover_unfinished_tasks(obj, {'status': 'CONSUMED'}, cp, {})
+        self.assertEqual(item['status'], 'READY')
+        self.assertIn('runner del batch siguiente', item['next_action'])
+
     def test_complete_batch_job_is_reconciled_without_second_runner_start(self):
         item = AP.task('CERT-BATCH-0011', 'CERTIFICATION_BATCH', 'batch', 'READY', 10,
                        automatic=True)
@@ -236,6 +246,39 @@ class AutopilotTests(unittest.TestCase):
             self.assertEqual(archived['status'], 'COMPLETE')
             self.assertEqual(current['status'], 'CONSUMED')
             self.assertEqual(current['consumed_by_task'], 'CERT-BATCH-0012')
+
+    def test_consuming_previous_job_starts_exactly_one_next_runner(self):
+        with tempfile.TemporaryDirectory() as td:
+            job, cp, tasks, state, publish, paths = self.previous_batch_fixture(td)
+            item = AP.task('CERT-BATCH-0012', 'CERTIFICATION_BATCH', 'next batch', 'READY', 10,
+                           automatic=True)
+            tasks['tasks'][2] = item
+            state.update({'status': 'RUNNING', 'batch_size': 100,
+                          'run_id': 'new-autopilot-run'})
+            running = {'status': 'RUNNING', 'job_id': '20261117T130700_abcdef12',
+                       'pid': 4001, 'worker_pid': 4002}
+            started = AP.subprocess.CompletedProcess(args=[], returncode=0, stdout='STARTED', stderr='')
+            atomic_json = AP.atomic_json
+            with mock.patch.object(AP, 'AUDIT', paths['AUDIT']), \
+                 mock.patch.object(AP, 'get_cert_job_status', side_effect=[job, running]), \
+                 mock.patch.object(AP, 'read_json', side_effect=lambda path, fallback=None:
+                                   cp if Path(path) == AP.CERT_STATE else
+                                   publish if Path(path) == paths['AUDIT'] / 'github_publish_state.json' else
+                                   json.loads(Path(path).read_text()) if Path(path).is_file() else fallback), \
+                 mock.patch.object(AP, 'report_reconciled', return_value=(True, {})), \
+                 mock.patch.object(AP, 'summary_matches_checkpoint', return_value=True), \
+                 mock.patch.object(AP, 'health_check', return_value=(True, None, {})), \
+                 mock.patch.object(AP, 'save_tasks'), mock.patch.object(AP, 'append_event'), \
+                 mock.patch.object(AP, 'atomic_json', side_effect=lambda path, value:
+                                   atomic_json(path, value) if Path(path).is_relative_to(paths['AUDIT']) else None), \
+                 mock.patch.object(AP, 'log'), \
+                 mock.patch.object(AP.subprocess, 'run', return_value=started) as runner, \
+                 mock.patch.object(AP.time, 'sleep', side_effect=RuntimeError('STOP_TEST_LOOP')):
+                with self.assertRaisesRegex(RuntimeError, 'STOP_TEST_LOOP'):
+                    AP.execute_one(item, tasks, state)
+            runner.assert_called_once()
+            self.assertEqual(runner.call_args.args[0][:2], [str(AP.CERT_JOB), 'start'])
+            self.assertEqual(json.loads(paths['meta'].read_text())['status'], 'CONSUMED')
 
     def test_complete_unpublished_or_mismatched_job_fails_closed(self):
         with tempfile.TemporaryDirectory() as td:
