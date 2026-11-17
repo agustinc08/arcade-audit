@@ -107,11 +107,20 @@ def autopilot_process_owned_by_current_run():
  if not run_id or os.environ.get('ARCADE_AUTOPILOT_RUN_ID')!=run_id or not isinstance(pid,int):return False
  try:
   cert_pid=os.getpid();cert_proc=process_identity(cert_pid);parent_pid=os.getppid()
-  job=json.loads(CERTIFIER_JOB_META.read_text())
   owner_proc=process_identity(pid)
-  return delegated_autopilot_owner_matches(state,os.environ.get('ARCADE_AUTOPILOT_RUN_ID'),
-   job.get('autopilot_owner'),job,cert_pid,parent_pid,
-   cert_proc.get('cmdline','') if cert_proc else '',owner_proc)
+  cert_cmd=cert_proc.get('cmdline','') if cert_proc else ''
+  expected={'run_id':run_id,'pid':pid,'process_start_ticks':state.get('process_start_ticks')}
+  for _ in range(200):
+   job=json.loads(CERTIFIER_JOB_META.read_text())
+   if delegated_autopilot_owner_matches(state,os.environ.get('ARCADE_AUTOPILOT_RUN_ID'),
+     job.get('autopilot_owner'),job,cert_pid,parent_pid,cert_cmd,owner_proc):return True
+   # The detached worker publishes its own PID before spawning this process;
+   # allow only that single, owner-matched metadata transition.
+   if (job.get('status')!='RUNNING' or job.get('autopilot_owner')!=expected or
+       job.get('worker_pid')!=parent_pid or job.get('pid') not in (None,parent_pid)):
+    return False
+   time.sleep(0.01)
+  return False
  except (OSError,ValueError,TypeError):return False
 def acquire_certifier_lock():
  global CERTIFIER_LOCK_FD
