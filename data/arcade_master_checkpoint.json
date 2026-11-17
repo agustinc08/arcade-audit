@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-17T21:25:27+00:00",
+  "updated_at": "2026-11-17T22:06:19+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_23: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=1862; NEXT_GAME=nes:/userdata/roms/nes/owlia.nes",
+      "summary": "priority_batch_24: 100 considerados, 100 lanzados, 99 AUTO_PASS, 1 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=1961; NEXT_GAME=nes:/userdata/roms/nes/The Legend of Zelda (ESP-Orden).nes",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-17T21:25:27+00:00"
+      "updated_at": "2026-11-17T22:06:19+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 1862,
-    "attempted_new": 2018,
+    "auto_certified": 1961,
+    "attempted_new": 2118,
     "static_fail": 194,
-    "game_fail": 154,
+    "game_fail": 155,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
-    "needs_repair": 348,
-    "total_restores": 2018,
+    "needs_repair": 349,
+    "total_restores": 2118,
     "restore_failures": 0,
-    "next_game": "nes:/userdata/roms/nes/owlia.nes",
+    "next_game": "nes:/userdata/roms/nes/The Legend of Zelda (ESP-Orden).nes",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 2210,
-    "result_records": 2212,
-    "launch_transactions": 2018,
+    "unique_games_processed": 2310,
+    "result_records": 2312,
+    "launch_transactions": 2118,
     "retry_transactions": 2
   }
 }
