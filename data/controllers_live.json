@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T21:33:28+00:00",
+  "updated_at": "2026-11-17T05:12:34+00:00",
   "source": "controller_dispatcher --diagnose; SDL runtime; pactl sink names",
   "BOTONERA_P1_P4": [
     {

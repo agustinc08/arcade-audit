@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-17T02:38:55+00:00",
+  "updated_at": "2026-11-17T05:39:44+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -124,10 +124,10 @@
       "updated_at": "2026-11-15T10:57:30+00:00"
     },
     "PHASE_14_FULL_GAME_CERTIFICATION": {
-      "status": "BLOCKED",
+      "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_11 parcial: 9 AUTO_PASS de 9 juegos lanzados; xmultipl abortado antes de /launch por colisión de boot_audit_once.json; 10 transacciones con RESTORE_VERIFIED; engine pause activa; no continuar hasta resolver la concurrencia del marker.",
+      "summary": "priority_batch_11 parcial: conserva sus 9 AUTO_PASS originales y 10 transacciones originales; xmultipl tuvo ENGINE_FAIL pre-launch histórico y un retry aislado AUTO_PASS (transaction 20261117T023330_2ac933f47e), HDMI/identidad/runtime/visual/exit/restore PASS. engine_fail_active=0; 920 transacciones, 2 retries; cursor ordinario xsleena. Reanudación pendiente de publicar Autopilot y continuar el mismo Batch 11.",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-17T02:38:55+00:00"
+      "updated_at": "2026-11-17T05:39:44+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 897,
-    "attempted_new": 919,
+    "auto_certified": 898,
+    "attempted_new": 920,
     "static_fail": 2,
     "game_fail": 20,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
     "needs_repair": 22,
-    "total_restores": 919,
+    "total_restores": 920,
     "restore_failures": 0,
     "next_game": "mame:/userdata/roms/mame/xsleena.zip",
-    "engine_failures_unresolved": 1,
+    "engine_failures_unresolved": 0,
     "unique_games_processed": 920,
-    "result_records": 921,
-    "launch_transactions": 919,
-    "retry_transactions": 1
+    "result_records": 922,
+    "launch_transactions": 920,
+    "retry_transactions": 2
   }
 }

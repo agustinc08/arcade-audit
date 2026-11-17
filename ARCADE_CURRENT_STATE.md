@@ -1,7 +1,7 @@
 # Estado actual del arcade
 
-- UPDATED_AT: 2026-11-17T02:41:40+00:00
-- GITHUB_HEAD observado antes de publicar: `5110e8e1a0186a06ee9be43a698ca28ca63448b6`
+- UPDATED_AT: 2026-11-17T11:24:43+00:00
+- GITHUB_HEAD observado antes de publicar: `c20d8a43187a83c5dbdeac5fedaee31b6ff5e9bf`
 - BATOCERA_VERSION: 43.1
 
 ## Sistema y hardware
@@ -33,11 +33,11 @@
 
 ## Certificación
 
-- FULL_CERTIFICATION_PHASE: BLOCKED
+- FULL_CERTIFICATION_PHASE: RUNNING
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- AUTO_CERTIFIED: 897
+- AUTO_CERTIFIED: 898
 - GAME_FAIL: 20
 - STATIC_FAIL: 2
 - FLAKY: 0
@@ -46,9 +46,9 @@
 - GUEST_READY: 0
 - NEXT_GAME: `mame:/userdata/roms/mame/xsleena.zip`
 - UNIQUE_GAMES_PROCESSED: 920
-- RESULT_RECORDS: 921
-- LAUNCH_TRANSACTIONS: 919
-- RETRY_TRANSACTIONS: 1
+- RESULT_RECORDS: 922
+- LAUNCH_TRANSACTIONS: 920
+- RETRY_TRANSACTIONS: 2
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
 - REPAIR_QUEUE_PENDING: 22
@@ -64,7 +64,7 @@
 
 - GUEST_MODE_STATUS: PENDING; no se promueven juegos automáticamente.
 - ARCADE_MANAGER_STATUS: script local disponible; servicio/panel persistente no certificado.
-- OPEN_ROOT_ISSUES: 10
+- OPEN_ROOT_ISSUES: 9
 - MANUAL_TESTS_PENDING: 14 (detalle en `data/manual_physical_test_queue.csv`).
 - LAST_MAJOR_CHANGES: Resolved HDMI selection policy at runtime, verified no-game transaction restore, found/version-checked FBNeo DAT, audited publisher changeset; no game launched.
 

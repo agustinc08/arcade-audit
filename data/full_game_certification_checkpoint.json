@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-17T02:27:23+00:00",
+  "updated_at": "2026-11-17T05:39:44+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
   "next_untested": "mame:/userdata/roms/mame/xsleena.zip",
-  "attempted_new": 919,
-  "auto_certified": 897,
+  "attempted_new": 920,
+  "auto_certified": 898,
   "manual_control_certified": 0,
   "guest_ready": 0,
   "launches_blocked_by": [],
@@ -22128,11 +22128,35 @@
         "paths": 10
       },
       "finished_at": "2026-11-16T23:27:22.879-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/xmultipl.zip",
+      "name": "X Multiply",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T023330_2ac933f47e",
+      "stable_seconds": 20.08,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T023330_2ac933f47e",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T02:33:57.421-03:00"
     }
   ],
-  "status": "PAUSED_ENGINE_FAILURE",
-  "mode": "batch",
-  "selected_count": 100,
+  "status": "STOPPED_SAFE",
+  "mode": "single",
+  "selected_count": 1,
   "baseline": {
     "batocera_conf_sha256": "098c88444322bacaac5f2f2383e5bf6e5fa42623353fe8c49d307fffc47b52d2",
     "global_mame_core": "mame078plus",
@@ -22155,14 +22179,14 @@
       ]
     },
     "audio_default": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
-    "dispatcher_sha256": "a60be89fb45ea27ec4f7c3f546e088c7ff3da140bccfe1c6a37e5b14ec581c45",
+    "dispatcher_sha256": "92d7bb43101a72eaaaa844b51b961170c5276a3728e88c2c4240f320d162829c",
     "profile_sha256": "11431873bed4f024d71707b71ad1b2e6848c2f79fafda485b086cad0a548af15",
     "multiplayer_sha256": "f6a72b297f1e587de9e6b3e5ccb885deda22975e444a6e4f1398b2a51928ed0f"
   },
   "current_test": null,
   "next_game": null,
   "counts": {
-    "AUTO_PASS": 897,
+    "AUTO_PASS": 898,
     "GAME_FAIL": 20,
     "STATIC_FAIL": 2,
     "FLAKY": 0,
@@ -22172,8 +22196,8 @@
     "AUDIO_ROUTE_CHANGED": 0,
     "RESTORE_FAILURE": 0
   },
-  "blocked_reason": "CERTIFIER_EXCEPTION:FileExistsError: [Errno 17] File exists: '/userdata/system/state/boot_audit_once.json'",
-  "resume_reason": "CSV logger normalized null identity; Hoops95 preflight result was safely recorded without launch",
+  "blocked_reason": null,
+  "resume_reason": "CERT-007 reconciled: shared marker ownership protocol verified; P1-P4 gate PASS 5/5; isolated xmultipl retry AUTO_PASS and RESTORE_VERIFIED. Preserve historical ENGINE_FAIL; detached Autopilot may continue only priority_batch_11 from xsleena after infrastructure publication.",
   "pilot_summary": {
     "unique_games": 10,
     "auto_pass": 10,
@@ -22219,20 +22243,20 @@
       "resolved_at": "2026-11-15T09:39:16-03:00"
     }
   ],
-  "launch_transactions": 919,
+  "launch_transactions": 920,
   "transaction_attempts": 509,
-  "retry_transactions": 1,
+  "retry_transactions": 2,
   "unique_games_processed": 920,
-  "result_records": 921,
+  "result_records": 922,
   "static_preflight_results": 2,
   "engine_fail_total_historical": 2,
-  "engine_fail_active": 1,
+  "engine_fail_active": 0,
   "game_fail": 20,
   "static_fail": 2,
   "flaky": 0,
   "needs_repair": 22,
   "control_certified": 0,
-  "restores_verified": 919,
+  "restores_verified": 920,
   "restore_failures": 0,
   "batch_in_progress": {
     "name": "priority_batch_11",

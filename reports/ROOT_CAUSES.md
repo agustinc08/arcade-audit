@@ -31,7 +31,7 @@ Los sospechosos visuales no deben provocar un fallo masivo automático: el méto
 
 Los estados individuales viven en `arcade_issues.csv`; resultados de juegos en `full_game_certification.csv`; cursor y transacciones en `full_game_certification_checkpoint.json`. Este resumen es derivado y debe regenerarse cuando esas fuentes cambien.
 
-| `CERTIFIER_MARKER_COLLISION` | 1 (`mame/xmultipl.zip`, pre-launch) | ABIERTO | El manifest muestra marker ausente en PRE_STATE y presente en POST_STATE; `open('x')` falló con `FileExistsError` antes de `/launch`. Restore volvió a PRE_STATE, pero el contenido/escritor concurrente no quedó preservado. No reanudar lanzamientos hasta implementar/verificar exclusión mutua y abort seguro ante marker ajeno. Ver `reports/PRIORITY_CERTIFICATION_BATCH_11.md`. |
+| `CERTIFIER_MARKER_COLLISION` | 1 (`mame/xmultipl.zip`, pre-launch) | CERRADO | Causa de protocolo aceptada y demostrada: varios productores compartían marker sin ownership coordinado; restore genérico borraba PRE ausente/POST presente aunque la transacción no lo hubiera creado. El proceso exacto que escribió el marker original sigue sin poder atribuirse porque no se preservaron payload/PID. Mitigación: helper único, lock, creación exclusiva, `FOREIGN_UNKNOWN` fail-closed y restore `FOREIGN_STATE_CONFLICT`. Suite local 26/26 y retry xmultipl AUTO_PASS/RESTORE_VERIFIED; gate P1-P4 5/5. Ver `reports/CERTIFIER_MARKER_COLLISION.md`.
 
 ## Estado de certificación después de Batch 11 parcial
 

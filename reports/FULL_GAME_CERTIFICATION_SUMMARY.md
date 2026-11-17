@@ -1,16 +1,16 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-17T02:41:39+00:00
+- UPDATED_AT: 2026-11-17T05:39:58+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 919
+- ATTEMPTED_NEW: 920
 - UNIQUE_GAMES_PROCESSED: 920
-- RESULT_RECORDS: 921
-- LAUNCH_TRANSACTIONS: 919
-- RETRY_TRANSACTIONS: 1
+- RESULT_RECORDS: 922
+- LAUNCH_TRANSACTIONS: 920
+- RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 2
-- AUTO_CERTIFIED: 897
+- AUTO_CERTIFIED: 898
 - STATIC_FAIL: 2
 - GAME_FAIL: 20
 - FLAKY: 0
@@ -20,11 +20,11 @@
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
 - NEXT_GAME: mame:/userdata/roms/mame/xsleena.zip
-- TOTAL_RESTORES: 919
+- TOTAL_RESTORES: 920
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
-- ENGINE_FAIL_ACTIVE: 1
-- CERTIFICATION_PHASE: BLOCKED
+- ENGINE_FAIL_ACTIVE: 0
+- CERTIFICATION_PHASE: RUNNING
 
 Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la nueva auto-certificación. `AUTO_CERTIFIED` no certifica botones físicos. `GUEST_READY` permanece sujeto a certificación de controles y salida.
 
@@ -49,7 +49,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | hcl | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | hurrican | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | ikemen | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
-| mame | 1324 | 1324 | 1112 | 889 | 2 | 20 | 0 | 0 | 0 | 412 |
+| mame | 1324 | 1324 | 1112 | 890 | 2 | 20 | 0 | 0 | 0 | 412 |
 | mastersystem | 383 | 383 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 382 |
 | megacd | 24 | 24 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 24 |
 | megadrive | 1037 | 1037 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1036 |
@@ -87,10 +87,10 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 ## Último lote y reanudación
 
 - Lote más reciente: priority_batch_10; considerados 100; lanzados 100; AUTO_PASS 98; restore 100/100.
-- Estado de runner: PAUSED_ENGINE_FAILURE.
+- Estado de runner: STOPPED_SAFE.
 - NEXT_GAME: mame:/userdata/roms/mame/xsleena.zip.
 - Lote parcial: priority_batch_11; considerados 100; transacciones 10; AUTO_PASS 9; GAME_FAIL 0; restore verificados 10; el lote no está cerrado.
-- Bloqueo activo: CERTIFIER_EXCEPTION:FileExistsError: [Errno 17] File exists: '/userdata/system/state/boot_audit_once.json'.
+- Bloqueo activo: None.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY
