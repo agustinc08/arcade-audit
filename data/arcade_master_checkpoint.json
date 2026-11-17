@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-16T23:48:17+00:00",
+  "updated_at": "2026-11-17T01:28:53+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_7: 100 considerados, 100 lanzados, 97 AUTO_PASS, 3 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=596; NEXT_GAME=mame:/userdata/roms/mame/pc_bfght.zip",
+      "summary": "priority_batch_9: 100 considerados, 100 lanzados, 98 AUTO_PASS, 2 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=790; NEXT_GAME=mame:/userdata/roms/mame/strkforc.zip",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-16T23:48:17+00:00"
+      "updated_at": "2026-11-17T01:28:53+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 596,
-    "attempted_new": 609,
+    "auto_certified": 790,
+    "attempted_new": 809,
     "static_fail": 2,
-    "game_fail": 12,
+    "game_fail": 18,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
-    "needs_repair": 14,
-    "total_restores": 609,
+    "needs_repair": 20,
+    "total_restores": 809,
     "restore_failures": 0,
-    "next_game": "mame:/userdata/roms/mame/pc_bfght.zip",
+    "next_game": "mame:/userdata/roms/mame/strkforc.zip",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 610,
-    "result_records": 611,
-    "launch_transactions": 609,
+    "unique_games_processed": 810,
+    "result_records": 811,
+    "launch_transactions": 809,
     "retry_transactions": 1
   }
 }
