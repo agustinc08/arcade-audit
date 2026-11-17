@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-17T14:46:45+00:00",
+  "updated_at": "2026-11-17T15:08:54+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
-  "next_untested": "fbneo:/userdata/roms/fbneo/gijoe.zip",
-  "attempted_new": 1168,
-  "auto_certified": 1024,
+  "next_untested": "neogeo:/userdata/roms/neogeo/blazstar.zip",
+  "attempted_new": 1211,
+  "auto_certified": 1067,
   "manual_control_certified": 0,
   "guest_ready": 0,
   "launches_blocked_by": [],
@@ -28041,6 +28041,1893 @@
         "paths": 8
       },
       "finished_at": "2026-11-17T11:46:44.414-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/gijoe.zip",
+      "name": "G.I. Joe",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T114818_189b1ac3c1",
+      "stable_seconds": 20.142,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T114818_189b1ac3c1",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:48:45.225-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/metamrph.zip",
+      "name": "Metamorphic Force",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T114846_1e4c2acdb7",
+      "stable_seconds": 20.105,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T114846_1e4c2acdb7",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:49:13.008-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/promutrv.zip",
+      "name": "Progressive Music Trivia",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T114914_e62275ccfc",
+      "stable_seconds": 20.111,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T114914_e62275ccfc",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:49:41.844-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/tmnt.zip",
+      "name": "Teenage Mutant Ninja Turtles",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T114947_1f699c2e6f",
+      "stable_seconds": 20.121,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T114947_1f699c2e6f",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:50:15.088-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/trog.zip",
+      "name": "Trog",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115016_9707177cb9",
+      "stable_seconds": 20.104,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115016_9707177cb9",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:50:42.721-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/usg182.zip",
+      "name": "Games V25.4x",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/vendetta.zip",
+      "name": "Vendetta",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/wcbowldx.zip",
+      "name": "World Class Bowling Deluxe",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/zeroteam.zip",
+      "name": "zeroteam",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115045_03f90112ef",
+      "stable_seconds": 20.12,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115045_03f90112ef",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:51:12.155-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/desertbr.zip",
+      "name": "Desert Breaker",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/kod.zip",
+      "name": "The King of Dragons",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/20pacgalr4.zip",
+      "name": "Ms. Pac-man/Galaga - 20th Anniversary Class of 1981 Reunion",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/aoh.zip",
+      "name": "Age of Heroes - Silkroad 2",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115115_4906f5d217",
+      "stable_seconds": 20.116,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115115_4906f5d217",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:51:41.728-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/bestri.zip",
+      "name": "Bestri",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115142_1305f35b58",
+      "stable_seconds": 20.093,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115142_1305f35b58",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:52:09.352-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/bublboblr.zip",
+      "name": "Bubble Bobble",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/ckongg.zip",
+      "name": "Crazy Kong",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/coolmini.zip",
+      "name": "Cool Minigame Collection",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/crazywar.zip",
+      "name": "Crazy War",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115212_f66ee1ca29",
+      "stable_seconds": 20.112,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115212_f66ee1ca29",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:52:39.285-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/cybertnk.zip",
+      "name": "Cyber Tank",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115240_84ab4f4caf",
+      "stable_seconds": 20.157,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115240_84ab4f4caf",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:53:06.965-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/dbldynj.zip",
+      "name": "The Double Dynamites",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115308_46d00f1507",
+      "stable_seconds": 20.081,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115308_46d00f1507",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:53:34.828-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/dynabomb.zip",
+      "name": "Dynamite Bomber",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115336_e882a0e053",
+      "stable_seconds": 20.142,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115336_e882a0e053",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:54:02.261-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/excelsr.zip",
+      "name": "Excelsior",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/ffight.zip",
+      "name": "Final Fight",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115404_df1501f6b2",
+      "stable_seconds": 20.11,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115404_df1501f6b2",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:54:30.321-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/firehawk.zip",
+      "name": "Spectrum 2000",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/fort2b.zip",
+      "name": "Fortress 2 Blue Arcade",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115432_191e66a113",
+      "stable_seconds": 20.132,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115432_191e66a113",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:54:58.464-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/gslugrsj.zip",
+      "name": "Great Sluggers",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/hamaway.zip",
+      "name": "Hammer Away",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115500_560bd9546d",
+      "stable_seconds": 20.123,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115500_560bd9546d",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:55:27.021-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/hvyunit.zip",
+      "name": "Heavy Unit",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115528_da62a14a89",
+      "stable_seconds": 20.09,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115528_da62a14a89",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:55:54.794-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/joemacr.zip",
+      "name": "Joe & Mac Returns",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115555_f5a68522d8",
+      "stable_seconds": 20.09,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115555_f5a68522d8",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:56:22.405-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/jumppop.zip",
+      "name": "Jumping Pop",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115623_035a473aff",
+      "stable_seconds": 20.076,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115623_035a473aff",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:56:50.015-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/magerror.zip",
+      "name": "Magical Error Wo Sagase",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115651_799585a773",
+      "stable_seconds": 20.112,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115651_799585a773",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:57:17.525-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/mangchi.zip",
+      "name": "Mang-Chi",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115718_5ae20d354e",
+      "stable_seconds": 20.083,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115718_5ae20d354e",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:57:45.245-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/mazeinv.zip",
+      "name": "Maze Invaders",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/mslug4.zip",
+      "name": "Metal Slug 4",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/mslug5.zip",
+      "name": "Metal Slug 5",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/mslugx.zip",
+      "name": "Metal Slug X : Super Vehicle-001",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/powerbal.zip",
+      "name": "Power Balls",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115749_94cb9f5291",
+      "stable_seconds": 20.08,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115749_94cb9f5291",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:58:15.391-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/punisher.zip",
+      "name": "The Punisher",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/puyo.zip",
+      "name": "Puyo Puyo",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/r2dx_v33.zip",
+      "name": "Raiden II New / Raiden DX",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115817_4356ddc498",
+      "stable_seconds": 20.089,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115817_4356ddc498",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:58:44.498-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/raidendx.zip",
+      "name": "Raiden DX",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115845_2ac34324d8",
+      "stable_seconds": 20.088,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115845_2ac34324d8",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:59:12.208-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/rocktrv2.zip",
+      "name": "Mtv Rock-n-roll Trivia",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115913_64bbf91dc9",
+      "stable_seconds": 20.14,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115913_64bbf91dc9",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:59:40.218-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/roughrac.zip",
+      "name": "Rough Racer",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T115941_b1ed5e5d16",
+      "stable_seconds": 20.157,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T115941_b1ed5e5d16",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:00:07.791-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/samsho2.zip",
+      "name": "Samurai Shodown II",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/sb2003.zip",
+      "name": "Super Bubble 2003",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120009_52e5fb1e06",
+      "stable_seconds": 20.081,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120009_52e5fb1e06",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:00:35.864-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/searcheya.zip",
+      "name": "Search Eye",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/searchp2.zip",
+      "name": "Search Eye Plus V2.0",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120037_e7bebdeae5",
+      "stable_seconds": 20.116,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120037_e7bebdeae5",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:01:04.028-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/semibase.zip",
+      "name": "Muhanseungbu",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120105_9f7dddd3ca",
+      "stable_seconds": 20.117,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120105_9f7dddd3ca",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:01:31.595-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/sf2hf.zip",
+      "name": "Street Fighter II' : Hyper Fighting",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120132_852cb25160",
+      "stable_seconds": 20.141,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120132_852cb25160",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:01:59.164-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/sfiii.zip",
+      "name": "Street Fighter III : New Generation",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120200_95e72a3b2c",
+      "stable_seconds": 20.112,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120200_95e72a3b2c",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:02:26.658-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/sfiii2.zip",
+      "name": "Street Fighter III : 2nd Impact - Giant Attack",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120227_e54a47c6b3",
+      "stable_seconds": 20.142,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120227_e54a47c6b3",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:02:54.244-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/sfiii3.zip",
+      "name": "Street Fighter III : 3rd Strike - Fight for the Future",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120255_a64916de46",
+      "stable_seconds": 20.147,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120255_a64916de46",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:03:22.021-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/sfz2al.zip",
+      "name": "Street Fighter Zero 2 Alpha",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120323_69c7914058",
+      "stable_seconds": 20.127,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120323_69c7914058",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:03:49.518-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/shocktr2.zip",
+      "name": "Shock Troopers : 2nd Squad",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/silvmil.zip",
+      "name": "Silver Millennium",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120351_8c0367127c",
+      "stable_seconds": 20.113,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120351_8c0367127c",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:04:17.754-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/spec2kh.zip",
+      "name": "Spectrum 2000",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/supduck.zip",
+      "name": "Super Duck",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120419_fef4c14701",
+      "stable_seconds": 20.133,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120419_fef4c14701",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:04:46.224-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/suratk.zip",
+      "name": "Surprise Attack",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120447_aa7081df10",
+      "stable_seconds": 20.123,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120447_aa7081df10",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:05:14.058-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/sws.zip",
+      "name": "Super World Stadium",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/twinsqua.zip",
+      "name": "Twin Squash",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/wbbc97.zip",
+      "name": "Beach Festival World Championship 1997",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120516_520ddd9c33",
+      "stable_seconds": 20.106,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120516_520ddd9c33",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:05:43.091-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/wildplt.zip",
+      "name": "Wild Pilot",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120544_cfba4ce516",
+      "stable_seconds": 20.088,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120544_cfba4ce516",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:06:10.821-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/wpksocv2.zip",
+      "name": "World Pk Soccer V2",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/wwallyj.zip",
+      "name": "Wally Wo Sagase!",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/ejsakura.zip",
+      "name": "E-jan Sakurasou",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120613_42470b10d4",
+      "stable_seconds": 20.084,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120613_42470b10d4",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:06:39.685-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/garogun.zip",
+      "name": "Garogun Seroyang",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120640_7af32438ef",
+      "stable_seconds": 20.117,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120640_7af32438ef",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:07:07.524-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/gforce2.zip",
+      "name": "Galaxy Force 2",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/luctoday.zip",
+      "name": "Lucky Today",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120709_998d2360c3",
+      "stable_seconds": 20.137,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120709_998d2360c3",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:07:35.734-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/magicstk.zip",
+      "name": "Magic Sticks",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120738_db85004e27",
+      "stable_seconds": 20.077,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120738_db85004e27",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:08:05.904-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/orbs.zip",
+      "name": "Orbs",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T120807_652b4b407a",
+      "stable_seconds": 20.12,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T120807_652b4b407a",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T12:08:33.541-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/strkfgtrj.zip",
+      "name": "Strike Fighter",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/wyvernwg.zip",
+      "name": "Wivern Wings",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/acpsx.zip",
+      "name": "acpsx",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/cpzn1.zip",
+      "name": "cpzn1",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/cpzn2.zip",
+      "name": "cpzn2",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/cvs.zip",
+      "name": "cvs",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/decocass.zip",
+      "name": "decocass",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/konamigx.zip",
+      "name": "konamigx",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/megaplay.zip",
+      "name": "megaplay",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/megatech.zip",
+      "name": "megatech",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/neogeo.zip",
+      "name": "neogeo",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/nss.zip",
+      "name": "nss",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/pgm.zip",
+      "name": "pgm",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/playch10.zip",
+      "name": "playch10",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/skns.zip",
+      "name": "skns",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/stvbios.zip",
+      "name": "stvbios",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/taitotz.zip",
+      "name": "taitotz",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/tps.zip",
+      "name": "tps",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/mslug.zip",
+      "name": "Metal Slug : Super Vehicle-001",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/breakers.zip",
+      "name": "Breakers",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/gpilots.zip",
+      "name": "Ghost Pilots",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/mslug2.zip",
+      "name": "Metal Slug 2 : Super Vehicle-001/II",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/lbowling.zip",
+      "name": "League Bowling",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/neotris.zip",
+      "name": "NeoTRIS",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/2020bb.zip",
+      "name": "2020 Super Baseball",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/3countb.zip",
+      "name": "3 Count Bout",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/alpham2.zip",
+      "name": "Alpha Mission II",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/androdun.zip",
+      "name": "Andro Dunos",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/aof.zip",
+      "name": "Art of Fighting",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/b2b.zip",
+      "name": "Bang Bang Busters",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
     }
   ],
   "status": "COMPLETE",
@@ -28075,9 +29962,9 @@
   "current_test": null,
   "next_game": null,
   "counts": {
-    "AUTO_PASS": 1024,
+    "AUTO_PASS": 1067,
     "GAME_FAIL": 142,
-    "STATIC_FAIL": 44,
+    "STATIC_FAIL": 101,
     "FLAKY": 0,
     "ADAPTER_NOT_READY": 0,
     "ENGINE_FAIL": 2,
@@ -28098,21 +29985,21 @@
     "status": "PILOT_PASS_WITH_ADAPTER_FIX"
   },
   "latest_batch": {
-    "name": "priority_batch_13",
+    "name": "priority_batch_14",
     "considered": 100,
-    "launched": 60,
-    "auto_pass": 11,
-    "game_fail": 49,
-    "static_fail": 40,
+    "launched": 43,
+    "auto_pass": 43,
+    "game_fail": 0,
+    "static_fail": 57,
     "flaky": 0,
-    "restore_verified": "60/60",
+    "restore_verified": "43/43",
     "restore_failures": 0,
     "engine_failures_unresolved": 0,
-    "started_at": "2026-11-17T11:09:28.818-03:00",
-    "finished_at": "2026-11-17T11:46:45.173-03:00",
-    "first_game": "/userdata/roms/mame/suplup.zip",
-    "last_game": "/userdata/roms/fbneo/ga2.zip",
-    "next_game": "fbneo:/userdata/roms/fbneo/gijoe.zip"
+    "started_at": "2026-11-17T11:48:17.744-03:00",
+    "finished_at": "2026-11-17T12:08:54.625-03:00",
+    "first_game": "/userdata/roms/fbneo/gijoe.zip",
+    "last_game": "/userdata/roms/neogeo/b2b.zip",
+    "next_game": "neogeo:/userdata/roms/neogeo/blazstar.zip"
   },
   "latest_engine_issue": {
     "cause": "update_csv assumed identity was a dict for STATIC_FAIL (identity=null)",
@@ -28132,19 +30019,19 @@
       "resolved_at": "2026-11-15T09:39:16-03:00"
     }
   ],
-  "launch_transactions": 1168,
+  "launch_transactions": 1211,
   "transaction_attempts": 509,
   "retry_transactions": 2,
-  "unique_games_processed": 1210,
-  "result_records": 1212,
-  "static_preflight_results": 44,
+  "unique_games_processed": 1310,
+  "result_records": 1312,
+  "static_preflight_results": 101,
   "engine_fail_total_historical": 2,
   "engine_fail_active": 0,
   "game_fail": 142,
-  "static_fail": 44,
+  "static_fail": 101,
   "flaky": 0,
-  "needs_repair": 186,
+  "needs_repair": 243,
   "control_certified": 0,
-  "restores_verified": 1168,
+  "restores_verified": 1211,
   "restore_failures": 0
 }

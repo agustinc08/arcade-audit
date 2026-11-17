@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-17T14:46:45+00:00",
+  "updated_at": "2026-11-17T15:08:54+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_13: 100 considerados, 60 lanzados, 11 AUTO_PASS, 49 GAME_FAIL, 40 STATIC_FAIL; restores 60/60; AUTO_CERTIFIED=1024; NEXT_GAME=fbneo:/userdata/roms/fbneo/gijoe.zip",
+      "summary": "priority_batch_14: 100 considerados, 43 lanzados, 43 AUTO_PASS, 0 GAME_FAIL, 57 STATIC_FAIL; restores 43/43; AUTO_CERTIFIED=1067; NEXT_GAME=neogeo:/userdata/roms/neogeo/blazstar.zip",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-17T14:46:45+00:00"
+      "updated_at": "2026-11-17T15:08:54+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 1024,
-    "attempted_new": 1168,
-    "static_fail": 44,
+    "auto_certified": 1067,
+    "attempted_new": 1211,
+    "static_fail": 101,
     "game_fail": 142,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
-    "needs_repair": 186,
-    "total_restores": 1168,
+    "needs_repair": 243,
+    "total_restores": 1211,
     "restore_failures": 0,
-    "next_game": "fbneo:/userdata/roms/fbneo/gijoe.zip",
+    "next_game": "neogeo:/userdata/roms/neogeo/blazstar.zip",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 1210,
-    "result_records": 1212,
-    "launch_transactions": 1168,
+    "unique_games_processed": 1310,
+    "result_records": 1312,
+    "launch_transactions": 1211,
     "retry_transactions": 2
   }
 }

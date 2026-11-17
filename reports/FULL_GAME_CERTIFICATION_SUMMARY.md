@@ -1,26 +1,26 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-17T14:47:31+00:00
+- UPDATED_AT: 2026-11-17T15:09:18+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 1168
-- UNIQUE_GAMES_PROCESSED: 1210
-- RESULT_RECORDS: 1212
-- LAUNCH_TRANSACTIONS: 1168
+- ATTEMPTED_NEW: 1211
+- UNIQUE_GAMES_PROCESSED: 1310
+- RESULT_RECORDS: 1312
+- LAUNCH_TRANSACTIONS: 1211
 - RETRY_TRANSACTIONS: 2
-- STATIC_PREFLIGHT_RESULTS: 44
-- AUTO_CERTIFIED: 1024
-- STATIC_FAIL: 44
+- STATIC_PREFLIGHT_RESULTS: 101
+- AUTO_CERTIFIED: 1067
+- STATIC_FAIL: 101
 - GAME_FAIL: 142
 - FLAKY: 0
-- NEEDS_REPAIR: 186
+- NEEDS_REPAIR: 243
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: fbneo:/userdata/roms/fbneo/gijoe.zip
-- TOTAL_RESTORES: 1168
+- NEXT_GAME: neogeo:/userdata/roms/neogeo/blazstar.zip
+- TOTAL_RESTORES: 1211
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -39,7 +39,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | devilutionx | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 8 |
 | dreamcast | 775 | 775 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 775 |
 | easyrpg | 12 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 |
-| fbneo | 104 | 104 | 88 | 9 | 7 | 0 | 0 | 0 | 0 | 88 |
+| fbneo | 104 | 104 | 88 | 52 | 52 | 0 | 0 | 0 | 0 | 0 |
 | fds | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | flatpak | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
 | gamecube | 9 | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 |
@@ -57,7 +57,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | n64 | 377 | 377 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 377 |
 | naomi | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | nds | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
-| neogeo | 105 | 105 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 105 |
+| neogeo | 105 | 105 | 0 | 0 | 12 | 0 | 0 | 0 | 0 | 93 |
 | nes | 702 | 702 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 701 |
 | odcommander | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | openbor | 128 | 128 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 128 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_13; considerados 100; lanzados 60; AUTO_PASS 11; restore 60/60.
+- Lote más reciente: priority_batch_14; considerados 100; lanzados 43; AUTO_PASS 43; restore 43/43.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: fbneo:/userdata/roms/fbneo/gijoe.zip.
+- NEXT_GAME: neogeo:/userdata/roms/neogeo/blazstar.zip.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY
