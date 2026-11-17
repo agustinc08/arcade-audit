@@ -35,12 +35,14 @@ class AutopilotTests(unittest.TestCase):
                 'autopilot_owner': {'run_id': '20261117T085032_4f18d1ce', 'pid': 2061,
                                     'process_start_ticks': 38846002}}
         job_status = {'status': 'COMPLETE', 'job_id': job_id, 'pid': 2096, 'worker_pid': 2094,
-                      'NEXT_GAME': 'mame:/userdata/roms/mame/starcas.zip'}
+                      'NEXT_GAME': "snes:/userdata/roms/snes/Magical Pop'n.zip"}
         cp = {'status': 'COMPLETE', 'latest_batch': {'name': 'priority_batch_11',
               'started_at': '2026-11-16T23:22:54-03:00',
-              'finished_at': '2026-11-17T09:33:21-03:00'},
+              'finished_at': '2026-11-17T09:33:21-03:00', 'considered': 100,
+              'launched': 7, 'auto_pass': 7, 'static_fail': 93,
+              'restore_verified': '7/7', 'restore_failures': 0},
               'batch_in_progress': None, 'blocked_reason': None, 'engine_fail_active': 0,
-              'next_untested': 'mame:/userdata/roms/mame/starcas.zip'}
+              'next_untested': "snes:/userdata/roms/snes/Magical Pop'n.zip"}
         tasks = {'tasks': [{'id': 'CERT-BATCH-0011', 'status': 'COMPLETE'},
                            {'id': 'GITHUB-PUBLISH-CERT-BATCH-0011', 'status': 'COMPLETE'},
                            {'id': 'CERT-BATCH-0012', 'status': 'PAUSED_SAFETY'}]}
@@ -50,8 +52,16 @@ class AutopilotTests(unittest.TestCase):
                  'archive': root / 'jobs' / 'history' / f'{job_id}.json'}
         paths['meta'].parent.mkdir(parents=True)
         paths['meta'].write_text(json.dumps(meta))
+        (root / 'full_game_certification_checkpoint.json').write_text('{"status":"COMPLETE"}')
+        (root / 'FULL_GAME_CERTIFICATION_SUMMARY.md').write_text('AUTO_CERTIFIED: fixture\n')
+        report = root / 'reports' / 'PRIORITY_CERTIFICATION_BATCH_11.md'
+        report.parent.mkdir(parents=True)
+        report.write_text('fixture static-heavy batch report\n')
         publish = {'last_known_remote_sha': '156721dad12ac1bcbfc18877d57458c7b6d576b1',
                    'last_successful_publish_sha': '156721dad12ac1bcbfc18877d57458c7b6d576b1'}
+        with mock.patch.object(AP, 'AUDIT', root):
+            self.assertTrue(AP.write_publication_receipt(
+                'priority_batch_11', publish['last_known_remote_sha'], '2026-11-17T12:35:00+00:00'))
         return job_status, cp, tasks, state, publish, paths
 
     def test_atomic_json_replace_and_mode(self):
@@ -195,6 +205,30 @@ class AutopilotTests(unittest.TestCase):
         self.assertEqual(item['status'], 'READY')
         self.assertIn('no relanzar', item['next_action'])
 
+    def test_finish_batch_recovery_is_idempotent_after_checkpoint_reconcile(self):
+        item = AP.task('CERT-BATCH-0015', 'CERTIFICATION_BATCH', 'batch 15', 'RUNNING', 10,
+                       automatic=True)
+        publish = AP.task('GITHUB-PUBLISH-CERT-BATCH-0015', 'GITHUB_PUBLISH', 'publish',
+                          'READY', 5, automatic=True)
+        next_batch = AP.task('CERT-BATCH-0016', 'CERTIFICATION_BATCH', 'batch 16',
+                             'READY', 10, automatic=True)
+        obj = {'schema_version': 1, 'tasks': [item, publish, next_batch]}
+        state = {'batches_completed': 0, 'games_processed_this_run': 0}
+        cp = {'latest_batch': {'launched': 7, 'considered': 100, 'static_fail': 93}}
+        with mock.patch.object(AP, 'report_reconciled', return_value=(True, {'ok': True})), \
+             mock.patch.object(AP, 'SUMMARY_BUILDER', Path('/tmp/summary_builder_fixture.py')), \
+             mock.patch.object(AP, 'STATE_BUILDER', Path('/tmp/state_builder_fixture.py')), \
+             mock.patch.object(AP.subprocess, 'run', return_value=mock.Mock(returncode=0, stdout='', stderr='')), \
+             mock.patch.object(AP, 'read_json', side_effect=lambda path, fallback=None:
+                               cp if Path(path) == AP.CERT_STATE else (fallback or {})), \
+             mock.patch.object(AP, 'save_tasks'), mock.patch.object(AP, 'append_event'), \
+             mock.patch.object(AP, 'atomic_json'), mock.patch.object(AP, 'write_cycle_summary'):
+            self.assertTrue(AP.finish_batch(obj, 'CERT-BATCH-0015', state))
+            self.assertTrue(AP.finish_batch(obj, 'CERT-BATCH-0015', state))
+        self.assertEqual(state['batches_completed'], 1)
+        self.assertEqual(state['games_processed_this_run'], 7)
+        self.assertEqual(state['completed_batch_ids'], ['CERT-BATCH-0015'])
+
     def test_consumed_previous_job_recovers_interrupted_next_batch_task(self):
         item = AP.task('CERT-BATCH-0012', 'CERTIFICATION_BATCH', 'next batch', 'RUNNING', 10,
                        automatic=True)
@@ -204,6 +238,15 @@ class AutopilotTests(unittest.TestCase):
         AP.recover_unfinished_tasks(obj, {'status': 'CONSUMED'}, cp, {})
         self.assertEqual(item['status'], 'READY')
         self.assertIn('runner del batch siguiente', item['next_action'])
+
+    def test_publish_running_at_crash_recovers_as_retryable_ready(self):
+        item = AP.task('GITHUB-PUBLISH-CERT-BATCH-0015', 'GITHUB_PUBLISH', 'publish',
+                       'RUNNING', 5, automatic=True)
+        obj = {'tasks': [item]}
+        AP.recover_unfinished_tasks(obj, {'status': 'COMPLETE'},
+                                    {'status': 'COMPLETE', 'latest_batch': {'name': 'priority_batch_15'}}, {})
+        self.assertEqual(item['status'], 'READY')
+        self.assertIn('Reintentar tarea idempotente', item['next_action'])
 
     def test_complete_batch_job_is_reconciled_without_second_runner_start(self):
         item = AP.task('CERT-BATCH-0011', 'CERTIFICATION_BATCH', 'batch', 'READY', 10,
@@ -246,6 +289,39 @@ class AutopilotTests(unittest.TestCase):
             self.assertEqual(archived['status'], 'COMPLETE')
             self.assertEqual(current['status'], 'CONSUMED')
             self.assertEqual(current['consumed_by_task'], 'CERT-BATCH-0012')
+
+    def test_static_heavy_batch_with_spaced_cursor_has_valid_handoff(self):
+        with tempfile.TemporaryDirectory() as td:
+            job, cp, tasks, state, publish, paths = self.previous_batch_fixture(td)
+            with mock.patch.object(AP, 'AUDIT', paths['AUDIT']), \
+                 mock.patch.object(AP, 'report_reconciled', return_value=(True, {})), \
+                 mock.patch.object(AP, 'summary_matches_checkpoint', return_value=True), \
+                 mock.patch.object(AP, 'read_json', side_effect=lambda path, fallback=None:
+                                   publish if Path(path) == paths['AUDIT'] / 'github_publish_state.json'
+                                   else json.loads(Path(path).read_text()) if Path(path).is_file() else fallback):
+                allowed, reason = AP.previous_job_consumption_check(
+                    'CERT-BATCH-0012', job, cp, tasks, state)
+            self.assertTrue(allowed, reason)
+            batch = cp['latest_batch']
+            self.assertEqual(batch['considered'], batch['launched'] + batch['static_fail'])
+            self.assertEqual((batch['launched'], batch['auto_pass'], batch['restore_verified']),
+                             (7, 7, '7/7'))
+
+    def test_publication_receipt_detects_changed_batch_artifact(self):
+        with tempfile.TemporaryDirectory() as td:
+            job, cp, tasks, state, publish, paths = self.previous_batch_fixture(td)
+            report = paths['AUDIT'] / 'reports' / 'PRIORITY_CERTIFICATION_BATCH_11.md'
+            report.write_text('changed after publish\n')
+            with mock.patch.object(AP, 'AUDIT', paths['AUDIT']), \
+                 mock.patch.object(AP, 'report_reconciled', return_value=(True, {})), \
+                 mock.patch.object(AP, 'summary_matches_checkpoint', return_value=True), \
+                 mock.patch.object(AP, 'read_json', side_effect=lambda path, fallback=None:
+                                   publish if Path(path) == paths['AUDIT'] / 'github_publish_state.json'
+                                   else json.loads(Path(path).read_text()) if Path(path).is_file() else fallback):
+                allowed, reason = AP.previous_job_consumption_check(
+                    'CERT-BATCH-0012', job, cp, tasks, state)
+            self.assertFalse(allowed)
+            self.assertEqual(reason, 'PUBLICATION_RECEIPT_INVALID')
 
     def test_consuming_previous_job_starts_exactly_one_next_runner(self):
         with tempfile.TemporaryDirectory() as td:
@@ -310,7 +386,8 @@ class AutopilotTests(unittest.TestCase):
                  mock.patch.object(AP, 'atomic_json'), mock.patch.object(AP, 'log'), \
                  mock.patch.object(AP.subprocess, 'run') as runner:
                 self.assertFalse(AP.execute_one(item, tasks, state))
-            self.assertEqual(state['pause_reason'], 'COMPLETE_JOB_CHECKPOINT_MISMATCH')
+            self.assertEqual(state['pause_reason'],
+                             'COMPLETE_JOB_CHECKPOINT_MISMATCH:PUBLISH_TASK_NOT_COMPLETE')
             runner.assert_not_called()
 
     def test_consumed_metadata_requires_archive_proof_and_does_not_bypass_duplicate_guard(self):
@@ -343,6 +420,33 @@ class AutopilotTests(unittest.TestCase):
                  contextlib.redirect_stdout(io.StringIO()):
                 self.assertEqual(AP.start(dry_run=False), 2)
             runner.assert_not_called()
+
+    def test_idempotent_consume_keeps_existing_archive_and_consumed_timestamp(self):
+        with tempfile.TemporaryDirectory() as td:
+            job, cp, tasks, state, publish, paths = self.previous_batch_fixture(td)
+            archived = json.loads(paths['meta'].read_text())
+            archived.update({'archived_at': '2026-11-17T12:40:00+00:00',
+                             'archived_as': 'PREVIOUS_JOB_COMPLETE_AND_CONSUMED'})
+            paths['archive'].parent.mkdir(parents=True)
+            paths['archive'].write_text(json.dumps(archived))
+            consumed_at = '2026-11-17T12:41:00+00:00'
+            current = dict(archived, status='CONSUMED', consumed_at=consumed_at,
+                           consumed_by_task='CERT-BATCH-0012', archive_path=str(paths['archive']))
+            paths['meta'].write_text(json.dumps(current))
+            job['status'] = 'CONSUMED'
+            original_archive = paths['archive'].read_bytes()
+            with mock.patch.object(AP, 'AUDIT', paths['AUDIT']), \
+                 mock.patch.object(AP, 'report_reconciled', return_value=(True, {})), \
+                 mock.patch.object(AP, 'summary_matches_checkpoint', return_value=True), \
+                 mock.patch.object(AP, 'read_json', side_effect=lambda path, fallback=None:
+                                   publish if Path(path) == paths['AUDIT'] / 'github_publish_state.json'
+                                   else json.loads(Path(path).read_text()) if Path(path).is_file() else fallback), \
+                 mock.patch.object(AP, 'append_event') as event:
+                self.assertEqual(AP.consume_previous_job('CERT-BATCH-0012', job, cp, tasks, state),
+                                 (True, 'PREVIOUS_JOB_COMPLETE_AND_CONSUMED'))
+            self.assertEqual(paths['archive'].read_bytes(), original_archive)
+            self.assertEqual(json.loads(paths['meta'].read_text())['consumed_at'], consumed_at)
+            event.assert_not_called()
 
     def test_running_checkpoint_is_not_rendered_as_arcade_safety_failure(self):
         state = {'status': 'RUNNING', 'pid': 99, 'started_at': None, 'current_task': 'CERT-BATCH-0012',

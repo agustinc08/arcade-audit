@@ -62,6 +62,26 @@ batch siguiente vuelve a `READY` sólo cuando el checkpoint sigue limpio y la
 última metadata está `CONSUMED`; luego se vuelven a validar el archivo y el SHA
 antes de iniciar exactamente un runner nuevo.
 
+La publicación de un batch genera además `jobs/publications/<batch>.json` con
+las identidades CERT/PUBLISH, SHA remoto verificado, fecha y hashes SHA-256 del
+checkpoint, summary y report del batch. El consumo vuelve a comparar esos
+hashes con los artefactos locales; un SHA remoto aislado no es evidencia
+suficiente. La copia `certifier_job` de `autopilot_state.json` es un snapshot:
+la metadata de `jobs/certifier_job.json` es la identidad canónica y el snapshot
+sólo se usa para detectar que se está hablando de otro `job_id`.
+
+El cursor canónico es `full_game_certification_checkpoint.json.next_untested`
+después de completar la reconciliación. Un snapshot previo del job puede tener
+un cursor anterior; no invalida el checkpoint reconciliado. Los nombres ROM
+pueden contener espacios. `considered` puede exceder `launched` cuando el
+preflight produce `STATIC_FAIL`; cada entrada considerada debe quedar clasificada,
+pero no debe exigirse `launched == considered`.
+
+El error `COMPLETE_JOB_CHECKPOINT_MISMATCH` siempre conserva el motivo concreto
+como `COMPLETE_JOB_CHECKPOINT_MISMATCH:<SUBREASON>` en la task, el evento, el
+log y `pause_reason`. La finalización de batch guarda `completed_batch_ids`
+antes de marcar la task `COMPLETE`, para no sumar dos veces tras una caída.
+
 Durante un batch activo, `STATUS: RUNNING` y `ARCADE_SAFETY: PASS` son campos
 separados: `RUNNING` no representa un fallo de safety. `NEXT_ACTION` se deriva
 del certifier vivo cuando éste está procesando.

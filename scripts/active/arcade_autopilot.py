@@ -3,6 +3,7 @@
 import argparse
 import csv
 import datetime as dt
+import hashlib
 import fcntl
 import json
 import os
@@ -634,6 +635,46 @@ def summary_matches_checkpoint(cp, path=None):
     return True
 
 
+def _batch_publication_artifact_hashes(batch_name):
+    number = _batch_index(batch_name)
+    if number is None:
+        return None
+    paths = {
+        'checkpoint_hash': AUDIT / 'full_game_certification_checkpoint.json',
+        'summary_hash': AUDIT / 'FULL_GAME_CERTIFICATION_SUMMARY.md',
+        'batch_report_hash': AUDIT / 'reports' / f'PRIORITY_CERTIFICATION_BATCH_{number}.md',
+    }
+    result = {}
+    for key, path in paths.items():
+        try:
+            result[key] = hashlib.sha256(path.read_bytes()).hexdigest()
+        except OSError:
+            return None
+    return result
+
+
+def write_publication_receipt(batch_name, remote_sha, published_at=None):
+    """Persist local evidence tying a verified publisher commit to batch artifacts."""
+    number = _batch_index(batch_name)
+    hashes = _batch_publication_artifact_hashes(batch_name)
+    if (not number or not hashes or not isinstance(remote_sha, str) or
+            not re.fullmatch(r'[a-f0-9]{40}', remote_sha)):
+        return False
+    receipt = {
+        'schema_version': 1,
+        'batch_name': batch_name,
+        'cert_task': f'CERT-BATCH-{number:04d}',
+        'publish_task': f'GITHUB-PUBLISH-CERT-BATCH-{number:04d}',
+        'remote_sha': remote_sha,
+        'published_at': published_at or now(),
+        **hashes,
+        'verified': True,
+    }
+    path = AUDIT / 'jobs' / 'publications' / f'{batch_name}.json'
+    atomic_json(path, receipt)
+    return True
+
+
 def previous_job_consumption_check(task_id, job, cp, task_obj, state, *, reconciled=None,
                                    summary_ok=None, publish_state=None, archive_path=None):
     """Validate historical completion before allowing the next batch through the job guard."""
@@ -647,8 +688,10 @@ def previous_job_consumption_check(task_id, job, cp, task_obj, state, *, reconci
             cp.get('status') != 'COMPLETE' or cp.get('blocked_reason') or
             cp.get('batch_in_progress') or int(cp.get('engine_fail_active', 0))):
         return False, 'CHECKPOINT_NOT_CLEAN_COMPLETE'
+    # ROM filenames may contain spaces (for example "Magical Pop'n.zip").
+    # Reject control/newline characters while keeping the canonical queue cursor.
     if (cp.get('next_untested') not in (None, 'NONE') and
-            not re.fullmatch(r'[a-z0-9_-]+:/userdata/roms/[^\s]+', str(cp.get('next_untested')))):
+            not re.fullmatch(r'[a-z0-9_-]+:/userdata/roms/[^\r\n\x00]+', str(cp.get('next_untested')))):
         return False, 'NEXT_GAME_INVALID'
     job_id = job.get('job_id')
     if not isinstance(job_id, str) or not re.fullmatch(r'\d{8}T\d{6}_[a-f0-9]{8}', job_id):
@@ -665,10 +708,16 @@ def previous_job_consumption_check(task_id, job, cp, task_obj, state, *, reconci
             not isinstance(owner.get('process_start_ticks'), int) or owner.get('process_start_ticks') <= 0):
         return False, 'JOB_OWNER_IDENTITY_INVALID'
     state_job = (state or {}).get('certifier_job') or {}
-    for key in ('job_id', 'pid', 'worker_pid'):
-        if state_job.get(key) != job.get(key):
-            return False, 'JOB_STATE_IDENTITY_MISMATCH'
-    if job.get('NEXT_GAME') not in (None, cp.get('next_untested')):
+    # certifier_job in autopilot_state is a runtime snapshot and can lag the
+    # canonical job metadata after a detached worker completes. Cross-check its
+    # identity only when it names a different concrete job.
+    if state_job.get('job_id') not in (None, job_id):
+        return False, 'JOB_STATE_IDENTITY_MISMATCH'
+    job_cursor = job.get('NEXT_GAME') or meta.get('next_game')
+    if (job_cursor not in (None, 'NONE') and
+            not re.fullmatch(r'[a-z0-9_-]+:/userdata/roms/[^\r\n\x00]+', str(job_cursor))):
+        return False, 'JOB_CURSOR_INVALID'
+    if latest.get('next_game') not in (None, cp.get('next_untested')):
         return False, 'JOB_CURSOR_MISMATCH'
     if meta.get('batch_name') and meta.get('batch_name') != batch_name:
         return False, 'JOB_BATCH_MISMATCH'
@@ -700,6 +749,15 @@ def previous_job_consumption_check(task_id, job, cp, task_obj, state, *, reconci
             remote_sha != pub.get('last_successful_publish_sha') or
             (recorded_sha is not None and not re.fullmatch(r'[a-f0-9]{40}', str(recorded_sha)))):
         return False, 'PUBLISH_SHA_UNVERIFIED'
+    receipt_path = AUDIT / 'jobs' / 'publications' / f'{batch_name}.json'
+    receipt = read_json(receipt_path, {}) or {}
+    expected_hashes = _batch_publication_artifact_hashes(batch_name)
+    if (not expected_hashes or receipt.get('batch_name') != batch_name or
+            receipt.get('cert_task') != f'CERT-BATCH-{batch_n:04d}' or
+            receipt.get('publish_task') != f'GITHUB-PUBLISH-CERT-BATCH-{batch_n:04d}' or
+            receipt.get('remote_sha') != remote_sha or receipt.get('verified') is not True or
+            any(receipt.get(k) != v for k, v in expected_hashes.items())):
+        return False, 'PUBLICATION_RECEIPT_INVALID'
     if job.get('status') == 'CONSUMED':
         expected_archive = Path(archive_path or (AUDIT / 'jobs' / 'history' / f'{job_id}.json'))
         archived = read_json(expected_archive, {}) or {}
@@ -851,10 +909,18 @@ def finish_batch(task_obj, tid, state):
             p = subprocess.run([sys.executable, str(script)], capture_output=True, text=True, timeout=180)
             if p.returncode:
                 raise RuntimeError(script.name + ':' + p.stdout[-500:] + p.stderr[-200:])
+        completed_ids = list(state.get('completed_batch_ids', []))
+        if tid not in completed_ids:
+            state['completed_batch_ids'] = completed_ids + [tid]
+            state['batches_completed'] = int(state.get('batches_completed', 0)) + 1
+            state['games_processed_this_run'] = int(state.get('games_processed_this_run', 0)) + int(
+                (read_json(CERT_STATE, {}) or {}).get('latest_batch', {}).get('launched', 0))
+            # Persist the idempotency marker before task completion. A restart
+            # between these writes can safely rerun reconciliation without
+            # incrementing batch counters twice.
+            atomic_json(STATE, state)
         update_task(task_obj, tid, status='COMPLETE', last_error=None,
                     evidence=[str(CERT_STATE), str(CERT_CSV), str(AUDIT / 'FULL_GAME_CERTIFICATION_SUMMARY.md')])
-        state['batches_completed'] = int(state.get('batches_completed', 0)) + 1
-        state['games_processed_this_run'] = int(state.get('games_processed_this_run', 0)) + int((read_json(CERT_STATE, {}) or {}).get('latest_batch', {}).get('launched', 0))
         state['last_completed_task'] = tid
         state['current_task'] = None
         state['next_action'] = 'Publicar reportes/checkpoints y recalcular la siguiente tarea.'
@@ -888,8 +954,19 @@ def execute_publish(item):
     p = subprocess.run([str(PUBLISHER), message], capture_output=True, text=True, timeout=180)
     if p.returncode:
         return False, (p.stdout + p.stderr)[-500:]
+    match = re.search(r'^COMMIT SHA: ([a-f0-9]{40})$', p.stdout, re.M)
     state_file = read_json(AUDIT / 'github_publish_state.json', {}) or {}
-    return True, {'remote_sha': state_file.get('last_known_remote_sha'), 'output': p.stdout[-800:]}
+    remote_sha = state_file.get('last_known_remote_sha')
+    if ('PUBLISH_PASS' not in p.stdout or not match or match.group(1) != remote_sha or
+            state_file.get('last_successful_publish_sha') != remote_sha):
+        return False, 'PUBLISH_RESULT_NOT_VERIFIED'
+    match = re.fullmatch(r'GITHUB-PUBLISH-CERT-BATCH-(\d{4})', item.get('id', ''))
+    if match:
+        batch_name = f'priority_batch_{int(match.group(1))}'
+        if not write_publication_receipt(batch_name, remote_sha,
+                                         state_file.get('last_publish_at')):
+            return False, 'PUBLICATION_RECEIPT_CREATE_FAILED'
+    return True, {'remote_sha': remote_sha, 'output': p.stdout[-800:]}
 
 
 def execute_one(item, task_obj, state):
@@ -934,27 +1011,40 @@ def execute_one(item, task_obj, state):
                                                                         task_obj, state)
             if not valid:
                 update_task(task_obj, tid, status='PAUSED_SAFETY',
-                            last_error='COMPLETE_JOB_CHECKPOINT_MISMATCH',
-                            next_action='COMPLETE_JOB_CHECKPOINT_MISMATCH; no launch until evidence is reconciled.')
+                            last_error='COMPLETE_JOB_CHECKPOINT_MISMATCH:' + consumption_reason,
+                            next_action='COMPLETE_JOB_CHECKPOINT_MISMATCH:' + consumption_reason +
+                                        '; no launch until evidence is reconciled.')
                 save_tasks(task_obj)
-                state.update({'status': 'PAUSED_SAFETY', 'pause_reason': 'COMPLETE_JOB_CHECKPOINT_MISMATCH',
+                failure = 'COMPLETE_JOB_CHECKPOINT_MISMATCH:' + consumption_reason
+                state.update({'status': 'PAUSED_SAFETY', 'pause_reason': failure,
                               'next_action': 'Job COMPLETE inesperado o sin reconciliación; no se lanzó ningún juego.'})
                 atomic_json(STATE, state)
-                append_event('SAFETY_PAUSE', task_id=tid, reason='COMPLETE_JOB_CHECKPOINT_MISMATCH',
-                             detail=consumption_reason)
+                append_event('SAFETY_PAUSE', task_id=tid, reason=failure,
+                             detail={'subreason': consumption_reason,
+                                     'expected': 'snes:/userdata/roms/<valid path; spaces allowed>',
+                                     'actual': cp.get('next_untested'),
+                                     'sources': [str(CERT_STATE), str(AUDIT / 'jobs' / 'certifier_job.json'),
+                                                 str(AUDIT / 'github_publish_state.json')]})
+                log('SAFETY_PAUSE', task_id=tid, reason=failure,
+                    expected='valid ROM path (spaces allowed)', actual=cp.get('next_untested'))
                 return False
             if existing_job.get('status') == 'COMPLETE':
                 consumed, consumption_reason = consume_previous_job(tid, existing_job, cp, task_obj, state)
                 if not consumed:
                     update_task(task_obj, tid, status='PAUSED_SAFETY',
-                                last_error='COMPLETE_JOB_CHECKPOINT_MISMATCH')
+                                last_error='COMPLETE_JOB_CHECKPOINT_MISMATCH:' + consumption_reason)
                     save_tasks(task_obj)
+                    failure = 'COMPLETE_JOB_CHECKPOINT_MISMATCH:' + consumption_reason
                     state.update({'status': 'PAUSED_SAFETY',
-                                  'pause_reason': 'COMPLETE_JOB_CHECKPOINT_MISMATCH',
+                                  'pause_reason': failure,
                                   'next_action': 'No se pudo archivar el job anterior; no se lanzó ningún juego.'})
                     atomic_json(STATE, state)
                     append_event('SAFETY_PAUSE', task_id=tid,
-                                 reason='COMPLETE_JOB_CHECKPOINT_MISMATCH', detail=consumption_reason)
+                                 reason=failure, detail={'subreason': consumption_reason,
+                                                         'sources': [str(AUDIT / 'jobs' / 'certifier_job.json'),
+                                                                     str(AUDIT / 'jobs' / 'history'),
+                                                                     str(AUDIT / 'jobs' / 'publications')]})
+                    log('SAFETY_PAUSE', task_id=tid, reason=failure)
                     return False
             append_event('PREVIOUS_JOB_COMPLETE_AND_CONSUMED', task_id=tid,
                          job_id=existing_job.get('job_id'))
