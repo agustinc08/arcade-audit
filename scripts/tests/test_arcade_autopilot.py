@@ -307,6 +307,38 @@ class AutopilotTests(unittest.TestCase):
             self.assertEqual((batch['launched'], batch['auto_pass'], batch['restore_verified']),
                              (7, 7, '7/7'))
 
+    def test_batch15_fixture_ignores_stale_remote_publish_task_snapshot(self):
+        with tempfile.TemporaryDirectory() as td:
+            job, cp, tasks, state, publish, paths = self.previous_batch_fixture(td)
+            cp['latest_batch']['name'] = 'priority_batch_15'
+            cp['latest_batch']['next_game'] = cp['next_untested']
+            tasks['tasks'][0]['id'] = 'CERT-BATCH-0015'
+            tasks['tasks'][1]['id'] = 'GITHUB-PUBLISH-CERT-BATCH-0015'
+            tasks['tasks'][2]['id'] = 'CERT-BATCH-0016'
+            meta_path = paths['meta']
+            meta = json.loads(meta_path.read_text())
+            meta['batch_name'] = 'priority_batch_15'
+            meta_path.write_text(json.dumps(meta))
+            report = paths['AUDIT'] / 'reports' / 'PRIORITY_CERTIFICATION_BATCH_15.md'
+            report.write_text('considered=100 launched=7 auto_pass=7 static_fail=93 restore=7/7\n')
+            with mock.patch.object(AP, 'AUDIT', paths['AUDIT']):
+                self.assertTrue(AP.write_publication_receipt(
+                    'priority_batch_15', publish['last_successful_publish_sha']))
+            # The publisher commit can contain its own task as RUNNING because
+            # that snapshot predates the local COMPLETE write. Consumption uses
+            # the reconciled local task object plus the verified receipt.
+            remote_snapshot = {'GITHUB-PUBLISH-CERT-BATCH-0015': {'status': 'RUNNING'}}
+            self.assertEqual(remote_snapshot['GITHUB-PUBLISH-CERT-BATCH-0015']['status'], 'RUNNING')
+            with mock.patch.object(AP, 'AUDIT', paths['AUDIT']), \
+                 mock.patch.object(AP, 'report_reconciled', return_value=(True, {})), \
+                 mock.patch.object(AP, 'summary_matches_checkpoint', return_value=True), \
+                 mock.patch.object(AP, 'read_json', side_effect=lambda path, fallback=None:
+                                   publish if Path(path) == paths['AUDIT'] / 'github_publish_state.json'
+                                   else json.loads(Path(path).read_text()) if Path(path).is_file() else fallback):
+                allowed, reason = AP.previous_job_consumption_check(
+                    'CERT-BATCH-0016', job, cp, tasks, state)
+            self.assertTrue(allowed, reason)
+
     def test_publication_receipt_detects_changed_batch_artifact(self):
         with tempfile.TemporaryDirectory() as td:
             job, cp, tasks, state, publish, paths = self.previous_batch_fixture(td)

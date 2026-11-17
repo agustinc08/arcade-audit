@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-17T15:14:00+00:00",
+  "updated_at": "2026-11-17T16:40:45+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_15: 100 considerados, 7 lanzados, 7 AUTO_PASS, 0 GAME_FAIL, 93 STATIC_FAIL; restores 7/7; AUTO_CERTIFIED=1074; NEXT_GAME=snes:/userdata/roms/snes/Magical Pop'n.zip",
+      "summary": "priority_batch_16: 100 considerados, 100 lanzados, 96 AUTO_PASS, 4 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=1170; NEXT_GAME=snes:/userdata/roms/snes/Super Battletank 2.zip",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-17T15:14:00+00:00"
+      "updated_at": "2026-11-17T16:40:45+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 1074,
-    "attempted_new": 1218,
+    "auto_certified": 1170,
+    "attempted_new": 1318,
     "static_fail": 194,
-    "game_fail": 142,
+    "game_fail": 146,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
-    "needs_repair": 336,
-    "total_restores": 1218,
+    "needs_repair": 340,
+    "total_restores": 1318,
     "restore_failures": 0,
-    "next_game": "snes:/userdata/roms/snes/Magical Pop'n.zip",
+    "next_game": "snes:/userdata/roms/snes/Super Battletank 2.zip",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 1410,
-    "result_records": 1412,
-    "launch_transactions": 1218,
+    "unique_games_processed": 1510,
+    "result_records": 1512,
+    "launch_transactions": 1318,
     "retry_transactions": 2
   }
 }
