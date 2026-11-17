@@ -695,8 +695,10 @@ def previous_job_consumption_check(task_id, job, cp, task_obj, state, *, reconci
         return False, 'SUMMARY_NOT_RECONCILED'
     pub = publish_state if publish_state is not None else (read_json(AUDIT / 'github_publish_state.json', {}) or {})
     remote_sha = pub.get('last_known_remote_sha')
-    if (not remote_sha or remote_sha != pub.get('last_successful_publish_sha') or
-            remote_sha != (state or {}).get('last_github_sha')):
+    recorded_sha = (state or {}).get('last_github_sha')
+    if (not isinstance(remote_sha, str) or not re.fullmatch(r'[a-f0-9]{40}', remote_sha) or
+            remote_sha != pub.get('last_successful_publish_sha') or
+            (recorded_sha is not None and not re.fullmatch(r'[a-f0-9]{40}', str(recorded_sha)))):
         return False, 'PUBLISH_SHA_UNVERIFIED'
     if job.get('status') == 'CONSUMED':
         expected_archive = Path(archive_path or (AUDIT / 'jobs' / 'history' / f'{job_id}.json'))

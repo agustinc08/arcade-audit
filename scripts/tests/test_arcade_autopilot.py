@@ -50,8 +50,8 @@ class AutopilotTests(unittest.TestCase):
                  'archive': root / 'jobs' / 'history' / f'{job_id}.json'}
         paths['meta'].parent.mkdir(parents=True)
         paths['meta'].write_text(json.dumps(meta))
-        publish = {'last_known_remote_sha': state['last_github_sha'],
-                   'last_successful_publish_sha': state['last_github_sha']}
+        publish = {'last_known_remote_sha': '156721dad12ac1bcbfc18877d57458c7b6d576b1',
+                   'last_successful_publish_sha': '156721dad12ac1bcbfc18877d57458c7b6d576b1'}
         return job_status, cp, tasks, state, publish, paths
 
     def test_atomic_json_replace_and_mode(self):
