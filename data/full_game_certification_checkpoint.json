@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-17T20:44:38+00:00",
+  "updated_at": "2026-11-17T21:25:27+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
-  "next_untested": "nes:/userdata/roms/nes/Ironsword - Wizards & Warriors II (ESP).nes",
-  "attempted_new": 1918,
-  "auto_certified": 1762,
+  "next_untested": "nes:/userdata/roms/nes/owlia.nes",
+  "attempted_new": 2018,
+  "auto_certified": 1862,
   "manual_control_certified": 0,
   "guest_ready": 0,
   "launches_blocked_by": [],
@@ -48277,6 +48277,2406 @@
         "paths": 7
       },
       "finished_at": "2026-11-17T17:44:37.542-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Ironsword - Wizards & Warriors II (ESP).nes",
+      "name": "IronSword : Wizards & Warriors II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T174604_dcb5d41160",
+      "stable_seconds": 16.215,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T174604_dcb5d41160",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:46:26.269-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Isolated Warrior (ESP).nes",
+      "name": "Isolated Warrior",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T174627_3ddd49ec3b",
+      "stable_seconds": 16.211,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T174627_3ddd49ec3b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:46:49.759-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Jackie Chan's Action Kung Fu (ESP).nes",
+      "name": "Jackie Chan's Action Kung Fu",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T174650_5a59a3e050",
+      "stable_seconds": 16.202,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T174650_5a59a3e050",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:47:13.492-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Jajamaru no Daibouken (ESP).nes",
+      "name": "Jajamaru No Daibouken",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T174714_1c383d7f30",
+      "stable_seconds": 16.221,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T174714_1c383d7f30",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:47:37.065-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/JJ (ESP).nes",
+      "name": "Jj - Tobidase Daisakusen Part 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T174738_960592c770",
+      "stable_seconds": 16.205,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T174738_960592c770",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:48:00.506-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Journey to Silius (ESP).nes",
+      "name": "Journey to Silius",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T174801_0acef9c22a",
+      "stable_seconds": 16.202,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T174801_0acef9c22a",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:48:24.016-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Journey to Silius (ESP-JONNYVILLA2088).nes",
+      "name": "Journey to Silius",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T174825_568373df73",
+      "stable_seconds": 16.209,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T174825_568373df73",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:48:47.516-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Journey to Silius (ESP-Terwilf).nes",
+      "name": "Journey to Silius",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T174848_e2a8fdbb44",
+      "stable_seconds": 16.212,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T174848_e2a8fdbb44",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:49:10.939-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Jumpin' Kid - Jack to Mame no Ki Monogatari (ESP).nes",
+      "name": "Jumpin' Kid - Jack To Mame No Ki Monogatari",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T174912_0fdc3e1b18",
+      "stable_seconds": 16.22,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T174912_0fdc3e1b18",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:49:34.449-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Just Breed (ESP).nes",
+      "name": "Just Breed",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T174935_226a82c1b5",
+      "stable_seconds": 16.223,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T174935_226a82c1b5",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:49:58.126-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Juuouki (ESP).nes",
+      "name": "Juuouki",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T174959_a43e256bc2",
+      "stable_seconds": 16.218,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T174959_a43e256bc2",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:50:21.706-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Kabuki - Quantum Fighter (ESP).nes",
+      "name": "Kabuki Quantum Fighter",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175022_85dd376eca",
+      "stable_seconds": 16.219,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175022_85dd376eca",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:50:45.299-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Kaiketsu Yancha Maru 2 - Karakuri Land (ESP).nes",
+      "name": "Kaiketsu Yancha Maru 2 - Karakuri Land",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175046_72d97384ff",
+      "stable_seconds": 16.208,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175046_72d97384ff",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:51:08.698-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Kaiketsu Yancha Maru 3 - Taiketsu! Zouringen (ESP).nes",
+      "name": "Kaiketsu Yancha Maru 3 - Taiketsu! Zouringen",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175109_7425fc5e99",
+      "stable_seconds": 16.201,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175109_7425fc5e99",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:51:31.956-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Kero Kero Keroppi no Daibouken (ESP).nes",
+      "name": "Kero Kero Keroppi No Daibouken",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175133_142f1f0b56",
+      "stable_seconds": 16.179,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175133_142f1f0b56",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:51:55.826-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Kero Kero Keroppi no Daibouken 2 - Donuts Ike wa Oosawagi! (ESP).nes",
+      "name": "Kero Kero Keroppi No Daibouken 2 - Donuts Ike Wa Oosawagi!",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175156_3818f0749d",
+      "stable_seconds": 16.185,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175156_3818f0749d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:52:19.245-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Keroppi to Keroriinu no Splash Bomb! (ESP).nes",
+      "name": "Keroppi To Keroriinu No Splash Bomb!",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175223_3e089a97b1",
+      "stable_seconds": 16.176,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175223_3e089a97b1",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:52:46.329-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Ki no Bouken - The Quest of Ki (ESP).nes",
+      "name": "Ki No Bouken - The Quest Of Ki",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175247_e56c3a4a57",
+      "stable_seconds": 16.209,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175247_e56c3a4a57",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:53:10.109-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Kick Master (ESP).nes",
+      "name": "KickMaster",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175311_f1832e3c4e",
+      "stable_seconds": 16.207,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175311_f1832e3c4e",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:53:33.599-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Kickle Cubicle (ESP).nes",
+      "name": "Kickle Cubicle",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175334_6e5ac0e008",
+      "stable_seconds": 16.186,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175334_6e5ac0e008",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:53:56.822-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Kid Icarus (ESP).nes",
+      "name": "Kid Icarus",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175357_42f4bf022f",
+      "stable_seconds": 16.216,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175357_42f4bf022f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:54:19.918-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Kid Icarus (ESP-Pikachumanson).nes",
+      "name": "Kid Icarus",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175421_c898f3df6e",
+      "stable_seconds": 16.215,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175421_c898f3df6e",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:54:43.409-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Kid Klown en Night Mayor World - Mickey Mouse III - Yume Fuusen (ESP).nes",
+      "name": "Kid Klown in Night Mayor World",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175444_f80866cad8",
+      "stable_seconds": 16.179,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175444_f80866cad8",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:55:07.083-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Kid Klown ESP).nes",
+      "name": "Kid Klown in Night Mayor World",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175508_a3ab0ea1fd",
+      "stable_seconds": 16.176,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175508_a3ab0ea1fd",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:55:30.449-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/King Kong 2 - Ikari no Megaton Punch (ESP).nes",
+      "name": "King Kong 2 - Ikari No Megaton Punch",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175531_66c97e4101",
+      "stable_seconds": 16.215,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175531_66c97e4101",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:55:54.129-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Kirby's Adventure (ESP) (Rev A).nes",
+      "name": "Kirby's Adventure",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175555_3b517c16df",
+      "stable_seconds": 16.186,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175555_3b517c16df",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:56:17.886-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Kyouryuu Sentai Zyuranger (ESP).nes",
+      "name": "Kyouryuu Sentai Zyuranger",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175619_c2a33c61e9",
+      "stable_seconds": 16.176,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175619_c2a33c61e9",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:56:41.289-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/La Gran Aventura Submarina  (ESP) (Unl).nes",
+      "name": "Sea Of Dreamland",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175642_40f1fdccc8",
+      "stable_seconds": 16.208,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175642_40f1fdccc8",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:57:04.926-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Lagrange Point (ESP).nes",
+      "name": "Lagrange Point",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175705_5432c33af7",
+      "stable_seconds": 16.21,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175705_5432c33af7",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:57:28.922-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Lasalle Ishii no Child's Quest (ESP).nes",
+      "name": "Lasalle Ishii No Child's Quest",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175729_2539bd5fc3",
+      "stable_seconds": 16.212,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175729_2539bd5fc3",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:57:52.426-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Layla (ESP).nes",
+      "name": "Layla",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175753_3c14c11c4a",
+      "stable_seconds": 16.224,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175753_3c14c11c4a",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:58:16.059-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Legacy of the Wizard (ESP).nes",
+      "name": "Legacy of the Wizard",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175817_23512bb491",
+      "stable_seconds": 16.203,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175817_23512bb491",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:58:39.422-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Little Nemo - The Dream Master (ESP-2.0).nes",
+      "name": "Little Nemo : The Dream Master",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175840_b07d70c094",
+      "stable_seconds": 16.207,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175840_b07d70c094",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:59:02.819-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Little Samson (ESP).nes",
+      "name": "Little Samson",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175904_32b24ddfd6",
+      "stable_seconds": 16.203,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175904_32b24ddfd6",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:59:26.255-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Locksmith (ESP) (Asia) (Ja) (PAL) (Unl).nes",
+      "name": "Locksmith",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175927_0e980360aa",
+      "stable_seconds": 16.216,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175927_0e980360aa",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T17:59:49.815-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Los Gatos Samurai - Kyattou Ninden Teyandee (ESP).nes",
+      "name": "Kyatto Ninden Teyandee",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T175950_ad10e1c6ae",
+      "stable_seconds": 16.173,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T175950_ad10e1c6ae",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:00:13.302-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Low G Man - The Low Gravity Man (ESP).nes",
+      "name": "Low G Man - The Low Gravity Man",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180014_882a21c43e",
+      "stable_seconds": 16.211,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180014_882a21c43e",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:00:37.052-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Lupin Sansei - Pandora no Isan (ESP).nes",
+      "name": "Lupin Sansei - Pandora No Isan",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180038_22d9cbfa36",
+      "stable_seconds": 16.223,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180038_22d9cbfa36",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:01:00.449-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Machine Cave (ESP).nes",
+      "name": "Machine Cave",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180101_de87f95b67",
+      "stable_seconds": 16.225,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180101_de87f95b67",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:01:23.762-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Magic Carpet 1001 (ESP) (Unl).nes",
+      "name": "Magic Carpet 1001",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180124_2acf3aa180",
+      "stable_seconds": 16.223,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180124_2acf3aa180",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:01:47.326-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Magic Dragon (ESP) (Unl).nes",
+      "name": "Magic Dragon",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180148_ca4b30e67e",
+      "stable_seconds": 16.2,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180148_ca4b30e67e",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:02:10.926-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Makai Island (ESP) (Proto).nes",
+      "name": "Makai Island",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180212_657e508f0e",
+      "stable_seconds": 16.193,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180212_657e508f0e",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:02:34.512-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Maniac Mansion (ESP) (Prototype).nes",
+      "name": "Maniac Mansion",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180235_954dbc281c",
+      "stable_seconds": 16.21,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180235_954dbc281c",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:02:58.136-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mega Man (ESP-Blade133bo).nes",
+      "name": "Mega Man",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180259_70132a0918",
+      "stable_seconds": 16.162,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180259_70132a0918",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:03:21.589-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mega Man (ESP-Wave).nes",
+      "name": "Mega Man",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180322_b7e5da26a4",
+      "stable_seconds": 16.213,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180322_b7e5da26a4",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:03:45.272-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mega Man - Rockman (JAP-ESP-danuffo).nes",
+      "name": "Mega Man",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180346_49c8e85eaf",
+      "stable_seconds": 16.187,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180346_49c8e85eaf",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:04:08.750-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mega Man 2 (ESP-Blade133bo).nes",
+      "name": "Mega Man 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180409_8708c8a182",
+      "stable_seconds": 16.221,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180409_8708c8a182",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:04:32.462-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mega Man 2 - Rockman 2 - Dr. Wily no Nazo (ESP-JAP-danuffo).nes",
+      "name": "Mega Man 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180433_59fe7a8f16",
+      "stable_seconds": 16.213,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180433_59fe7a8f16",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:04:55.822-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mega Man 3 (ESP-Blade133bo).nes",
+      "name": "Mega Man 3",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180457_3399f9cee4",
+      "stable_seconds": 16.204,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180457_3399f9cee4",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:05:19.816-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mega Man 3 (ESP-JONNYVILLA2088).nes",
+      "name": "Mega Man 3",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180520_1649af3bc6",
+      "stable_seconds": 16.208,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180520_1649af3bc6",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:05:43.426-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mega Man 5 (ESP-Blade133bo).nes",
+      "name": "Mega Man 5",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180544_a57039c091",
+      "stable_seconds": 16.227,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180544_a57039c091",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:06:07.206-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mega Man 5 (ESP-StalkerMaestro).nes",
+      "name": "Mega Man 5",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180608_cd43c9013f",
+      "stable_seconds": 16.214,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180608_cd43c9013f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:06:30.768-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mega Man 6 (ESP-Blade133bo).nes",
+      "name": "Mega Man 6",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180631_8f51d8e9e4",
+      "stable_seconds": 16.231,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180631_8f51d8e9e4",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:06:54.529-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Megaman II (ESP-Wave).nes",
+      "name": "Mega Man 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180655_395708cf80",
+      "stable_seconds": 16.215,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180655_395708cf80",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:07:18.392-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Megaman III (ESP-Wave).nes",
+      "name": "Mega Man 3",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180719_063c70222d",
+      "stable_seconds": 16.212,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180719_063c70222d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:07:41.502-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Megaman III (ESP-Wave-Megaman III Improvement Hack).nes",
+      "name": "Mega Man 3",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180742_094761702b",
+      "stable_seconds": 16.21,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180742_094761702b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:08:05.175-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Megaman V (ESP-Wave).nes",
+      "name": "Mega Man 5",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180806_e52d2c2452",
+      "stable_seconds": 16.225,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180806_e52d2c2452",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:08:28.496-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Megaman VI (ESP-Wave).nes",
+      "name": "Mega Man 6",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180829_a5f1b47422",
+      "stable_seconds": 16.23,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180829_a5f1b47422",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:08:52.052-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Megaman VI - Rockman 6 - Shijou Saidai no Tatakai!! (ESP-SotoXlX).nes",
+      "name": "Mega Man 6",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180853_29137fe6b5",
+      "stable_seconds": 16.23,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180853_29137fe6b5",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:09:15.532-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Metal Force (Korea) (ESP-Unl).nes",
+      "name": "Metal Force",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180916_b08e9bd82b",
+      "stable_seconds": 16.216,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180916_b08e9bd82b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:09:39.249-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Metal Gear (ESP-Julian L.).nes",
+      "name": "Metal Gear",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T180940_859350eb4d",
+      "stable_seconds": 16.202,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T180940_859350eb4d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:10:02.882-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Metal Gear (ESP-Wave).nes",
+      "name": "Metal Gear",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181003_b29aded8df",
+      "stable_seconds": 16.209,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181003_b29aded8df",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:10:26.329-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Metal Slader Glory (ESP).nes",
+      "name": "Metal Slader Glory",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181027_e3a4955c00",
+      "stable_seconds": 16.213,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181027_e3a4955c00",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:10:49.466-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Metal Storm (ESP).nes",
+      "name": "Metal Storm",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181050_4390d4a78a",
+      "stable_seconds": 16.207,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181050_4390d4a78a",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:11:13.059-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Metro-Cross (ESP).nes",
+      "name": "Metro Cross",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181114_6c1d806da2",
+      "stable_seconds": 16.198,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181114_6c1d806da2",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:11:36.773-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Metroid (ESP).nes",
+      "name": "Metroid",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181137_c4f10b2768",
+      "stable_seconds": 16.211,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181137_c4f10b2768",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:12:00.729-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mickey Mousecapade (ESP).nes",
+      "name": "Mickey Mousecapade",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181201_0834a7b7cf",
+      "stable_seconds": 16.186,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181201_0834a7b7cf",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:12:24.486-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mighty Final Fight (ESP).nes",
+      "name": "Mighty Final Fight",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181225_187387b5d2",
+      "stable_seconds": 16.228,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181225_187387b5d2",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:12:48.309-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mike Tyson's Punch-Out!! (ESP-Wave) (PRG1).nes",
+      "name": "Mike Tyson's Punch-Out!!",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181252_3afdbf9aea",
+      "stable_seconds": 16.196,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181252_3afdbf9aea",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:13:15.283-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Milon's Secret Castle (ESP).nes",
+      "name": "Milon's Secret Castle",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181316_37a477632a",
+      "stable_seconds": 16.162,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181316_37a477632a",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:13:38.792-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mission Impossible (ESP).nes",
+      "name": "Mission : Impossible",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181340_ed3ae61a16",
+      "stable_seconds": 16.211,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181340_ed3ae61a16",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:14:02.596-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mitsume ga Tooru (ESP).nes",
+      "name": "Mitsume Ga Tooru",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181403_34f0c024c8",
+      "stable_seconds": 16.203,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181403_34f0c024c8",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:14:26.089-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Moai-kun (ESP).nes",
+      "name": "Moai Kun",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181427_9deb6d1869",
+      "stable_seconds": 16.159,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181427_9deb6d1869",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:14:49.649-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mobile Suit Z Gundam - Hot Scramble (ESP).nes",
+      "name": "Kidou Senshi Z Gundam - Hot Scramble",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181450_5fe6ae1e4f",
+      "stable_seconds": 16.22,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181450_5fe6ae1e4f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:15:13.249-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Monster Party (ESP).nes",
+      "name": "Monster Party",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181514_8e0280cb9a",
+      "stable_seconds": 16.199,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181514_8e0280cb9a",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:15:37.029-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Monster Party - Parody World - Monster Party (Japan) (Proto).nes",
+      "name": "Monster Party",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181538_619418adc8",
+      "stable_seconds": 16.204,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181538_619418adc8",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:16:00.546-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Moon Crystal (ESP-Wave).nes",
+      "name": "Moon Crystal",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181601_88afc9fc49",
+      "stable_seconds": 16.212,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181601_88afc9fc49",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:16:24.019-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Moon Crystal (JONNYVILLA2088).nes",
+      "name": "Moon Crystal",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181625_01dcbeed0f",
+      "stable_seconds": 16.224,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181625_01dcbeed0f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:16:47.632-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Motocross Champion (ESP).nes",
+      "name": "Motocross Champion",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181648_4e35c97605",
+      "stable_seconds": 16.218,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181648_4e35c97605",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:17:11.326-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mottomo Abunai Deka (ESP-Japan).nes",
+      "name": "Mottomo Abunai Deka",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181712_b44c0ea1c3",
+      "stable_seconds": 16.223,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181712_b44c0ea1c3",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:17:34.932-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mr. Gimmick (ESP-Wave-Euro).nes",
+      "name": "Mr. Gimmick",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181736_c97dccb6c1",
+      "stable_seconds": 16.22,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181736_c97dccb6c1",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:17:58.679-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Mr. Gimmick! (ESP- Jap-Wave).nes",
+      "name": "Mr. Gimmick",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181759_26c9284593",
+      "stable_seconds": 16.233,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181759_26c9284593",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:18:22.022-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/New Ghostbusters II (ESP).nes",
+      "name": "New Ghostbusters II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181823_dd830822f0",
+      "stable_seconds": 16.192,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181823_dd830822f0",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:18:45.519-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Nightshade (ESP).nes",
+      "name": "Nightshade",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181846_7a15fd86c1",
+      "stable_seconds": 16.196,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181846_7a15fd86c1",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:19:08.785-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Ninja Gaiden (ESP-ARG-Julian L.).nes",
+      "name": "Shadow Warriors",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181909_5a688b8cee",
+      "stable_seconds": 16.214,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181909_5a688b8cee",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:19:32.215-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Ninja Gaiden (ESP-Chrono Traducciones).nes",
+      "name": "Shadow Warriors",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181933_1fff0b1368",
+      "stable_seconds": 16.218,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181933_1fff0b1368",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:19:55.749-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Ninja Gaiden (ESP-Terwilf).nes",
+      "name": "Shadow Warriors",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T181956_9df74b5a18",
+      "stable_seconds": 16.225,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T181956_9df74b5a18",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:20:19.163-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Ninja Gaiden (ESP-Wave).nes",
+      "name": "Shadow Warriors",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T182020_b9a9856ded",
+      "stable_seconds": 16.229,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T182020_b9a9856ded",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:20:42.712-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Ninja Gaiden II - The Dark Sword of Chaos (ESP-Terwilf).nes",
+      "name": "Shadow Warriors II : Ninja Gaiden II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T182043_ebb83a4c92",
+      "stable_seconds": 16.227,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T182043_ebb83a4c92",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:21:06.352-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Ninja Gaiden II - The Dark Sword of Chaos (ESP-TransGen).nes",
+      "name": "Shadow Warriors II : Ninja Gaiden II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T182107_7c8ad9d44d",
+      "stable_seconds": 16.227,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T182107_7c8ad9d44d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:21:29.833-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Ninja Gaiden II - The Dark Sword of Chaos (ESP-Wave).nes",
+      "name": "Shadow Warriors II : Ninja Gaiden II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T182130_13d622397e",
+      "stable_seconds": 16.228,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T182130_13d622397e",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:21:53.462-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Ninja Gaiden III - The Ancient Ship of Doom (ESP-Terwilf).nes",
+      "name": "Ninja Gaiden III : The Ancient Ship of Doom",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T182154_ad3ebe2e9a",
+      "stable_seconds": 16.21,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T182154_ad3ebe2e9a",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:22:17.176-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Ninja Gaiden III - The Ancient Ship of Doom (ESP-TransGen).nes",
+      "name": "Ninja Gaiden III : The Ancient Ship of Doom",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T182218_84d3d60c09",
+      "stable_seconds": 16.213,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T182218_84d3d60c09",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:22:40.829-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Ninja Gaiden III - The Ancient Ship of Doom (ESP-Wave).nes",
+      "name": "Ninja Gaiden III : The Ancient Ship of Doom",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T182241_3ee3d94b1d",
+      "stable_seconds": 16.213,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T182241_3ee3d94b1d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:23:04.505-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Ninja Hattori-kun - Ninja wa Syugyou de Gozaru (ESP).nes",
+      "name": "Ninja Hattori Kun - Ninja Ha Syugyou De Gozaru",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T182305_c85641301b",
+      "stable_seconds": 16.188,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T182305_c85641301b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:23:28.129-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Noah's Ark (ESP) (Europe).nes",
+      "name": "Noah's Ark",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T182329_bbf836fe5a",
+      "stable_seconds": 16.212,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T182329_bbf836fe5a",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:23:51.505-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Nova the Squirrel.nes",
+      "name": "Nova The Squirrel",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T182352_47effd205e",
+      "stable_seconds": 16.183,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T182352_47effd205e",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:24:15.329-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Operation Wolf (ESP).nes",
+      "name": "Operation Wolf",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T182416_524afc1cbb",
+      "stable_seconds": 16.219,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T182416_524afc1cbb",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:24:39.309-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Orphea (ESP).nes",
+      "name": "Orphea",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T182440_847d1308df",
+      "stable_seconds": 16.22,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T182440_847d1308df",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:25:02.932-03:00"
+    },
+    {
+      "system": "nes",
+      "rom": "/userdata/roms/nes/Over Horizon (ESP).nes",
+      "name": "Over Horizon",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T182504_b3d58bc9c1",
+      "stable_seconds": 16.219,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T182504_b3d58bc9c1",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T18:25:26.782-03:00"
     }
   ],
   "status": "COMPLETE",
@@ -48311,7 +50711,7 @@
   "current_test": null,
   "next_game": null,
   "counts": {
-    "AUTO_PASS": 1762,
+    "AUTO_PASS": 1862,
     "GAME_FAIL": 154,
     "STATIC_FAIL": 194,
     "FLAKY": 0,
@@ -48334,21 +50734,21 @@
     "status": "PILOT_PASS_WITH_ADAPTER_FIX"
   },
   "latest_batch": {
-    "name": "priority_batch_22",
+    "name": "priority_batch_23",
     "considered": 100,
     "launched": 100,
-    "auto_pass": 99,
-    "game_fail": 1,
+    "auto_pass": 100,
+    "game_fail": 0,
     "static_fail": 0,
     "flaky": 0,
     "restore_verified": "100/100",
     "restore_failures": 0,
     "engine_failures_unresolved": 0,
-    "started_at": "2026-11-17T17:05:19.666-03:00",
-    "finished_at": "2026-11-17T17:44:38.307-03:00",
-    "first_game": "/userdata/roms/nes/Cosmo Police Galivan (ESP).nes",
-    "last_game": "/userdata/roms/nes/Iron Tank - The Invasion of Normandy (ESP).nes",
-    "next_game": "nes:/userdata/roms/nes/Ironsword - Wizards & Warriors II (ESP).nes"
+    "started_at": "2026-11-17T17:46:03.646-03:00",
+    "finished_at": "2026-11-17T18:25:27.575-03:00",
+    "first_game": "/userdata/roms/nes/Ironsword - Wizards & Warriors II (ESP).nes",
+    "last_game": "/userdata/roms/nes/Over Horizon (ESP).nes",
+    "next_game": "nes:/userdata/roms/nes/owlia.nes"
   },
   "latest_engine_issue": {
     "cause": "update_csv assumed identity was a dict for STATIC_FAIL (identity=null)",
@@ -48368,11 +50768,11 @@
       "resolved_at": "2026-11-15T09:39:16-03:00"
     }
   ],
-  "launch_transactions": 1918,
+  "launch_transactions": 2018,
   "transaction_attempts": 509,
   "retry_transactions": 2,
-  "unique_games_processed": 2110,
-  "result_records": 2112,
+  "unique_games_processed": 2210,
+  "result_records": 2212,
   "static_preflight_results": 194,
   "engine_fail_total_historical": 2,
   "engine_fail_active": 0,
@@ -48381,6 +50781,6 @@
   "flaky": 0,
   "needs_repair": 348,
   "control_certified": 0,
-  "restores_verified": 1918,
+  "restores_verified": 2018,
   "restore_failures": 0
 }
