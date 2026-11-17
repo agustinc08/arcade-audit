@@ -1,18 +1,18 @@
 # ARCADE AUTOPILOT — último ciclo
 
-- Actualizado: 2026-11-17T18:02:41+00:00
-- Batch: priority_batch_18
+- Actualizado: 2026-11-17T18:43:19+00:00
+- Batch: priority_batch_19
 - Considerados: 100
 - Lanzados: 100
-- AUTO_PASS: 96
-- GAME_FAIL: 4
+- AUTO_PASS: 100
+- GAME_FAIL: 0
 - STATIC_FAIL: 0
 - Restores: 100/100
-- AUTO_CERTIFIED acumulado: 1363
+- AUTO_CERTIFIED acumulado: 1463
 - Reparaciones automáticas realizadas: 0 (sin receta revisada)
 - CODEX_REQUIRED pendientes: 4
 - MANUAL_REQUIRED pendientes: 1
-- NEXT_GAME: `nes:/userdata/roms/nes/Armed Dragon Fantasy Villgust (ESP).nes`
+- NEXT_GAME: `nes:/userdata/roms/nes/Kung-Fu Heroes (ESP).nes`
 - Safety: COMPLETE; sin bloqueo registrado
 - GitHub: gestionado por task separada del publisher; SHA verificado en `autopilot_state.json`.
 - Próximo paso: Publicar reportes/checkpoints y recalcular la siguiente tarea.

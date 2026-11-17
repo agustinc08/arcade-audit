@@ -1,7 +1,7 @@
 # Estado actual del arcade
 
-- UPDATED_AT: 2026-11-17T18:02:41+00:00
-- GITHUB_HEAD observado antes de publicar: `049a7b2da48608366999c2afff5c552b0bf35775`
+- UPDATED_AT: 2026-11-17T18:43:19+00:00
+- GITHUB_HEAD observado antes de publicar: `9ea76c0833ed66955bcbc6d7618bafd868f78b56`
 - BATOCERA_VERSION: 43.1
 
 ## Sistema y hardware
@@ -37,17 +37,17 @@
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- AUTO_CERTIFIED: 1363
+- AUTO_CERTIFIED: 1463
 - GAME_FAIL: 153
 - STATIC_FAIL: 194
 - FLAKY: 0
 - NEEDS_REPAIR: 347
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
-- NEXT_GAME: `nes:/userdata/roms/nes/Armed Dragon Fantasy Villgust (ESP).nes`
-- UNIQUE_GAMES_PROCESSED: 1710
-- RESULT_RECORDS: 1712
-- LAUNCH_TRANSACTIONS: 1518
+- NEXT_GAME: `nes:/userdata/roms/nes/Kung-Fu Heroes (ESP).nes`
+- UNIQUE_GAMES_PROCESSED: 1810
+- RESULT_RECORDS: 1812
+- LAUNCH_TRANSACTIONS: 1618
 - RETRY_TRANSACTIONS: 2
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
@@ -56,7 +56,7 @@
 ## Espacio
 
 - FILESYSTEM_STATUS: lectura de capacidad; no es una prueba SMART.
-    /dev/sda2        211G   121G   82G  60% /userdata
+    /dev/sda2        211G   121G   81G  60% /userdata
     /dev/sdc1        3,6T  1012G  2,5T  30% /media/ROMS
     /dev/sdb1        916G   783G   88G  90% /media/BATOCERA_ROMS
 

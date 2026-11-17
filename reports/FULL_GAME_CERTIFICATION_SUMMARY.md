@@ -1,16 +1,16 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-17T18:02:40+00:00
+- UPDATED_AT: 2026-11-17T18:43:18+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 1518
-- UNIQUE_GAMES_PROCESSED: 1710
-- RESULT_RECORDS: 1712
-- LAUNCH_TRANSACTIONS: 1518
+- ATTEMPTED_NEW: 1618
+- UNIQUE_GAMES_PROCESSED: 1810
+- RESULT_RECORDS: 1812
+- LAUNCH_TRANSACTIONS: 1618
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 1363
+- AUTO_CERTIFIED: 1463
 - STATIC_FAIL: 194
 - GAME_FAIL: 153
 - FLAKY: 0
@@ -19,8 +19,8 @@
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: nes:/userdata/roms/nes/Armed Dragon Fantasy Villgust (ESP).nes
-- TOTAL_RESTORES: 1518
+- NEXT_GAME: nes:/userdata/roms/nes/Kung-Fu Heroes (ESP).nes
+- TOTAL_RESTORES: 1618
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -58,7 +58,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | naomi | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | nds | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
 | neogeo | 105 | 105 | 0 | 0 | 105 | 0 | 0 | 0 | 0 | 0 |
-| nes | 702 | 702 | 0 | 34 | 0 | 0 | 0 | 0 | 0 | 668 |
+| nes | 702 | 702 | 0 | 134 | 0 | 0 | 0 | 0 | 0 | 568 |
 | odcommander | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | openbor | 128 | 128 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 128 |
 | pcengine | 529 | 529 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 528 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_18; considerados 100; lanzados 100; AUTO_PASS 96; restore 100/100.
+- Lote más reciente: priority_batch_19; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: nes:/userdata/roms/nes/Armed Dragon Fantasy Villgust (ESP).nes.
+- NEXT_GAME: nes:/userdata/roms/nes/Kung-Fu Heroes (ESP).nes.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY
