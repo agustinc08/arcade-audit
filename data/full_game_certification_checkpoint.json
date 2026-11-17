@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-17T14:08:26+00:00",
+  "updated_at": "2026-11-17T14:46:45+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
-  "next_untested": "mame:/userdata/roms/mame/suplup.zip",
-  "attempted_new": 1108,
-  "auto_certified": 1013,
+  "next_untested": "fbneo:/userdata/roms/fbneo/gijoe.zip",
+  "attempted_new": 1168,
+  "auto_certified": 1024,
   "manual_control_certified": 0,
   "guest_ready": 0,
   "launches_blocked_by": [],
@@ -26296,6 +26296,1751 @@
         "paths": 10
       },
       "finished_at": "2026-11-17T11:08:25.628-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/suplup.zip",
+      "name": "Super Lup Lup Puzzle",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T110929_3f59208c8a",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T110929_3f59208c8a",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:10:10.691-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/svg.zip",
+      "name": "S.v.g. - Spectral Vs Generation",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T111011_4b5c783d0f",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111011_4b5c783d0f",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:10:53.201-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/sws98.zip",
+      "name": "Super World Stadium '98",
+      "adapter": "MAME_CURRENT",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T111054_e0464dafbb",
+      "stable_seconds": 20.133,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111054_e0464dafbb",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:11:21.711-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/tblkkuzu.zip",
+      "name": "The Block Kuzushi",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T111122_378ace5a12",
+      "stable_seconds": 0.008,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [],
+        "default_during": "UNKNOWN",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111122_378ace5a12",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:11:38.448-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/tecmowcm.zip",
+      "name": "Tecmo World Cup Millennium",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T111139_e926399bb2",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111139_e926399bb2",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:12:21.055-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/tenkomor.zip",
+      "name": "Tenkomori Shooting",
+      "adapter": "MAME_CURRENT",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T111222_e85249e955",
+      "stable_seconds": 20.119,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111222_e85249e955",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:12:50.008-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/tenthdeg.zip",
+      "name": "Tenth Degree",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T111251_ac300b3fa3",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111251_ac300b3fa3",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:13:32.618-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/terabrst.zip",
+      "name": "Teraburst",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T111333_bc73193cd0",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111333_bc73193cd0",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:14:15.248-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/tm4k.zip",
+      "name": "Touchmaster 4000",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T111416_f2bb035f81",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111416_f2bb035f81",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:14:57.794-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/tm7k.zip",
+      "name": "Touchmaster 7000",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T111459_80f9057e54",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111459_80f9057e54",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:15:40.478-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/twinbrat.zip",
+      "name": "Twin Brats",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T111541_ca5ae9b83b",
+      "stable_seconds": 0.269,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111541_ca5ae9b83b",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:16:04.401-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/viprp1.zip",
+      "name": "Viper Phase 1",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T111605_316b77e164",
+      "stable_seconds": 0.269,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111605_316b77e164",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:16:21.471-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/weddingr.zip",
+      "name": "Wedding Rhapsody",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T111622_52d14c1e61",
+      "stable_seconds": 0.008,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [],
+        "default_during": "UNKNOWN",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111622_52d14c1e61",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:16:38.598-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/act2000.zip",
+      "name": "Action 2000",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T111639_4b5b4318eb",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111639_4b5b4318eb",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:17:21.031-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/alpinesa.zip",
+      "name": "Alpine Surfer",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T111722_8d81a92fd7",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111722_8d81a92fd7",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:18:03.588-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/alpinr2b.zip",
+      "name": "Alpine Racer 2",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T111804_bb45dafd85",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111804_bb45dafd85",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:18:46.028-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/ar_ninj.zip",
+      "name": "Ninja Mission",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T111847_9518646a13",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111847_9518646a13",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:19:28.548-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/buggyboy.zip",
+      "name": "Buggy Boy",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T111929_edb0540250",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T111929_edb0540250",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:20:10.951-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/cbaj.zip",
+      "name": "Cool Boarders Arcade Jam",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T112012_648ca34c46",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T112012_648ca34c46",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:20:53.611-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/cclownz.zip",
+      "name": "Crazzy Clownz",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T112054_21fc2fa4e2",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T112054_21fc2fa4e2",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:21:36.225-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/fbait2bc.zip",
+      "name": "Fisherman's Bait 2 - A Bass Challenge",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T112137_2ab1925473",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T112137_2ab1925473",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:22:18.655-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/fbaitbc.zip",
+      "name": "Fisherman's Bait - A Bass Challenge",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T112219_ac153d134c",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T112219_ac153d134c",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:23:01.225-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/fbaitmc.zip",
+      "name": "Fisherman's Bait - Marlin Challenge",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T112302_c4faa760f0",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T112302_c4faa760f0",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:23:43.798-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/finalapr.zip",
+      "name": "Final Lap R",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T112344_ba2527effd",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T112344_ba2527effd",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:24:26.224-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/galastrm.zip",
+      "name": "Galactic Storm",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T112427_1cd4ce596d",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T112427_1cd4ce596d",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:25:08.624-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/gloc.zip",
+      "name": "G-loc Air Battle",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T112509_9fdf839bfa",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T112509_9fdf839bfa",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:25:51.245-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/goodejaa.zip",
+      "name": "Good E Jong -kachinuki Mahjong Syoukin Oh!!-",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T112552_78e9697a81",
+      "stable_seconds": 0.008,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [],
+        "default_during": "UNKNOWN",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T112552_78e9697a81",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:26:08.395-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/gprider.zip",
+      "name": "Gp Rider",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T112609_46630f973b",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T112609_46630f973b",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:26:50.848-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/hyprdriv.zip",
+      "name": "Hyperdrive",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T112652_ae7f6065d2",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T112652_ae7f6065d2",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:27:36.678-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/mf_bdash.zip",
+      "name": "Boulder Dash",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T112742_a571911fab",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T112742_a571911fab",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:28:23.841-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/midnrun.zip",
+      "name": "Midnight Run: Road Fighters 2",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T112825_ca06386fb7",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T112825_ca06386fb7",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:29:06.244-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/multigm3.zip",
+      "name": "Multi Game III",
+      "adapter": "MAME_CURRENT",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T112907_bb653453a8",
+      "stable_seconds": 20.125,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T112907_bb653453a8",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:29:35.018-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/pdrift.zip",
+      "name": "Power Drift",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T112936_55b926a7b5",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T112936_55b926a7b5",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:30:17.628-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/pocketrc.zip",
+      "name": "Pocket Racer",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T113018_aff37aba0f",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T113018_aff37aba0f",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:31:00.211-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/polepos.zip",
+      "name": "Pole Position",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T113101_7ed0ff7454",
+      "stable_seconds": 0.268,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T113101_7ed0ff7454",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:31:17.578-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/ppcar.zip",
+      "name": "Pang Pang Car",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T113118_fc5e4ad34c",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T113118_fc5e4ad34c",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:32:00.138-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/radikalb.zip",
+      "name": "Radikal Bikers",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T113201_55425d3ebd",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T113201_55425d3ebd",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:32:42.742-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/ridgerac.zip",
+      "name": "Ridge Racer",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T113243_3939a02dfb",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T113243_3939a02dfb",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:33:25.198-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/sidebs.zip",
+      "name": "Side By Side",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T113326_846bf5bf0a",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T113326_846bf5bf0a",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:34:07.614-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/sidebs2.zip",
+      "name": "Side By Side 2",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T113408_a9ff383914",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T113408_a9ff383914",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:34:50.057-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/speedrcr.zip",
+      "name": "Speed Racer",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T113451_99b32c6b27",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T113451_99b32c6b27",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:35:32.611-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/speedup.zip",
+      "name": "Speed Up",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T113533_d0b2c1e5eb",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T113533_d0b2c1e5eb",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:36:15.041-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/starsldr.zip",
+      "name": "Star Soldier: Vanishing Earth",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T113616_26c32b6471",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T113616_26c32b6471",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:36:57.555-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/strtdriv.zip",
+      "name": "Street Drivin'",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T113658_b172e34ac3",
+      "stable_seconds": 0.268,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T113658_b172e34ac3",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:37:14.518-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/surfplnt.zip",
+      "name": "Surf Planet",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T113715_5bce80b315",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T113715_5bce80b315",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:37:56.994-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/tx1.zip",
+      "name": "Tx-1",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T113758_7abbc7cee8",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T113758_7abbc7cee8",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:38:39.601-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/vaportrx.zip",
+      "name": "Vapor Trx",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T113845_26fef7f334",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T113845_26fef7f334",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:39:27.911-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/windheat.zip",
+      "name": "Winding Heat",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T113929_6ea3da1a39",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T113929_6ea3da1a39",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:40:10.451-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/witch.zip",
+      "name": "Witch",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T114011_912afcca2a",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T114011_912afcca2a",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:40:53.018-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/acpsx.zip",
+      "name": "acpsx",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/aleck64.zip",
+      "name": "aleck64",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/alg_bios.zip",
+      "name": "alg_bios",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/ar_bios.zip",
+      "name": "ar_bios",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/atarisy1.zip",
+      "name": "atarisy1",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/atluspsx.zip",
+      "name": "atluspsx",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/atpsx.zip",
+      "name": "atpsx",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/bctvidbs.zip",
+      "name": "bctvidbs",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/bigappg.zip",
+      "name": "The Big Apple",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T114059_befbc8fdd7",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T114059_befbc8fdd7",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:41:40.751-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/cpzn1.zip",
+      "name": "cpzn1",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/cpzn2.zip",
+      "name": "cpzn2",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/crysbios.zip",
+      "name": "crysbios",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/cvs.zip",
+      "name": "cvs",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/decocass.zip",
+      "name": "decocass",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/dstage.zip",
+      "name": "Dancing Stage - Internet Ranking Ver",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T114145_e128cd1e54",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T114145_e128cd1e54",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:42:26.395-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/galgbios.zip",
+      "name": "galgbios",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/jolyjokr.zip",
+      "name": "Jolly Joker",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T114228_f9e7032924",
+      "stable_seconds": 0.008,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [],
+        "default_during": "UNKNOWN",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T114228_f9e7032924",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:42:44.504-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/konamigv.zip",
+      "name": "konamigv",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/konamigx.zip",
+      "name": "konamigx",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/kviper.zip",
+      "name": "kviper",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/maxaflex.zip",
+      "name": "maxaflex",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/megaplay.zip",
+      "name": "megaplay",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/megatech.zip",
+      "name": "megatech",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/neogeo.zip",
+      "name": "neogeo",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/nss.zip",
+      "name": "nss",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/pgm.zip",
+      "name": "pgm",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/playch10.zip",
+      "name": "playch10",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/psarc95.zip",
+      "name": "psarc95",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/skns.zip",
+      "name": "skns",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/stvbios.zip",
+      "name": "stvbios",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/sys573.zip",
+      "name": "sys573",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/taitofx1.zip",
+      "name": "taitofx1",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/taitogn.zip",
+      "name": "taitogn",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/taitotz.zip",
+      "name": "taitotz",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/tps.zip",
+      "name": "tps",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/vspsx.zip",
+      "name": "vspsx",
+      "adapter": "MAME078PLUS",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/dino.zip",
+      "name": "Cadillacs and Dinosaurs",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/spidman.zip",
+      "name": "Spider-Man: The Videogame",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/goldnaxe.zip",
+      "name": "Golden Axe",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T114300_9485c8e19e",
+      "stable_seconds": 20.086,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T114300_9485c8e19e",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:43:26.598-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/bbmanw.zip",
+      "name": "New Dyna Blaster - Global Quest",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T114327_123900af69",
+      "stable_seconds": 20.108,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T114327_123900af69",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:43:54.224-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/ssriders.zip",
+      "name": "Sunset Riders — 4 jugadores",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T114355_9149954277",
+      "stable_seconds": 20.118,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T114355_9149954277",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:44:22.205-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/knights.zip",
+      "name": "Knights of the Round",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T114423_7cb11df845",
+      "stable_seconds": 20.113,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T114423_7cb11df845",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:44:50.034-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/mslug3.zip",
+      "name": "Metal Slug 3",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/moomesa.zip",
+      "name": "Wild West C.O.W.-Boys of Moo Mesa",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T114451_e2a4ba1e57",
+      "stable_seconds": 20.109,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T114451_e2a4ba1e57",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:45:18.611-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/mystwarru.zip",
+      "name": "Mystic Warriors",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/bbredux.zip",
+      "name": "Bubble Bobble",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/garou.zip",
+      "name": "Garou: Mark of the Wolves",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/mslug.zip",
+      "name": "Metal Slug : Super Vehicle-001",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/mvsc.zip",
+      "name": "Marvel vs. Capcom : Clash of Super Heroes",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T114522_314bdecfda",
+      "stable_seconds": 20.11,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T114522_314bdecfda",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:45:48.998-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/mvsch.zip",
+      "name": "Marvel vs. Capcom : Clash of Super Heroes",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T114550_8697c033a8",
+      "stable_seconds": 20.106,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T114550_8697c033a8",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:46:16.851-03:00"
+    },
+    {
+      "system": "fbneo",
+      "rom": "/userdata/roms/fbneo/ga2.zip",
+      "name": "Golden Axe: The Revenge of Death Adder",
+      "adapter": "FBNEO",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T114617_8768cdd267",
+      "stable_seconds": 20.092,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T114617_8768cdd267",
+        "paths": 8
+      },
+      "finished_at": "2026-11-17T11:46:44.414-03:00"
     }
   ],
   "status": "COMPLETE",
@@ -26330,9 +28075,9 @@
   "current_test": null,
   "next_game": null,
   "counts": {
-    "AUTO_PASS": 1013,
-    "GAME_FAIL": 93,
-    "STATIC_FAIL": 4,
+    "AUTO_PASS": 1024,
+    "GAME_FAIL": 142,
+    "STATIC_FAIL": 44,
     "FLAKY": 0,
     "ADAPTER_NOT_READY": 0,
     "ENGINE_FAIL": 2,
@@ -26353,21 +28098,21 @@
     "status": "PILOT_PASS_WITH_ADAPTER_FIX"
   },
   "latest_batch": {
-    "name": "priority_batch_12",
+    "name": "priority_batch_13",
     "considered": 100,
-    "launched": 100,
-    "auto_pass": 28,
-    "game_fail": 72,
-    "static_fail": 0,
+    "launched": 60,
+    "auto_pass": 11,
+    "game_fail": 49,
+    "static_fail": 40,
     "flaky": 0,
-    "restore_verified": "100/100",
+    "restore_verified": "60/60",
     "restore_failures": 0,
     "engine_failures_unresolved": 0,
-    "started_at": "2026-11-17T10:09:48.288-03:00",
-    "finished_at": "2026-11-17T11:08:26.482-03:00",
-    "first_game": "/userdata/roms/mame/starcas.zip",
-    "last_game": "/userdata/roms/mame/ssf2t.zip",
-    "next_game": "mame:/userdata/roms/mame/suplup.zip"
+    "started_at": "2026-11-17T11:09:28.818-03:00",
+    "finished_at": "2026-11-17T11:46:45.173-03:00",
+    "first_game": "/userdata/roms/mame/suplup.zip",
+    "last_game": "/userdata/roms/fbneo/ga2.zip",
+    "next_game": "fbneo:/userdata/roms/fbneo/gijoe.zip"
   },
   "latest_engine_issue": {
     "cause": "update_csv assumed identity was a dict for STATIC_FAIL (identity=null)",
@@ -26387,19 +28132,19 @@
       "resolved_at": "2026-11-15T09:39:16-03:00"
     }
   ],
-  "launch_transactions": 1108,
+  "launch_transactions": 1168,
   "transaction_attempts": 509,
   "retry_transactions": 2,
-  "unique_games_processed": 1110,
-  "result_records": 1112,
-  "static_preflight_results": 4,
+  "unique_games_processed": 1210,
+  "result_records": 1212,
+  "static_preflight_results": 44,
   "engine_fail_total_historical": 2,
   "engine_fail_active": 0,
-  "game_fail": 93,
-  "static_fail": 4,
+  "game_fail": 142,
+  "static_fail": 44,
   "flaky": 0,
-  "needs_repair": 97,
+  "needs_repair": 186,
   "control_certified": 0,
-  "restores_verified": 1108,
+  "restores_verified": 1168,
   "restore_failures": 0
 }

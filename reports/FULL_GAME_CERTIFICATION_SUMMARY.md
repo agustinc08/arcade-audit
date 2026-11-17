@@ -1,26 +1,26 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-17T14:08:51+00:00
+- UPDATED_AT: 2026-11-17T14:47:31+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 1108
-- UNIQUE_GAMES_PROCESSED: 1110
-- RESULT_RECORDS: 1112
-- LAUNCH_TRANSACTIONS: 1108
+- ATTEMPTED_NEW: 1168
+- UNIQUE_GAMES_PROCESSED: 1210
+- RESULT_RECORDS: 1212
+- LAUNCH_TRANSACTIONS: 1168
 - RETRY_TRANSACTIONS: 2
-- STATIC_PREFLIGHT_RESULTS: 4
-- AUTO_CERTIFIED: 1013
-- STATIC_FAIL: 4
-- GAME_FAIL: 93
+- STATIC_PREFLIGHT_RESULTS: 44
+- AUTO_CERTIFIED: 1024
+- STATIC_FAIL: 44
+- GAME_FAIL: 142
 - FLAKY: 0
-- NEEDS_REPAIR: 97
+- NEEDS_REPAIR: 186
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: mame:/userdata/roms/mame/suplup.zip
-- TOTAL_RESTORES: 1108
+- NEXT_GAME: fbneo:/userdata/roms/fbneo/gijoe.zip
+- TOTAL_RESTORES: 1168
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -39,7 +39,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | devilutionx | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 8 |
 | dreamcast | 775 | 775 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 775 |
 | easyrpg | 12 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 |
-| fbneo | 104 | 104 | 88 | 1 | 0 | 0 | 0 | 0 | 0 | 103 |
+| fbneo | 104 | 104 | 88 | 9 | 7 | 0 | 0 | 0 | 0 | 88 |
 | fds | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | flatpak | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
 | gamecube | 9 | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 |
@@ -49,7 +49,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | hcl | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | hurrican | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | ikemen | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
-| mame | 1324 | 1324 | 1112 | 1005 | 4 | 93 | 0 | 0 | 0 | 222 |
+| mame | 1324 | 1324 | 1112 | 1008 | 37 | 142 | 0 | 0 | 0 | 137 |
 | mastersystem | 383 | 383 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 382 |
 | megacd | 24 | 24 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 24 |
 | megadrive | 1037 | 1037 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1036 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_12; considerados 100; lanzados 100; AUTO_PASS 28; restore 100/100.
+- Lote más reciente: priority_batch_13; considerados 100; lanzados 60; AUTO_PASS 11; restore 60/60.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: mame:/userdata/roms/mame/suplup.zip.
+- NEXT_GAME: fbneo:/userdata/roms/fbneo/gijoe.zip.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY
