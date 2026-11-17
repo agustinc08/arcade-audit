@@ -1,7 +1,7 @@
 # Estado actual del arcade
 
-- UPDATED_AT: 2026-11-17T01:31:48+00:00
-- GITHUB_HEAD observado antes de publicar: `f0c533385f58dd50bec7c01691e62499a6455281`
+- UPDATED_AT: 2026-11-17T02:21:52+00:00
+- GITHUB_HEAD observado antes de publicar: `e95e180d1e951512d56f4b00484be023cc15f140`
 - BATOCERA_VERSION: 43.1
 
 ## Sistema y hardware
@@ -37,26 +37,26 @@
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- AUTO_CERTIFIED: 790
-- GAME_FAIL: 18
+- AUTO_CERTIFIED: 888
+- GAME_FAIL: 20
 - STATIC_FAIL: 2
 - FLAKY: 0
-- NEEDS_REPAIR: 20
+- NEEDS_REPAIR: 22
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
-- NEXT_GAME: `mame:/userdata/roms/mame/strkforc.zip`
-- UNIQUE_GAMES_PROCESSED: 810
-- RESULT_RECORDS: 811
-- LAUNCH_TRANSACTIONS: 809
+- NEXT_GAME: `mame:/userdata/roms/mame/wndrplnt.zip`
+- UNIQUE_GAMES_PROCESSED: 910
+- RESULT_RECORDS: 911
+- LAUNCH_TRANSACTIONS: 909
 - RETRY_TRANSACTIONS: 1
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- REPAIR_QUEUE_PENDING: 20
+- REPAIR_QUEUE_PENDING: 22
 
 ## Espacio
 
 - FILESYSTEM_STATUS: lectura de capacidad; no es una prueba SMART.
-    /dev/sda2        211G   120G   82G  60% /userdata
+    /dev/sda2        211G   121G   82G  60% /userdata
     /dev/sdc1        3,6T  1012G  2,5T  30% /media/ROMS
     /dev/sdb1        916G   783G   88G  90% /media/BATOCERA_ROMS
 

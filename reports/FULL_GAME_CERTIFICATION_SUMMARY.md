@@ -1,26 +1,26 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-17T01:31:47+00:00
+- UPDATED_AT: 2026-11-17T02:21:51+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 809
-- UNIQUE_GAMES_PROCESSED: 810
-- RESULT_RECORDS: 811
-- LAUNCH_TRANSACTIONS: 809
+- ATTEMPTED_NEW: 909
+- UNIQUE_GAMES_PROCESSED: 910
+- RESULT_RECORDS: 911
+- LAUNCH_TRANSACTIONS: 909
 - RETRY_TRANSACTIONS: 1
 - STATIC_PREFLIGHT_RESULTS: 2
-- AUTO_CERTIFIED: 790
+- AUTO_CERTIFIED: 888
 - STATIC_FAIL: 2
-- GAME_FAIL: 18
+- GAME_FAIL: 20
 - FLAKY: 0
-- NEEDS_REPAIR: 20
+- NEEDS_REPAIR: 22
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: mame:/userdata/roms/mame/strkforc.zip
-- TOTAL_RESTORES: 809
+- NEXT_GAME: mame:/userdata/roms/mame/wndrplnt.zip
+- TOTAL_RESTORES: 909
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 1
 - ENGINE_FAIL_ACTIVE: 0
@@ -49,7 +49,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | hcl | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | hurrican | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | ikemen | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
-| mame | 1324 | 1324 | 1112 | 782 | 2 | 18 | 0 | 0 | 0 | 522 |
+| mame | 1324 | 1324 | 1112 | 880 | 2 | 20 | 0 | 0 | 0 | 422 |
 | mastersystem | 383 | 383 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 382 |
 | megacd | 24 | 24 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 24 |
 | megadrive | 1037 | 1037 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1036 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_9; considerados 100; lanzados 100; AUTO_PASS 98; restore 100/100.
+- Lote más reciente: priority_batch_10; considerados 100; lanzados 100; AUTO_PASS 98; restore 100/100.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: mame:/userdata/roms/mame/strkforc.zip.
+- NEXT_GAME: mame:/userdata/roms/mame/wndrplnt.zip.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY
