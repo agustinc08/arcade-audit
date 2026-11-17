@@ -4,6 +4,8 @@ import csv, hashlib, json, os, shutil, signal, stat, sys, time
 from datetime import datetime
 from pathlib import Path
 import smoke_runner as sr
+sys.path.insert(0, '/userdata/system/el_gordo_tools')
+from marker_ownership import create_exclusive as create_owned_marker, remove_if_owned as remove_owned_marker
 from configgen.settings.unixSettings import UnixSettings
 
 OUT=Path('/userdata/system/state/arcade_audit')
@@ -139,9 +141,14 @@ def run_game(n,r,oldbackup,base,state):
     if sha(conf_copy)!=pre[str(CONF)]['sha256']:
         restore_conf(oldconf,oldstat); raise RuntimeError('CONFIG_SNAPSHOT_HASH_MISMATCH')
     romhash=sha(rom); dmesg=sr.read_dmesg(); logs=sr.snapshot_logs(); espids=sr.es_pids()
-    marker=sr.marker_value('mame',str(rom))
+    marker=None
     if sr.MARKER.exists(): restore_conf(oldconf,oldstat); raise RuntimeError('ONE_SHOT_MARKER_EXISTS')
-    with sr.MARKER.open('x',encoding='utf-8') as f: json.dump(marker,f); f.flush(); os.fsync(f.fileno())
+    try:
+        marker=create_owned_marker('mame',str(rom),'smoke_pilot_runner',
+                                   f'smoke-pilot:{n}:{os.getpid()}:{time.time_ns()}',path=sr.MARKER)
+    except FileExistsError as exc:
+        restore_conf(oldconf,oldstat)
+        raise RuntimeError('MARKER_ALREADY_EXISTS') from exc
     start=time.time(); proc=None; status='FAIL'; detail=''; exitcode='—'; cleanup='NOT_REQUIRED'; safety=None
     try:
         http,body=sr.post_launch(str(rom))
@@ -244,9 +251,9 @@ def run_game(n,r,oldbackup,base,state):
         raise RuntimeError('SAFETY_PAUSE_RESTORE_UNSAFE:'+safety)
     finally:
         try:
-            if sr.MARKER.exists() and sr.api_idle() is True and sr.api_game() is None and not sr.launcher_processes():
-                m=json.loads(sr.MARKER.read_text(encoding='utf-8'))
-                if m.get('audit_id')==marker.get('audit_id'): sr.MARKER.unlink()
+            if marker and sr.api_idle() is True and sr.api_game() is None and not sr.launcher_processes():
+                remove_owned_marker(marker['transaction_id'],owner='smoke_pilot_runner',
+                                    audit_id=marker.get('audit_id'),path=sr.MARKER)
         except Exception: pass
 
 def write_report(s):

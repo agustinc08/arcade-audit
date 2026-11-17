@@ -21,6 +21,8 @@ sys.path.insert(0, str(OUT))
 import smoke_runner as sr
 import smoke_pilot_batch2 as pilot
 import smoke_pilot_batch3 as batch3
+sys.path.insert(0, '/userdata/system/el_gordo_tools')
+from marker_ownership import create_exclusive as create_owned_marker, remove_if_owned as remove_owned_marker
 
 CPFILE = OUT / 'mame_batch4_checkpoint.json'
 REPORT = OUT / 'ARCADE_MAME_BATCH4_RESULTS.md'
@@ -132,10 +134,8 @@ def copy_logs(game, phase):
     return result
 
 def marker_for(rom):
-    v = sr.marker_value('mame', str(rom))
-    with sr.MARKER.open('x', encoding='utf-8') as f:
-        json.dump(v, f); f.flush(); os.fsync(f.fileno())
-    return v
+    return create_owned_marker('mame', str(rom), 'mame_batch4_runner',
+                               f'mame-batch4:{os.getpid()}:{time.time_ns()}', path=sr.MARKER)
 
 def fresh_preflight(n):
     rom = Path('/userdata/roms/mame') / (n + '.zip')
@@ -492,12 +492,11 @@ def one_game(game, is_control, cp, backup, baseline):
     while time.time() < deadline:
         if sr.api_idle() is True and sr.api_game() is None and not chain_processes(): break
         time.sleep(0.25)
-    if sr.MARKER.exists():
-        try:
-            remaining = json.loads(sr.MARKER.read_text())
-            if remaining.get('audit_id') == marker['audit_id']:
-                sr.MARKER.unlink(); result['marker_cleanup'] = 'REMOVED_OWN_UNCONSUMED_MARKER'
-        except Exception as e: result['marker_cleanup'] = 'FAILED:' + repr(e)
+    try:
+        if remove_owned_marker(marker['transaction_id'], owner='mame_batch4_runner',
+                               audit_id=marker.get('audit_id'), path=sr.MARKER):
+            result['marker_cleanup'] = 'REMOVED_OWN_UNCONSUMED_MARKER'
+    except Exception as e: result['marker_cleanup'] = 'FAILED:' + repr(e)
     result['api_after_close'] = api_state()
     result['processes_after_close'] = chain_processes()
     # Restore monitored persistent user state. Logs/game_health are audit evidence and intentionally excluded.

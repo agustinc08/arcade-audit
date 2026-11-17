@@ -1,0 +1,485 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-17T05:39:44+00:00",
+  "tasks": [
+    {
+      "id": "CERT-BATCH-0011",
+      "type": "CERTIFICATION_BATCH",
+      "title": "Continuar priority_batch_11",
+      "status": "PAUSED_SAFETY",
+      "priority": 10,
+      "created_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T03:06:29+00:00",
+      "source": "full_game_certification_checkpoint.json",
+      "reason": "Batch 11 permanece parcial (9 AUTO_PASS originales; 10 transacciones originales). CERT-007 mitigado/cerrado, xmultipl retry AUTO_PASS y engine_fail_active=0. Reanudar sólo después de publicar Autopilot, desde xsleena y con el remanente del mismo lote.",
+      "automatic": true,
+      "requires_codex": false,
+      "requires_manual": false,
+      "depends_on": [
+        "GITHUB-PUBLISH-AUTOPILOT"
+      ],
+      "attempts": 0,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "Tras publicar infraestructura, detached runner debe continuar priority_batch_11 desde xsleena y limitarse a los juegos restantes; no crear otro lote.",
+      "evidence": [
+        "/userdata/system/state/arcade_audit/full_game_certification_checkpoint.json",
+        "/userdata/system/state/arcade_audit/full_game_certification.csv"
+      ],
+      "files": [
+        "/userdata/system/state/arcade_audit/full_game_certification_checkpoint.json",
+        "/userdata/system/state/arcade_audit/full_game_certification.csv",
+        "/userdata/system/el_gordo_tools/arcade_certifier_job.sh"
+      ],
+      "do_not_change": [
+        "Resultados históricos",
+        "MAME global",
+        "overrides",
+        "P1-P4",
+        "ROM/BIOS"
+      ],
+      "success_criteria": "Batch limitado completado, restore verificado por juego y fuentes locales reconciliadas.",
+      "after_completion": "Rebuild summary/current state, publicar y recalcular NEXT_GAME."
+    },
+    {
+      "id": "REPAIR-CERTIFIER-MARKER-COLLISION",
+      "type": "REPAIR_CODEX",
+      "title": "Resolver colisión del marker de certificación",
+      "status": "COMPLETE",
+      "priority": 1,
+      "created_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T03:06:29+00:00",
+      "source": "CERT-007",
+      "reason": "Ownership protocol y restore conflict verificados; identidad del escritor histórico quedó documentada como no atribuible. CERT-007 cerrado tras retry aislado AUTO_PASS.",
+      "automatic": false,
+      "requires_codex": true,
+      "requires_manual": false,
+      "depends_on": [],
+      "attempts": 0,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "Mantener protocolo común y no atribuir retrospectivamente el escritor sin evidencia.",
+      "evidence": [
+        "arcade_master_checkpoint.json: CERT-007",
+        "reports/PRIORITY_CERTIFICATION_BATCH_11.md",
+        "runtime/20261116T232721_823ec5e49e/manifest.json"
+      ],
+      "files": [
+        "/userdata/system/el_gordo_tools/full_game_certifier.py",
+        "/userdata/system/state/arcade_audit/scripts/active/certification_transaction.py"
+      ],
+      "do_not_change": [
+        "No relanzar xmultipl",
+        "No reintentar Batch 11",
+        "No eliminar marker ajeno",
+        "No cambiar controles ni configuración global"
+      ],
+      "success_criteria": "Writer identificado o exclusión mutua demostrada; abort no modifica marker ajeno; runtime y transaction pasan prueba aislada.",
+      "after_completion": "Reconciliar el registro pre-launch sin borrar evidencia y habilitar sólo el cursor elegible siguiente."
+    },
+    {
+      "id": "REGRESSION-HEALTH-001",
+      "type": "REGRESSION_CHECK",
+      "title": "Health review antes de modificar runtime",
+      "status": "READY",
+      "priority": 8,
+      "created_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T03:06:29+00:00",
+      "source": "ARCADE_MASTER",
+      "reason": "Validar configuración, runtime, disco y reconciliación antes de certificar.",
+      "automatic": true,
+      "requires_codex": false,
+      "requires_manual": false,
+      "depends_on": [],
+      "attempts": 0,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "Ejecutar comprobaciones read-only; cualquier discrepancia pausa la cola.",
+      "evidence": [
+        "checkpoint",
+        "batocera.conf",
+        "P1-P4",
+        "HDMI",
+        "EmulationStation"
+      ],
+      "files": [],
+      "do_not_change": [],
+      "success_criteria": "Safety gates PASS sin mutaciones.",
+      "after_completion": ""
+    },
+    {
+      "id": "CHECKPOINT-RECONCILIATION-0011",
+      "type": "CHECKPOINT_RECONCILIATION",
+      "title": "Verificar reconciliación Batch 11 parcial",
+      "status": "COMPLETE",
+      "priority": 15,
+      "created_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T03:06:29+00:00",
+      "source": "local CSV/checkpoint/master/summary",
+      "reason": "Fuentes canónicas reconcilian 920 transacciones, 2 retries, 898 AUTO_CERTIFIED, engine_fail_active=0; xmultipl figura como una sola identidad y Batch 11 permanece parcial con 9 AUTO_PASS originales.",
+      "automatic": true,
+      "requires_codex": false,
+      "requires_manual": false,
+      "depends_on": [],
+      "attempts": 0,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "Repetir únicamente lectura de invariantes al reanudar; no reconstruir ni sobreescribir evidencia.",
+      "evidence": [
+        "full_game_certification.csv",
+        "full_game_certification_checkpoint.json",
+        "arcade_master_checkpoint.json",
+        "FULL_GAME_CERTIFICATION_SUMMARY.md"
+      ],
+      "files": [],
+      "do_not_change": [],
+      "success_criteria": "Métricas, records, cursor y CSV concuerdan sin cambiar resultados.",
+      "after_completion": ""
+    },
+    {
+      "id": "REPORT-REBUILD-0011",
+      "type": "REPORT_REBUILD",
+      "title": "Regenerar reportes derivados tras la pausa",
+      "status": "COMPLETE",
+      "priority": 16,
+      "created_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T03:06:29+00:00",
+      "source": "ARCADE_MASTER",
+      "reason": "Los reportes se regeneran tras incorporar el retry xmultipl y reflejar el Batch 11 todavía parcial.",
+      "automatic": true,
+      "requires_codex": false,
+      "requires_manual": false,
+      "depends_on": [],
+      "attempts": 0,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "Regenerar tras cada batch estable.",
+      "evidence": [
+        "FULL_GAME_CERTIFICATION_SUMMARY.md",
+        "ARCADE_CURRENT_STATE.md"
+      ],
+      "files": [],
+      "do_not_change": [],
+      "success_criteria": "",
+      "after_completion": ""
+    },
+    {
+      "id": "GITHUB-PUBLISH-AUTOPILOT",
+      "type": "GITHUB_PUBLISH",
+      "title": "Publicar Autopilot después de validación",
+      "status": "PENDING",
+      "priority": 30,
+      "created_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T03:06:29+00:00",
+      "source": "ARCADE_MASTER",
+      "reason": "Publicar infraestructura local ya validada (py_compile, suite 26/26, dry-run, detached, duplicate guard y controller gate 5/5) antes de reanudar Batch 11.",
+      "automatic": true,
+      "requires_codex": false,
+      "requires_manual": false,
+      "depends_on": [],
+      "attempts": 0,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "Ejecutar secret/payload scan y publisher existente; respetar límites y manifests exactos.",
+      "evidence": [
+        "github_publish_state.json",
+        "publisher dry-run pendiente"
+      ],
+      "files": [
+        "/userdata/system/el_gordo_tools/publish_arcade_audit_github.py"
+      ],
+      "do_not_change": [
+        "No incluir tokens",
+        "No saltar SECRET_SCAN/PAYLOAD_SCAN",
+        "No usar autorización one-time amplia"
+      ],
+      "success_criteria": "Remote SHA nuevo verificado y export exacto coincide.",
+      "after_completion": ""
+    },
+    {
+      "id": "VISUAL-BLACK-CAPTURE",
+      "type": "VISUAL_DIAGNOSTIC",
+      "title": "Investigar sospechas de captura negra",
+      "status": "CODEX_REQUIRED",
+      "priority": 40,
+      "created_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T03:06:29+00:00",
+      "source": "CERT-004",
+      "reason": "19 casos BLACK_SCREEN_SUSPECT; el mecanismo de captura puede no representar salida visible.",
+      "automatic": false,
+      "requires_codex": true,
+      "requires_manual": false,
+      "depends_on": [],
+      "attempts": 0,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "Correlacionar captura con proceso, framebuffer/backend y evidencia independiente; agrupar casos.",
+      "evidence": [
+        "arcade_master_checkpoint.json: CERT-004",
+        "reports/ROOT_CAUSES.md"
+      ],
+      "files": [
+        "full_game_certification_checkpoint.json",
+        "reports/ARCADE_VISUAL_MEDIA_AUDIT.md"
+      ],
+      "do_not_change": [
+        "No marcar BLACK_SCREEN_SUSPECT como GAME_FAIL automáticamente",
+        "No relanzar juegos masivamente"
+      ],
+      "success_criteria": "Explicación aceptada, backend identificado o tarea manual de TV documentada.",
+      "after_completion": ""
+    },
+    {
+      "id": "REPAIR-MVP",
+      "type": "REPAIR_CODEX",
+      "title": "Diagnosticar SIGSEGV aislado de Mvp",
+      "status": "CODEX_REQUIRED",
+      "priority": 50,
+      "created_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T03:06:29+00:00",
+      "source": "CERT-002",
+      "reason": "SIGSEGV histórico aislado con transacción restaurada; requiere análisis antes de cualquier retest.",
+      "automatic": false,
+      "requires_codex": true,
+      "requires_manual": false,
+      "depends_on": [],
+      "attempts": 0,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "Analizar logs/runtime y decidir si existe retry seguro basado en causa demostrada.",
+      "evidence": [
+        "game_repair_queue.csv: mame/mvp.zip"
+      ],
+      "files": [
+        "full_game_certification_checkpoint.json",
+        "reports/ROOT_CAUSES.md"
+      ],
+      "do_not_change": [
+        "No cambiar core global",
+        "No probar masivamente",
+        "No tocar ROM/BIOS"
+      ],
+      "success_criteria": "Causa raíz o estado de reparación documentado con evidencia.",
+      "after_completion": ""
+    },
+    {
+      "id": "REPAIR-CONTENT-ROOTS",
+      "type": "REPAIR_CODEX",
+      "title": "Resolver contenido/BIOS faltante por causas raíz",
+      "status": "CODEX_REQUIRED",
+      "priority": 55,
+      "created_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T03:06:29+00:00",
+      "source": "CERT-003/CERT-005",
+      "reason": "CRC/BIOS/CHD faltantes requieren verificación de contenido apropiado; no se permiten descargas ni edición a ciegas.",
+      "automatic": false,
+      "requires_codex": true,
+      "requires_manual": false,
+      "depends_on": [],
+      "attempts": 0,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "Verificar inventarios y documentación legal del set/BIOS; nunca modificar ZIP automáticamente.",
+      "evidence": [
+        "game_repair_queue.csv",
+        "arcade_issues.csv: CERT-003/CERT-005"
+      ],
+      "files": [],
+      "do_not_change": [
+        "No descargar ROM comercial",
+        "No editar ZIP",
+        "No sustituir BIOS arbitrariamente"
+      ],
+      "success_criteria": "Contenido validado por evidencia y retest explícitamente autorizado.",
+      "after_completion": ""
+    },
+    {
+      "id": "CTRL-REPRESENTATIVE-SAMPLE",
+      "type": "CONTROL_PHYSICAL",
+      "title": "Certificar muestra física representativa de controles",
+      "status": "MANUAL_REQUIRED",
+      "priority": 70,
+      "created_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T03:06:29+00:00",
+      "source": "manual_physical_test_queue.csv",
+      "reason": "14 secuencias físicas siguen pendientes; no inferir control desde AUTO_PASS.",
+      "automatic": false,
+      "requires_codex": false,
+      "requires_manual": true,
+      "depends_on": [],
+      "attempts": 0,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "Probar muestra acordada: P1/P2 fighter, MAME 4P, beat-em-up, deporte y joystick externo.",
+      "evidence": [
+        "manual_physical_test_queue.csv",
+        "reports/ARCADE_CONTROL_CERTIFICATION.md"
+      ],
+      "files": [
+        "manual_physical_test_queue.csv"
+      ],
+      "do_not_change": [
+        "No remapear P1-P4 durante la prueba",
+        "No declarar juegos físicos certificados sin observación"
+      ],
+      "success_criteria": "Resultados humanos registrados por secuencia y controles/restore sin regresión.",
+      "after_completion": "",
+      "manual_test": {
+        "test_id": "ARCADE_FIGHT_01",
+        "name": "Final Fight 2",
+        "system": "mame",
+        "rom": "ffight2b.zip",
+        "test_goal": "Fighting, six-button; MAME-current BOOT_OK. Verify no duplicate/double inputs and exit combo."
+      }
+    },
+    {
+      "id": "ADAPTER-IMPLEMENTATION",
+      "type": "ADAPTER_IMPLEMENTATION",
+      "title": "Implementar adapters para sistemas pendientes",
+      "status": "CODEX_REQUIRED",
+      "priority": 80,
+      "created_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T03:06:29+00:00",
+      "source": "detected_systems.csv",
+      "reason": "El registry actual tiene sistemas PENDING; consultar el registry al seleccionar, no fijar el total histórico.",
+      "automatic": false,
+      "requires_codex": true,
+      "requires_manual": false,
+      "depends_on": [],
+      "attempts": 0,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "Priorizar el primer adapter PENDING entre PS2, Dreamcast, PSP, N64, PSX, GameCube, Saturn, Mega CD, Xbox y Xbox360 según registry actual.",
+      "evidence": [
+        "data/detected_systems.csv",
+        "data/certifier_adapter_registry.csv",
+        "PENDING systems: easyrpg, ikemen, scummvm, windows, xbox, xbox360, n64, gamecube, flatpak, openbor, ports, sdlpop, theforceengine, cdogs, hurrican, hcl, odcommander, pygame, solarus, psx, ps2, psp, ps3, ps4, steam"
+      ],
+      "files": [
+        "certifier_adapters.py",
+        "full_game_certifier.py"
+      ],
+      "do_not_change": [
+        "Mantener identidad/audio/restore/ES/disk/transaction gates",
+        "No modificar core global ni controles"
+      ],
+      "success_criteria": "Adapter implementado, transaccional, auditado y habilitado sólo después de prueba focalizada.",
+      "after_completion": ""
+    },
+    {
+      "id": "MEDIA-AUDIT-REFRESH",
+      "type": "MEDIA_AUDIT",
+      "title": "Actualizar auditoría de media sólo lectura",
+      "status": "COMPLETE",
+      "priority": 90,
+      "created_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T03:06:29+00:00",
+      "source": "ARCADE_MASTER",
+      "reason": "Existe media_audit.csv con verificación de referencias; no descargar en lote durante certificación.",
+      "automatic": true,
+      "requires_codex": false,
+      "requires_manual": false,
+      "depends_on": [],
+      "attempts": 0,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "Refrescar sólo en ventana sin conflicto de recursos.",
+      "evidence": [
+        "media_audit.csv",
+        "reports/ARCADE_VISUAL_MEDIA_AUDIT.md"
+      ],
+      "files": [],
+      "do_not_change": [],
+      "success_criteria": "",
+      "after_completion": ""
+    },
+    {
+      "id": "FILESYSTEM-CANDIDATES",
+      "type": "FILESYSTEM_CLEANUP",
+      "title": "Inventariar candidatos de cleanup sin borrar",
+      "status": "BLOCKED",
+      "priority": 95,
+      "created_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T03:06:29+00:00",
+      "source": "filesystem audit",
+      "reason": "Primera versión permite detectar/documentar; no autoriza borrar backups ni datos de usuario.",
+      "automatic": false,
+      "requires_codex": false,
+      "requires_manual": false,
+      "depends_on": [],
+      "attempts": 0,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "Generar candidatos con referencias, mount, tamaño y clasificación; cualquier borrado requiere revisión humana.",
+      "evidence": [
+        "reports/FILESYSTEM_MASTER_AUDIT.md",
+        "data/filesystem_cleanup_inventory.csv"
+      ],
+      "files": [],
+      "do_not_change": [
+        "No borrar ROMs/BIOS/saves/config/backups",
+        "No usar rm -rf"
+      ],
+      "success_criteria": "Inventario read-only reconciliado y candidatos explícitamente clasificados.",
+      "after_completion": ""
+    },
+    {
+      "id": "REPAIR-AUTO-RECIPE-QUEUE",
+      "type": "REPAIR_AUTOMATIC",
+      "title": "Evaluar recetas de reparación previamente aprobadas",
+      "status": "BLOCKED",
+      "priority": 60,
+      "created_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T03:06:29+00:00",
+      "source": "game_repair_queue.csv",
+      "reason": "No hay receta automática revisada habilitada en la primera versión.",
+      "automatic": false,
+      "requires_codex": false,
+      "requires_manual": false,
+      "depends_on": [],
+      "attempts": 0,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "Registrar receta explícita retry-safe antes de habilitar esta tarea.",
+      "evidence": [
+        "game_repair_queue.csv",
+        "ROOT_CAUSES.md"
+      ],
+      "files": [],
+      "do_not_change": [
+        "No ROM/BIOS/CHD, core global, P1-P4 ni paquetes"
+      ],
+      "success_criteria": "Sólo reparación permitida por receta auditada y retest explícito.",
+      "after_completion": ""
+    },
+    {
+      "id": "GUEST_READY_BUILD",
+      "type": "GUEST_READY_BUILD",
+      "title": "Diseñar promoción Guest Mode basada en evidencia física",
+      "status": "BLOCKED",
+      "priority": 100,
+      "created_at": "2026-11-17T03:06:29+00:00",
+      "updated_at": "2026-11-17T03:06:29+00:00",
+      "source": "control certification",
+      "reason": "CONTROL_CERTIFIED=0; no promover juegos automáticamente.",
+      "automatic": false,
+      "requires_codex": true,
+      "requires_manual": false,
+      "depends_on": [
+        "CTRL-REPRESENTATIVE-SAMPLE"
+      ],
+      "attempts": 0,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "Esperar estrategia y muestra representativa de controles suficiente.",
+      "evidence": [
+        "reports/ARCADE_GUEST_READY_STATUS.md",
+        "reports/ARCADE_CONTROL_CERTIFICATION.md"
+      ],
+      "files": [],
+      "do_not_change": [],
+      "success_criteria": "Reglas de elegibilidad inequívocas y sin promoción automática fuera de política.",
+      "after_completion": ""
+    }
+  ]
+}

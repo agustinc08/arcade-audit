@@ -33,7 +33,9 @@ El control y la observación se separan de la ejecución larga mediante `/userda
 
 ```text
 Codex / SSH
-    ↓ start / status / log / stop-safe
+    ↓ start / status / log / pause / resume / stop-safe
+arcade_autopilot (opcional, explícito y desacoplado)
+    ↓ task queue; adopta jobs existentes; reconcile/reports/publish
 arcade_certifier_job.sh
     ↓ supervisor desacoplado de terminal (sesión nueva)
 full_game_certifier.py --batch N
@@ -42,6 +44,12 @@ checkpoint por juego
 ```
 
 La operación y recuperación se describen en `CERTIFIER_JOB_RUNNER.md`. El helper rechaza estados no reconciliados, fallos de motor activos o un segundo certifier; la desconexión SSH/Codex no es una señal de parada.
+
+El orquestador explícito `/userdata/system/el_gordo_tools/arcade_autopilot`
+mantiene una cola determinística y puede monitorizar/adoptar el job existente.
+Codex sigue siendo el operador de inicio, inspección, reconciliación,
+diagnóstico y publicación. Autopilot no invoca Codex ni arranca al boot.
+Consultar `ARCADE_AUTOPILOT.md` para comandos y recovery.
 
 ## Core MAME y overrides
 

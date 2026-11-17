@@ -4,6 +4,11 @@ import csv, hashlib, json, os, shutil, signal, sqlite3, stat, subprocess, sys, t
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
+import sys
+
+TOOLS=Path('/userdata/system/el_gordo_tools')
+if str(TOOLS) not in sys.path: sys.path.insert(0,str(TOOLS))
+from marker_ownership import create_exclusive as create_owned_marker, remove_if_owned as remove_owned_marker, marker_lock
 
 OUT=Path('/userdata/system/state/arcade_audit')
 CHECKPOINT=OUT/'checkpoint.json'
@@ -482,10 +487,13 @@ def run_one(item,batch,cp,bp,baseline):
     if procs: raise RuntimeError('LAUNCH_PROCESS_ALREADY_ACTIVE:'+repr(procs))
     epids=es_pids()
     if not epids: raise RuntimeError('EMULATIONSTATION_PID_MISSING')
-    marker=marker_value(item['system'],str(rom))
+    marker=None
     if MARKER.exists(): raise RuntimeError('ONE_SHOT_MARKER_ALREADY_EXISTS')
-    with MARKER.open('x',encoding='utf-8') as f:
-        json.dump(marker,f); f.flush(); os.fsync(f.fileno())
+    try:
+        marker=create_owned_marker(item['system'],str(rom),'smoke_runner',
+                                   f"smoke:{item['system']}:{Path(str(rom)).name}:{time.time_ns()}",path=MARKER)
+    except FileExistsError as exc:
+        raise RuntimeError('MARKER_ALREADY_EXISTS') from exc
     start=time.time(); launched=False; seen=[]; process=None; health=None; status='FAIL_RETURN_TO_ES'; error=''; exit_code=None; cleanup='NOT_REQUIRED'
     try:
         http,body=post_launch(str(rom))
@@ -593,9 +601,9 @@ def run_one(item,batch,cp,bp,baseline):
     finally:
         # Remove only our exact, unconsumed one-shot marker, and only if no game launch remains active.
         try:
-            if MARKER.exists() and api_idle() is True and api_game() is None and not launcher_processes():
-                current=json.loads(MARKER.read_text(encoding='utf-8'))
-                if current.get('audit_id')==marker.get('audit_id'): MARKER.unlink()
+            if marker and api_idle() is True and api_game() is None and not launcher_processes():
+                remove_owned_marker(marker['transaction_id'],owner='smoke_runner',
+                                    audit_id=marker.get('audit_id'),path=MARKER)
         except Exception: pass
 
 def run_batch(limit=25):

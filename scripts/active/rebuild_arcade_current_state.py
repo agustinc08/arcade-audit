@@ -279,6 +279,11 @@ def main():
     manual_rows = read_csv(manual_path) if manual_path.exists() else []
     manual_pending = sum(1 for row in manual_rows if row.get('status','').upper() not in
                          {'DONE','COMPLETE','PASS','CONTROL_CERTIFIED','CLOSED'})
+    autopilot = load_json(AUDIT / 'autopilot_state.json') if (AUDIT / 'autopilot_state.json').exists() else {}
+    autopilot_tasks = load_json(AUDIT / 'data/autopilot_tasks.json') if (AUDIT / 'data/autopilot_tasks.json').exists() else {}
+    task_rows = autopilot_tasks.get('tasks', []) if isinstance(autopilot_tasks, dict) else []
+    codex_pending = sum(1 for row in task_rows if row.get('status') == 'CODEX_REQUIRED')
+    manual_task_pending = sum(1 for row in task_rows if row.get('status') == 'MANUAL_REQUIRED')
     free = '\n'.join('    ' + x for x in disks.splitlines()[1:]) if disks else '    UNKNOWN'
     pad_text = '\n'.join(pads) if pads else '- No disponible'
     last_action = master.get('last_action', 'No registrado')
@@ -319,6 +324,11 @@ def main():
         '- ARCADE_MANAGER_STATUS: script local disponible; servicio/panel persistente no certificado.',
         f'- OPEN_ROOT_ISSUES: {len(root_issues)}',
         f'- MANUAL_TESTS_PENDING: {manual_pending} (detalle en `data/manual_physical_test_queue.csv`).',
+        '', '## Autopilot', '',
+        f'- STATUS: {autopilot.get("status", "STOPPED")}',
+        f'- CURRENT_TASK: {autopilot.get("current_task") or "NONE"}',
+        f'- LAST_COMPLETED: {autopilot.get("last_completed_task") or "NONE"}',
+        f'- CODEX_PENDING: {codex_pending}', f'- MANUAL_PENDING: {manual_task_pending}',
         f'- LAST_MAJOR_CHANGES: {last_action}', '',
         'Este documento se deriva de checkpoints, tabla de certificación y consultas locales. Los datos variables deben regenerarse; los reportes históricos no prevalecen sobre estas fuentes.', ''
     ]

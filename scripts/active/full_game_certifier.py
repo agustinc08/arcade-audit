@@ -10,6 +10,7 @@ sys.path.insert(0,str(AUDIT/'scripts'));sys.path.insert(0,str(AUDIT));sys.path.i
 import certification_transaction as tx
 import certifier_adapters as ad
 import smoke_runner as sr
+from marker_ownership import create_exclusive as create_owned_marker, remove_if_owned as remove_owned_marker
 
 TABLE=AUDIT/'full_game_certification.csv'; MASTER=AUDIT/'arcade_master_checkpoint.json'
 STATE=AUDIT/'full_game_certification_checkpoint.json'; RUNTIME=AUDIT/'runtime'/'full_certification'
@@ -203,8 +204,7 @@ def launch_one(game,adapter_info,baseline,mode):
  result['test_id']=txid;result['transaction_id']=txid;txroot=Path('/userdata/system/state/arcade_audit/runtime')/txid
  try:
   # Marker is the existing one-shot controller choice, not synthetic game input.
-  marker=sr.marker_value(system,str(rom))
-  with sr.MARKER.open('x',encoding='utf-8') as f:json.dump(marker,f);f.flush();os.fsync(f.fileno())
+  marker=create_owned_marker(system,str(rom),'full_game_certifier',txid,path=sr.MARKER)
   result['selector_present']='controller_dispatcher' in ad.parse_es().get(system,{}).get('command','')
   result['control_selected']='BOTONERA';result['control_recommended']=game.get('recommended_control','UNKNOWN')
   req=urllib.request.Request(API+'/launch',data=str(rom).encode('utf-8'),method='POST',headers={'Content-Type':'application/x-www-form-urlencoded'})
@@ -316,6 +316,9 @@ def launch_one(game,adapter_info,baseline,mode):
    result['visual_summary']='STATIC_SCREEN_SUSPECT' if len(frames)>1 and len(set(frames))==1 else 'VISUAL_ACTIVITY' if frames else 'UNKNOWN'
    result['result']='AUTO_PASS';result['failure_class']=None
   return result
+ except FileExistsError:
+  result['result']='ENGINE_FAIL';result['failure_class']='MARKER_ALREADY_EXISTS'
+  return result
  except Exception as e:
   result['result']='ENGINE_FAIL';result['failure_class']='CERTIFIER_EXCEPTION:'+type(e).__name__+': '+str(e)
   return result
@@ -331,9 +334,9 @@ def launch_one(game,adapter_info,baseline,mode):
   except Exception:pass
   # On all paths, remove only this transaction's marker if it is still ours.
   try:
-   if sr.MARKER.is_file():
-    data=json.loads(sr.MARKER.read_text())
-    if data.get('audit_id')==marker.get('audit_id'):sr.MARKER.unlink()
+   if result.get('transaction_id'):
+    remove_owned_marker(result['transaction_id'],owner='full_game_certifier',
+                        audit_id=marker.get('audit_id') if isinstance(marker,dict) else None,path=sr.MARKER)
   except Exception:pass
   # Restore if a transaction reached POST_STATE; refuse to overwrite any concurrent edit.
   if result.get('transaction_id'):

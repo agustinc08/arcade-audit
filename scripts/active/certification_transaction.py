@@ -3,6 +3,11 @@
 import argparse, hashlib, json, os, shutil, stat, tempfile, uuid
 from datetime import datetime, timezone
 from pathlib import Path
+import sys
+
+TOOLS = Path('/userdata/system/el_gordo_tools')
+if str(TOOLS) not in sys.path: sys.path.insert(0, str(TOOLS))
+from marker_ownership import MARKER, classify_marker, marker_lock, read_marker
 
 RUNTIME = Path('/userdata/system/state/arcade_audit/runtime')
 ALLOWED_EXACT = {Path('/userdata/system/batocera.conf'), Path('/userdata/system/state/boot_audit_once.json'),
@@ -118,13 +123,24 @@ def seal(txid):
 def restore(txid):
     root=txdir(txid); m=json.loads((root/'manifest.json').read_text())
     if m['status']!='POST_STATE': raise RuntimeError('RESTORE_REQUIRES_SEALED_POST_STATE')
+    if any(Path(e['path']) == MARKER for e in m['entries']):
+        with marker_lock(): return _restore_locked(txid, root, m)
+    return _restore_locked(txid, root, m)
+
+def _restore_locked(txid, root, m):
     # Preflight every file before changing any file.
     actions=[]
     for e in m['entries']:
         p=Path(e['path']); current=state(p); before=e['before']; post=e['post']
         if not is_allowed(p): raise RuntimeError('RESTORE_PATH_NOT_ALLOWLISTED:'+str(p))
         if current==before: actions.append((e,'unchanged')); continue
-        if current!=post: raise RuntimeError('RESTORE_CONFLICT:'+str(p))
+        if p == MARKER:
+            if before.get('exists') or current!=post:
+                raise RuntimeError('FOREIGN_STATE_CONFLICT:'+str(p)+':FOREIGN_UNKNOWN')
+            ownership=classify_marker(read_marker(p), txid)
+            if ownership != 'OWNED_BY_CURRENT_TRANSACTION':
+                raise RuntimeError('FOREIGN_STATE_CONFLICT:'+str(p)+':'+ownership)
+        elif current!=post: raise RuntimeError('RESTORE_CONFLICT:'+str(p))
         actions.append((e,'restore'))
     for e,action in actions:
         if action=='unchanged': continue

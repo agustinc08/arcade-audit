@@ -20,6 +20,8 @@ OUT = Path('/userdata/system/state/arcade_audit')
 sys.path.insert(0, str(OUT))
 import smoke_runner as sr
 import smoke_pilot_batch2 as pilot
+sys.path.insert(0, '/userdata/system/el_gordo_tools')
+from marker_ownership import create_exclusive as create_owned_marker, remove_if_owned as remove_owned_marker
 
 RESUME = OUT / 'mame_batch3_resume_checkpoint.json'
 ORIGINAL = OUT / 'mame_batch3_checkpoint.json'
@@ -164,11 +166,11 @@ def main():
         'core_path': str(CORE), 'override_set_before': overrides()})
     RESUME.write_text(json.dumps(cp, ensure_ascii=False, indent=2) + '\n')
 
-    marker = sr.marker_value('mame', str(ROM))
-    with sr.MARKER.open('x', encoding='utf-8') as f:
-        json.dump(marker, f)
-        f.flush()
-        os.fsync(f.fileno())
+    try:
+        marker = create_owned_marker('mame', str(ROM), 'mame_batch3_resume_control',
+                                    f'mame-batch3:{os.getpid()}:{time.time_ns()}', path=sr.MARKER)
+    except FileExistsError as exc:
+        raise RuntimeError('MARKER_ALREADY_EXISTS') from exc
     cp['control_altair']['marker'] = marker
     add_event(cp, 'T0_MARKER_CREATED', {'path': str(sr.MARKER), 'value': marker})
 
@@ -266,14 +268,12 @@ def main():
             details = 'POST/dispatch no inició RetroArch con MAME actual dentro de 30s'
     finally:
         stop.set(); watcher.join(timeout=3)
-        if sr.MARKER.exists():
-            try:
-                remaining = json.loads(sr.MARKER.read_text())
-                if remaining.get('audit_id') == marker['audit_id']:
-                    sr.MARKER.unlink()
-                    cp['control_altair']['marker_cleanup'] = 'REMOVED_OWN_UNCONSUMED_MARKER'
-            except Exception as e:
-                cp['control_altair']['marker_cleanup'] = 'FAILED:' + repr(e)
+        try:
+            removed = remove_owned_marker(marker['transaction_id'], owner='mame_batch3_resume_control',
+                                          audit_id=marker.get('audit_id'), path=sr.MARKER)
+            if removed: cp['control_altair']['marker_cleanup'] = 'REMOVED_OWN_UNCONSUMED_MARKER'
+        except Exception as e:
+            cp['control_altair']['marker_cleanup'] = 'FAILED:' + repr(e)
         # Wait for the official launcher to return to ES before restoring monitored per-game state.
         deadline = time.time() + 30
         while time.time() < deadline:

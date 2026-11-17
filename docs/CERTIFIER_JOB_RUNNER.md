@@ -35,5 +35,13 @@ Después de reconectar: ejecutar `status`. Si `RUNNING`, no iniciar otro. Si `CO
 
 ## Límite actual de validación
 
-El helper y la separación de sesión se implementaron, pero la prueba de certificación desacoplada queda pendiente. El estado real observado el 2026-11-16 avanzó más allá del estado de partida indicado: `priority_batch_11` ya había lanzado 10 juegos (9 AUTO_PASS) con 10 restores verificados y luego quedó pausado por `CERTIFIER_EXCEPTION:FileExistsError` al crear `/userdata/system/state/boot_audit_once.json`. El 2026-11-17 el master/summary/current state quedaron reconciliados con 919 transacciones y `NEXT_GAME=mame:/userdata/roms/mame/xsleena.zip`, pero la fase sigue `BLOCKED`, `engine_fail_active=1` y el checkpoint no está en estado ejecutable. El helper rechaza ese estado. No se debe quitar esa guarda para forzar una prueba.
+El helper y la separación de sesión se implementaron, pero la prueba de certificación desacoplada queda pendiente. El estado real observado el 2026-11-16 avanzó más allá del estado de partida indicado: `priority_batch_11` tiene 10 transacciones/restores verificados, 9 juegos lanzados con AUTO_PASS, y `xmultipl` abortado antes de `/launch` por `CERTIFIER_EXCEPTION:FileExistsError` al crear `/userdata/system/state/boot_audit_once.json`. El 2026-11-17 el master/summary/current state quedaron reconciliados con 919 transacciones y `NEXT_GAME=mame:/userdata/roms/mame/xsleena.zip`, pero la fase sigue `BLOCKED`, `engine_fail_active=1` y el checkpoint no está en estado ejecutable. El helper rechaza ese estado. No se debe quitar esa guarda para forzar una prueba.
+
+### Mitigación local de marker (2026-11-17, EN PRUEBA)
+
+La auditoría confirmó dos creadores directos que comparten el path: `full_game_certifier.run_one()` y `smoke_runner.run_one()`. `controller_dispatcher.consume_boot_audit_once()` lee y consume un marker coincidente; no lo crea. El proceso que escribió el marker de CERT-007 no puede atribuirse porque el manifest conservó SHA/tamaño pero no payload/PID.
+
+Se añadió un lock compartido para create/consume/cleanup y metadata de owner/transaction. El restore transaccional ahora devuelve `FOREIGN_STATE_CONFLICT` si la marca no pertenece a la transacción actual. El marker presente bloquea Autopilot como `MARKER_FOREIGN_UNKNOWN`. Pruebas locales aisladas no lanzan juegos. CERT-007 y `PAUSED_ENGINE_FAILURE` permanecen activos; todavía no iniciar un juego ni Batch 11.
+
+También hay un lock exclusivo del proceso certifier, y el job runner sólo acepta un inicio bajo Autopilot si el token de `run_id`, PID, start ticks y relación padre/hijo coinciden. El Autopilot pasa su token explícitamente; una invocación manual no puede colarse como tarea suya. La suite local confirma guards y detached session, pero el certifier real está `NOT_RUNNING` y no se probó una ejecución que lanzara un juego.
 
