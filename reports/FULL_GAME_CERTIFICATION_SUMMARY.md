@@ -1,26 +1,26 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-17T15:09:18+00:00
+- UPDATED_AT: 2026-11-17T15:14:58+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 1211
-- UNIQUE_GAMES_PROCESSED: 1310
-- RESULT_RECORDS: 1312
-- LAUNCH_TRANSACTIONS: 1211
+- ATTEMPTED_NEW: 1218
+- UNIQUE_GAMES_PROCESSED: 1410
+- RESULT_RECORDS: 1412
+- LAUNCH_TRANSACTIONS: 1218
 - RETRY_TRANSACTIONS: 2
-- STATIC_PREFLIGHT_RESULTS: 101
-- AUTO_CERTIFIED: 1067
-- STATIC_FAIL: 101
+- STATIC_PREFLIGHT_RESULTS: 194
+- AUTO_CERTIFIED: 1074
+- STATIC_FAIL: 194
 - GAME_FAIL: 142
 - FLAKY: 0
-- NEEDS_REPAIR: 243
+- NEEDS_REPAIR: 336
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: neogeo:/userdata/roms/neogeo/blazstar.zip
-- TOTAL_RESTORES: 1211
+- NEXT_GAME: snes:/userdata/roms/snes/Magical Pop'n.zip
+- TOTAL_RESTORES: 1218
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -57,7 +57,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | n64 | 377 | 377 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 377 |
 | naomi | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | nds | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
-| neogeo | 105 | 105 | 0 | 0 | 12 | 0 | 0 | 0 | 0 | 93 |
+| neogeo | 105 | 105 | 0 | 0 | 105 | 0 | 0 | 0 | 0 | 0 |
 | nes | 702 | 702 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 701 |
 | odcommander | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | openbor | 128 | 128 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 128 |
@@ -73,7 +73,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | saturn | 6 | 6 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 |
 | scummvm | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 |
 | sdlpop | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
-| snes | 275 | 275 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 274 |
+| snes | 275 | 275 | 0 | 8 | 0 | 0 | 0 | 0 | 0 | 267 |
 | solarus | 10 | 10 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 10 |
 | steam | 7 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 |
 | superbroswar | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_14; considerados 100; lanzados 43; AUTO_PASS 43; restore 43/43.
+- Lote más reciente: priority_batch_15; considerados 100; lanzados 7; AUTO_PASS 7; restore 7/7.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: neogeo:/userdata/roms/neogeo/blazstar.zip.
+- NEXT_GAME: snes:/userdata/roms/snes/Magical Pop'n.zip.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY

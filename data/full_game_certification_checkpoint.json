@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-17T15:08:54+00:00",
+  "updated_at": "2026-11-17T15:14:00+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
-  "next_untested": "neogeo:/userdata/roms/neogeo/blazstar.zip",
-  "attempted_new": 1211,
-  "auto_certified": 1067,
+  "next_untested": "snes:/userdata/roms/snes/Magical Pop'n.zip",
+  "attempted_new": 1218,
+  "auto_certified": 1074,
   "manual_control_certified": 0,
   "guest_ready": 0,
   "launches_blocked_by": [],
@@ -29928,6 +29928,1569 @@
         "status": "NOT_REQUIRED_NO_WRITE"
       },
       "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/blazstar.zip",
+      "name": "Blazing Star",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/bstars.zip",
+      "name": "Baseball Stars Professional",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/bstars2.zip",
+      "name": "Baseball Stars 2",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/burningf.zip",
+      "name": "Burning Fight",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/crsword.zip",
+      "name": "Crossed Swords",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/cyberlip.zip",
+      "name": "Cyber-Lip",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/doubledr.zip",
+      "name": "Double Dragon",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/eightman.zip",
+      "name": "Eight Man",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/fatfursp.zip",
+      "name": "Fatal Fury Special",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/fatfury1.zip",
+      "name": "Fatal Fury : King of Fighters",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/fatfury2.zip",
+      "name": "Fatal Fury 2",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/fatfury3.zip",
+      "name": "Fatal Fury 3: Road to the Final Victory",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/galaxyfg.zip",
+      "name": "Galaxy Fight: Universal Warriors",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/garou.zip",
+      "name": "Garou: Mark of the Wolves",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/gowcaizr.zip",
+      "name": "Voltage Fighter Gowcaizer",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/joyjoy.zip",
+      "name": "Puzzled",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/kabukikl.zip",
+      "name": "Far East of Eden: Kabuki Klash",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/karnovr.zip",
+      "name": "Karnov's Revenge",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/kizuna.zip",
+      "name": "Kizuna Encounter : Super Tag Battle",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/kof2000.zip",
+      "name": "The King of Fighters 2000",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/kof2001.zip",
+      "name": "The King of Fighters 2001",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/kof2002.zip",
+      "name": "The King of Fighters 2002",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/kof2003.zip",
+      "name": "The King of Fighters 2003",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/kof94.zip",
+      "name": "The King of Fighters '94",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/kof95.zip",
+      "name": "The King of Fighters '95",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/kof96.zip",
+      "name": "The King of Fighters '96",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/kof97.zip",
+      "name": "The King of Fighters '97",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/kof98.zip",
+      "name": "The King of Fighters '98 : The Slugfest",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/kof99.zip",
+      "name": "The King of Fighters '99 : Millennium Battle",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/kotm2.zip",
+      "name": "King of the Monsters 2 : The Next Thing",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/lastblad.zip",
+      "name": "The Last Blade",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/lastbld2.zip",
+      "name": "The Last Blade 2",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/lresort.zip",
+      "name": "Last Resort",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/magdrop3.zip",
+      "name": "Magical Drop III",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/maglord.zip",
+      "name": "Magician Lord",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/marukodq.zip",
+      "name": "Chibi Marukochan Deluxe Quiz",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/matrim.zip",
+      "name": "Matrimelee",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/mslug3.zip",
+      "name": "Metal Slug 3",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/mslug4.zip",
+      "name": "Metal Slug 4",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/mslug5.zip",
+      "name": "Metal Slug 5",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/mslugx.zip",
+      "name": "Metal Slug X : Super Vehicle-001",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/mutnat.zip",
+      "name": "Mutation Nation",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/nam1975.zip",
+      "name": "NAM-1975",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/ncombat.zip",
+      "name": "Ninja Combat",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/ncommand.zip",
+      "name": "Ninja Commando",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/neocup98.zip",
+      "name": "Neo Geo Cup '98 : The Road to the Victory",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/ninjamas.zip",
+      "name": "Ninja Master's: Haō Ninpō Chō",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/overtop.zip",
+      "name": "Over Top",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/pulstar.zip",
+      "name": "Pulstar",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/quizkof.zip",
+      "name": "Quiz King of Fighters",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/ragnagrd.zip",
+      "name": "Ragnagard",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/rbff1.zip",
+      "name": "Real Bout Fatal Fury",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/rbff1a.zip",
+      "name": "Real Bout Fatal Fury",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/rbff2.zip",
+      "name": "Real Bout Fatal Fury 2 : The Newcomers",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/rbffspec.zip",
+      "name": "Real Bout Fatal Fury Special",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/ridhero.zip",
+      "name": "Riding Hero",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/roboarmy.zip",
+      "name": "Robo Army",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/samsh5sp.zip",
+      "name": "Samurai Shodown V Special",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/samsho.zip",
+      "name": "Samurai Shodown",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/samsho2.zip",
+      "name": "Samurai Shodown II",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/samsho3.zip",
+      "name": "Samurai Shodown III",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/samsho4.zip",
+      "name": "samsho4",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/samsho5.zip",
+      "name": "Samurai Shodown V",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/savagere.zip",
+      "name": "Savage Reign",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/sengoku2.zip",
+      "name": "Sengoku 2",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/sengoku3.zip",
+      "name": "Sengoku 3",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/shocktr2.zip",
+      "name": "Shock Troopers : 2nd Squad",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/shocktro.zip",
+      "name": "Shock Troopers",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/socbrawl.zip",
+      "name": "Soccer Brawl",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/sonicwi2.zip",
+      "name": "Aero Fighters 2",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/sonicwi3.zip",
+      "name": "Aero Fighters 3",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/spinmast.zip",
+      "name": "Spin Master",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/ssideki.zip",
+      "name": "Super Sidekicks",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/ssideki2.zip",
+      "name": "Super Sidekicks 2 : The World Championship",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/ssideki3.zip",
+      "name": "Super Sidekicks 3 : The Next Glory",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/ssideki4.zip",
+      "name": "The Ultimate 11: SNK Football Championship",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/stakwin.zip",
+      "name": "Stakes Winner",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/strhoop.zip",
+      "name": "Street Hoop",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/svc.zip",
+      "name": "SNK vs. Capcom : SVC Chaos",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/tophuntr.zip",
+      "name": "Top Hunter: Roddy & Cathy",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/tpgolf.zip",
+      "name": "Top Player's Golf",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/turfmast.zip",
+      "name": "Neo Turf Masters",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/twinspri.zip",
+      "name": "Twinkle Star Sprites",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/viewpoin.zip",
+      "name": "Viewpoint",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/wakuwak7.zip",
+      "name": "Waku Waku 7",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/wh1.zip",
+      "name": "World Heroes",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/wh2.zip",
+      "name": "World Heroes 2",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/whp.zip",
+      "name": "World Heroes Perfect",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/wjammers.zip",
+      "name": "Windjammers",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/lasthope.zip",
+      "name": "Last Hope",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/mahretsu.zip",
+      "name": "Mahjong Kyo Retsuden",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/quizdai2.zip",
+      "name": "quizdai2",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "FBNEO_DAT_CONTENT_MISMATCH",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "neogeo",
+      "rom": "/userdata/roms/neogeo/neogeo.zip",
+      "name": "neogeo",
+      "adapter": "FBNEO",
+      "result": "STATIC_FAIL",
+      "failure_class": "ES_GAME_PATH_NOT_UNIQUE_OR_NOT_LOADED",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "snes",
+      "rom": "/userdata/roms/snes/Captain Tsubasa III - Koutei no Chousen.zip",
+      "name": "Captain Tsubasa 3 - Koutei No Chousen",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T121114_d479940e0c",
+      "stable_seconds": 16.213,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T121114_d479940e0c",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T12:11:36.668-03:00"
+    },
+    {
+      "system": "snes",
+      "rom": "/userdata/roms/snes/Fatal Fury 2.zip",
+      "name": "Fatal Fury 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T121137_3c4fae5398",
+      "stable_seconds": 16.212,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T121137_3c4fae5398",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T12:12:00.524-03:00"
+    },
+    {
+      "system": "snes",
+      "rom": "/userdata/roms/snes/Ultimate Mortal Kombat 3 (USA).zip",
+      "name": "Ultimate Mortal Kombat 3",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T121201_442ec48a0d",
+      "stable_seconds": 16.211,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T121201_442ec48a0d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T12:12:24.071-03:00"
+    },
+    {
+      "system": "snes",
+      "rom": "/userdata/roms/snes/Zombies Ate My Neighbors (USA).zip",
+      "name": "Zombies Ate My Neighbors",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T121225_25496c9d82",
+      "stable_seconds": 16.205,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T121225_25496c9d82",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T12:12:47.934-03:00"
+    },
+    {
+      "system": "snes",
+      "rom": "/userdata/roms/snes/Boogerman - A Pick and Flick Adventure (USA).zip",
+      "name": "Boogerman: A Pick and Flick Adventure",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T121249_4bb6bddd80",
+      "stable_seconds": 16.203,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T121249_4bb6bddd80",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T12:13:11.688-03:00"
+    },
+    {
+      "system": "snes",
+      "rom": "/userdata/roms/snes/California Games II (USA).zip",
+      "name": "California Games II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T121312_09f7f8f4ae",
+      "stable_seconds": 16.188,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T121312_09f7f8f4ae",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T12:13:35.391-03:00"
+    },
+    {
+      "system": "snes",
+      "rom": "/userdata/roms/snes/FIFA Soccer 97.zip",
+      "name": "FIFA 97",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T121336_133caaba54",
+      "stable_seconds": 16.227,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T121336_133caaba54",
+        "paths": 7
+      },
+      "finished_at": "2026-11-17T12:13:59.271-03:00"
     }
   ],
   "status": "COMPLETE",
@@ -29962,9 +31525,9 @@
   "current_test": null,
   "next_game": null,
   "counts": {
-    "AUTO_PASS": 1067,
+    "AUTO_PASS": 1074,
     "GAME_FAIL": 142,
-    "STATIC_FAIL": 101,
+    "STATIC_FAIL": 194,
     "FLAKY": 0,
     "ADAPTER_NOT_READY": 0,
     "ENGINE_FAIL": 2,
@@ -29985,21 +31548,21 @@
     "status": "PILOT_PASS_WITH_ADAPTER_FIX"
   },
   "latest_batch": {
-    "name": "priority_batch_14",
+    "name": "priority_batch_15",
     "considered": 100,
-    "launched": 43,
-    "auto_pass": 43,
+    "launched": 7,
+    "auto_pass": 7,
     "game_fail": 0,
-    "static_fail": 57,
+    "static_fail": 93,
     "flaky": 0,
-    "restore_verified": "43/43",
+    "restore_verified": "7/7",
     "restore_failures": 0,
     "engine_failures_unresolved": 0,
-    "started_at": "2026-11-17T11:48:17.744-03:00",
-    "finished_at": "2026-11-17T12:08:54.625-03:00",
-    "first_game": "/userdata/roms/fbneo/gijoe.zip",
-    "last_game": "/userdata/roms/neogeo/b2b.zip",
-    "next_game": "neogeo:/userdata/roms/neogeo/blazstar.zip"
+    "started_at": "2026-11-17T12:09:58.770-03:00",
+    "finished_at": "2026-11-17T12:14:00.119-03:00",
+    "first_game": "/userdata/roms/neogeo/blazstar.zip",
+    "last_game": "/userdata/roms/snes/FIFA Soccer 97.zip",
+    "next_game": "snes:/userdata/roms/snes/Magical Pop'n.zip"
   },
   "latest_engine_issue": {
     "cause": "update_csv assumed identity was a dict for STATIC_FAIL (identity=null)",
@@ -30019,19 +31582,19 @@
       "resolved_at": "2026-11-15T09:39:16-03:00"
     }
   ],
-  "launch_transactions": 1211,
+  "launch_transactions": 1218,
   "transaction_attempts": 509,
   "retry_transactions": 2,
-  "unique_games_processed": 1310,
-  "result_records": 1312,
-  "static_preflight_results": 101,
+  "unique_games_processed": 1410,
+  "result_records": 1412,
+  "static_preflight_results": 194,
   "engine_fail_total_historical": 2,
   "engine_fail_active": 0,
   "game_fail": 142,
-  "static_fail": 101,
+  "static_fail": 194,
   "flaky": 0,
-  "needs_repair": 243,
+  "needs_repair": 336,
   "control_certified": 0,
-  "restores_verified": 1211,
+  "restores_verified": 1218,
   "restore_failures": 0
 }
