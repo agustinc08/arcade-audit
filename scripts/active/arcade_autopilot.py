@@ -601,6 +601,141 @@ def get_cert_job_status():
         return {'status': 'UNKNOWN', 'detail': out[-200:]}
 
 
+def _batch_index(value):
+    match = re.search(r'(\d+)$', str(value or ''))
+    return int(match.group(1)) if match else None
+
+
+def _parse_time(value):
+    try:
+        return dt.datetime.fromisoformat(str(value).replace('Z', '+00:00')).astimezone(dt.timezone.utc)
+    except (TypeError, ValueError):
+        return None
+
+
+def summary_matches_checkpoint(cp, path=None):
+    path = Path(path or (AUDIT / 'FULL_GAME_CERTIFICATION_SUMMARY.md'))
+    try:
+        summary = path.read_text(encoding='utf-8')
+    except OSError:
+        return False
+    expected = {
+        'AUTO_CERTIFIED': cp.get('auto_certified'),
+        'GAME_FAIL': cp.get('game_fail'),
+        'STATIC_FAIL': cp.get('static_fail'),
+        'NEEDS_REPAIR': cp.get('needs_repair'),
+        'ENGINE_FAIL_ACTIVE': cp.get('engine_fail_active'),
+        'NEXT_GAME': cp.get('next_untested') or 'NONE',
+    }
+    for key, value in expected.items():
+        match = re.search(r'^\s*[-*]?\s*' + re.escape(key) + r'\s*:\s*(.*?)\s*$', summary, re.M)
+        if not match or match.group(1).strip('`') != str(value):
+            return False
+    return True
+
+
+def previous_job_consumption_check(task_id, job, cp, task_obj, state, *, reconciled=None,
+                                   summary_ok=None, publish_state=None, archive_path=None):
+    """Validate historical completion before allowing the next batch through the job guard."""
+    latest = cp.get('latest_batch') or {}
+    batch_name = latest.get('name')
+    batch_n = _batch_index(batch_name)
+    current_n = _batch_index(task_id)
+    if not batch_n or current_n != batch_n + 1:
+        return False, 'NOT_IMMEDIATELY_PREVIOUS_BATCH'
+    if (job.get('status') not in ('COMPLETE', 'CONSUMED') or
+            cp.get('status') != 'COMPLETE' or cp.get('blocked_reason') or
+            cp.get('batch_in_progress') or int(cp.get('engine_fail_active', 0))):
+        return False, 'CHECKPOINT_NOT_CLEAN_COMPLETE'
+    if (cp.get('next_untested') not in (None, 'NONE') and
+            not re.fullmatch(r'[a-z0-9_-]+:/userdata/roms/[^\s]+', str(cp.get('next_untested')))):
+        return False, 'NEXT_GAME_INVALID'
+    job_id = job.get('job_id')
+    if not isinstance(job_id, str) or not re.fullmatch(r'\d{8}T\d{6}_[a-f0-9]{8}', job_id):
+        return False, 'JOB_ID_INVALID'
+    meta = read_json(AUDIT / 'jobs' / 'certifier_job.json', {}) or {}
+    if (meta.get('job_id') != job_id or meta.get('status') not in ('COMPLETE', 'CONSUMED') or
+            meta.get('exit_code') != 0 or meta.get('checkpoint_status') != 'COMPLETE' or
+            not isinstance(meta.get('pid'), int) or meta.get('pid') <= 1 or
+            not isinstance(meta.get('worker_pid'), int) or meta.get('worker_pid') <= 1):
+        return False, 'JOB_METADATA_INCOMPATIBLE'
+    owner = meta.get('autopilot_owner')
+    if (not isinstance(owner, dict) or not owner.get('run_id') or
+            not isinstance(owner.get('pid'), int) or owner.get('pid') <= 1 or
+            not isinstance(owner.get('process_start_ticks'), int) or owner.get('process_start_ticks') <= 0):
+        return False, 'JOB_OWNER_IDENTITY_INVALID'
+    state_job = (state or {}).get('certifier_job') or {}
+    for key in ('job_id', 'pid', 'worker_pid'):
+        if state_job.get(key) != job.get(key):
+            return False, 'JOB_STATE_IDENTITY_MISMATCH'
+    if job.get('NEXT_GAME') not in (None, cp.get('next_untested')):
+        return False, 'JOB_CURSOR_MISMATCH'
+    if meta.get('batch_name') and meta.get('batch_name') != batch_name:
+        return False, 'JOB_BATCH_MISMATCH'
+    if not meta.get('batch_name'):
+        started, finished = _parse_time(meta.get('started_at')), _parse_time(meta.get('finished_at'))
+        batch_started, batch_finished = _parse_time(latest.get('started_at')), _parse_time(latest.get('finished_at'))
+        if not all((started, finished, batch_started, batch_finished)) or started < batch_started or \
+                finished < batch_finished or (finished - batch_finished).total_seconds() > 600:
+            return False, 'JOB_BATCH_IDENTITY_UNPROVEN'
+    cert_task = next((x for x in task_obj.get('tasks', []) if x.get('id') == f'CERT-BATCH-{batch_n:04d}'), None)
+    publish_task = next((x for x in task_obj.get('tasks', [])
+                         if x.get('id') == f'GITHUB-PUBLISH-CERT-BATCH-{batch_n:04d}'), None)
+    if not cert_task or cert_task.get('status') != 'COMPLETE':
+        return False, 'CERTIFICATION_TASK_NOT_COMPLETE'
+    if not publish_task or publish_task.get('status') != 'COMPLETE':
+        return False, 'PUBLISH_TASK_NOT_COMPLETE'
+    if reconciled is None:
+        reconciled, _ = report_reconciled()
+    if not reconciled:
+        return False, 'SUMMARY_NOT_RECONCILED'
+    if summary_ok is None:
+        summary_ok = summary_matches_checkpoint(cp)
+    if not summary_ok:
+        return False, 'SUMMARY_NOT_RECONCILED'
+    pub = publish_state if publish_state is not None else (read_json(AUDIT / 'github_publish_state.json', {}) or {})
+    remote_sha = pub.get('last_known_remote_sha')
+    if (not remote_sha or remote_sha != pub.get('last_successful_publish_sha') or
+            remote_sha != (state or {}).get('last_github_sha')):
+        return False, 'PUBLISH_SHA_UNVERIFIED'
+    if job.get('status') == 'CONSUMED':
+        expected_archive = Path(archive_path or (AUDIT / 'jobs' / 'history' / f'{job_id}.json'))
+        archived = read_json(expected_archive, {}) or {}
+        if (meta.get('consumed_by_task') != task_id or meta.get('archive_path') != str(expected_archive) or
+                archived.get('job_id') != job_id or archived.get('status') != 'COMPLETE'):
+            return False, 'CONSUMED_JOB_ARCHIVE_INVALID'
+    return True, 'PREVIOUS_JOB_COMPLETE_AND_CONSUMED'
+
+
+def consume_previous_job(task_id, job, cp, task_obj, state):
+    valid, reason = previous_job_consumption_check(task_id, job, cp, task_obj, state)
+    if not valid:
+        return False, reason
+    if job.get('status') == 'CONSUMED':
+        return True, reason
+    meta_path = AUDIT / 'jobs' / 'certifier_job.json'
+    meta = read_json(meta_path, {}) or {}
+    history = AUDIT / 'jobs' / 'history'
+    history.mkdir(parents=True, exist_ok=True, mode=0o700)
+    archive = history / f"{meta['job_id']}.json"
+    if archive.exists():
+        existing = read_json(archive, {}) or {}
+        if existing.get('job_id') != meta.get('job_id') or existing.get('status') != 'COMPLETE':
+            return False, 'CONSUMED_JOB_ARCHIVE_CONFLICT'
+    else:
+        archived = dict(meta)
+        archived['archived_at'] = now()
+        archived['archived_as'] = 'PREVIOUS_JOB_COMPLETE_AND_CONSUMED'
+        atomic_json(archive, archived)
+    meta.update({'status': 'CONSUMED', 'consumed_at': now(), 'consumed_by_task': task_id,
+                 'archive_path': str(archive)})
+    atomic_json(meta_path, meta)
+    append_event('CERTIFIER_JOB_CONSUMED', task_id=task_id, job_id=meta['job_id'],
+                 batch=meta.get('batch_name') or (cp.get('latest_batch') or {}).get('name'),
+                 archive_path=str(archive))
+    return True, 'PREVIOUS_JOB_COMPLETE_AND_CONSUMED'
+
+
 def update_task(obj, task_id, **changes):
     for item in obj['tasks']:
         if item['id'] == task_id:
@@ -777,23 +912,45 @@ def execute_one(item, task_obj, state):
                 return False
             state['certifier_job'] = existing_job
             append_event('CERTIFIER_ADOPTED', task_id=tid, job_id=existing_job.get('job_id'))
-        elif existing_job.get('status') == 'COMPLETE' and (read_json(CERT_STATE, {}) or {}).get('status') == 'COMPLETE':
+        elif existing_job.get('status') in ('COMPLETE', 'CONSUMED'):
             cp = read_json(CERT_STATE, {}) or {}
             latest = cp.get('latest_batch') or {}
             expected = re.search(r'(\d+)$', latest.get('name', ''))
             complete_id = f'CERT-BATCH-{int(expected.group(1)):04d}' if expected else None
-            if (complete_id == tid and cp.get('status') == 'COMPLETE' and
+            if (existing_job.get('status') == 'COMPLETE' and complete_id == tid and cp.get('status') == 'COMPLETE' and
                     not cp.get('batch_in_progress') and not cp.get('blocked_reason') and
                     not int(cp.get('engine_fail_active', 0))):
                 append_event('CERTIFIER_COMPLETE_RECOVERED', task_id=tid,
                              job_id=existing_job.get('job_id'))
                 return finish_batch(task_obj, tid, state)
-            update_task(task_obj, tid, status='PAUSED_SAFETY', last_error='COMPLETE_JOB_CHECKPOINT_MISMATCH')
-            save_tasks(task_obj)
-            state.update({'status': 'PAUSED_SAFETY', 'pause_reason': 'COMPLETE_JOB_CHECKPOINT_MISMATCH'})
-            atomic_json(STATE, state)
-            append_event('SAFETY_PAUSE', task_id=tid, reason='COMPLETE_JOB_CHECKPOINT_MISMATCH')
-            return False
+            valid, consumption_reason = previous_job_consumption_check(tid, existing_job, cp,
+                                                                        task_obj, state)
+            if not valid:
+                update_task(task_obj, tid, status='PAUSED_SAFETY',
+                            last_error='COMPLETE_JOB_CHECKPOINT_MISMATCH',
+                            next_action='COMPLETE_JOB_CHECKPOINT_MISMATCH; no launch until evidence is reconciled.')
+                save_tasks(task_obj)
+                state.update({'status': 'PAUSED_SAFETY', 'pause_reason': 'COMPLETE_JOB_CHECKPOINT_MISMATCH',
+                              'next_action': 'Job COMPLETE inesperado o sin reconciliación; no se lanzó ningún juego.'})
+                atomic_json(STATE, state)
+                append_event('SAFETY_PAUSE', task_id=tid, reason='COMPLETE_JOB_CHECKPOINT_MISMATCH',
+                             detail=consumption_reason)
+                return False
+            if existing_job.get('status') == 'COMPLETE':
+                consumed, consumption_reason = consume_previous_job(tid, existing_job, cp, task_obj, state)
+                if not consumed:
+                    update_task(task_obj, tid, status='PAUSED_SAFETY',
+                                last_error='COMPLETE_JOB_CHECKPOINT_MISMATCH')
+                    save_tasks(task_obj)
+                    state.update({'status': 'PAUSED_SAFETY',
+                                  'pause_reason': 'COMPLETE_JOB_CHECKPOINT_MISMATCH',
+                                  'next_action': 'No se pudo archivar el job anterior; no se lanzó ningún juego.'})
+                    atomic_json(STATE, state)
+                    append_event('SAFETY_PAUSE', task_id=tid,
+                                 reason='COMPLETE_JOB_CHECKPOINT_MISMATCH', detail=consumption_reason)
+                    return False
+            append_event('PREVIOUS_JOB_COMPLETE_AND_CONSUMED', task_id=tid,
+                         job_id=existing_job.get('job_id'))
         else:
             ok, reason, checks = health_check(include_checkpoint=True, allow_self=True)
             state['last_safety_check'] = checks
@@ -1107,6 +1264,13 @@ def start(batch_size=DEFAULT_BATCH_SIZE, max_batches=DEFAULT_MAX_BATCHES, dry_ru
         if not dry_run:
             save_tasks(obj)
     next_item = select_task(obj['tasks'])
+    previous_job_reason = None
+    if (job_status.get('status') in ('COMPLETE', 'CONSUMED') and next_item and
+            next_item.get('type') == 'CERTIFICATION_BATCH'):
+        previous_job_ok, previous_job_reason = previous_job_consumption_check(
+            next_item['id'], job_status, cp, obj, state)
+        if not previous_job_ok:
+            ok, reason, cp_ok = False, 'COMPLETE_JOB_CHECKPOINT_MISMATCH:' + previous_job_reason, False
     if dry_run:
         print('ARCADE AUTOPILOT DRY RUN')
         print('STATUS: WOULD_ADOPT' if adopt_task_id and ok and cp_ok else 'STATUS: WOULD_START' if ok and cp_ok else 'STATUS: PAUSED_SAFETY')
@@ -1116,6 +1280,8 @@ def start(batch_size=DEFAULT_BATCH_SIZE, max_batches=DEFAULT_MAX_BATCHES, dry_ru
         print('STARTING_GAME: ' + str(next_game or 'BLOCKED/UNKNOWN'))
         print('HEALTH: ' + ('PASS' if ok else 'FAIL:' + str(reason)))
         print('CHECKPOINT: ' + ('PASS' if cp_ok else 'FAIL:' + str(cp.get('status')) + ':' + str(cp.get('blocked_reason'))))
+        if previous_job_reason:
+            print('PREVIOUS_JOB: ' + previous_job_reason)
         return 0 if ok and cp_ok else 3
     if not ok or not cp_ok:
         reason = reason if not ok else 'CHECKPOINT_SAFETY_BLOCK:' + str(cp.get('status')) + ':' + str(cp.get('blocked_reason'))
@@ -1228,7 +1394,10 @@ def status():
     safety_ok = ((cp.get('status') == 'COMPLETE' and not cp.get('blocked_reason') and
                   not cp.get('batch_in_progress')) or
                  (cp.get('status') == 'STOPPED_SAFE' and not cp.get('blocked_reason') and
-                  isinstance(cp.get('batch_in_progress'), dict))) and not int(cp.get('engine_fail_active', 0))
+                  isinstance(cp.get('batch_in_progress'), dict)) or
+                 (cp.get('status') == 'RUNNING' and not cp.get('blocked_reason') and
+                  isinstance(cp.get('batch_in_progress'), dict) and job.get('status') == 'RUNNING')) and \
+                not int(cp.get('engine_fail_active', 0))
     task_label = 'next_safe_task' if safety_ok else 'next_task_candidate'
     result = {
         'status': current_status, 'pid': pid, 'session_id': rec.get('sid') if rec else None,
@@ -1244,7 +1413,10 @@ def status():
         'CODEX_TASKS': len(codex), 'MANUAL_TASKS': len(manual),
         'certifier_status': job.get('status'), 'next_game': cp.get('next_untested'),
         'github_sha': gh.get('last_known_remote_sha'), 'pause_reason': state.get('pause_reason'),
-        'next_action': state.get('next_action'), 'last_batch': latest.get('name'),
+        'next_action': ('Certifier activo; continuar monitorizando el checkpoint y RESTORE_VERIFIED.'
+                        if current_status == 'RUNNING' and job.get('status') == 'RUNNING' and safety_ok else
+                        state.get('next_action') or ('Sin acción pendiente.' if safety_ok else 'Resolver safety blocker.')),
+        'last_batch': latest.get('name'),
         'arcade_safety': 'PASS' if safety_ok else 'FAIL:' + str(cp.get('status')) + ':' + str(cp.get('blocked_reason')),
     }
     print('ARCADE AUTOPILOT\n================')

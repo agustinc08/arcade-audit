@@ -39,6 +39,28 @@ Tras desconexión, consultar `status`. Si RUNNING no iniciar otra instancia.
 Un certifier se adopta sólo si PID/command line, metadata y checkpoint coinciden.
 Job COMPLETE se reconcilia antes de reports/publicación. Estado dudoso pausa.
 
+### Consumo seguro de job COMPLETE anterior
+
+Al entrar al batch inmediatamente siguiente, un job `COMPLETE` no se ignora
+por su estado solamente. Se consume sólo si su identidad (`job_id`, PID,
+worker PID, owner `run_id`/PID/start ticks) es coherente; `latest_batch` es el
+anterior inmediato; la task CERT y la task GITHUB-PUBLISH de ese batch están
+`COMPLETE`; checkpoint, CSV y summary reconcilian; no hay batch parcial,
+`blocked_reason` ni `engine_fail_active`; el cursor es válido; y el SHA remoto
+publicado coincide con el estado de publicación.
+
+La metadata original queda archivada en `jobs/history/<job_id>.json`. La
+metadata corriente pasa a `CONSUMED` con `consumed_at`, `consumed_by_task` y
+`archive_path`. Si falta evidencia, el estado queda `PAUSED_SAFETY` con
+`COMPLETE_JOB_CHECKPOINT_MISMATCH` y no se inicia el runner. Un job `RUNNING`
+sigue usando los guards existentes de PID/command line/checkpoint y no crea un
+segundo certifier. Un reintento después del consumo exige validar de nuevo el
+archivo histórico y la reconciliación.
+
+Durante un batch activo, `STATUS: RUNNING` y `ARCADE_SAFETY: PASS` son campos
+separados: `RUNNING` no representa un fallo de safety. `NEXT_ACTION` se deriva
+del certifier vivo cuando éste está procesando.
+
 El arranque de un job bajo Autopilot valida primero el `run_id`, PID y
 `process_start_ticks` del worker. El detached runner conserva esa vinculación en
 `certifier_job.json`; el certifier la vuelve a verificar junto con su PID y el

@@ -27,11 +27,20 @@ Si el checkpoint no está limpio o un proceso ya existe, start se niega; para du
 ## Archivos y recuperación
 
 - `/userdata/system/state/arcade_audit/jobs/certifier_job.json`: metadata, estado, PID, command, exit code y fechas; no contiene secretos.
+- `/userdata/system/state/arcade_audit/jobs/history/<job_id>.json`: copia histórica completa creada al consumir un job del batch anterior ya reconciliado y publicado.
 - `/userdata/system/state/arcade_audit/jobs/certifier_job.pid`: PID de certifier/supervisor activo.
 - `/userdata/system/state/arcade_audit/jobs/certifier_job.log`: enlace al log del job actual.
 - `/userdata/system/state/arcade_audit/jobs/logs/<job_id>.log`: log del job; los logs completos previos se comprimen a `.log.gz` al iniciar el siguiente job. Los logs de jobs fallidos se conservan sin comprimir ni borrar.
 
 Después de reconectar: ejecutar `status`. Si `RUNNING`, no iniciar otro. Si `COMPLETE`, reconciliar CSV/checkpoint/summary/current state y después publicar desde Codex. Si `FAILED`, conservar el log, revisar `exit_code`, checkpoint, transacción y restore antes de cualquier reanudación. El helper nunca publica a GitHub ni contiene tokens.
+
+Después de publicar un batch, Autopilot puede marcar su job `CONSUMED` al preparar
+el batch inmediatamente siguiente, pero sólo cuando checkpoint, task CERT,
+task de publicación, summary, CSV y SHA remoto estén reconciliados. El estado
+`CONSUMED` conserva la metadata activa con `consumed_at`, `consumed_by_task` y
+`archive_path`; el JSON original permanece en `jobs/history/`. La comprobación
+de `RUNNING` y la guarda de certifier activo ocurren antes, así que consumir un
+job anterior no permite abrir dos certifiers.
 
 ## Límite actual de validación
 

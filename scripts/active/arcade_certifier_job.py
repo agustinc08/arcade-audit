@@ -272,7 +272,8 @@ def worker(job_id, batch_size, starting_game, log_path):
     status = 'COMPLETE' if safe_stopped or (code == 0 and cp.get('status') == 'COMPLETE') else 'FAILED'
     meta.update({'exit_code': code, 'finished_at': now(), 'status': status,
                  'completion_reason': 'SAFE_STOP_AT_GAME_BOUNDARY' if safe_stopped else None,
-                 'checkpoint_status': cp.get('status'), 'next_game': cp.get('next_untested')})
+                 'checkpoint_status': cp.get('status'), 'next_game': cp.get('next_untested'),
+                 'batch_name': (cp.get('latest_batch') or {}).get('name') if status == 'COMPLETE' else None})
     atomic_json(META, meta)
     return code
 
@@ -288,7 +289,7 @@ def status():
     state = meta.get('status')
     if running:
         state = 'RUNNING'
-    elif meta.get('finished_at') and state in ('COMPLETE', 'FAILED'):
+    elif meta.get('finished_at') and state in ('COMPLETE', 'FAILED', 'CONSUMED'):
         state = meta['status']
     else:
         cp = read_json(AUDIT / 'full_game_certification_checkpoint.json', {})
@@ -308,7 +309,12 @@ def status():
         'NEXT_GAME': cp.get('next_untested'), 'job_id': meta.get('job_id'),
         'exit_code': meta.get('exit_code'), 'session_id': info.get('sid') if info else None,
         'process_group': info.get('pgid') if info else None,
-        'log': meta.get('log_path'),
+        'log': meta.get('log_path'), 'batch_name': meta.get('batch_name'),
+        'starting_game': meta.get('starting_game'), 'started_at': meta.get('started_at'),
+        'finished_at': meta.get('finished_at'), 'autopilot_owner': meta.get('autopilot_owner'),
+        'checkpoint_status': meta.get('checkpoint_status'),
+        'consumed_at': meta.get('consumed_at'), 'consumed_by_task': meta.get('consumed_by_task'),
+        'archive_path': meta.get('archive_path'),
     }
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0
