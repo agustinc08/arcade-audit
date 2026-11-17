@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-17T12:33:21+00:00",
+  "updated_at": "2026-11-17T14:08:26+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_11: 90 considerados, 88 lanzados, 87 AUTO_PASS, 1 GAME_FAIL, 2 STATIC_FAIL; restores 88/88; AUTO_CERTIFIED=985; NEXT_GAME=mame:/userdata/roms/mame/starcas.zip",
+      "summary": "priority_batch_12: 100 considerados, 100 lanzados, 28 AUTO_PASS, 72 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=1013; NEXT_GAME=mame:/userdata/roms/mame/suplup.zip",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-17T12:33:21+00:00"
+      "updated_at": "2026-11-17T14:08:26+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 985,
-    "attempted_new": 1008,
+    "auto_certified": 1013,
+    "attempted_new": 1108,
     "static_fail": 4,
-    "game_fail": 21,
+    "game_fail": 93,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
-    "needs_repair": 25,
-    "total_restores": 1008,
+    "needs_repair": 97,
+    "total_restores": 1108,
     "restore_failures": 0,
-    "next_game": "mame:/userdata/roms/mame/starcas.zip",
+    "next_game": "mame:/userdata/roms/mame/suplup.zip",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 1010,
-    "result_records": 1012,
-    "launch_transactions": 1008,
+    "unique_games_processed": 1110,
+    "result_records": 1112,
+    "launch_transactions": 1108,
     "retry_transactions": 2
   }
 }

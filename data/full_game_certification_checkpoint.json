@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-17T12:33:21+00:00",
+  "updated_at": "2026-11-17T14:08:26+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
-  "next_untested": "mame:/userdata/roms/mame/starcas.zip",
-  "attempted_new": 1008,
-  "auto_certified": 985,
+  "next_untested": "mame:/userdata/roms/mame/suplup.zip",
+  "attempted_new": 1108,
+  "auto_certified": 1013,
   "manual_control_certified": 0,
   "guest_ready": 0,
   "launches_blocked_by": [],
@@ -24294,11 +24294,2013 @@
         "paths": 10
       },
       "finished_at": "2026-11-17T09:33:20.698-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/starcas.zip",
+      "name": "Star Castle",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T100948_761e2e7704",
+      "stable_seconds": 20.145,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T100948_761e2e7704",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:10:16.339-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/stargate.zip",
+      "name": "Stargate",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101017_2b96bf7000",
+      "stable_seconds": 20.118,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101017_2b96bf7000",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:10:44.978-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/startrek.zip",
+      "name": "Star Trek : Strategic Operations Simulator",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101046_5e0ae1e99c",
+      "stable_seconds": 20.183,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101046_5e0ae1e99c",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:11:13.655-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/starwars.zip",
+      "name": "Star Wars",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101114_b96dd35861",
+      "stable_seconds": 20.187,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101114_b96dd35861",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:11:42.715-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/stocker.zip",
+      "name": "Stocker",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101143_0d54186ef1",
+      "stable_seconds": 20.115,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101143_0d54186ef1",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:12:11.808-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/strvmstr.zip",
+      "name": "Super Trivia Master",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101213_84e0fe96e5",
+      "stable_seconds": 20.12,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101213_84e0fe96e5",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:12:40.728-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/subroc3d.zip",
+      "name": "Subroc-3d",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101241_1fb8254de9",
+      "stable_seconds": 20.1,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101241_1fb8254de9",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:13:09.608-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/suzuk8h2.zip",
+      "name": "Suzuka 8 Hours 2",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101310_b3f4cfb66e",
+      "stable_seconds": 20.095,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101310_b3f4cfb66e",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:13:38.328-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/suzuka8h.zip",
+      "name": "Suzuka 8 Hours",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101339_b0860226dc",
+      "stable_seconds": 20.112,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101339_b0860226dc",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:14:07.118-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/tacscan.zip",
+      "name": "Tac/Scan",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101408_8a9aac6f97",
+      "stable_seconds": 20.177,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101408_8a9aac6f97",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:14:36.159-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/teetert.zip",
+      "name": "Teeter Torture",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101437_e88317c97e",
+      "stable_seconds": 20.13,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101437_e88317c97e",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:15:04.798-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/tempest.zip",
+      "name": "Tempest",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101505_fb317a4e88",
+      "stable_seconds": 20.169,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101505_fb317a4e88",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:15:33.459-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/usg32.zip",
+      "name": "Super Duper Casino",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101534_f3564133ef",
+      "stable_seconds": 20.095,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101534_f3564133ef",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:16:02.119-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/venture.zip",
+      "name": "Venture",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101603_24d8481f07",
+      "stable_seconds": 20.134,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101603_24d8481f07",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:16:30.692-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/vr.zip",
+      "name": "Virtua Racing",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101631_a26381116f",
+      "stable_seconds": 20.143,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101631_a26381116f",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:16:59.365-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/wecleman.zip",
+      "name": "Wec Le Mans 24",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101700_556c582a52",
+      "stable_seconds": 20.109,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101700_556c582a52",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:17:28.151-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/wizwarz.zip",
+      "name": "Wiz Warz",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101729_95d72e9861",
+      "stable_seconds": 20.12,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101729_95d72e9861",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:17:57.108-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/wotw.zip",
+      "name": "War Of The Worlds",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101758_3e94acc3f6",
+      "stable_seconds": 20.168,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101758_3e94acc3f6",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:18:25.761-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/zektor.zip",
+      "name": "Zektor",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101827_41430eb31a",
+      "stable_seconds": 20.177,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101827_41430eb31a",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:18:54.962-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/zwackery.zip",
+      "name": "Zwackery",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101856_022c94549f",
+      "stable_seconds": 20.104,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101856_022c94549f",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:19:23.925-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/deroon.zip",
+      "name": "Deroon Derodero",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T101925_b327e4e7d4",
+      "stable_seconds": 20.136,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101925_b327e4e7d4",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:19:52.385-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/fantzn2.zip",
+      "name": "Fantasy Zone II: The Tears of Opa-Opa",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "RUNTIME_HEALTH_OR_VISUAL_CHECK_FAILED",
+      "transaction_id": "20261117T101953_252ce4f06a",
+      "stable_seconds": 20.139,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T101953_252ce4f06a",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:20:21.212-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/kakumei2.zip",
+      "name": "Mahjong Kakumei 2 - Princess League",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "RUNTIME_HEALTH_OR_VISUAL_CHECK_FAILED",
+      "transaction_id": "20261117T102022_62d269b1df",
+      "stable_seconds": 20.141,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102022_62d269b1df",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:20:49.872-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/rabbit.zip",
+      "name": "Rabbit",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T102051_dd95747e34",
+      "stable_seconds": 20.159,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102051_dd95747e34",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:21:18.748-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/tkdensho.zip",
+      "name": "Toukidenshou - Angel Eyes",
+      "adapter": "MAME078PLUS",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T102119_3b6d4fa37b",
+      "stable_seconds": 20.105,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102119_3b6d4fa37b",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:21:47.605-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/blitz.zip",
+      "name": "Nfl Blitz",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T102148_50b605304f",
+      "stable_seconds": 0.007,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [],
+        "default_during": "UNKNOWN",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102148_50b605304f",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:22:05.538-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/blitz2k.zip",
+      "name": "Nfl Blitz 2000 Gold Edition",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T102206_7c56d8862e",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102206_7c56d8862e",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:22:48.005-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/blitz99.zip",
+      "name": "Nfl Blitz '99",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T102249_da795bf64f",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102249_da795bf64f",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:23:30.632-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/gauntdl.zip",
+      "name": "Gauntlet Dark Legacy",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T102331_de8cafe841",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102331_de8cafe841",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:24:13.175-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/gauntleg.zip",
+      "name": "Gauntlet Legends",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T102414_f7b56ac859",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102414_f7b56ac859",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:24:55.661-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/hyperath.zip",
+      "name": "Hyper Athlete",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T102456_f67c71773e",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102456_f67c71773e",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:25:38.141-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/kov2.zip",
+      "name": "Knights of Valour 2",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T102539_1f62af4649",
+      "stable_seconds": 0.008,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [],
+        "default_during": "UNKNOWN",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102539_1f62af4649",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:25:55.385-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/kov2p.zip",
+      "name": "Knights of Valour 2 Plus - Nine Dragons",
+      "adapter": "MAME_CURRENT",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T102556_dbe36c6c12",
+      "stable_seconds": 20.155,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102556_dbe36c6c12",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:26:23.695-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/nagano98.zip",
+      "name": "Nagano Winter Olympics '98",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T102624_fb71b63916",
+      "stable_seconds": 0.269,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102624_fb71b63916",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:26:40.388-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/neotris.zip",
+      "name": "NeoTRIS",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T102641_3dd7c0f709",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102641_3dd7c0f709",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:27:25.571-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/simpbowl.zip",
+      "name": "Simpsons Bowling",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T102730_8e37b59347",
+      "stable_seconds": 0.269,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102730_8e37b59347",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:27:48.418-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/theglad.zip",
+      "name": "The Gladiator / Road Of The Sword / Shen Jian",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T102749_ff8a3f99a5",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102749_ff8a3f99a5",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:28:30.942-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/wg3dh.zip",
+      "name": "Wayne Gretzky's 3d Hockey",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T102832_a4403493b2",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102832_a4403493b2",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:29:13.485-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/armwar.zip",
+      "name": "Armored Warriors",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T102914_4c3d07bac1",
+      "stable_seconds": 0.534,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102914_4c3d07bac1",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:29:31.448-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/pasha2.zip",
+      "name": "Pasha Pasha 2",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T102932_e89b2f12ea",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T102932_e89b2f12ea",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:30:14.082-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/salarymc.zip",
+      "name": "Salary Man Champ",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T103015_21bcaf7691",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T103015_21bcaf7691",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:30:56.598-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/aerofgts.zip",
+      "name": "Aero Fighters Special",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T103057_67b32ac81a",
+      "stable_seconds": 0.007,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [],
+        "default_during": "UNKNOWN",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T103057_67b32ac81a",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:31:13.515-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/ar_ldrb.zip",
+      "name": "Leader Board Golf",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T103114_830d16c419",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T103114_830d16c419",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:31:56.055-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/ar_sprg.zip",
+      "name": "Asteroids",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T103157_ff85f96f0c",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T103157_ff85f96f0c",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:32:38.634-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/bldyror2.zip",
+      "name": "Bloody Roar 2: Bringer of the New Age",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T103239_433200fba2",
+      "stable_seconds": 0.269,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T103239_433200fba2",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:32:55.521-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/cball.zip",
+      "name": "Cannonball",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T103256_0f4533c99d",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T103256_0f4533c99d",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:33:38.048-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/dacholer.zip",
+      "name": "Dacholer",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T103339_2fd3510915",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T103339_2fd3510915",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:34:20.638-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/darkhleg.zip",
+      "name": "Dark Horse Legend",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T103421_0a7f9bf0ab",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T103421_0a7f9bf0ab",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:35:02.942-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/ddux.zip",
+      "name": "Dynamite Dux",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T103504_f7dd3e097a",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T103504_f7dd3e097a",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:35:45.415-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/dsftkd.zip",
+      "name": "Dancing Stage Featuring True Kiss Destination",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T103546_35c39dfb73",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T103546_35c39dfb73",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:36:27.975-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/dynwar.zip",
+      "name": "Dynasty Wars",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T103629_32b8c613c4",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T103629_32b8c613c4",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:37:10.455-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/ertictac.zip",
+      "name": "Erotictac/tactic",
+      "adapter": "MAME_CURRENT",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T103711_c4123fb668",
+      "stable_seconds": 20.156,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T103711_c4123fb668",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:37:39.488-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/fishfren.zip",
+      "name": "Fishin' Frenzy",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T103740_2daf782d5c",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T103740_2daf782d5c",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:38:24.502-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/fiveside.zip",
+      "name": "Five A Side Soccer",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T103830_10eea27c3c",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T103830_10eea27c3c",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:39:13.808-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/flamegun.zip",
+      "name": "Flame Gunner",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T103915_45dd4648ea",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T103915_45dd4648ea",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:39:56.358-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/freezeat.zip",
+      "name": "Freeze",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T103957_337d6a68ed",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T103957_337d6a68ed",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:40:38.828-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/gekisou.zip",
+      "name": "Gekisou",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T104040_3f3f55480e",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T104040_3f3f55480e",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:41:21.352-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/ghlpanic.zip",
+      "name": "Ghoul Panic",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T104122_73873225c9",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T104122_73873225c9",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:42:03.825-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/glpracr3.zip",
+      "name": "Gallop Racer 3",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T104205_5f091a2691",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T104205_5f091a2691",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:42:46.415-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/gradius4.zip",
+      "name": "Gradius IV: Fukkatsu",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T104247_06c24ba9cc",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T104247_06c24ba9cc",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:43:28.968-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/gtrfrk2m.zip",
+      "name": "Guitar Freaks 2nd Mix Ver 1.01",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T104330_3e4ba55fb8",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T104330_3e4ba55fb8",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:44:11.552-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/gtrfrks.zip",
+      "name": "Guitar Freaks",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T104412_f226860fd7",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T104412_f226860fd7",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:44:53.978-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/hvnsgate.zip",
+      "name": "Heaven's Gate",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T104455_9af218454b",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T104455_9af218454b",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:45:36.552-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/invasnab.zip",
+      "name": "Invasion - The Abductors",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T104537_f390682203",
+      "stable_seconds": 0.268,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T104537_f390682203",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:45:54.601-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/jockeygp.zip",
+      "name": "Jockey Grand Prix",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T104555_18a27addb4",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T104555_18a27addb4",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:46:37.235-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/jojo.zip",
+      "name": "JoJo's Venture",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T104638_b67a1ba872",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T104638_b67a1ba872",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:47:19.855-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/jojoba.zip",
+      "name": "Jojo's Bizarre Adventure",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T104721_7e547ce538",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T104721_7e547ce538",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:48:02.475-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/kdynastg.zip",
+      "name": "King Of Dynast Gear",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T104803_7cf7c20111",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T104803_7cf7c20111",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:48:45.005-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/kinst2.zip",
+      "name": "Killer Instinct 2",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T104846_43b7c8b383",
+      "stable_seconds": 0.268,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T104846_43b7c8b383",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:49:02.588-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/kinstb.zip",
+      "name": "Killer Instinct",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T104903_f774f41cbe",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T104903_f774f41cbe",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:49:45.021-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/konam80s.zip",
+      "name": "Konami 80's AC Special",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T104951_dcc30d7bfe",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T104951_dcc30d7bfe",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:50:33.568-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/martmast.zip",
+      "name": "Martial Masters",
+      "adapter": "MAME_CURRENT",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T105034_ac8d82bc56",
+      "stable_seconds": 20.165,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105034_ac8d82bc56",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:51:02.698-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/mfjump.zip",
+      "name": "Monster Farm Jump",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T105103_889b015d02",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105103_889b015d02",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:51:45.168-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/misncrft.zip",
+      "name": "Mission Craft",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T105146_c4470d9fa3",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105146_c4470d9fa3",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:52:27.752-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/mk4.zip",
+      "name": "Mortal Kombat 4",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T105228_956fe6a9e8",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105228_956fe6a9e8",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:53:10.235-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/multigam.zip",
+      "name": "Multi Game",
+      "adapter": "MAME_CURRENT",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T105311_85a285d1fb",
+      "stable_seconds": 20.128,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105311_85a285d1fb",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:53:39.301-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/nbapbp.zip",
+      "name": "Nba Play By Play",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T105340_db9704cfb9",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105340_db9704cfb9",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:54:21.792-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/nratechu.zip",
+      "name": "Neratte Chu",
+      "adapter": "MAME_CURRENT",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261117T105423_7a610dd299",
+      "stable_seconds": 20.131,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105423_7a610dd299",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:54:50.758-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/pacapp2.zip",
+      "name": "Paca Paca Passion 2",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T105452_cccfa74f96",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105452_cccfa74f96",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:55:33.441-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/pacappsp.zip",
+      "name": "Paca Paca Passion Special",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T105534_908f2e19f4",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105534_908f2e19f4",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:56:16.015-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/pbball96.zip",
+      "name": "Jikkyou Powerful Pro Yakyuu '96",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T105617_8c61b66b52",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105617_8c61b66b52",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:56:58.615-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/pbballex.zip",
+      "name": "Powerful Pro Baseball Ex",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T105659_45d4b8d290",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105659_45d4b8d290",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:57:41.075-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/pitboss.zip",
+      "name": "The Pit Boss",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T105742_b534c016dc",
+      "stable_seconds": 0.269,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105742_b534c016dc",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:57:58.365-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/qb3.zip",
+      "name": "Qb-3",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T105759_26e2438e61",
+      "stable_seconds": 0.269,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105759_26e2438e61",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:58:15.452-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/qdrmfgp.zip",
+      "name": "Quiz Do Re Mi Fa Grand Prix",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T105816_47f6e79bd2",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105816_47f6e79bd2",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:58:58.045-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/qdrmfgp2.zip",
+      "name": "Quiz Do Re Mi Fa Grand Prix 2 - Shin-Kyoku Nyuukad",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T105859_35f14e38b4",
+      "stable_seconds": 0.269,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105859_35f14e38b4",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:59:15.522-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/rdft.zip",
+      "name": "Raiden Fighters",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T105916_498a8a61ae",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105916_498a8a61ae",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T10:59:57.951-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/rdft2.zip",
+      "name": "Raiden Fighters 2 : Operation Hell Dive",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T105959_d50aae33ac",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T105959_d50aae33ac",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:00:43.298-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/redearth.zip",
+      "name": "Red Earth",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T110046_de69b419ff",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T110046_de69b419ff",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:01:28.031-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/rfjet.zip",
+      "name": "Raiden Fighters Jet",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T110129_0334cf909f",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T110129_0334cf909f",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:02:10.405-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/scorpion.zip",
+      "name": "Scorpion",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T110211_dc210be7b0",
+      "stable_seconds": 0.269,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T110211_dc210be7b0",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:02:27.578-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/senkyu.zip",
+      "name": "Battle Balls",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T110228_370f8e3d6f",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T110228_370f8e3d6f",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:03:10.098-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/sfiii2n.zip",
+      "name": "Street Fighter III : 2nd Impact - Giant Attack",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T110311_0749d6b6d1",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T110311_0749d6b6d1",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:03:52.708-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/sfiii3n.zip",
+      "name": "Street Fighter III : 3rd Strike - Fight for the Future",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T110353_ffdc77c159",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T110353_ffdc77c159",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:04:35.248-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/sfiiin.zip",
+      "name": "Street Fighter III : New Generation",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T110436_b6773bb41c",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T110436_b6773bb41c",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:05:17.824-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/sfzch.zip",
+      "name": "Street Fighter Alpha : Warriors' Dreams",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T110518_2405f46b99",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T110518_2405f46b99",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:06:00.211-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/shngmtkb.zip",
+      "name": "Shanghai Matekibuyuu",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T110601_d249cd9edc",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T110601_d249cd9edc",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:06:42.651-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/sqix.zip",
+      "name": "Super Qix",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T110643_3cc022adb3",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T110643_3cc022adb3",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:07:25.261-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/ssf2ghw.zip",
+      "name": "Super Street Fighter II: The New Challengers",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS",
+      "transaction_id": "20261117T110726_0e5962ec3d",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T110726_0e5962ec3d",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:08:07.851-03:00"
+    },
+    {
+      "system": "mame",
+      "rom": "/userdata/roms/mame/ssf2t.zip",
+      "name": "Super Street Fighter II Turbo",
+      "adapter": "MAME078PLUS",
+      "result": "GAME_FAIL",
+      "failure_class": "UNEXPECTED_PROCESS_EXIT",
+      "transaction_id": "20261117T110809_bca1adb9f1",
+      "stable_seconds": 0.531,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261117T110809_bca1adb9f1",
+        "paths": 10
+      },
+      "finished_at": "2026-11-17T11:08:25.628-03:00"
     }
   ],
   "status": "COMPLETE",
   "mode": "batch",
-  "selected_count": 90,
+  "selected_count": 100,
   "baseline": {
     "batocera_conf_sha256": "098c88444322bacaac5f2f2383e5bf6e5fa42623353fe8c49d307fffc47b52d2",
     "global_mame_core": "mame078plus",
@@ -24328,8 +26330,8 @@
   "current_test": null,
   "next_game": null,
   "counts": {
-    "AUTO_PASS": 985,
-    "GAME_FAIL": 21,
+    "AUTO_PASS": 1013,
+    "GAME_FAIL": 93,
     "STATIC_FAIL": 4,
     "FLAKY": 0,
     "ADAPTER_NOT_READY": 0,
@@ -24351,21 +26353,21 @@
     "status": "PILOT_PASS_WITH_ADAPTER_FIX"
   },
   "latest_batch": {
-    "name": "priority_batch_11",
+    "name": "priority_batch_12",
     "considered": 100,
-    "launched": 98,
-    "auto_pass": 96,
-    "game_fail": 1,
-    "static_fail": 2,
+    "launched": 100,
+    "auto_pass": 28,
+    "game_fail": 72,
+    "static_fail": 0,
     "flaky": 0,
-    "restore_verified": "98/98",
+    "restore_verified": "100/100",
     "restore_failures": 0,
     "engine_failures_unresolved": 0,
-    "started_at": "2026-11-16T23:22:54.606-03:00",
-    "finished_at": "2026-11-17T09:33:21.495-03:00",
-    "first_game": "/userdata/roms/mame/wndrplnt.zip",
-    "last_game": "/userdata/roms/mame/starblad.zip",
-    "next_game": "mame:/userdata/roms/mame/starcas.zip"
+    "started_at": "2026-11-17T10:09:48.288-03:00",
+    "finished_at": "2026-11-17T11:08:26.482-03:00",
+    "first_game": "/userdata/roms/mame/starcas.zip",
+    "last_game": "/userdata/roms/mame/ssf2t.zip",
+    "next_game": "mame:/userdata/roms/mame/suplup.zip"
   },
   "latest_engine_issue": {
     "cause": "update_csv assumed identity was a dict for STATIC_FAIL (identity=null)",
@@ -24385,19 +26387,19 @@
       "resolved_at": "2026-11-15T09:39:16-03:00"
     }
   ],
-  "launch_transactions": 1008,
+  "launch_transactions": 1108,
   "transaction_attempts": 509,
   "retry_transactions": 2,
-  "unique_games_processed": 1010,
-  "result_records": 1012,
+  "unique_games_processed": 1110,
+  "result_records": 1112,
   "static_preflight_results": 4,
   "engine_fail_total_historical": 2,
   "engine_fail_active": 0,
-  "game_fail": 21,
+  "game_fail": 93,
   "static_fail": 4,
   "flaky": 0,
-  "needs_repair": 25,
+  "needs_repair": 97,
   "control_certified": 0,
-  "restores_verified": 1008,
+  "restores_verified": 1108,
   "restore_failures": 0
 }
