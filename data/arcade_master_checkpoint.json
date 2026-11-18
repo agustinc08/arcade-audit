@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-18T06:57:17+00:00",
+  "updated_at": "2026-11-18T07:38:53+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_37: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=3248; NEXT_GAME=gba:/userdata/roms/gba/Final Fight One.gba",
+      "summary": "priority_batch_38: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=3348; NEXT_GAME=gba:/userdata/roms/gba/Ultimate Brain Games (U).gba",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-18T06:57:17+00:00"
+      "updated_at": "2026-11-18T07:38:53+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 3248,
-    "attempted_new": 3418,
+    "auto_certified": 3348,
+    "attempted_new": 3518,
     "static_fail": 194,
     "game_fail": 168,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
     "needs_repair": 362,
-    "total_restores": 3418,
+    "total_restores": 3518,
     "restore_failures": 0,
-    "next_game": "gba:/userdata/roms/gba/Final Fight One.gba",
+    "next_game": "gba:/userdata/roms/gba/Ultimate Brain Games (U).gba",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 3610,
-    "result_records": 3612,
-    "launch_transactions": 3418,
+    "unique_games_processed": 3710,
+    "result_records": 3712,
+    "launch_transactions": 3518,
     "retry_transactions": 2
   }
 }

@@ -1,7 +1,7 @@
 # Estado actual del arcade
 
-- UPDATED_AT: 2026-11-18T06:57:36+00:00
-- GITHUB_HEAD observado antes de publicar: `ea543f9cd2d33d7e0f47e5d8bc9337f8ec08b33d`
+- UPDATED_AT: 2026-11-18T07:39:16+00:00
+- GITHUB_HEAD observado antes de publicar: `c44f81789d13adf3b9094c80fb467a18c90eefaf`
 - BATOCERA_VERSION: 43.1
 
 ## Sistema y hardware
@@ -37,17 +37,17 @@
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- AUTO_CERTIFIED: 3248
+- AUTO_CERTIFIED: 3348
 - GAME_FAIL: 168
 - STATIC_FAIL: 194
 - FLAKY: 0
 - NEEDS_REPAIR: 362
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
-- NEXT_GAME: `gba:/userdata/roms/gba/Final Fight One.gba`
-- UNIQUE_GAMES_PROCESSED: 3610
-- RESULT_RECORDS: 3612
-- LAUNCH_TRANSACTIONS: 3418
+- NEXT_GAME: `gba:/userdata/roms/gba/Ultimate Brain Games (U).gba`
+- UNIQUE_GAMES_PROCESSED: 3710
+- RESULT_RECORDS: 3712
+- LAUNCH_TRANSACTIONS: 3518
 - RETRY_TRANSACTIONS: 2
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
@@ -56,7 +56,7 @@
 ## Espacio
 
 - FILESYSTEM_STATUS: lectura de capacidad; no es una prueba SMART.
-    /dev/sda2        211G   121G   81G  60% /userdata
+    /dev/sda2        211G   122G   81G  61% /userdata
     /dev/sdc1        3,6T  1012G  2,5T  30% /media/ROMS
     /dev/sdb1        916G   783G   88G  90% /media/BATOCERA_ROMS
 
