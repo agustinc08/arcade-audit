@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-18T04:53:07+00:00",
+  "updated_at": "2026-11-18T05:33:41+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_34: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=2951; NEXT_GAME=megadrive:/userdata/roms/megadrive/Trampoline Terror! (U) [!].bin",
+      "summary": "priority_batch_35: 100 considerados, 100 lanzados, 97 AUTO_PASS, 3 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=3048; NEXT_GAME=gba:/userdata/roms/gba/2 in 1 - Teenage Mutant Ninja Turtles Double Pack (E)(sUppLeX).gba",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-18T04:53:07+00:00"
+      "updated_at": "2026-11-18T05:33:41+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 2951,
-    "attempted_new": 3118,
+    "auto_certified": 3048,
+    "attempted_new": 3218,
     "static_fail": 194,
-    "game_fail": 165,
+    "game_fail": 168,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
-    "needs_repair": 359,
-    "total_restores": 3118,
+    "needs_repair": 362,
+    "total_restores": 3218,
     "restore_failures": 0,
-    "next_game": "megadrive:/userdata/roms/megadrive/Trampoline Terror! (U) [!].bin",
+    "next_game": "gba:/userdata/roms/gba/2 in 1 - Teenage Mutant Ninja Turtles Double Pack (E)(sUppLeX).gba",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 3310,
-    "result_records": 3312,
-    "launch_transactions": 3118,
+    "unique_games_processed": 3410,
+    "result_records": 3412,
+    "launch_transactions": 3218,
     "retry_transactions": 2
   }
 }

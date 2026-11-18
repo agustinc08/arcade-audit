@@ -1,26 +1,26 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-18T04:53:33+00:00
+- UPDATED_AT: 2026-11-18T05:34:13+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 3118
-- UNIQUE_GAMES_PROCESSED: 3310
-- RESULT_RECORDS: 3312
-- LAUNCH_TRANSACTIONS: 3118
+- ATTEMPTED_NEW: 3218
+- UNIQUE_GAMES_PROCESSED: 3410
+- RESULT_RECORDS: 3412
+- LAUNCH_TRANSACTIONS: 3218
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 2951
+- AUTO_CERTIFIED: 3048
 - STATIC_FAIL: 194
-- GAME_FAIL: 165
+- GAME_FAIL: 168
 - FLAKY: 0
-- NEEDS_REPAIR: 359
+- NEEDS_REPAIR: 362
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: megadrive:/userdata/roms/megadrive/Trampoline Terror! (U) [!].bin
-- TOTAL_RESTORES: 3118
+- NEXT_GAME: gba:/userdata/roms/gba/2 in 1 - Teenage Mutant Ninja Turtles Double Pack (E)(sUppLeX).gba
+- TOTAL_RESTORES: 3218
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -44,7 +44,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | flatpak | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
 | gamecube | 9 | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 |
 | gb | 410 | 410 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 409 |
-| gba | 725 | 725 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 724 |
+| gba | 725 | 725 | 0 | 5 | 0 | 0 | 0 | 0 | 0 | 720 |
 | gbc | 406 | 406 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 406 |
 | hcl | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | hurrican | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
@@ -52,7 +52,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | mame | 1324 | 1324 | 1112 | 1008 | 37 | 142 | 0 | 0 | 0 | 137 |
 | mastersystem | 383 | 383 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 382 |
 | megacd | 24 | 24 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 24 |
-| megadrive | 1037 | 1037 | 0 | 923 | 0 | 10 | 0 | 0 | 0 | 104 |
+| megadrive | 1037 | 1037 | 0 | 1016 | 0 | 13 | 0 | 0 | 0 | 8 |
 | mrboom | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | n64 | 377 | 377 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 377 |
 | naomi | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_34; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
+- Lote más reciente: priority_batch_35; considerados 100; lanzados 100; AUTO_PASS 97; restore 100/100.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: megadrive:/userdata/roms/megadrive/Trampoline Terror! (U) [!].bin.
+- NEXT_GAME: gba:/userdata/roms/gba/2 in 1 - Teenage Mutant Ninja Turtles Double Pack (E)(sUppLeX).gba.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY
