@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-17T23:27:50+00:00",
+  "updated_at": "2026-11-18T00:08:20+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_26: 100 considerados, 100 lanzados, 97 AUTO_PASS, 3 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=2158; NEXT_GAME=megadrive:/userdata/roms/megadrive/Air Buster (U) [c][!].bin",
+      "summary": "priority_batch_27: 100 considerados, 100 lanzados, 99 AUTO_PASS, 1 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=2257; NEXT_GAME=megadrive:/userdata/roms/megadrive/Evander Holyfield's Real Deal Boxing (JU) [!].bin",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-17T23:27:50+00:00"
+      "updated_at": "2026-11-18T00:08:20+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 2158,
-    "attempted_new": 2318,
+    "auto_certified": 2257,
+    "attempted_new": 2418,
     "static_fail": 194,
-    "game_fail": 158,
+    "game_fail": 159,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
-    "needs_repair": 352,
-    "total_restores": 2318,
+    "needs_repair": 353,
+    "total_restores": 2418,
     "restore_failures": 0,
-    "next_game": "megadrive:/userdata/roms/megadrive/Air Buster (U) [c][!].bin",
+    "next_game": "megadrive:/userdata/roms/megadrive/Evander Holyfield's Real Deal Boxing (JU) [!].bin",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 2510,
-    "result_records": 2512,
-    "launch_transactions": 2318,
+    "unique_games_processed": 2610,
+    "result_records": 2612,
+    "launch_transactions": 2418,
     "retry_transactions": 2
   }
 }
