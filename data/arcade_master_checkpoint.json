@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-18T11:46:56+00:00",
+  "updated_at": "2026-11-18T12:27:41+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_44: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=3946; NEXT_GAME=mastersystem:/userdata/roms/mastersystem/Con-Dori (KR).sms",
+      "summary": "priority_batch_45: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=4046; NEXT_GAME=mastersystem:/userdata/roms/mastersystem/Psychic World (EU).sms",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-18T11:46:56+00:00"
+      "updated_at": "2026-11-18T12:27:41+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 3946,
-    "attempted_new": 4118,
+    "auto_certified": 4046,
+    "attempted_new": 4218,
     "static_fail": 194,
     "game_fail": 170,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
     "needs_repair": 364,
-    "total_restores": 4118,
+    "total_restores": 4218,
     "restore_failures": 0,
-    "next_game": "mastersystem:/userdata/roms/mastersystem/Con-Dori (KR).sms",
+    "next_game": "mastersystem:/userdata/roms/mastersystem/Psychic World (EU).sms",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 4310,
-    "result_records": 4312,
-    "launch_transactions": 4118,
+    "unique_games_processed": 4410,
+    "result_records": 4412,
+    "launch_transactions": 4218,
     "retry_transactions": 2
   }
 }

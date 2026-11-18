@@ -1,16 +1,16 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-18T11:47:26+00:00
+- UPDATED_AT: 2026-11-18T12:28:14+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 4118
-- UNIQUE_GAMES_PROCESSED: 4310
-- RESULT_RECORDS: 4312
-- LAUNCH_TRANSACTIONS: 4118
+- ATTEMPTED_NEW: 4218
+- UNIQUE_GAMES_PROCESSED: 4410
+- RESULT_RECORDS: 4412
+- LAUNCH_TRANSACTIONS: 4218
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 3946
+- AUTO_CERTIFIED: 4046
 - STATIC_FAIL: 194
 - GAME_FAIL: 170
 - FLAKY: 0
@@ -19,8 +19,8 @@
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: mastersystem:/userdata/roms/mastersystem/Con-Dori (KR).sms
-- TOTAL_RESTORES: 4118
+- NEXT_GAME: mastersystem:/userdata/roms/mastersystem/Psychic World (EU).sms
+- TOTAL_RESTORES: 4218
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -50,7 +50,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | hurrican | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | ikemen | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
 | mame | 1324 | 1324 | 1112 | 1008 | 37 | 142 | 0 | 0 | 0 | 137 |
-| mastersystem | 383 | 383 | 0 | 181 | 0 | 1 | 0 | 0 | 0 | 201 |
+| mastersystem | 383 | 383 | 0 | 281 | 0 | 1 | 0 | 0 | 0 | 101 |
 | megacd | 24 | 24 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 24 |
 | megadrive | 1037 | 1037 | 0 | 1016 | 0 | 13 | 0 | 0 | 0 | 8 |
 | mrboom | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_44; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
+- Lote más reciente: priority_batch_45; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: mastersystem:/userdata/roms/mastersystem/Con-Dori (KR).sms.
+- NEXT_GAME: mastersystem:/userdata/roms/mastersystem/Psychic World (EU).sms.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY

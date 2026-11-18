@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18T11:46:57+00:00",
+  "updated_at": "2026-11-18T12:27:41+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
-  "next_untested": "mastersystem:/userdata/roms/mastersystem/Con-Dori (KR).sms",
-  "attempted_new": 4118,
-  "auto_certified": 3946,
+  "next_untested": "mastersystem:/userdata/roms/mastersystem/Psychic World (EU).sms",
+  "attempted_new": 4218,
+  "auto_certified": 4046,
   "manual_control_certified": 0,
   "guest_ready": 0,
   "launches_blocked_by": [],
@@ -101077,6 +101077,2406 @@
         "paths": 7
       },
       "finished_at": "2026-11-18T08:46:56.187-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Con-Dori (KR).sms",
+      "name": "Con-Dori",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T084811_8faa5699ca",
+      "stable_seconds": 16.168,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T084811_8faa5699ca",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:48:34.643-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Cool Spot (EU).sms",
+      "name": "Cool Spot",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T084835_ed113cefc5",
+      "stable_seconds": 16.211,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T084835_ed113cefc5",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:48:57.944-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Cyborg Hunter (NA).sms",
+      "name": "Cyborg Hunter",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T084858_08f564984b",
+      "stable_seconds": 16.215,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T084858_08f564984b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:49:21.307-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Daffy Duck in Hollywood (EU).sms",
+      "name": "Daffy Duck in Hollywood",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T084922_305771e9d8",
+      "stable_seconds": 16.171,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T084922_305771e9d8",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:49:44.790-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Danan - The Jungle Fighter (EU).sms",
+      "name": "Danan : The Jungle Fighter",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T084945_424adc0900",
+      "stable_seconds": 16.212,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T084945_424adc0900",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:50:08.227-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Dead Angle (NA).sms",
+      "name": "Dead Angle",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085009_074983021d",
+      "stable_seconds": 16.166,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085009_074983021d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:50:31.254-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Deep Duck Trouble, Starring Donald Duck (EU).sms",
+      "name": "Deep Duck Trouble Starring Donald Duck",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085032_f16fe45e2e",
+      "stable_seconds": 16.209,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085032_f16fe45e2e",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:50:54.807-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Desert Speedtrap, Starring Road Runner and Wile E. Coyote (EU).sms",
+      "name": "Desert Speedtrap Starring Road Runner and Wile E.",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085055_0bb2c61ee2",
+      "stable_seconds": 16.197,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085055_0bb2c61ee2",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:51:18.343-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Desert Strike (EU).sms",
+      "name": "Desert Strike",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085119_2aab642117",
+      "stable_seconds": 16.165,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085119_2aab642117",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:51:42.180-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Dick Tracy (NA).sms",
+      "name": "Dick Tracy",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085143_e167aeb7da",
+      "stable_seconds": 16.188,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085143_e167aeb7da",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:52:05.947-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Dragon Crystal (EU).sms",
+      "name": "Dragon Crystal",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085207_20eba7b8ac",
+      "stable_seconds": 16.222,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085207_20eba7b8ac",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:52:29.730-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Dynamite Duke (EU).sms",
+      "name": "Dynamite Duke",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085230_2dc2dd7edd",
+      "stable_seconds": 16.169,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085230_2dc2dd7edd",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:52:53.034-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Dynamite Dux (EU).sms",
+      "name": "Dynamite Dux",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085254_bb3467e322",
+      "stable_seconds": 16.174,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085254_bb3467e322",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:53:16.517-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Dynamite Headdy (BR).sms",
+      "name": "Dynamite Headdy",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085317_114bf5d21a",
+      "stable_seconds": 16.174,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085317_114bf5d21a",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:53:40.147-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/E-SWAT (NA, Rev A).sms",
+      "name": "E-SWAT",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085341_ad3fffe687",
+      "stable_seconds": 16.199,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085341_ad3fffe687",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:54:03.837-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Eagles 5 (KR).sms",
+      "name": "Eagles 5",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085405_a355464284",
+      "stable_seconds": 16.214,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085405_a355464284",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:54:27.547-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Earthworm Jim (BR).sms",
+      "name": "Earthworm Jim",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085428_4e7537b0e4",
+      "stable_seconds": 16.2,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085428_4e7537b0e4",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:54:51.078-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Ecco - The Tides of Time (BR).sms",
+      "name": "Ecco : The Tides of Time",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085452_7e32245cef",
+      "stable_seconds": 16.187,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085452_7e32245cef",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:55:14.214-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Ecco the Dolphin (EU).sms",
+      "name": "Ecco the Dolphin",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085515_822d1a886c",
+      "stable_seconds": 16.181,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085515_822d1a886c",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:55:37.955-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Enduro Racer (NA).sms",
+      "name": "Enduro Racer",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085539_5db17f5f03",
+      "stable_seconds": 16.169,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085539_5db17f5f03",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:56:01.544-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/F-16 Fighting Falcon (NA).sms",
+      "name": "F-16 Fighter",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085602_4cf7c39c0d",
+      "stable_seconds": 16.215,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085602_4cf7c39c0d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:56:25.201-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/FA Tetris (KR).sms",
+      "name": "FA Tetris",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085626_3f54aded35",
+      "stable_seconds": 16.215,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085626_3f54aded35",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:56:48.844-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Fantastic Dizzy (EU).sms",
+      "name": "Fantastic Dizzy",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085649_f777a1e3b6",
+      "stable_seconds": 16.224,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085649_f777a1e3b6",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:57:12.814-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Fantasy Zone II (NA).sms",
+      "name": "Fantasy Zone II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085713_22a142a15b",
+      "stable_seconds": 16.173,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085713_22a142a15b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:57:36.484-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Ferias Frustradas do Pica Pau (BR).sms",
+      "name": "Férias Frustradas do Pica Pau",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085737_13231ffa4c",
+      "stable_seconds": 16.191,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085737_13231ffa4c",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:58:00.120-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/FIFA International Soccer (BR).sms",
+      "name": "FIFA International Soccer",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085801_84f7061dd0",
+      "stable_seconds": 16.193,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085801_84f7061dd0",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:58:23.647-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Fire & Forget II (EU).sms",
+      "name": "Fire & Forget II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085824_c441d92475",
+      "stable_seconds": 16.206,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085824_c441d92475",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:58:47.257-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Fire & Ice (BR).sms",
+      "name": "Fire & Ice",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085848_68f8a8dc35",
+      "stable_seconds": 16.174,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085848_68f8a8dc35",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:59:10.833-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Forgotten Worlds (EU).sms",
+      "name": "Forgotten Worlds",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085912_cd4cd326c3",
+      "stable_seconds": 16.218,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085912_cd4cd326c3",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:59:34.527-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Fushigi no Oshiro Pit Pot (JP).sms",
+      "name": "Fushigi no Oshiro Pit Pot",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085935_cf083d7f0c",
+      "stable_seconds": 16.183,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085935_cf083d7f0c",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T08:59:58.230-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/G-LOC - Air Battle (EU).sms",
+      "name": "G-LOC Air Battle",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T085959_0037fe51d3",
+      "stable_seconds": 16.215,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T085959_0037fe51d3",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:00:22.381-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Gaegujangi Ggachi (KR).sms",
+      "name": "Gaegujangi Ggachi",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090023_078c5eec4f",
+      "stable_seconds": 16.186,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090023_078c5eec4f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:00:45.433-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Galaxian (KR).sms",
+      "name": "Galaxian",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090046_1307d0bbd2",
+      "stable_seconds": 16.22,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090046_1307d0bbd2",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:01:08.984-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Galaxy Force (NA).sms",
+      "name": "Galaxy Force",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090110_52f73b8814",
+      "stable_seconds": 16.194,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090110_52f73b8814",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:01:32.610-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Gangcheol RoboCop (KR).sms",
+      "name": "Gangcheol RoboCop",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090133_e14a1ad7b9",
+      "stable_seconds": 16.198,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090133_e14a1ad7b9",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:01:56.377-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Ghostbusters (NA).sms",
+      "name": "Ghostbusters",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090157_403561eb82",
+      "stable_seconds": 16.209,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090157_403561eb82",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:02:19.970-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Ghouls 'n Ghosts (NA).sms",
+      "name": "Ghouls'n Ghosts",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090221_008d01ac05",
+      "stable_seconds": 16.204,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090221_008d01ac05",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:02:43.728-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Global Defense (NA).sms",
+      "name": "Global Defense",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090244_bc3e358824",
+      "stable_seconds": 16.194,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090244_bc3e358824",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:03:07.470-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Global Gladiators (EU).sms",
+      "name": "Global Gladiators",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090310_58ad5bf265",
+      "stable_seconds": 16.201,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090310_58ad5bf265",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:03:34.623-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Golden Axe (NA).sms",
+      "name": "Golden Axe",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090335_afafd926ca",
+      "stable_seconds": 16.204,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090335_afafd926ca",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:03:58.134-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Golden Axe (USA, Europe).sms",
+      "name": "Golden Axe",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090359_fe1153a732",
+      "stable_seconds": 16.223,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090359_fe1153a732",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:04:21.480-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Golden Axe Warrior (NA).sms",
+      "name": "Golden Axe Warrior",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090422_763a2247fa",
+      "stable_seconds": 16.208,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090422_763a2247fa",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:04:44.920-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Golvellius - Valley of Doom (NA).sms",
+      "name": "Golvellius : Valley of Doom",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090446_d315959cde",
+      "stable_seconds": 16.206,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090446_d315959cde",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:05:08.543-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Gun.Smoke (KR).sms",
+      "name": "Gun.Smoke",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090509_aede1ec505",
+      "stable_seconds": 16.196,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090509_aede1ec505",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:05:32.087-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Hang On & Safari Hunt (NA).sms",
+      "name": "Hang-On & Safari Hunt",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090533_64f6c99082",
+      "stable_seconds": 16.172,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090533_64f6c99082",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:05:56.061-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Heroes of the Lance (EU).sms",
+      "name": "Heroes of the Lance",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090557_41e01a8c3d",
+      "stable_seconds": 16.217,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090557_41e01a8c3d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:06:19.911-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/High School! Kimengumi (English Translated).sms",
+      "name": "High School Kimengumi",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090621_6bbdddd155",
+      "stable_seconds": 16.174,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090621_6bbdddd155",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:06:43.540-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Hokuto no Ken (English Translated).sms",
+      "name": "Black Belt",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090644_14e158f3a8",
+      "stable_seconds": 16.179,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090644_14e158f3a8",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:07:07.484-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Home Alone (EU).sms",
+      "name": "Home Alone",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090708_180f4be293",
+      "stable_seconds": 16.197,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090708_180f4be293",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:07:30.937-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Hong Kil Dong (KR).sms",
+      "name": "Hong Kil Dong",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090732_b48eb1104b",
+      "stable_seconds": 16.221,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090732_b48eb1104b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:07:54.704-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Hook (Prototype).sms",
+      "name": "Hook",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090755_c5356adf90",
+      "stable_seconds": 16.219,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090755_c5356adf90",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:08:18.607-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Hoshi wo Sagashite... (English Translated).sms",
+      "name": "Hoshi Wo Sagashite...",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090819_9b2f5050e3",
+      "stable_seconds": 16.169,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090819_9b2f5050e3",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:08:42.061-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Impossible Mission (EU).sms",
+      "name": "Impossible Mission",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090843_2ac77d8a29",
+      "stable_seconds": 16.207,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090843_2ac77d8a29",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:09:05.293-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Indiana Jones and the Last Crusade (EU).sms",
+      "name": "Indiana Jones and the Last Crusade: The Action Game",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090906_829e8b0a22",
+      "stable_seconds": 16.215,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090906_829e8b0a22",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:09:28.897-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/James Bond 007 - The Duel (EU).sms",
+      "name": "James Bond 007 : The Duel",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090930_06c41ca9c3",
+      "stable_seconds": 16.196,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090930_06c41ca9c3",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:09:52.935-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/James Pond 2 - Codename RoboCod (EU).sms",
+      "name": "James Pond 2 : Codename RoboCod",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T090954_b08812a5c3",
+      "stable_seconds": 16.204,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T090954_b08812a5c3",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:10:16.434-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Janggun-ui Adeul (KR).sms",
+      "name": "Janggun-ui Adeul",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091017_5e345e1374",
+      "stable_seconds": 16.216,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091017_5e345e1374",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:10:39.857-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Jurassic Park (EU).sms",
+      "name": "Jurassic Park",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091041_865693ea9b",
+      "stable_seconds": 16.186,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091041_865693ea9b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:11:03.367-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Kenseiden (NA).sms",
+      "name": "Kenseiden",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091104_9d5a0e07a5",
+      "stable_seconds": 16.209,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091104_9d5a0e07a5",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:11:26.996-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/King & Balloon (KR).sms",
+      "name": "King & Balloon",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091128_a1f5aa2226",
+      "stable_seconds": 16.214,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091128_a1f5aa2226",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:11:50.604-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/King's Quest - Quest for the Crown (NA).sms",
+      "name": "King's Quest : Quest for the Crown",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091151_77044911cd",
+      "stable_seconds": 16.17,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091151_77044911cd",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:12:14.460-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Klax (EU).sms",
+      "name": "Klax",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091215_748b175222",
+      "stable_seconds": 16.191,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091215_748b175222",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:12:38.267-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Knightmare II - The Maze of Galious (KR).sms",
+      "name": "Knightmare II : The Maze of Galious",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091239_02c4be864e",
+      "stable_seconds": 16.2,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091239_02c4be864e",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:13:01.724-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Krusty's Fun House (EU).sms",
+      "name": "Krusty's Fun House",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091302_f5a21c6ce3",
+      "stable_seconds": 16.215,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091302_f5a21c6ce3",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:13:25.250-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Land of Illusion, Starring Mickey Mouse (EU).sms",
+      "name": "Land of Illusion Starring Mickey Mouse",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091326_326fe5c86e",
+      "stable_seconds": 16.215,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091326_326fe5c86e",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:13:48.860-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Laser Ghost (EU).sms",
+      "name": "Laser Ghost",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091349_d46f3feae5",
+      "stable_seconds": 16.185,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091349_d46f3feae5",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:14:12.703-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Legend of Illusion, Starring Mickey Mouse (BR).sms",
+      "name": "Legend of Illusion Starring Mickey Mouse",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091413_0e1d031a24",
+      "stable_seconds": 16.189,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091413_0e1d031a24",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:14:36.000-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Lemmings (EU).sms",
+      "name": "Lemmings",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091437_cfa6755cc0",
+      "stable_seconds": 16.187,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091437_cfa6755cc0",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:14:59.663-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Les Schtroumpfs Autour du Monde (EU).sms",
+      "name": "The Smurfs Travel The World",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091500_0e4a87b909",
+      "stable_seconds": 16.227,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091500_0e4a87b909",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:15:23.524-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Line of Fire (EU).sms",
+      "name": "Line of Fire",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091524_85ce8f6b0e",
+      "stable_seconds": 16.19,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091524_85ce8f6b0e",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:15:47.150-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Lord of the Sword (NA).sms",
+      "name": "Lord of the Sword",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091548_e1b15eed57",
+      "stable_seconds": 16.183,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091548_e1b15eed57",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:16:10.850-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Marble Madness (EU).sms",
+      "name": "Marble Madness",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091611_0803e54cbb",
+      "stable_seconds": 16.205,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091611_0803e54cbb",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:16:34.384-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Master of Darkness (EU).sms",
+      "name": "Master of Darkness",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091635_9032f5655b",
+      "stable_seconds": 16.208,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091635_9032f5655b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:16:57.861-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Maze Hunter 3-D (NA).sms",
+      "name": "Maze Hunter 3-D",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091658_7e151d9648",
+      "stable_seconds": 16.216,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091658_7e151d9648",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:17:21.647-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Megumi Rescue (JP).sms",
+      "name": "Megumi Rescue",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091722_16f1eda7b9",
+      "stable_seconds": 16.201,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091722_16f1eda7b9",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:17:45.320-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Mercs (EU).sms",
+      "name": "Mercs",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091746_5db058bfaf",
+      "stable_seconds": 16.202,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091746_5db058bfaf",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:18:08.944-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Michael Jackson's Moonwalker (NA).sms",
+      "name": "Michael Jackson's Moonwalker",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091814_8e99cf35b4",
+      "stable_seconds": 16.185,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091814_8e99cf35b4",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:18:36.967-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Mickey's Ultimate Challenge (BR).sms",
+      "name": "Mickey's Ultimate Challenge",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091838_3d565ff00f",
+      "stable_seconds": 16.192,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091838_3d565ff00f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:19:00.391-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Miracle Warriors - Seal of The Dark Lord (NA).sms",
+      "name": "Miracle Warriors : Seal of the Dark Lord",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091901_b8615c9d09",
+      "stable_seconds": 16.202,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091901_b8615c9d09",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:19:23.970-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Missile Defense 3-D (NA).sms",
+      "name": "Missile Defense 3-D",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091925_2f4ae8eec4",
+      "stable_seconds": 16.189,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091925_2f4ae8eec4",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:19:47.534-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Monopoly (NA).sms",
+      "name": "Monopoly",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T091948_9899e8bb15",
+      "stable_seconds": 16.165,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T091948_9899e8bb15",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:20:11.080-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Montezuma's Revenge, Featuring Panama Joe (NA).sms",
+      "name": "Montezuma's Revenge featuring Panama Joe",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092012_8e92ce9347",
+      "stable_seconds": 16.196,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092012_8e92ce9347",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:20:34.897-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Mopiranger (KR).sms",
+      "name": "Mopiranger",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092035_c78774847a",
+      "stable_seconds": 16.189,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092035_c78774847a",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:20:58.696-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Ninja Gaiden (EU).sms",
+      "name": "Ninja Gaiden",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092059_6d1f219610",
+      "stable_seconds": 16.206,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092059_6d1f219610",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:21:22.270-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Operation Wolf (EU).sms",
+      "name": "Operation Wolf",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092123_e92242bc20",
+      "stable_seconds": 16.217,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092123_e92242bc20",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:21:46.123-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/OutRun (NA).sms",
+      "name": "Out Run",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092147_82334a8828",
+      "stable_seconds": 16.17,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092147_82334a8828",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:22:09.640-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/OutRun 3-D (EU).sms",
+      "name": "Out Run 3-D",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092210_cfdb42920b",
+      "stable_seconds": 16.176,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092210_cfdb42920b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:22:33.421-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/OutRun Europa (EU).sms",
+      "name": "Out Run Europa",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092234_22d5135ade",
+      "stable_seconds": 16.191,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092234_22d5135ade",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:22:57.084-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Pac-Mania (EU).sms",
+      "name": "Pac-Mania",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092258_88cf8ef0ab",
+      "stable_seconds": 16.194,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092258_88cf8ef0ab",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:23:20.623-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Paperboy (NA).sms",
+      "name": "Paperboy",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092321_6ab0d1c257",
+      "stable_seconds": 16.212,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092321_6ab0d1c257",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:23:44.307-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Penguin Adventure (KR).sms",
+      "name": "Penguin Adventure",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092345_2452b280a0",
+      "stable_seconds": 16.183,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092345_2452b280a0",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:24:08.036-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Penguin Land (NA).sms",
+      "name": "Penguin Land",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092409_3089c0c34a",
+      "stable_seconds": 16.173,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092409_3089c0c34a",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:24:31.534-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Phantasy Star (NA, Rev A).sms",
+      "name": "Phantasy Star",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092432_4894e57da9",
+      "stable_seconds": 16.213,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092432_4894e57da9",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:24:54.943-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Populous (EU).sms",
+      "name": "Populous",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092456_09f307756d",
+      "stable_seconds": 16.209,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092456_09f307756d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:25:18.774-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Poseidon Wars 3-D (NA).sms",
+      "name": "Poseidon Wars 3-D",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092519_ea2c531553",
+      "stable_seconds": 16.176,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092519_ea2c531553",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:25:42.604-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Power Boggle Boggle (KR).sms",
+      "name": "Power Boggle Boggle",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092543_20d369971d",
+      "stable_seconds": 16.217,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092543_20d369971d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:26:06.227-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Power Strike (NA).sms",
+      "name": "Power Strike",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092607_e77a2c092f",
+      "stable_seconds": 16.184,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092607_e77a2c092f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:26:29.847-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Power Strike II (EU).sms",
+      "name": "Power Strike II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092630_47dd5cd7bb",
+      "stable_seconds": 16.221,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092630_47dd5cd7bb",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:26:53.614-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Predator 2 (EU).sms",
+      "name": "Predator 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092654_326ac8b1b2",
+      "stable_seconds": 16.195,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092654_326ac8b1b2",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:27:17.224-03:00"
+    },
+    {
+      "system": "mastersystem",
+      "rom": "/userdata/roms/mastersystem/Prince of Persia (EU).sms",
+      "name": "Prince of Persia",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T092718_930c0dceb2",
+      "stable_seconds": 16.198,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T092718_930c0dceb2",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T09:27:41.167-03:00"
     }
   ],
   "status": "COMPLETE",
@@ -101111,7 +103511,7 @@
   "current_test": null,
   "next_game": null,
   "counts": {
-    "AUTO_PASS": 3946,
+    "AUTO_PASS": 4046,
     "GAME_FAIL": 170,
     "STATIC_FAIL": 194,
     "FLAKY": 0,
@@ -101134,7 +103534,7 @@
     "status": "PILOT_PASS_WITH_ADAPTER_FIX"
   },
   "latest_batch": {
-    "name": "priority_batch_44",
+    "name": "priority_batch_45",
     "considered": 100,
     "launched": 100,
     "auto_pass": 100,
@@ -101144,11 +103544,11 @@
     "restore_verified": "100/100",
     "restore_failures": 0,
     "engine_failures_unresolved": 0,
-    "started_at": "2026-11-18T08:07:25.200-03:00",
-    "finished_at": "2026-11-18T08:46:56.997-03:00",
-    "first_game": "/userdata/roms/mastersystem/Pat Riley Basketball (Prototype).sms",
-    "last_game": "/userdata/roms/mastersystem/Comical Machine Gun Joe (JP).sms",
-    "next_game": "mastersystem:/userdata/roms/mastersystem/Con-Dori (KR).sms"
+    "started_at": "2026-11-18T08:48:10.530-03:00",
+    "finished_at": "2026-11-18T09:27:41.959-03:00",
+    "first_game": "/userdata/roms/mastersystem/Con-Dori (KR).sms",
+    "last_game": "/userdata/roms/mastersystem/Prince of Persia (EU).sms",
+    "next_game": "mastersystem:/userdata/roms/mastersystem/Psychic World (EU).sms"
   },
   "latest_engine_issue": {
     "cause": "update_csv assumed identity was a dict for STATIC_FAIL (identity=null)",
@@ -101168,11 +103568,11 @@
       "resolved_at": "2026-11-15T09:39:16-03:00"
     }
   ],
-  "launch_transactions": 4118,
+  "launch_transactions": 4218,
   "transaction_attempts": 509,
   "retry_transactions": 2,
-  "unique_games_processed": 4310,
-  "result_records": 4312,
+  "unique_games_processed": 4410,
+  "result_records": 4412,
   "static_preflight_results": 194,
   "engine_fail_total_historical": 2,
   "engine_fail_active": 0,
@@ -101181,6 +103581,6 @@
   "flaky": 0,
   "needs_repair": 364,
   "control_certified": 0,
-  "restores_verified": 4118,
+  "restores_verified": 4218,
   "restore_failures": 0
 }
