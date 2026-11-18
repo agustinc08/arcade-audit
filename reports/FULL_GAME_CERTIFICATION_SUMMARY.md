@@ -1,16 +1,16 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-18T15:52:06+00:00
+- UPDATED_AT: 2026-11-18T16:32:51+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 4718
-- UNIQUE_GAMES_PROCESSED: 4910
-- RESULT_RECORDS: 4912
-- LAUNCH_TRANSACTIONS: 4718
+- ATTEMPTED_NEW: 4818
+- UNIQUE_GAMES_PROCESSED: 5010
+- RESULT_RECORDS: 5012
+- LAUNCH_TRANSACTIONS: 4818
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 4546
+- AUTO_CERTIFIED: 4646
 - STATIC_FAIL: 194
 - GAME_FAIL: 170
 - FLAKY: 0
@@ -19,8 +19,8 @@
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: gb:/userdata/roms/gb/Yogi Bear in Yogi Bear's Goldrush (E) [!].gb
-- TOTAL_RESTORES: 4718
+- NEXT_GAME: gbc:/userdata/roms/gbc/Tweety's High-Flying Adventure (E) (M3) (Eng-Ita-Spa) [C][!].gbc
+- TOTAL_RESTORES: 4818
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -43,9 +43,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | fds | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | flatpak | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
 | gamecube | 9 | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 |
-| gb | 410 | 410 | 0 | 401 | 0 | 0 | 0 | 0 | 0 | 9 |
+| gb | 410 | 410 | 0 | 403 | 0 | 0 | 0 | 0 | 0 | 7 |
 | gba | 725 | 725 | 0 | 723 | 0 | 1 | 0 | 0 | 0 | 1 |
-| gbc | 406 | 406 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 406 |
+| gbc | 406 | 406 | 0 | 98 | 0 | 0 | 0 | 0 | 0 | 308 |
 | hcl | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | hurrican | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | ikemen | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_50; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
+- Lote más reciente: priority_batch_51; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: gb:/userdata/roms/gb/Yogi Bear in Yogi Bear's Goldrush (E) [!].gb.
+- NEXT_GAME: gbc:/userdata/roms/gbc/Tweety's High-Flying Adventure (E) (M3) (Eng-Ita-Spa) [C][!].gbc.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY
