@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-18T18:34:41+00:00",
+  "updated_at": "2026-11-18T18:55:57+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_54: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=4946; NEXT_GAME=gbc:/userdata/roms/gbc/Triple Play 2001 (U) [C][!].gbc",
+      "summary": "priority_batch_55: 100 considerados, 46 lanzados, 45 AUTO_PASS, 1 GAME_FAIL, 0 STATIC_FAIL; restores 46/46; AUTO_CERTIFIED=4991; NEXT_GAME=dreamcast:/userdata/roms/dreamcast/Fur Fighters (Europe) (En,Fr,De,Es).chd",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-18T18:34:41+00:00"
+      "updated_at": "2026-11-18T18:55:57+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 4946,
-    "attempted_new": 5118,
+    "auto_certified": 4991,
+    "attempted_new": 5164,
     "static_fail": 194,
-    "game_fail": 170,
+    "game_fail": 171,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
-    "needs_repair": 364,
-    "total_restores": 5118,
+    "needs_repair": 365,
+    "total_restores": 5164,
     "restore_failures": 0,
-    "next_game": "gbc:/userdata/roms/gbc/Triple Play 2001 (U) [C][!].gbc",
+    "next_game": "dreamcast:/userdata/roms/dreamcast/Fur Fighters (Europe) (En,Fr,De,Es).chd",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 5310,
-    "result_records": 5312,
-    "launch_transactions": 5118,
+    "unique_games_processed": 5410,
+    "result_records": 5412,
+    "launch_transactions": 5164,
     "retry_transactions": 2
   }
 }
