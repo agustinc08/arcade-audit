@@ -1,7 +1,7 @@
 # Estado actual del arcade
 
-- UPDATED_AT: 2026-11-18T10:26:08+00:00
-- GITHUB_HEAD observado antes de publicar: `160f9ba57adea6c4741dc5e8f3bd8fecaceb4fca`
+- UPDATED_AT: 2026-11-18T11:06:48+00:00
+- GITHUB_HEAD observado antes de publicar: `4f36d57de9db16ed5c7ea761d8e5ae00d6bc59f2`
 - BATOCERA_VERSION: 43.1
 
 ## Sistema y hardware
@@ -37,17 +37,17 @@
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- AUTO_CERTIFIED: 3748
-- GAME_FAIL: 168
+- AUTO_CERTIFIED: 3846
+- GAME_FAIL: 170
 - STATIC_FAIL: 194
 - FLAKY: 0
-- NEEDS_REPAIR: 362
+- NEEDS_REPAIR: 364
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
-- NEXT_GAME: `gba:/userdata/roms/gba/Yu-Gi-Oh! Gamepack 2 - Destiny Board Traveler & Dungeon Dice Monsters (E).gba`
-- UNIQUE_GAMES_PROCESSED: 4110
-- RESULT_RECORDS: 4112
-- LAUNCH_TRANSACTIONS: 3918
+- NEXT_GAME: `mastersystem:/userdata/roms/mastersystem/Pat Riley Basketball (Prototype).sms`
+- UNIQUE_GAMES_PROCESSED: 4210
+- RESULT_RECORDS: 4212
+- LAUNCH_TRANSACTIONS: 4018
 - RETRY_TRANSACTIONS: 2
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
