@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18T19:15:21+00:00",
+  "updated_at": "2026-11-18T19:18:04+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
-  "next_untested": "dreamcast:/userdata/roms/dreamcast/King of Fighters XI.chd",
+  "next_untested": "dreamcast:/userdata/roms/dreamcast/Vampire Chronicle for Matching Service (Japan).chd",
   "attempted_new": 5198,
   "auto_certified": 5025,
   "manual_control_certified": 0,
@@ -130290,6 +130290,1506 @@
         "status": "NOT_REQUIRED_NO_WRITE"
       },
       "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/King of Fighters XI.chd",
+      "name": "King of Fighters 11, The",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/King of Fighters, The - Dream Match 1999 (USA) (En,Ja,Es,Pt).chd",
+      "name": "The King of Fighters : Dream Match 1999",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/King of Fighters, The - Evolution (USA) (En,Ja,Es,Pt).chd",
+      "name": "The King of Fighters : Evolution",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Kitahei Gold (Japan).chd",
+      "name": "Kitahei Gold",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Knights of Valour The Seven Spirits.cdi",
+      "name": "Knights of Valour The Seven Spirits",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Last Blade 2, The - Heart of the Samurai (USA).chd",
+      "name": "The Last Blade 2 : Heart of the Samurai",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Mars Matrix (USA).chd",
+      "name": "Mars Matrix",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Marvel vs. Capcom - Clash of Super Heroes (Europe).chd",
+      "name": "Marvel vs. Capcom : Clash of Super Heroes",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Marvel vs. Capcom 2 - New Age of Heroes (Europe).chd",
+      "name": "Marvel vs. Capcom 2 : New Age of Heroes",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Mat Hoffman's Pro BMX (USA).chd",
+      "name": "Mat Hoffman's Pro BMX",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Metal Slug 6.chd",
+      "name": "Metal Slug 6",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Millennium Soldier - Expendable (Europe) (En,Fr,De,Es,It).chd",
+      "name": "Millennium Soldier : Expendable",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Morita no Saikyou Reversi (Japan).chd",
+      "name": "Morita no Saikyou Reversi",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Morita no Saikyou Shougi (Japan).chd",
+      "name": "Morita no Saikyou Shogi",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Mortal Kombat Gold (Europe).chd",
+      "name": "Mortal Kombat Gold",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Motto Pro Yakyuu Team o Tsukurou! (Japan).chd",
+      "name": "Motto Pro Yakyuu Team o Tsukurou!",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/MSR Opel Challenge (Europe) (Beta).chd",
+      "name": "MSR Opel Challenge",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Musapey's Choco Marker (Japan).chd",
+      "name": "Musapey no Choco Marker",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Namco Museum (USA).chd",
+      "name": "Namco Museum",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Nanatsu no Hikan - Senritsu no Bishou (Japan).chd",
+      "name": "Nanatsu no Hikan : Senritsu no Bishou",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/NCAA College Football 2K2 - Road to the Rose Bowl (USA).chd",
+      "name": "NCAA College Football 2K2 : Road to the Rose Bowl",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Neogeo Battle Coliseum.chd",
+      "name": "NeoGeo Battle Coliseum",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Net Versus - Chess (Japan).chd",
+      "name": "Net Versus Chess",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Net Versus - Gomoku Narabe to Renju (Japan).chd",
+      "name": "Net Versus Gomoku Narabe to Renju",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Net Versus - Hanafuda (Japan).chd",
+      "name": "Net Versus Hanafuda",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Net Versus - Igo (Japan).chd",
+      "name": "Net Versus Igo",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Net Versus - Reversi (Japan).chd",
+      "name": "Net Versus Reversi",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Net Versus - Shougi (Japan).chd",
+      "name": "Net Versus Shogi",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Next Tetris, The (Europe).chd",
+      "name": "The Next Tetris",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/NFL Blitz 2001 (USA).chd",
+      "name": "NFL Blitz 2001",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/NFL QB Club 2001 (USA).chd",
+      "name": "NFL QB Club 2001",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Planet Ring (Europe) (En,Fr,De,Es).chd",
+      "name": "Planet Ring",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Plasma Sword - Nightmare of Bilstein (Europe).chd",
+      "name": "Plasma Sword : Nightmare of Bilstein",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Plus Plumb (Japan).chd",
+      "name": "Plus Plum",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Power Stone (Europe).chd",
+      "name": "Power Stone",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Power Stone v1.001 (1999)(Capcom)(US)[!].chd",
+      "name": "Power Stone (Capcom)",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Pro Mahjong Kiwame D (Japan).chd",
+      "name": "Pro Mahjong Kiwame D",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Pro Yakyuu Team de Asobou Net! (Japan) (Rev A).chd",
+      "name": "Pro Yakyuu Team de Asobou Net!",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Pro Yakyuu Team de Asobou! (Japan).chd",
+      "name": "Pro Yakyuu Team de Asobou!",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Pro Yakyuu Team o Tsukurou! & Asobou! (Japan).chd",
+      "name": "Pro Yakyuu Team o Tsukurou! & Asobou!",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Psychic Force 2012 (Europe).chd",
+      "name": "Psychic Force 2012",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Puyo Puyo Da! Featuring Ellena System (Japan).chd",
+      "name": "Puyo Puyo Da! Featuring Ellena System",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Puyo Puyo Fever (Japan).chd",
+      "name": "Puyo Puyo Fever",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Quiz Aa Megami-sama - Tatakau Tsubasa to Tomoni (Japan).chd",
+      "name": "Quiz Aa! Megami-sama : Tatakau Tsubasa to Tomoni",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Racing Simulation - Monaco Grand Prix (Europe) (En,Fr,De,Es,It).chd",
+      "name": "Racing Simulation 2 : Monaco Grand Prix",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Racing Simulation 2 - Monaco Grand Prix On-Line (Europe).chd",
+      "name": "Racing Simulation 2 : Monaco Grand Prix Online",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Ready 2 Rumble Boxing (Europe) (En,Fr,De).chd",
+      "name": "Ready 2 Rumble Boxing",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Ready 2 Rumble Boxing - Round 2 (Europe) (En,Fr,De).chd",
+      "name": "Ready 2 Rumble Boxing Round 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Ready 2 Rumble Boxing v1.000 (1999)(Midway)(US)[!][8S].chd",
+      "name": "Ready 2 Rumble Boxing (Midway)",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Rectangle Battle.cdi",
+      "name": "Rectangle Battle in Space",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Red Dog - Superior Firepower (Europe) (En,Fr,De,Es).chd",
+      "name": "Red Dog : Superior Firepower",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Rumble Fish 2.chd",
+      "name": "The Rumble Fish 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Rumble Fish.chd",
+      "name": "The Rumble Fish",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Rune Caster (Japan).chd",
+      "name": "Rune Caster",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sakura Taisen - Hanagumi Taisen Columns 2 (Japan).chd",
+      "name": "Hanagumi Taisen Columns 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Samba de Amigo (Europe).chd",
+      "name": "Samba de Amigo",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Samba de Amigo Ver. 2000 (Japan).chd",
+      "name": "Samba de Amigo Ver.2000",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sega Extreme Sports (Europe) (En,Fr,De,Es).chd",
+      "name": "Sega Extreme Sports",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sega GT (Europe) (En,Fr,De,Es).chd",
+      "name": "Sega GT",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sega Rally 2 (Europe).chd",
+      "name": "Sega Rally 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sega Rally 2 v1.003 (1999)(Sega)(US)[!].chd",
+      "name": "Sega Rally 2 (Sega)",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sega Smash Pack - Volume 1 (USA).chd",
+      "name": "Sega Smash Pack : Volume 1",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sega Tetris (Japan) (Rev A).chd",
+      "name": "Sega Tetris",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sega Worldwide Soccer 2000 - Euro Edition (Europe) (En,Fr,De,Es).chd",
+      "name": "Sega Worldwide Soccer 2000 : Euro Edition",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Shikigami no Shiro II (Japan).chd",
+      "name": "Shikigami no Shiro II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/SnoCross Championship Racing (Europe) (En,Fr,De).chd",
+      "name": "Sno-Cross Championship Racing",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Snow Surfers (Europe).chd",
+      "name": "Snow Surfers",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sonic Adventure 2 (Europe) (En,Ja,Fr,De,Es).chd",
+      "name": "Sonic Adventure 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Soulcalibur (Europe) (En,Fr,De,Es).chd",
+      "name": "SoulCalibur",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Soulcalibur (Europe) (EnFrDeEs).chd",
+      "name": "SoulCalibur",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Space Channel 5 Part 2 (Japan).chd",
+      "name": "Space Channel 5 : Part 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sports Jam (USA).chd",
+      "name": "Sports Jam",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Star Wars - Demolition (Europe).chd",
+      "name": "Star Wars Demolition",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Star Wars - Episode I - Jedi Power Battles (Europe).chd",
+      "name": "Star Wars : Episode I Jedi Power Battles",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Street Fighter Alpha 3 (Europe).chd",
+      "name": "Street Fighter Alpha 3",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Street Fighter III - 3rd Strike (Europe).chd",
+      "name": "Street Fighter III : 3rd Strike",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Street Fighter III - 3rd Strike v1.001 (2000)(Capcom)(US)[!].chd",
+      "name": "Street Fighter III: 3rd Strike (Capcom)",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Street Fighter III - Double Impact (Europe).chd",
+      "name": "Street Fighter III : Double Impact",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Street Fighter Zero 3 - Saikyo-ryu Dojo for Matching Service (Japan).chd",
+      "name": "Street Fighter Zero 3 : Saikyo-ryu Dojo for Matching Service",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sunrise Eiyuutan (Japan).chd",
+      "name": "Sunrise Eiyuutan",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Super Puzzle Fighter II X for Matching Service (Japan).chd",
+      "name": "Super Puzzle Fighter II X for Matching Service",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Super Street Fighter II X for Matching Service (Japan).chd",
+      "name": "Super Street Fighter II X for Matching Service",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sushi Bar.chd",
+      "name": "Sushi Bar",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Tanaka Torahiko no Ultra-ryuu Shougi - Ibisha Anaguma-hen (Japan).chd",
+      "name": "Tanaka Torahiko no Uru Toraryuu Shogi : Ibisha Anaguma-hen",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/TDCFinal2.cdi",
+      "name": "Capcom Fighting Collection",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Tech Romancer (Europe).chd",
+      "name": "Tech Romancer",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Tokyo Highway Challenge (Europe).chd",
+      "name": "Tokyo Highway Challenge",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Tokyo Highway Challenge 2 (Europe).chd",
+      "name": "Tokyo Highway Challenge 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Tony Hawk's Pro Skater 2 (Europe).chd",
+      "name": "Tony Hawk's Pro Skater 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Tony Hawk's Pro Skater 2 v1.001 (2000)(Activision)(US)[!].chd",
+      "name": "Tony Hawk's Pro Skater 2 (Activision)",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Tony Hawk's Skateboarding (Europe).chd",
+      "name": "Tony Hawk's Skateboarding",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Tough Guy (USA, Japan) (Unl).cdi",
+      "name": "Tough Guy",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/TrickStyle (Europe) (En,Fr,De,Es,It).chd",
+      "name": "TrickStyle",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Triggerheart Exelica (Japan).chd",
+      "name": "Trigger Heart Exelica",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Trizeal (Japan).chd",
+      "name": "Trizeal",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Tsuushin Taisen Logic Battle Daisessen (Japan).chd",
+      "name": "Tsuushin Taisen Logic Battle Daisessen",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Twinkle Star Sprites (Japan) (En,Ja,Es).chd",
+      "name": "Twinkle Star Sprites",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Typing of the Dead, The (USA).chd",
+      "name": "The Typing of the Dead",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Ultimate Fighting Championship (Europe).chd",
+      "name": "Ultimate Fighting Championship",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Under Defeat (Japan).chd",
+      "name": "Under Defeat",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
     }
   ],
   "status": "COMPLETE",
@@ -130328,7 +131828,7 @@
     "GAME_FAIL": 171,
     "STATIC_FAIL": 194,
     "FLAKY": 0,
-    "ADAPTER_NOT_READY": 220,
+    "ADAPTER_NOT_READY": 320,
     "ENGINE_FAIL": 2,
     "WRONG_GAME_DISPATCH": 0,
     "AUDIO_ROUTE_CHANGED": 0,
@@ -130347,21 +131847,21 @@
     "status": "PILOT_PASS_WITH_ADAPTER_FIX"
   },
   "latest_batch": {
-    "name": "priority_batch_57",
+    "name": "priority_batch_58",
     "considered": 100,
-    "launched": 34,
-    "auto_pass": 34,
+    "launched": 0,
+    "auto_pass": 0,
     "game_fail": 0,
     "static_fail": 0,
     "flaky": 0,
-    "restore_verified": "34/34",
+    "restore_verified": "0/0",
     "restore_failures": 0,
     "engine_failures_unresolved": 0,
-    "started_at": "2026-11-18T16:00:36.677-03:00",
-    "finished_at": "2026-11-18T16:15:21.426-03:00",
-    "first_game": "/userdata/roms/dreamcast/Worms Armageddon (Europe) (En,Fr,De,Nl,Sv,No,Da).chd",
-    "last_game": "/userdata/roms/dreamcast/King of Fighters 2002, The (Japan) (En,Ja).chd",
-    "next_game": "dreamcast:/userdata/roms/dreamcast/King of Fighters XI.chd"
+    "started_at": "2026-11-18T16:16:22.488-03:00",
+    "finished_at": "2026-11-18T16:18:04.807-03:00",
+    "first_game": "/userdata/roms/dreamcast/King of Fighters XI.chd",
+    "last_game": "/userdata/roms/dreamcast/Under Defeat (Japan).chd",
+    "next_game": "dreamcast:/userdata/roms/dreamcast/Vampire Chronicle for Matching Service (Japan).chd"
   },
   "latest_engine_issue": {
     "cause": "update_csv assumed identity was a dict for STATIC_FAIL (identity=null)",
@@ -130384,8 +131884,8 @@
   "launch_transactions": 5198,
   "transaction_attempts": 509,
   "retry_transactions": 2,
-  "unique_games_processed": 5610,
-  "result_records": 5612,
+  "unique_games_processed": 5710,
+  "result_records": 5712,
   "static_preflight_results": 194,
   "engine_fail_total_historical": 2,
   "engine_fail_active": 0,

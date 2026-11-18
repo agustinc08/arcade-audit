@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-18T19:15:21+00:00",
+  "updated_at": "2026-11-18T19:18:04+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_57: 100 considerados, 34 lanzados, 34 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 34/34; AUTO_CERTIFIED=5025; NEXT_GAME=dreamcast:/userdata/roms/dreamcast/King of Fighters XI.chd",
+      "summary": "priority_batch_58: 100 considerados, 0 lanzados, 0 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 0/0; AUTO_CERTIFIED=5025; NEXT_GAME=dreamcast:/userdata/roms/dreamcast/Vampire Chronicle for Matching Service (Japan).chd",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-18T19:15:21+00:00"
+      "updated_at": "2026-11-18T19:18:04+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -590,10 +590,10 @@
     "needs_repair": 365,
     "total_restores": 5198,
     "restore_failures": 0,
-    "next_game": "dreamcast:/userdata/roms/dreamcast/King of Fighters XI.chd",
+    "next_game": "dreamcast:/userdata/roms/dreamcast/Vampire Chronicle for Matching Service (Japan).chd",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 5610,
-    "result_records": 5612,
+    "unique_games_processed": 5710,
+    "result_records": 5712,
     "launch_transactions": 5198,
     "retry_transactions": 2
   }

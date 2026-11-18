@@ -1,7 +1,7 @@
 # Estado actual del arcade
 
-- UPDATED_AT: 2026-11-18T19:15:38+00:00
-- GITHUB_HEAD observado antes de publicar: `67fc295b3f2387a1ac406ee2dfe0451429e9f2ce`
+- UPDATED_AT: 2026-11-18T19:18:23+00:00
+- GITHUB_HEAD observado antes de publicar: `7570d2772c32c7e8a7316585ecd3d9cfeca73fe6`
 - BATOCERA_VERSION: 43.1
 
 ## Sistema y hardware
@@ -44,9 +44,9 @@
 - NEEDS_REPAIR: 365
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
-- NEXT_GAME: `dreamcast:/userdata/roms/dreamcast/King of Fighters XI.chd`
-- UNIQUE_GAMES_PROCESSED: 5610
-- RESULT_RECORDS: 5612
+- NEXT_GAME: `dreamcast:/userdata/roms/dreamcast/Vampire Chronicle for Matching Service (Japan).chd`
+- UNIQUE_GAMES_PROCESSED: 5710
+- RESULT_RECORDS: 5712
 - LAUNCH_TRANSACTIONS: 5198
 - RETRY_TRANSACTIONS: 2
 - ADAPTERS_READY: 23
