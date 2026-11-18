@@ -1,26 +1,26 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-18T00:08:53+00:00
+- UPDATED_AT: 2026-11-18T00:49:34+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 2418
-- UNIQUE_GAMES_PROCESSED: 2610
-- RESULT_RECORDS: 2612
-- LAUNCH_TRANSACTIONS: 2418
+- ATTEMPTED_NEW: 2518
+- UNIQUE_GAMES_PROCESSED: 2710
+- RESULT_RECORDS: 2712
+- LAUNCH_TRANSACTIONS: 2518
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 2257
+- AUTO_CERTIFIED: 2356
 - STATIC_FAIL: 194
-- GAME_FAIL: 159
+- GAME_FAIL: 160
 - FLAKY: 0
-- NEEDS_REPAIR: 353
+- NEEDS_REPAIR: 354
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: megadrive:/userdata/roms/megadrive/Evander Holyfield's Real Deal Boxing (JU) [!].bin
-- TOTAL_RESTORES: 2418
+- NEXT_GAME: megadrive:/userdata/roms/megadrive/Ms. Pac-Man (U) [!].bin
+- TOTAL_RESTORES: 2518
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -52,7 +52,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | mame | 1324 | 1324 | 1112 | 1008 | 37 | 142 | 0 | 0 | 0 | 137 |
 | mastersystem | 383 | 383 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 382 |
 | megacd | 24 | 24 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 24 |
-| megadrive | 1037 | 1037 | 0 | 229 | 0 | 4 | 0 | 0 | 0 | 804 |
+| megadrive | 1037 | 1037 | 0 | 328 | 0 | 5 | 0 | 0 | 0 | 704 |
 | mrboom | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | n64 | 377 | 377 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 377 |
 | naomi | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_27; considerados 100; lanzados 100; AUTO_PASS 99; restore 100/100.
+- Lote más reciente: priority_batch_28; considerados 100; lanzados 100; AUTO_PASS 99; restore 100/100.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: megadrive:/userdata/roms/megadrive/Evander Holyfield's Real Deal Boxing (JU) [!].bin.
+- NEXT_GAME: megadrive:/userdata/roms/megadrive/Ms. Pac-Man (U) [!].bin.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY
