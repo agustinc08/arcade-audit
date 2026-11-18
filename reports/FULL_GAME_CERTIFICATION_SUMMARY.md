@@ -1,16 +1,16 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-18T18:59:52+00:00
+- UPDATED_AT: 2026-11-18T19:15:37+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 5164
-- UNIQUE_GAMES_PROCESSED: 5510
-- RESULT_RECORDS: 5512
-- LAUNCH_TRANSACTIONS: 5164
+- ATTEMPTED_NEW: 5198
+- UNIQUE_GAMES_PROCESSED: 5610
+- RESULT_RECORDS: 5612
+- LAUNCH_TRANSACTIONS: 5198
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 4991
+- AUTO_CERTIFIED: 5025
 - STATIC_FAIL: 194
 - GAME_FAIL: 171
 - FLAKY: 0
@@ -19,8 +19,8 @@
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/Worms Armageddon (Europe) (En,Fr,De,Nl,Sv,No,Da).chd
-- TOTAL_RESTORES: 5164
+- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/King of Fighters XI.chd
+- TOTAL_RESTORES: 5198
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -32,12 +32,12 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 | Sistema | TOTAL | INSTALLED | HISTORICAL_BOOT_OK | AUTO_CERTIFIED | STATIC_FAIL | GAME_FAIL | FLAKY | CONTROL_CERTIFIED | GUEST_READY | NOT_TESTED |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| atari2600 | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
+| atari2600 | 2 | 2 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 |
 | c64 | 4 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 |
 | cannonball | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | cdogs | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | devilutionx | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 8 |
-| dreamcast | 775 | 775 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 621 |
+| dreamcast | 775 | 775 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 555 |
 | easyrpg | 12 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 |
 | fbneo | 104 | 104 | 88 | 52 | 52 | 0 | 0 | 0 | 0 | 0 |
 | fds | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
@@ -61,7 +61,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | nes | 702 | 702 | 0 | 700 | 0 | 2 | 0 | 0 | 0 | 0 |
 | odcommander | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | openbor | 128 | 128 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 128 |
-| pcengine | 529 | 529 | 0 | 36 | 0 | 0 | 0 | 0 | 0 | 493 |
+| pcengine | 529 | 529 | 0 | 69 | 0 | 0 | 0 | 0 | 0 | 460 |
 | ports | 5 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 5 |
 | prboom | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
 | ps2 | 196 | 196 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 196 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_56; considerados 100; lanzados 0; AUTO_PASS 0; restore 0/0.
+- Lote más reciente: priority_batch_57; considerados 100; lanzados 34; AUTO_PASS 34; restore 34/34.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/Worms Armageddon (Europe) (En,Fr,De,Nl,Sv,No,Da).chd.
+- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/King of Fighters XI.chd.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY

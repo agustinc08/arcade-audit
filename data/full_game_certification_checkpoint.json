@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18T18:59:25+00:00",
+  "updated_at": "2026-11-18T19:15:21+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
-  "next_untested": "dreamcast:/userdata/roms/dreamcast/Worms Armageddon (Europe) (En,Fr,De,Nl,Sv,No,Da).chd",
-  "attempted_new": 5164,
-  "auto_certified": 4991,
+  "next_untested": "dreamcast:/userdata/roms/dreamcast/King of Fighters XI.chd",
+  "attempted_new": 5198,
+  "auto_certified": 5025,
   "manual_control_certified": 0,
   "guest_ready": 0,
   "launches_blocked_by": [],
@@ -128484,6 +128484,1812 @@
         "status": "NOT_REQUIRED_NO_WRITE"
       },
       "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Worms Armageddon (Europe) (En,Fr,De,Nl,Sv,No,Da).chd",
+      "name": "Worms Armageddon",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Worms World Party (Europe) (En,Fr,De,Es,It,Nl,Sv,Da).chd",
+      "name": "Worms World Party",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/WWF Attitude (Europe).chd",
+      "name": "WWF Attitude",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/WWF Royal Rumble (Europe).chd",
+      "name": "WWF Royal Rumble",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/21 Emon - Mezase Hotel Ou!! (Japan).pce",
+      "name": "21 Emon : Mezase Hotel Ou!!",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160045_748498a1d7",
+      "stable_seconds": 16.164,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160045_748498a1d7",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:01:08.528-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/AV Poker - World Gambler (Japan).pce",
+      "name": "AV Poker : World Gambler",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160109_a054e00d8d",
+      "stable_seconds": 16.203,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160109_a054e00d8d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:01:32.248-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Break In (Japan).pce",
+      "name": "Break In",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160133_93022db71a",
+      "stable_seconds": 16.206,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160133_93022db71a",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:01:56.658-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Champion Wrestler (Japan).pce",
+      "name": "Champion Wrestler",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160157_dcf4d0a536",
+      "stable_seconds": 16.217,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160157_dcf4d0a536",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:02:20.221-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Davis Cup Tennis (USA).pce",
+      "name": "Davis Cup Tennis",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160221_212eb890cd",
+      "stable_seconds": 16.213,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160221_212eb890cd",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:02:43.888-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Final Match Tennis (Japan).pce",
+      "name": "Final Match Tennis",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160245_6ee09be43a",
+      "stable_seconds": 16.198,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160245_6ee09be43a",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:03:07.804-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Final Match Tennis Ladies + Training mode Hack (ENG).pce",
+      "name": "Final Match Tennis",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160309_da4aaf7154",
+      "stable_seconds": 16.207,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160309_da4aaf7154",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:03:31.478-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Fire Pro Wrestling - Combination Tag (Japan).pce",
+      "name": "Fire Pro Wrestling : Combination Tag",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160332_4b82574181",
+      "stable_seconds": 16.198,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160332_4b82574181",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:03:54.861-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Fire Pro Wrestling 2 - 2nd Bout (Japan).pce",
+      "name": "Fire Pro Wrestling 2 : 2nd Bout",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160356_fd11d954b2",
+      "stable_seconds": 16.207,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160356_fd11d954b2",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:04:18.978-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Fire Pro Wrestling 3 - Legend Bout (Japan).pce",
+      "name": "Fire Pro Wrestling 3 : Legend Bout",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160420_e44f31f89f",
+      "stable_seconds": 16.22,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160420_e44f31f89f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:04:42.568-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Ganbare! Golf Boys (Japan).pce",
+      "name": "Ganbare! Golf Boys",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160443_564603684c",
+      "stable_seconds": 16.172,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160443_564603684c",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:05:06.781-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Hit the Ice - VHL - The Official Video Hockey League (Japan).pce",
+      "name": "Hit the Ice : The Video Hockey League",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160507_b57773ce0d",
+      "stable_seconds": 16.177,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160507_b57773ce0d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:05:30.768-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Hit the Ice - VHL - The Official Video Hockey League (USA).pce",
+      "name": "Hit the Ice : The Video Hockey League",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160531_fcfc8ae1be",
+      "stable_seconds": 16.19,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160531_fcfc8ae1be",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:05:54.875-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/J. League Greatest Eleven (Japan).pce",
+      "name": "J. League Greatest Eleven",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160555_82f9b24019",
+      "stable_seconds": 16.191,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160555_82f9b24019",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:06:18.778-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Jack Nicklaus' Greatest 18 Holes of Major Championship Golf (Japan).pce",
+      "name": "Jack Nicklaus : Championship Golf",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160620_b94266ff46",
+      "stable_seconds": 16.193,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160620_b94266ff46",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:06:43.031-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Jack Nicklaus' Turbo Golf (USA).pce",
+      "name": "Jack Nicklaus' Turbo Golf",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160644_93b2bae390",
+      "stable_seconds": 16.197,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160644_93b2bae390",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:07:06.758-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Nekketsu Koukou Dodgeball-bu - Soccer PC Hen (Japan).pce",
+      "name": "Nekketsu Koukou Dodgeball-bu : Soccer PC Hen",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160707_fc670ddac8",
+      "stable_seconds": 16.206,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160707_fc670ddac8",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:07:30.591-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Power League 5 (Japan).pce",
+      "name": "Power League 5",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160731_164a75959b",
+      "stable_seconds": 16.193,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160731_164a75959b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:07:54.534-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Power League III (Japan).pce",
+      "name": "Power League III",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160755_35fb516acf",
+      "stable_seconds": 16.164,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160755_35fb516acf",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:08:18.464-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Power Tennis (Japan).pce",
+      "name": "Power Tennis",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160819_3966effa3b",
+      "stable_seconds": 16.179,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160819_3966effa3b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:08:42.470-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Pro Tennis World Court (Japan).pce",
+      "name": "Pro Tennis World Court",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160843_b1fb31547a",
+      "stable_seconds": 16.196,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160843_b1fb31547a",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:09:06.344-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Pro Yakyuu World Stadium '91 (Japan).pce",
+      "name": "Pro Yakyuu World Stadium '91",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160907_cce589266f",
+      "stable_seconds": 16.206,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160907_cce589266f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:09:30.154-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Sonic Spike - World Championship Beach Volleyball (ESP).pce",
+      "name": "Sonic Spike",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160931_f3b70968e4",
+      "stable_seconds": 16.175,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160931_f3b70968e4",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:09:53.958-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Sonic Spike - World Championship Beach Volleyball (USA).pce",
+      "name": "Sonic Spike",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T160955_c86464559f",
+      "stable_seconds": 16.181,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T160955_c86464559f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:10:18.058-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Super Momotarou Dentetsu (Japan).pce",
+      "name": "Super Momotarou Dentetsu",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T161019_64bec0551b",
+      "stable_seconds": 16.173,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T161019_64bec0551b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:10:41.844-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Winning Shot (Japan).pce",
+      "name": "Winning Shot",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T161042_a11d5a1d0d",
+      "stable_seconds": 16.181,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T161042_a11d5a1d0d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:11:06.917-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/World Beach Volley (Japan).pce",
+      "name": "World Beach Volley",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T161108_9d84aed9eb",
+      "stable_seconds": 16.175,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T161108_9d84aed9eb",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:11:30.771-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/World Court Tennis (ESP).pce",
+      "name": "World Court Tennis",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T161131_7e4d2b83ec",
+      "stable_seconds": 16.197,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T161131_7e4d2b83ec",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:11:54.338-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/World Court Tennis (USA).pce",
+      "name": "World Court Tennis",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T161155_7909a837df",
+      "stable_seconds": 16.201,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T161155_7909a837df",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:12:18.298-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/World Jockey (Japan).pce",
+      "name": "World Jockey",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T161219_d9f0ea7b78",
+      "stable_seconds": 16.179,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T161219_d9f0ea7b78",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:12:42.154-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/F1 Triple Battle (Japan).pce",
+      "name": "F1 Triple Battle",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T161243_fc72e9504f",
+      "stable_seconds": 16.225,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T161243_fc72e9504f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:13:05.811-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Power Golf (Japan).pce",
+      "name": "Power Golf",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T161307_815ef54a02",
+      "stable_seconds": 16.18,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T161307_815ef54a02",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:13:29.804-03:00"
+    },
+    {
+      "system": "pcengine",
+      "rom": "/userdata/roms/pcengine/Power Golf (USA).pce",
+      "name": "Power Golf",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T161331_154b6eb87c",
+      "stable_seconds": 16.174,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T161331_154b6eb87c",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:13:53.800-03:00"
+    },
+    {
+      "system": "atari2600",
+      "rom": "/userdata/roms/atari2600/Amoeba Jump v1.3 NTSC.bin",
+      "name": "Amoeba Jump",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T161354_2ae06af19f",
+      "stable_seconds": 20.094,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T161354_2ae06af19f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:14:21.251-03:00"
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/18 Wheeler - American Pro Trucker (Europe) (En,Fr,De,Es).chd",
+      "name": "18 Wheeler : American Pro Trucker",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/4 Wheel Thunder (Europe) (En,Fr).chd",
+      "name": "4 Wheel Thunder",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Aero Dancing i (Japan).chd",
+      "name": "Aero Dancing i",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/AeroWings 2 - Airstrike (Europe) (En,De).chd",
+      "name": "AeroWings 2 : Airstrike",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Aqua GT (Europe) (En,Fr,De).chd",
+      "name": "Aqua GT",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/b2b.cdi",
+      "name": "Bang² Busters",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Battle Beaster (Japan).chd",
+      "name": "Battle Beaster",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Border Down (Japan).chd",
+      "name": "Border Down",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Breakers (USA, Japan) (Unl).cue",
+      "name": "Breaker's",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Buggy Heat (Europe) (En,Fr,De,Es).chd",
+      "name": "Buggy Heat",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Bust-A-Move 4 (Europe).chd",
+      "name": "Bust-A-Move 4",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Cannon Spike (Europe).chd",
+      "name": "Cannon Spike",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Capcom vs. SNK (Europe).chd",
+      "name": "Capcom vs. SNK",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Capcom vs. SNK - Millennium Fight 2000 Pro (Japan).chd",
+      "name": "Capcom vs. SNK : Millennium Fight 2000 Pro",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Capcom vs. SNK 2 - Millionaire Fighting 2001 (English v1.0)/disc.gdi",
+      "name": "Nanatsu no Hikan - Senritsu no Bishou",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Capcom vs. SNK 2 - Millionaire Fighting 2001 (Japan).chd",
+      "name": "Capcom vs. SNK 2 : Millionaire Fighting 2001",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Captain Tomaday (USA, Japan) (Unl).cue",
+      "name": "Captain Tomaday",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Centipede (USA).chd",
+      "name": "Centipede",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Championship Surfer (Europe) (En,Fr,De,Es,It).chd",
+      "name": "Championship Surfer",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Charge 'N Blast (Europe).chd",
+      "name": "Charge 'N Blast",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Choukou Senki Kikaioh for Matching Service (Japan).chd",
+      "name": "Choukou Senki Kikaioh for Matching Service",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Cleopatra Fortune (Japan) (Rev A).chd",
+      "name": "Cleopatra Fortune",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Confidential Mission (Europe) (En,Fr,De,Es).chd",
+      "name": "Confidential Mission",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Cool Cool Toon (Japan).chd",
+      "name": "Cool Cool Toon",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Cyber Troopers - Virtual-On - Oratorio Tangram (USA).chd",
+      "name": "Cyber Troopers Virtual-On : Oratorio Tangram",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Dance Dance Revolution - Club Version - Dreamcast Edition (Japan).chd",
+      "name": "Dance Dance Revolution Club Version Dreamcast Edition",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Dance Dance Revolution 2nd Mix - Dreamcast Edition (Japan).chd",
+      "name": "Dance Dance Revolution 2nd Mix Dreamcast Edition",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Dave Mirra Freestyle BMX (Europe).chd",
+      "name": "Dave Mirra Freestyle BMX",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Death Crimson OX (USA).chd",
+      "name": "Death Crimson OX",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Doguu Senki - Haou (Japan).chd",
+      "name": "Doguu Senki : Haou",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Doki Doki Idol Star Seeker Remix (Japan).chd",
+      "name": "Doki Doki Idol Star Seeker Remix",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Dolphin Blue.chd",
+      "name": "Dolphin Blue",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Ducati World (Europe) (En,Fr,De,It).chd",
+      "name": "Ducati World",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Dynamite Cop (Europe).chd",
+      "name": "Dynamite Cop",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Eisei Meijin III - Game Creator Yoshimura Nobuhiro no Zunou (Japan).chd",
+      "name": "Eisei Meijin III : Game Creator Yoshimura Nobuhiro no Zunou",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/F1 World Grand Prix (Europe) (En,Fr,De,Es).chd",
+      "name": "F1 World Grand Prix for Dreamcast",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/F355 Challenge - Passione Rossa (Europe) (En,Fr,De,Es,It).chd",
+      "name": "F355 Challenge : Passione Rossa",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Fatal Fury - Mark of the Wolves (USA).chd",
+      "name": "Fatal Fury : Mark of the Wolves",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Fighting Vipers 2 (Europe) (En,Ja,Fr,De,Es,It).chd",
+      "name": "Fighting Vipers 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Fist of the North Star.chd",
+      "name": "Fist of the North Star",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Flag to Flag (USA).chd",
+      "name": "Flag to Flag",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Force Five.chd",
+      "name": "Force Five",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Frame Gride (Japan).chd",
+      "name": "Frame Gride",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Frog Feast (World).cdi",
+      "name": "Frog Feast",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Ganryu (USA, Japan) (Unl).cue",
+      "name": "Ganryu",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/GigaWing (Europe).chd",
+      "name": "GigaWing",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Golem no Maigo (Japan).chd",
+      "name": "Golem no Maigo",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Guilty Gear X (Japan) (Rev A).chd",
+      "name": "Guilty Gear X",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Guilty Gear X ver 1.5.chd",
+      "name": "Guilty Gear X Ver. 1.5",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Gunbird 2 (Europe).chd",
+      "name": "Gunbird 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/House of the Dead 2, The (Europe) (En,Fr,De,Es).chd",
+      "name": "The House of the Dead 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Hydro Thunder (Europe).chd",
+      "name": "Hydro Thunder",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Incoming (Europe) (En,Fr,De,Es,It).chd",
+      "name": "Incoming",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Iron Aces (Europe).chd",
+      "name": "Iron Aces",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Jeremy McGrath Supercross 2000 (Europe) (En,Fr,De).chd",
+      "name": "Jeremy McGrath Supercross 2000",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Jikkyou Powerful Pro Yakyuu - Dreamcast Edition (Japan).chd",
+      "name": "Jikkyou Powerful Pro Yakyuu Dreamcast Edition",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Jimmy White's 2 - Cueball (Europe) (En,Fr,De,Es,It).chd",
+      "name": "Jimmy White's 2 : Cueball",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/JoJo's Bizarre Adventure (Europe).chd",
+      "name": "JoJo's Bizarre Adventure",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/KenJu.chd",
+      "name": "KenJu",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/King of Fighters 2000, The (Japan).chd",
+      "name": "The King of Fighters 2000",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/King of Fighters 2001, The (Japan).chd",
+      "name": "The King of Fighters 2001",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/King of Fighters 2002, The (Japan) (En,Ja).chd",
+      "name": "The King of Fighters 2002",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
     }
   ],
   "status": "COMPLETE",
@@ -128518,11 +130324,11 @@
   "current_test": null,
   "next_game": null,
   "counts": {
-    "AUTO_PASS": 4991,
+    "AUTO_PASS": 5025,
     "GAME_FAIL": 171,
     "STATIC_FAIL": 194,
     "FLAKY": 0,
-    "ADAPTER_NOT_READY": 154,
+    "ADAPTER_NOT_READY": 220,
     "ENGINE_FAIL": 2,
     "WRONG_GAME_DISPATCH": 0,
     "AUDIO_ROUTE_CHANGED": 0,
@@ -128541,21 +130347,21 @@
     "status": "PILOT_PASS_WITH_ADAPTER_FIX"
   },
   "latest_batch": {
-    "name": "priority_batch_56",
+    "name": "priority_batch_57",
     "considered": 100,
-    "launched": 0,
-    "auto_pass": 0,
+    "launched": 34,
+    "auto_pass": 34,
     "game_fail": 0,
     "static_fail": 0,
     "flaky": 0,
-    "restore_verified": "0/0",
+    "restore_verified": "34/34",
     "restore_failures": 0,
     "engine_failures_unresolved": 0,
-    "started_at": "2026-11-18T15:57:50.671-03:00",
-    "finished_at": "2026-11-18T15:59:25.000-03:00",
-    "first_game": "/userdata/roms/dreamcast/Fur Fighters (Europe) (En,Fr,De,Es).chd",
-    "last_game": "/userdata/roms/dreamcast/Who Wants to Beat Up a Millionaire (USA).chd",
-    "next_game": "dreamcast:/userdata/roms/dreamcast/Worms Armageddon (Europe) (En,Fr,De,Nl,Sv,No,Da).chd"
+    "started_at": "2026-11-18T16:00:36.677-03:00",
+    "finished_at": "2026-11-18T16:15:21.426-03:00",
+    "first_game": "/userdata/roms/dreamcast/Worms Armageddon (Europe) (En,Fr,De,Nl,Sv,No,Da).chd",
+    "last_game": "/userdata/roms/dreamcast/King of Fighters 2002, The (Japan) (En,Ja).chd",
+    "next_game": "dreamcast:/userdata/roms/dreamcast/King of Fighters XI.chd"
   },
   "latest_engine_issue": {
     "cause": "update_csv assumed identity was a dict for STATIC_FAIL (identity=null)",
@@ -128575,11 +130381,11 @@
       "resolved_at": "2026-11-15T09:39:16-03:00"
     }
   ],
-  "launch_transactions": 5164,
+  "launch_transactions": 5198,
   "transaction_attempts": 509,
   "retry_transactions": 2,
-  "unique_games_processed": 5510,
-  "result_records": 5512,
+  "unique_games_processed": 5610,
+  "result_records": 5612,
   "static_preflight_results": 194,
   "engine_fail_total_historical": 2,
   "engine_fail_active": 0,
@@ -128588,6 +130394,6 @@
   "flaky": 0,
   "needs_repair": 365,
   "control_certified": 0,
-  "restores_verified": 5164,
+  "restores_verified": 5198,
   "restore_failures": 0
 }
