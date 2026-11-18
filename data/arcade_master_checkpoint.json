@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-18T08:20:43+00:00",
+  "updated_at": "2026-11-18T09:02:26+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_39: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=3448; NEXT_GAME=gba:/userdata/roms/gba/Dogz - Fashion (E).gba",
+      "summary": "priority_batch_40: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=3548; NEXT_GAME=gba:/userdata/roms/gba/Matantei Loki Ragnarok - Gensou no Labyrinth (J).gba",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-18T08:20:43+00:00"
+      "updated_at": "2026-11-18T09:02:26+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 3448,
-    "attempted_new": 3618,
+    "auto_certified": 3548,
+    "attempted_new": 3718,
     "static_fail": 194,
     "game_fail": 168,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
     "needs_repair": 362,
-    "total_restores": 3618,
+    "total_restores": 3718,
     "restore_failures": 0,
-    "next_game": "gba:/userdata/roms/gba/Dogz - Fashion (E).gba",
+    "next_game": "gba:/userdata/roms/gba/Matantei Loki Ragnarok - Gensou no Labyrinth (J).gba",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 3810,
-    "result_records": 3812,
-    "launch_transactions": 3618,
+    "unique_games_processed": 3910,
+    "result_records": 3912,
+    "launch_transactions": 3718,
     "retry_transactions": 2
   }
 }
