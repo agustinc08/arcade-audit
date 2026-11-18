@@ -1,16 +1,16 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-18T09:44:28+00:00
+- UPDATED_AT: 2026-11-18T10:26:07+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 3818
-- UNIQUE_GAMES_PROCESSED: 4010
-- RESULT_RECORDS: 4012
-- LAUNCH_TRANSACTIONS: 3818
+- ATTEMPTED_NEW: 3918
+- UNIQUE_GAMES_PROCESSED: 4110
+- RESULT_RECORDS: 4112
+- LAUNCH_TRANSACTIONS: 3918
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 3648
+- AUTO_CERTIFIED: 3748
 - STATIC_FAIL: 194
 - GAME_FAIL: 168
 - FLAKY: 0
@@ -19,8 +19,8 @@
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: gba:/userdata/roms/gba/Shaman King - Master of Spirits (E) [T+Spa1.0_Crimental].gba
-- TOTAL_RESTORES: 3818
+- NEXT_GAME: gba:/userdata/roms/gba/Yu-Gi-Oh! Gamepack 2 - Destiny Board Traveler & Dungeon Dice Monsters (E).gba
+- TOTAL_RESTORES: 3918
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -44,7 +44,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | flatpak | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
 | gamecube | 9 | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 |
 | gb | 410 | 410 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 409 |
-| gba | 725 | 725 | 0 | 605 | 0 | 0 | 0 | 0 | 0 | 120 |
+| gba | 725 | 725 | 0 | 705 | 0 | 0 | 0 | 0 | 0 | 20 |
 | gbc | 406 | 406 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 406 |
 | hcl | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | hurrican | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_41; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
+- Lote más reciente: priority_batch_42; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: gba:/userdata/roms/gba/Shaman King - Master of Spirits (E) [T+Spa1.0_Crimental].gba.
+- NEXT_GAME: gba:/userdata/roms/gba/Yu-Gi-Oh! Gamepack 2 - Destiny Board Traveler & Dungeon Dice Monsters (E).gba.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY

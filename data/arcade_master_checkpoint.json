@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-18T09:44:02+00:00",
+  "updated_at": "2026-11-18T10:25:46+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_41: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=3648; NEXT_GAME=gba:/userdata/roms/gba/Shaman King - Master of Spirits (E) [T+Spa1.0_Crimental].gba",
+      "summary": "priority_batch_42: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=3748; NEXT_GAME=gba:/userdata/roms/gba/Yu-Gi-Oh! Gamepack 2 - Destiny Board Traveler & Dungeon Dice Monsters (E).gba",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-18T09:44:02+00:00"
+      "updated_at": "2026-11-18T10:25:46+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 3648,
-    "attempted_new": 3818,
+    "auto_certified": 3748,
+    "attempted_new": 3918,
     "static_fail": 194,
     "game_fail": 168,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
     "needs_repair": 362,
-    "total_restores": 3818,
+    "total_restores": 3918,
     "restore_failures": 0,
-    "next_game": "gba:/userdata/roms/gba/Shaman King - Master of Spirits (E) [T+Spa1.0_Crimental].gba",
+    "next_game": "gba:/userdata/roms/gba/Yu-Gi-Oh! Gamepack 2 - Destiny Board Traveler & Dungeon Dice Monsters (E).gba",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 4010,
-    "result_records": 4012,
-    "launch_transactions": 3818,
+    "unique_games_processed": 4110,
+    "result_records": 4112,
+    "launch_transactions": 3918,
     "retry_transactions": 2
   }
 }
