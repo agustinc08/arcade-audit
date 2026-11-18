@@ -1,16 +1,16 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-18T17:13:39+00:00
+- UPDATED_AT: 2026-11-18T17:54:22+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 4918
-- UNIQUE_GAMES_PROCESSED: 5110
-- RESULT_RECORDS: 5112
-- LAUNCH_TRANSACTIONS: 4918
+- ATTEMPTED_NEW: 5018
+- UNIQUE_GAMES_PROCESSED: 5210
+- RESULT_RECORDS: 5212
+- LAUNCH_TRANSACTIONS: 5018
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 4746
+- AUTO_CERTIFIED: 4846
 - STATIC_FAIL: 194
 - GAME_FAIL: 170
 - FLAKY: 0
@@ -19,8 +19,8 @@
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: gbc:/userdata/roms/gbc/JumpStart Dino Adventure - Field Trip (U) [C].gbc
-- TOTAL_RESTORES: 4918
+- NEXT_GAME: gbc:/userdata/roms/gbc/Robocop (U) (M6) [C][!].gbc
+- TOTAL_RESTORES: 5018
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -45,7 +45,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | gamecube | 9 | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 |
 | gb | 410 | 410 | 0 | 403 | 0 | 0 | 0 | 0 | 0 | 7 |
 | gba | 725 | 725 | 0 | 723 | 0 | 1 | 0 | 0 | 0 | 1 |
-| gbc | 406 | 406 | 0 | 198 | 0 | 0 | 0 | 0 | 0 | 208 |
+| gbc | 406 | 406 | 0 | 298 | 0 | 0 | 0 | 0 | 0 | 108 |
 | hcl | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | hurrican | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | ikemen | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_52; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
+- Lote más reciente: priority_batch_53; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: gbc:/userdata/roms/gbc/JumpStart Dino Adventure - Field Trip (U) [C].gbc.
+- NEXT_GAME: gbc:/userdata/roms/gbc/Robocop (U) (M6) [C][!].gbc.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY
