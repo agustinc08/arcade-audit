@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-18T00:48:59+00:00",
+  "updated_at": "2026-11-18T01:29:44+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_28: 100 considerados, 100 lanzados, 99 AUTO_PASS, 1 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=2356; NEXT_GAME=megadrive:/userdata/roms/megadrive/Ms. Pac-Man (U) [!].bin",
+      "summary": "priority_batch_29: 100 considerados, 100 lanzados, 98 AUTO_PASS, 2 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=2454; NEXT_GAME=megadrive:/userdata/roms/megadrive/Tecmo Super Hockey (U) [!].bin",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-18T00:48:59+00:00"
+      "updated_at": "2026-11-18T01:29:44+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 2356,
-    "attempted_new": 2518,
+    "auto_certified": 2454,
+    "attempted_new": 2618,
     "static_fail": 194,
-    "game_fail": 160,
+    "game_fail": 162,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
-    "needs_repair": 354,
-    "total_restores": 2518,
+    "needs_repair": 356,
+    "total_restores": 2618,
     "restore_failures": 0,
-    "next_game": "megadrive:/userdata/roms/megadrive/Ms. Pac-Man (U) [!].bin",
+    "next_game": "megadrive:/userdata/roms/megadrive/Tecmo Super Hockey (U) [!].bin",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 2710,
-    "result_records": 2712,
-    "launch_transactions": 2518,
+    "unique_games_processed": 2810,
+    "result_records": 2812,
+    "launch_transactions": 2618,
     "retry_transactions": 2
   }
 }
