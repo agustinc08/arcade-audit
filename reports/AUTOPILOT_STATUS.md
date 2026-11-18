@@ -1,18 +1,18 @@
 # ARCADE AUTOPILOT — último ciclo
 
-- Actualizado: 2026-11-18T12:28:15+00:00
-- Batch: priority_batch_45
+- Actualizado: 2026-11-18T13:08:54+00:00
+- Batch: priority_batch_46
 - Considerados: 100
 - Lanzados: 100
 - AUTO_PASS: 100
 - GAME_FAIL: 0
 - STATIC_FAIL: 0
 - Restores: 100/100
-- AUTO_CERTIFIED acumulado: 4046
+- AUTO_CERTIFIED acumulado: 4146
 - Reparaciones automáticas realizadas: 0 (sin receta revisada)
 - CODEX_REQUIRED pendientes: 4
 - MANUAL_REQUIRED pendientes: 1
-- NEXT_GAME: `mastersystem:/userdata/roms/mastersystem/Psychic World (EU).sms`
+- NEXT_GAME: `gb:/userdata/roms/gb/F-1 Pole Position (UE) [!].gb`
 - Safety: COMPLETE; sin bloqueo registrado
 - GitHub: gestionado por task separada del publisher; SHA verificado en `autopilot_state.json`.
 - Próximo paso: Publicar reportes/checkpoints y recalcular la siguiente tarea.
