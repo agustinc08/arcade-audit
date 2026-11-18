@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-18T02:51:07+00:00",
+  "updated_at": "2026-11-18T03:31:55+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_31: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=2653; NEXT_GAME=megadrive:/userdata/roms/megadrive/F-15 Strike Eagle II.smd",
+      "summary": "priority_batch_32: 100 considerados, 100 lanzados, 99 AUTO_PASS, 1 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=2752; NEXT_GAME=megadrive:/userdata/roms/megadrive/Mega Turrican (E) [!].bin",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-18T02:51:07+00:00"
+      "updated_at": "2026-11-18T03:31:54+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 2653,
-    "attempted_new": 2818,
+    "auto_certified": 2752,
+    "attempted_new": 2918,
     "static_fail": 194,
-    "game_fail": 163,
+    "game_fail": 164,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
-    "needs_repair": 357,
-    "total_restores": 2818,
+    "needs_repair": 358,
+    "total_restores": 2918,
     "restore_failures": 0,
-    "next_game": "megadrive:/userdata/roms/megadrive/F-15 Strike Eagle II.smd",
+    "next_game": "megadrive:/userdata/roms/megadrive/Mega Turrican (E) [!].bin",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 3010,
-    "result_records": 3012,
-    "launch_transactions": 2818,
+    "unique_games_processed": 3110,
+    "result_records": 3112,
+    "launch_transactions": 2918,
     "retry_transactions": 2
   }
 }

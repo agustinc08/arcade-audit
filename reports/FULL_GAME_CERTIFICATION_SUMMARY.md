@@ -1,26 +1,26 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-18T02:51:34+00:00
+- UPDATED_AT: 2026-11-18T03:32:15+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 2818
-- UNIQUE_GAMES_PROCESSED: 3010
-- RESULT_RECORDS: 3012
-- LAUNCH_TRANSACTIONS: 2818
+- ATTEMPTED_NEW: 2918
+- UNIQUE_GAMES_PROCESSED: 3110
+- RESULT_RECORDS: 3112
+- LAUNCH_TRANSACTIONS: 2918
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 2653
+- AUTO_CERTIFIED: 2752
 - STATIC_FAIL: 194
-- GAME_FAIL: 163
+- GAME_FAIL: 164
 - FLAKY: 0
-- NEEDS_REPAIR: 357
+- NEEDS_REPAIR: 358
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: megadrive:/userdata/roms/megadrive/F-15 Strike Eagle II.smd
-- TOTAL_RESTORES: 2818
+- NEXT_GAME: megadrive:/userdata/roms/megadrive/Mega Turrican (E) [!].bin
+- TOTAL_RESTORES: 2918
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -52,7 +52,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | mame | 1324 | 1324 | 1112 | 1008 | 37 | 142 | 0 | 0 | 0 | 137 |
 | mastersystem | 383 | 383 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 382 |
 | megacd | 24 | 24 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 24 |
-| megadrive | 1037 | 1037 | 0 | 625 | 0 | 8 | 0 | 0 | 0 | 404 |
+| megadrive | 1037 | 1037 | 0 | 724 | 0 | 9 | 0 | 0 | 0 | 304 |
 | mrboom | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | n64 | 377 | 377 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 377 |
 | naomi | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_31; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
+- Lote más reciente: priority_batch_32; considerados 100; lanzados 100; AUTO_PASS 99; restore 100/100.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: megadrive:/userdata/roms/megadrive/F-15 Strike Eagle II.smd.
+- NEXT_GAME: megadrive:/userdata/roms/megadrive/Mega Turrican (E) [!].bin.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY
