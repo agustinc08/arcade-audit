@@ -1,16 +1,16 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-18T04:12:53+00:00
+- UPDATED_AT: 2026-11-18T04:53:33+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 3018
-- UNIQUE_GAMES_PROCESSED: 3210
-- RESULT_RECORDS: 3212
-- LAUNCH_TRANSACTIONS: 3018
+- ATTEMPTED_NEW: 3118
+- UNIQUE_GAMES_PROCESSED: 3310
+- RESULT_RECORDS: 3312
+- LAUNCH_TRANSACTIONS: 3118
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 2851
+- AUTO_CERTIFIED: 2951
 - STATIC_FAIL: 194
 - GAME_FAIL: 165
 - FLAKY: 0
@@ -19,8 +19,8 @@
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: megadrive:/userdata/roms/megadrive/Shining in the Darkness (UE) [!].bin
-- TOTAL_RESTORES: 3018
+- NEXT_GAME: megadrive:/userdata/roms/megadrive/Trampoline Terror! (U) [!].bin
+- TOTAL_RESTORES: 3118
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -52,7 +52,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | mame | 1324 | 1324 | 1112 | 1008 | 37 | 142 | 0 | 0 | 0 | 137 |
 | mastersystem | 383 | 383 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 382 |
 | megacd | 24 | 24 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 24 |
-| megadrive | 1037 | 1037 | 0 | 823 | 0 | 10 | 0 | 0 | 0 | 204 |
+| megadrive | 1037 | 1037 | 0 | 923 | 0 | 10 | 0 | 0 | 0 | 104 |
 | mrboom | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | n64 | 377 | 377 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 377 |
 | naomi | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_33; considerados 100; lanzados 100; AUTO_PASS 99; restore 100/100.
+- Lote más reciente: priority_batch_34; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: megadrive:/userdata/roms/megadrive/Shining in the Darkness (UE) [!].bin.
+- NEXT_GAME: megadrive:/userdata/roms/megadrive/Trampoline Terror! (U) [!].bin.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY

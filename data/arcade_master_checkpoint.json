@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-18T04:12:23+00:00",
+  "updated_at": "2026-11-18T04:53:07+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_33: 100 considerados, 100 lanzados, 99 AUTO_PASS, 1 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=2851; NEXT_GAME=megadrive:/userdata/roms/megadrive/Shining in the Darkness (UE) [!].bin",
+      "summary": "priority_batch_34: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=2951; NEXT_GAME=megadrive:/userdata/roms/megadrive/Trampoline Terror! (U) [!].bin",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-18T04:12:23+00:00"
+      "updated_at": "2026-11-18T04:53:07+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 2851,
-    "attempted_new": 3018,
+    "auto_certified": 2951,
+    "attempted_new": 3118,
     "static_fail": 194,
     "game_fail": 165,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
     "needs_repair": 359,
-    "total_restores": 3018,
+    "total_restores": 3118,
     "restore_failures": 0,
-    "next_game": "megadrive:/userdata/roms/megadrive/Shining in the Darkness (UE) [!].bin",
+    "next_game": "megadrive:/userdata/roms/megadrive/Trampoline Terror! (U) [!].bin",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 3210,
-    "result_records": 3212,
-    "launch_transactions": 3018,
+    "unique_games_processed": 3310,
+    "result_records": 3312,
+    "launch_transactions": 3118,
     "retry_transactions": 2
   }
 }
