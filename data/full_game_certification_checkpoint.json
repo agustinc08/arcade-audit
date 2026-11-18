@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18T05:33:41+00:00",
+  "updated_at": "2026-11-18T06:15:46+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
-  "next_untested": "gba:/userdata/roms/gba/2 in 1 - Teenage Mutant Ninja Turtles Double Pack (E)(sUppLeX).gba",
-  "attempted_new": 3218,
-  "auto_certified": 3048,
+  "next_untested": "gba:/userdata/roms/gba/Shrek - Hassle at the Castle (E).gba",
+  "attempted_new": 3318,
+  "auto_certified": 3148,
   "manual_control_certified": 0,
   "guest_ready": 0,
   "launches_blocked_by": [],
@@ -79477,6 +79477,2406 @@
         "paths": 7
       },
       "finished_at": "2026-11-18T02:33:40.779-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/2 in 1 - Teenage Mutant Ninja Turtles Double Pack (E)(sUppLeX).gba",
+      "name": "Teenage Mutant Ninja Turtles Double Pack",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T023455_0b2341681f",
+      "stable_seconds": 16.202,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T023455_0b2341681f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:35:18.356-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Advance Guardian Heroes (Europe) (Es,Fr).gba",
+      "name": "Advance Guardian Heroes",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T023519_7c899eb06d",
+      "stable_seconds": 16.197,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T023519_7c899eb06d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:35:42.819-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Advance Wars (Europe) (En,Fr,De,Es).gba",
+      "name": "Advance Wars",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T023543_8ce8f4cec9",
+      "stable_seconds": 16.179,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T023543_8ce8f4cec9",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:36:07.156-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Advance Wars 2 - Black Hole Rising (Europe) (En,Fr,De,Es,It) (1).zip",
+      "name": "Advance Wars 2 : Black Hole Rising",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T023608_962e32e709",
+      "stable_seconds": 16.193,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T023608_962e32e709",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:36:31.566-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Advance Wars 2 - Black Hole Rising (Europe) (En,Fr,De,Es,It).gba",
+      "name": "Advance Wars 2 : Black Hole Rising",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T023632_42cbc5b3d6",
+      "stable_seconds": 16.184,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T023632_42cbc5b3d6",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:36:55.653-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/All-Star Baseball 2004 (U).gba",
+      "name": "All-Star Baseball 2004 Featuring Derek Jeter",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T023656_f8d727d7f4",
+      "stable_seconds": 16.182,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T023656_f8d727d7f4",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:37:19.465-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/American Bass Challenge (U) [!].gba",
+      "name": "American Bass Challenge",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T023720_9860cd45a1",
+      "stable_seconds": 16.17,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T023720_9860cd45a1",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:37:43.800-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Army Men - Turf Wars (U) [!].gba",
+      "name": "Army Men : Turf Wars",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T023744_60d70e8e74",
+      "stable_seconds": 16.193,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T023744_60d70e8e74",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:38:07.883-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Banjo Pilot (E) (M5).gba",
+      "name": "Banjo-Pilot",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T023809_0db80933cf",
+      "stable_seconds": 16.172,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T023809_0db80933cf",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:38:32.106-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Blender Bros. (U) [!].gba",
+      "name": "Blender Bros.",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T023833_2bfd955899",
+      "stable_seconds": 16.189,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T023833_2bfd955899",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:38:56.202-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/BMX Trick Racer (U) [hIR00].gba",
+      "name": "BMX Trick Racer",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T023859_f98134be57",
+      "stable_seconds": 16.166,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T023859_f98134be57",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:39:24.032-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Boktai - The Sun Is in Your Hand (E) (M5).gba",
+      "name": "Boktai : The Sun Is in Your Hand",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T023925_e174223025",
+      "stable_seconds": 16.176,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T023925_e174223025",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:39:48.273-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Boktai 2 - Solar Boy Django (E) (M5).gba",
+      "name": "Boktai 2 : Solar Boy Django",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T023949_df3eec0731",
+      "stable_seconds": 16.16,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T023949_df3eec0731",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:40:12.433-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Bomberman Max 2 - Blue (E) (M3).gba",
+      "name": "Bomberman Max 2 : Blue Advance",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024013_b13045a720",
+      "stable_seconds": 16.164,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024013_b13045a720",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:40:36.499-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Bomberman Max 2 - Red (E) (M3).gba",
+      "name": "Bomberman Max 2 : Red Advance",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024037_4fc3c74db3",
+      "stable_seconds": 16.171,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024037_4fc3c74db3",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:41:00.806-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Bomberman Tournament (U) [!].gba",
+      "name": "Bomberman Tournament",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024102_c7c4dc1e4e",
+      "stable_seconds": 16.21,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024102_c7c4dc1e4e",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:41:25.416-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Boulder Dash EX (E) (M3).gba",
+      "name": "Boulder Dash EX",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024126_e805a14047",
+      "stable_seconds": 16.173,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024126_e805a14047",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:41:50.269-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Car Battler Joe (U) [!].gba",
+      "name": "Car Battler Joe",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024151_c26d990f01",
+      "stable_seconds": 16.177,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024151_c26d990f01",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:42:14.913-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Cartoon Network - Block Party (U).gba",
+      "name": "Cartoon Network Block Party",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024216_e7f6b4d713",
+      "stable_seconds": 16.158,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024216_e7f6b4d713",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:42:39.499-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Chu Chu Rocket (E) (M5) [!].gba",
+      "name": "ChuChu Rocket!",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024240_79a4260f41",
+      "stable_seconds": 16.169,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024240_79a4260f41",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:43:03.789-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Crash Bandicoot Fusion (Europe) (En,Fr,De,Es,It).gba",
+      "name": "Crash Bandicoot Fusion",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024304_9f2fda6676",
+      "stable_seconds": 16.172,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024304_9f2fda6676",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:43:28.319-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Crash Nitro Kart (Europe) (En,Fr,De,Es,It,Nl).gba",
+      "name": "Crash Nitro Kart",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024329_3a1a8e7ee9",
+      "stable_seconds": 16.198,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024329_3a1a8e7ee9",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:43:52.426-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Crash of the Titans (Europe) (En,Fr,De,Es,It,Nl).gba",
+      "name": "Crash of the Titans",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024353_5728a011c9",
+      "stable_seconds": 16.17,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024353_5728a011c9",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:44:16.592-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Crash Superpack - Crash Bandicoot 2 - N-Tranced & Crash Nitro Kart (U).gba",
+      "name": "Crash Superpack",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024417_3b93c96644",
+      "stable_seconds": 16.193,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024417_3b93c96644",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:44:40.669-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Cubix - Robots for Everyone - Clash 'n Bash (U).gba",
+      "name": "Cubix : Robots for Everyone, Clash 'N Bash",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024441_b7216fda42",
+      "stable_seconds": 16.178,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024441_b7216fda42",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:45:04.942-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Dark Arena (U) [!].gba",
+      "name": "Dark Arena",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024506_338bf610de",
+      "stable_seconds": 16.168,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024506_338bf610de",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:45:29.273-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Dave Mirra Freestyle BMX 2 (E) (M5).gba",
+      "name": "Dave Mirra Freestyle BMX 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024530_a379407439",
+      "stable_seconds": 16.161,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024530_a379407439",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:45:53.526-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Demon Driver - Time to Burn Rubber! (E).gba",
+      "name": "Demon Driver : Time to Burn Rubber!",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024554_0ef888e05b",
+      "stable_seconds": 16.169,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024554_0ef888e05b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:46:17.532-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Denki Blocks! (E) (M5) [!].gba",
+      "name": "Denki Blocks!",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024618_45e393acd7",
+      "stable_seconds": 16.171,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024618_45e393acd7",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:46:41.839-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Disney Sports - American Football (U).gba",
+      "name": "Disney Sports : Football",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024642_00303fdbf1",
+      "stable_seconds": 16.174,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024642_00303fdbf1",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:47:06.142-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Disney Sports - Basketball (Europe) (En,Fr,De,Es,It).gba",
+      "name": "Disney Sports : Basketball",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024707_aeedb8d965",
+      "stable_seconds": 16.186,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024707_aeedb8d965",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:47:30.882-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Disney Sports - Football (Europe) (En,Fr,De,Es,It).gba",
+      "name": "Disney Sports - Football (Soccer)",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024732_8d6632fce6",
+      "stable_seconds": 16.176,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024732_8d6632fce6",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:47:55.459-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Disney's Party (USA, Europe) (En,Fr,De,Es,It).gba",
+      "name": "Disney's Party",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024756_33411a8e68",
+      "stable_seconds": 16.168,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024756_33411a8e68",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:48:19.712-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/DK - King of Swing (E) (M5).gba",
+      "name": "DK : King of Swing",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024820_f010f9e9bc",
+      "stable_seconds": 16.164,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024820_f010f9e9bc",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:48:43.902-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Donkey Kong Country 2 (E) (M5).gba",
+      "name": "Donkey Kong Country 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024845_892c021677",
+      "stable_seconds": 16.168,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024845_892c021677",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:49:08.429-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Doom (U) [!].gba",
+      "name": "Doom",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024909_7ab3b926d6",
+      "stable_seconds": 16.192,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024909_7ab3b926d6",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:49:32.579-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Doom II (E).gba",
+      "name": "Doom II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024933_6470caaafc",
+      "stable_seconds": 16.187,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024933_6470caaafc",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:49:56.665-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Driven (USA) (En,Fr,De,Es,It).gba",
+      "name": "Driven",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T024957_2efc907d67",
+      "stable_seconds": 16.156,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T024957_2efc907d67",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:50:20.606-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Droopy's Tennis Open (Europe) (En,Fr,De,Es,It,Nl) [b].gba",
+      "name": "Droopy's Tennis Open",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025021_8135f5733f",
+      "stable_seconds": 16.17,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025021_8135f5733f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:50:44.819-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Duke Nukem Advance (E).gba",
+      "name": "Duke Nukem Advance",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025046_8e4fef301b",
+      "stable_seconds": 16.158,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025046_8e4fef301b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:51:08.809-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Ecks vs. Sever (E) (M5).gba",
+      "name": "Ecks V Sever",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025109_0022d486c6",
+      "stable_seconds": 16.188,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025109_0022d486c6",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:51:33.076-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/F-14 Tomcat (U).gba",
+      "name": "F-14 Tomcat",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025134_6eebf2de75",
+      "stable_seconds": 16.172,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025134_6eebf2de75",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:51:57.463-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/F-Zero - Climax (J).gba",
+      "name": "F-Zero : Climax",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025158_8a0ed46fa8",
+      "stable_seconds": 16.169,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025158_8a0ed46fa8",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:52:27.285-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/F-Zero - GP Legend (E) (M5).gba",
+      "name": "F-Zero : GP Legend",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025234_f572c23b41",
+      "stable_seconds": 16.174,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025234_f572c23b41",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:52:57.875-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/F-Zero - Maximum Velocity (UE).gba",
+      "name": "F-Zero : Maximum Velocity",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025258_5184bb8c08",
+      "stable_seconds": 16.187,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025258_5184bb8c08",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:53:22.172-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/FILA Decathlon (Europe) (En,Fr,De,Es,It,Sv).gba",
+      "name": "FILA Decathlon",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025323_3895c16a8b",
+      "stable_seconds": 16.165,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025323_3895c16a8b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:53:46.512-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Fire Emblem (Europe) (En,Es,It).gba",
+      "name": "Fire Emblem",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025347_d2632b7c06",
+      "stable_seconds": 16.172,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025347_d2632b7c06",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:54:11.205-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Fire Emblem - The Sacred Stones (E) (M5).gba",
+      "name": "Fire Emblem : The Sacred Stones",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025412_6a75dcea48",
+      "stable_seconds": 16.167,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025412_6a75dcea48",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:54:35.845-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Frogger's Adventures 2 - The Lost Wand (Europe) (En,Fr,De,Es,It).gba",
+      "name": "Frogger's Adventures 2 : The Lost Wand",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025437_3099aa6a53",
+      "stable_seconds": 16.167,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025437_3099aa6a53",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:55:00.288-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Gadget Racers (E) (M3).gba",
+      "name": "Gadget Racers",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025501_c71f1d73b2",
+      "stable_seconds": 16.17,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025501_c71f1d73b2",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:55:24.279-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Jimmy Neutron Boy Genius (Europe) (En,Fr,De,Es).gba",
+      "name": "Jimmy Neutron: Boy Genius",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025525_b010b629d7",
+      "stable_seconds": 16.188,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025525_b010b629d7",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:55:48.895-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Karnaaj Rally (U).gba",
+      "name": "Karnaaj Rally",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025550_b74b917dee",
+      "stable_seconds": 16.167,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025550_b74b917dee",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:56:13.216-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/KerPlunk!, Toss Across, and TipIt (U).gba",
+      "name": "3 Game Pack! : Ker Plunk! + Toss Across + Tip It",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025614_b4e68630e8",
+      "stable_seconds": 16.163,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025614_b4e68630e8",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:56:37.502-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Kirby & the Amazing Mirror (Europe) (En,Fr,De,Es,It).gba",
+      "name": "Kirby & the Amazing Mirror",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025638_3dbaced344",
+      "stable_seconds": 16.16,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025638_3dbaced344",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:57:01.818-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Kirby - Nightmare in Dream Land (Europe) (En,Fr,De,Es,It).gba",
+      "name": "Kirby : Nightmare in Dream Land",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025702_127ec4351c",
+      "stable_seconds": 16.173,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025702_127ec4351c",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:57:26.456-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Kuru Kuru Kururin (E) [!].gba",
+      "name": "Kurukuru Kururin",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025727_47309b543b",
+      "stable_seconds": 16.158,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025727_47309b543b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:57:50.776-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Legend of Zelda, The - A Link to the Past & Four Swords (Europe) (En,Fr,De,Es,It).gba",
+      "name": "The Legend of Zelda : A Link to the Past & Four Swords",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025751_c362f4c3aa",
+      "stable_seconds": 16.173,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025751_c362f4c3aa",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:58:15.076-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/LEGO Racers 2 (E) (M8).gba",
+      "name": "LEGO Racers 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025816_8ac96c020f",
+      "stable_seconds": 16.191,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025816_8ac96c020f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:58:39.509-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Lufia - The Ruins of Lore (U) [!].gba",
+      "name": "Lufia : The Ruins of Lore",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025840_419c4d6b0f",
+      "stable_seconds": 16.191,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025840_419c4d6b0f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:59:03.630-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Madden NFL 2003 (U).gba",
+      "name": "Madden NFL 2003",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025904_ede17a9b9e",
+      "stable_seconds": 16.174,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025904_ede17a9b9e",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:59:27.882-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Maniac Racers Advance (Europe) (En,Fr,De,Es,It).gba",
+      "name": "Maniac Racers Advance",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025929_b80c2125c8",
+      "stable_seconds": 16.172,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025929_b80c2125c8",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T02:59:52.192-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Mario & Luigi - Superstar Saga (E) (M5).gba",
+      "name": "Mario & Luigi : Superstar Saga",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T025953_5b1ab4e690",
+      "stable_seconds": 16.161,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T025953_5b1ab4e690",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:00:16.916-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Mario Golf - Advance Tour (E).gba",
+      "name": "Mario Golf : Advance Tour",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030018_fca4f6857e",
+      "stable_seconds": 16.177,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030018_fca4f6857e",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:00:41.179-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Mario Kart - Super Circuit (Europe).zip",
+      "name": "Mario Kart : Super Circuit",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030042_33fa1e10fe",
+      "stable_seconds": 16.164,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030042_33fa1e10fe",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:01:05.272-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Mario Kart Super Circuit (E) [!].gba",
+      "name": "Mario Kart : Super Circuit",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030106_af9fbe969e",
+      "stable_seconds": 16.158,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030106_af9fbe969e",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:01:29.279-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Mario Kart Super Circuit - Freemastered (hack v3.5).gba",
+      "name": "Mario Kart : Super Circuit",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030130_fd8c712ada",
+      "stable_seconds": 16.175,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030130_fd8c712ada",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:01:53.479-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Mario Tennis Advance - Power Tour (E) (M5) [h2IR].gba",
+      "name": "Mario Power Tennis",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030154_7d60daa841",
+      "stable_seconds": 16.166,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030154_7d60daa841",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:02:18.002-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Micro Machines (Europe) (En,Fr,De,Es,It).gba",
+      "name": "Micro Machines",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030219_d0c85f1809",
+      "stable_seconds": 16.171,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030219_d0c85f1809",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:02:42.389-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Monster Rancher Advanced (U) [!].gba",
+      "name": "Monster Rancher Advance",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030243_f935c5aa0f",
+      "stable_seconds": 16.161,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030243_f935c5aa0f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:03:06.822-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Monster Rancher Advanced 2 (U).gba",
+      "name": "Monster Rancher Advance 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030308_1254e12b16",
+      "stable_seconds": 16.167,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030308_1254e12b16",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:03:31.196-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Monster Truck Madness (U).gba",
+      "name": "Monster Truck Madness",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030332_881a6ef02e",
+      "stable_seconds": 16.167,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030332_881a6ef02e",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:03:55.762-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Mortal Kombat - Tournament Edition (USA) (En,Fr,De,Es,It).gba",
+      "name": "Mortal Kombat : Tournament Edition",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030356_ad35041a5d",
+      "stable_seconds": 16.186,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030356_ad35041a5d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:04:20.372-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Mother 1 + 2 (Traducido).gba",
+      "name": "Mother 1+2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030427_4da6176911",
+      "stable_seconds": 16.181,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030427_4da6176911",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:04:51.815-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Moto GP (Europe) (En,Fr,De,Es,It).gba",
+      "name": "Moto GP",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030453_5124c5c16b",
+      "stable_seconds": 16.186,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030453_5124c5c16b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:05:16.049-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Motocross Maniacs Advance (USA) (En,Es).gba",
+      "name": "Motocross Maniacs Advance",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030517_446d5928cc",
+      "stable_seconds": 16.169,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030517_446d5928cc",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:05:40.262-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Motoracer Advance (USA) (En,Fr,De,Es,It).gba",
+      "name": "Motoracer Advance",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030541_44efae8e0c",
+      "stable_seconds": 16.161,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030541_44efae8e0c",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:06:04.166-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Naruto - Ninja Council 2 (U).gba",
+      "name": "Naruto : Ninja Council 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030605_2aa788e690",
+      "stable_seconds": 16.183,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030605_2aa788e690",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:06:28.499-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Nicktoons Racing (Europe) (En,Fr,De,Es,It).gba",
+      "name": "NickToons Racing",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030629_656f1fa9ec",
+      "stable_seconds": 16.164,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030629_656f1fa9ec",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:06:52.499-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Payback (E) (M5).gba",
+      "name": "Payback",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030653_f3b58cf248",
+      "stable_seconds": 16.165,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030653_f3b58cf248",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:07:16.759-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Pinball of the Dead, The (E) (M5).gba",
+      "name": "The Pinball of the Dead",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030717_20b9976bd3",
+      "stable_seconds": 16.165,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030717_20b9976bd3",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:07:40.875-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Pinky and The Brain - The Master Plan (E).gba",
+      "name": "Pinky and the Brain : The Masterplan",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030741_0d9b0a7457",
+      "stable_seconds": 16.168,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030741_0d9b0a7457",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:08:04.989-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Planet Monsters (E) [!].gba",
+      "name": "Planet Monsters",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030806_dfbbea3342",
+      "stable_seconds": 16.181,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030806_dfbbea3342",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:08:29.446-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Pokemon - Edicion Rojo Fuego (Spain).gba",
+      "name": "Pokémon FireRed Version",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030830_b19fb8582b",
+      "stable_seconds": 16.175,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030830_b19fb8582b",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:08:53.758-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Pokemon - Edicion Verde Hoja (Spain).gba",
+      "name": "Pokémon LeafGreen Version",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030854_ac1755ef66",
+      "stable_seconds": 16.18,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030854_ac1755ef66",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:09:17.942-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Pokemon - Rubi.gba",
+      "name": "Pokémon Ruby Version",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030919_570161263c",
+      "stable_seconds": 16.167,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030919_570161263c",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:09:41.999-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Pokemon - Zafiro.gba",
+      "name": "Pokémon Sapphire Version",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T030943_abd1d4b7c3",
+      "stable_seconds": 16.169,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T030943_abd1d4b7c3",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:10:06.112-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Pokemon Edicion Rojo Fuego.gba",
+      "name": "Pokémon FireRed Version",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T031007_b205eb496a",
+      "stable_seconds": 16.183,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T031007_b205eb496a",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:10:30.679-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Pokemon Edicion Verde Hoja.gba",
+      "name": "Pokémon LeafGreen Version",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T031031_a4ea08228d",
+      "stable_seconds": 16.178,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T031031_a4ea08228d",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:10:54.856-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Pokemon Rubi.gba",
+      "name": "Pokémon Ruby Version",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T031055_5b94c88fb5",
+      "stable_seconds": 16.169,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T031055_5b94c88fb5",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:11:19.006-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Pokemon Zafiro.gba",
+      "name": "Pokémon Sapphire Version",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T031120_e91e05cb45",
+      "stable_seconds": 16.173,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T031120_e91e05cb45",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:11:43.222-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Pro Tennis WTA Tour (E).gba",
+      "name": "Pro Tennis WTA Tour",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T031144_86f014a4da",
+      "stable_seconds": 16.165,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T031144_86f014a4da",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:12:07.796-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Puyo Pop (E) (M2).gba",
+      "name": "Puyo Pop",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T031208_d26b2a11d2",
+      "stable_seconds": 16.196,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T031208_d26b2a11d2",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:12:31.696-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Racing Gears Advance (Europe) (En,Fr,De,Es,It).gba",
+      "name": "Racing Gears Advance",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T031232_19b2ec13d0",
+      "stable_seconds": 16.159,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T031232_19b2ec13d0",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:12:56.019-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Rainbow Six - Rogue Spear (E) [!].gba",
+      "name": "Tom Clancy's Rainbow Six : Rogue Spear",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T031257_70dd7654e9",
+      "stable_seconds": 16.185,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T031257_70dd7654e9",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:13:20.556-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Rayman 3 (USA) (En,Fr,Es).gba",
+      "name": "Rayman 3",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T031321_1d355a9ebf",
+      "stable_seconds": 16.165,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T031321_1d355a9ebf",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:13:44.506-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Rayman 3 - Hoodlum Havoc (E) (M10).gba",
+      "name": "Rayman 3",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T031345_25b4809c66",
+      "stable_seconds": 16.17,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T031345_25b4809c66",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:14:08.759-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Robopon 2 - Cross Version (U).gba",
+      "name": "Robopon 2 : Cross Version",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T031410_4925bb267c",
+      "stable_seconds": 16.176,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T031410_4925bb267c",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:14:33.379-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Robotech - The Macross Saga (U) [!].gba",
+      "name": "Robotech: The Macross Saga",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T031434_00606ba849",
+      "stable_seconds": 16.19,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T031434_00606ba849",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:14:57.359-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Scrabble (Europe) (En,Fr,De,Es).gba",
+      "name": "Scrabble",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T031458_49e1c6c558",
+      "stable_seconds": 16.178,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T031458_49e1c6c558",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:15:21.762-03:00"
+    },
+    {
+      "system": "gba",
+      "rom": "/userdata/roms/gba/Shining Soul II (E) (M5).gba",
+      "name": "Shining Soul II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T031523_efafaf6fc9",
+      "stable_seconds": 16.165,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T031523_efafaf6fc9",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T03:15:46.069-03:00"
     }
   ],
   "status": "COMPLETE",
@@ -79511,7 +81911,7 @@
   "current_test": null,
   "next_game": null,
   "counts": {
-    "AUTO_PASS": 3048,
+    "AUTO_PASS": 3148,
     "GAME_FAIL": 168,
     "STATIC_FAIL": 194,
     "FLAKY": 0,
@@ -79534,21 +81934,21 @@
     "status": "PILOT_PASS_WITH_ADAPTER_FIX"
   },
   "latest_batch": {
-    "name": "priority_batch_35",
+    "name": "priority_batch_36",
     "considered": 100,
     "launched": 100,
-    "auto_pass": 97,
-    "game_fail": 3,
+    "auto_pass": 100,
+    "game_fail": 0,
     "static_fail": 0,
     "flaky": 0,
     "restore_verified": "100/100",
     "restore_failures": 0,
     "engine_failures_unresolved": 0,
-    "started_at": "2026-11-18T01:54:11.932-03:00",
-    "finished_at": "2026-11-18T02:33:41.559-03:00",
-    "first_game": "/userdata/roms/megadrive/Trampoline Terror! (U) [!].bin",
-    "last_game": "/userdata/roms/gba/Pokemon Edicion Esmeralda.gba",
-    "next_game": "gba:/userdata/roms/gba/2 in 1 - Teenage Mutant Ninja Turtles Double Pack (E)(sUppLeX).gba"
+    "started_at": "2026-11-18T02:34:54.546-03:00",
+    "finished_at": "2026-11-18T03:15:46.929-03:00",
+    "first_game": "/userdata/roms/gba/2 in 1 - Teenage Mutant Ninja Turtles Double Pack (E)(sUppLeX).gba",
+    "last_game": "/userdata/roms/gba/Shining Soul II (E) (M5).gba",
+    "next_game": "gba:/userdata/roms/gba/Shrek - Hassle at the Castle (E).gba"
   },
   "latest_engine_issue": {
     "cause": "update_csv assumed identity was a dict for STATIC_FAIL (identity=null)",
@@ -79568,11 +81968,11 @@
       "resolved_at": "2026-11-15T09:39:16-03:00"
     }
   ],
-  "launch_transactions": 3218,
+  "launch_transactions": 3318,
   "transaction_attempts": 509,
   "retry_transactions": 2,
-  "unique_games_processed": 3410,
-  "result_records": 3412,
+  "unique_games_processed": 3510,
+  "result_records": 3512,
   "static_preflight_results": 194,
   "engine_fail_total_historical": 2,
   "engine_fail_active": 0,
@@ -79581,6 +81981,6 @@
   "flaky": 0,
   "needs_repair": 362,
   "control_certified": 0,
-  "restores_verified": 3218,
+  "restores_verified": 3318,
   "restore_failures": 0
 }
