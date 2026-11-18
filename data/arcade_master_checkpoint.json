@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-18T13:48:59+00:00",
+  "updated_at": "2026-11-18T14:29:45+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_47: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=4246; NEXT_GAME=gb:/userdata/roms/gb/Space Invaders (E) [S][!].gb",
+      "summary": "priority_batch_48: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=4346; NEXT_GAME=gb:/userdata/roms/gb/Dick Tracy (U).gb",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-18T13:48:59+00:00"
+      "updated_at": "2026-11-18T14:29:45+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 4246,
-    "attempted_new": 4418,
+    "auto_certified": 4346,
+    "attempted_new": 4518,
     "static_fail": 194,
     "game_fail": 170,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
     "needs_repair": 364,
-    "total_restores": 4418,
+    "total_restores": 4518,
     "restore_failures": 0,
-    "next_game": "gb:/userdata/roms/gb/Space Invaders (E) [S][!].gb",
+    "next_game": "gb:/userdata/roms/gb/Dick Tracy (U).gb",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 4610,
-    "result_records": 4612,
-    "launch_transactions": 4418,
+    "unique_games_processed": 4710,
+    "result_records": 4712,
+    "launch_transactions": 4518,
     "retry_transactions": 2
   }
 }
