@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-18T17:54:06+00:00",
+  "updated_at": "2026-11-18T18:34:41+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_53: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=4846; NEXT_GAME=gbc:/userdata/roms/gbc/Robocop (U) (M6) [C][!].gbc",
+      "summary": "priority_batch_54: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=4946; NEXT_GAME=gbc:/userdata/roms/gbc/Triple Play 2001 (U) [C][!].gbc",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-18T17:54:06+00:00"
+      "updated_at": "2026-11-18T18:34:41+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 4846,
-    "attempted_new": 5018,
+    "auto_certified": 4946,
+    "attempted_new": 5118,
     "static_fail": 194,
     "game_fail": 170,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
     "needs_repair": 364,
-    "total_restores": 5018,
+    "total_restores": 5118,
     "restore_failures": 0,
-    "next_game": "gbc:/userdata/roms/gbc/Robocop (U) (M6) [C][!].gbc",
+    "next_game": "gbc:/userdata/roms/gbc/Triple Play 2001 (U) [C][!].gbc",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 5210,
-    "result_records": 5212,
-    "launch_transactions": 5018,
+    "unique_games_processed": 5310,
+    "result_records": 5312,
+    "launch_transactions": 5118,
     "retry_transactions": 2
   }
 }
