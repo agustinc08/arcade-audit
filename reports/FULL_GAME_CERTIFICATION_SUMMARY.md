@@ -1,16 +1,16 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-18T07:39:16+00:00
+- UPDATED_AT: 2026-11-18T08:20:58+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 3518
-- UNIQUE_GAMES_PROCESSED: 3710
-- RESULT_RECORDS: 3712
-- LAUNCH_TRANSACTIONS: 3518
+- ATTEMPTED_NEW: 3618
+- UNIQUE_GAMES_PROCESSED: 3810
+- RESULT_RECORDS: 3812
+- LAUNCH_TRANSACTIONS: 3618
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 3348
+- AUTO_CERTIFIED: 3448
 - STATIC_FAIL: 194
 - GAME_FAIL: 168
 - FLAKY: 0
@@ -19,8 +19,8 @@
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: gba:/userdata/roms/gba/Ultimate Brain Games (U).gba
-- TOTAL_RESTORES: 3518
+- NEXT_GAME: gba:/userdata/roms/gba/Dogz - Fashion (E).gba
+- TOTAL_RESTORES: 3618
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -44,7 +44,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | flatpak | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
 | gamecube | 9 | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 |
 | gb | 410 | 410 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 409 |
-| gba | 725 | 725 | 0 | 305 | 0 | 0 | 0 | 0 | 0 | 420 |
+| gba | 725 | 725 | 0 | 405 | 0 | 0 | 0 | 0 | 0 | 320 |
 | gbc | 406 | 406 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 406 |
 | hcl | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | hurrican | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_38; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
+- Lote más reciente: priority_batch_39; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: gba:/userdata/roms/gba/Ultimate Brain Games (U).gba.
+- NEXT_GAME: gba:/userdata/roms/gba/Dogz - Fashion (E).gba.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY
