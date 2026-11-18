@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-18T15:10:31+00:00",
+  "updated_at": "2026-11-18T15:51:40+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_49: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=4446; NEXT_GAME=gb:/userdata/roms/gb/Mystic Quest (E) [!].gb",
+      "summary": "priority_batch_50: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=4546; NEXT_GAME=gb:/userdata/roms/gb/Yogi Bear in Yogi Bear's Goldrush (E) [!].gb",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-18T15:10:31+00:00"
+      "updated_at": "2026-11-18T15:51:40+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 4446,
-    "attempted_new": 4618,
+    "auto_certified": 4546,
+    "attempted_new": 4718,
     "static_fail": 194,
     "game_fail": 170,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
     "needs_repair": 364,
-    "total_restores": 4618,
+    "total_restores": 4718,
     "restore_failures": 0,
-    "next_game": "gb:/userdata/roms/gb/Mystic Quest (E) [!].gb",
+    "next_game": "gb:/userdata/roms/gb/Yogi Bear in Yogi Bear's Goldrush (E) [!].gb",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 4810,
-    "result_records": 4812,
-    "launch_transactions": 4618,
+    "unique_games_processed": 4910,
+    "result_records": 4912,
+    "launch_transactions": 4718,
     "retry_transactions": 2
   }
 }
