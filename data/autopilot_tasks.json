@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18T09:02:51+00:00",
+  "updated_at": "2026-11-18T09:44:31+00:00",
   "tasks": [
     {
       "id": "CERT-BATCH-0011",
@@ -2255,11 +2255,72 @@
       "id": "GITHUB-PUBLISH-CERT-BATCH-0040",
       "type": "GITHUB_PUBLISH",
       "title": "Publicar CERT-BATCH-0040 y verificar remoto",
-      "status": "RUNNING",
+      "status": "COMPLETE",
       "priority": 5,
       "created_at": "2026-11-18T09:02:49+00:00",
-      "updated_at": "2026-11-18T09:02:51+00:00",
+      "updated_at": "2026-11-18T09:03:21+00:00",
       "source": "CERT-BATCH-0040",
+      "reason": "Publicación posterior a reconciliación y rebuild del batch.",
+      "automatic": true,
+      "requires_codex": false,
+      "requires_manual": false,
+      "depends_on": [],
+      "attempts": 1,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "SECRET_SCAN, PAYLOAD_SCAN, publisher REST y verificación del HEAD remoto.",
+      "evidence": [
+        "/userdata/system/state/arcade_audit/github_publish_state.json"
+      ],
+      "files": [],
+      "do_not_change": [
+        "No incluir tokens ni datos runtime privados"
+      ],
+      "success_criteria": "El SHA remoto coincide con el commit publicado.",
+      "after_completion": ""
+    },
+    {
+      "id": "CERT-BATCH-0041",
+      "type": "CERTIFICATION_BATCH",
+      "title": "Certificar priority_batch_41",
+      "status": "COMPLETE",
+      "priority": 10,
+      "created_at": "2026-11-18T09:02:49+00:00",
+      "updated_at": "2026-11-18T09:44:29+00:00",
+      "source": "recalculated queue",
+      "reason": "Tarea creada sólo después de batch estable y queue reconciliada.",
+      "automatic": true,
+      "requires_codex": false,
+      "requires_manual": false,
+      "depends_on": [],
+      "attempts": 1,
+      "max_attempts": 3,
+      "last_error": null,
+      "next_action": "arcade_certifier_job.sh start N",
+      "evidence": [
+        "/userdata/system/state/arcade_audit/full_game_certification_checkpoint.json",
+        "/userdata/system/state/arcade_audit/full_game_certification.csv",
+        "/userdata/system/state/arcade_audit/FULL_GAME_CERTIFICATION_SUMMARY.md"
+      ],
+      "files": [
+        "/userdata/system/el_gordo_tools/arcade_certifier_job.sh"
+      ],
+      "do_not_change": [
+        "No repetir identidades terminales",
+        "No relajar safety gates"
+      ],
+      "success_criteria": "N juegos procesados o checkpoint de seguridad pausa.",
+      "after_completion": "Reconciliar reports y publicar."
+    },
+    {
+      "id": "GITHUB-PUBLISH-CERT-BATCH-0041",
+      "type": "GITHUB_PUBLISH",
+      "title": "Publicar CERT-BATCH-0041 y verificar remoto",
+      "status": "RUNNING",
+      "priority": 5,
+      "created_at": "2026-11-18T09:44:29+00:00",
+      "updated_at": "2026-11-18T09:44:31+00:00",
+      "source": "CERT-BATCH-0041",
       "reason": "Publicación posterior a reconciliación y rebuild del batch.",
       "automatic": true,
       "requires_codex": false,
@@ -2281,13 +2342,13 @@
       "after_completion": ""
     },
     {
-      "id": "CERT-BATCH-0041",
+      "id": "CERT-BATCH-0042",
       "type": "CERTIFICATION_BATCH",
-      "title": "Certificar priority_batch_41",
+      "title": "Certificar priority_batch_42",
       "status": "READY",
       "priority": 10,
-      "created_at": "2026-11-18T09:02:49+00:00",
-      "updated_at": "2026-11-18T09:02:49+00:00",
+      "created_at": "2026-11-18T09:44:29+00:00",
+      "updated_at": "2026-11-18T09:44:29+00:00",
       "source": "recalculated queue",
       "reason": "Tarea creada sólo después de batch estable y queue reconciliada.",
       "automatic": true,
