@@ -9,6 +9,13 @@
 - ENGINE_FAIL activos: 0
 - Restores: 0/0
 - Restore failures: 0
+- Adapter pending: 100
+- Skipped: 0
+- Deferred: 0
+- Other unlaunched: 0
+- Not yet processed: 0
+- Motivo de adapter pending: 100 Dreamcast `ADAPTER_NOT_READY` por `RESTORE_SCOPE_UNSAFE`
+- Accounting: `100 = 0 launched + 0 static_fail + 100 adapter_pending + 0 skipped + 0 deferred + 0 other_unlaunched + 0 not_yet_processed`
 - Audio route changes: 0
 - Wrong dispatch: 0
 - NEXT_GAME: `dreamcast:/userdata/roms/dreamcast/Vampire Chronicle for Matching Service (Japan).chd`

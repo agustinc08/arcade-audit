@@ -33,6 +33,9 @@ PILOT=[('mame','lbgrande.zip'),('mame','1941.zip'),('fbneo','captcomm.zip'),
  ('gba','Final Fantasy V Advance (Europe) (En,Fr,De,Es,It).gba'),('n64','Super Mario 64.z64'),
  ('mastersystem','Batman Returns (EU).sms')]
 STOP_ENGINE={'ENGINE_FAIL','WRONG_GAME_DISPATCH','AUDIO_ROUTE_CHANGED','RESTORE_FAILURE','SYSTEM_SAFETY_FAILURE'}
+SAFETY_GATE_FAILURES={'ES_IDLE_TIMEOUT','ES_LAUNCH_PROCESS_ACTIVE','MARKER_FOREIGN_UNKNOWN','MARKER_ALREADY_EXISTS'}
+ES_IDLE_TIMEOUT_SECONDS=20
+ES_IDLE_POLL_SECONDS=1
 
 def utc():return datetime.now(timezone.utc).isoformat(timespec='seconds')
 def stamp():return datetime.now().astimezone().isoformat(timespec='milliseconds')
@@ -73,13 +76,47 @@ def api_state():
  _,ib=api('/isIdle');_,gb=api('/runningGame');idle=json.loads(ib);game=json.loads(gb)
  if isinstance(game,dict) and game.get('msg')=='NO GAME RUNNING':game=None
  return idle[0] is True,game
+def es_gate_evidence(idle,game,active,marker_exists,detail=None):
+ return {'captured_at':stamp(),'isIdle':idle,'runningGame':game,'launch_processes':active,
+         'marker_exists':marker_exists,'detail':detail}
+def wait_for_es_idle(timeout=ES_IDLE_TIMEOUT_SECONDS,interval=ES_IDLE_POLL_SECONDS,*,
+                     sleep=None,clock=None,evidence_path=None):
+ sleep=sleep or time.sleep;clock=clock or time.monotonic
+ started=clock();clean_samples=0;last=None
+ def save(reason):
+  if evidence_path is not None:
+   atomic_json(Path(evidence_path),{'reason':reason,'timeout_seconds':timeout,'last_observation':last})
+  elif last is not None:
+   path=RUNTIME/(datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S')+'_es_idle_gate.json')
+   atomic_json(path,{'reason':reason,'timeout_seconds':timeout,'last_observation':last})
+ while True:
+  detail=None
+  try:idle,game=api_state()
+  except Exception as exc:idle,game=False,None;detail=type(exc).__name__+': '+str(exc)
+  active=pids();marker_exists=sr.MARKER.exists()
+  last=es_gate_evidence(idle,game,active,marker_exists,detail)
+  if marker_exists:
+   save('MARKER_FOREIGN_UNKNOWN');raise RuntimeError('MARKER_FOREIGN_UNKNOWN')
+  if active:
+   save('ES_LAUNCH_PROCESS_ACTIVE');raise RuntimeError('ES_LAUNCH_PROCESS_ACTIVE')
+  if idle and game is None:
+   clean_samples+=1
+   if clean_samples>=2:return last
+  else:clean_samples=0
+  remaining=timeout-(clock()-started)
+  if remaining<=0:
+   save('ES_IDLE_TIMEOUT');raise RuntimeError('ES_IDLE_TIMEOUT')
+  sleep(min(interval,remaining))
 def pids():
  out=[]
  for x in Path('/proc').iterdir():
   if not x.name.isdigit():continue
   try:
    comm=(x/'comm').read_text().strip().lower();exe=os.path.basename(os.readlink(x/'exe')).lower();argv=(x/'cmdline').read_bytes().replace(b'\0',b' ').decode(errors='replace').strip()
-   if comm in {'retroarch','mame','controller_dispatcher','selector_controles','emulatorlauncher'} or exe in {'retroarch','mame','controller_dispatcher','selector_controles','emulatorlauncher'}:
+   launch_argv=('/userdata/system/el_gordo_tools/controller_dispatcher' in argv or
+                '/userdata/system/el_gordo_tools/selector_controles' in argv or
+                '/usr/bin/emulatorlauncher' in argv)
+   if comm in {'retroarch','mame','controller_dispatcher','selector_controles','emulatorlauncher'} or exe in {'retroarch','mame','controller_dispatcher','selector_controles','emulatorlauncher'} or launch_argv:
     st=(x/'stat').read_text().rsplit(')',1)[1].split();out.append({'pid':int(x.name),'ppid':int(st[1]),'comm':comm,'exe':exe,'argv':argv})
   except (OSError,ValueError,IndexError):pass
  return out
@@ -143,10 +180,7 @@ def profile_state():
 def expected_global_core():
  d=ad.parse_defaults();return d.get('mame',{}).get('core')
 def safety_baseline():
- idle,game=api_state()
- if not idle or game is not None:raise RuntimeError('ES_NOT_IDLE')
- if sr.MARKER.exists():raise RuntimeError('MARKER_ALREADY_EXISTS')
- if pids():raise RuntimeError('LAUNCH_PROCESSES_ALREADY_ACTIVE')
+ wait_for_es_idle()
  if not sr.es_pids():raise RuntimeError('EMULATIONSTATION_NOT_ACTIVE')
  p1=profile_state();exp={'P1':('5','/dev/input/event17'),'P2':('6','/dev/input/event18'),'P3':('8','/dev/input/event20'),'P4':('7','/dev/input/event19')}
  if any(p1.get(k)!=v for k,v in exp.items()):raise RuntimeError('P1_P4_MAPPING_REGRESSION')
@@ -371,7 +405,10 @@ def launch_one(game,adapter_info,baseline,mode):
   result['result']='ENGINE_FAIL';result['failure_class']='MARKER_ALREADY_EXISTS'
   return result
  except Exception as e:
-  result['result']='ENGINE_FAIL';result['failure_class']='CERTIFIER_EXCEPTION:'+type(e).__name__+': '+str(e)
+  if str(e) in SAFETY_GATE_FAILURES:
+   result['result']='SYSTEM_SAFETY_FAILURE';result['failure_class']=str(e)
+  else:
+   result['result']='ENGINE_FAIL';result['failure_class']='CERTIFIER_EXCEPTION:'+type(e).__name__+': '+str(e)
   return result
  finally:
   # If an engine-side exception happened after launch, close only the exact PID observed by this transaction.
@@ -418,7 +455,10 @@ def launch_one(game,adapter_info,baseline,mode):
      result['safety_after_finally']=after
      if after!=baseline:raise RuntimeError('GLOBAL_SAFETY_BASELINE_CHANGED')
     except Exception as e:
-     result['result']='ENGINE_FAIL';result['failure_class']='POST_RESTORE_SAFETY_GATE:'+type(e).__name__+': '+str(e)
+     if str(e) in SAFETY_GATE_FAILURES:
+      result['result']='SYSTEM_SAFETY_FAILURE';result['failure_class']=str(e)
+     else:
+      result['result']='ENGINE_FAIL';result['failure_class']='POST_RESTORE_SAFETY_GATE:'+type(e).__name__+': '+str(e)
   result['finished_at']=stamp()
   try:atomic_json(tx.RUNTIME/result['transaction_id']/'result.json',result)
   except Exception:pass
@@ -579,15 +619,22 @@ def assert_reconciled_queue(rows,cp,systems,batch_size=None):
  return metrics
 
 def run_tests(games,cp,mode):
- baseline=safety_baseline();cp['baseline']=baseline;cp['mode']=mode
+ try:baseline=safety_baseline()
+ except RuntimeError as e:
+  cp['status']='PAUSED_SYSTEM_SAFETY_FAILURE';cp['blocked_reason']=str(e);checkpoint_update(cp);return False
+ cp['baseline']=baseline;cp['mode']=mode
  started=stamp();before_results=len(cp.get('results',[]));batch_pass=batch_game=batch_static=batch_flaky=launched=restored=0;first=games[0]['rom'] if games else None;last=None
  batch_progress=cp.get('batch_in_progress') if mode in ('batch','resume') else None
  if mode in ('batch','resume') and not batch_progress:
   prior=(cp.get('latest_batch') or {}).get('name','priority_batch_0')
   number=int(prior.rsplit('_',1)[-1])+1 if prior.rsplit('_',1)[-1].isdigit() else 1
   batch_progress={'name':'priority_batch_'+str(number),'considered':len(games),'launched':0,'auto_pass':0,'game_fail':0,'static_fail':0,'flaky':0,
+   'adapter_pending':0,'skipped':0,'deferred':0,'other_unlaunched':0,'processed':0,
    'restore_verified':0,'restore_failures':0,'started_at':started,'first_game':first,'last_game':None}
   cp['batch_in_progress']=batch_progress;checkpoint_update(cp)
+ if batch_progress is not None:
+  for key in ('adapter_pending','skipped','deferred','other_unlaunched','processed'):
+   batch_progress.setdefault(key,0)
  for game in games:
   stop_file=os.environ.get('ARCADE_CERTIFIER_STOP_FILE')
   if stop_file and Path(stop_file).is_file():
@@ -599,7 +646,11 @@ def run_tests(games,cp,mode):
    checkpoint_update(cp);print('SAFE_STOP_AT_GAME_BOUNDARY',flush=True);return True
   label=game['system']+'/'+Path(game['rom']).name
   cp['current_test']=label;cp['next_game']=label;cp['status']='RUNNING';checkpoint_update(cp)
-  result=launch_one(game,game['adapter_info'],baseline,mode)
+  try:result=launch_one(game,game['adapter_info'],baseline,mode)
+  except RuntimeError as e:
+   if str(e) in SAFETY_GATE_FAILURES:
+    cp['status']='PAUSED_SYSTEM_SAFETY_FAILURE';cp['blocked_reason']=str(e);checkpoint_update(cp);return False
+   raise
   # Keep structured, bounded evidence per test; no screenshots or raw full logs.
   RUNTIME.mkdir(parents=True,exist_ok=True,mode=0o700)
   if not update_csv(game,result):
@@ -618,6 +669,13 @@ def run_tests(games,cp,mode):
    batch_progress['last_game']=game['rom']
    batch_progress['auto_pass']+=result.get('result')=='AUTO_PASS';batch_progress['game_fail']+=result.get('result')=='GAME_FAIL'
    batch_progress['static_fail']+=result.get('result')=='STATIC_FAIL';batch_progress['flaky']+=result.get('result')=='FLAKY'
+   batch_progress['processed']+=1
+   if not result.get('transaction_id'):
+    if result.get('result')=='ADAPTER_NOT_READY':batch_progress['adapter_pending']+=1
+    elif result.get('result') in ('SKIPPED','NOT_ELIGIBLE','PRECHECK_SKIPPED','ALREADY_TERMINAL','CONTENT_MISSING','UNSUPPORTED'):
+     batch_progress['skipped']+=1
+    elif result.get('result')=='DEFERRED':batch_progress['deferred']+=1
+    elif result.get('result')!='STATIC_FAIL':batch_progress['other_unlaunched']+=1
    cp['batch_in_progress']=batch_progress
   checkpoint_update(cp)
   launched+=bool(result.get('transaction_id'));restored+=result.get('restore',{}).get('status')=='RESTORE_VERIFIED';last=game['rom']
@@ -631,6 +689,8 @@ def run_tests(games,cp,mode):
       'exit':health_summary,'restore':result.get('restore'),'result':result.get('result'),'cause':result.get('failure_class')},ensure_ascii=False),flush=True)
   if result.get('transaction_id') and result.get('restore',{}).get('status')!='RESTORE_VERIFIED':
    cp['status']='PAUSED_RESTORE_FAILURE';cp['blocked_reason']='RESTORE_FAILURE';checkpoint_update(cp);return False
+  if result.get('result')=='SYSTEM_SAFETY_FAILURE':
+   cp['status']='PAUSED_SYSTEM_SAFETY_FAILURE';cp['blocked_reason']=result.get('failure_class','SYSTEM_SAFETY_FAILURE');checkpoint_update(cp);return False
   if result.get('result') in STOP_ENGINE:
    # Recover only the HDMI default through the already installed, narrow helper.
    if result.get('result')=='AUDIO_ROUTE_CHANGED':
@@ -669,6 +729,22 @@ def run_tests(games,cp,mode):
    f"- Wrong dispatch: {sum(x.get('result')=='WRONG_GAME_DISPATCH' for x in cp['results'][before_results:])}",
    f"- NEXT_GAME: `{cp['next_untested'] or 'NONE'}`",'']
   batch_num=int(cp['latest_batch']['name'].rsplit('_',1)[-1])
+  accounted=(cp['latest_batch']['launched']+cp['latest_batch']['static_fail']+
+             progress.get('adapter_pending',0)+progress.get('skipped',0)+progress.get('deferred',0)+
+             progress.get('other_unlaunched',0))
+  unprocessed=max(0,cp['latest_batch']['considered']-accounted)
+  cp['latest_batch'].update({'adapter_pending':progress.get('adapter_pending',0),'skipped':progress.get('skipped',0),
+   'deferred':progress.get('deferred',0),'other_unlaunched':progress.get('other_unlaunched',0),
+   'unprocessed':unprocessed,'accounted':accounted})
+  checkpoint_update(cp)
+  report_lines.extend([
+   f"- Adapter pending: {progress.get('adapter_pending',0)}",
+   f"- Skipped: {progress.get('skipped',0)}",
+   f"- Deferred: {progress.get('deferred',0)}",
+   f"- Other unlaunched: {progress.get('other_unlaunched',0)}",
+   f"- Not yet processed: {unprocessed}",
+   f"- Accounting: {cp['latest_batch']['considered']} = {cp['latest_batch']['launched']} launched + {cp['latest_batch']['static_fail']} static_fail + {progress.get('adapter_pending',0)} adapter_pending + {progress.get('skipped',0)} skipped + {progress.get('deferred',0)} deferred + {progress.get('other_unlaunched',0)} other_unlaunched + {unprocessed} not_yet_processed",
+  ])
   atomic_bytes(AUDIT/f'reports/PRIORITY_CERTIFICATION_BATCH_{batch_num}.md','\n'.join(report_lines).encode())
   summary=subprocess.run([sys.executable,str(TOOLS/'rebuild_certification_summary.py')],capture_output=True,text=True,timeout=60)
   print(summary.stdout.strip(),flush=True)

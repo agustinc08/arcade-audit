@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18T19:18:04+00:00",
+  "updated_at": "2026-11-18T19:19:35+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
-  "next_untested": "dreamcast:/userdata/roms/dreamcast/Vampire Chronicle for Matching Service (Japan).chd",
-  "attempted_new": 5198,
-  "auto_certified": 5025,
+  "next_untested": "megacd:/userdata/roms/megacd/Final Fight CD (USA).chd",
+  "attempted_new": 5199,
+  "auto_certified": 5026,
   "manual_control_certified": 0,
   "guest_ready": 0,
   "launches_blocked_by": [],
@@ -131790,9 +131790,228 @@
         "status": "NOT_REQUIRED_NO_WRITE"
       },
       "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Vampire Chronicle for Matching Service (Japan).chd",
+      "name": "Vampire Chronicle for Matching Service",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Vanishing Point (Europe) (En,Fr,De,Es,It).chd",
+      "name": "Vanishing Point",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Virtua Cop 2 (Japan).chd",
+      "name": "Virtua Cop 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Virtua Fighter 3tb (Europe).chd",
+      "name": "Virtua Fighter 3tb",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Virtua Striker 2 Ver. 2000.1 (Europe) (En,Ja,Fr,De,Es).chd",
+      "name": "Virtua Striker 2 Ver. 2000.1",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Wetrix+ (Europe) (En,Fr,De).chd",
+      "name": "Wetrix+",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/World Series Baseball 2K1 (USA).chd",
+      "name": "World Series Baseball 2K1",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/World Series Baseball 2K2 (USA).chd",
+      "name": "World Series Baseball 2K2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Xeno Crisis (Unl).chd",
+      "name": "Xeno Crisis",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Yu Suzuki Game Works Vol. 1 (Japan).chd",
+      "name": "Yu Suzuki Game Works Vol. 1",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Zero Gunner 2 (Japan) (En,Ja).chd",
+      "name": "Zero Gunner 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Zombie Revenge (Europe) (En,Ja).chd",
+      "name": "Zombie Revenge",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Zusar Vasar (Japan) (En,Ja).chd",
+      "name": "Zusar Vasar",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "fds",
+      "rom": "/userdata/roms/fds/Super Mario Brothers (ESP).fds",
+      "name": "Super Mario Brothers",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261118T161913_0b1c456071",
+      "stable_seconds": 16.204,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261118T161913_0b1c456071",
+        "paths": 7
+      },
+      "finished_at": "2026-11-18T16:19:35.487-03:00"
     }
   ],
-  "status": "COMPLETE",
+  "status": "PAUSED_SYSTEM_SAFETY_FAILURE",
   "mode": "batch",
   "selected_count": 100,
   "baseline": {
@@ -131824,17 +132043,17 @@
   "current_test": null,
   "next_game": null,
   "counts": {
-    "AUTO_PASS": 5025,
+    "AUTO_PASS": 5026,
     "GAME_FAIL": 171,
     "STATIC_FAIL": 194,
     "FLAKY": 0,
-    "ADAPTER_NOT_READY": 320,
+    "ADAPTER_NOT_READY": 333,
     "ENGINE_FAIL": 2,
     "WRONG_GAME_DISPATCH": 0,
     "AUDIO_ROUTE_CHANGED": 0,
     "RESTORE_FAILURE": 0
   },
-  "blocked_reason": null,
+  "blocked_reason": "RuntimeError: ES_NOT_IDLE",
   "resume_reason": "CERT-007 reconciled: shared marker ownership protocol verified; P1-P4 gate PASS 5/5; isolated xmultipl retry AUTO_PASS and RESTORE_VERIFIED. Preserve historical ENGINE_FAIL; detached Autopilot may continue only priority_batch_11 from xsleena after infrastructure publication.",
   "pilot_summary": {
     "unique_games": 10,
@@ -131881,11 +132100,11 @@
       "resolved_at": "2026-11-15T09:39:16-03:00"
     }
   ],
-  "launch_transactions": 5198,
+  "launch_transactions": 5199,
   "transaction_attempts": 509,
   "retry_transactions": 2,
-  "unique_games_processed": 5710,
-  "result_records": 5712,
+  "unique_games_processed": 5724,
+  "result_records": 5726,
   "static_preflight_results": 194,
   "engine_fail_total_historical": 2,
   "engine_fail_active": 0,
@@ -131894,6 +132113,20 @@
   "flaky": 0,
   "needs_repair": 365,
   "control_certified": 0,
-  "restores_verified": 5198,
-  "restore_failures": 0
+  "restores_verified": 5199,
+  "restore_failures": 0,
+  "batch_in_progress": {
+    "name": "priority_batch_59",
+    "considered": 100,
+    "launched": 1,
+    "auto_pass": 1,
+    "game_fail": 0,
+    "static_fail": 0,
+    "flaky": 0,
+    "restore_verified": 1,
+    "restore_failures": 0,
+    "started_at": "2026-11-18T16:19:02.644-03:00",
+    "first_game": "/userdata/roms/dreamcast/Vampire Chronicle for Matching Service (Japan).chd",
+    "last_game": "/userdata/roms/fds/Super Mario Brothers (ESP).fds"
+  }
 }

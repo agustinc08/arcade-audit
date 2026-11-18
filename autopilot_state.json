@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "status": "RUNNING",
+  "status": "PAUSED_SAFETY",
   "started_at": "2026-11-17T16:01:15+00:00",
-  "updated_at": "2026-11-18T19:18:25+00:00",
-  "current_task": "GITHUB-PUBLISH-CERT-BATCH-0058",
-  "last_completed_task": "GITHUB-PUBLISH-CERT-BATCH-0057",
+  "updated_at": "2026-11-18T19:20:01+00:00",
+  "current_task": "CERT-BATCH-0059",
+  "last_completed_task": "GITHUB-PUBLISH-CERT-BATCH-0058",
   "safe_mode": true,
-  "pause_reason": null,
+  "pause_reason": "CERTIFIER_FAILED:FAILED",
   "batches_completed": 3,
   "games_processed_this_run": 3980,
-  "last_github_sha": "7570d2772c32c7e8a7316585ecd3d9cfeca73fe6",
-  "next_action": "Job COMPLETE inesperado o sin reconciliación; no se lanzó ningún juego."
+  "last_github_sha": "9d857ed0edbca55d0e2a49fb7891b09dd2b328af",
+  "next_action": "Diagnosticar transacción/restore/checkpoint antes de reanudar."
 }
