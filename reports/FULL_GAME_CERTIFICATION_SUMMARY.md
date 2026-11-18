@@ -1,12 +1,12 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-18T18:56:58+00:00
+- UPDATED_AT: 2026-11-18T18:59:52+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
 - ATTEMPTED_NEW: 5164
-- UNIQUE_GAMES_PROCESSED: 5410
-- RESULT_RECORDS: 5412
+- UNIQUE_GAMES_PROCESSED: 5510
+- RESULT_RECORDS: 5512
 - LAUNCH_TRANSACTIONS: 5164
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
@@ -19,7 +19,7 @@
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/Fur Fighters (Europe) (En,Fr,De,Es).chd
+- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/Worms Armageddon (Europe) (En,Fr,De,Nl,Sv,No,Da).chd
 - TOTAL_RESTORES: 5164
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
@@ -37,7 +37,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | cannonball | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | cdogs | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | devilutionx | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 8 |
-| dreamcast | 775 | 775 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 721 |
+| dreamcast | 775 | 775 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 621 |
 | easyrpg | 12 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 |
 | fbneo | 104 | 104 | 88 | 52 | 52 | 0 | 0 | 0 | 0 | 0 |
 | fds | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
@@ -86,9 +86,9 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_55; considerados 100; lanzados 46; AUTO_PASS 45; restore 46/46.
+- Lote más reciente: priority_batch_56; considerados 100; lanzados 0; AUTO_PASS 0; restore 0/0.
 - Estado de runner: COMPLETE.
-- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/Fur Fighters (Europe) (En,Fr,De,Es).chd.
+- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/Worms Armageddon (Europe) (En,Fr,De,Nl,Sv,No,Da).chd.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY

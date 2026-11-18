@@ -1,7 +1,7 @@
 # Estado actual del arcade
 
-- UPDATED_AT: 2026-11-18T18:56:58+00:00
-- GITHUB_HEAD observado antes de publicar: `5faedeb0698c21b5c132bbb111bc8eeafc3d088b`
+- UPDATED_AT: 2026-11-18T18:59:53+00:00
+- GITHUB_HEAD observado antes de publicar: `6954469ddec7f7431ed1abe420a87c248c8cf424`
 - BATOCERA_VERSION: 43.1
 
 ## Sistema y hardware
@@ -44,9 +44,9 @@
 - NEEDS_REPAIR: 365
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
-- NEXT_GAME: `dreamcast:/userdata/roms/dreamcast/Fur Fighters (Europe) (En,Fr,De,Es).chd`
-- UNIQUE_GAMES_PROCESSED: 5410
-- RESULT_RECORDS: 5412
+- NEXT_GAME: `dreamcast:/userdata/roms/dreamcast/Worms Armageddon (Europe) (En,Fr,De,Nl,Sv,No,Da).chd`
+- UNIQUE_GAMES_PROCESSED: 5510
+- RESULT_RECORDS: 5512
 - LAUNCH_TRANSACTIONS: 5164
 - RETRY_TRANSACTIONS: 2
 - ADAPTERS_READY: 23

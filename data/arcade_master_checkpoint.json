@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-18T18:55:57+00:00",
+  "updated_at": "2026-11-18T18:59:25+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_55: 100 considerados, 46 lanzados, 45 AUTO_PASS, 1 GAME_FAIL, 0 STATIC_FAIL; restores 46/46; AUTO_CERTIFIED=4991; NEXT_GAME=dreamcast:/userdata/roms/dreamcast/Fur Fighters (Europe) (En,Fr,De,Es).chd",
+      "summary": "priority_batch_56: 100 considerados, 0 lanzados, 0 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 0/0; AUTO_CERTIFIED=4991; NEXT_GAME=dreamcast:/userdata/roms/dreamcast/Worms Armageddon (Europe) (En,Fr,De,Nl,Sv,No,Da).chd",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-18T18:55:57+00:00"
+      "updated_at": "2026-11-18T18:59:25+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -590,10 +590,10 @@
     "needs_repair": 365,
     "total_restores": 5164,
     "restore_failures": 0,
-    "next_game": "dreamcast:/userdata/roms/dreamcast/Fur Fighters (Europe) (En,Fr,De,Es).chd",
+    "next_game": "dreamcast:/userdata/roms/dreamcast/Worms Armageddon (Europe) (En,Fr,De,Nl,Sv,No,Da).chd",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 5410,
-    "result_records": 5412,
+    "unique_games_processed": 5510,
+    "result_records": 5512,
     "launch_transactions": 5164,
     "retry_transactions": 2
   }
