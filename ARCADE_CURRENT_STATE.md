@@ -1,7 +1,7 @@
 # Estado actual del arcade
 
-- UPDATED_AT: 2026-11-19T14:10:44+00:00
-- GITHUB_HEAD observado antes de publicar: `566a54068b50d74fe95d82696415ae07d03d5c49`
+- UPDATED_AT: 2026-11-19T14:39:04+00:00
+- GITHUB_HEAD observado antes de publicar: `f488d98cfe6e9331216be8820f13da63ac7c1541`
 - BATOCERA_VERSION: 43.1
 
 ## Sistema y hardware
@@ -39,17 +39,17 @@
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- AUTO_CERTIFIED: 5125
+- AUTO_CERTIFIED: 5155
 - GAME_FAIL: 171
 - STATIC_FAIL: 194
 - FLAKY: 0
 - NEEDS_REPAIR: 365
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
-- NEXT_GAME: `pcengine:/userdata/roms/pcengine/Racing Damashii (Japan).pce`
-- UNIQUE_GAMES_PROCESSED: 5823
-- RESULT_RECORDS: 5825
-- LAUNCH_TRANSACTIONS: 5298
+- NEXT_GAME: `dreamcast:/userdata/roms/dreamcast/Dancing Blade Katte ni Momotenshi II - Tears of Eden Kanzenban (Japan) (Disc 1).chd`
+- UNIQUE_GAMES_PROCESSED: 5923
+- RESULT_RECORDS: 5925
+- LAUNCH_TRANSACTIONS: 5328
 - RETRY_TRANSACTIONS: 2
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25

@@ -1,16 +1,16 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-19T14:10:44+00:00
+- UPDATED_AT: 2026-11-19T14:39:03+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 5298
-- UNIQUE_GAMES_PROCESSED: 5823
-- RESULT_RECORDS: 5825
-- LAUNCH_TRANSACTIONS: 5298
+- ATTEMPTED_NEW: 5328
+- UNIQUE_GAMES_PROCESSED: 5923
+- RESULT_RECORDS: 5925
+- LAUNCH_TRANSACTIONS: 5328
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 5125
+- AUTO_CERTIFIED: 5155
 - STATIC_FAIL: 194
 - GAME_FAIL: 171
 - FLAKY: 0
@@ -19,8 +19,8 @@
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: pcengine:/userdata/roms/pcengine/Racing Damashii (Japan).pce
-- TOTAL_RESTORES: 5298
+- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/Dancing Blade Katte ni Momotenshi II - Tears of Eden Kanzenban (Japan) (Disc 1).chd
+- TOTAL_RESTORES: 5328
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -32,12 +32,12 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 | Sistema | TOTAL | INSTALLED | HISTORICAL_BOOT_OK | AUTO_CERTIFIED | STATIC_FAIL | GAME_FAIL | FLAKY | CONTROL_CERTIFIED | GUEST_READY | NOT_TESTED |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| atari2600 | 2 | 2 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 |
-| c64 | 4 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 |
+| atari2600 | 2 | 2 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 |
+| c64 | 4 | 4 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 1 |
 | cannonball | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | cdogs | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | devilutionx | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 8 |
-| dreamcast | 775 | 775 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 442 |
+| dreamcast | 775 | 775 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 372 |
 | easyrpg | 12 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 |
 | fbneo | 104 | 104 | 88 | 52 | 52 | 0 | 0 | 0 | 0 | 0 |
 | fds | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -61,7 +61,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | nes | 702 | 702 | 0 | 700 | 0 | 2 | 0 | 0 | 0 | 0 |
 | odcommander | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | openbor | 128 | 128 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 128 |
-| pcengine | 529 | 529 | 0 | 163 | 0 | 0 | 0 | 0 | 0 | 366 |
+| pcengine | 529 | 529 | 0 | 188 | 0 | 0 | 0 | 0 | 0 | 341 |
 | ports | 5 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 5 |
 | prboom | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
 | ps2 | 196 | 196 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 196 |
@@ -70,7 +70,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | psp | 631 | 631 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 631 |
 | psx | 78 | 78 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 78 |
 | pygame | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
-| saturn | 6 | 6 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 |
+| saturn | 6 | 6 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 5 |
 | scummvm | 3 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 |
 | sdlpop | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | snes | 275 | 275 | 0 | 264 | 0 | 11 | 0 | 0 | 0 | 0 |
@@ -86,10 +86,10 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_59; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
-- CURRENT_INVOCATION_SELECTED_COUNT: 99 (selección de la invocación más reciente; no es el total acumulado del batch).
+- Lote más reciente: priority_batch_60; considerados 100; lanzados 30; AUTO_PASS 30; restore 30/30.
+- CURRENT_INVOCATION_SELECTED_COUNT: 100 (selección de la invocación más reciente; no es el total acumulado del batch).
 - Estado de runner: COMPLETE.
-- NEXT_GAME: pcengine:/userdata/roms/pcengine/Racing Damashii (Japan).pce.
+- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/Dancing Blade Katte ni Momotenshi II - Tears of Eden Kanzenban (Japan) (Disc 1).chd.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY
