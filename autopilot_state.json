@@ -2,13 +2,13 @@
   "schema_version": 1,
   "status": "RUNNING",
   "started_at": "2026-11-19T14:22:58+00:00",
-  "updated_at": "2026-11-19T14:39:06+00:00",
-  "current_task": "GITHUB-PUBLISH-CERT-BATCH-0060",
-  "last_completed_task": "GITHUB-PUBLISH-CERT-BATCH-0059",
+  "updated_at": "2026-11-19T14:43:08+00:00",
+  "current_task": "GITHUB-PUBLISH-CERT-BATCH-0061",
+  "last_completed_task": "GITHUB-PUBLISH-CERT-BATCH-0060",
   "safe_mode": true,
   "pause_reason": null,
-  "batches_completed": 5,
+  "batches_completed": 6,
   "games_processed_this_run": 4110,
-  "last_github_sha": "6ab5c226b4ab9a8edc7ca14725e2a298e9b357f1",
+  "last_github_sha": "7bf7acbcd4936725683c10a2c7d60bf933931b22",
   "next_action": "Publicar Batch 59; Batch 60 sigue esperando el publish task."
 }

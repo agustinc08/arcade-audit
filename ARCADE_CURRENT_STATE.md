@@ -1,7 +1,7 @@
 # Estado actual del arcade
 
-- UPDATED_AT: 2026-11-19T14:39:04+00:00
-- GITHUB_HEAD observado antes de publicar: `f488d98cfe6e9331216be8820f13da63ac7c1541`
+- UPDATED_AT: 2026-11-19T14:43:06+00:00
+- GITHUB_HEAD observado antes de publicar: `7bf7acbcd4936725683c10a2c7d60bf933931b22`
 - BATOCERA_VERSION: 43.1
 
 ## Sistema y hardware
@@ -46,9 +46,9 @@
 - NEEDS_REPAIR: 365
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
-- NEXT_GAME: `dreamcast:/userdata/roms/dreamcast/Dancing Blade Katte ni Momotenshi II - Tears of Eden Kanzenban (Japan) (Disc 1).chd`
-- UNIQUE_GAMES_PROCESSED: 5923
-- RESULT_RECORDS: 5925
+- NEXT_GAME: `dreamcast:/userdata/roms/dreamcast/Interlude (Japan).chd`
+- UNIQUE_GAMES_PROCESSED: 6023
+- RESULT_RECORDS: 6025
 - LAUNCH_TRANSACTIONS: 5328
 - RETRY_TRANSACTIONS: 2
 - ADAPTERS_READY: 23
