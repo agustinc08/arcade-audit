@@ -123,6 +123,24 @@ otras tareas automáticas independientes.
 - Exportar tasks, estado saneado, handoffs, docs y scripts aprobados; nunca PID,
   lock, log o eventos JSONL.
 
+### Reconciliación explícita post-reboot de bloqueos ES
+
+`arcade_autopilot reconcile-recovered-safety` es una ruta separada y fail-closed
+para un checkpoint `PAUSED_SYSTEM_SAFETY_FAILURE` cuyo motivo contenga
+exactamente una causa recuperable (`ES_NOT_IDLE`, `ES_IDLE_TIMEOUT` o
+`SELECTOR_NOT_CLOSED`). Exige ES idle y `NO GAME RUNNING`, ausencia de marker y
+procesos de lanzamiento/certifier, `engine_fail_active=0`, la última transacción
+con resultado y manifest `RESTORE_VERIFIED`, hashes protegidos compatibles con
+el baseline transaccional y reconciliación de queue/checkpoint. Sólo entonces
+guarda backup, registro de recovery y transforma el estado en `STOPPED_SAFE`;
+preserva íntegros el lote parcial, resultados y cursor. No habilita otros
+blockers ni marca un batch `COMPLETE`.
+
+Las nuevas metadata de job guardan `/proc/sys/kernel/random/boot_id` y el
+estado del PID. Después de reiniciar, un PID persistido sólo se reconoce activo
+si coincide el boot y `/proc/<pid>` confirma el comando certifier; el PID no es
+una identidad suficiente por sí solo.
+
 La operación real se libera sólo después de pruebas y un test pequeño elegible
 con detached survival, checkpoint y restore. Si el checkpoint está bloqueado,
 no iniciar juegos ni `start` real.

@@ -34,3 +34,57 @@ Estado: EN INVESTIGACIÓN
 ## Próximo paso
 
 Resolver manualmente la pantalla del selector activo y volver a comprobar API, procesos, marker y configuración protegida. Reanudar sólo cuando el dry run reporte `HEALTH PASS`, `ARCADE_SAFETY PASS` y el siguiente juego exacto. El gate implementado debe seguir fallando cerrado si vuelve a aparecer un selector o launcher activo.
+
+## Reconciliación post-reboot (2026-11-18)
+
+La evidencia previa de `SELECTOR_NOT_CLOSED` y el job `20261118T161901_df534fc7`
+`FAILED` se conservan sin modificaciones. El runtime limpio después del reboot
+no convierte el incidente histórico en inexistente.
+
+Se agregó `arcade_autopilot reconcile-recovered-safety`, que sólo acepta
+`PAUSED_SYSTEM_SAFETY_FAILURE` con una causa identificada como `ES_NOT_IDLE`,
+`ES_IDLE_TIMEOUT` o `SELECTOR_NOT_CLOSED`. Antes de cambiar el estado exige:
+
+- ausencia de marker, launcher, selector, dispatcher, emulador y certifier;
+- dos observaciones limpias de ES API, con `isIdle=true` y sin juego corriendo;
+- cero `engine_fail_active`;
+- resultado y manifest de `20261118T161913_0b1c456071` en `RESTORE_VERIFIED`;
+- hashes/configuración protegida coincidentes con el baseline de esa transacción;
+- cola y checkpoint reconciliados, y cursor exacto en Final Fight CD.
+
+La única transición permitida conserva el lote y cursor, y cambia el checkpoint
+a `STOPPED_SAFE`, con `blocked_reason=null` y un registro `safety_recovery`.
+También crea una copia previa del checkpoint y un evento de auditoría. No
+completa Batch 59 ni reejecuta FDS. Los demás blockers, incluidos restore,
+corrupción, cambios de configuración/mapeo, disco y marker desconocido, siguen
+sin ruta de limpieza.
+
+La metadata nueva de jobs incluye `boot_id`; status contrasta esa identidad y
+la identidad de proceso antes de considerar vivo un PID almacenado. El PID
+histórico `21930` no existe en `/proc` en esta sesión de herramientas.
+
+Validación de código: `py_compile` PASS. Los siete tests nuevos focalizados
+PASS. La suite completa actual reportó además cuatro fallos en pruebas de
+consumo/publicación de jobs (`PUBLISH_TASK_NOT_COMPLETE`,
+`PUBLICATION_RECEIPT_INVALID` y expectativa `STOP_TEST_LOOP`); no se alteraron
+los jobs/history/markers para hacerlos pasar.
+
+La consulta live posterior sí confirma ES idle (`[ true ]`),
+`NO GAME RUNNING`, HDMI `alsa_output.pci-0000_01_00.1.hdmi-stereo`, cero procesos
+de lanzamiento y marker ausente. El PID `21930` no existe en `/proc` y se
+clasifica `STALE`.
+
+La reconciliación se detuvo por una discrepancia nueva: `controller_dispatcher
+--diagnose` asigna actualmente P1–P4 a `event18`, `event19`, `event21`,
+`event20`, mientras el baseline transaccional conserva `event17`, `event18`,
+`event20`, `event19`. Además, el SHA live de `batocera.conf` es
+`bb8579bd3cb91c2ad8606ff04fe2b7ed238ed0264018a418acbe0943c3762426`, distinto
+del SHA previo/post transacción `098c88444322bacaac5f2f2383e5bf6e5fa42623353fe8c49d307fffc47b52d2`.
+Los hashes de `controller_dispatcher`, `controller_technical.json` y
+`multiplayer.json` sí coinciden con el baseline. No se modificaron
+configuraciones para resolver estas diferencias.
+
+Por esos gates, no se reconcilió el checkpoint, no se ejecutó el dry run ni se
+reanuda Autopilot. Batch 59 permanece en su estado original. La suite
+focalizada de recovery pasa; la suite completa conserva cuatro fallos en
+pruebas previas de consumo/publicación ya registrados arriba.

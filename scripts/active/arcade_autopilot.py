@@ -3,6 +3,7 @@
 import argparse
 import csv
 import datetime as dt
+import shutil
 import hashlib
 import fcntl
 import json
@@ -569,6 +570,216 @@ def health_check(*, include_checkpoint=True, allow_self=False, allow_certifier_p
             detail = str(exc).splitlines()[0][:180]
             return False, 'RUNTIME_HEALTH_FAIL:' + type(exc).__name__ + ':' + detail, checks
     return True, None, checks
+
+
+RECOVERABLE_SAFETY_BLOCKERS = {'ES_NOT_IDLE', 'ES_IDLE_TIMEOUT', 'SELECTOR_NOT_CLOSED'}
+POST_REBOOT_GAME = 'megacd:/userdata/roms/megacd/Final Fight CD (USA).chd'
+POST_REBOOT_TX = '20261118T161913_0b1c456071'
+POST_REBOOT_FAILED_JOB = '20261118T161901_df534fc7'
+
+
+def current_boot_id():
+    try:
+        return Path('/proc/sys/kernel/random/boot_id').read_text().strip()
+    except OSError:
+        return None
+
+
+def pid_matches_boot(pid, record_boot_id=None):
+    """A stored PID is not evidence of a live process across a reboot."""
+    boot_id = current_boot_id()
+    if not isinstance(pid, int) or not boot_id:
+        return False
+    if record_boot_id and record_boot_id != boot_id:
+        return False
+    return proc_record(pid) is not None
+
+
+def recovered_runtime_evidence(cp):
+    """Collect fresh gates needed to reconcile only known post-ES blockers."""
+    evidence = {'current_boot_id': current_boot_id(), 'checks': {}, 'passed': False}
+    try:
+        if not evidence['current_boot_id']:
+            raise RuntimeError('BOOT_ID_UNAVAILABLE')
+        job = read_json(AUDIT / 'jobs' / 'certifier_job.json', {}) or {}
+        evidence['checks']['historical_failed_job_preserved'] = bool(
+            job.get('job_id') == POST_REBOOT_FAILED_JOB and job.get('status') == 'FAILED')
+        if not evidence['checks']['historical_failed_job_preserved']:
+            raise RuntimeError('HISTORICAL_FAILED_JOB_MISMATCH')
+        evidence['previous_boot_id'] = job.get('boot_id')
+        evidence['certifier_pid'] = job.get('pid')
+        evidence['certifier_pid_alive_this_boot'] = pid_matches_boot(
+            job.get('pid'), job.get('boot_id'))
+        if evidence['certifier_pid_alive_this_boot']:
+            rec = proc_record(job['pid'])
+            if rec and str(CERTIFIER) in rec.get('cmdline', ''):
+                raise RuntimeError('CERTIFIER_STILL_ACTIVE')
+
+        cp_status = cp.get('status')
+        evidence['checks']['no_engine_fail'] = int(cp.get('engine_fail_active', 0)) == 0
+        if not evidence['checks']['no_engine_fail']:
+            raise RuntimeError('ENGINE_FAIL_ACTIVE')
+        evidence['checks']['marker_absent'] = not MARKER.exists()
+        if not evidence['checks']['marker_absent']:
+            raise RuntimeError('MARKER_FOREIGN_UNKNOWN')
+
+        sys.path.insert(0, str(TOOLS))
+        import full_game_certifier as cert
+        active = cert.pids()
+        evidence['launch_processes'] = active
+        evidence['checks']['launch_processes_absent'] = not active
+        if active:
+            raise RuntimeError('LAUNCH_PROCESS_ACTIVE')
+        evidence['checks']['no_active_certifier'] = certifier_active()[0] is None
+        if not evidence['checks']['no_active_certifier']:
+            raise RuntimeError('CERTIFIER_STILL_ACTIVE')
+        idle_observation = cert.wait_for_es_idle()
+        evidence['es'] = idle_observation
+        evidence['checks']['es_idle'] = idle_observation.get('isIdle') is True
+        evidence['checks']['running_game_none'] = idle_observation.get('runningGame') is None
+        if not evidence['checks']['es_idle']:
+            raise RuntimeError('ES_NOT_IDLE')
+        if not evidence['checks']['running_game_none']:
+            raise RuntimeError('RUNNING_GAME_ACTIVE')
+
+        before = next((x for x in cp.get('results', [])
+                       if x.get('transaction_id') == POST_REBOOT_TX and
+                       x.get('system') == 'fds' and
+                       x.get('rom') == '/userdata/roms/fds/Super Mario Brothers (ESP).fds'), None)
+        txdir = AUDIT / 'runtime' / POST_REBOOT_TX
+        manifest = read_json(txdir / 'manifest.json', {}) or {}
+        result = read_json(txdir / 'result.json', {}) or {}
+        evidence['last_restored_transaction'] = POST_REBOOT_TX
+        evidence['checks']['last_result_restore_verified'] = bool(
+            before and before.get('result') == 'AUTO_PASS' and
+            before.get('restore', {}).get('status') == 'RESTORE_VERIFIED' and
+            before.get('restore', {}).get('transaction_id') == POST_REBOOT_TX)
+        evidence['checks']['manifest_restore_verified'] = bool(
+            manifest.get('transaction_id') == POST_REBOOT_TX and
+            manifest.get('status') == 'RESTORE_VERIFIED')
+        if not evidence['checks']['last_result_restore_verified'] or not evidence['checks']['manifest_restore_verified']:
+            raise RuntimeError('LAST_TRANSACTION_NOT_RESTORE_VERIFIED')
+
+        core, override_count = current_global_overrides()
+        baseline = {
+            'batocera_conf_sha256': hashlib.sha256(
+                Path('/userdata/system/batocera.conf').read_bytes()).hexdigest(),
+            'global_mame_core': core,
+            'mame_overrides_count': override_count,
+            'p1_p4': cert.profile_state(),
+            'audio_default': cert.get_default_sink(),
+            'dispatcher_sha256': hashlib.sha256(Path(str(TOOLS / 'controller_dispatcher')).read_bytes()).hexdigest(),
+            'profile_sha256': hashlib.sha256(Path('/userdata/system/configs/el_gordo_controller_profiles/controller_technical.json').read_bytes()).hexdigest(),
+            'multiplayer_sha256': hashlib.sha256(Path('/userdata/system/configs/el_gordo_controller_profiles/multiplayer.json').read_bytes()).hexdigest(),
+        }
+        evidence['runtime_baseline'] = baseline
+        protected = ('batocera_conf_sha256', 'global_mame_core', 'p1_p4', 'audio_default',
+                     'dispatcher_sha256', 'profile_sha256', 'multiplayer_sha256')
+        tx_baseline = result.get('safety_before') or {}
+        evidence['protected_config'] = {
+            key: {'expected': tx_baseline.get(key), 'actual': baseline.get(key),
+                  'matches': tx_baseline.get(key) == baseline.get(key)}
+            for key in protected
+        }
+        evidence['checks']['protected_config_matches'] = all(
+            item['expected'] is not None and item['matches']
+            for item in evidence['protected_config'].values())
+        evidence['checks']['mame_overrides_expected'] = (
+            baseline['global_mame_core'] == 'mame078plus' and
+            baseline['mame_overrides_count'] == 18)
+        if not evidence['checks']['mame_overrides_expected']:
+            raise RuntimeError('PROTECTED_MAME_CONFIG_CHANGE')
+        if not evidence['checks']['protected_config_matches']:
+            raise RuntimeError('PROTECTED_CONFIG_MISMATCH')
+
+        rows, _ = cert.load_rows()
+        systems = cert.ad.live_systems()
+        evidence['queue_reconciliation'] = cert.assert_reconciled_queue(rows, cp, systems)
+        evidence['checks']['queue_checkpoint_reconciled'] = True
+        evidence['passed'] = True
+        return evidence
+    except Exception as exc:
+        evidence['failure'] = type(exc).__name__ + ':' + str(exc)[:180]
+        return evidence
+
+
+def recovered_safety_plan(cp, evidence):
+    """Pure, deliberately narrow decision gate for post-reboot reconciliation."""
+    import re as _re
+    reason = str(cp.get('blocked_reason') or '')
+    blockers = _re.findall(r'(?<![A-Z0-9_])(ES_NOT_IDLE|ES_IDLE_TIMEOUT|SELECTOR_NOT_CLOSED)(?![A-Z0-9_])',
+                           reason.upper())
+    if cp.get('status') != 'PAUSED_SYSTEM_SAFETY_FAILURE' or len(blockers) != 1:
+        return False, 'BLOCKER_NOT_RECOVERABLE', None
+    if int(cp.get('engine_fail_active', 0)) != 0:
+        return False, 'ENGINE_FAIL_ACTIVE', None
+    batch = cp.get('batch_in_progress')
+    if not isinstance(batch, dict) or batch.get('name') != 'priority_batch_59':
+        return False, 'BATCH_59_CHECKPOINT_MISMATCH', None
+    if (batch.get('considered') != 100 or batch.get('launched') != 1 or
+            batch.get('auto_pass') != 1 or batch.get('game_fail') != 0 or
+            batch.get('restore_verified') != 1 or batch.get('restore_failures') != 0 or
+            cp.get('next_untested') != POST_REBOOT_GAME):
+        return False, 'BATCH_59_PROGRESS_MISMATCH', None
+    checks = evidence.get('checks', {}) if isinstance(evidence, dict) else {}
+    required = ('no_engine_fail', 'marker_absent', 'launch_processes_absent',
+                'no_active_certifier', 'es_idle', 'running_game_none',
+                'historical_failed_job_preserved',
+                'last_result_restore_verified', 'manifest_restore_verified',
+                'protected_config_matches', 'mame_overrides_expected',
+                'queue_checkpoint_reconciled')
+    if (not evidence.get('passed') or not evidence.get('current_boot_id') or
+            any(checks.get(key) is not True for key in required)):
+        return False, evidence.get('failure', 'RUNTIME_RECOVERY_GATES_FAILED'), None
+    if evidence.get('last_restored_transaction') != POST_REBOOT_TX:
+        return False, 'LAST_TRANSACTION_ID_MISMATCH', None
+    return True, blockers[0], {
+        'recovered_at': now(),
+        'previous_status': cp.get('status'),
+        'previous_blocked_reason': cp.get('blocked_reason'),
+        'current_boot_id': evidence['current_boot_id'],
+        'previous_boot_id': evidence.get('previous_boot_id'),
+        'runtime_checks': checks,
+        'last_restored_transaction': POST_REBOOT_TX,
+        'next_game': cp.get('next_untested'),
+        'recovery_reason': 'POST_REBOOT_RUNTIME_CLEAN',
+        'recovered_blocker': blockers[0],
+    }
+
+
+def reconcile_recovered_safety_block():
+    cp = read_json(CERT_STATE, {}) or {}
+    evidence = recovered_runtime_evidence(cp)
+    allowed, reason, recovery = recovered_safety_plan(cp, evidence)
+    if not allowed:
+        print('RECOVERY: FAIL:' + str(reason))
+        print('EVIDENCE: ' + json.dumps(evidence, ensure_ascii=False, sort_keys=True))
+        return 3
+    before = json.loads(json.dumps(cp))
+    stamp = dt.datetime.now().strftime('%Y%m%dT%H%M%S')
+    backup_dir = AUDIT / 'recovery_backups' / ('safety_checkpoint_' + stamp)
+    backup_dir.mkdir(parents=True, exist_ok=False, mode=0o700)
+    shutil.copy2(CERT_STATE, backup_dir / CERT_STATE.name)
+    cp['status'] = 'STOPPED_SAFE'
+    cp['blocked_reason'] = None
+    cp['resume_reason'] = 'POST_REBOOT_RUNTIME_CLEAN'
+    cp['safety_recovery'] = recovery
+    cp['updated_at'] = recovery['recovered_at']
+    # Assert that only the blocker/recovery metadata changed.
+    for key in ('batch_in_progress', 'latest_batch', 'next_untested', 'results',
+                'launch_transactions', 'unique_games_processed', 'result_records',
+                'auto_certified', 'game_fail', 'restore_failures', 'engine_fail_active'):
+        if cp.get(key) != before.get(key):
+            raise RuntimeError('RECOVERY_PROGRESS_MUTATION:' + key)
+    atomic_json(CERT_STATE, cp)
+    append_event('RECOVERED_SAFETY_BLOCK_RECONCILED', **recovery,
+                 checkpoint_backup=str(backup_dir / CERT_STATE.name))
+    print('RECOVERY: PASS')
+    print('CHECKPOINT: STOPPED_SAFE')
+    print('BATCH: priority_batch_59; progress preserved')
+    print('NEXT_GAME: ' + str(cp.get('next_untested')))
+    print('LAST_RESTORE: RESTORE_VERIFIED:' + POST_REBOOT_TX)
+    return 0
 
 
 def report_reconciled():
@@ -1505,6 +1716,7 @@ def status():
         'batch_name': batch.get('name'), 'batch': f"{batch.get('launched',0)}/{batch.get('considered',0)}",
         'current_game': job.get('current_game') or cp.get('current_test'),
         'last_game': batch.get('last_game'), 'certifier_pid': job.get('pid'),
+        'certifier_pid_state': job.get('pid_state', 'UNKNOWN'),
         'certifier_elapsed_seconds': job.get('elapsed_seconds'), 'autopilot_elapsed_seconds': autopilot_elapsed,
         'AUTO_PASS': batch.get('auto_pass', 0), 'GAME_FAIL': batch.get('game_fail', 0),
         'RESTORES': batch.get('restore_verified', 0), 'AUTO_CERTIFIED': cp.get('auto_certified'),
@@ -1593,12 +1805,14 @@ def main(argv=None):
     s = subs.add_parser('start'); s.add_argument('--dry-run', action='store_true')
     s.add_argument('--batch-size', type=int, default=DEFAULT_BATCH_SIZE); s.add_argument('--max-batches', type=int, default=DEFAULT_MAX_BATCHES)
     subs.add_parser('status'); l = subs.add_parser('log'); l.add_argument('lines', nargs='?', type=int, default=100)
+    subs.add_parser('reconcile-recovered-safety', help='Reconciliar blockers ES recuperables tras verificar runtime y restore')
     subs.add_parser('pause'); subs.add_parser('resume')
     st = subs.add_parser('stop-safe'); st.add_argument('--unused', action='store_true', help=argparse.SUPPRESS)
     subs.add_parser('tasks'); subs.add_parser('next')
     args = parser.parse_args(argv)
     if args.action == 'start': return start(args.batch_size, args.max_batches, args.dry_run)
     if args.action == 'status': return status()
+    if args.action == 'reconcile-recovered-safety': return reconcile_recovered_safety_block()
     if args.action == 'log': return show_log(args.lines)
     if args.action == 'pause': return command_pause(False)
     if args.action == 'resume': return resume()

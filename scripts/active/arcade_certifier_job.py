@@ -28,6 +28,13 @@ def now():
     return datetime.now(timezone.utc).isoformat(timespec='seconds')
 
 
+def current_boot_id():
+    try:
+        return Path('/proc/sys/kernel/random/boot_id').read_text().strip()
+    except OSError:
+        return None
+
+
 def autopilot_owner_record():
     state = read_json(AUTOPILOT_STATE, {}) or {}
     if state.get('status') not in ('STARTING', 'RUNNING'):
@@ -85,7 +92,8 @@ def proc_info(pid):
     try:
         raw = Path(f'/proc/{pid}/cmdline').read_bytes().replace(b'\0', b' ').decode(errors='replace')
         stat = Path(f'/proc/{pid}/stat').read_text().rsplit(')', 1)[1].split()
-        return {'cmdline': raw, 'ppid': int(stat[1]), 'pgid': int(stat[2]), 'sid': int(stat[3])}
+        return {'cmdline': raw, 'ppid': int(stat[1]), 'pgid': int(stat[2]), 'sid': int(stat[3]),
+                'start_ticks': int(stat[19]), 'boot_id': current_boot_id()}
     except (OSError, ValueError, IndexError):
         return None
 
@@ -214,6 +222,7 @@ def start(batch_size):
         argv = [sys.executable, str(CERTIFIER), '--batch', str(effective_batch_size)]
         meta = {
             'job_id': job_id, 'pid': None, 'worker_pid': None,
+            'boot_id': current_boot_id(),
             'started_at': now(), 'finished_at': None, 'batch_size': effective_batch_size,
             'requested_batch_size': batch_size,
             'starting_game': next_game, 'command': argv, 'status': 'STARTING',
@@ -285,7 +294,14 @@ def status():
         return 0
     pid = meta.get('pid')
     info = proc_info(pid) if isinstance(pid, int) else None
-    running = bool(info and (str(CERTIFIER) in info['cmdline'] or meta.get('worker_pid') == pid))
+    boot_id = current_boot_id()
+    same_boot = bool(boot_id and meta.get('boot_id') == boot_id)
+    # Older metadata may lack boot_id. A PID is considered live only when /proc
+    # identifies the certifier command itself; PID equality alone is never enough.
+    running = bool(info and (not meta.get('boot_id') or same_boot) and
+                    str(CERTIFIER) in info['cmdline'])
+    pid_state = ('ACTIVE' if running else 'STALE' if not info or (meta.get('boot_id') and not same_boot)
+                 else 'UNKNOWN_BOOT_ID')
     state = meta.get('status')
     if running:
         state = 'RUNNING'
@@ -303,6 +319,7 @@ def status():
     batch = cp.get('batch_in_progress') or cp.get('latest_batch') or {}
     result = {
         'status': state, 'pid': pid, 'worker_pid': meta.get('worker_pid'),
+        'pid_state': pid_state, 'boot_id': boot_id,
         'elapsed_seconds': elapsed, 'current_game': cp.get('current_test'),
         'processed': batch.get('launched', 0), 'AUTO_PASS': batch.get('auto_pass', 0),
         'GAME_FAIL': batch.get('game_fail', 0), 'RESTORES': batch.get('restore_verified', 0),

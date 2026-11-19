@@ -24,6 +24,96 @@ import full_game_certifier as CERT
 
 
 class AutopilotTests(unittest.TestCase):
+    def recovered_checkpoint_fixture(self):
+        return {
+            'status': 'PAUSED_SYSTEM_SAFETY_FAILURE',
+            'blocked_reason': 'RuntimeError: ES_NOT_IDLE',
+            'engine_fail_active': 0,
+            'next_untested': AP.POST_REBOOT_GAME,
+            'batch_in_progress': {'name': 'priority_batch_59', 'considered': 100,
+                'launched': 1, 'auto_pass': 1, 'game_fail': 0, 'static_fail': 0,
+                'flaky': 0, 'restore_verified': 1, 'restore_failures': 0,
+                'adapter_pending': 13, 'unprocessed': 86},
+        }
+
+    def recovered_evidence_fixture(self):
+        checks = {key: True for key in (
+            'no_engine_fail', 'marker_absent', 'launch_processes_absent',
+            'no_active_certifier', 'historical_failed_job_preserved',
+            'es_idle', 'running_game_none', 'last_result_restore_verified',
+            'manifest_restore_verified', 'protected_config_matches',
+            'mame_overrides_expected', 'queue_checkpoint_reconciled')}
+        return {'passed': True, 'current_boot_id': 'boot-new', 'previous_boot_id': 'boot-old',
+                'checks': checks, 'last_restored_transaction': AP.POST_REBOOT_TX}
+
+    def test_recovered_es_not_idle_allows_clean_post_reboot_reconciliation(self):
+        allowed, blocker, recovery = AP.recovered_safety_plan(
+            self.recovered_checkpoint_fixture(), self.recovered_evidence_fixture())
+        self.assertTrue(allowed)
+        self.assertEqual(blocker, 'ES_NOT_IDLE')
+        self.assertEqual(recovery['recovery_reason'], 'POST_REBOOT_RUNTIME_CLEAN')
+
+    def test_recovery_rejects_active_selector_process(self):
+        evidence = self.recovered_evidence_fixture()
+        evidence['checks']['launch_processes_absent'] = False
+        evidence.update({'passed': False, 'failure': 'LAUNCH_PROCESS_ACTIVE'})
+        self.assertFalse(AP.recovered_safety_plan(self.recovered_checkpoint_fixture(), evidence)[0])
+
+    def test_recovery_rejects_active_running_game(self):
+        evidence = self.recovered_evidence_fixture()
+        evidence['checks']['running_game_none'] = False
+        evidence.update({'passed': False, 'failure': 'RUNNING_GAME_ACTIVE'})
+        self.assertFalse(AP.recovered_safety_plan(self.recovered_checkpoint_fixture(), evidence)[0])
+
+    def test_recovery_never_clears_restore_failure(self):
+        evidence = self.recovered_evidence_fixture()
+        evidence['checks']['manifest_restore_verified'] = False
+        evidence.update({'passed': False, 'failure': 'LAST_TRANSACTION_NOT_RESTORE_VERIFIED'})
+        cp = self.recovered_checkpoint_fixture()
+        cp['blocked_reason'] = 'RuntimeError: RESTORE_FAILURE'
+        self.assertFalse(AP.recovered_safety_plan(cp, evidence)[0])
+
+    def test_recovery_never_clears_foreign_marker(self):
+        evidence = self.recovered_evidence_fixture()
+        evidence['checks']['marker_absent'] = False
+        evidence.update({'passed': False, 'failure': 'MARKER_FOREIGN_UNKNOWN'})
+        self.assertFalse(AP.recovered_safety_plan(self.recovered_checkpoint_fixture(), evidence)[0])
+
+    def test_pre_reboot_pid_is_not_live_when_boot_id_changed(self):
+        with mock.patch.object(AP, 'current_boot_id', return_value='boot-new'), \
+             mock.patch.object(AP, 'proc_record', return_value={'cmdline': str(AP.CERTIFIER)}):
+            self.assertFalse(AP.pid_matches_boot(21930, 'boot-old'))
+
+    def test_recovery_keeps_partial_batch_progress_and_exact_cursor(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            checkpoint = self.recovered_checkpoint_fixture()
+            checkpoint.update({'results': [{'transaction_id': AP.POST_REBOOT_TX}],
+                               'latest_batch': {'name': 'priority_batch_58'},
+                               'launch_transactions': 5199, 'unique_games_processed': 5724,
+                               'result_records': 5726, 'auto_certified': 5026,
+                               'game_fail': 171, 'restore_failures': 0,
+                               'engine_fail_active': 0})
+            before_batch = json.loads(json.dumps(checkpoint['batch_in_progress']))
+            before_cursor = checkpoint['next_untested']
+            state_file = root / 'checkpoint.json'
+            state_file.write_text(json.dumps(checkpoint))
+            with mock.patch.object(AP, 'CERT_STATE', state_file), \
+                 mock.patch.object(AP, 'AUDIT', root), \
+                 mock.patch.object(AP, 'EVENTS', root / 'events.jsonl'), \
+                 mock.patch.object(AP, 'recovered_runtime_evidence',
+                                   return_value=self.recovered_evidence_fixture()), \
+                 contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(AP.reconcile_recovered_safety_block(), 0)
+            updated = json.loads(state_file.read_text())
+            self.assertEqual(updated['status'], 'STOPPED_SAFE')
+            self.assertIsNone(updated['blocked_reason'])
+            self.assertEqual(updated['batch_in_progress'], before_batch)
+            self.assertEqual(updated['next_untested'], before_cursor)
+            self.assertEqual(updated['batch_in_progress']['auto_pass'], 1)
+            self.assertEqual(updated['batch_in_progress']['adapter_pending'], 13)
+            self.assertEqual(updated['batch_in_progress']['unprocessed'], 86)
+
     def previous_batch_fixture(self, td):
         root = Path(td)
         job_id = '20261117T085034_f43abe4f'
