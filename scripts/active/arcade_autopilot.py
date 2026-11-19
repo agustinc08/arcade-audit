@@ -481,6 +481,70 @@ def current_global_overrides():
     return global_core, len(overrides)
 
 
+PROTECTED_CONF_KEYS = {
+    'global.videooutput', 'global.videomode', 'audio.device', 'audio.driver',
+    'audio.mode', 'audio.output'
+}
+CRITICAL_KEY_HINTS = ('video', 'audio', 'mame', 'core', 'emulator', 'controller',
+                      'launcher', 'dispatcher', 'retroarch', 'input', 'player', 'p1', 'p2', 'p3', 'p4')
+
+
+def parse_batocera_config(path):
+    values = {}
+    for raw in Path(path).read_text(encoding='utf-8', errors='replace').splitlines():
+        line = raw.strip()
+        if not line or line.startswith('#') or '=' not in line:
+            continue
+        key, value = line.split('=', 1)
+        values[key.strip()] = value.strip()
+    return values
+
+
+def is_protected_config_key(key):
+    low = key.lower()
+    return (low in PROTECTED_CONF_KEYS or low.startswith('mame.') or
+            bool(re.fullmatch(r'mame\["[^"]+"\]\.core', low)) or
+            bool(re.search(r'(^|[.\[])controllers?(?:[.\[]|$)', low)) or
+            any(term in low for term in ('controller', 'launcher', 'dispatcher')))
+
+
+def is_unknown_critical_config_key(key):
+    low = key.lower()
+    return any(hint in low for hint in CRITICAL_KEY_HINTS) and not is_protected_config_key(key) and low != 'audio.volume'
+
+
+def protected_config_snapshot(path, global_mame_core=None, mame_override_count=None):
+    values = parse_batocera_config(path)
+    protected = {key: value for key, value in values.items() if is_protected_config_key(key)}
+    if global_mame_core is not None:
+        protected['@runtime.global_mame_core'] = global_mame_core
+    if mame_override_count is not None:
+        protected['@runtime.mame_override_count'] = int(mame_override_count)
+    canonical = json.dumps(protected, sort_keys=True, ensure_ascii=False, separators=(',', ':')).encode('utf-8')
+    return {'keys': protected, 'fingerprint': hashlib.sha256(canonical).hexdigest()}
+
+
+def compare_protected_config(expected_path, actual_path, expected_sha256=None):
+    expected_file = Path(expected_path)
+    actual_file = Path(actual_path)
+    if not expected_file.is_file() or not actual_file.is_file():
+        return {'matches': False, 'reason': 'CONFIG_FILE_MISSING'}
+    if expected_sha256 and hashlib.sha256(expected_file.read_bytes()).hexdigest() != expected_sha256:
+        return {'matches': False, 'reason': 'EXPECTED_CONFIG_BASELINE_UNAVAILABLE'}
+    old, new = parse_batocera_config(expected_file), parse_batocera_config(actual_file)
+    changed = {key for key in old.keys() | new.keys() if old.get(key) != new.get(key)}
+    unknown = sorted(key for key in changed if is_unknown_critical_config_key(key))
+    old_sem = protected_config_snapshot(expected_file)
+    new_sem = protected_config_snapshot(actual_file)
+    return {'matches': not unknown and old_sem['keys'] == new_sem['keys'],
+            'expected_fingerprint': old_sem['fingerprint'],
+            'actual_fingerprint': new_sem['fingerprint'],
+            'unknown_critical_keys': unknown,
+            'changed_protected_keys': sorted(key for key in changed if is_protected_config_key(key)),
+            'whole_file_sha_changed': hashlib.sha256(expected_file.read_bytes()).hexdigest() !=
+                                      hashlib.sha256(actual_file.read_bytes()).hexdigest()}
+
+
 def disk_health():
     paths = ['/userdata', '/media/ROMS', '/media/BATOCERA_ROMS']
     records = []
@@ -664,6 +728,8 @@ def recovered_runtime_evidence(cp):
         baseline = {
             'batocera_conf_sha256': hashlib.sha256(
                 Path('/userdata/system/batocera.conf').read_bytes()).hexdigest(),
+            'protected_config_fingerprint': protected_config_snapshot(
+                '/userdata/system/batocera.conf', core, override_count)['fingerprint'],
             'global_mame_core': core,
             'mame_overrides_count': override_count,
             'p1_p4': cert.profile_state(),
@@ -673,17 +739,35 @@ def recovered_runtime_evidence(cp):
             'multiplayer_sha256': hashlib.sha256(Path('/userdata/system/configs/el_gordo_controller_profiles/multiplayer.json').read_bytes()).hexdigest(),
         }
         evidence['runtime_baseline'] = baseline
-        protected = ('batocera_conf_sha256', 'global_mame_core', 'p1_p4', 'audio_default',
-                     'dispatcher_sha256', 'profile_sha256', 'multiplayer_sha256')
         tx_baseline = result.get('safety_before') or {}
+        stable_mapping_ok = cert.stable_profile_matches(baseline['p1_p4'])
+        evidence['checks']['logical_p1_p4_stable_identity'] = stable_mapping_ok
+        if not stable_mapping_ok:
+            raise RuntimeError('P1_P4_MAPPING_CHANGE')
+        config_reference = AUDIT / 'certification_runtime' / 'batocera.conf.current'
+        config_comparison = compare_protected_config(
+            config_reference, '/userdata/system/batocera.conf',
+            expected_sha256=tx_baseline.get('batocera_conf_sha256'))
+        expected_fingerprint = protected_config_snapshot(
+            config_reference, tx_baseline.get('global_mame_core'), 18)['fingerprint']
+        actual_fingerprint = protected_config_snapshot(
+            '/userdata/system/batocera.conf', core, override_count)['fingerprint']
+        config_comparison['expected_fingerprint'] = expected_fingerprint
+        config_comparison['actual_fingerprint'] = actual_fingerprint
+        config_comparison['matches'] = (config_comparison.get('matches') is True and
+                                        expected_fingerprint == actual_fingerprint)
+        evidence['protected_config_semantic'] = config_comparison
+        evidence['checks']['protected_semantic_config_matches'] = config_comparison.get('matches') is True
         evidence['protected_config'] = {
             key: {'expected': tx_baseline.get(key), 'actual': baseline.get(key),
                   'matches': tx_baseline.get(key) == baseline.get(key)}
-            for key in protected
+            for key in ('global_mame_core', 'audio_default', 'dispatcher_sha256',
+                        'profile_sha256', 'multiplayer_sha256')
         }
         evidence['checks']['protected_config_matches'] = all(
             item['expected'] is not None and item['matches']
-            for item in evidence['protected_config'].values())
+            for item in evidence['protected_config'].values()) and stable_mapping_ok and \
+            evidence['checks']['protected_semantic_config_matches']
         evidence['checks']['mame_overrides_expected'] = (
             baseline['global_mame_core'] == 'mame078plus' and
             baseline['mame_overrides_count'] == 18)
@@ -726,7 +810,8 @@ def recovered_safety_plan(cp, evidence):
                 'no_active_certifier', 'es_idle', 'running_game_none',
                 'historical_failed_job_preserved',
                 'last_result_restore_verified', 'manifest_restore_verified',
-                'protected_config_matches', 'mame_overrides_expected',
+                'protected_config_matches', 'protected_semantic_config_matches',
+                'logical_p1_p4_stable_identity', 'mame_overrides_expected',
                 'queue_checkpoint_reconciled')
     if (not evidence.get('passed') or not evidence.get('current_boot_id') or
             any(checks.get(key) is not True for key in required)):

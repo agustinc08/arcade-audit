@@ -172,18 +172,109 @@ def conf_sha():return hashlib.sha256(CONF.read_bytes()).hexdigest()
 def get_default_sink():
  q=subprocess.run(['pactl','get-default-sink'],capture_output=True,text=True,timeout=3)
  return q.stdout.strip() if q.returncode==0 else None
+EXPECTED_ARCADE_USB={'P1':'5','P2':'6','P3':'8','P4':'7'}
+EXPECTED_ARCADE_DEVICE=('0079','0006')
+
+def _udev_properties(sysfs_path):
+ q=subprocess.run(['udevadm','info','--query=property','--path',str(sysfs_path)],
+                  capture_output=True,text=True,timeout=5)
+ if q.returncode:raise RuntimeError('INPUT_UDEV_INFO_FAILED:'+str(sysfs_path))
+ out={}
+ for line in q.stdout.splitlines():
+  if '=' in line:
+   k,v=line.split('=',1);out[k]=v
+ return out
+
+def _js_for_id_path(id_path):
+ for node in Path('/sys/class/input').glob('js*'):
+  try:
+   props=_udev_properties(node)
+  except Exception:
+   continue
+  if props.get('ID_PATH')==id_path:
+   return props.get('DEVNAME')
+ return None
+
 def profile_state():
- q=subprocess.run([str(DISP),'--diagnose'],capture_output=True,text=True,timeout=20)
- if q.returncode:raise RuntimeError('P1_P4_DIAGNOSE_FAILED')
- j=json.loads(q.stdout);players=j.get('profiles',{}).get('arcade',{}).get('players',[])
- return {x.get('arcade_player'):(x.get('usb_port'),x.get('path')) for x in players if x.get('arcade_player') in ('P1','P2','P3','P4')}
+ try:
+  profile=json.loads(PROFILE.read_text(encoding='utf-8'))
+ except (OSError,ValueError) as exc:
+  raise RuntimeError('P1_P4_PROFILE_UNREADABLE') from exc
+ configured={x.get('player'):x for x in profile.get('arcade_controllers',[])
+             if isinstance(x,dict) and x.get('player') in EXPECTED_ARCADE_USB}
+ if set(configured)!=set(EXPECTED_ARCADE_USB):raise RuntimeError('P1_P4_PROFILE_INCOMPLETE')
+ runtime_by_path={}
+ # sysfs + udev are the identity source. This also works when /dev is not
+ # mounted in a diagnostic namespace; event/js names remain informational.
+ for node in Path('/sys/class/input').glob('event*'):
+  try:
+   props=_udev_properties(node)
+  except Exception:
+   continue
+  if props.get('ID_VENDOR_ID','').lower()!=EXPECTED_ARCADE_DEVICE[0] or \
+     props.get('ID_MODEL_ID','').lower()!=EXPECTED_ARCADE_DEVICE[1]:
+   continue
+  for link in props.get('DEVLINKS','').split():
+   if '/by-path/' in link and link.endswith('-event-joystick'):
+    runtime_by_path.setdefault(link,[]).append((node,props))
+ result={}
+ for player,expected_port in EXPECTED_ARCADE_USB.items():
+  route=configured[player]
+  expected_by_path=route.get('by_path')
+  matches=runtime_by_path.get(expected_by_path,[])
+  if len(matches)!=1:raise RuntimeError('P1_P4_STABLE_PATH_MISSING_OR_DUPLICATE:'+player)
+  sysfs,props=matches[0]
+  name=(sysfs/'device'/'name').read_text(encoding='utf-8',errors='replace').strip()
+  phys=(sysfs/'device'/'phys').read_text(encoding='utf-8',errors='replace').strip() if (sysfs/'device'/'phys').exists() else ''
+  uniq=(sysfs/'device'/'uniq').read_text(encoding='utf-8',errors='replace').strip() if (sysfs/'device'/'uniq').exists() else ''
+  id_path=props.get('ID_PATH','')
+  by_path=next((item for item in props.get('DEVLINKS','').split()
+                if '/by-path/' in item),None)
+  # ID_PATH's stable root port is the number after "usb-0:" (the interface
+  # suffix follows the port); use the sysfs/phys port as a second check.
+  port_match=re.search(r'usb-0:([0-9]+)(?::|$)',id_path)
+  physical_port=port_match.group(1) if port_match else None
+  if route.get('usb_port')!=expected_port:
+   raise RuntimeError('P1_P4_PROFILE_PORT_MISMATCH:'+player)
+  result[player]={
+   'expected_usb_port':expected_port,
+   'usb_port':physical_port,
+   'physical_path':id_path,
+   'by_path':by_path,
+   'device_identity':{'vendor_id':props.get('ID_VENDOR_ID','').lower(),
+                      'product_id':props.get('ID_MODEL_ID','').lower(),
+                      'name':name},
+   'event':props.get('DEVNAME'),
+   'js':_js_for_id_path(id_path),
+   'devpath':props.get('DEVPATH'),
+   'phys':phys,
+   'uniq':uniq or None,
+  }
+ return result
+
+def stable_profile_matches(state):
+ if not isinstance(state,dict) or set(state)!=set(EXPECTED_ARCADE_USB):return False
+ seen=set()
+ for player,expected_port in EXPECTED_ARCADE_USB.items():
+  item=state.get(player)
+  if not isinstance(item,dict):return False
+  path=item.get('physical_path');by_path=item.get('by_path')
+  identity=item.get('device_identity') or {}
+  if (item.get('expected_usb_port')!=expected_port or item.get('usb_port')!=expected_port or
+      not path or not by_path or path in seen or
+      identity.get('vendor_id','').lower()!=EXPECTED_ARCADE_DEVICE[0] or
+      identity.get('product_id','').lower()!=EXPECTED_ARCADE_DEVICE[1] or
+      'dragonrise' not in identity.get('name','').lower()):
+   return False
+  seen.add(path)
+ return True
 def expected_global_core():
  d=ad.parse_defaults();return d.get('mame',{}).get('core')
 def safety_baseline():
  wait_for_es_idle()
  if not sr.es_pids():raise RuntimeError('EMULATIONSTATION_NOT_ACTIVE')
- p1=profile_state();exp={'P1':('5','/dev/input/event17'),'P2':('6','/dev/input/event18'),'P3':('8','/dev/input/event20'),'P4':('7','/dev/input/event19')}
- if any(p1.get(k)!=v for k,v in exp.items()):raise RuntimeError('P1_P4_MAPPING_REGRESSION')
+ p1=profile_state()
+ if not stable_profile_matches(p1):raise RuntimeError('P1_P4_MAPPING_CHANGE')
  audio=get_default_sink()
  if audio!=HDMI:raise RuntimeError('AUDIO_GLOBAL_FAILURE:'+str(audio))
  return {'batocera_conf_sha256':conf_sha(),'global_mame_core':expected_global_core(),'p1_p4':p1,'audio_default':audio,

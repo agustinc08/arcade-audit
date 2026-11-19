@@ -42,9 +42,79 @@ class AutopilotTests(unittest.TestCase):
             'no_active_certifier', 'historical_failed_job_preserved',
             'es_idle', 'running_game_none', 'last_result_restore_verified',
             'manifest_restore_verified', 'protected_config_matches',
+            'protected_semantic_config_matches', 'logical_p1_p4_stable_identity',
             'mame_overrides_expected', 'queue_checkpoint_reconciled')}
         return {'passed': True, 'current_boot_id': 'boot-new', 'previous_boot_id': 'boot-old',
                 'checks': checks, 'last_restored_transaction': AP.POST_REBOOT_TX}
+
+    def controller_identity_fixture(self):
+        ports = {'P1': '5', 'P2': '6', 'P3': '8', 'P4': '7'}
+        return {player: {'expected_usb_port': port, 'usb_port': port,
+                         'physical_path': f'pci-0000:00:14.0-usb-0:{port}:1.0',
+                         'by_path': f'/dev/input/by-path/pci-0000:00:14.0-usb-0:{port}:1.0-event-joystick',
+                         'device_identity': {'vendor_id': '0079', 'product_id': '0006',
+                                             'name': 'DragonRise Inc. Generic USB Joystick'},
+                         'event': f'/dev/input/event{17 + i}', 'js': f'/dev/input/js{i}'}
+                for i, (player, port) in enumerate(ports.items())}
+
+    def test_stable_controller_identity_ignores_event_renumber(self):
+        state = self.controller_identity_fixture()
+        state['P1']['event'] = '/dev/input/event18'
+        state['P2']['event'] = '/dev/input/event19'
+        state['P3']['event'] = '/dev/input/event21'
+        state['P4']['event'] = '/dev/input/event20'
+        self.assertTrue(CERT.stable_profile_matches(state))
+
+    def test_stable_controller_identity_rejects_physical_swap(self):
+        state = self.controller_identity_fixture()
+        state['P1']['physical_path'], state['P2']['physical_path'] = (
+            state['P2']['physical_path'], state['P1']['physical_path'])
+        state['P1']['by_path'], state['P2']['by_path'] = (
+            state['P2']['by_path'], state['P1']['by_path'])
+        state['P1']['usb_port'], state['P2']['usb_port'] = '6', '5'
+        self.assertFalse(CERT.stable_profile_matches(state))
+
+    def test_stable_controller_identity_rejects_missing_duplicate_and_wrong_device(self):
+        state = self.controller_identity_fixture()
+        del state['P3']
+        self.assertFalse(CERT.stable_profile_matches(state))
+        state = self.controller_identity_fixture()
+        state['P2']['physical_path'] = state['P1']['physical_path']
+        self.assertFalse(CERT.stable_profile_matches(state))
+        state = self.controller_identity_fixture()
+        state['P4']['device_identity']['product_id'] = '0001'
+        self.assertFalse(CERT.stable_profile_matches(state))
+
+    def test_semantic_config_allows_benign_volume_change(self):
+        with tempfile.TemporaryDirectory() as td:
+            old = Path(td) / 'old.conf'; new = Path(td) / 'new.conf'
+            old.write_text('global.videooutput=HDMI-0\nglobal.videomode=max-1920x1080\n'
+                           'audio.device=hdmi-surround\naudio.volume=40\nmame.core=mame078plus\n')
+            new.write_text('global.videooutput=HDMI-0\nglobal.videomode=max-1920x1080\n'
+                           'audio.device=hdmi-surround\naudio.volume=45\nmame.core=mame078plus\n')
+            result = AP.compare_protected_config(old, new)
+            self.assertTrue(result['matches'])
+            self.assertTrue(result['whole_file_sha_changed'])
+            evidence = self.recovered_evidence_fixture()
+            self.assertTrue(AP.recovered_safety_plan(
+                self.recovered_checkpoint_fixture(), evidence)[0])
+
+    def test_semantic_config_pauses_on_protected_or_unknown_critical_change(self):
+        with tempfile.TemporaryDirectory() as td:
+            old = Path(td) / 'old.conf'; new = Path(td) / 'new.conf'
+            old.write_text('global.videooutput=HDMI-0\naudio.device=hdmi-surround\n')
+            new.write_text('global.videooutput=DP-0\naudio.device=hdmi-surround\n')
+            self.assertFalse(AP.compare_protected_config(old, new)['matches'])
+            new.write_text('global.videooutput=HDMI-0\naudio.device=hdmi-surround\n'
+                           'global.video.custom_mode=unsafe\n')
+            result = AP.compare_protected_config(old, new)
+            self.assertFalse(result['matches'])
+            self.assertIn('global.video.custom_mode', result['unknown_critical_keys'])
+            evidence = self.recovered_evidence_fixture()
+            evidence['checks']['protected_semantic_config_matches'] = False
+            evidence['passed'] = False
+            self.assertFalse(AP.recovered_safety_plan(
+                self.recovered_checkpoint_fixture(), evidence)[0])
 
     def test_recovered_es_not_idle_allows_clean_post_reboot_reconciliation(self):
         allowed, blocker, recovery = AP.recovered_safety_plan(
