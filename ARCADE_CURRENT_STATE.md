@@ -1,7 +1,7 @@
 # Estado actual del arcade
 
-- UPDATED_AT: 2026-11-19T14:46:54+00:00
-- GITHUB_HEAD observado antes de publicar: `cbd754a34a634d4b004170d5a70fa3ff48d13d54`
+- UPDATED_AT: 2026-11-19T14:50:43+00:00
+- GITHUB_HEAD observado antes de publicar: `b0bf6301dafec852ee2887d42cc664571cebc61b`
 - BATOCERA_VERSION: 43.1
 
 ## Sistema y hardware
@@ -46,9 +46,9 @@
 - NEEDS_REPAIR: 365
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
-- NEXT_GAME: `dreamcast:/userdata/roms/dreamcast/Phantasy Star Online Ver. 2 (Europe) (En,Ja,Fr,De,Es).chd`
-- UNIQUE_GAMES_PROCESSED: 6123
-- RESULT_RECORDS: 6125
+- NEXT_GAME: `dreamcast:/userdata/roms/dreamcast/SQRXZ 2 (World).cdi`
+- UNIQUE_GAMES_PROCESSED: 6223
+- RESULT_RECORDS: 6225
 - LAUNCH_TRANSACTIONS: 5328
 - RETRY_TRANSACTIONS: 2
 - ADAPTERS_READY: 23

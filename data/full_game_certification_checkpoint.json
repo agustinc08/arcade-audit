@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-19T14:46:45+00:00",
+  "updated_at": "2026-11-19T14:50:32+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
-  "next_untested": "dreamcast:/userdata/roms/dreamcast/Phantasy Star Online Ver. 2 (Europe) (En,Ja,Fr,De,Es).chd",
+  "next_untested": "dreamcast:/userdata/roms/dreamcast/SQRXZ 2 (World).cdi",
   "attempted_new": 5328,
   "auto_certified": 5155,
   "manual_control_certified": 0,
@@ -139155,6 +139155,1506 @@
         "status": "NOT_REQUIRED_NO_WRITE"
       },
       "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Phantasy Star Online Ver. 2 (Europe) (En,Ja,Fr,De,Es).chd",
+      "name": "Phantasy Star Online Ver. 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Philia - The Sequel to Elansar (Europe) (En,Fr,De,Es,It) (Unl).chd",
+      "name": "Philia : The Sequel to Elansar",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Pia Carrot e Youkoso!! 2.5 (Japan) (Disc 1) (Pia Carrot e Youkoso!! 2).chd",
+      "name": "Pia Carrot e Youkoso!! 2.5",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Pia Carrot e Youkoso!! 2.5 (Japan) (Disc 2) (Pia Carrot e Youkoso!! 2.2).chd",
+      "name": "Pia Carrot e Youkoso!! 2.5",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Pia Carrot e Youkoso!! 3 (Japan).chd",
+      "name": "Pia Carrot e Youkoso!! 3",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Pier Solar and the Great Architects (USA) (Unl).chd",
+      "name": "Pier Solar and The Great Architects",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Pizzicato Polka - Ensa Gen'ya (Japan).chd",
+      "name": "Pizzicato Polka : Ensa Genya",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Polyko's Super Jelly Bean Quest in the Sketchbook of Illusion.cdi",
+      "name": "Polyko's Super Jelly Bean Quest in the Sketchbook of Illusion",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Prince of Persia - Arabian Nights (USA).chd",
+      "name": "Prince of Persia : Arabian Nights",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Prince of Persia - Arabian Nights v1.001 (2000)(Mattel)(US)[!].chd",
+      "name": "Prince of Persia: Arabian Nights (Mattel)",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Princess Holiday - Korogaru Ringo Tei Sen'ya Ichiya (Japan).chd",
+      "name": "Princess Holiday : Korogaru Ringo Tei Sen'ya Ichiya",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Princess Maker Collection (Japan).chd",
+      "name": "Princess Maker Collection",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Prism Heart (Japan).chd",
+      "name": "Prism Heart",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Prismaticallization (Japan).chd",
+      "name": "Prismaticallization",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Pro Pinball Trilogy (Europe).chd",
+      "name": "Pro-Pinball Trilogy",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Psyvariar 2 - The Will to Fabricate (Japan).chd",
+      "name": "Psyvariar 2 : The Will to Fabricate",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Q-bert (USA).chd",
+      "name": "Q*bert",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Radirgy (Japan).chd",
+      "name": "Radirgy",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Railroad Tycoon II (Europe) (En,Fr,De).chd",
+      "name": "Railroad Tycoon II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Rainbow Cotton (Japan).chd",
+      "name": "Rainbow Cotton",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Real Sound - Kaze no Regret (Japan) (Disc 1) (Rev A).chd",
+      "name": "Real Sound : Kaze no Regret",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Real Sound - Kaze no Regret (Japan) (Disc 2) (Rev A).chd",
+      "name": "Real Sound : Kaze no Regret",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Record of Lodoss War (France).chd",
+      "name": "Record of Lodoss War",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Reel Fishing + Wild (USA).chd",
+      "name": "Reel Fishing | Wild",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Ren'ai Chu! Happy Perfect (Japan).chd",
+      "name": "Renai Chu! Happy Perfect",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Rent a Hero No.1 (Japan).chd",
+      "name": "Rent A Hero No.1",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Resident Evil - Code - Veronica (France) (Disc 1).chd",
+      "name": "Resident Evil Code : Veronica",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Resident Evil - Code - Veronica (France) (Disc 2).chd",
+      "name": "Resident Evil Code : Veronica",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Resident Evil 2 (Europe) (En,Fr) (Disc 1).chd",
+      "name": "Resident Evil 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Resident Evil 2 (Europe) (En,Fr) (Disc 2).chd",
+      "name": "Resident Evil 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Resident Evil 3 - Nemesis (Europe) (Fr,Es).chd",
+      "name": "Resident Evil 3 : Nemesis",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Revive... - Sosei (Japan).chd",
+      "name": "Revive... : Sosei",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Rez (Europe) (En,Ja,Fr,De,Es,It).chd",
+      "name": "Rez",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Ring, The - Terror's Realm (USA).chd",
+      "name": "The Ring : Terror's Realm",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Rocketron (USA, Japan) (Unl).cdi",
+      "name": "Rocketron",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Roommania 203 (Japan).chd",
+      "name": "Roommania #203",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Roommate Asami - Okusama wa Joshikousei - Director's Edition (Japan).chd",
+      "name": "Roommate Asami : Okusama ha Joshikousei - Director's Edition",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Roommate Novel - Satou Yuka (Japan).chd",
+      "name": "Roommate Novel : Satou Yuka",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Run=Dim as Black Soul (Japan).chd",
+      "name": "Run=Dim as Black Soul",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Rune Jade (Japan).chd",
+      "name": "Rune Jade",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Saka Tsuku Tokudai-gou - J.League Pro Soccer Club o Tsukurou! (Japan).chd",
+      "name": "Saka Tsuku Tokudaigou : J.League Pro Soccer Club o Tsukurou!",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Saka Tsuku Tokudai-gou 2 - J.League Pro Soccer Club o Tsukurou! (Japan).chd",
+      "name": "Saka Tsuku Tokudaigou 2 : J.League Pro Soccer Club o Tsukurou!",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sakura Taisen (Japan) (Disc 1).chd",
+      "name": "Sakura Taisen",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sakura Taisen (Japan) (Disc 2).chd",
+      "name": "Sakura Taisen",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sakura Taisen 2 - Kimi, Shinitamou Koto Nakare (Japan) (Disc 1).chd",
+      "name": "Sakura Taisen 2 : Kimi, Shinitamou Koto Nakare",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sakura Taisen 2 - Kimi, Shinitamou Koto Nakare (Japan) (Disc 2).chd",
+      "name": "Sakura Taisen 2 : Kimi, Shinitamou Koto Nakare",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sakura Taisen 2 - Kimi, Shinitamou Koto Nakare (Japan) (Disc 3).chd",
+      "name": "Sakura Taisen 2 : Kimi, Shinitamou Koto Nakare",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sakura Taisen 3 - Paris wa Moeteiru ka (Japan) (Disc 1).chd",
+      "name": "Sakura Taisen 3 : Paris wa Moeteiru ka",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sakura Taisen 3 - Paris wa Moeteiru ka (Japan) (Disc 2).chd",
+      "name": "Sakura Taisen 3 : Paris wa Moeteiru ka",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sakura Taisen 3 - Paris wa Moeteiru ka (Japan) (Disc 3).chd",
+      "name": "Sakura Taisen 3 : Paris wa Moeteiru ka",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sakura Taisen 4 - Koi Seyo Otome (Japan).chd",
+      "name": "Sakura Taisen 4 : Koi Seyo Otome",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sakura Taisen Online - Teito no Nagai Hibi (Japan).chd",
+      "name": "Sakura Taisen Online : Teito no Nagai Hibi",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Seaman (USA).chd",
+      "name": "Seaman",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sega Bass Fishing (Europe).chd",
+      "name": "Sega Bass Fishing",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sega Bass Fishing 2 (USA).chd",
+      "name": "Sega Bass Fishing 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sega Marine Fishing (USA).chd",
+      "name": "Sega Marine Fishing",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Seireiki Rayblade (Japan).chd",
+      "name": "Seireiki Rayblade",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sekai Fushigi Hakken! Troia (Japan).chd",
+      "name": "Sekai Fushigi Hakken! Troy",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sengoku Turb (Japan).chd",
+      "name": "Sengoku Turb",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sentimental Graffiti - Yakusoku (Japan).chd",
+      "name": "Sentimental Graffiti : Yakusoku",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sentimental Graffiti 2 (Japan) (Disc 1).chd",
+      "name": "Sentimental Graffiti 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sentimental Graffiti 2 (Japan) (Disc 2).chd",
+      "name": "Sentimental Graffiti 2",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Seventh Cross Evolution (USA).chd",
+      "name": "Seventh Cross Evolution",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/SGGG - Segagaga (Japan).chd",
+      "name": "SGGG : Segagaga",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Shadow Gangs (USA, Japan) (Unl).cdi",
+      "name": "Shadow Gangs",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Shadow Man (Europe) (En,Fr,Es,It).chd",
+      "name": "Shadow Man",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Shenmue (Europe) (En,Fr,De,Es) (Disc 1).chd",
+      "name": "Shenmue",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Shenmue (Europe) (En,Fr,De,Es) (Disc 2).chd",
+      "name": "Shenmue",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Shenmue (Europe) (En,Fr,De,Es) (Disc 3).chd",
+      "name": "Shenmue",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Shenmue (Europe) (En,Fr,De,Es) (Shenmue Passport).chd",
+      "name": "Shenmue",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Shenmue II (Europe) (En,Fr,De,Es) (Disc 1).chd",
+      "name": "Shenmue II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Shenmue II (Europe) (En,Fr,De,Es) (Disc 2).chd",
+      "name": "Shenmue II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Shenmue II (Europe) (En,Fr,De,Es) (Disc 3).chd",
+      "name": "Shenmue II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Shenmue II (Europe) (En,Fr,De,Es) (Disc 4).chd",
+      "name": "Shenmue II",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Shin Honkaku Hanafuda (Japan).chd",
+      "name": "Shin Honkaku Hanafuda",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Shin Seiki Evangelion - Ayanami Ikusei Keikaku (Japan).chd",
+      "name": "Shinseiki Evangelion : Ayanami Ikusei Keikaku",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Shin Seiki Evangelion - Typing E Keikaku (Japan).chd",
+      "name": "Shinseiki Evangelion : Typing E-Keikaku",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Shin Seiki Evangelion - Typing Hokan Keikaku (Japan).chd",
+      "name": "Shinseiki Evangelion : Typing Hokan Keikaku",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Shirotsumesouwa - Episode of the Clovers (Japan).chd",
+      "name": "Shirotsumesouwa : Episode of the Clovers",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Silent Scope (Europe) (En,Fr,De,Es,It).chd",
+      "name": "Silent Scope",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Silver (France) (Fr,It,Pt).chd",
+      "name": "Silver",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Simple 2000 Series DC Vol. 01 - Bittersweet Fools - The Ren'ai Adventure (Japan).chd",
+      "name": "Simple 2000 Series DC Vol.01 : Bitter Sweet Fools - The Renai Adventure",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Simple 2000 Series DC Vol. 02 - Natsuiro Celebration - The Ren'ai Simulation (Japan).chd",
+      "name": "Simple 2000 Series DC Vol.02 : Natsuiro Celebration - The Renai Simulation",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Simple 2000 Series DC Vol. 03 - Fureai - The Ren'ai Simulation (Japan).chd",
+      "name": "Simple 2000 Series DC Vol.03 : Fureai - The Renai Simulation",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Simple 2000 Series DC Vol. 04 - Okaeri! The Ren'ai Adventure (Japan).chd",
+      "name": "Simple 2000 Series DC Vol.04 : Okaeritsu! - The Renai Adventure",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sister Princess - Premium Edition (Japan) (Disc 1).chd",
+      "name": "Sister Princess Premium Edition",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sister Princess - Premium Edition (Japan) (Disc 2).chd",
+      "name": "Sister Princess Premium Edition",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Skies of Arcadia (Europe) (En,Fr,De,Es) (Disc 1).chd",
+      "name": "Skies of Arcadia",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Skies of Arcadia (Europe) (En,Fr,De,Es) (Disc 2).chd",
+      "name": "Skies of Arcadia",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Slave Zero (Europe) (En,Fr,De,Es,It).chd",
+      "name": "Slave Zero",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Snow (Japan).chd",
+      "name": "Snow",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Soldier of Fortune (Europe).chd",
+      "name": "Soldier of Fortune",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sonic Adventure (Europe) (En,Ja,Fr,De,Es).chd",
+      "name": "Sonic Adventure",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Sorcerian - Shichisei Mahou no Shito (Japan).chd",
+      "name": "Sorcerian : Shichisei Mahou no Shito",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Soukou no Kihei - Space Griffon (Japan).chd",
+      "name": "Soukou no Kihei : Space Griffon",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Soul Fighter (Europe).chd",
+      "name": "Soul Fighter",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Space Channel 5 (Europe) (En,Fr,De,Es).chd",
+      "name": "Space Channel 5",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Spec Ops II - Omega Squad (Europe) (En,Fr,De,Es,It).chd",
+      "name": "Spec Ops II : Omega Squad",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Spider-Man (Europe).chd",
+      "name": "Spider-Man",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
+    },
+    {
+      "system": "dreamcast",
+      "rom": "/userdata/roms/dreamcast/Spirit of Speed 1937 (Europe) (En,Fr,De,Es).chd",
+      "name": "Spirit of Speed 1937",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "ADAPTER_NOT_READY",
+      "failure_class": "RESTORE_SCOPE_UNSAFE",
+      "transaction_id": null,
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "NOT_REQUIRED_NO_WRITE"
+      },
+      "finished_at": null
     }
   ],
   "status": "COMPLETE",
@@ -139241,7 +140741,7 @@
     "GAME_FAIL": 171,
     "STATIC_FAIL": 194,
     "FLAKY": 0,
-    "ADAPTER_NOT_READY": 603,
+    "ADAPTER_NOT_READY": 703,
     "ENGINE_FAIL": 2,
     "WRONG_GAME_DISPATCH": 0,
     "AUDIO_ROUTE_CHANGED": 0,
@@ -139260,7 +140760,7 @@
     "status": "PILOT_PASS_WITH_ADAPTER_FIX"
   },
   "latest_batch": {
-    "name": "priority_batch_62",
+    "name": "priority_batch_63",
     "considered": 100,
     "launched": 0,
     "auto_pass": 0,
@@ -139270,11 +140770,11 @@
     "restore_verified": "0/0",
     "restore_failures": 0,
     "engine_failures_unresolved": 0,
-    "started_at": "2026-11-19T11:43:54.678-03:00",
-    "finished_at": "2026-11-19T11:46:45.719-03:00",
-    "first_game": "/userdata/roms/dreamcast/Interlude (Japan).chd",
-    "last_game": "/userdata/roms/dreamcast/Phantasy Star Online (Europe) (En,Ja,Fr,De,Es) (Rev 1).chd",
-    "next_game": "dreamcast:/userdata/roms/dreamcast/Phantasy Star Online Ver. 2 (Europe) (En,Ja,Fr,De,Es).chd",
+    "started_at": "2026-11-19T11:47:43.633-03:00",
+    "finished_at": "2026-11-19T11:50:31.945-03:00",
+    "first_game": "/userdata/roms/dreamcast/Phantasy Star Online Ver. 2 (Europe) (En,Ja,Fr,De,Es).chd",
+    "last_game": "/userdata/roms/dreamcast/Spirit of Speed 1937 (Europe) (En,Fr,De,Es).chd",
+    "next_game": "dreamcast:/userdata/roms/dreamcast/SQRXZ 2 (World).cdi",
     "adapter_pending": 100,
     "skipped": 0,
     "deferred": 0,
@@ -139303,8 +140803,8 @@
   "launch_transactions": 5328,
   "transaction_attempts": 509,
   "retry_transactions": 2,
-  "unique_games_processed": 6123,
-  "result_records": 6125,
+  "unique_games_processed": 6223,
+  "result_records": 6225,
   "static_preflight_results": 194,
   "engine_fail_total_historical": 2,
   "engine_fail_active": 0,

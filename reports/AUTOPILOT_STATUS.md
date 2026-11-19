@@ -1,7 +1,7 @@
 # ARCADE AUTOPILOT — último ciclo
 
-- Actualizado: 2026-11-19T14:46:54+00:00
-- Batch: priority_batch_62
+- Actualizado: 2026-11-19T14:50:43+00:00
+- Batch: priority_batch_63
 - Considerados: 100
 - Lanzados: 0
 - AUTO_PASS: 0
@@ -12,7 +12,7 @@
 - Reparaciones automáticas realizadas: 0 (sin receta revisada)
 - CODEX_REQUIRED pendientes: 4
 - MANUAL_REQUIRED pendientes: 1
-- NEXT_GAME: `dreamcast:/userdata/roms/dreamcast/Phantasy Star Online Ver. 2 (Europe) (En,Ja,Fr,De,Es).chd`
+- NEXT_GAME: `dreamcast:/userdata/roms/dreamcast/SQRXZ 2 (World).cdi`
 - Safety: COMPLETE; sin bloqueo registrado
 - GitHub: gestionado por task separada del publisher; SHA verificado en `autopilot_state.json`.
 - Próximo paso: Publicar reportes/checkpoints y recalcular la siguiente tarea.
