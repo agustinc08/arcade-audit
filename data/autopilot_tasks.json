@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-19T14:10:45+00:00",
+  "updated_at": "2026-11-19T14:22:20+00:00",
   "tasks": [
     {
       "id": "CERT-BATCH-0011",
@@ -3414,17 +3414,17 @@
       "id": "GITHUB-PUBLISH-CERT-BATCH-0059",
       "type": "GITHUB_PUBLISH",
       "title": "Publicar CERT-BATCH-0059 y verificar remoto",
-      "status": "READY",
+      "status": "RUNNING",
       "priority": 5,
       "created_at": "2026-11-19T14:10:01+00:00",
-      "updated_at": "2026-11-19T14:10:01+00:00",
+      "updated_at": "2026-11-19T14:22:20+00:00",
       "source": "CERT-BATCH-0059",
       "reason": "Publicación posterior a reconciliación y rebuild del batch.",
       "automatic": true,
       "requires_codex": false,
       "requires_manual": false,
       "depends_on": [],
-      "attempts": 0,
+      "attempts": 1,
       "max_attempts": 3,
       "last_error": null,
       "next_action": "SECRET_SCAN, PAYLOAD_SCAN, publisher REST y verificación del HEAD remoto.",
