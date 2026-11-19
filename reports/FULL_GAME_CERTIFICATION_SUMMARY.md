@@ -1,12 +1,12 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-19T14:43:05+00:00
+- UPDATED_AT: 2026-11-19T14:46:53+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
 - ATTEMPTED_NEW: 5328
-- UNIQUE_GAMES_PROCESSED: 6023
-- RESULT_RECORDS: 6025
+- UNIQUE_GAMES_PROCESSED: 6123
+- RESULT_RECORDS: 6125
 - LAUNCH_TRANSACTIONS: 5328
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
@@ -19,7 +19,7 @@
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/Interlude (Japan).chd
+- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/Phantasy Star Online Ver. 2 (Europe) (En,Ja,Fr,De,Es).chd
 - TOTAL_RESTORES: 5328
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
@@ -37,7 +37,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | cannonball | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | cdogs | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | devilutionx | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 8 |
-| dreamcast | 775 | 775 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 272 |
+| dreamcast | 775 | 775 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 172 |
 | easyrpg | 12 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 |
 | fbneo | 104 | 104 | 88 | 52 | 52 | 0 | 0 | 0 | 0 | 0 |
 | fds | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -86,10 +86,10 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_61; considerados 100; lanzados 0; AUTO_PASS 0; restore 0/0.
+- Lote más reciente: priority_batch_62; considerados 100; lanzados 0; AUTO_PASS 0; restore 0/0.
 - CURRENT_INVOCATION_SELECTED_COUNT: 100 (selección de la invocación más reciente; no es el total acumulado del batch).
 - Estado de runner: COMPLETE.
-- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/Interlude (Japan).chd.
+- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/Phantasy Star Online Ver. 2 (Europe) (En,Ja,Fr,De,Es).chd.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY
