@@ -1396,9 +1396,13 @@ def execute_publish(item):
     if p.returncode:
         return False, (p.stdout + p.stderr)[-500:]
     match = re.search(r'^COMMIT SHA: ([a-f0-9]{40})$', p.stdout, re.M)
+    observed_head = re.search(r'^REMOTE HEAD: ([a-f0-9]{40})$', p.stdout, re.M)
     state_file = read_json(AUDIT / 'github_publish_state.json', {}) or {}
     remote_sha = state_file.get('last_known_remote_sha')
-    if ('PUBLISH_PASS' not in p.stdout or not match or match.group(1) != remote_sha or
+    committed = ('PUBLISH_PASS' in p.stdout and match and match.group(1) == remote_sha)
+    already_published = ('NO_CHANGES' in p.stdout and observed_head and
+                         observed_head.group(1) == remote_sha)
+    if (not (committed or already_published) or
             state_file.get('last_successful_publish_sha') != remote_sha):
         return False, 'PUBLISH_RESULT_NOT_VERIFIED'
     match = re.fullmatch(r'GITHUB-PUBLISH-CERT-BATCH-(\d{4})', item.get('id', ''))
@@ -2105,6 +2109,41 @@ def next_task():
     return 0
 
 
+def publish_reconciled_batch59():
+    """Run only the ready Batch 59 publication task; never starts certification."""
+    if find_autopilot_process()[0]:
+        print('AUTOPILOT_ALREADY_ACTIVE')
+        return 3
+    task_obj = load_tasks(create=False)
+    if not task_obj:
+        print('TASKS_UNAVAILABLE')
+        return 3
+    item = next((x for x in task_obj.get('tasks', [])
+                 if x.get('id') == 'GITHUB-PUBLISH-CERT-BATCH-0059'), None)
+    if not item or item.get('status') not in ('READY', 'PENDING'):
+        print('BATCH59_PUBLISH_TASK_NOT_READY')
+        return 3
+    selected = select_task(task_obj['tasks'])
+    if not selected or selected.get('id') != item.get('id'):
+        print('BATCH59_PUBLISH_TASK_NOT_NEXT')
+        return 3
+    ok, reason, checks = health_check(include_checkpoint=True)
+    if not ok:
+        print('ARCADE_SAFETY: FAIL ' + str(reason))
+        return 3
+    state = read_json(STATE, {}) or initial_state()
+    state['last_safety_check'] = checks
+    if not execute_one(item, task_obj, state):
+        print('BATCH59_PUBLISH_LIFECYCLE_FAIL')
+        return 3
+    print('BATCH59_PUBLISH_LIFECYCLE_PASS')
+    print('GITHUB_SHA: ' + str(state.get('last_github_sha')))
+    print('JOB: ' + str((read_json(AUDIT / 'jobs' / 'certifier_job.json', {}) or {}).get('status')))
+    next_item = select_task(task_obj['tasks'])
+    print('NEXT_TASK: ' + (next_item.get('id') if next_item else 'NONE'))
+    return 0
+
+
 def show_log(lines=100):
     if not 1 <= lines <= 1000:
         raise RuntimeError('LOG_LINES_MUST_BE_1_TO_1000')
@@ -2126,6 +2165,7 @@ def main(argv=None):
     subs.add_parser('status'); l = subs.add_parser('log'); l.add_argument('lines', nargs='?', type=int, default=100)
     subs.add_parser('reconcile-recovered-safety', help='Reconciliar blockers ES recuperables tras verificar runtime y restore')
     subs.add_parser('reconcile-report-recovery', help='Cerrar Batch 59 tras validar sólo su post-procesamiento')
+    subs.add_parser('publish-reconciled-batch59', help='Completar el publish task ya publicado y consumir su job reconciliado')
     subs.add_parser('pause'); subs.add_parser('resume')
     st = subs.add_parser('stop-safe'); st.add_argument('--unused', action='store_true', help=argparse.SUPPRESS)
     subs.add_parser('tasks'); subs.add_parser('next')
@@ -2134,6 +2174,7 @@ def main(argv=None):
     if args.action == 'status': return status()
     if args.action == 'reconcile-recovered-safety': return reconcile_recovered_safety_block()
     if args.action == 'reconcile-report-recovery': return reconcile_report_recovery()
+    if args.action == 'publish-reconciled-batch59': return publish_reconciled_batch59()
     if args.action == 'log': return show_log(args.lines)
     if args.action == 'pause': return command_pause(False)
     if args.action == 'resume': return resume()
