@@ -6,7 +6,7 @@ Generado de la configuración activa. No es una copia de `batocera.conf`; sólo 
 
 - Effective MAME system core in `es_systems_el_gordo.cfg`: `mame078plus`
 - `audio.device`: `alsa_output.pci-0000_01_00.1.hdmi-surround`
-- `audio.volume`: `40`
+- `audio.volume`: `45`
 - `global.videomode`: `max-1920x1080`
 - `global.videooutput`: `HDMI-0`
 - MAME per-game overrides: 18
@@ -31,7 +31,7 @@ Generado de la configuración activa. No es una copia de `batocera.conf`; sólo 
 
 ## SHA-256 de configuración y herramientas activas
 
-- `batocera.conf`: `098c88444322bacaac5f2f2383e5bf6e5fa42623353fe8c49d307fffc47b52d2`
+- `batocera.conf`: `bb8579bd3cb91c2ad8606ff04fe2b7ed238ed0264018a418acbe0943c3762426`
 - `controller_dispatcher`: `92d7bb43101a72eaaaa844b51b961170c5276a3728e88c2c4240f320d162829c`
 - `selector_controles`: `c77b2aaae862580685d71bf0ef493e928c3ab28b00cd7464fdafb8843d888daf`
 - `custom_service`: `ad81be13cea6cfade6ba4b9994b64ddb821b9680099c4a9233356fd3a9a4247c`

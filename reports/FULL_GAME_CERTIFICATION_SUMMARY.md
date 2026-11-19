@@ -1,16 +1,16 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-18T19:18:22+00:00
+- UPDATED_AT: 2026-11-19T14:10:44+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 5198
-- UNIQUE_GAMES_PROCESSED: 5710
-- RESULT_RECORDS: 5712
-- LAUNCH_TRANSACTIONS: 5198
+- ATTEMPTED_NEW: 5298
+- UNIQUE_GAMES_PROCESSED: 5823
+- RESULT_RECORDS: 5825
+- LAUNCH_TRANSACTIONS: 5298
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 5025
+- AUTO_CERTIFIED: 5125
 - STATIC_FAIL: 194
 - GAME_FAIL: 171
 - FLAKY: 0
@@ -19,8 +19,8 @@
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/Vampire Chronicle for Matching Service (Japan).chd
-- TOTAL_RESTORES: 5198
+- NEXT_GAME: pcengine:/userdata/roms/pcengine/Racing Damashii (Japan).pce
+- TOTAL_RESTORES: 5298
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -37,10 +37,10 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | cannonball | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | cdogs | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | devilutionx | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 8 |
-| dreamcast | 775 | 775 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 455 |
+| dreamcast | 775 | 775 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 442 |
 | easyrpg | 12 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 |
 | fbneo | 104 | 104 | 88 | 52 | 52 | 0 | 0 | 0 | 0 | 0 |
-| fds | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| fds | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | flatpak | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
 | gamecube | 9 | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 |
 | gb | 410 | 410 | 0 | 403 | 0 | 0 | 0 | 0 | 0 | 7 |
@@ -51,7 +51,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | ikemen | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
 | mame | 1324 | 1324 | 1112 | 1008 | 37 | 142 | 0 | 0 | 0 | 137 |
 | mastersystem | 383 | 383 | 0 | 381 | 0 | 1 | 0 | 0 | 0 | 1 |
-| megacd | 24 | 24 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 21 |
+| megacd | 24 | 24 | 0 | 8 | 0 | 0 | 0 | 0 | 0 | 16 |
 | megadrive | 1037 | 1037 | 0 | 1016 | 0 | 13 | 0 | 0 | 0 | 8 |
 | mrboom | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | n64 | 377 | 377 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 377 |
@@ -61,7 +61,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | nes | 702 | 702 | 0 | 700 | 0 | 2 | 0 | 0 | 0 | 0 |
 | odcommander | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | openbor | 128 | 128 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 128 |
-| pcengine | 529 | 529 | 0 | 69 | 0 | 0 | 0 | 0 | 0 | 460 |
+| pcengine | 529 | 529 | 0 | 163 | 0 | 0 | 0 | 0 | 0 | 366 |
 | ports | 5 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 5 |
 | prboom | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
 | ps2 | 196 | 196 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 196 |
@@ -86,9 +86,10 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_58; considerados 100; lanzados 0; AUTO_PASS 0; restore 0/0.
+- Lote más reciente: priority_batch_59; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
+- CURRENT_INVOCATION_SELECTED_COUNT: 99 (selección de la invocación más reciente; no es el total acumulado del batch).
 - Estado de runner: COMPLETE.
-- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/Vampire Chronicle for Matching Service (Japan).chd.
+- NEXT_GAME: pcengine:/userdata/roms/pcengine/Racing Damashii (Japan).pce.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY

@@ -10,6 +10,8 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
+from certification_batch_accounting import invocation_selection_line
+
 AUDIT = Path('/userdata/system/state/arcade_audit')
 TABLE = AUDIT / 'full_game_certification.csv'
 CHECKPOINT = AUDIT / 'full_game_certification_checkpoint.json'
@@ -99,7 +101,7 @@ def main():
     if cp.get('counts', {}).get('AUTO_PASS') != auto:
         mismatches.append(f"counts.AUTO_PASS={cp.get('counts', {}).get('AUTO_PASS')},table.AUTO_CERTIFIED={auto}")
     master_phase = master.get('phases', {}).get('PHASE_14_FULL_GAME_CERTIFICATION', {})
-    if master_phase.get('status') not in ('RUNNING', 'COMPLETE', 'COMPLETE_WITH_ISSUES', 'MANUAL_REQUIRED'):
+    if master_phase.get('status') not in ('RUNNING', 'BLOCKED', 'COMPLETE', 'COMPLETE_WITH_ISSUES', 'MANUAL_REQUIRED'):
         mismatches.append('master certification phase has unknown status')
 
     per_system = defaultdict(lambda: defaultdict(int))
@@ -155,8 +157,13 @@ def main():
     lines += ['', '## Último lote y reanudación', '']
     latest = cp.get('latest_batch') or {}
     lines.append(f"- Lote más reciente: {latest.get('name', 'sin lote registrado')}; considerados {latest.get('considered', 'N/D')}; lanzados {latest.get('launched', 'N/D')}; AUTO_PASS {latest.get('auto_pass', 'N/D')}; restore {latest.get('restore_verified', 'N/D')}.")
+    lines.append(invocation_selection_line(cp))
     lines.append(f"- Estado de runner: {cp.get('status', 'UNKNOWN')}.")
     lines.append(f"- NEXT_GAME: {next_game}.")
+    partial = cp.get('batch_in_progress')
+    if partial:
+        lines.append(f"- Lote parcial: {partial.get('name', 'desconocido')}; considerados {partial.get('considered', 'N/D')}; transacciones {partial.get('launched', 'N/D')}; AUTO_PASS {partial.get('auto_pass', 'N/D')}; GAME_FAIL {partial.get('game_fail', 'N/D')}; restore verificados {partial.get('restore_verified', 'N/D')}; el lote no está cerrado.")
+        lines.append(f"- Bloqueo activo: {cp.get('blocked_reason', 'sin detalle')}.")
     lines.append('- No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.')
     lines += ['', '## HISTORY', '', 'Los totales anteriores se excluyeron de la cabecera. La columna histórica se deriva del campo `boot_core` conservado en el CSV canónico.', '']
     text = '\n'.join(lines)

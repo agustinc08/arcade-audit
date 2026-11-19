@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 import re
+import sys
 import subprocess
 import tempfile
 import urllib.error
@@ -19,10 +20,6 @@ CONF = Path('/userdata/system/batocera.conf')
 ES_SYSTEMS = Path('/userdata/system/configs/emulationstation/es_systems_el_gordo.cfg')
 TOKEN_FILE = Path('/userdata/system/secrets/github_arcade_audit.token')
 OWNER, REPO, BRANCH = 'agustinc08', 'arcade-audit', 'main'
-EXPECTED_PADS = {
-    'P1': ('USB5', 'event17', 'js0'), 'P2': ('USB6', 'event18', 'js1'),
-    'P3': ('USB8', 'event20', 'js3'), 'P4': ('USB7', 'event19', 'js2'),
-}
 EXPECTED_MAME_OVERRIDES = {
     'ffight2b.zip', 'altair.zip', 'apache3.zip', 'blazlaz.zip', 'cubeqst.zip',
     'sia2650.zip', 'evosocc.zip', 'hoops95.zip', 'funcube4.zip', 'lbgrande.zip',
@@ -120,31 +117,29 @@ def default_audio_sink():
 
 
 def controller_state():
-    # Prefer the live dispatcher diagnosis; controllers_live.json is a snapshot
-    # and may be stale. SDL index is derived by matching the current event path.
-    dispatcher = Path('/userdata/system/el_gordo_tools/controller_dispatcher')
+    # Reuse the certifier/autopilot's stable physical identity source. SDL event
+    # and js nodes are emitted as current runtime details, never as identity.
     try:
-        probe = subprocess.run([str(dispatcher), '--diagnose'], check=True,
-                               stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
-                               text=True, timeout=20)
-        data = json.loads(probe.stdout)
-    except (OSError, subprocess.SubprocessError, ValueError):
-        raise RuntimeError('CURRENT_STATE_RECONCILIATION_FAIL: live controller diagnosis unavailable')
-    entries = data.get('profiles', {}).get('arcade', {}).get('players')
-    natural = data.get('natural')
-    if not isinstance(entries, list) or not isinstance(natural, list):
-        raise RuntimeError('CURRENT_STATE_RECONCILIATION_FAIL: live controller diagnosis schema unavailable')
+        tools = '/userdata/system/el_gordo_tools'
+        if tools not in sys.path:
+            sys.path.insert(0, tools)
+        import full_game_certifier as cert
+        identity = cert.profile_state()
+        if not cert.stable_profile_matches(identity):
+            raise RuntimeError('P1_P4_MAPPING_CHANGE')
+    except Exception as exc:
+        detail = str(exc).splitlines()[0][:220]
+        raise RuntimeError('CURRENT_STATE_RECONCILIATION_FAIL: stable controller identity: ' + detail) from exc
     lines = []
-    for player, expected in EXPECTED_PADS.items():
-        found = next((item for item in entries if item.get('arcade_player') == player), None)
-        usb, event, js = expected
-        event_path='/dev/input/'+event
-        live_index=next((item.get('index') for item in natural if item.get('path')==event_path),None)
-        if not found or str(found.get('usb_port')) != usb.removeprefix('USB'):
-            raise RuntimeError('CURRENT_STATE_RECONCILIATION_FAIL: controller player missing')
-        if found.get('path') != event_path or 'js' + str(live_index) != js:
-            raise RuntimeError('CURRENT_STATE_RECONCILIATION_FAIL: P1-P4 mapping differs')
-        lines.append(f'- {player}: {usb} / {event} / {js}')
+    for player in ('P1', 'P2', 'P3', 'P4'):
+        found = identity[player]
+        device = found['device_identity']
+        lines.append(
+            f"- {player}: USB{found['usb_port']} / {found.get('event') or 'event unavailable'} / "
+            f"{found.get('js') or 'js unavailable'}; ID_PATH `{found['physical_path']}`; "
+            f"by-path `{found['by_path']}`; VID:PID `{device['vendor_id']}:{device['product_id']}`; "
+            f"name `{device['name'].strip()}` (event/js = valores runtime actuales)."
+        )
     snapshot=AUDIT/'controllers_live.json'
     snapshot_data=load_json(snapshot) if snapshot.exists() else {}
     gamepads = snapshot_data.get('GAMEPADS_CONNECTED', [])
@@ -157,7 +152,7 @@ def controller_state():
             transport = str(pad.get('transport') or 'unknown').replace('`', '')
             audio = 'yes' if pad.get('audio_capability') is True else 'no/unknown'
             external.append(f'{name} ({transport}, audio endpoint: {audio})')
-    return 'controllers_live.json', lines, external
+    return 'controller_technical.json + live udev/sysfs', lines, external
 
 
 def atomic_write(path, text):
@@ -279,11 +274,6 @@ def main():
     manual_rows = read_csv(manual_path) if manual_path.exists() else []
     manual_pending = sum(1 for row in manual_rows if row.get('status','').upper() not in
                          {'DONE','COMPLETE','PASS','CONTROL_CERTIFIED','CLOSED'})
-    autopilot = load_json(AUDIT / 'autopilot_state.json') if (AUDIT / 'autopilot_state.json').exists() else {}
-    autopilot_tasks = load_json(AUDIT / 'data/autopilot_tasks.json') if (AUDIT / 'data/autopilot_tasks.json').exists() else {}
-    task_rows = autopilot_tasks.get('tasks', []) if isinstance(autopilot_tasks, dict) else []
-    codex_pending = sum(1 for row in task_rows if row.get('status') == 'CODEX_REQUIRED')
-    manual_task_pending = sum(1 for row in task_rows if row.get('status') == 'MANUAL_REQUIRED')
     free = '\n'.join('    ' + x for x in disks.splitlines()[1:]) if disks else '    UNKNOWN'
     pad_text = '\n'.join(pads) if pads else '- No disponible'
     last_action = master.get('last_action', 'No registrado')
@@ -304,6 +294,7 @@ def main():
         f'- HDMI_DEFAULT_STATUS: {"PASS" if "pci-0000_01_00.1.hdmi-stereo" in audio_sink else "NOT_CONFIRMED"}',
         '- AUDIO_POLICY_STATUS: instalada; reconexión física DS4 y persistencia post-reboot pendientes.', '',
         '### P1–P4', '', f'- Fuente de snapshot: `{pads_source}`', pad_text, '',
+        '- Identidad persistente: jugador lógico + puerto USB físico + `ID_PATH`/`by-path` + VID:PID + nombre. `eventXX` y `jsX` son valores runtime actuales y pueden renumerarse.', '',
         f'- GAMEPADS_CONNECTED: {len(gamepads)}',
         *[f'  - {x}' for x in gamepads], '',
         '## Certificación', '', f'- FULL_CERTIFICATION_PHASE: {phase}',
@@ -324,11 +315,6 @@ def main():
         '- ARCADE_MANAGER_STATUS: script local disponible; servicio/panel persistente no certificado.',
         f'- OPEN_ROOT_ISSUES: {len(root_issues)}',
         f'- MANUAL_TESTS_PENDING: {manual_pending} (detalle en `data/manual_physical_test_queue.csv`).',
-        '', '## Autopilot', '',
-        f'- STATUS: {autopilot.get("status", "STOPPED")}',
-        f'- CURRENT_TASK: {autopilot.get("current_task") or "NONE"}',
-        f'- LAST_COMPLETED: {autopilot.get("last_completed_task") or "NONE"}',
-        f'- CODEX_PENDING: {codex_pending}', f'- MANUAL_PENDING: {manual_task_pending}',
         f'- LAST_MAJOR_CHANGES: {last_action}', '',
         'Este documento se deriva de checkpoints, tabla de certificación y consultas locales. Los datos variables deben regenerarse; los reportes históricos no prevalecen sobre estas fuentes.', ''
     ]
@@ -345,5 +331,5 @@ if __name__ == '__main__':
         main()
     except Exception as exc:
         # Avoid reporting exception context that could contain data values.
-        print(type(exc).__name__ + ': ' + str(exc).split(':',1)[0])
+        print(type(exc).__name__ + ': ' + str(exc))
         raise SystemExit(2)

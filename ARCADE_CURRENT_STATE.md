@@ -1,7 +1,7 @@
 # Estado actual del arcade
 
-- UPDATED_AT: 2026-11-18T19:18:23+00:00
-- GITHUB_HEAD observado antes de publicar: `7570d2772c32c7e8a7316585ecd3d9cfeca73fe6`
+- UPDATED_AT: 2026-11-19T14:10:44+00:00
+- GITHUB_HEAD observado antes de publicar: `566a54068b50d74fe95d82696415ae07d03d5c49`
 - BATOCERA_VERSION: 43.1
 
 ## Sistema y hardware
@@ -22,11 +22,13 @@
 
 ### P1–P4
 
-- Fuente de snapshot: `controllers_live.json`
-- P1: USB5 / event17 / js0
-- P2: USB6 / event18 / js1
-- P3: USB8 / event20 / js3
-- P4: USB7 / event19 / js2
+- Fuente de snapshot: `controller_technical.json + live udev/sysfs`
+- P1: USB5 / /dev/input/event18 / /dev/input/js1; ID_PATH `pci-0000:00:14.0-usb-0:5:1.0`; by-path `/dev/input/by-path/pci-0000:00:14.0-usb-0:5:1.0-event-joystick`; VID:PID `0079:0006`; name `DragonRise Inc.   Generic   USB  Joystick` (event/js = valores runtime actuales).
+- P2: USB6 / /dev/input/event19 / /dev/input/js2; ID_PATH `pci-0000:00:14.0-usb-0:6:1.0`; by-path `/dev/input/by-path/pci-0000:00:14.0-usb-0:6:1.0-event-joystick`; VID:PID `0079:0006`; name `DragonRise Inc.   Generic   USB  Joystick` (event/js = valores runtime actuales).
+- P3: USB8 / /dev/input/event21 / /dev/input/js4; ID_PATH `pci-0000:00:14.0-usb-0:8:1.0`; by-path `/dev/input/by-path/pci-0000:00:14.0-usb-0:8:1.0-event-joystick`; VID:PID `0079:0006`; name `DragonRise Inc.   Generic   USB  Joystick` (event/js = valores runtime actuales).
+- P4: USB7 / /dev/input/event20 / /dev/input/js3; ID_PATH `pci-0000:00:14.0-usb-0:7:1.0`; by-path `/dev/input/by-path/pci-0000:00:14.0-usb-0:7:1.0-event-joystick`; VID:PID `0079:0006`; name `DragonRise Inc.   Generic   USB  Joystick` (event/js = valores runtime actuales).
+
+- Identidad persistente: jugador lógico + puerto USB físico + `ID_PATH`/`by-path` + VID:PID + nombre. `eventXX` y `jsX` son valores runtime actuales y pueden renumerarse.
 
 - GAMEPADS_CONNECTED: 1
   - USB Gamepad (USB, audio endpoint: no/unknown)
@@ -37,17 +39,17 @@
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- AUTO_CERTIFIED: 5025
+- AUTO_CERTIFIED: 5125
 - GAME_FAIL: 171
 - STATIC_FAIL: 194
 - FLAKY: 0
 - NEEDS_REPAIR: 365
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
-- NEXT_GAME: `dreamcast:/userdata/roms/dreamcast/Vampire Chronicle for Matching Service (Japan).chd`
-- UNIQUE_GAMES_PROCESSED: 5710
-- RESULT_RECORDS: 5712
-- LAUNCH_TRANSACTIONS: 5198
+- NEXT_GAME: `pcengine:/userdata/roms/pcengine/Racing Damashii (Japan).pce`
+- UNIQUE_GAMES_PROCESSED: 5823
+- RESULT_RECORDS: 5825
+- LAUNCH_TRANSACTIONS: 5298
 - RETRY_TRANSACTIONS: 2
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
@@ -56,7 +58,7 @@
 ## Espacio
 
 - FILESYSTEM_STATUS: lectura de capacidad; no es una prueba SMART.
-    /dev/sda2        211G   122G   81G  61% /userdata
+    /dev/sda2        211G   122G   80G  61% /userdata
     /dev/sdc1        3,6T  1012G  2,5T  30% /media/ROMS
     /dev/sdb1        916G   783G   88G  90% /media/BATOCERA_ROMS
 

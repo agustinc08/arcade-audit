@@ -442,7 +442,14 @@ def certifier_active():
         if not entry.name.isdigit():
             continue
         rec = proc_record(int(entry.name))
-        if rec and str(CERTIFIER) in rec['cmdline']:
+        if not rec or str(CERTIFIER) not in rec['cmdline']:
+            continue
+        try:
+            executable = Path(f'/proc/{entry.name}/exe').resolve().name
+        except OSError:
+            continue
+        argv = rec['cmdline'].split()
+        if executable.startswith('python') and str(CERTIFIER) in argv[1:]:
             return int(entry.name), rec
     return None, None
 
@@ -931,6 +938,126 @@ def summary_matches_checkpoint(cp, path=None):
     return True
 
 
+def reconcile_report_recovery():
+    """Close Batch 59 only when its failed job is proven to be post-processing-only."""
+    autopilot_pid = find_autopilot_process()[0]
+    certifier_pid = certifier_active()[0]
+    if autopilot_pid or certifier_pid:
+        raise RuntimeError('REPORT_RECOVERY_RUNTIME_PROCESS_ACTIVE:' +
+                           str(autopilot_pid) + ':' + str(certifier_pid))
+    cp = read_json(CERT_STATE, {}) or {}
+    was_paused_for_reports = (cp.get('status') == 'PAUSED_REPORT_RECONCILIATION' and
+                              cp.get('blocked_reason') == 'CURRENT_STATE_RECONCILIATION_FAIL')
+    already_checkpoint_complete = (cp.get('status') == 'COMPLETE' and
+                                   not cp.get('blocked_reason'))
+    if (not (was_paused_for_reports or already_checkpoint_complete) or
+            cp.get('batch_in_progress') or int(cp.get('engine_fail_active', 0)) or
+            int(cp.get('restore_failures', 0))):
+        raise RuntimeError('REPORT_RECOVERY_CHECKPOINT_STATE_MISMATCH')
+    latest = cp.get('latest_batch') or {}
+    expected = {'name': 'priority_batch_59', 'considered': 100, 'launched': 100,
+                'auto_pass': 100, 'game_fail': 0, 'static_fail': 0,
+                'restore_verified': '100/100', 'restore_failures': 0,
+                'engine_failures_unresolved': 0}
+    if any(latest.get(key) != value for key, value in expected.items()):
+        raise RuntimeError('REPORT_RECOVERY_BATCH_TOTALS_MISMATCH')
+
+    meta_path = AUDIT / 'jobs' / 'certifier_job.json'
+    meta = read_json(meta_path, {}) or {}
+    job_view = get_cert_job_status()
+    if (meta.get('status') != 'FAILED' or meta.get('exit_code') != 5 or
+            meta.get('checkpoint_status') != 'PAUSED_REPORT_RECONCILIATION' or
+            job_view.get('status') != 'FAILED' or job_view.get('pid_state') != 'STALE'):
+        raise RuntimeError('REPORT_RECOVERY_JOB_NOT_POSTPROCESS_FAILURE')
+    log_path = Path(meta.get('log_path') or '')
+    try:
+        log_text = log_path.read_text(encoding='utf-8', errors='replace')
+    except OSError as exc:
+        raise RuntimeError('REPORT_RECOVERY_JOB_LOG_UNAVAILABLE') from exc
+    if ('REPORT_RECONCILIATION_PASS' not in log_text or
+            'CURRENT_STATE_RECONCILIATION_FAIL' not in log_text):
+        raise RuntimeError('REPORT_RECOVERY_JOB_LOG_CAUSE_MISMATCH')
+
+    sys.path.insert(0, str(TOOLS))
+    import rebuild_priority_batch_report as batch_report
+    import full_game_certifier as cert
+    rows, _ = cert.load_rows()
+    _, batch_results, _, _ = batch_report.batch_records(cp, rows)
+    resume_started = _parse_time(meta.get('started_at'))
+    pre_resume = sum(1 for item in batch_results
+                     if _parse_time(item.get('finished_at')) and
+                     _parse_time(item.get('finished_at')) < resume_started) if resume_started else -1
+    resume_selected = len(batch_results) - pre_resume
+    if (pre_resume != 1 or resume_selected != 99 or cp.get('selected_count') != 99 or
+            meta.get('batch_size') != 99 or meta.get('requested_batch_size') != 100):
+        raise RuntimeError('REPORT_RECOVERY_RESUME_ACCOUNTING_MISMATCH')
+    report = AUDIT / 'reports' / 'PRIORITY_CERTIFICATION_BATCH_59.md'
+    if report.read_text(encoding='utf-8') != batch_report.render_report(cp, rows):
+        raise RuntimeError('REPORT_RECOVERY_BATCH_REPORT_STALE')
+    if not summary_matches_checkpoint(cp):
+        raise RuntimeError('REPORT_RECOVERY_SUMMARY_MISMATCH')
+    summary = (AUDIT / 'FULL_GAME_CERTIFICATION_SUMMARY.md').read_text(encoding='utf-8')
+    if ('CURRENT_INVOCATION_SELECTED_COUNT: 99' not in summary or
+            'considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100' not in summary):
+        raise RuntimeError('REPORT_RECOVERY_INVOCATION_OR_BATCH_SEMANTICS_MISMATCH')
+    current = (AUDIT / 'ARCADE_CURRENT_STATE.md').read_text(encoding='utf-8')
+    live_identity = cert.profile_state()
+    if not cert.stable_profile_matches(live_identity):
+        raise RuntimeError('REPORT_RECOVERY_LIVE_CONTROLLER_IDENTITY_FAIL')
+    for player, port in cert.EXPECTED_ARCADE_USB.items():
+        item = live_identity[player]
+        if (f'USB{port}' not in current or item.get('physical_path') not in current or
+                item.get('by_path') not in current or item.get('event') not in current or
+                item.get('js') not in current):
+            raise RuntimeError('REPORT_RECOVERY_CURRENT_STATE_STALE:' + player)
+    recovery = cp.get('safety_recovery') or {}
+    checks = recovery.get('runtime_checks') or {}
+    state = read_json(STATE, {}) or {}
+    runtime = (state.get('last_safety_check') or {}).get('runtime') or {}
+    if (checks.get('protected_semantic_config_matches') is not True or
+            checks.get('protected_config_matches') is not True or
+            runtime.get('HDMI') != 'alsa_output.pci-0000_01_00.1.hdmi-stereo'):
+        raise RuntimeError('REPORT_RECOVERY_PROTECTED_CONFIG_OR_HDMI_NOT_VERIFIED')
+
+    backup_dir = AUDIT / 'recovery_backups' / ('batch59_report_recovery_' +
+                 dt.datetime.now().strftime('%Y%m%dT%H%M%S'))
+    backup_dir.mkdir(parents=True, exist_ok=False)
+    master_path = AUDIT / 'arcade_master_checkpoint.json'
+    for path in (CERT_STATE, master_path, TASKS, STATE, meta_path):
+        if path.is_file():
+            shutil.copy2(path, backup_dir / path.name)
+
+    if was_paused_for_reports:
+        cp['status'] = 'COMPLETE'
+        cp['blocked_reason'] = None
+        master = read_json(master_path, {}) or {}
+        phase = master.get('phases', {}).get('PHASE_14_FULL_GAME_CERTIFICATION', {})
+        from certification_batch_accounting import phase_summary
+        phase['summary'] = phase_summary(latest, cp.get('auto_certified'), cp.get('next_untested'))
+        phase['updated_at'] = now()
+        atomic_json(CERT_STATE, cp)
+        atomic_json(master_path, master)
+
+    task_obj = load_tasks(create=False)
+    result = finish_batch(task_obj, 'CERT-BATCH-0059', state)
+    if not result:
+        raise RuntimeError('REPORT_RECOVERY_BATCH_FINALIZATION_FAILED')
+    state.update({'status': 'STOPPED', 'pause_reason': None, 'current_task': None,
+                  'pause_requested': False, 'stop_requested': False,
+                  'next_action': 'Publicar Batch 59; Batch 60 sigue esperando el publish task.'})
+    atomic_json(STATE, state)
+    master = read_json(master_path, {}) or {}
+    phase_summary_text = master.get('phases', {}).get('PHASE_14_FULL_GAME_CERTIFICATION', {}).get('summary', '')
+    print('BATCH_59_REPORT_RECOVERY_PASS')
+    print('CHECKPOINT: COMPLETE')
+    print('BATCH_PRE_RESUME: ' + str(pre_resume))
+    print('RESUME_INVOCATION_SELECTED: ' + str(resume_selected))
+    print('PHASE_SUMMARY: ' + phase_summary_text)
+    print('JOB: FAILED_POSTPROCESS_PRESERVED_UNTIL_PUBLISH')
+    print('BACKUP: ' + str(backup_dir))
+    return 0
+
+
 def _batch_publication_artifact_hashes(batch_name):
     number = _batch_index(batch_name)
     if number is None:
@@ -993,8 +1120,14 @@ def previous_job_consumption_check(task_id, job, cp, task_obj, state, *, reconci
     if not isinstance(job_id, str) or not re.fullmatch(r'\d{8}T\d{6}_[a-f0-9]{8}', job_id):
         return False, 'JOB_ID_INVALID'
     meta = read_json(AUDIT / 'jobs' / 'certifier_job.json', {}) or {}
-    if (meta.get('job_id') != job_id or meta.get('status') not in ('COMPLETE', 'CONSUMED') or
-            meta.get('exit_code') != 0 or meta.get('checkpoint_status') != 'COMPLETE' or
+    recovered_postprocess = (
+        meta.get('status') == 'CONSUMED' and meta.get('original_status') == 'FAILED' and
+        meta.get('exit_code') == 5 and
+        (meta.get('postprocess_reconciliation') or {}).get('verified') is True)
+    normal_complete = (meta.get('status') in ('COMPLETE', 'CONSUMED') and
+                       meta.get('exit_code') == 0)
+    if (meta.get('job_id') != job_id or not (normal_complete or recovered_postprocess) or
+            meta.get('checkpoint_status') != 'COMPLETE' or
             not isinstance(meta.get('pid'), int) or meta.get('pid') <= 1 or
             not isinstance(meta.get('worker_pid'), int) or meta.get('worker_pid') <= 1):
         return False, 'JOB_METADATA_INCOMPATIBLE'
@@ -1057,8 +1190,14 @@ def previous_job_consumption_check(task_id, job, cp, task_obj, state, *, reconci
     if job.get('status') == 'CONSUMED':
         expected_archive = Path(archive_path or (AUDIT / 'jobs' / 'history' / f'{job_id}.json'))
         archived = read_json(expected_archive, {}) or {}
-        if (meta.get('consumed_by_task') != task_id or meta.get('archive_path') != str(expected_archive) or
-                archived.get('job_id') != job_id or archived.get('status') != 'COMPLETE'):
+        expected_archive_status = 'FAILED' if recovered_postprocess else 'COMPLETE'
+        expected_consumer = (f'GITHUB-PUBLISH-CERT-BATCH-{batch_n:04d}'
+                             if recovered_postprocess else task_id)
+        if (meta.get('consumed_by_task') != expected_consumer or
+                meta.get('archive_path') != str(expected_archive) or
+                archived.get('job_id') != job_id or archived.get('status') != expected_archive_status or
+                (recovered_postprocess and
+                 (archived.get('postprocess_reconciliation') or {}).get('verified') is not True)):
             return False, 'CONSUMED_JOB_ARCHIVE_INVALID'
     return True, 'PREVIOUS_JOB_COMPLETE_AND_CONSUMED'
 
@@ -1246,8 +1385,14 @@ def finish_batch(task_obj, tid, state):
 
 
 def execute_publish(item):
-    message = 'arcade: publish autopilot status and tasks'
-    p = subprocess.run([str(PUBLISHER), message], capture_output=True, text=True, timeout=180)
+    is_batch59 = item.get('id') == 'GITHUB-PUBLISH-CERT-BATCH-0059'
+    message = ('arcade: reconcile resumed batch accounting and controller diagnostics'
+               if is_batch59 else 'arcade: publish autopilot status and tasks')
+    args = [str(PUBLISHER)]
+    if is_batch59:
+        args.extend(['--scope', 'incident-batch'])
+    args.append(message)
+    p = subprocess.run(args, capture_output=True, text=True, timeout=180)
     if p.returncode:
         return False, (p.stdout + p.stderr)[-500:]
     match = re.search(r'^COMMIT SHA: ([a-f0-9]{40})$', p.stdout, re.M)
@@ -1263,6 +1408,83 @@ def execute_publish(item):
                                          state_file.get('last_publish_at')):
             return False, 'PUBLICATION_RECEIPT_CREATE_FAILED'
     return True, {'remote_sha': remote_sha, 'output': p.stdout[-800:]}
+
+
+def consume_reconciled_postprocess_job(publish_task_id, remote_sha, task_obj, state):
+    """Archive a report-only failed job after Batch 59 artifacts are published."""
+    if publish_task_id != 'GITHUB-PUBLISH-CERT-BATCH-0059':
+        return True
+    cp = read_json(CERT_STATE, {}) or {}
+    latest = cp.get('latest_batch') or {}
+    meta_path = AUDIT / 'jobs' / 'certifier_job.json'
+    meta = read_json(meta_path, {}) or {}
+    publish_task = next((item for item in task_obj['tasks']
+                         if item.get('id') == publish_task_id), None)
+    if (not publish_task or publish_task.get('status') != 'COMPLETE' or
+            cp.get('status') != 'COMPLETE' or cp.get('blocked_reason') or
+            cp.get('batch_in_progress') or latest.get('name') != 'priority_batch_59' or
+            latest.get('launched') != 100 or latest.get('auto_pass') != 100 or
+            latest.get('restore_verified') != '100/100' or
+            meta.get('status') != 'FAILED' or meta.get('exit_code') != 5 or
+            meta.get('checkpoint_status') != 'PAUSED_REPORT_RECONCILIATION'):
+        raise RuntimeError('FAILED_POSTPROCESS_JOB_RECOVERY_STATE_MISMATCH')
+    reconciled, _ = report_reconciled()
+    if not reconciled or not summary_matches_checkpoint(cp):
+        raise RuntimeError('FAILED_POSTPROCESS_JOB_REPORTS_NOT_RECONCILED')
+    publisher = read_json(AUDIT / 'github_publish_state.json', {}) or {}
+    receipt_path = AUDIT / 'jobs' / 'publications' / 'priority_batch_59.json'
+    receipt = read_json(receipt_path, {}) or {}
+    if (remote_sha != publisher.get('last_known_remote_sha') or
+            remote_sha != publisher.get('last_successful_publish_sha') or
+            receipt.get('remote_sha') != remote_sha or receipt.get('verified') is not True):
+        raise RuntimeError('FAILED_POSTPROCESS_JOB_PUBLISH_NOT_VERIFIED')
+    log_path = Path(meta.get('log_path') or '')
+    log_text = log_path.read_text(encoding='utf-8', errors='replace')
+    if ('REPORT_RECONCILIATION_PASS' not in log_text or
+            'CURRENT_STATE_RECONCILIATION_FAIL' not in log_text):
+        raise RuntimeError('FAILED_POSTPROCESS_JOB_CAUSE_NOT_VERIFIED')
+    reconciliation = {
+        'verified': True,
+        'classification': 'POSTPROCESS_ONLY_CURRENT_STATE_RECONCILIATION',
+        'batch_name': 'priority_batch_59',
+        'launches': 100,
+        'auto_pass': 100,
+        'restore_verified': '100/100',
+        'report_reconciled': True,
+        'summary_reconciled': True,
+        'current_state_reconciled': True,
+        'remote_sha': remote_sha,
+        'verified_at': now(),
+    }
+    history = AUDIT / 'jobs' / 'history'
+    history.mkdir(parents=True, exist_ok=True, mode=0o700)
+    archive = history / f"{meta['job_id']}.json"
+    if archive.exists():
+        raise RuntimeError('FAILED_POSTPROCESS_JOB_ARCHIVE_ALREADY_EXISTS')
+    archived = dict(meta)
+    archived['postprocess_reconciliation'] = reconciliation
+    archived['archived_at'] = now()
+    archived['archived_as'] = 'FAILED_POSTPROCESS_RECOVERED_AFTER_BATCH_RECONCILIATION'
+    atomic_json(archive, archived)
+    meta.update({
+        'original_status': 'FAILED', 'status': 'CONSUMED',
+        'checkpoint_status': 'COMPLETE', 'consumed_at': now(),
+        'consumed_by_task': publish_task_id, 'archive_path': str(archive),
+        'postprocess_reconciliation': reconciliation,
+    })
+    atomic_json(meta_path, meta)
+    state_job = dict(state.get('certifier_job') or {})
+    state_job.update({'status': 'CONSUMED', 'checkpoint_status': 'COMPLETE',
+                      'consumed_at': meta['consumed_at'],
+                      'consumed_by_task': publish_task_id,
+                      'archive_path': str(archive),
+                      'postprocess_reconciliation': reconciliation})
+    state['certifier_job'] = state_job
+    atomic_json(STATE, state)
+    append_event('CERTIFIER_JOB_CONSUMED_POSTPROCESS_RECOVERED',
+                 task_id=publish_task_id, job_id=meta['job_id'],
+                 archive_path=str(archive), remote_sha=remote_sha)
+    return True
 
 
 def execute_one(item, task_obj, state):
@@ -1444,6 +1666,18 @@ def execute_one(item, task_obj, state):
             state['current_task'] = None
             atomic_json(STATE, state)
             save_tasks(task_obj)
+            if item.get('id') == 'GITHUB-PUBLISH-CERT-BATCH-0059':
+                try:
+                    consume_reconciled_postprocess_job(item['id'], state['last_github_sha'],
+                                                       task_obj, state)
+                except Exception as exc:
+                    state.update({'status': 'PAUSED_SAFETY',
+                                  'pause_reason': 'POSTPROCESS_JOB_CONSUME_FAIL:' + str(exc)[:160],
+                                  'current_task': None})
+                    atomic_json(STATE, state)
+                    append_event('SAFETY_PAUSE', task_id=item['id'],
+                                 reason=state['pause_reason'])
+                    return False
             return True
         attempts = int(item.get('attempts', 0))
         terminal = attempts >= int(item.get('max_attempts', 3))
@@ -1891,6 +2125,7 @@ def main(argv=None):
     s.add_argument('--batch-size', type=int, default=DEFAULT_BATCH_SIZE); s.add_argument('--max-batches', type=int, default=DEFAULT_MAX_BATCHES)
     subs.add_parser('status'); l = subs.add_parser('log'); l.add_argument('lines', nargs='?', type=int, default=100)
     subs.add_parser('reconcile-recovered-safety', help='Reconciliar blockers ES recuperables tras verificar runtime y restore')
+    subs.add_parser('reconcile-report-recovery', help='Cerrar Batch 59 tras validar sólo su post-procesamiento')
     subs.add_parser('pause'); subs.add_parser('resume')
     st = subs.add_parser('stop-safe'); st.add_argument('--unused', action='store_true', help=argparse.SUPPRESS)
     subs.add_parser('tasks'); subs.add_parser('next')
@@ -1898,6 +2133,7 @@ def main(argv=None):
     if args.action == 'start': return start(args.batch_size, args.max_batches, args.dry_run)
     if args.action == 'status': return status()
     if args.action == 'reconcile-recovered-safety': return reconcile_recovered_safety_block()
+    if args.action == 'reconcile-report-recovery': return reconcile_report_recovery()
     if args.action == 'log': return show_log(args.lines)
     if args.action == 'pause': return command_pause(False)
     if args.action == 'resume': return resume()

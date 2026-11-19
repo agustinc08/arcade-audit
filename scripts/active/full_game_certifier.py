@@ -10,6 +10,7 @@ sys.path.insert(0,str(AUDIT/'scripts'));sys.path.insert(0,str(AUDIT));sys.path.i
 import certification_transaction as tx
 import certifier_adapters as ad
 import smoke_runner as sr
+from certification_batch_accounting import new_batch_progress, record_batch_result, set_invocation_selection, phase_summary
 from marker_ownership import create_exclusive as create_owned_marker, remove_if_owned as remove_owned_marker
 
 TABLE=AUDIT/'full_game_certification.csv'; MASTER=AUDIT/'arcade_master_checkpoint.json'
@@ -175,6 +176,12 @@ def get_default_sink():
 EXPECTED_ARCADE_USB={'P1':'5','P2':'6','P3':'8','P4':'7'}
 EXPECTED_ARCADE_DEVICE=('0079','0006')
 
+def expected_controller_id_path(usb_port):
+ return f'pci-0000:00:14.0-usb-0:{usb_port}:1.0'
+
+def expected_controller_by_path(usb_port):
+ return f'/dev/input/by-path/{expected_controller_id_path(usb_port)}-event-joystick'
+
 def _udev_properties(sysfs_path):
  q=subprocess.run(['udevadm','info','--query=property','--path',str(sysfs_path)],
                   capture_output=True,text=True,timeout=5)
@@ -203,6 +210,11 @@ def profile_state():
  configured={x.get('player'):x for x in profile.get('arcade_controllers',[])
              if isinstance(x,dict) and x.get('player') in EXPECTED_ARCADE_USB}
  if set(configured)!=set(EXPECTED_ARCADE_USB):raise RuntimeError('P1_P4_PROFILE_INCOMPLETE')
+ for player,expected_port in EXPECTED_ARCADE_USB.items():
+  route=configured[player]
+  if (str(route.get('usb_port'))!=expected_port or
+      route.get('by_path')!=expected_controller_by_path(expected_port)):
+   raise RuntimeError('P1_P4_PROFILE_PORT_MISMATCH:'+player)
  runtime_by_path={}
  # sysfs + udev are the identity source. This also works when /dev is not
  # mounted in a diagnostic namespace; event/js names remain informational.
@@ -217,6 +229,9 @@ def profile_state():
   for link in props.get('DEVLINKS','').split():
    if '/by-path/' in link and link.endswith('-event-joystick'):
     runtime_by_path.setdefault(link,[]).append((node,props))
+ expected_paths={expected_controller_by_path(port) for port in EXPECTED_ARCADE_USB.values()}
+ if set(runtime_by_path)!=expected_paths:
+  raise RuntimeError('P1_P4_UNEXPECTED_OR_MISSING_DRAGONRISE_PATH')
  result={}
  for player,expected_port in EXPECTED_ARCADE_USB.items():
   route=configured[player]
@@ -234,7 +249,10 @@ def profile_state():
   # suffix follows the port); use the sysfs/phys port as a second check.
   port_match=re.search(r'usb-0:([0-9]+)(?::|$)',id_path)
   physical_port=port_match.group(1) if port_match else None
-  if route.get('usb_port')!=expected_port:
+  if (id_path!=expected_controller_id_path(expected_port) or by_path!=expected_by_path or
+      props.get('ID_VENDOR_ID','').lower()!=EXPECTED_ARCADE_DEVICE[0] or
+      props.get('ID_MODEL_ID','').lower()!=EXPECTED_ARCADE_DEVICE[1] or
+      'dragonrise' not in name.lower()):
    raise RuntimeError('P1_P4_PROFILE_PORT_MISMATCH:'+player)
   result[player]={
    'expected_usb_port':expected_port,
@@ -260,8 +278,10 @@ def stable_profile_matches(state):
   if not isinstance(item,dict):return False
   path=item.get('physical_path');by_path=item.get('by_path')
   identity=item.get('device_identity') or {}
+  expected_path=expected_controller_id_path(expected_port)
+  expected_link=expected_controller_by_path(expected_port)
   if (item.get('expected_usb_port')!=expected_port or item.get('usb_port')!=expected_port or
-      not path or not by_path or path in seen or
+      path!=expected_path or by_path!=expected_link or path in seen or
       identity.get('vendor_id','').lower()!=EXPECTED_ARCADE_DEVICE[0] or
       identity.get('product_id','').lower()!=EXPECTED_ARCADE_DEVICE[1] or
       'dragonrise' not in identity.get('name','').lower()):
@@ -719,9 +739,7 @@ def run_tests(games,cp,mode):
  if mode in ('batch','resume') and not batch_progress:
   prior=(cp.get('latest_batch') or {}).get('name','priority_batch_0')
   number=int(prior.rsplit('_',1)[-1])+1 if prior.rsplit('_',1)[-1].isdigit() else 1
-  batch_progress={'name':'priority_batch_'+str(number),'considered':len(games),'launched':0,'auto_pass':0,'game_fail':0,'static_fail':0,'flaky':0,
-   'adapter_pending':0,'skipped':0,'deferred':0,'other_unlaunched':0,'processed':0,
-   'restore_verified':0,'restore_failures':0,'started_at':started,'first_game':first,'last_game':None}
+  batch_progress=new_batch_progress('priority_batch_'+str(number),len(games),first,started)
   cp['batch_in_progress']=batch_progress;checkpoint_update(cp)
  if batch_progress is not None:
   for key in ('adapter_pending','skipped','deferred','other_unlaunched','processed'):
@@ -754,19 +772,7 @@ def run_tests(games,cp,mode):
   cp.update({k:metrics[k] for k in ('unique_games_processed','result_records','launch_transactions','retry_transactions','static_preflight_results','engine_fail_total_historical','engine_fail_active','auto_certified','game_fail','static_fail','flaky','needs_repair','restores_verified','restore_failures','counts')})
   cp['attempted_new']=metrics['launch_transactions'];cp['next_untested']=next_cursor(rows,ad.live_systems());cp['next_game']=None;cp['current_test']=None
   if batch_progress is not None:
-   batch_progress['launched']+=bool(result.get('transaction_id'))
-   batch_progress['restore_verified']+=result.get('restore',{}).get('status')=='RESTORE_VERIFIED'
-   batch_progress['restore_failures']+=result.get('restore',{}).get('status')=='RESTORE_FAILURE'
-   batch_progress['last_game']=game['rom']
-   batch_progress['auto_pass']+=result.get('result')=='AUTO_PASS';batch_progress['game_fail']+=result.get('result')=='GAME_FAIL'
-   batch_progress['static_fail']+=result.get('result')=='STATIC_FAIL';batch_progress['flaky']+=result.get('result')=='FLAKY'
-   batch_progress['processed']+=1
-   if not result.get('transaction_id'):
-    if result.get('result')=='ADAPTER_NOT_READY':batch_progress['adapter_pending']+=1
-    elif result.get('result') in ('SKIPPED','NOT_ELIGIBLE','PRECHECK_SKIPPED','ALREADY_TERMINAL','CONTENT_MISSING','UNSUPPORTED'):
-     batch_progress['skipped']+=1
-    elif result.get('result')=='DEFERRED':batch_progress['deferred']+=1
-    elif result.get('result')!='STATIC_FAIL':batch_progress['other_unlaunched']+=1
+   record_batch_result(batch_progress,result)
    cp['batch_in_progress']=batch_progress
   checkpoint_update(cp)
   launched+=bool(result.get('transaction_id'));restored+=result.get('restore',{}).get('status')=='RESTORE_VERIFIED';last=game['rom']
@@ -805,7 +811,7 @@ def run_tests(games,cp,mode):
    'started_at':progress.get('started_at',started),'finished_at':stamp(),'first_game':progress.get('first_game',first),'last_game':progress.get('last_game',last),'next_game':cp['next_untested']}
   cp.pop('batch_in_progress',None)
   try:
-   m=json.loads(MASTER.read_text());ph=m.get('phases',{}).get('PHASE_14_FULL_GAME_CERTIFICATION',{});ph['updated_at']=utc();ph['summary']=f"{name}: {len(games)} considerados, {launched} lanzados, {batch_pass} AUTO_PASS, {batch_game} GAME_FAIL, {batch_static} STATIC_FAIL; restores {restored}/{launched}; AUTO_CERTIFIED={metrics['auto_certified']}; NEXT_GAME={cp['next_untested']}";m['certification_counts']={**m.get('certification_counts',{}),'auto_certified':metrics['auto_certified'],'attempted_new':metrics['launch_transactions'],'unique_games_processed':metrics['unique_games_processed'],'result_records':metrics['result_records'],'launch_transactions':metrics['launch_transactions'],'retry_transactions':metrics['retry_transactions'],'static_fail':metrics['static_fail'],'game_fail':metrics['game_fail'],'flaky':metrics['flaky'],'needs_repair':metrics['needs_repair'],'control_certified':metrics['control_certified'] if 'control_certified' in metrics else sum(r.get('control_certification')=='CONTROL_CERTIFIED' for r in rows),'guest_ready':sum(r.get('guest_ready')=='YES' for r in rows),'total_restores':metrics['restores_verified'],'restore_failures':metrics['restore_failures'],'next_game':cp['next_untested'],'engine_failures_unresolved':metrics['engine_fail_active']};m['updated_at']=utc();atomic_json(MASTER,m)
+   m=json.loads(MASTER.read_text());ph=m.get('phases',{}).get('PHASE_14_FULL_GAME_CERTIFICATION',{});ph['updated_at']=utc();ph['summary']=phase_summary(cp['latest_batch'],metrics['auto_certified'],cp['next_untested']);m['certification_counts']={**m.get('certification_counts',{}),'auto_certified':metrics['auto_certified'],'attempted_new':metrics['launch_transactions'],'unique_games_processed':metrics['unique_games_processed'],'result_records':metrics['result_records'],'launch_transactions':metrics['launch_transactions'],'retry_transactions':metrics['retry_transactions'],'static_fail':metrics['static_fail'],'game_fail':metrics['game_fail'],'flaky':metrics['flaky'],'needs_repair':metrics['needs_repair'],'control_certified':metrics['control_certified'] if 'control_certified' in metrics else sum(r.get('control_certification')=='CONTROL_CERTIFIED' for r in rows),'guest_ready':sum(r.get('guest_ready')=='YES' for r in rows),'total_restores':metrics['restores_verified'],'restore_failures':metrics['restore_failures'],'next_game':cp['next_untested'],'engine_failures_unresolved':metrics['engine_fail_active']};m['updated_at']=utc();atomic_json(MASTER,m)
   except Exception as e:
    cp['status']='PAUSED_ENGINE_FAILURE';cp['blocked_reason']='MASTER_CHECKPOINT_UPDATE_FAILED:'+type(e).__name__;checkpoint_update(cp);return False
  checkpoint_update(cp)
@@ -922,7 +928,7 @@ def main():
  try:acquire_certifier_lock()
  except RuntimeError as e:
   print(json.dumps({'result':'REFUSED','reason':str(e)},ensure_ascii=False));return 3
- cp.setdefault('results',[]);cp['status']='RUNNING';cp['mode']=mode;cp['selected_count']=len(games);checkpoint_update(cp)
+ cp.setdefault('results',[]);cp['status']='RUNNING';cp['mode']=mode;set_invocation_selection(cp,len(games));checkpoint_update(cp)
  ok=run_tests(games,cp,mode)
  print(json.dumps({'batch_status':cp.get('status'),'mode':mode,'selected':len(games),'counts':cp.get('counts',{}),
                    'next_game':cp.get('next_game'),'engine_ok':ok},ensure_ascii=False,indent=2))
