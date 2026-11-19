@@ -1,18 +1,18 @@
 # ARCADE AUTOPILOT — último ciclo
 
-- Actualizado: 2026-11-19T14:50:43+00:00
-- Batch: priority_batch_63
+- Actualizado: 2026-11-19T15:11:35+00:00
+- Batch: priority_batch_64
 - Considerados: 100
-- Lanzados: 0
-- AUTO_PASS: 0
+- Lanzados: 37
+- AUTO_PASS: 37
 - GAME_FAIL: 0
 - STATIC_FAIL: 0
-- Restores: 0/0
-- AUTO_CERTIFIED acumulado: 5155
+- Restores: 37/37
+- AUTO_CERTIFIED acumulado: 5192
 - Reparaciones automáticas realizadas: 0 (sin receta revisada)
 - CODEX_REQUIRED pendientes: 4
 - MANUAL_REQUIRED pendientes: 1
-- NEXT_GAME: `dreamcast:/userdata/roms/dreamcast/SQRXZ 2 (World).cdi`
+- NEXT_GAME: `pcengine:/userdata/roms/pcengine/Blazing Lazers (Gunhed - Hudson Gunhed Taikai) (ESP-Japan-RMGlitch).pce`
 - Safety: COMPLETE; sin bloqueo registrado
 - GitHub: gestionado por task separada del publisher; SHA verificado en `autopilot_state.json`.
 - Próximo paso: Publicar reportes/checkpoints y recalcular la siguiente tarea.

@@ -1,16 +1,16 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-19T14:50:42+00:00
+- UPDATED_AT: 2026-11-19T15:11:34+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 5328
-- UNIQUE_GAMES_PROCESSED: 6223
-- RESULT_RECORDS: 6225
-- LAUNCH_TRANSACTIONS: 5328
+- ATTEMPTED_NEW: 5365
+- UNIQUE_GAMES_PROCESSED: 6323
+- RESULT_RECORDS: 6325
+- LAUNCH_TRANSACTIONS: 5365
 - RETRY_TRANSACTIONS: 2
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 5155
+- AUTO_CERTIFIED: 5192
 - STATIC_FAIL: 194
 - GAME_FAIL: 171
 - FLAKY: 0
@@ -19,8 +19,8 @@
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/SQRXZ 2 (World).cdi
-- TOTAL_RESTORES: 5328
+- NEXT_GAME: pcengine:/userdata/roms/pcengine/Blazing Lazers (Gunhed - Hudson Gunhed Taikai) (ESP-Japan-RMGlitch).pce
+- TOTAL_RESTORES: 5365
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -37,7 +37,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | cannonball | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | cdogs | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | devilutionx | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 8 |
-| dreamcast | 775 | 775 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 72 |
+| dreamcast | 775 | 775 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 |
 | easyrpg | 12 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 |
 | fbneo | 104 | 104 | 88 | 52 | 52 | 0 | 0 | 0 | 0 | 0 |
 | fds | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -51,7 +51,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | ikemen | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
 | mame | 1324 | 1324 | 1112 | 1008 | 37 | 142 | 0 | 0 | 0 | 137 |
 | mastersystem | 383 | 383 | 0 | 381 | 0 | 1 | 0 | 0 | 0 | 1 |
-| megacd | 24 | 24 | 0 | 8 | 0 | 0 | 0 | 0 | 0 | 16 |
+| megacd | 24 | 24 | 0 | 23 | 0 | 0 | 0 | 0 | 0 | 1 |
 | megadrive | 1037 | 1037 | 0 | 1016 | 0 | 13 | 0 | 0 | 0 | 8 |
 | mrboom | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | n64 | 377 | 377 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 377 |
@@ -61,7 +61,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | nes | 702 | 702 | 0 | 700 | 0 | 2 | 0 | 0 | 0 | 0 |
 | odcommander | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | openbor | 128 | 128 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 128 |
-| pcengine | 529 | 529 | 0 | 188 | 0 | 0 | 0 | 0 | 0 | 341 |
+| pcengine | 529 | 529 | 0 | 210 | 0 | 0 | 0 | 0 | 0 | 319 |
 | ports | 5 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 5 |
 | prboom | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
 | ps2 | 196 | 196 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 196 |
@@ -86,10 +86,10 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_63; considerados 100; lanzados 0; AUTO_PASS 0; restore 0/0.
+- Lote más reciente: priority_batch_64; considerados 100; lanzados 37; AUTO_PASS 37; restore 37/37.
 - CURRENT_INVOCATION_SELECTED_COUNT: 100 (selección de la invocación más reciente; no es el total acumulado del batch).
 - Estado de runner: COMPLETE.
-- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/SQRXZ 2 (World).cdi.
+- NEXT_GAME: pcengine:/userdata/roms/pcengine/Blazing Lazers (Gunhed - Hudson Gunhed Taikai) (ESP-Japan-RMGlitch).pce.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY

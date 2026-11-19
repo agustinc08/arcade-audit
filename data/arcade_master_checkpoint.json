@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-19T14:50:31+00:00",
+  "updated_at": "2026-11-19T15:10:42+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_63: 100 considerados, 0 lanzados, 0 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 0/0; AUTO_CERTIFIED=5155; NEXT_GAME=dreamcast:/userdata/roms/dreamcast/SQRXZ 2 (World).cdi",
+      "summary": "priority_batch_64: 100 considerados, 37 lanzados, 37 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 37/37; AUTO_CERTIFIED=5192; NEXT_GAME=pcengine:/userdata/roms/pcengine/Blazing Lazers (Gunhed - Hudson Gunhed Taikai) (ESP-Japan-RMGlitch).pce",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-19T14:50:31+00:00"
+      "updated_at": "2026-11-19T15:10:42+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 5155,
-    "attempted_new": 5328,
+    "auto_certified": 5192,
+    "attempted_new": 5365,
     "static_fail": 194,
     "game_fail": 171,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
     "needs_repair": 365,
-    "total_restores": 5328,
+    "total_restores": 5365,
     "restore_failures": 0,
-    "next_game": "dreamcast:/userdata/roms/dreamcast/SQRXZ 2 (World).cdi",
+    "next_game": "pcengine:/userdata/roms/pcengine/Blazing Lazers (Gunhed - Hudson Gunhed Taikai) (ESP-Japan-RMGlitch).pce",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 6223,
-    "result_records": 6225,
-    "launch_transactions": 5328,
+    "unique_games_processed": 6323,
+    "result_records": 6325,
+    "launch_transactions": 5365,
     "retry_transactions": 2
   }
 }
