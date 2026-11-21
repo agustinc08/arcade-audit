@@ -23,6 +23,15 @@ No hay cron, servicio ni auto-start. Se conservan identity, ES/API/marker,
 HDMI/audio, restore, `batocera.conf`, core/overrides MAME, P1–P4, disco y
 transaction gates.
 
+Cada transacción automática autoriza como máximo un inicio de emulador. El
+dispatcher reclama el inicio mediante escritura atómica ligada a
+`transaction_id`, `boot_id`, identidad PID/start_ticks de EmulationStation,
+sistema, ROM canónica e identidad de la invocación. Una segunda ejecución ES
+que aún coincida con esa transacción queda registrada y se suprime antes de
+`configgen`/`emulatorlauncher`. Contexto ausente, corrupto o con identidad
+ambigua bloquea el lanzamiento automático. El camino manual no usa esta
+reclamación y conserva el selector normal; no se deduplica por ROM/tiempo.
+
 ## Comandos
 
 - `arcade_autopilot start [--batch-size 100] [--max-batches 10]`: health check,

@@ -207,6 +207,100 @@ def authorize_invocation(*, system: str, rom: str, dispatcher_pid: int,
         return True, 'MATCH', invocation
 
 
+def claim_emulator_launch(invocation: dict | None, *, system: str, rom: str,
+                          dispatcher_pid: int, ppid: int,
+                          path: Path = ACTIVE_CONTEXT,
+                          boot_id: str | None = None) -> tuple[str, str]:
+    """Atomically allow at most one emulator launch for an automatic transaction.
+
+    Manual launches do not carry an invocation and remain unaffected. An
+    invalid or ambiguous automatic context is refused; a second, otherwise
+    valid invocation of the same transaction is suppressed before configgen.
+    """
+    if invocation is None:
+        return 'ALLOW', 'MANUAL_LAUNCH'
+    with _locked(path):
+        context = read_context(path)
+        if not context:
+            return 'REFUSE', 'AUTOMATIC_CONTEXT_MISSING_OR_CORRUPT'
+        expected_boot = boot_id or current_boot_id()
+        if (context.get('schema_version') != 1 or context.get('state') != 'ACTIVE' or
+                not expected_boot or context.get('boot_id') != expected_boot):
+            return 'REFUSE', 'AUTOMATIC_CONTEXT_INACTIVE_OR_WRONG_BOOT'
+        if (context.get('transaction_id') != invocation.get('transaction_id') or
+                context.get('system') != system or context.get('rom') != _canonical_rom(rom) or
+                invocation.get('system') != system or invocation.get('rom') != _canonical_rom(rom) or
+                invocation.get('automatic_context_match') is not True):
+            return 'REFUSE', 'AUTOMATIC_CONTEXT_IDENTITY_MISMATCH'
+        if not _live_identity_matches(context.get('certifier'), 'full_game_certifier.py'):
+            return 'REFUSE', 'CERTIFIER_IDENTITY_NOT_LIVE'
+        if context.get('autopilot'):
+            owner = context['autopilot']
+            if (not _live_identity_matches(owner, 'arcade_autopilot.py') or
+                    owner.get('run_id') not in owner.get('cmdline', '')):
+                return 'REFUSE', 'AUTOPILOT_IDENTITY_NOT_LIVE'
+        es_identity = context.get('emulationstation')
+        dispatcher = process_identity(dispatcher_pid)
+        if (not dispatcher or dispatcher.get('ppid') != ppid or
+                DISPATCHER not in dispatcher.get('cmdline', '') or
+                not _ancestry_reaches_es(dispatcher_pid, es_identity or {})):
+            return 'REFUSE', 'EMULATIONSTATION_ANCESTRY_MISMATCH'
+        invocations = context.get('invocations')
+        if not isinstance(invocations, list):
+            return 'REFUSE', 'INVOCATION_LOG_CORRUPT'
+        record = next((item for item in invocations
+                       if item.get('selector_invocation_id') == invocation.get('selector_invocation_id')), None)
+        if (not record or record.get('pid') != dispatcher_pid or record.get('ppid') != ppid or
+                record.get('dispatcher_start_ticks') != dispatcher.get('start_ticks') or
+                record.get('transaction_id') != context.get('transaction_id') or
+                record.get('automatic_context_match') is not True):
+            return 'REFUSE', 'AUTOMATIC_INVOCATION_IDENTITY_MISMATCH'
+
+        claim = context.get('emulator_launch_claim')
+        if claim is None:
+            context['emulator_launch_claim'] = {
+                'state': 'CLAIMED',
+                'transaction_id': context['transaction_id'],
+                'boot_id': context['boot_id'],
+                'system': system,
+                'rom': _canonical_rom(rom),
+                'emulationstation': es_identity,
+                'selector_invocation_id': invocation['selector_invocation_id'],
+                'dispatcher': {
+                    'pid': dispatcher_pid,
+                    'start_ticks': dispatcher['start_ticks'],
+                    'ppid': ppid,
+                },
+                'claimed_at_utc': datetime.now(timezone.utc).isoformat(timespec='milliseconds'),
+            }
+            record['emulator_launch'] = 'ALLOWED'
+            record['emulator_launch_reason'] = 'FIRST_LAUNCH_FOR_TRANSACTION'
+            _atomic_json(path, context)
+            return 'ALLOW', 'FIRST_LAUNCH_FOR_TRANSACTION'
+
+        expected_identity = {
+            'transaction_id': context['transaction_id'],
+            'boot_id': context['boot_id'],
+            'system': system,
+            'rom': _canonical_rom(rom),
+            'emulationstation': es_identity,
+        }
+        if (not isinstance(claim, dict) or claim.get('state') != 'CLAIMED' or
+                any(claim.get(key) != value for key, value in expected_identity.items()) or
+                not isinstance(claim.get('dispatcher'), dict) or
+                not isinstance(claim.get('dispatcher', {}).get('pid'), int) or
+                not isinstance(claim.get('dispatcher', {}).get('start_ticks'), int) or
+                claim.get('selector_invocation_id') not in {
+                    item.get('selector_invocation_id') for item in invocations
+                    if item.get('emulator_launch') == 'ALLOWED'
+                }):
+            return 'REFUSE', 'AUTOMATIC_LAUNCH_CLAIM_CORRUPT_OR_AMBIGUOUS'
+        record['emulator_launch'] = 'SUPPRESSED_DUPLICATE'
+        record['emulator_launch_reason'] = 'DUPLICATE_LAUNCH_FOR_TRANSACTION'
+        _atomic_json(path, context)
+        return 'SUPPRESS', 'DUPLICATE_LAUNCH_FOR_TRANSACTION'
+
+
 def close_context(transaction_id: str, *, archive_path: Path | None = None,
                   reason: str = 'TRANSACTION_FINISHED', path: Path = ACTIVE_CONTEXT) -> dict | None:
     with _locked(path):

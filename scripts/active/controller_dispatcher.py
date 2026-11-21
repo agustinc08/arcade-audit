@@ -1192,6 +1192,7 @@ def parent_launch(argv: list[str], choice_override: str | None) -> int:
         show_error(message)
         return 1
 
+    automatic_invocation = None
     if choice_override:
         choice = choice_override
     else:
@@ -1203,6 +1204,7 @@ def parent_launch(argv: list[str], choice_override: str | None) -> int:
         except Exception as exc:
             matched, match_reason, invocation = False, "CONTEXT_CHECK_ERROR:" + type(exc).__name__, None
         if matched:
+            automatic_invocation = invocation
             choice = "external"
             marker_consumed = remove_owned_marker(invocation['transaction_id'], owner='full_game_certifier')
             log_line(
@@ -1222,8 +1224,10 @@ def parent_launch(argv: list[str], choice_override: str | None) -> int:
             # A certifier marker without a matching active context is not an
             # authorization. Other legacy marker owners keep their old path.
             marker = read_marker(BOOT_AUDIT_ONCE)
-            if marker and marker.get('owner') == 'full_game_certifier':
-                choice = None
+            if automatic_context.ACTIVE_CONTEXT.exists() or (marker and marker.get('owner') == 'full_game_certifier'):
+                log_line(log_path, "automatic_context_fail_closed", system=system,
+                         rom=rom, reason=match_reason)
+                return 1
             else:
                 choice = consume_boot_audit_once(system, rom)
                 if choice:
@@ -1262,6 +1266,39 @@ def parent_launch(argv: list[str], choice_override: str | None) -> int:
     if choice == "cancel":
         log_line(log_path, "cancel", system=system, rom=rom)
         return 0
+
+    if automatic_invocation is not None:
+        decision, reason = automatic_context.claim_emulator_launch(
+            automatic_invocation,
+            system=system,
+            rom=rom,
+            dispatcher_pid=os.getpid(),
+            ppid=os.getppid(),
+        )
+        if decision != "ALLOW":
+            event = "automatic_emulator_launch_suppressed" if decision == "SUPPRESS" else "automatic_emulator_launch_refused"
+            log_line(
+                log_path,
+                event,
+                system=system,
+                rom=rom,
+                transaction_id=automatic_invocation.get("transaction_id"),
+                selector_invocation_id=automatic_invocation.get("selector_invocation_id"),
+                decision=decision,
+                reason=reason,
+            )
+            # A proven duplicate is a successful no-op for ES; an ambiguous
+            # certification context fails closed and never reaches configgen.
+            return 0 if decision == "SUPPRESS" else 1
+        log_line(
+            log_path,
+            "automatic_emulator_launch_claimed",
+            system=system,
+            rom=rom,
+            transaction_id=automatic_invocation.get("transaction_id"),
+            selector_invocation_id=automatic_invocation.get("selector_invocation_id"),
+            reason=reason,
+        )
 
     try:
         natural = scan_sdl()

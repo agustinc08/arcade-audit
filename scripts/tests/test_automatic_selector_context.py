@@ -41,6 +41,15 @@ class AutomaticSelectorContextTests(unittest.TestCase):
             return ASC.authorize_invocation(system=system, rom=rom or self.rom,
                 dispatcher_pid=pid, ppid=302, path=self.path, boot_id=boot)
 
+    def claim(self, invocation, pid=303, system='prboom', rom=None, boot='boot-A', ancestry=True):
+        values = dict(self.base)
+        with patch.object(ASC, 'current_boot_id', return_value='boot-A'), \
+             patch.object(ASC, 'process_identity', side_effect=lambda p: values.get(p)), \
+             patch.object(ASC, '_ancestry_reaches_es', return_value=ancestry), \
+             patch.object(ASC, '_live_identity_matches', return_value=True):
+            return ASC.claim_emulator_launch(invocation, system=system, rom=rom or self.rom,
+                dispatcher_pid=pid, ppid=302, path=self.path, boot_id=boot)
+
     def test_transaction_invocation_one_and_two_choose_joysticks(self):
         ok, reason, first = self.authorize()
         self.assertTrue(ok, reason)
@@ -113,6 +122,65 @@ class AutomaticSelectorContextTests(unittest.TestCase):
         self.assertEqual(closed['close_reason'], 'SAFETY_AFTER_PASS')
         self.assertEqual(len(json.loads(archive.read_text())['invocations']), 1)
         self.assertFalse(self.path.exists())
+
+    def test_one_transaction_allows_only_one_emulator_launch(self):
+        ok, reason, first = self.authorize()
+        self.assertTrue(ok, reason)
+        self.assertEqual(self.claim(first), ('ALLOW', 'FIRST_LAUNCH_FOR_TRANSACTION'))
+        self.assertTrue(ASC.set_phase('TX-A', 'POST_EMULATOR', path=self.path))
+        ok, reason, second = self.authorize(pid=304)
+        self.assertTrue(ok, reason)
+        self.assertEqual(self.claim(second, pid=304), ('SUPPRESS', 'DUPLICATE_LAUNCH_FOR_TRANSACTION'))
+        saved = json.loads(self.path.read_text())
+        self.assertEqual(saved['emulator_launch_claim']['dispatcher']['pid'], 303)
+        self.assertEqual([x.get('emulator_launch') for x in saved['invocations']],
+                         ['ALLOWED', 'SUPPRESSED_DUPLICATE'])
+
+    def test_new_transaction_same_rom_can_claim_its_own_launch(self):
+        ASC.close_context('TX-A', path=self.path)
+        with patch.object(ASC, 'current_boot_id', return_value='boot-A'):
+            ASC.create_context(transaction_id='TX-B', system='prboom', rom=self.rom,
+                certifier={'pid': 101, 'start_ticks': 11, 'cmdline': self.base[101]['cmdline']},
+                es_identity=self.es, autopilot=None, path=self.path)
+        ok, reason, invocation = self.authorize()
+        self.assertTrue(ok, reason)
+        self.assertEqual(self.claim(invocation), ('ALLOW', 'FIRST_LAUNCH_FOR_TRANSACTION'))
+
+    def test_manual_launch_same_rom_bypasses_transaction_guard(self):
+        self.path.unlink()
+        self.assertEqual(self.claim(None), ('ALLOW', 'MANUAL_LAUNCH'))
+
+    def test_different_rom_cannot_use_automatic_launch_claim(self):
+        ok, reason, invocation = self.authorize()
+        self.assertTrue(ok, reason)
+        self.assertEqual(self.claim(invocation, rom='/userdata/roms/prboom/other.wad'),
+                         ('REFUSE', 'AUTOMATIC_CONTEXT_IDENTITY_MISMATCH'))
+
+    def test_different_es_identity_fails_closed_before_emulator(self):
+        ok, reason, invocation = self.authorize()
+        self.assertTrue(ok, reason)
+        self.assertEqual(self.claim(invocation, ancestry=False),
+                         ('REFUSE', 'EMULATIONSTATION_ANCESTRY_MISMATCH'))
+
+    def test_reboot_invalidates_automatic_launch_claim(self):
+        ok, reason, invocation = self.authorize()
+        self.assertTrue(ok, reason)
+        self.assertEqual(self.claim(invocation, boot='boot-B'),
+                         ('REFUSE', 'AUTOMATIC_CONTEXT_INACTIVE_OR_WRONG_BOOT'))
+
+    def test_corrupt_context_fails_closed_before_emulator(self):
+        ok, reason, invocation = self.authorize()
+        self.assertTrue(ok, reason)
+        self.path.write_text('{broken')
+        self.assertEqual(self.claim(invocation), ('REFUSE', 'AUTOMATIC_CONTEXT_MISSING_OR_CORRUPT'))
+
+    def test_corrupt_launch_claim_fails_closed(self):
+        ok, reason, invocation = self.authorize()
+        self.assertTrue(ok, reason)
+        self.path.write_text(json.dumps({**json.loads(self.path.read_text()),
+                                         'emulator_launch_claim': {'state': 'CLAIMED'}}))
+        self.assertEqual(self.claim(invocation),
+                         ('REFUSE', 'AUTOMATIC_LAUNCH_CLAIM_CORRUPT_OR_AMBIGUOUS'))
 
 
 if __name__ == '__main__':
