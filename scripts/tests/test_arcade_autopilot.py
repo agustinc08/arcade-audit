@@ -69,6 +69,100 @@ class AutopilotTests(unittest.TestCase):
             {'single_transaction_retry_completed': True}))
         self.assertFalse(AP.single_transaction_retry_completion_lock({}))
 
+    def batch69_recovery_fixture(self):
+        tx = AP.BATCH69_TX
+        batch = {'name': 'priority_batch_69', 'considered': 1, 'launched': 1,
+                 'processed': 1, 'auto_pass': 0, 'game_fail': 0, 'static_fail': 0,
+                 'restore_verified': 1, 'restore_failures': 0}
+        incident = {'system': 'mrboom', 'rom': '/userdata/roms/mrboom/MrBoom.libretro',
+                    'result': 'SYSTEM_SAFETY_FAILURE', 'failure_class': 'ES_LAUNCH_PROCESS_ACTIVE',
+                    'transaction_id': tx, 'restore': {'status': 'RESTORE_VERIFIED', 'transaction_id': tx}}
+        cp = {'status': 'PAUSED_SYSTEM_SAFETY_FAILURE', 'blocked_reason': 'ES_LAUNCH_PROCESS_ACTIVE',
+              'engine_fail_active': 1, 'next_untested': AP.BATCH69_GAME, 'current_test': None,
+              'batch_in_progress': batch, 'results': [incident]}
+        keys = ('two_consecutive_clean_runtime_observations', 'es_idle', 'running_game_none',
+                'marker_absent', 'selector_absent', 'launcher_absent', 'emulator_absent',
+                'all_launch_and_emulator_processes_absent', 'no_active_certifier', 'no_active_autopilot',
+                'no_partial_transaction', 'manifest_restore_verified', 'restored_paths_match_pre_state',
+                'emulator_not_started', 'normal_selector_cancel_verified', 'batch69_transactions_consistent',
+                'batch68_preserved', 'mrboom_csv_still_not_tested', 'cursor_matches_canonical_queue',
+                'hdmi_pass', 'logical_p1_p4_stable_identity', 'protected_config_pass',
+                'only_active_stop_is_reconciled_safety_incident', 'result_evidence_unchanged',
+                'batch_progress_unchanged')
+        evidence = {'passed': True, 'current_boot_id': 'boot-test', 'transaction_id': tx,
+                    'next_game': AP.BATCH69_GAME, 'active_stop_result_count': 1,
+                    'checks': {key: True for key in keys},
+                    'result_records_sha256': 'a'*64, 'batch_progress_sha256': 'b'*64,
+                    'csv_sha256': 'c'*64}
+        return cp, evidence
+
+    def test_batch69_recovery_requires_exact_incident_and_all_clean_gates(self):
+        cp, evidence = self.batch69_recovery_fixture()
+        allowed, reason, recovery = AP.batch69_recovered_safety_plan(cp, evidence)
+        self.assertTrue(allowed); self.assertEqual(reason, 'ES_LAUNCH_PROCESS_ACTIVE')
+        self.assertEqual(recovery['reconciled_engine_fail_active'], 0)
+        for gate in ('selector_absent', 'launcher_absent', 'emulator_absent',
+                     'manifest_restore_verified', 'restored_paths_match_pre_state',
+                     'batch68_preserved', 'mrboom_csv_still_not_tested',
+                     'cursor_matches_canonical_queue', 'hdmi_pass',
+                     'logical_p1_p4_stable_identity', 'protected_config_pass',
+                     'normal_selector_cancel_verified'):
+            changed, ev = self.batch69_recovery_fixture(); ev['checks'][gate] = False
+            self.assertFalse(AP.batch69_recovered_safety_plan(changed, ev)[0], gate)
+        changed, ev = self.batch69_recovery_fixture(); changed['next_untested'] = 'other:/rom'
+        self.assertFalse(AP.batch69_recovered_safety_plan(changed, ev)[0])
+        changed, ev = self.batch69_recovery_fixture(); changed['results'][-1]['result'] = 'AUTO_PASS'
+        self.assertFalse(AP.batch69_recovered_safety_plan(changed, ev)[0])
+        changed, ev = self.batch69_recovery_fixture(); changed['batch_in_progress']['restore_verified'] = 0
+        self.assertFalse(AP.batch69_recovered_safety_plan(changed, ev)[0])
+
+    def test_batch69_recovery_preserves_launch_result_and_batch_progress(self):
+        import copy
+        cp, evidence = self.batch69_recovery_fixture()
+        before_batch = copy.deepcopy(cp['batch_in_progress']); before_results = copy.deepcopy(cp['results'])
+        _, _, recovery = AP.batch69_recovered_safety_plan(cp, evidence)
+        cp = AP.apply_recovered_checkpoint_metadata(cp, recovery)
+        self.assertEqual(cp['batch_in_progress'], before_batch)
+        self.assertEqual(cp['results'], before_results)
+        self.assertEqual(cp['engine_fail_active'], 0)
+        self.assertEqual(cp['next_untested'], AP.BATCH69_GAME)
+        self.assertEqual(cp['results'][-1]['result'], 'SYSTEM_SAFETY_FAILURE')
+
+    def test_batch69_retry_match_is_exact_and_digest_bound(self):
+        import hashlib
+        cp, evidence = self.batch69_recovery_fixture()
+        recovery = {'transaction_id': AP.BATCH69_TX,
+            'previous_blocked_reason': 'ES_LAUNCH_PROCESS_ACTIVE',
+            'recovery_reason': 'BATCH69_RESIDUAL_DOOM_SELECTOR_CLOSED_AND_RUNTIME_CLEAN',
+            'reconciled_engine_fail_active': 0, 'previous_active_engine_fail_count': 1,
+            'next_game': AP.BATCH69_GAME, 'runtime_checks': evidence['checks'],
+            'result_records_sha256': hashlib.sha256(json.dumps(cp['results'], sort_keys=True,
+                separators=(',', ':')).encode()).hexdigest(),
+            'batch_progress_sha256': hashlib.sha256(json.dumps(cp['batch_in_progress'], sort_keys=True,
+                separators=(',', ':')).encode()).hexdigest(), 'csv_sha256': 'c'*64}
+        cp['status'] = 'STOPPED_SAFE'; cp['blocked_reason'] = None; cp['engine_fail_active'] = 0
+        cp['safety_recovery'] = recovery
+        game = {'system': 'mrboom', 'rom': '/userdata/roms/mrboom/MrBoom.libretro'}
+        self.assertTrue(CERT.reconciled_batch69_retry_matches(game, cp, 'c'*64))
+        self.assertFalse(CERT.reconciled_batch69_retry_matches(
+            {'system': 'prboom', 'rom': '/userdata/roms/prboom/doom1_shareware.wad'}, cp, 'c'*64))
+        self.assertFalse(CERT.reconciled_batch69_retry_matches(game, cp, 'd'*64))
+        cp['safety_recovery']['runtime_checks']['emulator_absent'] = False
+        self.assertFalse(CERT.reconciled_batch69_retry_matches(game, cp, 'c'*64))
+
+    def test_batch_accounting_retains_failed_launch_and_records_verified_retry(self):
+        progress = {'name': 'priority_batch_69', 'considered': 1, 'launched': 1,
+                    'processed': 1, 'auto_pass': 0, 'game_fail': 0, 'restore_verified': 1,
+                    'restore_failures': 0}
+        CERT.record_batch_result(progress, {'transaction_id': 'retry-tx', 'result': 'AUTO_PASS',
+            'failure_class': None, 'restore': {'status': 'RESTORE_VERIFIED'}})
+        self.assertEqual(progress['launched'], 2)
+        self.assertEqual(progress['processed'], 2)
+        self.assertEqual(progress['auto_pass'], 1)
+        self.assertEqual(progress['game_fail'], 0)
+        self.assertEqual(progress['restore_verified'], 2)
+        self.assertEqual(progress['restore_failures'], 0)
+
     def recovered_checkpoint_fixture(self):
         return {
             'status': 'PAUSED_SYSTEM_SAFETY_FAILURE',

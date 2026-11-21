@@ -788,6 +788,42 @@ def reconciled_batch68_retry_matches(game,cp,csv_sha256):
   tail[-2].get('transaction_id')==old_tx and tail[-1].get('transaction_id')==retry_tx and
   recovery.get('result_records_sha256')==results_sha and recovery.get('batch_progress_sha256')==batch_sha)
 
+def reconciled_batch69_retry_matches(game,cp,csv_sha256):
+ # Permit only the exact non-terminal MrBoom safety transaction after its
+ # clean-runtime reconciliation. Bind retry permission to the unchanged data.
+ recovery=cp.get('safety_recovery') or {};runtime=recovery.get('runtime_checks') or {}
+ system=game.get('system');rom=game.get('rom')
+ latest={}
+ for item in cp.get('results',[]):latest[(item.get('system'),item.get('rom'))]=item
+ incident=latest.get(('mrboom','/userdata/roms/mrboom/MrBoom.libretro'),{})
+ required=('two_consecutive_clean_runtime_observations','es_idle','running_game_none',
+  'marker_absent','selector_absent','launcher_absent','emulator_absent',
+  'all_launch_and_emulator_processes_absent','no_active_certifier',
+  'no_active_autopilot','no_partial_transaction','manifest_restore_verified',
+  'restored_paths_match_pre_state','batch69_transactions_consistent','batch68_preserved',
+  'mrboom_csv_still_not_tested','cursor_matches_canonical_queue','hdmi_pass',
+  'logical_p1_p4_stable_identity','protected_config_pass',
+  'only_active_stop_is_reconciled_safety_incident','normal_selector_cancel_verified',
+  'result_evidence_unchanged','batch_progress_unchanged','emulator_not_started')
+ results_sha=hashlib.sha256(json.dumps(cp.get('results',[]),ensure_ascii=False,sort_keys=True,
+  separators=(',',':')).encode()).hexdigest()
+ batch_sha=hashlib.sha256(json.dumps(cp.get('batch_in_progress'),ensure_ascii=False,sort_keys=True,
+  separators=(',',':')).encode()).hexdigest()
+ return bool(system=='mrboom' and rom=='/userdata/roms/mrboom/MrBoom.libretro' and
+  cp.get('status')=='STOPPED_SAFE' and cp.get('blocked_reason') is None and cp.get('engine_fail_active')==0 and
+  cp.get('next_untested')=='mrboom:/userdata/roms/mrboom/MrBoom.libretro' and
+  recovery.get('transaction_id')=='20261120T233918_99d5ee09e8' and
+  recovery.get('previous_blocked_reason')=='ES_LAUNCH_PROCESS_ACTIVE' and
+  recovery.get('recovery_reason')=='BATCH69_RESIDUAL_DOOM_SELECTOR_CLOSED_AND_RUNTIME_CLEAN' and
+  recovery.get('reconciled_engine_fail_active')==0 and recovery.get('previous_active_engine_fail_count')==1 and
+  recovery.get('next_game')=='mrboom:/userdata/roms/mrboom/MrBoom.libretro' and
+  all(runtime.get(key) is True for key in required) and
+  recovery.get('result_records_sha256')==results_sha and recovery.get('batch_progress_sha256')==batch_sha and
+  recovery.get('csv_sha256')==csv_sha256 and incident.get('transaction_id')=='20261120T233918_99d5ee09e8' and
+  incident.get('result')=='SYSTEM_SAFETY_FAILURE' and incident.get('failure_class')=='ES_LAUNCH_PROCESS_ACTIVE' and
+  incident.get('restore',{}).get('status')=='RESTORE_VERIFIED' and
+  incident.get('restore',{}).get('transaction_id')=='20261120T233918_99d5ee09e8')
+
 def assert_reconciled_queue(rows,cp,systems,batch_size=None):
  metrics=certification_metrics(rows,cp)
  for key in ('auto_certified','game_fail','static_fail','flaky','needs_repair'):
@@ -826,7 +862,8 @@ def assert_reconciled_queue(rows,cp,systems,batch_size=None):
     raise RuntimeError('QUEUE_INVARIANT_FAIL: selected terminal game')
    has_prior_result=any(x.get('system')==game['system'] and x.get('rom')==game['rom'] for x in cp.get('results',[]))
    current_csv_sha=hashlib.sha256(TABLE.read_bytes()).hexdigest()
-   if has_prior_result and not reconciled_batch68_retry_matches(game,cp,current_csv_sha):
+   if has_prior_result and not (reconciled_batch68_retry_matches(game,cp,current_csv_sha) or
+                                reconciled_batch69_retry_matches(game,cp,current_csv_sha)):
     raise RuntimeError('QUEUE_INVARIANT_FAIL: selected game already has a result')
  return metrics
 
