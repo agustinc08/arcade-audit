@@ -25,13 +25,19 @@ import full_game_certifier as CERT
 
 class AutopilotTests(unittest.TestCase):
     def test_batch68_retry_authorization_forces_exactly_one_game_only(self):
-        task = {'id': 'CERT-BATCH-0068', 'attempts': 5, 'max_attempts': 6,
+        task = {'id': 'CERT-BATCH-0068', 'attempts': 7, 'max_attempts': 8,
             'recovery_retry_authorization': {'post_fix_retry': {
-                'additional_task_attempts': 1, 'additional_game_transactions': 1,
+                'additional_task_attempts': 3, 'additional_game_transactions': 1,
                 'starting_game': AP.BATCH68_GAME, 'github_sha': 'a' * 40,
                 'launch_transactions_before': 5687, 'result_records_before': 6647,
                 'batch_launched_before': 22, 'batch_auto_pass_before': 20,
-                'batch_game_fail_before': 0}}}
+                'batch_game_fail_before': 0,
+                'prelaunch_refusals': [
+                    {'run_id': '20261120T231924_3dc310ae', 'reason': 'ENGINE_FAIL_COUNTER_MISMATCH',
+                     'game_transaction_started': False, 'new_transactions': 0},
+                    {'run_id': '20261120T232753_83f95d7b',
+                     'reason': 'QUEUE_INVARIANT_FAIL: selected game already has a result',
+                     'game_transaction_started': False, 'new_transactions': 0}]}}}
         cp = {'status': 'STOPPED_SAFE', 'blocked_reason': None, 'engine_fail_active': 0,
             'current_test': None, 'next_untested': AP.BATCH68_GAME,
             'launch_transactions': 5687, 'result_records': 6647,
@@ -43,6 +49,8 @@ class AutopilotTests(unittest.TestCase):
         obj = {'tasks': [task]}
         self.assertTrue(AP.batch68_single_transaction_retry_authorized(obj, cp, 'a' * 40))
         self.assertFalse(AP.batch68_single_transaction_retry_authorized(obj, cp, 'b' * 40))
+        task['recovery_retry_authorization']['post_fix_retry']['prelaunch_refusals'].pop()
+        self.assertFalse(AP.batch68_single_transaction_retry_authorized(obj, cp, 'a' * 40))
         cp['batch_in_progress']['launched'] = 23
         self.assertFalse(AP.batch68_single_transaction_retry_authorized(obj, cp, 'a' * 40))
 
@@ -985,6 +993,56 @@ class Batch68RunnerRecoveryGateTests(unittest.TestCase):
         self.assertEqual(RUNNER.active_engine_failure_count(cp, CERT.STOP_ENGINE), 1)
         cp = self.checkpoint(); cp['results'][0]['restore']['status'] = 'RESTORE_FAILURE'
         self.assertEqual(RUNNER.active_engine_failure_count(cp, CERT.STOP_ENGINE), 1)
+
+    def test_runner_ignores_the_exactly_reconciled_second_doom_incident(self):
+        cp = self.checkpoint()
+        current_tx = '20261120T213050_7ed567f0ef'
+        cp['safety_recovery']['transaction_id'] = current_tx
+        cp['results'][0]['transaction_id'] = current_tx
+        cp['results'][0]['restore']['transaction_id'] = current_tx
+        self.assertEqual(RUNNER.active_engine_failure_count(cp, CERT.STOP_ENGINE), 0)
+
+    def test_queue_allows_only_exactly_reconciled_single_doom_retry(self):
+        import hashlib
+        game = {'system': 'prboom', 'rom': '/userdata/roms/prboom/doom1_shareware.wad'}
+        results = [{'system': 'mame', 'rom': f'/userdata/roms/mame/pass{i}.zip',
+                    'result': 'AUTO_PASS', 'transaction_id': f'pass-{i}',
+                    'restore': {'status': 'RESTORE_VERIFIED'}} for i in range(20)]
+        prior = {'system': 'prboom', 'rom': game['rom'], 'result': 'SYSTEM_SAFETY_FAILURE',
+                 'failure_class': 'ES_LAUNCH_PROCESS_ACTIVE', 'transaction_id': AP.BATCH68_TX,
+                 'restore': {'status': 'RESTORE_VERIFIED', 'transaction_id': AP.BATCH68_TX}}
+        current = {'system': 'prboom', 'rom': game['rom'], 'result': 'SYSTEM_SAFETY_FAILURE',
+                   'failure_class': 'ES_LAUNCH_PROCESS_ACTIVE', 'transaction_id': AP.BATCH68_RETRY_TX,
+                   'restore': {'status': 'RESTORE_VERIFIED', 'transaction_id': AP.BATCH68_RETRY_TX}}
+        results.extend([prior, current])
+        batch = {'name': 'priority_batch_68', 'considered': 41, 'launched': 22,
+                 'processed': 22, 'auto_pass': 20, 'game_fail': 0,
+                 'restore_verified': 22, 'restore_failures': 0}
+        result_digest = hashlib.sha256(json.dumps(results, ensure_ascii=False, sort_keys=True,
+            separators=(',', ':')).encode()).hexdigest()
+        batch_digest = hashlib.sha256(json.dumps(batch, ensure_ascii=False, sort_keys=True,
+            separators=(',', ':')).encode()).hexdigest()
+        required = ('operator_confirmed_normal_selector_cancel', 'two_consecutive_clean_runtime_observations',
+            'es_idle', 'running_game_none', 'marker_absent', 'all_launch_and_emulator_processes_absent',
+            'no_active_certifier', 'no_active_autopilot', 'no_partial_transaction',
+            'last_result_restore_verified', 'manifest_restore_verified', 'restored_paths_match_pre_state',
+            'batch68_transactions_consistent', 'previous_terminal_result_preserved', 'doom_csv_still_not_tested',
+            'cursor_matches_canonical_queue', 'hdmi_pass', 'logical_p1_p4_stable_identity',
+            'protected_config_pass', 'result_evidence_unchanged', 'batch_progress_unchanged',
+            'no_game_terminal_result_for_doom')
+        cp = {'status': 'STOPPED_SAFE', 'blocked_reason': None, 'engine_fail_active': 0,
+              'next_untested': AP.BATCH68_GAME, 'results': results, 'batch_in_progress': batch,
+              'safety_recovery': {'transaction_id': AP.BATCH68_RETRY_TX,
+                  'previous_blocked_reason': 'ES_LAUNCH_PROCESS_ACTIVE',
+                  'recovery_reason': 'NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN',
+                  'operator_confirmed_normal_selector_cancel': True,
+                  'previous_active_engine_fail_count': 1, 'reconciled_engine_fail_active': 0,
+                  'next_game': AP.BATCH68_GAME, 'runtime_checks': {key: True for key in required},
+                  'result_records_sha256': result_digest, 'batch_progress_sha256': batch_digest,
+                  'csv_sha256': 'csv-sha'}}
+        self.assertTrue(CERT.reconciled_batch68_retry_matches(game, cp, 'csv-sha'))
+        cp['results'][-1]['transaction_id'] = 'foreign-transaction'
+        self.assertFalse(CERT.reconciled_batch68_retry_matches(game, cp, 'csv-sha'))
 
     def test_runtime_gate_accepts_only_hash_bound_reconciled_incident(self):
         import hashlib

@@ -1785,14 +1785,19 @@ def batch68_single_transaction_retry_authorized(task_obj, cp, remote_sha=None):
         remote_sha = publisher.get('last_known_remote_sha')
     batch = cp.get('batch_in_progress') or {}
     recovery = cp.get('safety_recovery') or {}
-    refusals = (task.get('recovery_retry_authorization') or {}).get('prelaunch_refusals') or []
-    exact_prelaunch_refusal = any(
-        item.get('reason') == 'ENGINE_FAIL_COUNTER_MISMATCH' and
-        item.get('certifier_started') is False and item.get('new_transactions') == 0
-        for item in refusals if isinstance(item, dict))
+    refusals = authorization.get('prelaunch_refusals') or []
+    expected_refusals = {
+        ('20261120T231924_3dc310ae', 'ENGINE_FAIL_COUNTER_MISMATCH'),
+        ('20261120T232753_83f95d7b', 'QUEUE_INVARIANT_FAIL: selected game already has a result'),
+    }
+    exact_prelaunch_refusal = (
+        len(refusals) == len(expected_refusals) and
+        {(item.get('run_id'), item.get('reason')) for item in refusals if isinstance(item, dict)} == expected_refusals and
+        all(item.get('new_transactions') == 0 and item.get('game_transaction_started') is False
+            for item in refusals if isinstance(item, dict)))
     return bool(
-        task.get('attempts') == 6 and task.get('max_attempts') == 7 and
-        authorization.get('additional_task_attempts') == 2 and exact_prelaunch_refusal and
+        task.get('attempts') == 7 and task.get('max_attempts') == 8 and
+        authorization.get('additional_task_attempts') == 3 and exact_prelaunch_refusal and
         authorization.get('additional_game_transactions') == 1 and
         authorization.get('starting_game') == BATCH68_GAME and
         authorization.get('github_sha') == remote_sha and

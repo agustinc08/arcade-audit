@@ -753,21 +753,40 @@ def reconciled_batch68_retry_matches(game,cp,csv_sha256):
   separators=(',',':')).encode()).hexdigest()
  batch_sha=hashlib.sha256(json.dumps(cp.get('batch_in_progress'),ensure_ascii=False,sort_keys=True,
   separators=(',',':')).encode()).hexdigest()
- return bool(system=='prboom' and rom=='/userdata/roms/prboom/doom1_shareware.wad' and
+ old_tx='20261119T143935_d7d3a63e70';retry_tx='20261120T213050_7ed567f0ef'
+ recovered_tx=recovery.get('transaction_id')
+ reconciled=bool(system=='prboom' and rom=='/userdata/roms/prboom/doom1_shareware.wad' and
   cp.get('status')=='STOPPED_SAFE' and cp.get('blocked_reason') is None and cp.get('engine_fail_active')==0 and
   cp.get('next_untested')=='prboom:/userdata/roms/prboom/doom1_shareware.wad' and
   recovery.get('previous_blocked_reason')=='ES_LAUNCH_PROCESS_ACTIVE' and
   recovery.get('recovery_reason')=='NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN' and
   recovery.get('operator_confirmed_normal_selector_cancel') is True and
   recovery.get('previous_active_engine_fail_count')==1 and recovery.get('reconciled_engine_fail_active')==0 and
-  recovery.get('transaction_id')=='20261119T143935_d7d3a63e70' and
+  recovered_tx in (old_tx,retry_tx) and
   recovery.get('next_game')=='prboom:/userdata/roms/prboom/doom1_shareware.wad' and
   all(runtime.get(key) is True for key in required) and
   recovery.get('result_records_sha256')==results_sha and recovery.get('batch_progress_sha256')==batch_sha and
-  recovery.get('csv_sha256')==csv_sha256 and incident.get('transaction_id')=='20261119T143935_d7d3a63e70' and
+  recovery.get('csv_sha256')==csv_sha256 and incident.get('transaction_id')==recovered_tx and
   incident.get('result')=='SYSTEM_SAFETY_FAILURE' and incident.get('failure_class')=='ES_LAUNCH_PROCESS_ACTIVE' and
   incident.get('restore',{}).get('status')=='RESTORE_VERIFIED' and
-  incident.get('restore',{}).get('transaction_id')=='20261119T143935_d7d3a63e70')
+  incident.get('restore',{}).get('transaction_id')==recovered_tx)
+ if not reconciled:return False
+ if recovered_tx==old_tx:return True
+
+ # The single explicit retry has its own clean-runtime recovery record.
+ # Require exact Batch 68 accounting and the allowlisted old/current Doom
+ # safety pair, while comparing recovery digests to the full current state.
+ batch=cp.get('batch_in_progress') or {};results=cp.get('results',[])
+ tail=results[-22:]
+ retry_counts={}
+ for item in tail:retry_counts[item.get('result','UNKNOWN')]=retry_counts.get(item.get('result','UNKNOWN'),0)+1
+ return bool(recovered_tx==retry_tx and
+  batch.get('name')=='priority_batch_68' and batch.get('considered')==41 and
+  batch.get('launched')==22 and batch.get('auto_pass')==20 and batch.get('game_fail')==0 and
+  batch.get('restore_verified')==22 and batch.get('restore_failures')==0 and len(tail)==22 and
+  retry_counts=={'AUTO_PASS':20,'SYSTEM_SAFETY_FAILURE':2} and
+  tail[-2].get('transaction_id')==old_tx and tail[-1].get('transaction_id')==retry_tx and
+  recovery.get('result_records_sha256')==results_sha and recovery.get('batch_progress_sha256')==batch_sha)
 
 def assert_reconciled_queue(rows,cp,systems,batch_size=None):
  metrics=certification_metrics(rows,cp)
