@@ -1457,6 +1457,39 @@ def write_publication_receipt(batch_name, remote_sha, published_at=None):
     return True
 
 
+def batch68_prelaunch_queue_refusal_matches(task_id, job, cp, task_obj, log_text, csv_sha256):
+    """Recognize only this reconciled Batch 68 job that failed before creating a transaction."""
+    if task_id != 'CERT-BATCH-0068':
+        return False
+    tasks = task_obj.get('tasks', []) if isinstance(task_obj, dict) else []
+    task = next((item for item in tasks if item.get('id') == task_id), {})
+    authorization = task.get('recovery_retry_authorization') or {}
+    import full_game_certifier as cert
+    latest = {}
+    for item in cp.get('results', []):
+        latest[(item.get('system'), item.get('rom'))] = item
+    active_stops = [item for item in latest.values() if item.get('result') in cert.STOP_ENGINE]
+    recovery_ok = batch68_reconciled_incident_matches(cp, active_stops, csv_sha256)
+    batch = cp.get('batch_in_progress') or {}
+    return bool(
+        recovery_ok and job.get('status') == 'COMPLETE' and job.get('exit_code') == 6 and
+        job.get('completion_reason') == 'SAFE_STOP_AT_GAME_BOUNDARY' and
+        job.get('checkpoint_status') == 'STOPPED_SAFE' and job.get('starting_game') == BATCH68_GAME and
+        job.get('finished_at') and job.get('job_id') == authorization.get('job_id') and
+        authorization.get('job_exit_code') == 6 and
+        authorization.get('queue_invariant') == 'QUEUE_INVARIANT_FAIL: selected game already has a result' and
+        authorization.get('starting_game') == BATCH68_GAME and
+        authorization.get('launch_transactions_before') == cp.get('launch_transactions') == 5686 and
+        authorization.get('result_records_before') == cp.get('result_records') == 6646 and
+        task.get('attempts') == 3 and task.get('max_attempts') == 4 and
+        authorization.get('allowed_additional_task_attempts') == 1 and
+        batch.get('name') == 'priority_batch_68' and batch.get('considered') == 41 and
+        batch.get('launched') == 21 and batch.get('auto_pass') == 20 and batch.get('game_fail') == 0 and
+        batch.get('restore_verified') == 21 and batch.get('restore_failures') == 0 and
+        cp.get('current_test') is None and cp.get('next_untested') == BATCH68_GAME and
+        'QUEUE_INVARIANT_FAIL: selected game already has a result' in log_text)
+
+
 def previous_job_consumption_check(task_id, job, cp, task_obj, state, *, reconciled=None,
                                    summary_ok=None, publish_state=None, archive_path=None):
     """Validate historical completion before allowing the next batch through the job guard."""
@@ -1466,6 +1499,22 @@ def previous_job_consumption_check(task_id, job, cp, task_obj, state, *, reconci
     current_n = _batch_index(task_id)
     if not batch_n or current_n != batch_n + 1:
         return False, 'NOT_IMMEDIATELY_PREVIOUS_BATCH'
+    if job.get('status') == 'COMPLETE' and task_id == 'CERT-BATCH-0068':
+        meta = read_json(AUDIT / 'jobs' / 'certifier_job.json', {}) or {}
+        log_path = Path(meta.get('log_path') or '')
+        try:
+            log_text = log_path.read_text(encoding='utf-8', errors='replace') if log_path.parent == (AUDIT / 'jobs' / 'logs') else ''
+        except OSError:
+            log_text = ''
+        csv_sha = hashlib.sha256(CERT_CSV.read_bytes()).hexdigest()
+        try:
+            import full_game_certifier as cert
+            rows, _ = cert.load_rows()
+            cert.assert_reconciled_queue(rows, cp, cert.ad.live_systems(), 1)
+        except Exception:
+            return False, 'BATCH68_QUEUE_NOT_RECONCILED'
+        if batch68_prelaunch_queue_refusal_matches(task_id, meta, cp, task_obj, log_text, csv_sha):
+            return True, 'BATCH68_PRELAUNCH_QUEUE_REFUSAL_RECONCILED'
     if (job.get('status') not in ('COMPLETE', 'CONSUMED') or
             cp.get('status') != 'COMPLETE' or cp.get('blocked_reason') or
             cp.get('batch_in_progress') or int(cp.get('engine_fail_active', 0))):

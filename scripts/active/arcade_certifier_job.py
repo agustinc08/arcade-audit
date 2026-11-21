@@ -312,9 +312,9 @@ def worker(job_id, batch_size, starting_game, log_path):
     code = proc.wait()
     cp = read_json(AUDIT / 'full_game_certification_checkpoint.json', {})
     safe_stopped = cp.get('status') == 'STOPPED_SAFE'
-    status = 'COMPLETE' if safe_stopped or (code == 0 and cp.get('status') == 'COMPLETE') else 'FAILED'
+    status = 'COMPLETE' if code == 0 and (safe_stopped or cp.get('status') == 'COMPLETE') else 'FAILED'
     meta.update({'exit_code': code, 'finished_at': now(), 'status': status,
-                 'completion_reason': 'SAFE_STOP_AT_GAME_BOUNDARY' if safe_stopped else None,
+                 'completion_reason': 'SAFE_STOP_AT_GAME_BOUNDARY' if safe_stopped and code == 0 else None,
                  'checkpoint_status': cp.get('status'), 'next_game': cp.get('next_untested'),
                  'batch_name': (cp.get('latest_batch') or {}).get('name') if status == 'COMPLETE' else None})
     atomic_json(META, meta)
