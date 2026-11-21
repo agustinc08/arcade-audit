@@ -54,9 +54,13 @@ EXPORT_SCOPE_PATHS = {
         "scripts/active/certification_batch_accounting.py",
         "scripts/active/arcade_autopilot.py",
         "scripts/active/arcade_certifier_job.py",
+        "scripts/active/controller_dispatcher.py",
+        "scripts/active/automatic_selector_context.py",
+        "scripts/active/marker_ownership.py",
         "scripts/active/publish_arcade_audit_github.py",
         "scripts/tests/test_batch59_reconciliation.py",
         "scripts/tests/test_arcade_autopilot.py",
+        "scripts/tests/test_automatic_selector_context.py",
     },
 }
 ALLOWED_SUFFIXES = {".md", ".txt", ".csv", ".json", ".py", ".sh"}
@@ -185,6 +189,8 @@ def source_export_map():
         (TOOLS / "arcade_certifier_job.py", "scripts/active/arcade_certifier_job.py"),
         (TOOLS / "arcade_certifier_job.sh", "scripts/active/arcade_certifier_job.sh"),
         (TOOLS / "full_game_certifier.py", "scripts/active/full_game_certifier.py"),
+        (TOOLS / "controller_dispatcher", "scripts/active/controller_dispatcher.py"),
+        (TOOLS / "automatic_selector_context.py", "scripts/active/automatic_selector_context.py"),
         (TOOLS / "rebuild_arcade_current_state.py", "scripts/active/rebuild_arcade_current_state.py"),
         (TOOLS / "rebuild_certification_summary.py", "scripts/active/rebuild_certification_summary.py"),
         (TOOLS / "rebuild_priority_batch_report.py", "scripts/active/rebuild_priority_batch_report.py"),
@@ -192,6 +198,8 @@ def source_export_map():
         (TOOLS / "arcade_autopilot.py", "scripts/active/arcade_autopilot.py"),
         (TOOLS / "publish_arcade_audit_github.py", "scripts/active/publish_arcade_audit_github.py"),
         (AUDIT / "tests" / "test_batch59_reconciliation.py", "scripts/tests/test_batch59_reconciliation.py"),
+        (AUDIT / "scripts" / "tests" / "test_automatic_selector_context.py", "scripts/tests/test_automatic_selector_context.py"),
+        (AUDIT / "scripts" / "tests" / "test_arcade_autopilot.py", "scripts/tests/test_arcade_autopilot.py"),
         (TOOLS / "marker_ownership.py", "scripts/active/marker_ownership.py"),
     ):
         if source.is_file() and not source.is_symlink():

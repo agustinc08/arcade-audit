@@ -105,14 +105,16 @@ def _stale_proven(value, evidence):
     return current_start_ticks != value['process_start_ticks']
 
 
-def create_exclusive(system, rom, owner, transaction_id, *, path=MARKER):
+def create_exclusive(system, rom, owner, transaction_id, *, choice='BOTONERA', path=MARKER):
     """Create a compatible one-shot marker without replacing any existing file."""
+    if choice not in ('BOTONERA', 'JOYSTICKS'):
+        raise ValueError('INVALID_AUTOMATIC_SELECTOR_CHOICE')
     now = time.time()
     value = {
         'enabled': True,
         'system': system,
         'rom': rom,
-        'choice': 'BOTONERA',
+        'choice': choice,
         'created_at': now,
         'expires_at': now + 55,
         'audit_id': f'{system}:{Path(rom).name}:{now:.6f}',

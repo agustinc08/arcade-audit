@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-21T00:00:05+00:00",
+  "updated_at": "2026-11-21T00:31:16+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
   "next_untested": "prboom:/userdata/roms/prboom/doom1_shareware.wad",
-  "attempted_new": 5686,
+  "attempted_new": 5687,
   "auto_certified": 5511,
   "manual_control_certified": 0,
   "guest_ready": 0,
@@ -150192,11 +150192,35 @@
         "paths": 7
       },
       "finished_at": "2026-11-19T14:40:01.064-03:00"
+    },
+    {
+      "system": "prboom",
+      "rom": "/userdata/roms/prboom/doom1_shareware.wad",
+      "name": "DOOM",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "SYSTEM_SAFETY_FAILURE",
+      "failure_class": "ES_LAUNCH_PROCESS_ACTIVE",
+      "transaction_id": "20261120T213050_7ed567f0ef",
+      "stable_seconds": 20.135,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261120T213050_7ed567f0ef",
+        "paths": 7
+      },
+      "finished_at": "2026-11-20T21:31:16.156-03:00"
     }
   ],
-  "status": "STOPPED_SAFE",
+  "status": "PAUSED_SYSTEM_SAFETY_FAILURE",
   "mode": "batch",
-  "selected_count": 41,
+  "selected_count": 20,
   "baseline": {
     "batocera_conf_sha256": "bb8579bd3cb91c2ad8606ff04fe2b7ed238ed0264018a418acbe0943c3762426",
     "global_mame_core": "mame078plus",
@@ -150284,7 +150308,7 @@
     "AUDIO_ROUTE_CHANGED": 0,
     "RESTORE_FAILURE": 0
   },
-  "blocked_reason": null,
+  "blocked_reason": "ES_LAUNCH_PROCESS_ACTIVE",
   "resume_reason": "NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN",
   "pilot_summary": {
     "unique_games": 10,
@@ -150337,20 +150361,20 @@
       "resolved_at": "2026-11-15T09:39:16-03:00"
     }
   ],
-  "launch_transactions": 5686,
+  "launch_transactions": 5687,
   "transaction_attempts": 509,
-  "retry_transactions": 2,
+  "retry_transactions": 3,
   "unique_games_processed": 6644,
-  "result_records": 6646,
+  "result_records": 6647,
   "static_preflight_results": 194,
   "engine_fail_total_historical": 2,
-  "engine_fail_active": 0,
+  "engine_fail_active": 1,
   "game_fail": 172,
   "static_fail": 194,
   "flaky": 0,
   "needs_repair": 366,
   "control_certified": 0,
-  "restores_verified": 5686,
+  "restores_verified": 5687,
   "restore_failures": 0,
   "safety_recovery": {
     "recovered_at": "2026-11-21T00:00:05+00:00",
@@ -150397,11 +150421,11 @@
     "batch_progress_sha256": "9b8832f46dd9c598d5d07fb93d3106369dccb73b9ff03911ce77a8eb62a09eac",
     "csv_sha256": "673c400ac88e653e57bfe23172a93281a39ed5bfa5ddefd93f540fd793802e1f"
   },
-  "invocation_selected_count": 41,
+  "invocation_selected_count": 20,
   "batch_in_progress": {
     "name": "priority_batch_68",
     "considered": 41,
-    "launched": 21,
+    "launched": 22,
     "auto_pass": 20,
     "game_fail": 0,
     "static_fail": 0,
@@ -150410,8 +150434,8 @@
     "skipped": 0,
     "deferred": 0,
     "other_unlaunched": 0,
-    "processed": 21,
-    "restore_verified": 21,
+    "processed": 22,
+    "restore_verified": 22,
     "restore_failures": 0,
     "started_at": "2026-11-19T14:30:26.317-03:00",
     "first_game": "/userdata/roms/pcengine/Wallaby!! - Usagi no Kuni no Kangaroo Race (Japan).pce",

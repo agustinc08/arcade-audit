@@ -21,6 +21,10 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
 
+from marker_ownership import marker_lock, read_marker
+from marker_ownership import remove_if_owned as remove_owned_marker
+import automatic_selector_context as automatic_context
+
 
 ROOT = Path("/userdata/system")
 TOOLS = ROOT / "el_gordo_tools"
@@ -309,16 +313,25 @@ def consume_boot_audit_once(
     now: float | None = None,
 ) -> str | None:
     """Consume a matching, short-lived BOOT AUDIT choice without changing normal launches."""
-    try:
-        marker = load_json(one_shot_path)
-    except (OSError, ValueError, json.JSONDecodeError):
+    with marker_lock():
+        return _consume_boot_audit_once_locked(system, rom, one_shot_path, now)
+
+
+def _consume_boot_audit_once_locked(
+    system: str,
+    rom: str,
+    one_shot_path: Path = BOOT_AUDIT_ONCE,
+    now: float | None = None,
+) -> str | None:
+    marker = read_marker(one_shot_path)
+    if marker is None:
         return None
     if (
         marker.get("enabled") is not True
         or marker.get("system") != system
         or marker.get("rom") != rom
         or not Path(rom).is_absolute()
-        or marker.get("choice") != "BOTONERA"
+        or marker.get("choice") not in ("BOTONERA", "JOYSTICKS")
     ):
         return None
     try:
@@ -336,10 +349,12 @@ def consume_boot_audit_once(
     ):
         return None
     try:
+        if one_shot_path.is_symlink() or not one_shot_path.is_file():
+            return None
         one_shot_path.unlink()
     except OSError:
         return None
-    return "arcade"
+    return "arcade" if marker.get("choice") == "BOTONERA" else "external"
 
 
 def sdl_text(value: bytes | None) -> str:
@@ -1180,20 +1195,46 @@ def parent_launch(argv: list[str], choice_override: str | None) -> int:
     if choice_override:
         choice = choice_override
     else:
-        # BOOT AUDIT — AUTO BOTONERA: consume a matching one-shot before opening the selector.
-        choice = consume_boot_audit_once(system, rom)
-        if choice:
+        # A certifier transaction owns authorization for its entire ES launch
+        # lifecycle. The marker remains only a first-invocation receipt.
+        try:
+            matched, match_reason, invocation = automatic_context.authorize_invocation(
+                system=system, rom=rom, dispatcher_pid=os.getpid(), ppid=os.getppid())
+        except Exception as exc:
+            matched, match_reason, invocation = False, "CONTEXT_CHECK_ERROR:" + type(exc).__name__, None
+        if matched:
+            choice = "external"
+            marker_consumed = remove_owned_marker(invocation['transaction_id'], owner='full_game_certifier')
             log_line(
                 log_path,
-                "boot_audit_auto_choice",
+                "automatic_selector_context_choice",
                 system=system,
                 rom=rom,
-                choice="BOTONERA",
+                choice="JOYSTICKS PRIMERO",
                 internal_choice=choice,
-                one_shot_consumed=True,
+                automatic_context_match=True,
+                transaction_id=invocation['transaction_id'],
+                selector_invocation_id=invocation['selector_invocation_id'],
+                phase=invocation['phase'],
+                one_shot_consumed=marker_consumed,
             )
         else:
-            choice = None
+            # A certifier marker without a matching active context is not an
+            # authorization. Other legacy marker owners keep their old path.
+            marker = read_marker(BOOT_AUDIT_ONCE)
+            if marker and marker.get('owner') == 'full_game_certifier':
+                choice = None
+            else:
+                choice = consume_boot_audit_once(system, rom)
+                if choice:
+                    log_line(log_path, "boot_audit_auto_choice", system=system, rom=rom,
+                             choice=marker.get('choice') if marker else 'BOTONERA',
+                             internal_choice=choice, one_shot_consumed=True)
+                else:
+                    choice = None
+            if choice is None:
+                log_line(log_path, "automatic_selector_context_no_match", system=system,
+                         rom=rom, reason=match_reason)
     if choice is None:
         selector_cfg = cfg.get("selector", {})
         command = [str(TOOLS / "selector_controles"), "--timeout", str(selector_cfg.get("timeout_seconds", 0))]

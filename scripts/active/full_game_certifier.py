@@ -12,6 +12,7 @@ import certifier_adapters as ad
 import smoke_runner as sr
 from certification_batch_accounting import new_batch_progress, record_batch_result, set_invocation_selection, phase_summary
 from marker_ownership import create_exclusive as create_owned_marker, remove_if_owned as remove_owned_marker
+import automatic_selector_context as automatic_context
 
 TABLE=AUDIT/'full_game_certification.csv'; MASTER=AUDIT/'arcade_master_checkpoint.json'
 STATE=AUDIT/'full_game_certification_checkpoint.json'; RUNTIME=AUDIT/'runtime'/'full_certification'
@@ -37,6 +38,7 @@ STOP_ENGINE={'ENGINE_FAIL','WRONG_GAME_DISPATCH','AUDIO_ROUTE_CHANGED','RESTORE_
 SAFETY_GATE_FAILURES={'ES_IDLE_TIMEOUT','ES_LAUNCH_PROCESS_ACTIVE','MARKER_FOREIGN_UNKNOWN','MARKER_ALREADY_EXISTS'}
 ES_IDLE_TIMEOUT_SECONDS=20
 ES_IDLE_POLL_SECONDS=1
+POST_LAUNCH_CLEANUP_TIMEOUT_SECONDS=180
 
 def utc():return datetime.now(timezone.utc).isoformat(timespec='seconds')
 def stamp():return datetime.now().astimezone().isoformat(timespec='milliseconds')
@@ -334,6 +336,10 @@ def selector_identity(logtext,system,rom):
   try:j=json.loads(line)
   except Exception:continue
   if j.get('system')==system and j.get('rom')==rom:
+   if j.get('event')=='automatic_selector_context_choice' and j.get('automatic_context_match') is True:
+    return {'choice':j.get('choice'),'marker_consumed':j.get('one_shot_consumed') is True,
+            'automatic_context_match':True,'transaction_id':j.get('transaction_id'),
+            'selector_invocation_id':j.get('selector_invocation_id'),'event':j.get('event')}
    if j.get('event')=='boot_audit_auto_choice' and j.get('one_shot_consumed') is True:return {'choice':j.get('choice'),'marker_consumed':True,'event':j.get('event')}
    if j.get('event')=='launch':return {'rom':j.get('rom'),'system':j.get('system'),'event':j.get('event')}
  return None
@@ -383,7 +389,7 @@ def launch_one(game,adapter_info,baseline,mode):
  system=game['system'];rom=Path(game['rom']);core=adapter_info['core'];adapter=adapter_info['adapter']
  result={'system':system,'rom':str(rom),'name':game.get('name'),'adapter':adapter,'core':core,'mode':mode,'started_at':stamp(),
          'test_id':None,'precheck':None,'identity':None,'audio':{},'process':{},'visual':[],'exit':{},'restore':{},'result':None,'failure_class':None}
- proc=None;marker=None
+ proc=None;marker=None;selector_context=None
  pre=ad.preflight(system,rom,adapter,core)
  result['precheck']=pre
  if pre['status']!='PASS':
@@ -399,10 +405,28 @@ def launch_one(game,adapter_info,baseline,mode):
  except Exception as e:result['result']='ADAPTER_NOT_READY';result['failure_class']='TRANSACTION_BEGIN:'+type(e).__name__+': '+str(e);result['restore']={'status':'NOT_REQUIRED_NO_WRITE'};return result
  result['test_id']=txid;result['transaction_id']=txid;txroot=Path('/userdata/system/state/arcade_audit/runtime')/txid
  try:
-  # Marker is the existing one-shot controller choice, not synthetic game input.
-  marker=create_owned_marker(system,str(rom),'full_game_certifier',txid,path=sr.MARKER)
+  es_ids=sr.es_pids()
+  if len(es_ids)!=1:raise RuntimeError('AUTOMATIC_CONTEXT_REQUIRES_ONE_EMULATIONSTATION')
+  cert_identity=automatic_context.process_identity(os.getpid())
+  es_identity=automatic_context.process_identity(es_ids[0])
+  if not cert_identity or not es_identity:raise RuntimeError('AUTOMATIC_CONTEXT_PROCESS_IDENTITY_UNAVAILABLE')
+  autopilot_owner=None
+  try:
+   ap_state=json.loads(AUTOPILOT_STATE.read_text())
+   if ap_state.get('status') in ('STARTING','RUNNING'):
+    ap_pid=ap_state.get('pid');ap_run=ap_state.get('run_id')
+    ap_identity=automatic_context.process_identity(ap_pid) if isinstance(ap_pid,int) else None
+    if (not ap_identity or not ap_run or ap_identity.get('start_ticks')!=ap_state.get('process_start_ticks') or
+        ap_run not in ap_identity.get('cmdline','')):raise RuntimeError('AUTOMATIC_CONTEXT_AUTOPILOT_IDENTITY_INVALID')
+    autopilot_owner={k:ap_identity[k] for k in ('pid','start_ticks','cmdline')}
+    autopilot_owner['run_id']=ap_run
+  except FileNotFoundError:pass
+  selector_context=automatic_context.create_context(transaction_id=txid,system=system,rom=str(rom),
+    certifier=cert_identity,es_identity=es_identity,autopilot=autopilot_owner)
+  # The one-shot marker is a receipt; lifecycle authorization lives in context.
+  marker=create_owned_marker(system,str(rom),'full_game_certifier',txid,choice='JOYSTICKS',path=sr.MARKER)
   result['selector_present']='controller_dispatcher' in ad.parse_es().get(system,{}).get('command','')
-  result['control_selected']='BOTONERA';result['control_recommended']=game.get('recommended_control','UNKNOWN')
+  result['control_selected']='JOYSTICKS PRIMERO';result['control_recommended']=game.get('recommended_control','UNKNOWN')
   req=urllib.request.Request(API+'/launch',data=str(rom).encode('utf-8'),method='POST',headers={'Content-Type':'application/x-www-form-urlencoded'})
   try:
    with urllib.request.urlopen(req,timeout=8) as r:result['http']={'status':r.status,'body':r.read().decode('utf-8','replace')}
@@ -432,12 +456,13 @@ def launch_one(game,adapter_info,baseline,mode):
     if p['exe']=='retroarch' or p['comm']=='retroarch':proc={'pid':p['pid'],'argv':p['argv']};break
    return result
   logtxt=read_new_selector_log(log_offset);sel=selector_identity(logtxt,system,str(rom));result['selector_event']=sel
-  if not sel or not sel.get('marker_consumed',False):
+  if not sel or not (sel.get('marker_consumed',False) or sel.get('automatic_context_match',False)):
    result['result']='ENGINE_FAIL';result['failure_class']='SELECTOR_MARKER_OR_IDENTITY_NOT_PROVEN';return result
   if proc is None:
    result['result']='GAME_FAIL';result['failure_class']='IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS';result['identity']={'es_running_game_seen':running_seen,'selector_event':sel};return result
   result['process']={'pid':proc['pid'],'argv':proc['argv'],'core':proc['core_loaded'],'core_ok':proc['core_ok'],'content_ok':proc['content_ok'],
                      'content_method':proc['content_method'],'started_at':stamp()}
+  automatic_context.set_phase(txid,'EMULATOR_RUNNING')
   result['identity']={'requested_rom':str(rom),'es_running_game':str(rom),'dispatcher_event':sel,'core_ok':proc['core_ok'],'content_ok':proc['content_ok']}
   if not proc['core_ok'] or not proc['content_ok']:
    result['result']='ENGINE_FAIL';result['failure_class']='CORE_OR_CONTENT_IDENTITY_MISMATCH';return result
@@ -460,6 +485,7 @@ def launch_one(game,adapter_info,baseline,mode):
   result['audio']={'default_before':baseline['audio_default'],'unique_during':sorted(set(audio_seen)),'default_during':'HDMI_PASS' if audio_seen and all(x==HDMI for x in audio_seen) else 'UNKNOWN'}
   # The certifier closes only the exact PID it launched; no broad process-name kill.
   if proc and any(x['pid']==proc['pid'] for x in pids()):
+   automatic_context.set_phase(txid,'POST_EMULATOR')
    try:os.kill(proc['pid'],signal.SIGTERM);result['exit']['close_signal']='SIGTERM_EXACT_PID'
    except ProcessLookupError:result['exit']['cleanup_race']='PROCESS_ALREADY_EXITED'
    for _ in range(120):
@@ -467,11 +493,17 @@ def launch_one(game,adapter_info,baseline,mode):
     time.sleep(.1)
   if any(x['pid']==proc['pid'] for x in pids()):
    result['result']='ENGINE_FAIL';result['failure_class']='UNRECOVERED_EMULATOR_ORPHAN';return result
-  for _ in range(120):
+  automatic_context.set_phase(txid,'POST_EMULATOR')
+  clean_samples=0;cleanup_deadline=time.monotonic()+POST_LAUNCH_CLEANUP_TIMEOUT_SECONDS
+  while time.monotonic()<cleanup_deadline:
    try:idle,rg=api_state()
    except Exception:idle,rg=False,{'api':'unavailable'}
-   if idle and rg is None:break
-   time.sleep(.1)
+   launch_processes=pids();marker_exists=sr.MARKER.exists()
+   if idle and rg is None and not launch_processes and not marker_exists:
+    clean_samples+=1
+    if clean_samples>=2:break
+   else:clean_samples=0
+   time.sleep(1)
   else:result['result']='ENGINE_FAIL';result['failure_class']='ES_RETURN_TIMEOUT';return result
   # Confirm one-shot choice and game-health row after clean exit.
   logtxt=read_new_selector_log(log_offset);sel=selector_identity(logtxt,system,str(rom));result['selector_event']=sel
@@ -570,6 +602,18 @@ def launch_one(game,adapter_info,baseline,mode):
       result['result']='SYSTEM_SAFETY_FAILURE';result['failure_class']=str(e)
      else:
       result['result']='ENGINE_FAIL';result['failure_class']='POST_RESTORE_SAFETY_GATE:'+type(e).__name__+': '+str(e)
+  if selector_context is not None:
+   try:
+    closed=automatic_context.close_context(txid,archive_path=txroot/'selector_context.json',
+      reason='SAFETY_AFTER_PASS' if result.get('safety_after_finally')==baseline else 'TRANSACTION_ABORTED_OR_SAFETY_GATE_FAILED')
+    if closed:
+     result['selector_context']={'transaction_id':txid,'state':closed.get('state'),
+       'choice':'JOYSTICKS PRIMERO','invocations':closed.get('invocations',[]),
+       'closed_at_utc':closed.get('closed_at_utc'),'close_reason':closed.get('close_reason')}
+    else:
+     result['result']='SYSTEM_SAFETY_FAILURE';result['failure_class']='AUTOMATIC_CONTEXT_CLOSE_NOT_OWNED'
+   except Exception as e:
+    result['result']='SYSTEM_SAFETY_FAILURE';result['failure_class']='AUTOMATIC_CONTEXT_CLOSE_FAILED:'+type(e).__name__
   result['finished_at']=stamp()
   try:atomic_json(tx.RUNTIME/result['transaction_id']/'result.json',result)
   except Exception:pass

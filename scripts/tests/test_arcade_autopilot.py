@@ -860,6 +860,73 @@ class Batch68SafetyRecoveryTests(unittest.TestCase):
         cp['results'][-1]['result'] = 'AUTO_PASS'
         self.assertFalse(AP.recovered_safety_plan(cp, evidence)[0])
 
+    def test_current_retry_failure_recovers_without_changing_accounting(self):
+        cp = self.checkpoint()
+        previous = cp['results'][-1]
+        cp['results'].append({'system': 'prboom', 'rom': previous['rom'],
+            'result': 'SYSTEM_SAFETY_FAILURE', 'failure_class': 'ES_LAUNCH_PROCESS_ACTIVE',
+            'transaction_id': AP.BATCH68_RETRY_TX,
+            'restore': {'status': 'RESTORE_VERIFIED', 'transaction_id': AP.BATCH68_RETRY_TX}})
+        batch = cp['batch_in_progress']
+        batch.update({'launched': 22, 'restore_verified': 22})
+        cp.update({'launch_transactions': 22, 'result_records': 22})
+        evidence = self.evidence(cp)
+        evidence['transaction_id'] = AP.BATCH68_RETRY_TX
+        ok, reason, recovery = AP.recovered_safety_plan(cp, evidence)
+        self.assertTrue(ok, reason)
+        before = json.loads(json.dumps(cp))
+        recovered = AP.apply_recovered_checkpoint_metadata(cp, recovery)
+        self.assertEqual(recovered['results'], before['results'])
+        self.assertEqual(recovered['batch_in_progress'], before['batch_in_progress'])
+        self.assertEqual(recovered['next_untested'], AP.BATCH68_GAME)
+        self.assertEqual(recovered['engine_fail_active'], 0)
+        self.assertEqual(recovered['batch_in_progress']['launched'], 22)
+        self.assertEqual(recovered['batch_in_progress']['auto_pass'], 20)
+        self.assertEqual(recovered['batch_in_progress']['game_fail'], 0)
+        self.assertEqual(recovered['batch_in_progress']['restore_verified'], 22)
+
+    def test_current_retry_recovery_rejects_changed_cursor_and_unrestored_tx(self):
+        cp = self.checkpoint()
+        old = cp['results'][-1]
+        cp['results'].append({'system': 'prboom', 'rom': old['rom'],
+            'result': 'SYSTEM_SAFETY_FAILURE', 'failure_class': 'ES_LAUNCH_PROCESS_ACTIVE',
+            'transaction_id': AP.BATCH68_RETRY_TX,
+            'restore': {'status': 'RESTORE_VERIFIED', 'transaction_id': AP.BATCH68_RETRY_TX}})
+        cp['batch_in_progress'].update({'launched': 22, 'restore_verified': 22})
+        cp['launch_transactions'] = cp['result_records'] = 22
+        evidence = self.evidence(cp); evidence['transaction_id'] = AP.BATCH68_RETRY_TX
+        cp['next_untested'] = 'prboom:/userdata/roms/prboom/other.wad'
+        self.assertFalse(AP.recovered_safety_plan(cp, evidence)[0])
+        cp['next_untested'] = AP.BATCH68_GAME
+        cp['results'][-1]['restore']['status'] = 'RESTORE_FAILURE'
+        self.assertFalse(AP.recovered_safety_plan(cp, evidence)[0])
+
+    def test_only_one_hash_linked_retry_incident_can_be_reconciled(self):
+        import hashlib
+        cp = self.checkpoint()
+        prefix = json.loads(json.dumps(cp['results']))
+        prior_batch = json.loads(json.dumps(cp['batch_in_progress']))
+        prior_batch['processed'] = 21
+        prior_batch['processed'] = 21
+        old_incident = cp['results'][-1]
+        cp['results'].append({'system': 'prboom', 'rom': old_incident['rom'],
+            'result': 'SYSTEM_SAFETY_FAILURE', 'failure_class': 'ES_LAUNCH_PROCESS_ACTIVE',
+            'transaction_id': AP.BATCH68_RETRY_TX,
+            'restore': {'status': 'RESTORE_VERIFIED', 'transaction_id': AP.BATCH68_RETRY_TX}})
+        cp['batch_in_progress'].update({'launched': 22, 'processed': 22, 'restore_verified': 22})
+        cp['safety_recovery'] = {
+            'transaction_id': AP.BATCH68_TX,
+            'recovery_reason': 'NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN',
+            'reconciled_engine_fail_active': 0,
+            'result_records_sha256': hashlib.sha256(json.dumps(prefix, ensure_ascii=False, sort_keys=True,
+                separators=(',', ':')).encode()).hexdigest(),
+            'batch_progress_sha256': hashlib.sha256(json.dumps(prior_batch, ensure_ascii=False, sort_keys=True,
+                separators=(',', ':')).encode()).hexdigest(),
+        }
+        self.assertTrue(AP.batch68_retry_incident_pending_matches(cp, [cp['results'][-1]], AP.BATCH68_RETRY_TX))
+        cp['batch_in_progress']['launched'] = 23
+        self.assertFalse(AP.batch68_retry_incident_pending_matches(cp, [cp['results'][-1]], AP.BATCH68_RETRY_TX))
+
 
 class Batch68RunnerRecoveryGateTests(unittest.TestCase):
     def checkpoint(self):
