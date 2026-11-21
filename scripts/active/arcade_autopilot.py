@@ -647,6 +647,8 @@ RECOVERABLE_SAFETY_BLOCKERS = {'ES_NOT_IDLE', 'ES_IDLE_TIMEOUT', 'SELECTOR_NOT_C
 POST_REBOOT_GAME = 'megacd:/userdata/roms/megacd/Final Fight CD (USA).chd'
 POST_REBOOT_TX = '20261118T161913_0b1c456071'
 POST_REBOOT_FAILED_JOB = '20261118T161901_df534fc7'
+BATCH68_GAME = 'prboom:/userdata/roms/prboom/doom1_shareware.wad'
+BATCH68_TX = '20261119T143935_d7d3a63e70'
 
 
 def current_boot_id():
@@ -796,6 +798,8 @@ def recovered_runtime_evidence(cp):
 
 def recovered_safety_plan(cp, evidence):
     """Pure, deliberately narrow decision gate for post-reboot reconciliation."""
+    if str(cp.get('blocked_reason') or '').strip() == 'ES_LAUNCH_PROCESS_ACTIVE':
+        return batch68_recovered_safety_plan(cp, evidence)
     import re as _re
     reason = str(cp.get('blocked_reason') or '')
     blockers = _re.findall(r'(?<![A-Z0-9_])(ES_NOT_IDLE|ES_IDLE_TIMEOUT|SELECTOR_NOT_CLOSED)(?![A-Z0-9_])',
@@ -839,38 +843,351 @@ def recovered_safety_plan(cp, evidence):
     }
 
 
-def reconcile_recovered_safety_block():
+def batch68_recovered_safety_plan(cp, evidence):
+    """Allow only the specifically recovered Batch 68 ES launch blocker."""
+    if cp.get('status') != 'PAUSED_SYSTEM_SAFETY_FAILURE' or cp.get('blocked_reason') != 'ES_LAUNCH_PROCESS_ACTIVE':
+        return False, 'BLOCKER_NOT_RECOVERABLE', None
+    batch = cp.get('batch_in_progress')
+    expected_batch = {'name': 'priority_batch_68', 'considered': 41, 'launched': 21,
+                      'auto_pass': 20, 'game_fail': 0, 'restore_verified': 21,
+                      'restore_failures': 0}
+    if not isinstance(batch, dict) or any(batch.get(k) != v for k, v in expected_batch.items()):
+        return False, 'BATCH68_PROGRESS_MISMATCH', None
+    if cp.get('next_untested') != BATCH68_GAME or cp.get('current_test'):
+        return False, 'BATCH68_CURSOR_OR_ACTIVE_TRANSACTION_MISMATCH', None
+    results = cp.get('results')
+    if not isinstance(results, list) or len(results) < 21:
+        return False, 'BATCH68_RESULT_HISTORY_MISSING', None
+    tail = results[-21:]
+    tail_counts = {}
+    for item in tail:
+        tail_counts[item.get('result', 'UNKNOWN')] = tail_counts.get(item.get('result', 'UNKNOWN'), 0) + 1
+    doom = tail[-1]
+    if (tail_counts != {'AUTO_PASS': 20, 'SYSTEM_SAFETY_FAILURE': 1} or
+            doom.get('transaction_id') != BATCH68_TX or doom.get('system') != 'prboom' or
+            doom.get('rom') != '/userdata/roms/prboom/doom1_shareware.wad' or
+            doom.get('result') != 'SYSTEM_SAFETY_FAILURE' or
+            doom.get('failure_class') != 'ES_LAUNCH_PROCESS_ACTIVE' or
+            doom.get('restore', {}).get('status') != 'RESTORE_VERIFIED' or
+            any(not item.get('transaction_id') or item.get('restore', {}).get('status') != 'RESTORE_VERIFIED'
+                for item in tail)):
+        return False, 'BATCH68_RESULT_OR_RESTORE_MISMATCH', None
+    result_sha = hashlib.sha256(json.dumps(results, ensure_ascii=False, sort_keys=True,
+                                          separators=(',', ':')).encode()).hexdigest()
+    batch_sha = hashlib.sha256(json.dumps(batch, ensure_ascii=False, sort_keys=True,
+                                         separators=(',', ':')).encode()).hexdigest()
+    if evidence.get('result_records_sha256') != result_sha:
+        return False, 'BATCH68_RESULT_EVIDENCE_CHANGED', None
+    if evidence.get('batch_progress_sha256') != batch_sha:
+        return False, 'BATCH68_PROGRESS_EVIDENCE_CHANGED', None
+    if doom.get('result') in ('AUTO_PASS', 'GAME_FAIL'):
+        return False, 'DOOM_RESULT_ALREADY_TERMINAL', None
+    checks = evidence.get('checks', {}) if isinstance(evidence, dict) else {}
+    required = (
+        'operator_confirmed_normal_selector_cancel', 'two_consecutive_clean_runtime_observations',
+        'es_idle', 'running_game_none', 'marker_absent', 'selector_absent', 'launcher_absent',
+        'emulator_absent', 'all_launch_and_emulator_processes_absent',
+        'no_active_certifier', 'no_active_autopilot', 'no_partial_transaction', 'last_result_restore_verified',
+        'transaction_record_consistent', 'manifest_restore_verified', 'restored_paths_match_pre_state', 'batch68_transactions_consistent',
+        'previous_terminal_result_preserved', 'doom_csv_still_not_tested', 'cursor_matches_canonical_queue',
+        'hdmi_pass', 'logical_p1_p4_stable_identity', 'protected_config_pass',
+        'only_active_stop_is_reconciled_safety_incident', 'no_other_active_engine_failure',
+        'result_evidence_unchanged', 'batch_progress_unchanged', 'no_game_terminal_result_for_doom',
+    )
+    if not evidence.get('passed') or not evidence.get('current_boot_id'):
+        return False, evidence.get('failure', 'BATCH68_RUNTIME_GATES_FAILED'), None
+    for key in required:
+        if checks.get(key) is not True:
+            return False, 'BATCH68_GATE_FAIL:' + key, None
+    if evidence.get('transaction_id') != BATCH68_TX or evidence.get('next_game') != BATCH68_GAME:
+        return False, 'BATCH68_TRANSACTION_OR_CURSOR_MISMATCH', None
+    # The existing counter includes this one SYSTEM_SAFETY_FAILURE because it
+    # belongs to STOP_ENGINE. It is cleared only after this exact incident is
+    # reconciled; all other active engine failures must already be absent.
+    if cp.get('engine_fail_active') != 1 or evidence.get('active_stop_result_count') != 1:
+        return False, 'ACTIVE_ENGINE_FAILURE_COUNT_MISMATCH', None
+    return True, 'ES_LAUNCH_PROCESS_ACTIVE', {
+        'recovered_at': now(),
+        'previous_status': cp.get('status'),
+        'previous_blocked_reason': cp.get('blocked_reason'),
+        'current_boot_id': evidence['current_boot_id'],
+        'transaction_id': BATCH68_TX,
+        'next_game': BATCH68_GAME,
+        'recovery_reason': 'NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN',
+        'operator_confirmed_normal_selector_cancel': True,
+        'runtime_checks': checks,
+        'previous_active_engine_fail_count': cp.get('engine_fail_active'),
+        'reconciled_engine_fail_active': 0,
+        'result_records_sha256': evidence.get('result_records_sha256'),
+        'batch_progress_sha256': evidence.get('batch_progress_sha256'),
+        'csv_sha256': evidence.get('csv_sha256'),
+    }
+
+
+def batch68_recovered_runtime_evidence(cp, *, operator_confirmed_normal_selector_cancel=False):
+    """Capture fresh, read-only evidence for Batch 68 safety reconciliation."""
+    import hashlib
+    evidence = {'current_boot_id': current_boot_id(), 'checks': {}, 'observations': [], 'passed': False}
+    checks = evidence['checks']
+    try:
+        if not evidence['current_boot_id']:
+            raise RuntimeError('BOOT_ID_UNAVAILABLE')
+        checks['operator_confirmed_normal_selector_cancel'] = bool(operator_confirmed_normal_selector_cancel)
+        if not checks['operator_confirmed_normal_selector_cancel']:
+            raise RuntimeError('NORMAL_SELECTOR_CANCELLATION_NOT_CONFIRMED')
+
+        sys.path.insert(0, str(TOOLS))
+        import full_game_certifier as cert
+        # Two complete observations, separated by the existing one-second
+        # safety polling interval; every observation checks ES, marker, the
+        # certifier detector, and the broader emulator/launcher process set.
+        relevant = {'retroarch', 'mame', 'flycast', 'prboom', 'gzdoom',
+                    'emulatorlauncher', 'controller_dispatcher', 'selector_controles'}
+        for index in range(2):
+            idle, game = cert.api_state()
+            detected = cert.pids()
+            broad = []
+            for entry in Path('/proc').iterdir():
+                if not entry.name.isdigit():
+                    continue
+                try:
+                    comm = (entry / 'comm').read_text().strip().lower()
+                    exe = Path(f'/proc/{entry.name}/exe').resolve().name.lower()
+                    argv = (entry / 'cmdline').read_bytes().replace(b'\\0', b' ').decode(errors='replace').strip()
+                except OSError:
+                    continue
+                if comm in relevant or exe in relevant:
+                    broad.append({'pid': int(entry.name), 'comm': comm, 'exe': exe, 'argv': argv[:500]})
+            all_records = list(detected) + broad
+            selector_active = [x for x in all_records if x.get('comm') in ('selector_controles', 'selector_contro') or
+                               x.get('exe') == 'selector_controles' or '/userdata/system/el_gordo_tools/selector_controles' in x.get('argv', '')]
+            launcher_active = [x for x in all_records if x.get('comm') in ('controller_dispatcher', 'controller_disp', 'emulatorlauncher') or
+                               x.get('exe') in ('controller_dispatcher', 'emulatorlauncher') or
+                               '/userdata/system/el_gordo_tools/controller_dispatcher' in x.get('argv', '') or
+                               '/usr/bin/emulatorlauncher' in x.get('argv', '')]
+            emulator_active = [x for x in all_records if x.get('comm') in ('retroarch', 'mame', 'flycast', 'prboom', 'gzdoom') or
+                               x.get('exe') in ('retroarch', 'mame', 'flycast', 'prboom', 'gzdoom')]
+            observation = {'index': index + 1, 'captured_at': now(), 'isIdle': idle,
+                           'runningGame': game, 'pids': detected, 'other_relevant_processes': broad,
+                           'selector_processes': selector_active, 'launcher_processes': launcher_active,
+                           'emulator_processes': emulator_active,
+                           'marker_absent': not MARKER.exists()}
+            evidence['observations'].append(observation)
+            if not idle or game is not None or detected or broad or MARKER.exists():
+                raise RuntimeError('RUNTIME_NOT_CLEAN_OBSERVATION_' + str(index + 1))
+            if index == 0:
+                time.sleep(1)
+        checks['two_consecutive_clean_runtime_observations'] = True
+        checks['es_idle'] = all(x['isIdle'] is True for x in evidence['observations'])
+        checks['running_game_none'] = all(x['runningGame'] is None for x in evidence['observations'])
+        checks['marker_absent'] = all(x['marker_absent'] for x in evidence['observations'])
+        checks['all_launch_and_emulator_processes_absent'] = all(
+            not x['pids'] and not x['other_relevant_processes'] for x in evidence['observations'])
+        checks['selector_absent'] = all(not x['selector_processes'] for x in evidence['observations'])
+        checks['launcher_absent'] = all(not x['launcher_processes'] for x in evidence['observations'])
+        checks['emulator_absent'] = all(not x['emulator_processes'] for x in evidence['observations'])
+
+        cert_pid, cert_proc = certifier_active()
+        evidence['certifier_pid'] = cert_pid
+        evidence['certifier_process'] = cert_proc
+        job = read_json(AUDIT / 'jobs' / 'certifier_job.json', {}) or {}
+        evidence['certifier_job'] = {k: job.get(k) for k in ('job_id', 'status', 'pid', 'started_at', 'finished_at', 'boot_id')}
+        checks['no_active_certifier'] = cert_pid is None and job.get('status') == 'FAILED' and bool(job.get('finished_at'))
+        if not checks['no_active_certifier']:
+            raise RuntimeError('CERTIFIER_STILL_ACTIVE_OR_JOB_NOT_TERMINAL')
+        autopilot_pid, _ = find_autopilot_process()
+        checks['no_active_autopilot'] = autopilot_pid is None
+        if not checks['no_active_autopilot']:
+            raise RuntimeError('AUTOPILOT_STILL_ACTIVE')
+        checks['no_partial_transaction'] = not cp.get('current_test')
+        if not checks['no_partial_transaction']:
+            raise RuntimeError('CHECKPOINT_TRANSACTION_STILL_ACTIVE')
+
+        txdir = AUDIT / 'runtime' / BATCH68_TX
+        manifest = read_json(txdir / 'manifest.json', {}) or {}
+        result = read_json(txdir / 'result.json', {}) or {}
+        evidence['transaction_id'] = BATCH68_TX
+        doom = next((x for x in reversed(cp.get('results', []))
+                     if x.get('transaction_id') == BATCH68_TX), None)
+        checks['no_game_terminal_result_for_doom'] = bool(
+            doom and doom.get('result') == 'SYSTEM_SAFETY_FAILURE' and
+            doom.get('failure_class') == 'ES_LAUNCH_PROCESS_ACTIVE' and
+            doom.get('system') == 'prboom' and doom.get('rom') == '/userdata/roms/prboom/doom1_shareware.wad')
+        evidence['doom_result'] = {k: doom.get(k) for k in ('result', 'failure_class', 'transaction_id', 'finished_at')} if doom else None
+        checks['last_result_restore_verified'] = bool(
+            doom and doom.get('restore', {}).get('status') == 'RESTORE_VERIFIED' and
+            doom.get('restore', {}).get('transaction_id') == BATCH68_TX and
+            result.get('restore', {}).get('status') == 'RESTORE_VERIFIED' and
+            result.get('restore', {}).get('transaction_id') == BATCH68_TX)
+        checks['transaction_record_consistent'] = bool(
+            result.get('transaction_id') == BATCH68_TX and result.get('system') == 'prboom' and
+            result.get('rom') == '/userdata/roms/prboom/doom1_shareware.wad' and
+            result.get('result') == 'SYSTEM_SAFETY_FAILURE' and
+            result.get('failure_class') == 'ES_LAUNCH_PROCESS_ACTIVE' and
+            result.get('finished_at') == (doom or {}).get('finished_at') and
+            result.get('exit', {}).get('code') == 0 and
+            result.get('restore', {}).get('paths') == 7 and
+            not result.get('safety_after') and not result.get('safety_after_finally'))
+        checks['manifest_restore_verified'] = bool(
+            manifest.get('transaction_id') == BATCH68_TX and
+            manifest.get('status') == 'RESTORE_VERIFIED' and len(manifest.get('entries', [])) == 7)
+        if (not checks['last_result_restore_verified'] or not checks['transaction_record_consistent'] or
+                not checks['manifest_restore_verified']):
+            raise RuntimeError('BATCH68_TRANSACTION_NOT_RESTORE_VERIFIED')
+
+        import certification_transaction as tx
+        restore_checks = []
+        for entry in manifest['entries']:
+            current = tx.state(Path(entry['path']))
+            restore_checks.append({'path': entry['path'], 'matches_pre_state': current == entry.get('before')})
+        evidence['restored_paths'] = restore_checks
+        checks['restored_paths_match_pre_state'] = all(x['matches_pre_state'] for x in restore_checks)
+        if not checks['restored_paths_match_pre_state']:
+            raise RuntimeError('RESTORED_PATH_DIFFERS_FROM_PRE_STATE')
+
+        batch = cp.get('batch_in_progress') or {}
+        tail = cp.get('results', [])[-int(batch.get('launched') or 0):]
+        tail_counts = {}
+        for item in tail:
+            tail_counts[item.get('result', 'UNKNOWN')] = tail_counts.get(item.get('result', 'UNKNOWN'), 0) + 1
+        evidence['batch68_tail_counts'] = tail_counts
+        checks['batch68_transactions_consistent'] = bool(
+            batch.get('name') == 'priority_batch_68' and batch.get('considered') == 41 and
+            batch.get('launched') == 21 and batch.get('auto_pass') == 20 and batch.get('game_fail') == 0 and
+            batch.get('restore_verified') == 21 and batch.get('restore_failures') == 0 and
+            len(tail) == 21 and tail_counts == {'AUTO_PASS': 20, 'SYSTEM_SAFETY_FAILURE': 1} and
+            all(x.get('transaction_id') and x.get('restore', {}).get('status') == 'RESTORE_VERIFIED' for x in tail))
+        if not checks['batch68_transactions_consistent']:
+            raise RuntimeError('BATCH68_ACCOUNTING_MISMATCH')
+        previous = tail[-2] if len(tail) >= 2 else None
+        checks['previous_terminal_result_preserved'] = bool(
+            previous and previous.get('result') == 'AUTO_PASS' and
+            previous.get('restore', {}).get('status') == 'RESTORE_VERIFIED' and
+            previous.get('transaction_id'))
+        if not checks['previous_terminal_result_preserved']:
+            raise RuntimeError('PREVIOUS_BATCH68_RESULT_MISMATCH')
+
+        rows, _ = cert.load_rows()
+        doom_row = next((x for x in rows if x.get('system') == 'prboom' and
+                         x.get('rom') == '/userdata/roms/prboom/doom1_shareware.wad'), None)
+        checks['doom_csv_still_not_tested'] = bool(
+            doom_row and doom_row.get('auto_certification') == 'NOT_TESTED' and
+            doom_row.get('lifecycle_state') == 'NOT_TESTED' and
+            doom_row.get('audio_certification') == 'NOT_TESTED' and
+            doom_row.get('exit_certification') == 'NOT_TESTED')
+        if not checks['doom_csv_still_not_tested']:
+            raise RuntimeError('DOOM_CSV_IS_TERMINAL_OR_CHANGED')
+        systems = cert.ad.live_systems()
+        queue = cert.queue(rows, systems)
+        canonical_next = f"{queue[0]['system']}:{queue[0]['rom']}" if queue else None
+        evidence['next_game'] = cp.get('next_untested')
+        checks['cursor_matches_canonical_queue'] = cp.get('next_untested') == BATCH68_GAME == canonical_next
+        evidence['queue_reconciliation'] = cert.assert_reconciled_queue(rows, cp, systems)
+        if not checks['cursor_matches_canonical_queue']:
+            raise RuntimeError('BATCH68_CURSOR_MISMATCH')
+
+        baseline = result.get('safety_before') or {}
+        identity = cert.profile_state()
+        checks['logical_p1_p4_stable_identity'] = cert.stable_profile_matches(identity)
+        evidence['p1_p4'] = {p: {'physical_path': v['physical_path'], 'by_path': v['by_path'],
+                                 'usb_port': v['usb_port'], 'device_identity': v['device_identity']}
+                             for p, v in identity.items()}
+        audio = cert.get_default_sink()
+        checks['hdmi_pass'] = audio == cert.HDMI == baseline.get('audio_default')
+        evidence['audio_default'] = audio
+        core, override_count = current_global_overrides()
+        checks['protected_config_pass'] = bool(
+            hashlib.sha256(Path('/userdata/system/batocera.conf').read_bytes()).hexdigest() == baseline.get('batocera_conf_sha256') and
+            core == baseline.get('global_mame_core') == 'mame078plus' and override_count == 18 and
+            hashlib.sha256((TOOLS / 'controller_dispatcher').read_bytes()).hexdigest() == baseline.get('dispatcher_sha256') and
+            hashlib.sha256(Path('/userdata/system/configs/el_gordo_controller_profiles/controller_technical.json').read_bytes()).hexdigest() == baseline.get('profile_sha256') and
+            hashlib.sha256(Path('/userdata/system/configs/el_gordo_controller_profiles/multiplayer.json').read_bytes()).hexdigest() == baseline.get('multiplayer_sha256'))
+        if not checks['logical_p1_p4_stable_identity'] or not checks['hdmi_pass'] or not checks['protected_config_pass']:
+            raise RuntimeError('BATCH68_PROTECTED_RUNTIME_GATE_FAIL')
+
+        latest = {}
+        for item in cp.get('results', []):
+            latest[(item.get('system'), item.get('rom'))] = item
+        active_stops = [x for x in latest.values() if x.get('result') in cert.STOP_ENGINE]
+        incident_only = (len(active_stops) == 1 and active_stops[0].get('transaction_id') == BATCH68_TX and
+                         active_stops[0].get('result') == 'SYSTEM_SAFETY_FAILURE' and
+                         active_stops[0].get('failure_class') == 'ES_LAUNCH_PROCESS_ACTIVE')
+        evidence['active_stop_result_count'] = len(active_stops)
+        checks['only_active_stop_is_reconciled_safety_incident'] = incident_only and cp.get('engine_fail_active') == len(active_stops)
+        checks['no_other_active_engine_failure'] = incident_only
+        if not incident_only or cp.get('engine_fail_active') != 1:
+            raise RuntimeError('ACTIVE_ENGINE_FAILURE_NOT_LIMITED_TO_RECOVERED_INCIDENT')
+
+        evidence['result_records_sha256'] = hashlib.sha256(
+            json.dumps(cp.get('results', []), ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+        evidence['batch_progress_sha256'] = hashlib.sha256(
+            json.dumps(batch, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+        evidence['csv_sha256'] = hashlib.sha256(CERT_CSV.read_bytes()).hexdigest()
+        checks['result_evidence_unchanged'] = True
+        checks['batch_progress_unchanged'] = True
+        evidence['passed'] = all(checks.get(k) is True for k in (
+            'operator_confirmed_normal_selector_cancel', 'two_consecutive_clean_runtime_observations',
+            'es_idle', 'running_game_none', 'marker_absent', 'selector_absent', 'launcher_absent',
+            'emulator_absent', 'all_launch_and_emulator_processes_absent',
+            'no_active_certifier', 'no_active_autopilot', 'no_partial_transaction', 'last_result_restore_verified',
+            'transaction_record_consistent', 'manifest_restore_verified', 'restored_paths_match_pre_state', 'batch68_transactions_consistent',
+            'previous_terminal_result_preserved', 'doom_csv_still_not_tested', 'cursor_matches_canonical_queue',
+            'hdmi_pass', 'logical_p1_p4_stable_identity', 'protected_config_pass',
+            'only_active_stop_is_reconciled_safety_incident', 'no_other_active_engine_failure',
+            'result_evidence_unchanged', 'batch_progress_unchanged', 'no_game_terminal_result_for_doom'))
+        if not evidence['passed']:
+            raise RuntimeError('BATCH68_RUNTIME_GATES_FAILED')
+        return evidence
+    except Exception as exc:
+        evidence['failure'] = type(exc).__name__ + ':' + str(exc)[:180]
+        return evidence
+
+
+def apply_recovered_checkpoint_metadata(cp, recovery):
+    before = json.loads(json.dumps(cp))
+    cp['status'] = 'STOPPED_SAFE'
+    cp['blocked_reason'] = None
+    cp['resume_reason'] = recovery['recovery_reason']
+    cp['safety_recovery'] = recovery
+    cp['updated_at'] = recovery['recovered_at']
+    if recovery.get('reconciled_engine_fail_active') == 0:
+        cp['engine_fail_active'] = 0
+    progress_keys = ('batch_in_progress', 'latest_batch', 'next_untested', 'results',
+                     'launch_transactions', 'unique_games_processed', 'result_records',
+                     'auto_certified', 'game_fail', 'restore_failures')
+    for key in progress_keys:
+        if cp.get(key) != before.get(key):
+            raise RuntimeError('RECOVERY_PROGRESS_MUTATION:' + key)
+    if recovery.get('reconciled_engine_fail_active') != 0 and cp.get('engine_fail_active') != before.get('engine_fail_active'):
+        raise RuntimeError('RECOVERY_PROGRESS_MUTATION:engine_fail_active')
+    return cp
+
+
+def reconcile_recovered_safety_block(*, operator_confirmed_normal_selector_cancel=False):
     cp = read_json(CERT_STATE, {}) or {}
-    evidence = recovered_runtime_evidence(cp)
+    if cp.get('blocked_reason') == 'ES_LAUNCH_PROCESS_ACTIVE':
+        evidence = batch68_recovered_runtime_evidence(
+            cp, operator_confirmed_normal_selector_cancel=operator_confirmed_normal_selector_cancel)
+    else:
+        evidence = recovered_runtime_evidence(cp)
     allowed, reason, recovery = recovered_safety_plan(cp, evidence)
     if not allowed:
         print('RECOVERY: FAIL:' + str(reason))
         print('EVIDENCE: ' + json.dumps(evidence, ensure_ascii=False, sort_keys=True))
         return 3
-    before = json.loads(json.dumps(cp))
     stamp = dt.datetime.now().strftime('%Y%m%dT%H%M%S')
     backup_dir = AUDIT / 'recovery_backups' / ('safety_checkpoint_' + stamp)
     backup_dir.mkdir(parents=True, exist_ok=False, mode=0o700)
     shutil.copy2(CERT_STATE, backup_dir / CERT_STATE.name)
-    cp['status'] = 'STOPPED_SAFE'
-    cp['blocked_reason'] = None
-    cp['resume_reason'] = 'POST_REBOOT_RUNTIME_CLEAN'
-    cp['safety_recovery'] = recovery
-    cp['updated_at'] = recovery['recovered_at']
-    # Assert that only the blocker/recovery metadata changed.
-    for key in ('batch_in_progress', 'latest_batch', 'next_untested', 'results',
-                'launch_transactions', 'unique_games_processed', 'result_records',
-                'auto_certified', 'game_fail', 'restore_failures', 'engine_fail_active'):
-        if cp.get(key) != before.get(key):
-            raise RuntimeError('RECOVERY_PROGRESS_MUTATION:' + key)
+    cp = apply_recovered_checkpoint_metadata(cp, recovery)
     atomic_json(CERT_STATE, cp)
     append_event('RECOVERED_SAFETY_BLOCK_RECONCILED', **recovery,
                  checkpoint_backup=str(backup_dir / CERT_STATE.name))
     print('RECOVERY: PASS')
     print('CHECKPOINT: STOPPED_SAFE')
-    print('BATCH: priority_batch_59; progress preserved')
+    print('BATCH: ' + str((cp.get('batch_in_progress') or {}).get('name')) + '; progress preserved')
     print('NEXT_GAME: ' + str(cp.get('next_untested')))
-    print('LAST_RESTORE: RESTORE_VERIFIED:' + POST_REBOOT_TX)
+    print('LAST_RESTORE: RESTORE_VERIFIED:' + str(recovery.get('last_restored_transaction') or recovery.get('transaction_id') or POST_REBOOT_TX))
     return 0
 
 
@@ -2163,7 +2480,9 @@ def main(argv=None):
     s = subs.add_parser('start'); s.add_argument('--dry-run', action='store_true')
     s.add_argument('--batch-size', type=int, default=DEFAULT_BATCH_SIZE); s.add_argument('--max-batches', type=int, default=DEFAULT_MAX_BATCHES)
     subs.add_parser('status'); l = subs.add_parser('log'); l.add_argument('lines', nargs='?', type=int, default=100)
-    subs.add_parser('reconcile-recovered-safety', help='Reconciliar blockers ES recuperables tras verificar runtime y restore')
+    recovery = subs.add_parser('reconcile-recovered-safety', help='Reconciliar blockers ES recuperables tras verificar runtime y restore')
+    recovery.add_argument('--normal-selector-cancel-confirmed', action='store_true',
+                          help='Confirmar que el selector de Batch 68 se canceló normalmente en la interfaz local')
     subs.add_parser('reconcile-report-recovery', help='Cerrar Batch 59 tras validar sólo su post-procesamiento')
     subs.add_parser('publish-reconciled-batch59', help='Completar el publish task ya publicado y consumir su job reconciliado')
     subs.add_parser('pause'); subs.add_parser('resume')
@@ -2172,7 +2491,9 @@ def main(argv=None):
     args = parser.parse_args(argv)
     if args.action == 'start': return start(args.batch_size, args.max_batches, args.dry_run)
     if args.action == 'status': return status()
-    if args.action == 'reconcile-recovered-safety': return reconcile_recovered_safety_block()
+    if args.action == 'reconcile-recovered-safety':
+        return reconcile_recovered_safety_block(
+            operator_confirmed_normal_selector_cancel=args.normal_selector_cancel_confirmed)
     if args.action == 'reconcile-report-recovery': return reconcile_report_recovery()
     if args.action == 'publish-reconciled-batch59': return publish_reconciled_batch59()
     if args.action == 'log': return show_log(args.lines)

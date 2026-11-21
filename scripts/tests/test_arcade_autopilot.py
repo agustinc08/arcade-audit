@@ -752,5 +752,114 @@ class AutopilotTests(unittest.TestCase):
             self.assertIn('MANUAL_REQUIRED pendientes: 1', report)
 
 
+class Batch68SafetyRecoveryTests(unittest.TestCase):
+    def checkpoint(self):
+        results = []
+        for index in range(20):
+            results.append({'system': 'demo', 'rom': f'/userdata/roms/demo/{index}.rom',
+                            'result': 'AUTO_PASS', 'transaction_id': f'b68-{index}',
+                            'restore': {'status': 'RESTORE_VERIFIED'}})
+        results.append({'system': 'prboom', 'rom': '/userdata/roms/prboom/doom1_shareware.wad',
+                        'result': 'SYSTEM_SAFETY_FAILURE', 'failure_class': 'ES_LAUNCH_PROCESS_ACTIVE',
+                        'transaction_id': AP.BATCH68_TX,
+                        'restore': {'status': 'RESTORE_VERIFIED', 'transaction_id': AP.BATCH68_TX}})
+        return {'status': 'PAUSED_SYSTEM_SAFETY_FAILURE',
+                'blocked_reason': 'ES_LAUNCH_PROCESS_ACTIVE', 'engine_fail_active': 1,
+                'next_untested': AP.BATCH68_GAME, 'current_test': None,
+                'auto_certified': 20, 'game_fail': 0, 'restore_failures': 0,
+                'launch_transactions': 21, 'result_records': 21,
+                'batch_in_progress': {'name': 'priority_batch_68', 'considered': 41,
+                    'launched': 21, 'auto_pass': 20, 'game_fail': 0,
+                    'restore_verified': 21, 'restore_failures': 0},
+                'results': results}
+
+    def evidence(self, cp):
+        import hashlib
+        import json
+        checks = {key: True for key in (
+            'operator_confirmed_normal_selector_cancel', 'two_consecutive_clean_runtime_observations',
+            'es_idle', 'running_game_none', 'marker_absent', 'all_launch_and_emulator_processes_absent',
+            'selector_absent', 'launcher_absent', 'emulator_absent',
+            'no_active_certifier', 'no_active_autopilot', 'no_partial_transaction',
+            'last_result_restore_verified', 'transaction_record_consistent',
+            'manifest_restore_verified', 'restored_paths_match_pre_state',
+            'batch68_transactions_consistent', 'previous_terminal_result_preserved',
+            'doom_csv_still_not_tested', 'cursor_matches_canonical_queue', 'hdmi_pass',
+            'logical_p1_p4_stable_identity', 'protected_config_pass',
+            'only_active_stop_is_reconciled_safety_incident', 'no_other_active_engine_failure',
+            'result_evidence_unchanged', 'batch_progress_unchanged', 'no_game_terminal_result_for_doom')}
+        return {'passed': True, 'current_boot_id': 'test-boot', 'checks': checks,
+                'transaction_id': AP.BATCH68_TX, 'next_game': AP.BATCH68_GAME,
+                'active_stop_result_count': 1,
+                'result_records_sha256': hashlib.sha256(json.dumps(
+                    cp['results'], ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest(),
+                'batch_progress_sha256': hashlib.sha256(json.dumps(
+                    cp['batch_in_progress'], ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest(),
+                'csv_sha256': 'fixture-csv-sha'}
+
+    def test_es_launch_active_historical_blocker_recovers_clean_consistent_batch68(self):
+        cp = self.checkpoint()
+        ok, reason, recovery = AP.recovered_safety_plan(cp, self.evidence(cp))
+        self.assertTrue(ok, reason)
+        self.assertEqual(recovery['reconciled_engine_fail_active'], 0)
+
+    def test_es_launch_blocker_fails_if_selector_is_active(self):
+        cp = self.checkpoint(); evidence = self.evidence(cp)
+        evidence['checks']['selector_absent'] = False
+        self.assertFalse(AP.recovered_safety_plan(cp, evidence)[0])
+
+    def test_es_launch_blocker_fails_if_launcher_is_active(self):
+        cp = self.checkpoint(); evidence = self.evidence(cp)
+        evidence['checks']['launcher_absent'] = False
+        self.assertFalse(AP.recovered_safety_plan(cp, evidence)[0])
+
+    def test_es_launch_blocker_fails_if_emulator_is_active(self):
+        cp = self.checkpoint(); evidence = self.evidence(cp)
+        evidence['checks']['emulator_absent'] = False
+        self.assertFalse(AP.recovered_safety_plan(cp, evidence)[0])
+
+    def test_es_launch_blocker_fails_for_restore_or_result_mismatch(self):
+        cp = self.checkpoint(); evidence = self.evidence(cp)
+        cp['results'][-1]['restore']['status'] = 'RESTORE_FAILURE'
+        self.assertFalse(AP.recovered_safety_plan(cp, evidence)[0])
+        cp = self.checkpoint(); evidence = self.evidence(cp)
+        evidence['checks']['manifest_restore_verified'] = False
+        self.assertFalse(AP.recovered_safety_plan(cp, evidence)[0])
+
+    def test_es_launch_blocker_fails_for_cursor_batch_or_result_mutation(self):
+        cp = self.checkpoint(); evidence = self.evidence(cp)
+        cp['next_untested'] = 'prboom:/userdata/roms/prboom/other.wad'
+        self.assertFalse(AP.recovered_safety_plan(cp, evidence)[0])
+        cp = self.checkpoint(); evidence = self.evidence(cp)
+        cp['batch_in_progress']['launched'] = 20
+        self.assertFalse(AP.recovered_safety_plan(cp, evidence)[0])
+        cp = self.checkpoint(); evidence = self.evidence(cp)
+        cp['results'][0]['rom'] = '/userdata/roms/demo/changed.rom'
+        self.assertFalse(AP.recovered_safety_plan(cp, evidence)[0])
+
+    def test_recovery_preserves_batch68_and_keeps_doom_nonterminal(self):
+        cp = self.checkpoint()
+        results_before = json.loads(json.dumps(cp['results']))
+        batch_before = json.loads(json.dumps(cp['batch_in_progress']))
+        _, _, recovery = AP.recovered_safety_plan(cp, self.evidence(cp))
+        recovered = AP.apply_recovered_checkpoint_metadata(cp, recovery)
+        self.assertEqual(recovered['results'], results_before)
+        self.assertEqual(recovered['batch_in_progress'], batch_before)
+        self.assertEqual(recovered['next_untested'], AP.BATCH68_GAME)
+        self.assertEqual(recovered['engine_fail_active'], 0)
+        self.assertEqual(recovered['results'][-1]['result'], 'SYSTEM_SAFETY_FAILURE')
+        self.assertEqual(recovered['results'][-1]['restore']['status'], 'RESTORE_VERIFIED')
+        self.assertEqual(recovered['batch_in_progress']['considered'], 41)
+        self.assertEqual(recovered['batch_in_progress']['launched'], 21)
+        self.assertEqual(recovered['batch_in_progress']['auto_pass'], 20)
+        self.assertEqual(recovered['batch_in_progress']['game_fail'], 0)
+        self.assertEqual(recovered['batch_in_progress']['restore_verified'], 21)
+
+    def test_recovery_fails_if_doom_was_already_marked_terminal(self):
+        cp = self.checkpoint(); evidence = self.evidence(cp)
+        cp['results'][-1]['result'] = 'AUTO_PASS'
+        self.assertFalse(AP.recovered_safety_plan(cp, evidence)[0])
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)

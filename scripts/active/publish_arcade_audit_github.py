@@ -56,6 +56,7 @@ EXPORT_SCOPE_PATHS = {
         "scripts/active/arcade_autopilot.py",
         "scripts/active/publish_arcade_audit_github.py",
         "scripts/tests/test_batch59_reconciliation.py",
+        "scripts/tests/test_arcade_autopilot.py",
     },
 }
 ALLOWED_SUFFIXES = {".md", ".txt", ".csv", ".json", ".py", ".sh"}
