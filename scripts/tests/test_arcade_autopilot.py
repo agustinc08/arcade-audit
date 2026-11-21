@@ -24,6 +24,28 @@ import full_game_certifier as CERT
 
 
 class AutopilotTests(unittest.TestCase):
+    def test_batch68_retry_authorization_forces_exactly_one_game_only(self):
+        task = {'id': 'CERT-BATCH-0068', 'attempts': 5, 'max_attempts': 6,
+            'recovery_retry_authorization': {'post_fix_retry': {
+                'additional_task_attempts': 1, 'additional_game_transactions': 1,
+                'starting_game': AP.BATCH68_GAME, 'github_sha': 'a' * 40,
+                'launch_transactions_before': 5687, 'result_records_before': 6647,
+                'batch_launched_before': 22, 'batch_auto_pass_before': 20,
+                'batch_game_fail_before': 0}}}
+        cp = {'status': 'STOPPED_SAFE', 'blocked_reason': None, 'engine_fail_active': 0,
+            'current_test': None, 'next_untested': AP.BATCH68_GAME,
+            'launch_transactions': 5687, 'result_records': 6647,
+            'batch_in_progress': {'name': 'priority_batch_68', 'considered': 41,
+                'launched': 22, 'auto_pass': 20, 'game_fail': 0,
+                'restore_verified': 22, 'restore_failures': 0},
+            'safety_recovery': {'transaction_id': AP.BATCH68_RETRY_TX,
+                'reconciled_engine_fail_active': 0}}
+        obj = {'tasks': [task]}
+        self.assertTrue(AP.batch68_single_transaction_retry_authorized(obj, cp, 'a' * 40))
+        self.assertFalse(AP.batch68_single_transaction_retry_authorized(obj, cp, 'b' * 40))
+        cp['batch_in_progress']['launched'] = 23
+        self.assertFalse(AP.batch68_single_transaction_retry_authorized(obj, cp, 'a' * 40))
+
     def recovered_checkpoint_fixture(self):
         return {
             'status': 'PAUSED_SYSTEM_SAFETY_FAILURE',

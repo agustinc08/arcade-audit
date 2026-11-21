@@ -1776,6 +1776,35 @@ def refresh_batch_task(obj, cp):
                       'reason': 'Checkpoint canónico reconciliado y safety gates PASS; reanudación permitida.'})
 
 
+def batch68_single_transaction_retry_authorized(task_obj, cp, remote_sha=None):
+    """Narrow one-game Autopilot limit for the explicitly authorized Doom retry."""
+    task = next((x for x in task_obj.get('tasks', []) if x.get('id') == 'CERT-BATCH-0068'), {})
+    authorization = (task.get('recovery_retry_authorization') or {}).get('post_fix_retry') or {}
+    if remote_sha is None:
+        publisher = read_json(AUDIT / 'github_publish_state.json', {}) or {}
+        remote_sha = publisher.get('last_known_remote_sha')
+    batch = cp.get('batch_in_progress') or {}
+    recovery = cp.get('safety_recovery') or {}
+    return bool(
+        task.get('attempts') == 5 and task.get('max_attempts') == 6 and
+        authorization.get('additional_task_attempts') == 1 and
+        authorization.get('additional_game_transactions') == 1 and
+        authorization.get('starting_game') == BATCH68_GAME and
+        authorization.get('github_sha') == remote_sha and
+        authorization.get('launch_transactions_before') == cp.get('launch_transactions') == 5687 and
+        authorization.get('result_records_before') == cp.get('result_records') == 6647 and
+        authorization.get('batch_launched_before') == batch.get('launched') == 22 and
+        authorization.get('batch_auto_pass_before') == batch.get('auto_pass') == 20 and
+        authorization.get('batch_game_fail_before') == batch.get('game_fail') == 0 and
+        batch.get('name') == 'priority_batch_68' and batch.get('considered') == 41 and
+        batch.get('restore_verified') == 22 and batch.get('restore_failures') == 0 and
+        cp.get('status') == 'STOPPED_SAFE' and not cp.get('blocked_reason') and
+        not cp.get('current_test') and cp.get('engine_fail_active') == 0 and
+        cp.get('next_untested') == BATCH68_GAME and
+        recovery.get('transaction_id') == BATCH68_RETRY_TX and
+        recovery.get('reconciled_engine_fail_active') == 0)
+
+
 def recover_unfinished_tasks(obj, job, cp, state):
     """Recover idempotent work; a completed certifier is finalized without relaunch."""
     if job.get('status') == 'RUNNING':
@@ -2104,6 +2133,12 @@ def execute_one(item, task_obj, state):
                         atomic_json(STATE, state)
                         append_event('AUTOPILOT_STOPPED_SAFE')
                         return True
+                    if state.get('single_transaction_retry'):
+                        state.update({'stop_requested': True,
+                                      'next_action': 'Único retry autorizado terminado en un límite seguro.'})
+                        atomic_json(STATE, state)
+                        append_event('AUTHORIZED_SINGLE_TRANSACTION_RETRY_COMPLETE', task_id=tid)
+                        return True
                     if state.get('pause_requested'):
                         state.update({'status': 'PAUSED', 'pid': None, 'process_start_ticks': None})
                         atomic_json(STATE, state)
@@ -2338,6 +2373,10 @@ def start(batch_size=DEFAULT_BATCH_SIZE, max_batches=DEFAULT_MAX_BATCHES, dry_ru
     job_status = get_cert_job_status()
     obj = load_tasks(create=not dry_run)
     cp = read_json(CERT_STATE, {}) or {}
+    one_game_retry = batch68_single_transaction_retry_authorized(obj, cp)
+    if one_game_retry:
+        batch_size = 1
+        max_batches = 1
     recover_unfinished_tasks(obj, job_status, cp, state)
     adopt_task_id = None
     if job_status.get('status') == 'RUNNING':
@@ -2425,7 +2464,8 @@ def start(batch_size=DEFAULT_BATCH_SIZE, max_batches=DEFAULT_MAX_BATCHES, dry_ru
     state.update({'schema_version': 1, 'status': 'STARTING', 'started_at': now(), 'updated_at': now(),
                   'safe_mode': True, 'pause_reason': None, 'pause_requested': False,
                   'stop_requested': False, 'current_task': None, 'batch_size': batch_size,
-                  'max_batches': max_batches, 'run_id': run_id, 'pid': None,
+                  'max_batches': max_batches, 'single_transaction_retry': one_game_retry,
+                  'run_id': run_id, 'pid': None,
                   'current_task': adopt_task_id})
     atomic_json(STATE, state)
     try:
