@@ -42,7 +42,6 @@ EXPORT_SCOPE_PATHS = {
     },
     "incident-batch": {
         "ARCADE_CURRENT_STATE.md", "data/arcade_issues.csv",
-        "data/autopilot_tasks.json", "autopilot_state.json",
         "data/arcade_master_checkpoint.json", "data/controllers_live.json",
         "data/full_game_certification.csv", "data/full_game_certification_checkpoint.json",
         "reports/AUTOPILOT_STATUS.md", "reports/CERTIFIER_MARKER_COLLISION.md",
@@ -54,6 +53,7 @@ EXPORT_SCOPE_PATHS = {
         "scripts/active/rebuild_priority_batch_report.py",
         "scripts/active/certification_batch_accounting.py",
         "scripts/active/arcade_autopilot.py",
+        "scripts/active/arcade_certifier_job.py",
         "scripts/active/publish_arcade_audit_github.py",
         "scripts/tests/test_batch59_reconciliation.py",
         "scripts/tests/test_arcade_autopilot.py",

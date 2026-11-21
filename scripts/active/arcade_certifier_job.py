@@ -88,6 +88,38 @@ def read_json(path, fallback=None):
         return fallback
 
 
+def active_engine_failure_count(cp, stop_engine):
+    """Count active stop results, excluding only a precisely reconciled B68 safety incident."""
+    latest = {}
+    for result in cp.get('results', []):
+        latest[(result.get('system'), result.get('rom'))] = result
+    active = [result for result in latest.values() if result.get('result') in stop_engine]
+    recovery = cp.get('safety_recovery') or {}
+    recovered_tx = recovery.get('transaction_id')
+    exact_recovery = (
+        cp.get('status') == 'STOPPED_SAFE' and not cp.get('blocked_reason') and
+        cp.get('engine_fail_active') == 0 and
+        recovery.get('recovered_blocker') == 'ES_LAUNCH_PROCESS_ACTIVE' and
+        recovery.get('recovery_reason') == 'NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN' and
+        recovery.get('operator_confirmed_normal_selector_cancel') is True and
+        recovery.get('reconciled_engine_fail_active') == 0 and
+        recovery.get('next_game') == 'prboom:/userdata/roms/prboom/doom1_shareware.wad' and
+        cp.get('next_untested') == recovery.get('next_game') and
+        isinstance(recovered_tx, str) and recovered_tx == '20261119T143935_d7d3a63e70'
+    )
+    if exact_recovery:
+        reconciled = [item for item in active
+                      if item.get('transaction_id') == recovered_tx and
+                      item.get('result') == 'SYSTEM_SAFETY_FAILURE' and
+                      item.get('failure_class') == 'ES_LAUNCH_PROCESS_ACTIVE' and
+                      item.get('system') == 'prboom' and
+                      item.get('rom') == '/userdata/roms/prboom/doom1_shareware.wad' and
+                      item.get('restore', {}).get('status') == 'RESTORE_VERIFIED']
+        if len(reconciled) == 1:
+            return len(active) - 1
+    return len(active)
+
+
 def proc_info(pid):
     try:
         raw = Path(f'/proc/{pid}/cmdline').read_bytes().replace(b'\0', b' ').decode(errors='replace')
@@ -147,8 +179,10 @@ def validate_start(batch_size):
     rows, _ = cert.load_rows()
     systems = cert.ad.live_systems()
     cert.assert_reconciled_queue(rows, cp, systems)
-    metrics = cert.certification_metrics(rows, cp)
-    if metrics.get('engine_fail_active'):
+    active_engine_failures = active_engine_failure_count(cp, cert.STOP_ENGINE)
+    if cp.get('engine_fail_active') != active_engine_failures:
+        raise RuntimeError('ENGINE_FAIL_COUNTER_MISMATCH')
+    if active_engine_failures:
         raise RuntimeError('ACTIVE_ENGINE_FAILURES')
     next_game = cert.next_cursor(rows, systems)
     if not next_game:

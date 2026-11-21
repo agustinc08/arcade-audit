@@ -861,5 +861,42 @@ class Batch68SafetyRecoveryTests(unittest.TestCase):
         self.assertFalse(AP.recovered_safety_plan(cp, evidence)[0])
 
 
+class Batch68RunnerRecoveryGateTests(unittest.TestCase):
+    def checkpoint(self):
+        return {'status': 'STOPPED_SAFE', 'blocked_reason': None, 'engine_fail_active': 0,
+                'next_untested': AP.BATCH68_GAME,
+                'safety_recovery': {
+                    'recovered_blocker': 'ES_LAUNCH_PROCESS_ACTIVE',
+                    'recovery_reason': 'NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN',
+                    'operator_confirmed_normal_selector_cancel': True,
+                    'reconciled_engine_fail_active': 0,
+                    'transaction_id': AP.BATCH68_TX, 'next_game': AP.BATCH68_GAME},
+                'results': [{'system': 'prboom',
+                    'rom': '/userdata/roms/prboom/doom1_shareware.wad',
+                    'result': 'SYSTEM_SAFETY_FAILURE', 'failure_class': 'ES_LAUNCH_PROCESS_ACTIVE',
+                    'transaction_id': AP.BATCH68_TX,
+                    'restore': {'status': 'RESTORE_VERIFIED'}}]}
+
+    def test_runner_ignores_only_the_exact_reconciled_safety_incident(self):
+        cp = self.checkpoint()
+        self.assertEqual(RUNNER.active_engine_failure_count(cp, CERT.STOP_ENGINE), 0)
+
+    def test_runner_still_blocks_another_active_failure(self):
+        cp = self.checkpoint()
+        cp['results'].append({'system': 'mame', 'rom': '/userdata/roms/mame/other.zip',
+                              'result': 'ENGINE_FAIL', 'transaction_id': 'foreign-engine-failure'})
+        self.assertEqual(RUNNER.active_engine_failure_count(cp, CERT.STOP_ENGINE), 1)
+
+    def test_runner_does_not_exempt_without_recovery_metadata(self):
+        cp = self.checkpoint(); cp['safety_recovery'] = None
+        self.assertEqual(RUNNER.active_engine_failure_count(cp, CERT.STOP_ENGINE), 1)
+
+    def test_runner_does_not_exempt_mismatched_transaction_or_restore(self):
+        cp = self.checkpoint(); cp['results'][0]['transaction_id'] = 'different-tx'
+        self.assertEqual(RUNNER.active_engine_failure_count(cp, CERT.STOP_ENGINE), 1)
+        cp = self.checkpoint(); cp['results'][0]['restore']['status'] = 'RESTORE_FAILURE'
+        self.assertEqual(RUNNER.active_engine_failure_count(cp, CERT.STOP_ENGINE), 1)
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)
