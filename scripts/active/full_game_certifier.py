@@ -689,6 +689,42 @@ def next_cursor(rows,systems):
  q=queue(rows,systems)
  return ('%s:%s'%(q[0]['system'],q[0]['rom'])) if q else None
 
+def reconciled_batch68_retry_matches(game,cp,csv_sha256):
+ # A single non-terminal Doom safety record may remain in history after the
+ # explicit Batch 68 recovery. Retry it only while every recovery-bound
+ # identity and evidence digest still matches the unchanged checkpoint.
+ recovery=cp.get('safety_recovery') or {};runtime=recovery.get('runtime_checks') or {}
+ system=game.get('system');rom=game.get('rom')
+ latest={}
+ for item in cp.get('results',[]):latest[(item.get('system'),item.get('rom'))]=item
+ incident=latest.get(('prboom','/userdata/roms/prboom/doom1_shareware.wad'),{})
+ required=('operator_confirmed_normal_selector_cancel','two_consecutive_clean_runtime_observations',
+  'es_idle','running_game_none','marker_absent','all_launch_and_emulator_processes_absent',
+  'no_active_certifier','no_active_autopilot','no_partial_transaction','last_result_restore_verified',
+  'manifest_restore_verified','restored_paths_match_pre_state','batch68_transactions_consistent',
+  'previous_terminal_result_preserved','doom_csv_still_not_tested','cursor_matches_canonical_queue',
+  'hdmi_pass','logical_p1_p4_stable_identity','protected_config_pass','result_evidence_unchanged',
+  'batch_progress_unchanged','no_game_terminal_result_for_doom')
+ results_sha=hashlib.sha256(json.dumps(cp.get('results',[]),ensure_ascii=False,sort_keys=True,
+  separators=(',',':')).encode()).hexdigest()
+ batch_sha=hashlib.sha256(json.dumps(cp.get('batch_in_progress'),ensure_ascii=False,sort_keys=True,
+  separators=(',',':')).encode()).hexdigest()
+ return bool(system=='prboom' and rom=='/userdata/roms/prboom/doom1_shareware.wad' and
+  cp.get('status')=='STOPPED_SAFE' and cp.get('blocked_reason') is None and cp.get('engine_fail_active')==0 and
+  cp.get('next_untested')=='prboom:/userdata/roms/prboom/doom1_shareware.wad' and
+  recovery.get('previous_blocked_reason')=='ES_LAUNCH_PROCESS_ACTIVE' and
+  recovery.get('recovery_reason')=='NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN' and
+  recovery.get('operator_confirmed_normal_selector_cancel') is True and
+  recovery.get('previous_active_engine_fail_count')==1 and recovery.get('reconciled_engine_fail_active')==0 and
+  recovery.get('transaction_id')=='20261119T143935_d7d3a63e70' and
+  recovery.get('next_game')=='prboom:/userdata/roms/prboom/doom1_shareware.wad' and
+  all(runtime.get(key) is True for key in required) and
+  recovery.get('result_records_sha256')==results_sha and recovery.get('batch_progress_sha256')==batch_sha and
+  recovery.get('csv_sha256')==csv_sha256 and incident.get('transaction_id')=='20261119T143935_d7d3a63e70' and
+  incident.get('result')=='SYSTEM_SAFETY_FAILURE' and incident.get('failure_class')=='ES_LAUNCH_PROCESS_ACTIVE' and
+  incident.get('restore',{}).get('status')=='RESTORE_VERIFIED' and
+  incident.get('restore',{}).get('transaction_id')=='20261119T143935_d7d3a63e70')
+
 def assert_reconciled_queue(rows,cp,systems,batch_size=None):
  metrics=certification_metrics(rows,cp)
  for key in ('auto_certified','game_fail','static_fail','flaky','needs_repair'):
@@ -725,7 +761,9 @@ def assert_reconciled_queue(rows,cp,systems,batch_size=None):
    status=game.get('auto_certification') or 'NOT_TESTED'
    if status not in ('NOT_TESTED',''):
     raise RuntimeError('QUEUE_INVARIANT_FAIL: selected terminal game')
-   if any(x.get('system')==game['system'] and x.get('rom')==game['rom'] for x in cp.get('results',[])):
+   has_prior_result=any(x.get('system')==game['system'] and x.get('rom')==game['rom'] for x in cp.get('results',[]))
+   current_csv_sha=hashlib.sha256(TABLE.read_bytes()).hexdigest()
+   if has_prior_result and not reconciled_batch68_retry_matches(game,cp,current_csv_sha):
     raise RuntimeError('QUEUE_INVARIANT_FAIL: selected game already has a result')
  return metrics
 

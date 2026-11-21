@@ -938,6 +938,39 @@ class Batch68RunnerRecoveryGateTests(unittest.TestCase):
         self.assertFalse(AP.batch68_reconciled_incident_matches(
             cp, extra, 'fixture-csv'))
 
+    def test_queue_allows_only_hash_bound_reconciled_doom_retry(self):
+        import hashlib
+        import json
+        cp = self.checkpoint()
+        cp['status'] = 'STOPPED_SAFE'; cp['blocked_reason'] = None; cp['engine_fail_active'] = 0
+        cp['batch_in_progress'] = {'name': 'priority_batch_68', 'considered': 41,
+                                   'launched': 21, 'auto_pass': 20, 'game_fail': 0,
+                                   'restore_verified': 21, 'restore_failures': 0}
+        runtime_keys = (
+            'operator_confirmed_normal_selector_cancel', 'two_consecutive_clean_runtime_observations',
+            'es_idle', 'running_game_none', 'marker_absent', 'all_launch_and_emulator_processes_absent',
+            'no_active_certifier', 'no_active_autopilot', 'no_partial_transaction',
+            'last_result_restore_verified', 'manifest_restore_verified', 'restored_paths_match_pre_state',
+            'batch68_transactions_consistent', 'previous_terminal_result_preserved',
+            'doom_csv_still_not_tested', 'cursor_matches_canonical_queue', 'hdmi_pass',
+            'logical_p1_p4_stable_identity', 'protected_config_pass', 'result_evidence_unchanged',
+            'batch_progress_unchanged', 'no_game_terminal_result_for_doom')
+        cp['safety_recovery'] = {
+            'previous_blocked_reason': 'ES_LAUNCH_PROCESS_ACTIVE',
+            'recovery_reason': 'NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN',
+            'operator_confirmed_normal_selector_cancel': True,
+            'previous_active_engine_fail_count': 1, 'reconciled_engine_fail_active': 0,
+            'transaction_id': AP.BATCH68_TX, 'next_game': AP.BATCH68_GAME,
+            'runtime_checks': {key: True for key in runtime_keys}, 'csv_sha256': 'fixture-csv',
+            'result_records_sha256': hashlib.sha256(json.dumps(
+                cp['results'], ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest(),
+            'batch_progress_sha256': hashlib.sha256(json.dumps(
+                cp['batch_in_progress'], ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()}
+        game = {'system': 'prboom', 'rom': '/userdata/roms/prboom/doom1_shareware.wad'}
+        self.assertTrue(CERT.reconciled_batch68_retry_matches(game, cp, 'fixture-csv'))
+        cp['safety_recovery']['csv_sha256'] = 'different-csv'
+        self.assertFalse(CERT.reconciled_batch68_retry_matches(game, cp, 'fixture-csv'))
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

@@ -1035,7 +1035,7 @@ def batch68_recovered_runtime_evidence(cp, *, operator_confirmed_normal_selector
         evidence['certifier_process'] = cert_proc
         job = read_json(AUDIT / 'jobs' / 'certifier_job.json', {}) or {}
         evidence['certifier_job'] = {k: job.get(k) for k in ('job_id', 'status', 'pid', 'started_at', 'finished_at', 'boot_id')}
-        checks['no_active_certifier'] = cert_pid is None and job.get('status') == 'FAILED' and bool(job.get('finished_at'))
+        checks['no_active_certifier'] = cert_pid is None and job.get('status') in ('FAILED', 'COMPLETE') and bool(job.get('finished_at'))
         if not checks['no_active_certifier']:
             raise RuntimeError('CERTIFIER_STILL_ACTIVE_OR_JOB_NOT_TERMINAL')
         autopilot_pid, _ = find_autopilot_process()
