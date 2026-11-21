@@ -1155,6 +1155,56 @@ class Batch69DuplicateLaunchRecoveryTests(unittest.TestCase):
         evidence = json.loads(json.dumps(self.evidence)); evidence['guard_remote_sha'] = '0' * 40
         self.assertFalse(AP.batch69_duplicate_launch_recovered_safety_plan(self.cp, evidence)[0])
 
+    def retry_task(self):
+        return {'id': 'CERT-BATCH-0069', 'type': 'CERTIFICATION_BATCH', 'status': 'PAUSED_SAFETY',
+            'attempts': 3, 'max_attempts': 3, 'automatic': True, 'requires_codex': False,
+            'requires_manual': False, 'last_error': 'CERTIFIER_FAILED:FAILED'}
+
+    def recovered_checkpoint(self):
+        cp = json.loads(json.dumps(self.cp))
+        cp.update({'status': 'STOPPED_SAFE', 'blocked_reason': None, 'engine_fail_active': 0})
+        cp['safety_recovery'] = {'recovery_reason': 'BATCH69_DUPLICATE_LAUNCH_GUARD_PUBLISHED_AND_RUNTIME_CLEAN',
+            'transaction_ids': ['20261120T233918_99d5ee09e8', AP.BATCH69_DUPLICATE_TX],
+            'guard_remote_sha': AP.BATCH69_DUPLICATE_FIX_SHA}
+        return cp
+
+    def test_exact_recovery_grants_one_task_attempt_and_exposes_batch69_in_dry_run(self):
+        task = self.retry_task(); obj = {'tasks': [task]}; cp = self.recovered_checkpoint()
+        with mock.patch.object(AP, 'batch69_duplicate_retry_task_eligible', return_value=True):
+            AP.refresh_batch_task(obj, cp)
+        self.assertEqual(task['status'], 'READY')
+        self.assertEqual(task['attempts'], 3)
+        self.assertEqual(task['max_attempts'], 4)
+        self.assertEqual(task['recovery_retry_authorization'], {
+            'reason': 'BATCH69_DUPLICATE_LAUNCH_GUARD_PUBLISHED_AND_RUNTIME_CLEAN',
+            'transaction_ids': ['20261120T233918_99d5ee09e8', AP.BATCH69_DUPLICATE_TX],
+            'prior_task_attempts': 3, 'additional_task_attempts': 1,
+            'additional_game_transactions': 1, 'starting_game': AP.BATCH69_GAME,
+            'guard_remote_sha': AP.BATCH69_DUPLICATE_FIX_SHA})
+        self.assertEqual(AP.select_task(obj['tasks'])['id'], 'CERT-BATCH-0069')
+        AP.refresh_batch_task(obj, cp)
+        self.assertEqual(task['max_attempts'], 4)
+
+    def test_task_attempt_allowance_is_not_extended_without_exact_recovery(self):
+        task = self.retry_task(); obj = {'tasks': [task]}; cp = self.recovered_checkpoint()
+        with mock.patch.object(AP, 'batch69_duplicate_retry_task_eligible', return_value=False):
+            AP.refresh_batch_task(obj, cp)
+        self.assertEqual(task['status'], 'READY')
+        self.assertEqual(task['max_attempts'], 3)
+        self.assertIsNone(AP.select_task(obj['tasks']))
+
+    def test_retry_authorization_rejects_changed_incident_accounting_or_task_attempts(self):
+        task = self.retry_task(); cp = self.recovered_checkpoint()
+        self.assertFalse(AP.batch69_duplicate_retry_task_eligible(task, cp))
+        task['attempts'] = 2
+        self.assertFalse(AP.batch69_duplicate_retry_task_eligible(task, cp))
+        task['attempts'] = 3
+        cp['batch_in_progress']['launched'] = 1
+        self.assertFalse(AP.batch69_duplicate_retry_task_eligible(task, cp))
+        cp = self.recovered_checkpoint()
+        cp['safety_recovery']['transaction_ids'] = ['foreign', AP.BATCH69_DUPLICATE_TX]
+        self.assertFalse(AP.batch69_duplicate_retry_task_eligible(task, cp))
+
 
 class Batch68RunnerRecoveryGateTests(unittest.TestCase):
     def checkpoint(self):

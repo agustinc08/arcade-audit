@@ -166,6 +166,28 @@ La operación real se libera sólo después de pruebas y un test pequeño elegib
 con detached survival, checkpoint y restore. Si el checkpoint está bloqueado,
 no iniciar juegos ni `start` real.
 
+### Batch 69: recuperación de doble lanzamiento MrBoom
+
+Una transacción automática puede tener una sola reclamación de emulador. El
+dispatcher reclama atómicamente antes de `configgen`/`emulatorlauncher`, con
+identidad de transacción, boot, ES, sistema y ROM. Una segunda invocación
+vinculada a la misma transacción se registra y suprime antes de iniciar otro
+emulador; contexto ausente, corrupto o ambiguo falla cerrado. El lanzamiento
+manual sin contexto mantiene el selector interactivo.
+
+La recuperación de Batch 69 sólo acepta el par allowlisted de transacciones
+MrBoom con ambos restores verificados, el segundo RetroArch cerrado por PID
+exacto y evidencia de runtime limpio. Preserva resultados y contadores, y
+reconcilia únicamente el blocker activo. Para este caso concreto, con
+`considered=1`, `launched=2`, `processed=2`, `RESTORES=2`, el preflight permite
+un solo lanzamiento adicional sólo si los digests de resultados, progreso y
+CSV, el cursor MrBoom y el guard publicado siguen coincidiendo. El task queue
+recibe exactamente un intento adicional cuando el task estaba agotado en
+`3/3`; cualquier fallo consume ese intento y no amplía de nuevo el límite.
+Este retry de un juego no activa el límite especial de Batch 68: después de un
+resultado terminal y publicación correctos, Autopilot puede continuar con la
+cola normal.
+
 ## Validación del handoff detached — 2026-11-17
 
 El primer arranque real de Autopilot llegó al detached job runner, pero el

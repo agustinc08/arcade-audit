@@ -2330,8 +2330,63 @@ def refresh_batch_task(obj, cp):
     tid = f'CERT-BATCH-{int(m.group(1)):04d}' if m else 'CERT-BATCH-UNKNOWN'
     found = next((x for x in obj['tasks'] if x.get('id') == tid), None)
     if found and found.get('status') == 'PAUSED_SAFETY':
+        if tid == 'CERT-BATCH-0069' and batch69_duplicate_retry_task_eligible(found, cp):
+            found['max_attempts'] = int(found['attempts']) + 1
+            found['recovery_retry_authorization'] = {
+                'reason': 'BATCH69_DUPLICATE_LAUNCH_GUARD_PUBLISHED_AND_RUNTIME_CLEAN',
+                'transaction_ids': ['20261120T233918_99d5ee09e8', BATCH69_DUPLICATE_TX],
+                'prior_task_attempts': int(found['attempts']),
+                'additional_task_attempts': 1,
+                'additional_game_transactions': 1,
+                'starting_game': BATCH69_GAME,
+                'guard_remote_sha': BATCH69_DUPLICATE_FIX_SHA,
+            }
         found.update({'status': 'READY', 'last_error': None, 'updated_at': now(),
                       'reason': 'Checkpoint canónico reconciliado y safety gates PASS; reanudación permitida.'})
+
+
+def batch69_duplicate_retry_task_eligible(task, cp):
+    """Grant exactly one task attempt only for the hash-bound duplicate-launch recovery."""
+    if (not isinstance(task, dict) or task.get('id') != 'CERT-BATCH-0069' or
+            task.get('type') != 'CERTIFICATION_BATCH' or task.get('status') != 'PAUSED_SAFETY' or
+            task.get('attempts') != 3 or task.get('max_attempts') != 3 or
+            task.get('automatic') is not True or task.get('requires_codex') or task.get('requires_manual') or
+            task.get('last_error') != 'CERTIFIER_FAILED:FAILED'):
+        return False
+    batch = cp.get('batch_in_progress') or {}
+    recovery = cp.get('safety_recovery') or {}
+    if (cp.get('status') != 'STOPPED_SAFE' or cp.get('blocked_reason') is not None or
+            cp.get('engine_fail_active') != 0 or cp.get('current_test') or
+            cp.get('next_untested') != BATCH69_GAME or
+            recovery.get('recovery_reason') != 'BATCH69_DUPLICATE_LAUNCH_GUARD_PUBLISHED_AND_RUNTIME_CLEAN' or
+            recovery.get('transaction_ids') != ['20261120T233918_99d5ee09e8', BATCH69_DUPLICATE_TX] or
+            recovery.get('guard_remote_sha') != BATCH69_DUPLICATE_FIX_SHA or
+            batch.get('name') != 'priority_batch_69' or batch.get('considered') != 1 or
+            batch.get('launched') != 2 or batch.get('processed') != 2 or
+            batch.get('auto_pass') != 0 or batch.get('game_fail') != 0 or
+            batch.get('restore_verified') != 2 or batch.get('restore_failures') != 0):
+        return False
+    try:
+        sys.path.insert(0, str(TOOLS))
+        import full_game_certifier as cert
+        import hashlib
+        publisher = read_json(AUDIT / 'github_publish_state.json', {}) or {}
+        published = publisher.get('last_successful_publish_sha')
+        if (not isinstance(published, str) or not re.fullmatch(r'[0-9a-f]{40}', published) or
+                publisher.get('last_known_remote_sha') != published):
+            return False
+        if not cert.reconciled_batch69_retry_matches(
+                {'system': 'mrboom', 'rom': '/userdata/roms/mrboom/MrBoom.libretro'}, cp,
+                hashlib.sha256(CERT_CSV.read_bytes()).hexdigest()):
+            return False
+        export = Path('/userdata/system/state/arcade_audit_git/scripts/active')
+        for name, active in (('controller_dispatcher.py', TOOLS / 'controller_dispatcher'),
+                             ('automatic_selector_context.py', TOOLS / 'automatic_selector_context.py')):
+            if hashlib.sha256(active.read_bytes()).digest() != hashlib.sha256((export / name).read_bytes()).digest():
+                return False
+        return True
+    except (OSError, ImportError, ValueError, TypeError):
+        return False
 
 
 def batch68_single_transaction_retry_authorized(task_obj, cp, remote_sha=None):

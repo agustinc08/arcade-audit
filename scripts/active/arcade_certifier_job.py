@@ -300,7 +300,10 @@ def validate_start(batch_size):
         progress = cp['batch_in_progress']
         remaining = int(progress.get('considered', 0)) - int(progress.get('launched', 0))
         csv_sha = __import__('hashlib').sha256((AUDIT / 'full_game_certification.csv').read_bytes()).hexdigest()
-        exact_batch69_retry = (remaining == 0 and batch69_retry_at_exhausted_boundary(cp, cert, csv_sha))
+        # Replayed safety launches can exceed the one considered ROM while
+        # remaining non-terminal. Permit that negative remainder only for the
+        # exact hash-bound Batch 69 duplicate-launch recovery below.
+        exact_batch69_retry = (remaining <= 0 and batch69_retry_at_exhausted_boundary(cp, cert, csv_sha))
         if remaining < 1 and not exact_batch69_retry:
             raise RuntimeError('SAFE_STOP_BATCH_BOUNDARY_INCONSISTENT')
         return next_game, 1 if exact_batch69_retry else min(batch_size, remaining), owner_record
