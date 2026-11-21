@@ -161,16 +161,64 @@ def active_engine_failure_count(cp, stop_engine):
                 recovery.get('result_records_sha256') == results_sha and
                 recovery.get('batch_progress_sha256') == batch_sha and recovery.get('csv_sha256') == csv_sha):
             return 0
+    exact_batch69_duplicate = (
+        cp.get('status') == 'STOPPED_SAFE' and not cp.get('blocked_reason') and
+        cp.get('engine_fail_active') == 0 and recovery.get('transaction_id') == '20261121T051959_e4bc123b91' and
+        recovery.get('transaction_ids') == ['20261120T233918_99d5ee09e8', '20261121T051959_e4bc123b91'] and
+        recovery.get('previous_blocked_reason') == 'ES_LAUNCH_PROCESS_ACTIVE' and
+        recovery.get('recovery_reason') == 'BATCH69_DUPLICATE_LAUNCH_GUARD_PUBLISHED_AND_RUNTIME_CLEAN' and
+        recovery.get('reconciled_engine_fail_active') == 0 and recovery.get('previous_active_engine_fail_count') == 1 and
+        recovery.get('guard_remote_sha') == '922fd4d12e3f14a797270f79cd45e4b6f59f1a54' and
+        recovery.get('next_game') == 'mrboom:/userdata/roms/mrboom/MrBoom.libretro' and
+        cp.get('next_untested') == recovery.get('next_game'))
+    if exact_batch69_duplicate:
+        runtime = recovery.get('runtime_checks') or {}
+        required = ('two_consecutive_clean_runtime_observations', 'es_idle', 'running_game_none',
+                    'marker_absent', 'selector_absent', 'launcher_absent', 'emulator_absent',
+                    'all_launch_and_emulator_processes_absent', 'no_active_certifier',
+                    'no_active_autopilot', 'no_partial_transaction', 'both_transactions_restore_verified',
+                    'restored_paths_match_pre_state', 'prior_transaction_emulator_not_started',
+                    'first_emulator_evidence_valid',
+                    'second_launch_tree_evidence_valid', 'second_retroarch_exact_pid_closed',
+                    'automatic_selector_context_matched_twice', 'duplicate_launch_guard_published',
+                    'batch68_preserved', 'mrboom_csv_still_not_tested', 'cursor_matches_canonical_queue',
+                    'hdmi_pass', 'logical_p1_p4_stable_identity', 'protected_config_pass',
+                    'only_active_stop_is_reconciled_safety_incident', 'batch69_transactions_consistent',
+                    'result_evidence_unchanged', 'batch_progress_unchanged')
+        results_sha = __import__('hashlib').sha256(json.dumps(cp.get('results', []), ensure_ascii=False,
+            sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+        batch_sha = __import__('hashlib').sha256(json.dumps(cp.get('batch_in_progress'), ensure_ascii=False,
+            sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+        try:
+            csv_sha = __import__('hashlib').sha256((AUDIT / 'full_game_certification.csv').read_bytes()).hexdigest()
+        except OSError:
+            csv_sha = None
+        reconciled = [item for item in active if item.get('transaction_id') == '20261121T051959_e4bc123b91' and
+                      item.get('result') == 'SYSTEM_SAFETY_FAILURE' and
+                      item.get('failure_class') == 'ES_LAUNCH_PROCESS_ACTIVE' and
+                      item.get('system') == 'mrboom' and
+                      item.get('rom') == '/userdata/roms/mrboom/MrBoom.libretro' and
+                      item.get('restore', {}).get('status') == 'RESTORE_VERIFIED' and
+                      item.get('restore', {}).get('transaction_id') == '20261121T051959_e4bc123b91']
+        batch = cp.get('batch_in_progress') or {}
+        if (all(runtime.get(key) is True for key in required) and len(active) == 1 and len(reconciled) == 1 and
+                recovery.get('result_records_sha256') == results_sha and
+                recovery.get('batch_progress_sha256') == batch_sha and recovery.get('csv_sha256') == csv_sha and
+                batch.get('name') == 'priority_batch_69' and batch.get('considered') == 1 and
+                batch.get('launched') == 2 and batch.get('processed') == 2 and
+                batch.get('restore_verified') == 2 and batch.get('restore_failures') == 0):
+            return 0
     return len(active)
 
 
 def batch69_retry_at_exhausted_boundary(cp, cert, csv_sha256):
-    """Permit one restore-verified pre-launch retry, never a general empty-batch resume."""
+    """Permit one explicitly reconciled MrBoom retry, never a general empty-batch resume."""
     progress = cp.get('batch_in_progress') or {}
     return bool(progress.get('name') == 'priority_batch_69' and
-        progress.get('considered') == progress.get('launched') == progress.get('processed') == 1 and
+        progress.get('considered') == 1 and progress.get('processed') == progress.get('launched') and
+        progress.get('launched') in (1, 2) and progress.get('restore_verified') == progress.get('launched') and
         progress.get('auto_pass') == progress.get('game_fail') == 0 and
-        progress.get('restore_verified') == 1 and progress.get('restore_failures') == 0 and
+        progress.get('restore_failures') == 0 and
         cp.get('next_untested') == 'mrboom:/userdata/roms/mrboom/MrBoom.libretro' and
         cert.reconciled_batch69_retry_matches(
             {'system': 'mrboom', 'rom': '/userdata/roms/mrboom/MrBoom.libretro'}, cp, csv_sha256))

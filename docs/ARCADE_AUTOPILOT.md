@@ -32,6 +32,14 @@ que aún coincida con esa transacción queda registrada y se suprime antes de
 ambigua bloquea el lanzamiento automático. El camino manual no usa esta
 reclamación y conserva el selector normal; no se deduplica por ROM/tiempo.
 
+La reconciliación de Batch 69 distingue el incidente inicial (sin emulador)
+del retry que llegó a RetroArch dos veces. Sólo acepta ese par exacto de
+transacciones, ambas con restore verificado y resultado no terminal, evidencia
+del segundo PID cerrado, runtime limpio, configuración protegida/restaurada,
+cursor MrBoom y hash remoto del guard publicado. Conserva resultados y el
+conteo `considered=1`, `launched=2`, `RESTORES=2`; no convierte el safety
+failure en `GAME_FAIL` ni en certificación.
+
 ## Comandos
 
 - `arcade_autopilot start [--batch-size 100] [--max-batches 10]`: health check,
