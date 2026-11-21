@@ -1481,8 +1481,11 @@ def batch68_prelaunch_queue_refusal_matches(task_id, job, cp, task_obj, log_text
         authorization.get('starting_game') == BATCH68_GAME and
         authorization.get('launch_transactions_before') == cp.get('launch_transactions') == 5686 and
         authorization.get('result_records_before') == cp.get('result_records') == 6646 and
-        task.get('attempts') == 3 and task.get('max_attempts') == 4 and
-        authorization.get('allowed_additional_task_attempts') == 1 and
+        task.get('max_attempts') == 5 and
+        ((task.get('attempts') == 4 and task.get('status') == 'READY') or
+         (task.get('attempts') == 5 and task.get('status') == 'RUNNING')) and
+        authorization.get('allowed_additional_task_attempts') == 2 and
+        authorization.get('allowed_new_game_transactions') == 1 and
         batch.get('name') == 'priority_batch_68' and batch.get('considered') == 41 and
         batch.get('launched') == 21 and batch.get('auto_pass') == 20 and batch.get('game_fail') == 0 and
         batch.get('restore_verified') == 21 and batch.get('restore_failures') == 0 and

@@ -1000,18 +1000,23 @@ class Batch68RunnerRecoveryGateTests(unittest.TestCase):
                 cp['results'], ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest(),
             'batch_progress_sha256': hashlib.sha256(json.dumps(
                 cp['batch_in_progress'], ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()}
-        task = {'id': 'CERT-BATCH-0068', 'attempts': 3, 'max_attempts': 4,
+        task = {'id': 'CERT-BATCH-0068', 'status': 'READY', 'attempts': 4, 'max_attempts': 5,
                 'recovery_retry_authorization': {'job_id': '20261120T211648_a755a7cb',
                     'job_exit_code': 6,
                     'queue_invariant': 'QUEUE_INVARIANT_FAIL: selected game already has a result',
                     'starting_game': AP.BATCH68_GAME, 'launch_transactions_before': 5686,
-                    'result_records_before': 6646, 'allowed_additional_task_attempts': 1}}
+                    'result_records_before': 6646, 'allowed_additional_task_attempts': 2,
+                    'allowed_new_game_transactions': 1}}
         job = {'job_id': '20261120T211648_a755a7cb', 'status': 'COMPLETE', 'exit_code': 6,
                'completion_reason': 'SAFE_STOP_AT_GAME_BOUNDARY', 'checkpoint_status': 'STOPPED_SAFE',
                'starting_game': AP.BATCH68_GAME, 'finished_at': 'now'}
         task_obj = {'tasks': [task]}; log = 'QUEUE_INVARIANT_FAIL: selected game already has a result\n'
         self.assertTrue(AP.batch68_prelaunch_queue_refusal_matches(
             'CERT-BATCH-0068', job, cp, task_obj, log, 'fixture-csv'))
+        running_task = json.loads(json.dumps(task))
+        running_task.update({'status': 'RUNNING', 'attempts': 5})
+        self.assertTrue(AP.batch68_prelaunch_queue_refusal_matches(
+            'CERT-BATCH-0068', job, cp, {'tasks': [running_task]}, log, 'fixture-csv'))
         self.assertFalse(AP.batch68_prelaunch_queue_refusal_matches(
             'CERT-BATCH-0068', job, cp, task_obj, 'different failure', 'fixture-csv'))
         cp['launch_transactions'] += 1
