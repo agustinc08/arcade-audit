@@ -89,7 +89,7 @@ def read_json(path, fallback=None):
 
 
 def active_engine_failure_count(cp, stop_engine):
-    """Count active stop results, excluding only a precisely reconciled B68 safety incident."""
+    """Count active stops, excluding only a precisely reconciled known safety incident."""
     latest = {}
     for result in cp.get('results', []):
         latest[(result.get('system'), result.get('rom'))] = result
@@ -120,7 +120,60 @@ def active_engine_failure_count(cp, stop_engine):
                       item.get('restore', {}).get('status') == 'RESTORE_VERIFIED']
         if len(reconciled) == 1:
             return len(active) - 1
+    exact_batch69 = (
+        cp.get('status') == 'STOPPED_SAFE' and not cp.get('blocked_reason') and
+        cp.get('engine_fail_active') == 0 and recovery.get('transaction_id') == '20261120T233918_99d5ee09e8' and
+        recovery.get('previous_blocked_reason') == 'ES_LAUNCH_PROCESS_ACTIVE' and
+        recovery.get('recovery_reason') == 'BATCH69_RESIDUAL_DOOM_SELECTOR_CLOSED_AND_RUNTIME_CLEAN' and
+        recovery.get('reconciled_engine_fail_active') == 0 and recovery.get('previous_active_engine_fail_count') == 1 and
+        recovery.get('next_game') == 'mrboom:/userdata/roms/mrboom/MrBoom.libretro' and
+        cp.get('next_untested') == recovery.get('next_game'))
+    if exact_batch69:
+        runtime = recovery.get('runtime_checks') or {}
+        required = ('two_consecutive_clean_runtime_observations', 'es_idle', 'running_game_none',
+                    'marker_absent', 'selector_absent', 'launcher_absent', 'emulator_absent',
+                    'all_launch_and_emulator_processes_absent', 'no_active_certifier',
+                    'no_active_autopilot', 'no_partial_transaction', 'manifest_restore_verified',
+                    'restored_paths_match_pre_state', 'emulator_not_started',
+                    'normal_selector_cancel_verified', 'batch69_transactions_consistent',
+                    'batch68_preserved', 'mrboom_csv_still_not_tested', 'cursor_matches_canonical_queue',
+                    'hdmi_pass', 'logical_p1_p4_stable_identity', 'protected_config_pass',
+                    'only_active_stop_is_reconciled_safety_incident', 'result_evidence_unchanged',
+                    'batch_progress_unchanged')
+        results_sha = __import__('hashlib').sha256(json.dumps(cp.get('results', []), ensure_ascii=False,
+            sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+        batch_sha = __import__('hashlib').sha256(json.dumps(cp.get('batch_in_progress'), ensure_ascii=False,
+            sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+        csv_path = AUDIT / 'full_game_certification.csv'
+        try:
+            csv_sha = __import__('hashlib').sha256(csv_path.read_bytes()).hexdigest()
+        except OSError:
+            csv_sha = None
+        reconciled = [item for item in active
+                      if item.get('transaction_id') == '20261120T233918_99d5ee09e8' and
+                      item.get('result') == 'SYSTEM_SAFETY_FAILURE' and
+                      item.get('failure_class') == 'ES_LAUNCH_PROCESS_ACTIVE' and
+                      item.get('system') == 'mrboom' and
+                      item.get('rom') == '/userdata/roms/mrboom/MrBoom.libretro' and
+                      item.get('restore', {}).get('status') == 'RESTORE_VERIFIED' and
+                      item.get('restore', {}).get('transaction_id') == '20261120T233918_99d5ee09e8']
+        if (all(runtime.get(key) is True for key in required) and len(active) == 1 and len(reconciled) == 1 and
+                recovery.get('result_records_sha256') == results_sha and
+                recovery.get('batch_progress_sha256') == batch_sha and recovery.get('csv_sha256') == csv_sha):
+            return 0
     return len(active)
+
+
+def batch69_retry_at_exhausted_boundary(cp, cert, csv_sha256):
+    """Permit one restore-verified pre-launch retry, never a general empty-batch resume."""
+    progress = cp.get('batch_in_progress') or {}
+    return bool(progress.get('name') == 'priority_batch_69' and
+        progress.get('considered') == progress.get('launched') == progress.get('processed') == 1 and
+        progress.get('auto_pass') == progress.get('game_fail') == 0 and
+        progress.get('restore_verified') == 1 and progress.get('restore_failures') == 0 and
+        cp.get('next_untested') == 'mrboom:/userdata/roms/mrboom/MrBoom.libretro' and
+        cert.reconciled_batch69_retry_matches(
+            {'system': 'mrboom', 'rom': '/userdata/roms/mrboom/MrBoom.libretro'}, cp, csv_sha256))
 
 
 def proc_info(pid):
@@ -198,9 +251,11 @@ def validate_start(batch_size):
     if safe_resume:
         progress = cp['batch_in_progress']
         remaining = int(progress.get('considered', 0)) - int(progress.get('launched', 0))
-        if remaining < 1:
+        csv_sha = __import__('hashlib').sha256((AUDIT / 'full_game_certification.csv').read_bytes()).hexdigest()
+        exact_batch69_retry = (remaining == 0 and batch69_retry_at_exhausted_boundary(cp, cert, csv_sha))
+        if remaining < 1 and not exact_batch69_retry:
             raise RuntimeError('SAFE_STOP_BATCH_BOUNDARY_INCONSISTENT')
-        return next_game, min(batch_size, remaining), owner_record
+        return next_game, 1 if exact_batch69_retry else min(batch_size, remaining), owner_record
     return next_game, batch_size, owner_record
 
 

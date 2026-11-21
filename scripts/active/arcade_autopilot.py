@@ -2758,6 +2758,20 @@ def start(batch_size=DEFAULT_BATCH_SIZE, max_batches=DEFAULT_MAX_BATCHES, dry_ru
             next_item['id'], job_status, cp, obj, state)
         if not previous_job_ok:
             ok, reason, cp_ok = False, 'COMPLETE_JOB_CHECKPOINT_MISMATCH:' + previous_job_reason, False
+    certifier_preflight = None
+    if ok and cp_ok and next_item and next_item.get('type') == 'CERTIFICATION_BATCH' and not adopt_task_id:
+        try:
+            sys.path.insert(0, str(TOOLS))
+            import arcade_certifier_job as cert_job
+            preflight_game, preflight_size, _ = cert_job.validate_start(batch_size)
+            if preflight_game != cp.get('next_untested') or preflight_game != next_game:
+                raise RuntimeError('CERTIFIER_PREFLIGHT_CURSOR_MISMATCH')
+            certifier_preflight = {'status': 'PASS', 'starting_game': preflight_game,
+                                   'effective_batch_size': preflight_size}
+        except Exception as exc:
+            certifier_preflight = {'status': 'FAIL', 'reason': type(exc).__name__ + ':' + str(exc)[:180]}
+            ok, reason = False, 'CERTIFIER_START_PREFLIGHT:' + certifier_preflight['reason']
+        checks['certifier_preflight'] = certifier_preflight
     if dry_run:
         print('ARCADE AUTOPILOT DRY RUN')
         print('STATUS: WOULD_ADOPT' if adopt_task_id and ok and cp_ok else 'STATUS: WOULD_START' if ok and cp_ok else 'STATUS: PAUSED_SAFETY')
@@ -2767,6 +2781,10 @@ def start(batch_size=DEFAULT_BATCH_SIZE, max_batches=DEFAULT_MAX_BATCHES, dry_ru
         print('STARTING_GAME: ' + str(next_game or 'BLOCKED/UNKNOWN'))
         print('HEALTH: ' + ('PASS' if ok else 'FAIL:' + str(reason)))
         print('CHECKPOINT: ' + ('PASS' if cp_ok else 'FAIL:' + str(cp.get('status')) + ':' + str(cp.get('blocked_reason'))))
+        if certifier_preflight is not None:
+            print('CERTIFIER_PREFLIGHT: ' + certifier_preflight['status'] +
+                  (':' + certifier_preflight['reason'] if certifier_preflight['status'] == 'FAIL' else
+                   ':' + certifier_preflight['starting_game'] + ':' + str(certifier_preflight['effective_batch_size'])))
         print('ARCADE_SAFETY: ' + ('PASS' if ok and cp_ok else 'FAIL'))
         if previous_job_reason:
             print('PREVIOUS_JOB: ' + previous_job_reason)

@@ -150,6 +150,27 @@ class AutopilotTests(unittest.TestCase):
         cp['safety_recovery']['runtime_checks']['emulator_absent'] = False
         self.assertFalse(CERT.reconciled_batch69_retry_matches(game, cp, 'c'*64))
 
+    def test_runner_allows_one_reconciled_batch69_retry_at_exhausted_boundary(self):
+        import hashlib
+        cp, evidence = self.batch69_recovery_fixture()
+        result_sha = hashlib.sha256(json.dumps(cp['results'], ensure_ascii=False, sort_keys=True,
+            separators=(',', ':')).encode()).hexdigest()
+        batch_sha = hashlib.sha256(json.dumps(cp['batch_in_progress'], ensure_ascii=False, sort_keys=True,
+            separators=(',', ':')).encode()).hexdigest()
+        cp.update({'status': 'STOPPED_SAFE', 'blocked_reason': None, 'engine_fail_active': 0})
+        cp['safety_recovery'] = {'transaction_id': AP.BATCH69_TX,
+            'previous_blocked_reason': 'ES_LAUNCH_PROCESS_ACTIVE',
+            'recovery_reason': 'BATCH69_RESIDUAL_DOOM_SELECTOR_CLOSED_AND_RUNTIME_CLEAN',
+            'reconciled_engine_fail_active': 0, 'previous_active_engine_fail_count': 1,
+            'next_game': AP.BATCH69_GAME, 'runtime_checks': evidence['checks'],
+            'result_records_sha256': result_sha, 'batch_progress_sha256': batch_sha,
+            'csv_sha256': 'c'*64}
+        self.assertTrue(RUNNER.batch69_retry_at_exhausted_boundary(cp, CERT, 'c'*64))
+        cp['batch_in_progress']['launched'] = 2
+        self.assertFalse(RUNNER.batch69_retry_at_exhausted_boundary(cp, CERT, 'c'*64))
+        cp, evidence = self.batch69_recovery_fixture()
+        self.assertFalse(RUNNER.batch69_retry_at_exhausted_boundary(cp, CERT, 'c'*64))
+
     def test_batch_accounting_retains_failed_launch_and_records_verified_retry(self):
         progress = {'name': 'priority_batch_69', 'considered': 1, 'launched': 1,
                     'processed': 1, 'auto_pass': 0, 'game_fail': 0, 'restore_verified': 1,
@@ -1086,6 +1107,43 @@ class Batch68RunnerRecoveryGateTests(unittest.TestCase):
     def test_runner_ignores_only_the_exact_reconciled_safety_incident(self):
         cp = self.checkpoint()
         self.assertEqual(RUNNER.active_engine_failure_count(cp, CERT.STOP_ENGINE), 0)
+
+    def test_runner_ignores_only_the_exact_reconciled_batch69_incident(self):
+        import hashlib
+        tx = AP.BATCH69_TX
+        incident = {'system': 'mrboom', 'rom': '/userdata/roms/mrboom/MrBoom.libretro',
+            'result': 'SYSTEM_SAFETY_FAILURE', 'failure_class': 'ES_LAUNCH_PROCESS_ACTIVE',
+            'transaction_id': tx, 'restore': {'status': 'RESTORE_VERIFIED', 'transaction_id': tx}}
+        batch = {'name': 'priority_batch_69', 'considered': 1, 'launched': 1, 'processed': 1,
+                 'auto_pass': 0, 'game_fail': 0, 'static_fail': 0, 'restore_verified': 1,
+                 'restore_failures': 0}
+        keys = ('two_consecutive_clean_runtime_observations', 'es_idle', 'running_game_none',
+            'marker_absent', 'selector_absent', 'launcher_absent', 'emulator_absent',
+            'all_launch_and_emulator_processes_absent', 'no_active_certifier', 'no_active_autopilot',
+            'no_partial_transaction', 'manifest_restore_verified', 'restored_paths_match_pre_state',
+            'emulator_not_started', 'normal_selector_cancel_verified', 'batch69_transactions_consistent',
+            'batch68_preserved', 'mrboom_csv_still_not_tested', 'cursor_matches_canonical_queue',
+            'hdmi_pass', 'logical_p1_p4_stable_identity', 'protected_config_pass',
+            'only_active_stop_is_reconciled_safety_incident', 'result_evidence_unchanged',
+            'batch_progress_unchanged')
+        cp = {'status': 'STOPPED_SAFE', 'blocked_reason': None, 'engine_fail_active': 0,
+              'next_untested': AP.BATCH69_GAME, 'results': [incident], 'batch_in_progress': batch}
+        runtime_checks = {key: True for key in keys}
+        recovery = {'transaction_id': AP.BATCH69_TX,
+            'previous_blocked_reason': 'ES_LAUNCH_PROCESS_ACTIVE',
+            'recovery_reason': 'BATCH69_RESIDUAL_DOOM_SELECTOR_CLOSED_AND_RUNTIME_CLEAN',
+            'reconciled_engine_fail_active': 0, 'previous_active_engine_fail_count': 1,
+            'next_game': AP.BATCH69_GAME, 'runtime_checks': runtime_checks,
+            'result_records_sha256': hashlib.sha256(json.dumps(cp['results'], ensure_ascii=False,
+                sort_keys=True, separators=(',', ':')).encode()).hexdigest(),
+            'batch_progress_sha256': hashlib.sha256(json.dumps(cp['batch_in_progress'], ensure_ascii=False,
+                sort_keys=True, separators=(',', ':')).encode()).hexdigest(),
+            'csv_sha256': hashlib.sha256((RUNNER.AUDIT / 'full_game_certification.csv').read_bytes()).hexdigest()}
+        cp.update({'status': 'STOPPED_SAFE', 'blocked_reason': None, 'engine_fail_active': 0,
+                   'safety_recovery': recovery})
+        self.assertEqual(RUNNER.active_engine_failure_count(cp, CERT.STOP_ENGINE), 0)
+        cp['results'][0]['transaction_id'] = 'foreign-tx'
+        self.assertEqual(RUNNER.active_engine_failure_count(cp, CERT.STOP_ENGINE), 1)
 
     def test_runner_still_blocks_another_active_failure(self):
         cp = self.checkpoint()

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-21T02:38:04+00:00",
+  "updated_at": "2026-11-21T08:11:40+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
   "next_untested": "mrboom:/userdata/roms/mrboom/MrBoom.libretro",
-  "attempted_new": 5688,
+  "attempted_new": 5689,
   "auto_certified": 5512,
   "manual_control_certified": 0,
   "guest_ready": 0,
@@ -150240,9 +150240,26 @@
         "paths": 7
       },
       "finished_at": "2026-11-20T23:38:02.594-03:00"
+    },
+    {
+      "system": "mrboom",
+      "rom": "/userdata/roms/mrboom/MrBoom.libretro",
+      "name": "MrBoom",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "SYSTEM_SAFETY_FAILURE",
+      "failure_class": "ES_LAUNCH_PROCESS_ACTIVE",
+      "transaction_id": "20261120T233918_99d5ee09e8",
+      "stable_seconds": null,
+      "audio": {},
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261120T233918_99d5ee09e8",
+        "paths": 7
+      },
+      "finished_at": "2026-11-20T23:39:18.718-03:00"
     }
   ],
-  "status": "COMPLETE",
+  "status": "STOPPED_SAFE",
   "mode": "batch",
   "selected_count": 1,
   "baseline": {
@@ -150333,7 +150350,7 @@
     "RESTORE_FAILURE": 0
   },
   "blocked_reason": null,
-  "resume_reason": "NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN",
+  "resume_reason": "BATCH69_RESIDUAL_DOOM_SELECTOR_CLOSED_AND_RUNTIME_CLEAN",
   "pilot_summary": {
     "unique_games": 10,
     "auto_pass": 10,
@@ -150385,11 +150402,11 @@
       "resolved_at": "2026-11-15T09:39:16-03:00"
     }
   ],
-  "launch_transactions": 5688,
+  "launch_transactions": 5689,
   "transaction_attempts": 509,
   "retry_transactions": 4,
-  "unique_games_processed": 6644,
-  "result_records": 6648,
+  "unique_games_processed": 6645,
+  "result_records": 6649,
   "static_preflight_results": 194,
   "engine_fail_total_historical": 2,
   "engine_fail_active": 0,
@@ -150398,19 +150415,17 @@
   "flaky": 0,
   "needs_repair": 366,
   "control_certified": 0,
-  "restores_verified": 5688,
+  "restores_verified": 5689,
   "restore_failures": 0,
   "safety_recovery": {
-    "recovered_at": "2026-11-21T02:13:26+00:00",
+    "recovered_at": "2026-11-21T08:11:40+00:00",
     "previous_status": "PAUSED_SYSTEM_SAFETY_FAILURE",
     "previous_blocked_reason": "ES_LAUNCH_PROCESS_ACTIVE",
     "current_boot_id": "51b26f0e-5eab-4ce8-a18f-203f4df6ece7",
-    "transaction_id": "20261120T213050_7ed567f0ef",
-    "next_game": "prboom:/userdata/roms/prboom/doom1_shareware.wad",
-    "recovery_reason": "NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN",
-    "operator_confirmed_normal_selector_cancel": true,
+    "transaction_id": "20261120T233918_99d5ee09e8",
+    "next_game": "mrboom:/userdata/roms/mrboom/MrBoom.libretro",
+    "recovery_reason": "BATCH69_RESIDUAL_DOOM_SELECTOR_CLOSED_AND_RUNTIME_CLEAN",
     "runtime_checks": {
-      "operator_confirmed_normal_selector_cancel": true,
       "two_consecutive_clean_runtime_observations": true,
       "es_idle": true,
       "running_game_none": true,
@@ -150422,28 +150437,46 @@
       "no_active_certifier": true,
       "no_active_autopilot": true,
       "no_partial_transaction": true,
-      "no_game_terminal_result_for_doom": true,
-      "last_result_restore_verified": true,
-      "transaction_record_consistent": true,
       "manifest_restore_verified": true,
+      "emulator_not_started": true,
       "restored_paths_match_pre_state": true,
-      "batch68_transactions_consistent": true,
-      "previous_terminal_result_preserved": true,
-      "doom_csv_still_not_tested": true,
+      "transaction_result_matches_checkpoint": true,
+      "normal_selector_cancel_verified": true,
+      "mrboom_csv_still_not_tested": true,
+      "only_active_stop_is_reconciled_safety_incident": true,
+      "batch68_preserved": true,
       "cursor_matches_canonical_queue": true,
       "logical_p1_p4_stable_identity": true,
       "hdmi_pass": true,
       "protected_config_pass": true,
-      "only_active_stop_is_reconciled_safety_incident": true,
-      "no_other_active_engine_failure": true,
       "result_evidence_unchanged": true,
-      "batch_progress_unchanged": true
+      "batch_progress_unchanged": true,
+      "batch69_transactions_consistent": true
     },
     "previous_active_engine_fail_count": 1,
     "reconciled_engine_fail_active": 0,
-    "result_records_sha256": "d293329f9173f85e89b0717007207f5f9757e2476b23f0883fcbee0598b7365b",
-    "batch_progress_sha256": "8c1710da51b8f448f2cbd76ce9280f0dfa3c4388952b180b447e0e7b579d3bfa",
-    "csv_sha256": "d3b798662b2195d75a37f53f943224dbab6b7eec1b61be3c76d580616ee4183a"
+    "result_records_sha256": "953c43b1df68bb10c5bfd389e44497216107f948be508254a8674a10bb577720",
+    "batch_progress_sha256": "9cd73d669a7af5c957a44a0d3a9a379220d8f2b45502ca12d7ca98be9b9fec9c",
+    "csv_sha256": "28c3ccae96d19a8a3040df4f0f9cfb7876da60c6cf52131d4a4338e17899114b"
   },
-  "invocation_selected_count": 1
+  "invocation_selected_count": 1,
+  "batch_in_progress": {
+    "name": "priority_batch_69",
+    "considered": 1,
+    "launched": 1,
+    "auto_pass": 0,
+    "game_fail": 0,
+    "static_fail": 0,
+    "flaky": 0,
+    "adapter_pending": 0,
+    "skipped": 0,
+    "deferred": 0,
+    "other_unlaunched": 0,
+    "processed": 1,
+    "restore_verified": 1,
+    "restore_failures": 0,
+    "started_at": "2026-11-20T23:39:16.765-03:00",
+    "first_game": "/userdata/roms/mrboom/MrBoom.libretro",
+    "last_game": "/userdata/roms/mrboom/MrBoom.libretro"
+  }
 }
