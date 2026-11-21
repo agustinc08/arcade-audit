@@ -2,7 +2,7 @@
   "schema_version": 1,
   "audit": "ARCADE_MASTER_HARDENING",
   "created_at": "2026-11-15T09:19:52+00:00",
-  "updated_at": "2026-11-19T17:29:13+00:00",
+  "updated_at": "2026-11-21T02:38:04+00:00",
   "current_phase": "PHASE_14_FULL_GAME_CERTIFICATION",
   "resume_policy": "Continue independent phases after isolated failures; stop only related risky writes. Preserve read-only work even when a phase is blocked.",
   "phases": {
@@ -127,7 +127,7 @@
       "status": "RUNNING",
       "started_at": "2026-11-15T11:38:49+00:00",
       "completed_at": null,
-      "summary": "priority_batch_67: 100 considerados, 100 lanzados, 100 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 100/100; AUTO_CERTIFIED=5491; NEXT_GAME=pcengine:/userdata/roms/pcengine/Wallaby!! - Usagi no Kuni no Kangaroo Race (Japan).pce",
+      "summary": "priority_batch_68: 41 considerados, 23 lanzados, 21 AUTO_PASS, 0 GAME_FAIL, 0 STATIC_FAIL; restores 23/23; AUTO_CERTIFIED=5512; NEXT_GAME=mrboom:/userdata/roms/mrboom/MrBoom.libretro",
       "issues": [
         "CERT-001",
         "CERT-002",
@@ -135,7 +135,7 @@
         "CERT-004",
         "CERT-005"
       ],
-      "updated_at": "2026-11-19T17:29:13+00:00"
+      "updated_at": "2026-11-21T02:38:04+00:00"
     },
     "PHASE_15_VISUAL_MEDIA_AUDIT": {
       "status": "COMPLETE_WITH_ISSUES",
@@ -580,21 +580,21 @@
   },
   "updated": "2026-11-15T11:38:49+00:00",
   "certification_counts": {
-    "auto_certified": 5491,
-    "attempted_new": 5665,
+    "auto_certified": 5512,
+    "attempted_new": 5688,
     "static_fail": 194,
     "game_fail": 172,
     "flaky": 0,
     "control_certified": 0,
     "guest_ready": 0,
     "needs_repair": 366,
-    "total_restores": 5665,
+    "total_restores": 5688,
     "restore_failures": 0,
-    "next_game": "pcengine:/userdata/roms/pcengine/Wallaby!! - Usagi no Kuni no Kangaroo Race (Japan).pce",
+    "next_game": "mrboom:/userdata/roms/mrboom/MrBoom.libretro",
     "engine_failures_unresolved": 0,
-    "unique_games_processed": 6623,
-    "result_records": 6625,
-    "launch_transactions": 5665,
-    "retry_transactions": 2
+    "unique_games_processed": 6644,
+    "result_records": 6648,
+    "launch_transactions": 5688,
+    "retry_transactions": 4
   }
 }

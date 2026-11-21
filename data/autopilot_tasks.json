@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-19T17:40:25+00:00",
+  "updated_at": "2026-11-21T02:38:35+00:00",
   "tasks": [
     {
       "id": "CERT-BATCH-0011",
@@ -3930,19 +3930,144 @@
       "id": "CERT-BATCH-0068",
       "type": "CERTIFICATION_BATCH",
       "title": "Certificar priority_batch_68",
-      "status": "PAUSED_SAFETY",
+      "status": "COMPLETE",
       "priority": 10,
       "created_at": "2026-11-19T17:29:38+00:00",
-      "updated_at": "2026-11-19T17:40:25+00:00",
+      "updated_at": "2026-11-21T02:38:32+00:00",
       "source": "recalculated queue",
-      "reason": "Tarea creada sólo después de batch estable y queue reconciliada.",
+      "reason": "Checkpoint canónico reconciliado y safety gates PASS; reanudación permitida.",
+      "automatic": true,
+      "requires_codex": false,
+      "requires_manual": false,
+      "depends_on": [],
+      "attempts": 8,
+      "max_attempts": 8,
+      "last_error": null,
+      "next_action": "Ejecutar un único retry real de Doom con autorización automática ligada al transaction context; detenerse tras la primera transacción.",
+      "evidence": [
+        "/userdata/system/state/arcade_audit/full_game_certification_checkpoint.json",
+        "/userdata/system/state/arcade_audit/full_game_certification.csv",
+        "/userdata/system/state/arcade_audit/FULL_GAME_CERTIFICATION_SUMMARY.md"
+      ],
+      "files": [
+        "/userdata/system/el_gordo_tools/arcade_certifier_job.sh"
+      ],
+      "do_not_change": [
+        "No repetir identidades terminales",
+        "No relajar safety gates"
+      ],
+      "success_criteria": "N juegos procesados o checkpoint de seguridad pausa.",
+      "after_completion": "Reconciliar reports y publicar.",
+      "recovery_retry_authorization": {
+        "authorized_at": "2026-11-21T00:29:20+00:00",
+        "reason": "Previous resume task attempts stopped before any new game transaction; both causes are now narrowly validated. Authorize one new Doom game transaction.",
+        "job_id": "20261120T211648_a755a7cb",
+        "job_log": "/userdata/system/state/arcade_audit/jobs/logs/20261120T211648_a755a7cb.log",
+        "job_exit_code": 6,
+        "queue_invariant": "QUEUE_INVARIANT_FAIL: selected game already has a result",
+        "launch_transactions_before": 5686,
+        "result_records_before": 6646,
+        "starting_game": "prboom:/userdata/roms/prboom/doom1_shareware.wad",
+        "allowed_additional_task_attempts": 2,
+        "allowed_new_game_transactions": 1,
+        "prelaunch_refusals": [
+          {
+            "job_id": "20261120T211648_a755a7cb",
+            "reason": "QUEUE_INVARIANT_FAIL: selected game already has a result",
+            "exit_code": 6,
+            "new_transactions": 0
+          },
+          {
+            "run_id": "20261120T212620_9ed4b6fb",
+            "reason": "COMPLETE_JOB_CHECKPOINT_MISMATCH:CHECKPOINT_NOT_CLEAN_COMPLETE",
+            "certifier_started": false,
+            "new_transactions": 0
+          },
+          {
+            "run_id": "20261120T231924_3dc310ae",
+            "reason": "ENGINE_FAIL_COUNTER_MISMATCH",
+            "certifier_started": false,
+            "new_transactions": 0
+          }
+        ],
+        "post_fix_retry": {
+          "authorized_at": "2026-11-21T02:37:16+00:00",
+          "reason": "One Doom game transaction remains authorized. Two runner starts were refused before any game transaction: ENGINE_FAIL_COUNTER_MISMATCH and the now-fixed exact reconciled Doom queue gate. Both are recorded with zero new transactions.",
+          "github_sha": "9594bd8766741227edea748e166d338af0eccaca",
+          "starting_game": "prboom:/userdata/roms/prboom/doom1_shareware.wad",
+          "launch_transactions_before": 5687,
+          "result_records_before": 6647,
+          "batch_launched_before": 22,
+          "batch_auto_pass_before": 20,
+          "batch_game_fail_before": 0,
+          "additional_task_attempts": 3,
+          "additional_game_transactions": 1,
+          "prelaunch_refusals": [
+            {
+              "run_id": "20261120T231924_3dc310ae",
+              "reason": "ENGINE_FAIL_COUNTER_MISMATCH",
+              "game_transaction_started": false,
+              "new_transactions": 0
+            },
+            {
+              "run_id": "20261120T232753_83f95d7b",
+              "reason": "QUEUE_INVARIANT_FAIL: selected game already has a result",
+              "job_id": "20261120T232755_06d78eac",
+              "runner_exit_code": 6,
+              "game_transaction_started": false,
+              "new_transactions": 0
+            }
+          ]
+        }
+      },
+      "retry_after": null
+    },
+    {
+      "id": "GITHUB-PUBLISH-CERT-BATCH-0068",
+      "type": "GITHUB_PUBLISH",
+      "title": "Publicar CERT-BATCH-0068 y verificar remoto",
+      "status": "RUNNING",
+      "priority": 5,
+      "created_at": "2026-11-21T02:38:32+00:00",
+      "updated_at": "2026-11-21T02:38:35+00:00",
+      "source": "CERT-BATCH-0068",
+      "reason": "Publicación posterior a reconciliación y rebuild del batch.",
       "automatic": true,
       "requires_codex": false,
       "requires_manual": false,
       "depends_on": [],
       "attempts": 1,
       "max_attempts": 3,
-      "last_error": "CERTIFIER_FAILED:FAILED",
+      "last_error": null,
+      "next_action": "SECRET_SCAN, PAYLOAD_SCAN, publisher REST y verificación del HEAD remoto.",
+      "evidence": [
+        "/userdata/system/state/arcade_audit/full_game_certification_checkpoint.json",
+        "/userdata/system/state/arcade_audit/github_publish_state.json"
+      ],
+      "files": [],
+      "do_not_change": [
+        "No incluir tokens ni datos runtime privados"
+      ],
+      "success_criteria": "El SHA remoto coincide con el commit publicado.",
+      "after_completion": ""
+    },
+    {
+      "id": "CERT-BATCH-0069",
+      "type": "CERTIFICATION_BATCH",
+      "title": "Certificar priority_batch_69",
+      "status": "READY",
+      "priority": 10,
+      "created_at": "2026-11-21T02:38:32+00:00",
+      "updated_at": "2026-11-21T02:38:32+00:00",
+      "source": "recalculated queue",
+      "reason": "Tarea creada sólo después de batch estable y queue reconciliada.",
+      "automatic": true,
+      "requires_codex": false,
+      "requires_manual": false,
+      "depends_on": [],
+      "attempts": 0,
+      "max_attempts": 3,
+      "last_error": null,
       "next_action": "arcade_certifier_job.sh start N",
       "evidence": [
         "/userdata/system/state/arcade_audit/full_game_certification_checkpoint.json",

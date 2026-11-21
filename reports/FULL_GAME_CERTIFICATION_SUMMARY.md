@@ -1,16 +1,16 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-19T17:29:38+00:00
+- UPDATED_AT: 2026-11-21T02:38:31+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 5665
-- UNIQUE_GAMES_PROCESSED: 6623
-- RESULT_RECORDS: 6625
-- LAUNCH_TRANSACTIONS: 5665
-- RETRY_TRANSACTIONS: 2
+- ATTEMPTED_NEW: 5688
+- UNIQUE_GAMES_PROCESSED: 6644
+- RESULT_RECORDS: 6648
+- LAUNCH_TRANSACTIONS: 5688
+- RETRY_TRANSACTIONS: 4
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 5491
+- AUTO_CERTIFIED: 5512
 - STATIC_FAIL: 194
 - GAME_FAIL: 172
 - FLAKY: 0
@@ -19,8 +19,8 @@
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: pcengine:/userdata/roms/pcengine/Wallaby!! - Usagi no Kuni no Kangaroo Race (Japan).pce
-- TOTAL_RESTORES: 5665
+- NEXT_GAME: mrboom:/userdata/roms/mrboom/MrBoom.libretro
+- TOTAL_RESTORES: 5688
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -33,7 +33,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | Sistema | TOTAL | INSTALLED | HISTORICAL_BOOT_OK | AUTO_CERTIFIED | STATIC_FAIL | GAME_FAIL | FLAKY | CONTROL_CERTIFIED | GUEST_READY | NOT_TESTED |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | atari2600 | 2 | 2 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 |
-| c64 | 4 | 4 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 1 |
+| c64 | 4 | 4 | 0 | 4 | 0 | 0 | 0 | 0 | 0 | 0 |
 | cannonball | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | cdogs | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | devilutionx | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 8 |
@@ -56,14 +56,14 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | mrboom | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | n64 | 377 | 377 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 377 |
 | naomi | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
-| nds | 2 | 2 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 |
+| nds | 2 | 2 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 |
 | neogeo | 105 | 105 | 0 | 0 | 105 | 0 | 0 | 0 | 0 | 0 |
 | nes | 702 | 702 | 0 | 700 | 0 | 2 | 0 | 0 | 0 | 0 |
 | odcommander | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | openbor | 128 | 128 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 128 |
-| pcengine | 529 | 529 | 0 | 509 | 0 | 1 | 0 | 0 | 0 | 19 |
+| pcengine | 529 | 529 | 0 | 527 | 0 | 1 | 0 | 0 | 0 | 1 |
 | ports | 5 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 5 |
-| prboom | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
+| prboom | 2 | 2 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 |
 | ps2 | 196 | 196 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 196 |
 | ps3 | 13 | 13 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 13 |
 | ps4 | 95 | 95 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 95 |
@@ -86,10 +86,10 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_67; considerados 100; lanzados 100; AUTO_PASS 100; restore 100/100.
-- CURRENT_INVOCATION_SELECTED_COUNT: 100 (selección de la invocación más reciente; no es el total acumulado del batch).
+- Lote más reciente: priority_batch_68; considerados 41; lanzados 23; AUTO_PASS 21; restore 23/23.
+- CURRENT_INVOCATION_SELECTED_COUNT: 1 (selección de la invocación más reciente; no es el total acumulado del batch).
 - Estado de runner: COMPLETE.
-- NEXT_GAME: pcengine:/userdata/roms/pcengine/Wallaby!! - Usagi no Kuni no Kangaroo Race (Japan).pce.
+- NEXT_GAME: mrboom:/userdata/roms/mrboom/MrBoom.libretro.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY

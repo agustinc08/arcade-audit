@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-21T02:13:26+00:00",
+  "updated_at": "2026-11-21T02:38:04+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
-  "next_untested": "prboom:/userdata/roms/prboom/doom1_shareware.wad",
-  "attempted_new": 5687,
-  "auto_certified": 5511,
+  "next_untested": "mrboom:/userdata/roms/mrboom/MrBoom.libretro",
+  "attempted_new": 5688,
+  "auto_certified": 5512,
   "manual_control_certified": 0,
   "guest_ready": 0,
   "launches_blocked_by": [],
@@ -150216,11 +150216,35 @@
         "paths": 7
       },
       "finished_at": "2026-11-20T21:31:16.156-03:00"
+    },
+    {
+      "system": "prboom",
+      "rom": "/userdata/roms/prboom/doom1_shareware.wad",
+      "name": "DOOM",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261120T233733_b974e9791f",
+      "stable_seconds": 20.113,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261120T233733_b974e9791f",
+        "paths": 7
+      },
+      "finished_at": "2026-11-20T23:38:02.594-03:00"
     }
   ],
-  "status": "STOPPED_SAFE",
+  "status": "COMPLETE",
   "mode": "batch",
-  "selected_count": 20,
+  "selected_count": 1,
   "baseline": {
     "batocera_conf_sha256": "bb8579bd3cb91c2ad8606ff04fe2b7ed238ed0264018a418acbe0943c3762426",
     "global_mame_core": "mame078plus",
@@ -150291,14 +150315,14 @@
       }
     },
     "audio_default": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
-    "dispatcher_sha256": "92d7bb43101a72eaaaa844b51b961170c5276a3728e88c2c4240f320d162829c",
+    "dispatcher_sha256": "f98362a443e4a11ccc5f4a238a5dd73fea7e840778de63e4d40987d337ac0278",
     "profile_sha256": "11431873bed4f024d71707b71ad1b2e6848c2f79fafda485b086cad0a548af15",
     "multiplayer_sha256": "f6a72b297f1e587de9e6b3e5ccb885deda22975e444a6e4f1398b2a51928ed0f"
   },
   "current_test": null,
   "next_game": null,
   "counts": {
-    "AUTO_PASS": 5511,
+    "AUTO_PASS": 5512,
     "GAME_FAIL": 172,
     "STATIC_FAIL": 194,
     "FLAKY": 0,
@@ -150321,27 +150345,27 @@
     "status": "PILOT_PASS_WITH_ADAPTER_FIX"
   },
   "latest_batch": {
-    "name": "priority_batch_67",
-    "considered": 100,
-    "launched": 100,
-    "auto_pass": 100,
+    "name": "priority_batch_68",
+    "considered": 41,
+    "launched": 23,
+    "auto_pass": 21,
     "game_fail": 0,
     "static_fail": 0,
     "flaky": 0,
-    "restore_verified": "100/100",
+    "restore_verified": "23/23",
     "restore_failures": 0,
     "engine_failures_unresolved": 0,
-    "started_at": "2026-11-19T13:44:35.311-03:00",
-    "finished_at": "2026-11-19T14:29:13.752-03:00",
-    "first_game": "/userdata/roms/pcengine/R-Type (USA).pce",
-    "last_game": "/userdata/roms/pcengine/Wai Wai Mahjong - Yukai na Janyuu-tachi (Japan).pce",
-    "next_game": "pcengine:/userdata/roms/pcengine/Wallaby!! - Usagi no Kuni no Kangaroo Race (Japan).pce",
+    "started_at": "2026-11-19T14:30:26.317-03:00",
+    "finished_at": "2026-11-20T23:38:04.050-03:00",
+    "first_game": "/userdata/roms/pcengine/Wallaby!! - Usagi no Kuni no Kangaroo Race (Japan).pce",
+    "last_game": "/userdata/roms/prboom/doom1_shareware.wad",
+    "next_game": "mrboom:/userdata/roms/mrboom/MrBoom.libretro",
     "adapter_pending": 0,
     "skipped": 0,
     "deferred": 0,
     "other_unlaunched": 0,
-    "unprocessed": 0,
-    "accounted": 100
+    "unprocessed": 18,
+    "accounted": 23
   },
   "latest_engine_issue": {
     "cause": "update_csv assumed identity was a dict for STATIC_FAIL (identity=null)",
@@ -150361,11 +150385,11 @@
       "resolved_at": "2026-11-15T09:39:16-03:00"
     }
   ],
-  "launch_transactions": 5687,
+  "launch_transactions": 5688,
   "transaction_attempts": 509,
-  "retry_transactions": 3,
+  "retry_transactions": 4,
   "unique_games_processed": 6644,
-  "result_records": 6647,
+  "result_records": 6648,
   "static_preflight_results": 194,
   "engine_fail_total_historical": 2,
   "engine_fail_active": 0,
@@ -150374,7 +150398,7 @@
   "flaky": 0,
   "needs_repair": 366,
   "control_certified": 0,
-  "restores_verified": 5687,
+  "restores_verified": 5688,
   "restore_failures": 0,
   "safety_recovery": {
     "recovered_at": "2026-11-21T02:13:26+00:00",
@@ -150421,24 +150445,5 @@
     "batch_progress_sha256": "8c1710da51b8f448f2cbd76ce9280f0dfa3c4388952b180b447e0e7b579d3bfa",
     "csv_sha256": "d3b798662b2195d75a37f53f943224dbab6b7eec1b61be3c76d580616ee4183a"
   },
-  "invocation_selected_count": 20,
-  "batch_in_progress": {
-    "name": "priority_batch_68",
-    "considered": 41,
-    "launched": 22,
-    "auto_pass": 20,
-    "game_fail": 0,
-    "static_fail": 0,
-    "flaky": 0,
-    "adapter_pending": 0,
-    "skipped": 0,
-    "deferred": 0,
-    "other_unlaunched": 0,
-    "processed": 22,
-    "restore_verified": 22,
-    "restore_failures": 0,
-    "started_at": "2026-11-19T14:30:26.317-03:00",
-    "first_game": "/userdata/roms/pcengine/Wallaby!! - Usagi no Kuni no Kangaroo Race (Japan).pce",
-    "last_game": "/userdata/roms/prboom/doom1_shareware.wad"
-  }
+  "invocation_selected_count": 1
 }
