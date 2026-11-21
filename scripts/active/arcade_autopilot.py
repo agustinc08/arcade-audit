@@ -2394,6 +2394,7 @@ def start(batch_size=DEFAULT_BATCH_SIZE, max_batches=DEFAULT_MAX_BATCHES, dry_ru
         print('STARTING_GAME: ' + str(next_game or 'BLOCKED/UNKNOWN'))
         print('HEALTH: ' + ('PASS' if ok else 'FAIL:' + str(reason)))
         print('CHECKPOINT: ' + ('PASS' if cp_ok else 'FAIL:' + str(cp.get('status')) + ':' + str(cp.get('blocked_reason'))))
+        print('ARCADE_SAFETY: ' + ('PASS' if ok and cp_ok else 'FAIL'))
         if previous_job_reason:
             print('PREVIOUS_JOB: ' + previous_job_reason)
         return 0 if ok and cp_ok else 3

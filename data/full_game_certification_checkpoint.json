@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-21T00:31:16+00:00",
+  "updated_at": "2026-11-21T02:13:26+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
   "next_untested": "prboom:/userdata/roms/prboom/doom1_shareware.wad",
@@ -150218,7 +150218,7 @@
       "finished_at": "2026-11-20T21:31:16.156-03:00"
     }
   ],
-  "status": "PAUSED_SYSTEM_SAFETY_FAILURE",
+  "status": "STOPPED_SAFE",
   "mode": "batch",
   "selected_count": 20,
   "baseline": {
@@ -150308,7 +150308,7 @@
     "AUDIO_ROUTE_CHANGED": 0,
     "RESTORE_FAILURE": 0
   },
-  "blocked_reason": "ES_LAUNCH_PROCESS_ACTIVE",
+  "blocked_reason": null,
   "resume_reason": "NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN",
   "pilot_summary": {
     "unique_games": 10,
@@ -150368,7 +150368,7 @@
   "result_records": 6647,
   "static_preflight_results": 194,
   "engine_fail_total_historical": 2,
-  "engine_fail_active": 1,
+  "engine_fail_active": 0,
   "game_fail": 172,
   "static_fail": 194,
   "flaky": 0,
@@ -150377,11 +150377,11 @@
   "restores_verified": 5687,
   "restore_failures": 0,
   "safety_recovery": {
-    "recovered_at": "2026-11-21T00:00:05+00:00",
+    "recovered_at": "2026-11-21T02:13:26+00:00",
     "previous_status": "PAUSED_SYSTEM_SAFETY_FAILURE",
     "previous_blocked_reason": "ES_LAUNCH_PROCESS_ACTIVE",
     "current_boot_id": "51b26f0e-5eab-4ce8-a18f-203f4df6ece7",
-    "transaction_id": "20261119T143935_d7d3a63e70",
+    "transaction_id": "20261120T213050_7ed567f0ef",
     "next_game": "prboom:/userdata/roms/prboom/doom1_shareware.wad",
     "recovery_reason": "NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN",
     "operator_confirmed_normal_selector_cancel": true,
@@ -150417,9 +150417,9 @@
     },
     "previous_active_engine_fail_count": 1,
     "reconciled_engine_fail_active": 0,
-    "result_records_sha256": "9caca5ec9ba26dbd183275faf0905e2ebb35588ef13b6207c5600e9c81351a2b",
-    "batch_progress_sha256": "9b8832f46dd9c598d5d07fb93d3106369dccb73b9ff03911ce77a8eb62a09eac",
-    "csv_sha256": "673c400ac88e653e57bfe23172a93281a39ed5bfa5ddefd93f540fd793802e1f"
+    "result_records_sha256": "d293329f9173f85e89b0717007207f5f9757e2476b23f0883fcbee0598b7365b",
+    "batch_progress_sha256": "8c1710da51b8f448f2cbd76ce9280f0dfa3c4388952b180b447e0e7b579d3bfa",
+    "csv_sha256": "d3b798662b2195d75a37f53f943224dbab6b7eec1b61be3c76d580616ee4183a"
   },
   "invocation_selected_count": 20,
   "batch_in_progress": {
