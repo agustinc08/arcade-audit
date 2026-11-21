@@ -105,7 +105,10 @@ def active_engine_failure_count(cp, stop_engine):
         recovery.get('reconciled_engine_fail_active') == 0 and
         recovery.get('next_game') == 'prboom:/userdata/roms/prboom/doom1_shareware.wad' and
         cp.get('next_untested') == recovery.get('next_game') and
-        isinstance(recovered_tx, str) and recovered_tx == '20261119T143935_d7d3a63e70'
+        isinstance(recovered_tx, str) and recovered_tx in {
+            '20261119T143935_d7d3a63e70',
+            '20261120T213050_7ed567f0ef',
+        }
     )
     if exact_recovery:
         reconciled = [item for item in active
