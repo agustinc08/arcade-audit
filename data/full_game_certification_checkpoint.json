@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-21T08:11:40+00:00",
+  "updated_at": "2026-11-21T20:30:30+00:00",
   "source": "full_game_certification.csv",
   "queue_policy": "priority: guest candidates, favorites, multiplayer, fighting, beat-em-up, classics, popular, remainder; remove-candidate last",
-  "next_untested": "mrboom:/userdata/roms/mrboom/MrBoom.libretro",
-  "attempted_new": 5689,
-  "auto_certified": 5512,
+  "next_untested": "dreamcast:/userdata/roms/dreamcast/Cool Herders (USA) (Unl).chd",
+  "attempted_new": 5691,
+  "auto_certified": 5513,
   "manual_control_certified": 0,
   "guest_ready": 0,
   "launches_blocked_by": [],
@@ -150257,9 +150257,56 @@
         "paths": 7
       },
       "finished_at": "2026-11-20T23:39:18.718-03:00"
+    },
+    {
+      "system": "mrboom",
+      "rom": "/userdata/roms/mrboom/MrBoom.libretro",
+      "name": "MrBoom",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "SYSTEM_SAFETY_FAILURE",
+      "failure_class": "ES_LAUNCH_PROCESS_ACTIVE",
+      "transaction_id": "20261121T051959_e4bc123b91",
+      "stable_seconds": 20.116,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261121T051959_e4bc123b91",
+        "paths": 7
+      },
+      "finished_at": "2026-11-21T05:23:23.527-03:00"
+    },
+    {
+      "system": "mrboom",
+      "rom": "/userdata/roms/mrboom/MrBoom.libretro",
+      "name": "MrBoom",
+      "adapter": "RETROARCH_GENERIC",
+      "result": "AUTO_PASS",
+      "failure_class": null,
+      "transaction_id": "20261121T172959_3ee11f3f87",
+      "stable_seconds": 20.105,
+      "audio": {
+        "default_before": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
+        "unique_during": [
+          "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+        ],
+        "default_during": "HDMI_PASS",
+        "default_after": "alsa_output.pci-0000_01_00.1.hdmi-stereo"
+      },
+      "restore": {
+        "status": "RESTORE_VERIFIED",
+        "transaction_id": "20261121T172959_3ee11f3f87",
+        "paths": 7
+      },
+      "finished_at": "2026-11-21T17:30:28.551-03:00"
     }
   ],
-  "status": "STOPPED_SAFE",
+  "status": "COMPLETE",
   "mode": "batch",
   "selected_count": 1,
   "baseline": {
@@ -150332,14 +150379,14 @@
       }
     },
     "audio_default": "alsa_output.pci-0000_01_00.1.hdmi-stereo",
-    "dispatcher_sha256": "f98362a443e4a11ccc5f4a238a5dd73fea7e840778de63e4d40987d337ac0278",
+    "dispatcher_sha256": "acdbf91953e88267b6181cc4648b63aacf07bbbc6c83f1d0dad42efb5cfaf58e",
     "profile_sha256": "11431873bed4f024d71707b71ad1b2e6848c2f79fafda485b086cad0a548af15",
     "multiplayer_sha256": "f6a72b297f1e587de9e6b3e5ccb885deda22975e444a6e4f1398b2a51928ed0f"
   },
   "current_test": null,
   "next_game": null,
   "counts": {
-    "AUTO_PASS": 5512,
+    "AUTO_PASS": 5513,
     "GAME_FAIL": 172,
     "STATIC_FAIL": 194,
     "FLAKY": 0,
@@ -150350,7 +150397,7 @@
     "RESTORE_FAILURE": 0
   },
   "blocked_reason": null,
-  "resume_reason": "BATCH69_RESIDUAL_DOOM_SELECTOR_CLOSED_AND_RUNTIME_CLEAN",
+  "resume_reason": "BATCH69_DUPLICATE_LAUNCH_GUARD_PUBLISHED_AND_RUNTIME_CLEAN",
   "pilot_summary": {
     "unique_games": 10,
     "auto_pass": 10,
@@ -150362,27 +150409,27 @@
     "status": "PILOT_PASS_WITH_ADAPTER_FIX"
   },
   "latest_batch": {
-    "name": "priority_batch_68",
-    "considered": 41,
-    "launched": 23,
-    "auto_pass": 21,
+    "name": "priority_batch_69",
+    "considered": 1,
+    "launched": 3,
+    "auto_pass": 1,
     "game_fail": 0,
     "static_fail": 0,
     "flaky": 0,
-    "restore_verified": "23/23",
+    "restore_verified": "3/3",
     "restore_failures": 0,
     "engine_failures_unresolved": 0,
-    "started_at": "2026-11-19T14:30:26.317-03:00",
-    "finished_at": "2026-11-20T23:38:04.050-03:00",
-    "first_game": "/userdata/roms/pcengine/Wallaby!! - Usagi no Kuni no Kangaroo Race (Japan).pce",
-    "last_game": "/userdata/roms/prboom/doom1_shareware.wad",
-    "next_game": "mrboom:/userdata/roms/mrboom/MrBoom.libretro",
+    "started_at": "2026-11-20T23:39:16.765-03:00",
+    "finished_at": "2026-11-21T17:30:29.978-03:00",
+    "first_game": "/userdata/roms/mrboom/MrBoom.libretro",
+    "last_game": "/userdata/roms/mrboom/MrBoom.libretro",
+    "next_game": "dreamcast:/userdata/roms/dreamcast/Cool Herders (USA) (Unl).chd",
     "adapter_pending": 0,
     "skipped": 0,
     "deferred": 0,
     "other_unlaunched": 0,
-    "unprocessed": 18,
-    "accounted": 23
+    "unprocessed": 0,
+    "accounted": 3
   },
   "latest_engine_issue": {
     "cause": "update_csv assumed identity was a dict for STATIC_FAIL (identity=null)",
@@ -150402,11 +150449,11 @@
       "resolved_at": "2026-11-15T09:39:16-03:00"
     }
   ],
-  "launch_transactions": 5689,
+  "launch_transactions": 5691,
   "transaction_attempts": 509,
-  "retry_transactions": 4,
+  "retry_transactions": 6,
   "unique_games_processed": 6645,
-  "result_records": 6649,
+  "result_records": 6651,
   "static_preflight_results": 194,
   "engine_fail_total_historical": 2,
   "engine_fail_active": 0,
@@ -150415,33 +150462,40 @@
   "flaky": 0,
   "needs_repair": 366,
   "control_certified": 0,
-  "restores_verified": 5689,
+  "restores_verified": 5691,
   "restore_failures": 0,
   "safety_recovery": {
-    "recovered_at": "2026-11-21T08:11:40+00:00",
+    "recovered_at": "2026-11-21T20:17:27+00:00",
     "previous_status": "PAUSED_SYSTEM_SAFETY_FAILURE",
     "previous_blocked_reason": "ES_LAUNCH_PROCESS_ACTIVE",
     "current_boot_id": "51b26f0e-5eab-4ce8-a18f-203f4df6ece7",
-    "transaction_id": "20261120T233918_99d5ee09e8",
+    "transaction_id": "20261121T051959_e4bc123b91",
+    "transaction_ids": [
+      "20261120T233918_99d5ee09e8",
+      "20261121T051959_e4bc123b91"
+    ],
     "next_game": "mrboom:/userdata/roms/mrboom/MrBoom.libretro",
-    "recovery_reason": "BATCH69_RESIDUAL_DOOM_SELECTOR_CLOSED_AND_RUNTIME_CLEAN",
+    "recovery_reason": "BATCH69_DUPLICATE_LAUNCH_GUARD_PUBLISHED_AND_RUNTIME_CLEAN",
     "runtime_checks": {
       "two_consecutive_clean_runtime_observations": true,
       "es_idle": true,
       "running_game_none": true,
       "marker_absent": true,
-      "all_launch_and_emulator_processes_absent": true,
       "selector_absent": true,
       "launcher_absent": true,
       "emulator_absent": true,
+      "all_launch_and_emulator_processes_absent": true,
       "no_active_certifier": true,
       "no_active_autopilot": true,
       "no_partial_transaction": true,
-      "manifest_restore_verified": true,
-      "emulator_not_started": true,
+      "both_transactions_restore_verified": true,
+      "prior_transaction_emulator_not_started": true,
       "restored_paths_match_pre_state": true,
-      "transaction_result_matches_checkpoint": true,
-      "normal_selector_cancel_verified": true,
+      "first_emulator_evidence_valid": true,
+      "automatic_selector_context_matched_twice": true,
+      "second_launch_tree_evidence_valid": true,
+      "second_retroarch_exact_pid_closed": true,
+      "duplicate_launch_guard_published": true,
       "mrboom_csv_still_not_tested": true,
       "only_active_stop_is_reconciled_safety_incident": true,
       "batch68_preserved": true,
@@ -150449,34 +150503,61 @@
       "logical_p1_p4_stable_identity": true,
       "hdmi_pass": true,
       "protected_config_pass": true,
+      "batch69_transactions_consistent": true,
       "result_evidence_unchanged": true,
-      "batch_progress_unchanged": true,
-      "batch69_transactions_consistent": true
+      "batch_progress_unchanged": true
     },
     "previous_active_engine_fail_count": 1,
     "reconciled_engine_fail_active": 0,
-    "result_records_sha256": "953c43b1df68bb10c5bfd389e44497216107f948be508254a8674a10bb577720",
-    "batch_progress_sha256": "9cd73d669a7af5c957a44a0d3a9a379220d8f2b45502ca12d7ca98be9b9fec9c",
-    "csv_sha256": "28c3ccae96d19a8a3040df4f0f9cfb7876da60c6cf52131d4a4338e17899114b"
+    "result_records_sha256": "bb981a3f76b80472287cd18abc795a4a67990f0677c87a9cce6dac17dfb40f14",
+    "batch_progress_sha256": "f69cdeacebca35220426ed1e2ce84c02eacf3d7d4dd20902f8dbebe9f43d6505",
+    "csv_sha256": "b21b44fd4675db1360ac4db4b53c2f21a193e8221a9d6a9c2370efc046d69acf",
+    "guard_remote_sha": "922fd4d12e3f14a797270f79cd45e4b6f59f1a54",
+    "second_retroarch_evidence_sha256": "e4c44c905027feb67bf4c2582ca6af1c5a29a164496c05a42602ec4c20de56bd"
   },
   "invocation_selected_count": 1,
-  "batch_in_progress": {
-    "name": "priority_batch_69",
-    "considered": 1,
-    "launched": 1,
-    "auto_pass": 0,
-    "game_fail": 0,
-    "static_fail": 0,
-    "flaky": 0,
-    "adapter_pending": 0,
-    "skipped": 0,
-    "deferred": 0,
-    "other_unlaunched": 0,
-    "processed": 1,
-    "restore_verified": 1,
-    "restore_failures": 0,
-    "started_at": "2026-11-20T23:39:16.765-03:00",
-    "first_game": "/userdata/roms/mrboom/MrBoom.libretro",
-    "last_game": "/userdata/roms/mrboom/MrBoom.libretro"
-  }
+  "safety_recovery_history": [
+    {
+      "recovered_at": "2026-11-21T08:11:40+00:00",
+      "previous_status": "PAUSED_SYSTEM_SAFETY_FAILURE",
+      "previous_blocked_reason": "ES_LAUNCH_PROCESS_ACTIVE",
+      "current_boot_id": "51b26f0e-5eab-4ce8-a18f-203f4df6ece7",
+      "transaction_id": "20261120T233918_99d5ee09e8",
+      "next_game": "mrboom:/userdata/roms/mrboom/MrBoom.libretro",
+      "recovery_reason": "BATCH69_RESIDUAL_DOOM_SELECTOR_CLOSED_AND_RUNTIME_CLEAN",
+      "runtime_checks": {
+        "two_consecutive_clean_runtime_observations": true,
+        "es_idle": true,
+        "running_game_none": true,
+        "marker_absent": true,
+        "all_launch_and_emulator_processes_absent": true,
+        "selector_absent": true,
+        "launcher_absent": true,
+        "emulator_absent": true,
+        "no_active_certifier": true,
+        "no_active_autopilot": true,
+        "no_partial_transaction": true,
+        "manifest_restore_verified": true,
+        "emulator_not_started": true,
+        "restored_paths_match_pre_state": true,
+        "transaction_result_matches_checkpoint": true,
+        "normal_selector_cancel_verified": true,
+        "mrboom_csv_still_not_tested": true,
+        "only_active_stop_is_reconciled_safety_incident": true,
+        "batch68_preserved": true,
+        "cursor_matches_canonical_queue": true,
+        "logical_p1_p4_stable_identity": true,
+        "hdmi_pass": true,
+        "protected_config_pass": true,
+        "result_evidence_unchanged": true,
+        "batch_progress_unchanged": true,
+        "batch69_transactions_consistent": true
+      },
+      "previous_active_engine_fail_count": 1,
+      "reconciled_engine_fail_active": 0,
+      "result_records_sha256": "953c43b1df68bb10c5bfd389e44497216107f948be508254a8674a10bb577720",
+      "batch_progress_sha256": "9cd73d669a7af5c957a44a0d3a9a379220d8f2b45502ca12d7ca98be9b9fec9c",
+      "csv_sha256": "28c3ccae96d19a8a3040df4f0f9cfb7876da60c6cf52131d4a4338e17899114b"
+    }
+  ]
 }

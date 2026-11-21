@@ -1,16 +1,16 @@
 # Certificación completa de juegos — estado actual
 
-- UPDATED_AT: 2026-11-21T02:38:31+00:00
+- UPDATED_AT: 2026-11-21T20:30:57+00:00
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- ATTEMPTED_NEW: 5688
-- UNIQUE_GAMES_PROCESSED: 6644
-- RESULT_RECORDS: 6648
-- LAUNCH_TRANSACTIONS: 5688
-- RETRY_TRANSACTIONS: 4
+- ATTEMPTED_NEW: 5691
+- UNIQUE_GAMES_PROCESSED: 6645
+- RESULT_RECORDS: 6651
+- LAUNCH_TRANSACTIONS: 5691
+- RETRY_TRANSACTIONS: 6
 - STATIC_PREFLIGHT_RESULTS: 194
-- AUTO_CERTIFIED: 5512
+- AUTO_CERTIFIED: 5513
 - STATIC_FAIL: 194
 - GAME_FAIL: 172
 - FLAKY: 0
@@ -19,8 +19,8 @@
 - GUEST_READY: 0
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
-- NEXT_GAME: mrboom:/userdata/roms/mrboom/MrBoom.libretro
-- TOTAL_RESTORES: 5688
+- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/Cool Herders (USA) (Unl).chd
+- TOTAL_RESTORES: 5691
 - RESTORE_FAILURES: 0
 - ENGINE_FAIL_TOTAL_HISTORICAL: 2
 - ENGINE_FAIL_ACTIVE: 0
@@ -53,7 +53,7 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 | mastersystem | 383 | 383 | 0 | 381 | 0 | 1 | 0 | 0 | 0 | 1 |
 | megacd | 24 | 24 | 0 | 23 | 0 | 0 | 0 | 0 | 0 | 1 |
 | megadrive | 1037 | 1037 | 0 | 1016 | 0 | 13 | 0 | 0 | 0 | 8 |
-| mrboom | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| mrboom | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | n64 | 377 | 377 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 377 |
 | naomi | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | nds | 2 | 2 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -86,10 +86,10 @@ Los resultados históricos (`HISTORICAL_BOOT_OK`) se mantienen separados de la n
 
 ## Último lote y reanudación
 
-- Lote más reciente: priority_batch_68; considerados 41; lanzados 23; AUTO_PASS 21; restore 23/23.
+- Lote más reciente: priority_batch_69; considerados 1; lanzados 3; AUTO_PASS 1; restore 3/3.
 - CURRENT_INVOCATION_SELECTED_COUNT: 1 (selección de la invocación más reciente; no es el total acumulado del batch).
 - Estado de runner: COMPLETE.
-- NEXT_GAME: mrboom:/userdata/roms/mrboom/MrBoom.libretro.
+- NEXT_GAME: dreamcast:/userdata/roms/dreamcast/Cool Herders (USA) (Unl).chd.
 - No se promovieron juegos a `GUEST_READY` ni a `CONTROL_CERTIFIED` por un resultado automático.
 
 ## HISTORY

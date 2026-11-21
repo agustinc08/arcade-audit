@@ -1,7 +1,7 @@
 # Estado actual del arcade
 
-- UPDATED_AT: 2026-11-21T02:38:32+00:00
-- GITHUB_HEAD observado antes de publicar: `9594bd8766741227edea748e166d338af0eccaca`
+- UPDATED_AT: 2026-11-21T20:30:58+00:00
+- GITHUB_HEAD observado antes de publicar: `4a39fb22ec93103d178c427bed61a1e6a9b5e694`
 - BATOCERA_VERSION: 43.1
 
 ## Sistema y hardware
@@ -39,18 +39,18 @@
 - TOTAL_INVENTORY: 8426
 - INSTALLED: 8400
 - HISTORICAL_BOOT_OK: 1200
-- AUTO_CERTIFIED: 5512
+- AUTO_CERTIFIED: 5513
 - GAME_FAIL: 172
 - STATIC_FAIL: 194
 - FLAKY: 0
 - NEEDS_REPAIR: 366
 - CONTROL_CERTIFIED: 0
 - GUEST_READY: 0
-- NEXT_GAME: `mrboom:/userdata/roms/mrboom/MrBoom.libretro`
-- UNIQUE_GAMES_PROCESSED: 6644
-- RESULT_RECORDS: 6648
-- LAUNCH_TRANSACTIONS: 5688
-- RETRY_TRANSACTIONS: 4
+- NEXT_GAME: `dreamcast:/userdata/roms/dreamcast/Cool Herders (USA) (Unl).chd`
+- UNIQUE_GAMES_PROCESSED: 6645
+- RESULT_RECORDS: 6651
+- LAUNCH_TRANSACTIONS: 5691
+- RETRY_TRANSACTIONS: 6
 - ADAPTERS_READY: 23
 - ADAPTERS_PENDING: 25
 - REPAIR_QUEUE_PENDING: 22
@@ -58,7 +58,7 @@
 ## Espacio
 
 - FILESYSTEM_STATUS: lectura de capacidad; no es una prueba SMART.
-    /dev/sda2        211G   122G   80G  61% /userdata
+    /dev/sda2        211G   123G   80G  61% /userdata
     /dev/sdc1        3,6T  1012G  2,5T  30% /media/ROMS
     /dev/sdb1        916G   783G   88G  90% /media/BATOCERA_ROMS
 
