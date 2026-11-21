@@ -1197,7 +1197,7 @@ def batch68_recovered_runtime_evidence(cp, *, operator_confirmed_normal_selector
         evidence['audio_default'] = audio
         core, override_count = current_global_overrides()
         current_dispatcher_sha = hashlib.sha256((TOOLS / 'controller_dispatcher').read_bytes()).hexdigest()
-        reviewed_dispatcher = AUDIT / 'scripts' / 'active' / 'controller_dispatcher.py'
+        reviewed_dispatcher = Path('/userdata/system/state/arcade_audit_git/scripts/active/controller_dispatcher.py')
         reviewed_dispatcher_sha = (hashlib.sha256(reviewed_dispatcher.read_bytes()).hexdigest()
                                    if reviewed_dispatcher.is_file() and not reviewed_dispatcher.is_symlink() else None)
         dispatcher_matches_baseline = current_dispatcher_sha == baseline.get('dispatcher_sha256')
