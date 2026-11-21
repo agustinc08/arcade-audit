@@ -1815,6 +1815,20 @@ def batch68_single_transaction_retry_authorized(task_obj, cp, remote_sha=None):
         recovery.get('reconciled_engine_fail_active') == 0)
 
 
+def single_transaction_retry_publish_boundary(state, item):
+    """Stop a one-game recovery run only after its own batch publication task."""
+    return bool(
+        state.get('single_transaction_retry') is True and
+        int(state.get('batches_completed', 0)) >= 1 and
+        item.get('type') == 'GITHUB_PUBLISH' and
+        item.get('id') == 'GITHUB-PUBLISH-CERT-BATCH-0068' and
+        item.get('source') == 'CERT-BATCH-0068')
+
+
+def single_transaction_retry_completion_lock(state):
+    return state.get('single_transaction_retry_completed') is True
+
+
 def recover_unfinished_tasks(obj, job, cp, state):
     """Recover idempotent work; a completed certifier is finalized without relaunch."""
     if job.get('status') == 'RUNNING':
@@ -2333,18 +2347,40 @@ def run_loop(run_id):
             append_event('CODEX_REQUIRED' if codex else 'MANUAL_REQUIRED' if manual else 'AUTOPILOT_COMPLETE')
             return 0
         if state.get('batches_completed', 0) >= int(state.get('max_batches', DEFAULT_MAX_BATCHES)):
-            ok, reason, checks = health_check(include_checkpoint=True, allow_self=True)
-            state['last_safety_check'] = checks
-            if not ok:
-                state.update({'status': 'PAUSED_SAFETY', 'pause_reason': 'DEEP_HEALTH_REVIEW:' + str(reason),
-                              'pid': None, 'process_start_ticks': None, 'updated_at': now()})
-                atomic_json(STATE, state)
-                append_event('SAFETY_PAUSE', reason=state['pause_reason'])
-                return 3
-            state['batches_completed'] = 0
+            if state.get('single_transaction_retry'):
+                if not single_transaction_retry_publish_boundary(state, item):
+                    state.update({'status': 'STOPPED', 'pid': None, 'process_start_ticks': None,
+                                  'current_task': None, 'stop_requested': True,
+                                  'single_transaction_retry_completed': True,
+                                  'next_action': 'Límite del retry único alcanzado; no ejecutar otra tarea/game.'})
+                    atomic_json(STATE, state)
+                    append_event('AUTHORIZED_SINGLE_TRANSACTION_RETRY_STOPPED_BEFORE_NEXT_TASK',
+                                 task_id=item.get('id'), batches_completed=state.get('batches_completed'))
+                    return 0
+            else:
+                ok, reason, checks = health_check(include_checkpoint=True, allow_self=True)
+                state['last_safety_check'] = checks
+                if not ok:
+                    state.update({'status': 'PAUSED_SAFETY', 'pause_reason': 'DEEP_HEALTH_REVIEW:' + str(reason),
+                                  'pid': None, 'process_start_ticks': None, 'updated_at': now()})
+                    atomic_json(STATE, state)
+                    append_event('SAFETY_PAUSE', reason=state['pause_reason'])
+                    return 3
+                state['batches_completed'] = 0
         try:
             if not execute_one(item, obj, state):
                 return 3
+            if single_transaction_retry_publish_boundary(state, item):
+                state.update({'status': 'STOPPED', 'pid': None, 'process_start_ticks': None,
+                              'current_task': None, 'stop_requested': True,
+                              'single_transaction_retry_completed': True,
+                              'next_action': 'Retry de una transacción completado y publicado; revisión explícita requerida antes de otro batch.'})
+                atomic_json(STATE, state)
+                append_event('AUTHORIZED_SINGLE_TRANSACTION_RETRY_STOPPED', task_id='CERT-BATCH-0068',
+                             published_task=item.get('id'),
+                             publish_status=next((x.get('status') for x in obj.get('tasks', [])
+                                                  if x.get('id') == item.get('id')), None))
+                return 0
         except Exception as exc:
             update_task(obj, item['id'], status='FAILED', last_error=type(exc).__name__ + ':' + str(exc)[:200])
             save_tasks(obj)
@@ -2375,6 +2411,9 @@ def start(batch_size=DEFAULT_BATCH_SIZE, max_batches=DEFAULT_MAX_BATCHES, dry_ru
     if not 1 <= max_batches <= 100:
         raise RuntimeError('MAX_BATCHES_MUST_BE_1_TO_100')
     state = read_json(STATE, {}) or initial_state()
+    if single_transaction_retry_completion_lock(state):
+        print('SINGLE_TRANSACTION_RETRY_COMPLETE_OPERATOR_REVIEW_REQUIRED')
+        return 3
     active_pid, active = find_autopilot_process()
     if active_pid:
         print('AUTOPILOT_ALREADY_RUNNING')

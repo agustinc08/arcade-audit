@@ -54,6 +54,21 @@ class AutopilotTests(unittest.TestCase):
         cp['batch_in_progress']['launched'] = 23
         self.assertFalse(AP.batch68_single_transaction_retry_authorized(obj, cp, 'a' * 40))
 
+    def test_single_transaction_retry_stops_only_after_its_publication(self):
+        state = {'single_transaction_retry': True, 'batches_completed': 1}
+        publish = {'type': 'GITHUB_PUBLISH', 'id': 'GITHUB-PUBLISH-CERT-BATCH-0068',
+                   'source': 'CERT-BATCH-0068'}
+        self.assertTrue(AP.single_transaction_retry_publish_boundary(state, publish))
+        self.assertFalse(AP.single_transaction_retry_publish_boundary(
+            {'single_transaction_retry': True, 'batches_completed': 0}, publish))
+        self.assertFalse(AP.single_transaction_retry_publish_boundary(
+            {'single_transaction_retry': False, 'batches_completed': 1}, publish))
+        self.assertFalse(AP.single_transaction_retry_publish_boundary(
+            state, {'type': 'CERTIFICATION_BATCH', 'id': 'CERT-BATCH-0069', 'source': None}))
+        self.assertTrue(AP.single_transaction_retry_completion_lock(
+            {'single_transaction_retry_completed': True}))
+        self.assertFalse(AP.single_transaction_retry_completion_lock({}))
+
     def recovered_checkpoint_fixture(self):
         return {
             'status': 'PAUSED_SYSTEM_SAFETY_FAILURE',

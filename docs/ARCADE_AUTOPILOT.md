@@ -120,6 +120,10 @@ otras tareas automáticas independientes.
 - Log máximo 5 MiB y tres rotaciones.
 - Cada batch estable genera `reports/AUTOPILOT_STATUS.md` con métricas,
   fallos, handoffs y siguiente cursor.
+- Un retry excepcional autorizado para una sola transacción detiene el worker
+  tras publicar su propio batch; no puede consumir el límite `max_batches` y
+  seguir con el siguiente batch. El estado persistido bloquea otro start hasta
+  revisión explícita.
 - Exportar tasks, estado saneado, handoffs, docs y scripts aprobados; nunca PID,
   lock, log o eventos JSONL.
 
