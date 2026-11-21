@@ -866,7 +866,7 @@ class Batch68RunnerRecoveryGateTests(unittest.TestCase):
         return {'status': 'STOPPED_SAFE', 'blocked_reason': None, 'engine_fail_active': 0,
                 'next_untested': AP.BATCH68_GAME,
                 'safety_recovery': {
-                    'recovered_blocker': 'ES_LAUNCH_PROCESS_ACTIVE',
+                    'previous_blocked_reason': 'ES_LAUNCH_PROCESS_ACTIVE',
                     'recovery_reason': 'NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN',
                     'operator_confirmed_normal_selector_cancel': True,
                     'reconciled_engine_fail_active': 0,
@@ -875,7 +875,7 @@ class Batch68RunnerRecoveryGateTests(unittest.TestCase):
                     'rom': '/userdata/roms/prboom/doom1_shareware.wad',
                     'result': 'SYSTEM_SAFETY_FAILURE', 'failure_class': 'ES_LAUNCH_PROCESS_ACTIVE',
                     'transaction_id': AP.BATCH68_TX,
-                    'restore': {'status': 'RESTORE_VERIFIED'}}]}
+                    'restore': {'status': 'RESTORE_VERIFIED', 'transaction_id': AP.BATCH68_TX}}]}
 
     def test_runner_ignores_only_the_exact_reconciled_safety_incident(self):
         cp = self.checkpoint()
@@ -896,6 +896,47 @@ class Batch68RunnerRecoveryGateTests(unittest.TestCase):
         self.assertEqual(RUNNER.active_engine_failure_count(cp, CERT.STOP_ENGINE), 1)
         cp = self.checkpoint(); cp['results'][0]['restore']['status'] = 'RESTORE_FAILURE'
         self.assertEqual(RUNNER.active_engine_failure_count(cp, CERT.STOP_ENGINE), 1)
+
+    def test_runtime_gate_accepts_only_hash_bound_reconciled_incident(self):
+        import hashlib
+        import json
+        cp = self.checkpoint()
+        cp['status'] = 'STOPPED_SAFE'
+        cp['blocked_reason'] = None
+        cp['engine_fail_active'] = 0
+        cp['batch_in_progress'] = {'name': 'priority_batch_68', 'considered': 41,
+                                   'launched': 21, 'auto_pass': 20, 'game_fail': 0,
+                                   'restore_verified': 21, 'restore_failures': 0}
+        runtime_keys = (
+            'operator_confirmed_normal_selector_cancel', 'two_consecutive_clean_runtime_observations',
+            'es_idle', 'running_game_none', 'marker_absent', 'all_launch_and_emulator_processes_absent',
+            'no_active_certifier', 'no_active_autopilot', 'no_partial_transaction',
+            'last_result_restore_verified', 'manifest_restore_verified', 'restored_paths_match_pre_state',
+            'batch68_transactions_consistent', 'previous_terminal_result_preserved',
+            'doom_csv_still_not_tested', 'cursor_matches_canonical_queue', 'hdmi_pass',
+            'logical_p1_p4_stable_identity', 'protected_config_pass', 'result_evidence_unchanged',
+            'batch_progress_unchanged', 'no_game_terminal_result_for_doom')
+        cp['safety_recovery'] = {
+            'previous_blocked_reason': 'ES_LAUNCH_PROCESS_ACTIVE',
+            'recovery_reason': 'NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN',
+            'operator_confirmed_normal_selector_cancel': True,
+            'previous_active_engine_fail_count': 1, 'reconciled_engine_fail_active': 0,
+            'transaction_id': AP.BATCH68_TX, 'next_game': AP.BATCH68_GAME,
+            'runtime_checks': {key: True for key in runtime_keys}, 'csv_sha256': 'fixture-csv',
+            'result_records_sha256': hashlib.sha256(json.dumps(
+                cp['results'], ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest(),
+            'batch_progress_sha256': hashlib.sha256(json.dumps(
+                cp['batch_in_progress'], ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()}
+        self.assertTrue(AP.batch68_reconciled_incident_matches(
+            cp, cp['results'], 'fixture-csv'))
+
+    def test_runtime_gate_rejects_other_stop_or_changed_evidence(self):
+        cp = self.checkpoint()
+        self.assertFalse(AP.batch68_reconciled_incident_matches(
+            cp, cp['results'], 'fixture-csv'))
+        extra = cp['results'] + [{'result': 'ENGINE_FAIL'}]
+        self.assertFalse(AP.batch68_reconciled_incident_matches(
+            cp, extra, 'fixture-csv'))
 
 
 if __name__ == '__main__':

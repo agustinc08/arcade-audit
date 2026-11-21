@@ -924,6 +924,49 @@ def batch68_recovered_safety_plan(cp, evidence):
     }
 
 
+def batch68_reconciled_incident_matches(cp, active_stops, csv_sha256):
+    """Accept only the exact Batch 68 incident previously reconciled with clean runtime evidence."""
+    import hashlib
+    recovery = cp.get('safety_recovery') or {}
+    runtime_checks = recovery.get('runtime_checks') or {}
+    required_runtime_checks = (
+        'operator_confirmed_normal_selector_cancel', 'two_consecutive_clean_runtime_observations',
+        'es_idle', 'running_game_none', 'marker_absent', 'all_launch_and_emulator_processes_absent',
+        'no_active_certifier', 'no_active_autopilot', 'no_partial_transaction',
+        'last_result_restore_verified', 'manifest_restore_verified', 'restored_paths_match_pre_state',
+        'batch68_transactions_consistent', 'previous_terminal_result_preserved',
+        'doom_csv_still_not_tested', 'cursor_matches_canonical_queue', 'hdmi_pass',
+        'logical_p1_p4_stable_identity', 'protected_config_pass', 'result_evidence_unchanged',
+        'batch_progress_unchanged', 'no_game_terminal_result_for_doom',
+    )
+    if len(active_stops) != 1:
+        return False
+    incident = active_stops[0]
+    results_digest = hashlib.sha256(json.dumps(
+        cp.get('results', []), ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+    batch_digest = hashlib.sha256(json.dumps(
+        cp.get('batch_in_progress'), ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+    return bool(
+        cp.get('status') == 'STOPPED_SAFE' and cp.get('blocked_reason') is None and
+        cp.get('engine_fail_active') == 0 and cp.get('next_untested') == BATCH68_GAME and
+        incident.get('transaction_id') == BATCH68_TX and
+        incident.get('system') == 'prboom' and incident.get('rom') == '/userdata/roms/prboom/doom1_shareware.wad' and
+        incident.get('result') == 'SYSTEM_SAFETY_FAILURE' and
+        incident.get('failure_class') == 'ES_LAUNCH_PROCESS_ACTIVE' and
+        incident.get('restore', {}).get('status') == 'RESTORE_VERIFIED' and
+        incident.get('restore', {}).get('transaction_id') == BATCH68_TX and
+        recovery.get('previous_blocked_reason') == 'ES_LAUNCH_PROCESS_ACTIVE' and
+        recovery.get('recovery_reason') == 'NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN' and
+        recovery.get('operator_confirmed_normal_selector_cancel') is True and
+        recovery.get('previous_active_engine_fail_count') == 1 and
+        recovery.get('reconciled_engine_fail_active') == 0 and
+        recovery.get('transaction_id') == BATCH68_TX and recovery.get('next_game') == BATCH68_GAME and
+        all(runtime_checks.get(key) is True for key in required_runtime_checks) and
+        recovery.get('result_records_sha256') == results_digest and
+        recovery.get('batch_progress_sha256') == batch_digest and
+        recovery.get('csv_sha256') == csv_sha256)
+
+
 def batch68_recovered_runtime_evidence(cp, *, operator_confirmed_normal_selector_cancel=False):
     """Capture fresh, read-only evidence for Batch 68 safety reconciliation."""
     import hashlib
@@ -1109,14 +1152,13 @@ def batch68_recovered_runtime_evidence(cp, *, operator_confirmed_normal_selector
         for item in cp.get('results', []):
             latest[(item.get('system'), item.get('rom'))] = item
         active_stops = [x for x in latest.values() if x.get('result') in cert.STOP_ENGINE]
-        incident_only = (len(active_stops) == 1 and active_stops[0].get('transaction_id') == BATCH68_TX and
-                         active_stops[0].get('result') == 'SYSTEM_SAFETY_FAILURE' and
-                         active_stops[0].get('failure_class') == 'ES_LAUNCH_PROCESS_ACTIVE')
+        evidence['csv_sha256'] = hashlib.sha256(CERT_CSV.read_bytes()).hexdigest()
+        incident_only = batch68_reconciled_incident_matches(cp, active_stops, evidence['csv_sha256'])
         evidence['active_stop_result_count'] = len(active_stops)
-        checks['only_active_stop_is_reconciled_safety_incident'] = incident_only and cp.get('engine_fail_active') == len(active_stops)
+        checks['only_active_stop_is_reconciled_safety_incident'] = incident_only
         checks['no_other_active_engine_failure'] = incident_only
-        if not incident_only or cp.get('engine_fail_active') != 1:
-            raise RuntimeError('ACTIVE_ENGINE_FAILURE_NOT_LIMITED_TO_RECOVERED_INCIDENT')
+        if not incident_only:
+            raise RuntimeError('RECONCILED_BATCH68_INCIDENT_MISMATCH')
 
         evidence['result_records_sha256'] = hashlib.sha256(
             json.dumps(cp.get('results', []), ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()

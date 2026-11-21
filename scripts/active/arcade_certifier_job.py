@@ -99,7 +99,7 @@ def active_engine_failure_count(cp, stop_engine):
     exact_recovery = (
         cp.get('status') == 'STOPPED_SAFE' and not cp.get('blocked_reason') and
         cp.get('engine_fail_active') == 0 and
-        recovery.get('recovered_blocker') == 'ES_LAUNCH_PROCESS_ACTIVE' and
+        recovery.get('previous_blocked_reason') == 'ES_LAUNCH_PROCESS_ACTIVE' and
         recovery.get('recovery_reason') == 'NORMAL_SELECTOR_CANCELLATION_AND_RUNTIME_CLEAN' and
         recovery.get('operator_confirmed_normal_selector_cancel') is True and
         recovery.get('reconciled_engine_fail_active') == 0 and
