@@ -331,18 +331,65 @@ def dispatcher_log_identity(s,rom):
   if j.get('event') in ('boot_audit_auto_choice','launch') and j.get('system')==s and j.get('rom')==rom:
    return {'event':j.get('event'),'system':j.get('system'),'rom':j.get('rom'),'choice':j.get('choice'),'one_shot_consumed':j.get('one_shot_consumed')}
  return None
-def selector_identity(logtext,system,rom):
+def selector_identity(logtext,system,rom,expected_transaction_id):
+ """Return strong selector evidence for this certification transaction.
+
+ Generic launch records are secondary evidence: they must never hide a later
+ automatic-choice record. Context choices are bound to the transaction and
+ the canonical system/ROM pair; ambiguous or contradictory matching context
+ records fail closed.
+ """
+ canonical_rom=os.path.realpath(os.path.abspath(str(rom)))
+ relevant=[];launch=None;legacy=[]
  for line in logtext.splitlines():
   try:j=json.loads(line)
-  except Exception:continue
-  if j.get('system')==system and j.get('rom')==rom:
-   if j.get('event')=='automatic_selector_context_choice' and j.get('automatic_context_match') is True:
-    return {'choice':j.get('choice'),'marker_consumed':j.get('one_shot_consumed') is True,
-            'automatic_context_match':True,'transaction_id':j.get('transaction_id'),
-            'selector_invocation_id':j.get('selector_invocation_id'),'event':j.get('event')}
-   if j.get('event')=='boot_audit_auto_choice' and j.get('one_shot_consumed') is True:return {'choice':j.get('choice'),'marker_consumed':True,'event':j.get('event')}
-   if j.get('event')=='launch':return {'rom':j.get('rom'),'system':j.get('system'),'event':j.get('event')}
+  except (TypeError,ValueError):continue
+  if not isinstance(j,dict):continue
+  if j.get('system')!=system or not isinstance(j.get('rom'),str):continue
+  if os.path.realpath(os.path.abspath(j['rom']))!=canonical_rom:continue
+  event=j.get('event')
+  if event=='automatic_selector_context_choice':
+   # A matching ROM from a different transaction is never this game's proof.
+   if j.get('transaction_id')!=expected_transaction_id:continue
+   relevant.append(j)
+  elif event=='boot_audit_auto_choice' and j.get('one_shot_consumed') is True:
+   legacy.append(j)
+  elif event=='launch' and launch is None:
+   launch=j
+
+ if relevant:
+  # Multiple invocations are expected, but every matching record must agree.
+  if any(j.get('automatic_context_match') is not True or
+         j.get('choice')!='JOYSTICKS PRIMERO' or
+         not isinstance(j.get('selector_invocation_id'),str) or
+         not j.get('selector_invocation_id') for j in relevant):
+   return None
+  invocation_ids=list(dict.fromkeys(j['selector_invocation_id'] for j in relevant))
+  return {'choice':'JOYSTICKS PRIMERO','marker_consumed':any(j.get('one_shot_consumed') is True for j in relevant),
+          'automatic_context_match':True,'transaction_id':expected_transaction_id,
+          'selector_invocation_id':invocation_ids[0],'selector_invocation_ids':invocation_ids,
+          'event':'automatic_selector_context_choice'}
+
+ if legacy:
+  # The legacy one-shot marker has no transaction field. Its exact ROM/system
+  # plus consumed receipt remains supported for old runtime logs.
+  choices={j.get('choice') for j in legacy}
+  if len(choices)==1 and next(iter(choices)) in ('JOYSTICKS PRIMERO','JOYSTICKS','external'):
+   return {'choice':next(iter(choices)),'marker_consumed':True,'event':'boot_audit_auto_choice'}
+  return None
+ if launch is not None:
+  return {'rom':launch['rom'],'system':launch['system'],'event':'launch'}
  return None
+def selector_identity_is_proven(identity):
+ if not isinstance(identity,dict):return False
+ if identity.get('event')=='automatic_selector_context_choice':
+  return (identity.get('automatic_context_match') is True and
+          identity.get('choice')=='JOYSTICKS PRIMERO' and
+          bool(identity.get('transaction_id')) and bool(identity.get('selector_invocation_id')))
+ if identity.get('event')=='boot_audit_auto_choice':
+  return (identity.get('marker_consumed') is True and
+          identity.get('choice') in ('JOYSTICKS PRIMERO','JOYSTICKS','external'))
+ return False
 def core_from_argv(argv):
  m=re.search(r'(?:^|\s)-L\s+([^\s]+)',argv)
  return m.group(1) if m else None
@@ -440,14 +487,17 @@ def launch_one(game,adapter_info,baseline,mode):
     actual=rg.get('path') if isinstance(rg,dict) else None
     if actual!=str(rom):wrong={'requested':str(rom),'es_running_game':actual,'raw':rg};break
    new=processes_by_pid(before_pids);logtxt=read_new_selector_log(log_offset)
-   identity=selector_identity(logtxt,system,str(rom))
+   identity=selector_identity(logtxt,system,str(rom),txid)
    for p in new:
     if p['exe']=='retroarch' or p['comm']=='retroarch':
      proc=identify_process(system,str(rom),adapter,core,[p]);break
    if proc:break
    if idle and rg is None and time.monotonic()-starttime>3:
     # ES returned idle without emulator process. This is a game failure only if dispatch identity was correct.
-    if identity and identity.get('rom')==str(rom):break
+    # A generic launch log is not selector proof and may arrive before the
+    # automatic-choice record. Keep observing until identity is proven or the
+    # launch deadline expires; otherwise event order can create a false fail.
+    if identity and identity.get('rom')==str(rom) and selector_identity_is_proven(identity):break
     time.sleep(.2);continue
    time.sleep(.1)
   if wrong:
@@ -455,8 +505,8 @@ def launch_one(game,adapter_info,baseline,mode):
    for p in processes_by_pid(before_pids):
     if p['exe']=='retroarch' or p['comm']=='retroarch':proc={'pid':p['pid'],'argv':p['argv']};break
    return result
-  logtxt=read_new_selector_log(log_offset);sel=selector_identity(logtxt,system,str(rom));result['selector_event']=sel
-  if not sel or not (sel.get('marker_consumed',False) or sel.get('automatic_context_match',False)):
+  logtxt=read_new_selector_log(log_offset);sel=selector_identity(logtxt,system,str(rom),txid);result['selector_event']=sel
+  if not selector_identity_is_proven(sel):
    result['result']='ENGINE_FAIL';result['failure_class']='SELECTOR_MARKER_OR_IDENTITY_NOT_PROVEN';return result
   if proc is None:
    result['result']='GAME_FAIL';result['failure_class']='IMMEDIATE_EXIT_OR_NO_EMULATOR_PROCESS';result['identity']={'es_running_game_seen':running_seen,'selector_event':sel};return result
@@ -506,7 +556,7 @@ def launch_one(game,adapter_info,baseline,mode):
    time.sleep(1)
   else:result['result']='ENGINE_FAIL';result['failure_class']='ES_RETURN_TIMEOUT';return result
   # Confirm one-shot choice and game-health row after clean exit.
-  logtxt=read_new_selector_log(log_offset);sel=selector_identity(logtxt,system,str(rom));result['selector_event']=sel
+  logtxt=read_new_selector_log(log_offset);sel=selector_identity(logtxt,system,str(rom),txid);result['selector_event']=sel
   health=None
   for _ in range(30):
    health=health_for(system,str(rom),health_id)

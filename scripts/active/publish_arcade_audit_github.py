@@ -32,7 +32,7 @@ ONE_TIME_MANIFEST = AUDIT / "github_one_time_changeset_approval.json"
 ALLOWED_ROOT_FILES = {"README.md", ".gitignore", "ARCADE_CURRENT_STATE.md", "ARCADE_DOCUMENT_INDEX.md",
                       "CODEX_NEXT_TASK.md", "MANUAL_NEXT_TASK.md", "autopilot_state.json"}
 ALLOWED_DIRS = {"data", "reports", "scripts", "docs"}
-EXPORT_SCOPES = {"all", "autopilot-infrastructure", "incident-batch"}
+EXPORT_SCOPES = {"all", "autopilot-infrastructure", "incident-batch", "selector-identity-fix"}
 EXPORT_SCOPE_PATHS = {
     "autopilot-infrastructure": {
         "CODEX_NEXT_TASK.md", "MANUAL_NEXT_TASK.md", "autopilot_state.json",
@@ -59,8 +59,15 @@ EXPORT_SCOPE_PATHS = {
         "scripts/active/marker_ownership.py",
         "scripts/active/publish_arcade_audit_github.py",
         "scripts/tests/test_batch59_reconciliation.py",
+        "scripts/tests/test_selector_identity.py",
         "scripts/tests/test_arcade_autopilot.py",
         "scripts/tests/test_automatic_selector_context.py",
+    },
+    "selector-identity-fix": {
+        "scripts/active/full_game_certifier.py",
+        "scripts/active/publish_arcade_audit.sh",
+        "scripts/active/publish_arcade_audit_github.py",
+        "scripts/tests/test_selector_identity.py",
     },
 }
 ALLOWED_SUFFIXES = {".md", ".txt", ".csv", ".json", ".py", ".sh"}
@@ -197,7 +204,9 @@ def source_export_map():
         (TOOLS / "certification_batch_accounting.py", "scripts/active/certification_batch_accounting.py"),
         (TOOLS / "arcade_autopilot.py", "scripts/active/arcade_autopilot.py"),
         (TOOLS / "publish_arcade_audit_github.py", "scripts/active/publish_arcade_audit_github.py"),
+        (TOOLS / "publish_arcade_audit.sh", "scripts/active/publish_arcade_audit.sh"),
         (AUDIT / "tests" / "test_batch59_reconciliation.py", "scripts/tests/test_batch59_reconciliation.py"),
+        (AUDIT / "scripts" / "tests" / "test_selector_identity.py", "scripts/tests/test_selector_identity.py"),
         (AUDIT / "scripts" / "tests" / "test_automatic_selector_context.py", "scripts/tests/test_automatic_selector_context.py"),
         (AUDIT / "scripts" / "tests" / "test_arcade_autopilot.py", "scripts/tests/test_arcade_autopilot.py"),
         (TOOLS / "marker_ownership.py", "scripts/active/marker_ownership.py"),
@@ -655,8 +664,8 @@ def consume_one_time_manifest(meta):
     atomic_json(path, doc)
 
 
-def scan_and_diff(token, require_token=False, one_time_approved=False):
-    files = export_files()
+def scan_and_diff(token, require_token=False, one_time_approved=False, scope="all"):
+    files = {rel: path for rel, path in export_files().items() if in_export_scope(rel, scope)}
     pat = token
     secret_scan(files, pat)
     total = payload_scan(files)
@@ -664,8 +673,12 @@ def scan_and_diff(token, require_token=False, one_time_approved=False):
     if remaining < MIN_RATE_REMAINING:
         raise PublishError("RATE_LIMIT_LOW")
     head, state = establish_head(token)
-    tree_sha, remote_blobs = get_remote_tree(token, head)
-    remote_files = remote_archive(head)
+    tree_sha, all_remote_blobs = get_remote_tree(token, head)
+    all_remote_files = remote_archive(head)
+    # A narrow scoped publish changes only explicitly reviewed paths. Keep the
+    # repository-wide count for size guards and retain the full tree as parent.
+    remote_blobs = {rel: sha for rel, sha in all_remote_blobs.items() if in_export_scope(rel, scope)}
+    remote_files = {rel: data for rel, data in all_remote_files.items() if in_export_scope(rel, scope)}
     local = {rel: p.read_bytes() for rel, p in files.items()}
     local_hash = {rel: hashlib.sha256(data).hexdigest() for rel, data in local.items()}
     added = sorted(set(local) - set(remote_blobs))
@@ -682,10 +695,10 @@ def scan_and_diff(token, require_token=False, one_time_approved=False):
     for rel in set(remote_files) - set(remote_blobs):
         raise PublishError("API_FAILED", "remote archive/tree disagreement")
     changed_count = len(added) + len(modified) + len(deleted)
-    allowed_existing = len(remote_blobs)
+    allowed_existing = len(all_remote_blobs)
     if len(deleted) > MAX_DELETES or (allowed_existing and len(deleted) / allowed_existing > MAX_DELETE_FRACTION):
         raise PublishError("MASS_DELETE_GUARD")
-    basis = max(len(remote_blobs), len(local), 1)
+    basis = max(len(all_remote_blobs), len(local), 1)
     approval = None
     if one_time_approved:
         approval = validate_one_time_manifest(head, added, modified, deleted, local, remote_files)
@@ -837,7 +850,7 @@ def main():
         say("SECRET_SCAN: PASS")
         say("PAYLOAD_SCAN: PASS")
         say("PAYLOAD SIZE: " + str(payload_size) + " bytes")
-        diff = scan_and_diff(credential_value, one_time_approved=args.one_time_approved)
+        diff = scan_and_diff(credential_value, one_time_approved=args.one_time_approved, scope=args.scope)
         if args.dry_run:
             if not (diff["added"] or diff["modified"] or diff["deleted"]):
                 say("NO_CHANGES")
